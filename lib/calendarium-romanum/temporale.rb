@@ -69,7 +69,22 @@ module CalendariumRomanum
 
     def baptism_of_lord(year=nil)
       year ||= @year
-      return sunday_after epiphany
+      return sunday_after epiphany(year)
+    end
+
+    def ash_wednesday(year=nil)
+      year ||= @year
+      return easter_sunday(year) - (6 * WEEK + 4)
+    end
+
+    def easter_sunday(year=nil)
+      year ||= @year
+      return Easter.easter(year+1).to_date
+    end
+
+    def pentecost(year=nil)
+      year ||= @year
+      return easter_sunday(year) + 7 * WEEK
     end
   end
 end

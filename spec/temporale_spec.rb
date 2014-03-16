@@ -50,4 +50,19 @@ describe Temporale do
       @t.advent_sunday(2, 2013).should eq Date.new(2013,12,8)
     end
   end
+
+  describe '#easter_sunday' do
+    it 'determines Easter Sunday' do
+      [
+       [2003, [2004, 4, 11]],
+       [2004, [2005, 3, 27]],
+       [2005, [2006, 4, 16]],
+       [2006, [2007, 4, 8]],
+       [2014, [2015, 4, 5]]
+      ].each do |d|
+        year, date = d
+        @t.easter_sunday(year).should eq Date.new(*date)
+      end
+    end
+  end
 end

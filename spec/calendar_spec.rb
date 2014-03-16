@@ -10,7 +10,7 @@ describe Calendar do
     describe '#dt_range' do
       it 'includes days of the year' do
         @c.dt_range.should include Date.new(2013, 12, 3)
-       
+        @c.dt_range.should include Date.new(2014, 11, 5)
       end
     end
 
@@ -23,6 +23,21 @@ describe Calendar do
 
       it 'determines Christmas' do
         @c.season(Date.new(2013, 12, 25)).should eq Calendar::T_CHRISTMAS
+        @c.season(Date.new(2014, 1, 12)).should eq Calendar::T_CHRISTMAS
+        @c.season(Date.new(2014, 1, 13)).should eq Calendar::T_ORDINARY
+      end
+
+      it 'determines Lent' do
+        @c.season(Date.new(2014, 3, 4)).should eq Calendar::T_ORDINARY
+        @c.season(Date.new(2014, 3, 5)).should eq Calendar::T_LENT
+        @c.season(Date.new(2014, 4, 19)).should eq Calendar::T_LENT
+        @c.season(Date.new(2014, 4, 20)).should eq Calendar::T_EASTER
+      end
+
+      it 'determines Easter time' do
+        @c.season(Date.new(2014, 4, 20)).should eq Calendar::T_EASTER
+        @c.season(Date.new(2014, 6, 8)).should eq Calendar::T_EASTER
+        @c.season(Date.new(2014, 6, 9)).should eq Calendar::T_ORDINARY
       end
     end
   end

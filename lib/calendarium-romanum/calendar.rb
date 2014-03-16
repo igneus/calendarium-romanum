@@ -12,6 +12,8 @@ module CalendariumRomanum
     T_LENT = 'Lent'
     T_EASTER = 'Easter Time'
     T_ORDINARY = 'Ordinary Time'
+    # is Triduum Sacrum a special season? For now I count Friday and Saturday
+    # to the Lent, Sunday to the Easter time
 
     # year: Integer
     # returns a calendar for the liturgical year beginning with
@@ -47,6 +49,15 @@ module CalendariumRomanum
 
       elsif @temporale.nativity <= date and @temporale.baptism_of_lord >= date then
         return T_CHRISTMAS
+
+      elsif @temporale.ash_wednesday <= date and @temporale.easter_sunday > date then
+        return T_LENT
+
+      elsif @temporale.easter_sunday <= date and @temporale.pentecost >= date then
+        return T_EASTER
+
+      else
+        return T_ORDINARY
       end
     end
     
@@ -99,7 +110,7 @@ module CalendariumRomanum
 
   def range_check(date)
     unless dt_range.include? date
-      raise ArgumentError("Date out of range #{date}")
+      raise ArgumentError.new "Date out of range #{date}"
     end
   end
 end
