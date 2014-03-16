@@ -1,0 +1,56 @@
+---
+
+# these texts are quickly written down out of my (non-native) head and will be mostly wrong;
+# once the library works, they need to be revised according to the
+# official US calendar and liturgical books 
+
+seasons:
+  ordinary: Ordinary Time
+  advent: Advent
+  christmas: Christmas Time
+  lent: Lent
+  easter: Easter Time
+
+day_ranks:
+  solemnity: solemnity
+  feast: feast
+  memorial: memorial
+  memorial_optional: optional memorial
+  ferial: ferial
+
+weekdays:
+  sunday: Sunday
+  monday: Monday
+  tuesday: Tuesday
+  wednesday: Wednesday
+  thursday: Thursday
+  friday: Friday
+  saturday: Saturday
+
+temporale_days:
+  ordinary:
+    sunday: Sunday of the %s week in the Ordinary Time
+    ferial: %s of the %s week in the Ordinary Time
+  advent:
+    sunday: %s Sunday of Advent
+    ferial: %s after the %s Sunday of Advent
+  lent:
+    sunday: %s Sunday of Lent
+    ferial: %s after the %s Sunday of Lent
+  easter:
+    sunday: %s Sunday in the Easter Time
+    ferial: %s after the %s Sunday in the Easter Time
+
+temporale_feasts: 
+  # and other privileged days of the temporale
+  christmas:
+    nativity: Nativity of the Lord
+    epiphany: Epiphany
+    baptism: Baptism of the Lord
+  lent:
+    ash_wednesday: Ash Wednesday
+  easter:
+    resurrection: Easter Sunday
+    ascension: Ascension
+    pentecost: Pentecost Sunday
+  ordinary:

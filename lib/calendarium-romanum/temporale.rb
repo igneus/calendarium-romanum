@@ -43,10 +43,6 @@ module CalendariumRomanum
       raise NoMethodError.new sym
     end
 
-    def sunday_after(date)
-      weekday_after 0, date
-    end
-
     def advent_sunday(num, year=nil)
       advent_sundays_total = 4
       unless (1..advent_sundays_total).include? num
