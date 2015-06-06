@@ -23,6 +23,16 @@ module CalendariumRomanum
       @temporale = Temporale.new(year)
     end
 
+    attr_reader :year
+
+    def ==(obj)
+      unless obj.is_a? Calendar
+        return false
+      end
+
+      return year == obj.year
+    end
+
     # DateTime of a year beginning
     # 00:00 of the first Advent Sunday
     def dt_beginning
@@ -73,7 +83,7 @@ module CalendariumRomanum
       def day(*args)
         date = mk_date(*args)
 
-        return calendar_for_day(date).day(date)
+        return for_day(date).day(date)
       end
 
       def mk_date(*args)
@@ -101,7 +111,14 @@ module CalendariumRomanum
 
       # creates a Calendar for the liturgical year including given
       # date
-      def calendar_for_day(date) 
+      def for_day(date)
+        year = date.year
+        temporale = Temporale.new year
+
+        if date < temporale.first_advent_sunday
+          return new(year - 1)
+        end
+        return new(year)
       end
     end
   end

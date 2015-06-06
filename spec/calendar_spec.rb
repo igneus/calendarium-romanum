@@ -14,6 +14,16 @@ describe Calendar do
       end
     end
 
+    describe '#==' do
+      it 'considers calendars with the same year same' do
+        Calendar.new(2014).should == Calendar.new(2014)
+      end
+
+      it 'considers calendars with different year different' do
+        Calendar.new(2014).should_not == Calendar.new(2010)
+      end
+    end
+
     describe '#season' do
       it 'determines Advent' do
         @c.season(Date.new(2013, 12, 15)).should eq Calendar::T_ADVENT
@@ -38,6 +48,16 @@ describe Calendar do
         @c.season(Date.new(2014, 4, 20)).should eq Calendar::T_EASTER
         @c.season(Date.new(2014, 6, 8)).should eq Calendar::T_EASTER
         @c.season(Date.new(2014, 6, 9)).should eq Calendar::T_ORDINARY
+      end
+    end
+
+    describe '.for_day' do
+      it 'continues the previous year\'s calendar in summer' do
+        Calendar.for_day(Date.new(2014, 6, 9)).should eq Calendar.new(2013)
+      end
+
+      it 'provides the current year\'s calendar in December' do
+        Calendar.for_day(Date.new(2014, 12, 20)).should eq Calendar.new(2014)
       end
     end
   end
