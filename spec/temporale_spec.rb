@@ -51,6 +51,14 @@ describe Temporale do
     end
   end
 
+  describe '#second_advent_sunday' do
+    # alias of advent_sunday through method_missing
+
+    it 'determines second Sunday of Advent' do
+      @t.second_advent_sunday(2013).should eq Date.new(2013,12,8)
+    end
+  end
+
   describe '#easter_sunday' do
     it 'determines Easter Sunday' do
       [
