@@ -120,14 +120,14 @@ module CalendariumRomanum
         end
         return new(year)
       end
-    end
-  end
+    end # class << self
 
-  private
+    private
 
-  def range_check(date)
-    unless dt_range.include? date
-      raise ArgumentError.new "Date out of range #{date}"
+    def range_check(date)
+      unless dt_range.include? date
+        raise ArgumentError.new "Date out of range #{date}"
+      end
     end
-  end
+  end # class Calendar
 end
