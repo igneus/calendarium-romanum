@@ -15,6 +15,8 @@ module CalendariumRomanum
     # is Triduum Sacrum a special season? For now I count Friday and Saturday
     # to the Lent, Sunday to the Easter time
 
+    LECTIONARY_CYCLES = [:A, :B, :C]
+
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
@@ -75,6 +77,11 @@ module CalendariumRomanum
     def day(*args)
       date = self.class.mk_date *args
       range_check date
+    end
+
+    # Sunday lectionary cycle
+    def lectionary
+      LECTIONARY_CYCLES[@year % 3]
     end
 
     class << self
