@@ -4,6 +4,13 @@ module CalendariumRomanum
   
   # information on one particular day of the liturgical year
   class Day
+    def initialize(**args)
+      %i(date season celebrations).each do |a|
+        if args.include? a
+          instance_variable_set "@#{a}", args[a]
+        end
+      end
+    end
 
     attr_reader :date 
 
@@ -18,7 +25,6 @@ module CalendariumRomanum
 
     # Celebration of the following day if it has first vespers
     attr_reader :vespers
- 
   end
 
   # information on one particular celebration of the liturgical year
@@ -28,8 +34,6 @@ module CalendariumRomanum
   class Celebration
 
     attr_reader :rank
-
-    attr_reader :rank_num
 
     attr_reader :title
 

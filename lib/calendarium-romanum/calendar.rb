@@ -81,6 +81,11 @@ module CalendariumRomanum
     def day(*args)
       date = self.class.mk_date *args
       range_check date
+
+      return Day.new(
+                     date: date,
+                     season: season(date)
+                    )
     end
 
     # Sunday lectionary cycle
@@ -142,7 +147,7 @@ module CalendariumRomanum
 
     def range_check(date)
       unless dt_range.include? date
-        raise ArgumentError.new "Date out of range #{date}"
+        raise RangeError.new "Date out of range #{date}"
       end
     end
   end # class Calendar

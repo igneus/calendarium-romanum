@@ -75,5 +75,19 @@ describe Calendar do
         Calendar.for_day(Date.new(2014, 12, 20)).should eq Calendar.new(2014)
       end
     end
+
+    describe '#day' do
+      it 'returns Day' do
+        @c.day(2013, 12, 10).should be_a Day
+      end
+
+      it 'throws RangeError if given date not included in the year' do
+        expect { @c.day(2000, 1, 1) }.to raise_error RangeError
+      end
+
+      it 'sets season correctly' do
+        @c.day(2013, 12, 10).season.should eq :advent
+      end
+    end
   end
 end
