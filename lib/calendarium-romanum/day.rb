@@ -1,24 +1,32 @@
 
 
 module CalendariumRomanum
-  
+
   # information on one particular day of the liturgical year
   class Day
     def initialize(**args)
-      %i(date season celebrations).each do |a|
+      %i(date season season_week celebrations).each do |a|
         if args.include? a
-          instance_variable_set "@#{a}", args[a]
+          instance_variable_set "@#{a}", args.delete(a)
         end
+      end
+
+      unless args.empty?
+        raise ArgumentError.new "Unexpected arguments #{args.keys.join(', ')}"
       end
     end
 
-    attr_reader :date 
+    attr_reader :date
 
     def weekday
       date.wday
     end
 
+    # one of the Seasons (Symbol)
     attr_reader :season
+
+    # week of the season (Integer)
+    attr_reader :season_week
 
     # an Array of Celebrations, possibly empty
     attr_reader :celebrations

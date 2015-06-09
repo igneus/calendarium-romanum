@@ -60,21 +60,63 @@ module CalendariumRomanum
     def season(date)
       range_check date
 
-      if @temporale.advent_sunday(1) <= date and @temporale.nativity > date then
-        return Seasons::ADVENT
+      if @temporale.first_advent_sunday <= date and @temporale.nativity > date then
+        Seasons::ADVENT
 
       elsif @temporale.nativity <= date and @temporale.baptism_of_lord >= date then
-        return Seasons::CHRISTMAS
+        Seasons::CHRISTMAS
 
       elsif @temporale.ash_wednesday <= date and @temporale.easter_sunday > date then
-        return Seasons::LENT
+        Seasons::LENT
 
       elsif @temporale.easter_sunday <= date and @temporale.pentecost >= date then
-        return Seasons::EASTER
+        Seasons::EASTER
 
       else
-        return Seasons::ORDINARY
+        Seasons::ORDINARY
       end
+    end
+
+    def season_beginning(s)
+      case s
+      when Seasons::ADVENT
+        @temporale.first_advent_sunday
+      when Seasons::CHRISTMAS
+        @temporale.nativity
+      when Seasons::LENT
+        @temporale.ash_wednesday
+      when Seasons::EASTER
+        @temporale.easter_sunday
+      else
+        @temporale.monday_after(@temporale.baptism_of_lord)
+      end
+    end
+
+    # difference between two Dates in days
+    def date_difference(d1, d2)
+      return (d1 - d2).numerator
+    end
+
+    def season_week(seasonn, date)
+      week1_beginning = season_beginning = season_beginning(seasonn)
+      unless season_beginning.sunday?
+        week1_beginning = @temporale.sunday_after(season_beginning)
+      end
+
+      week = date_difference(date, week1_beginning) / Temporale::WEEK + 1
+
+      if seasonn == Seasons::ORDINARY
+        # ordinary time does not begin with Sunday, but the first week
+        # is week 1, not 0
+        week += 1
+
+        if date > @temporale.pentecost
+          # gap made by Lent and Easter time
+          week -= 12
+        end
+      end
+
+      return week
     end
     
     # returns filled Day for the specified day
@@ -82,9 +124,11 @@ module CalendariumRomanum
       date = self.class.mk_date *args
       range_check date
 
+      s = season(date)
       return Day.new(
                      date: date,
-                     season: season(date)
+                     season: s,
+                     season_week: season_week(s, date)
                     )
     end
 

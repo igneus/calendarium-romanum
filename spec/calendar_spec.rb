@@ -81,13 +81,72 @@ describe Calendar do
         @c.day(2013, 12, 10).should be_a Day
       end
 
+      xit 'inserts correct year if not given' do
+        expect(@c.day(12, 10).date).to eq Date.new(2013, 12, 10)
+      end
+
       it 'throws RangeError if given date not included in the year' do
         expect { @c.day(2000, 1, 1) }.to raise_error RangeError
       end
 
-      it 'sets season correctly' do
-        @c.day(2013, 12, 10).season.should eq :advent
+      describe 'temporale features' do
+        describe 'season' do
+          it 'detects Advent correctly' do
+            @c.day(2013, 12, 10).season.should eq :advent
+          end
+        end
+
+        describe 'week of the season' do
+          describe 'Advent' do
+            it 'sets Advent week correctly' do
+              expect(@c.day(2013, 12, 10).season_week).to eq 2
+              expect(@c.day(2013, 12, 15).season_week).to eq 3
+            end
+          end
+
+          describe 'Christmas' do
+            it 'days before the first Sunday are week 0' do
+              expect(@c.day(2013, 12, 25).season_week).to eq 0
+            end
+
+            it 'first Sunday starts week 1' do
+              expect(@c.day(2013, 12, 29).season_week).to eq 1
+            end
+          end
+
+          describe 'Lent' do
+            it 'Ash Wednesday is week 0' do
+              expect(@c.day(2014, 3, 5).season_week).to eq 0
+            end
+          end
+
+          describe 'Easter' do
+            it 'Easter Sunday opens week 1' do
+              expect(@c.day(2014, 4, 20).season_week).to eq 1
+            end
+          end
+
+          describe 'Ordinary time' do
+            it 'Monday after Baptism of the Lord is week 1' do
+              expect(@c.day(2014, 1, 13).season_week).to eq 1
+            end
+
+            it 'Continue after Pentecost' do
+              expect(@c.day(2014, 6, 9).season_week).to eq 10
+            end
+          end
+        end
       end
+    end
+  end
+end
+
+describe Date do
+  describe 'substraction' do
+    it 'returns Integer' do
+      date_diff = Date.new(2013,5,5) - Date.new(2013,5,1)
+      expect(date_diff).to be_a Rational
+      expect(date_diff.numerator).to eq 4
     end
   end
 end
