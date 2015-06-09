@@ -59,6 +59,13 @@ describe Calendar do
       end
     end
 
+    describe '#ferial_lectionary' do
+      it 'detects correctly' do
+        Calendar.new(2014).ferial_lectionary.should eq 1
+        Calendar.new(2013).ferial_lectionary.should eq 2
+      end
+    end
+
     describe '.for_day' do
       it 'continues the previous year\'s calendar in summer' do
         Calendar.for_day(Date.new(2014, 6, 9)).should eq Calendar.new(2013)

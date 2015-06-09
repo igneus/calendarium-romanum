@@ -84,6 +84,11 @@ module CalendariumRomanum
       LECTIONARY_CYCLES[@year % 3]
     end
 
+    # Ferial lectionary cycle
+    def ferial_lectionary
+      @year % 2 + 1
+    end
+
     class << self
       # day(Date d)
       # day(Integer year, Integer month, Integer day)
