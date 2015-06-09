@@ -7,13 +7,6 @@ describe Calendar do
       @c = Calendar.new 2013
     end
 
-    describe '#dt_range' do
-      it 'includes days of the year' do
-        @c.dt_range.should include Date.new(2013, 12, 3)
-        @c.dt_range.should include Date.new(2014, 11, 5)
-      end
-    end
-
     describe '#==' do
       it 'considers calendars with the same year same' do
         Calendar.new(2014).should == Calendar.new(2014)
@@ -21,33 +14,6 @@ describe Calendar do
 
       it 'considers calendars with different year different' do
         Calendar.new(2014).should_not == Calendar.new(2010)
-      end
-    end
-
-    describe '#season' do
-      it 'determines Advent' do
-        @c.season(Date.new(2013, 12, 15)).should eq :advent
-        @c.season(Date.new(2013, 12, 1)).should eq :advent
-        @c.season(Date.new(2013, 12, 24)).should eq :advent
-      end
-
-      it 'determines Christmas' do
-        @c.season(Date.new(2013, 12, 25)).should eq :christmas
-        @c.season(Date.new(2014, 1, 12)).should eq :christmas
-        @c.season(Date.new(2014, 1, 13)).should eq :ordinary
-      end
-
-      it 'determines Lent' do
-        @c.season(Date.new(2014, 3, 4)).should eq :ordinary
-        @c.season(Date.new(2014, 3, 5)).should eq :lent
-        @c.season(Date.new(2014, 4, 19)).should eq :lent
-        @c.season(Date.new(2014, 4, 20)).should eq :easter
-      end
-
-      it 'determines Easter time' do
-        @c.season(Date.new(2014, 4, 20)).should eq :easter
-        @c.season(Date.new(2014, 6, 8)).should eq :easter
-        @c.season(Date.new(2014, 6, 9)).should eq :ordinary
       end
     end
 

@@ -73,4 +73,42 @@ describe Temporale do
       end
     end
   end
+
+  describe '#dt_range' do
+    it 'includes days of the year' do
+      @t.dt_range.should include Date.new(2012, 12, 3)
+      @t.dt_range.should include Date.new(2013, 11, 5)
+    end
+  end
+
+  describe '#season' do
+    before :all do
+      @t13 = Temporale.new 2013
+    end
+
+    it 'determines Advent' do
+      @t13.season(Date.new(2013, 12, 15)).should eq :advent
+      @t13.season(Date.new(2013, 12, 1)).should eq :advent
+      @t13.season(Date.new(2013, 12, 24)).should eq :advent
+    end
+
+    it 'determines Christmas' do
+      @t13.season(Date.new(2013, 12, 25)).should eq :christmas
+      @t13.season(Date.new(2014, 1, 12)).should eq :christmas
+      @t13.season(Date.new(2014, 1, 13)).should eq :ordinary
+    end
+
+    it 'determines Lent' do
+      @t13.season(Date.new(2014, 3, 4)).should eq :ordinary
+      @t13.season(Date.new(2014, 3, 5)).should eq :lent
+      @t13.season(Date.new(2014, 4, 19)).should eq :lent
+      @t13.season(Date.new(2014, 4, 20)).should eq :easter
+    end
+
+    it 'determines Easter time' do
+      @t13.season(Date.new(2014, 4, 20)).should eq :easter
+      @t13.season(Date.new(2014, 6, 8)).should eq :easter
+      @t13.season(Date.new(2014, 6, 9)).should eq :ordinary
+    end
+  end
 end

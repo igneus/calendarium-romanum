@@ -2,7 +2,7 @@ require 'date'
 
 module CalendariumRomanum
 
-  # determine dates of the Temporale feasts of the given year
+  # determine seasons and dates of the Temporale feasts of the given year
   class Temporale
 
     WEEK = 7
@@ -10,6 +10,29 @@ module CalendariumRomanum
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year)
       @year = year
+    end
+
+    # DateTime of a year beginning
+    # 00:00 of the first Advent Sunday
+    def dt_beginning
+      first_advent_sunday.to_datetime
+    end
+
+    # DateTime of a year end
+    # 23:59 of the last Saturday
+    def dt_end
+      day = advent_sunday(1, @year+1) - 1
+      return DateTime.new(day.year, day.month, day.day, 23, 59, 59)
+    end
+
+    def dt_range
+      dt_beginning .. dt_end
+    end
+
+    def range_check(date)
+      unless dt_range.include? date
+        raise RangeError.new "Date out of range #{date}"
+      end
     end
 
     def weekday_before(weekday, date)
@@ -44,7 +67,7 @@ module CalendariumRomanum
       if sym.to_s =~ /^(#{four.join('|')})_advent_sunday$/ then
         return send("advent_sunday", four.index($1) + 1, *args)
       end
-      
+
       raise NoMethodError.new sym
     end
 1
@@ -115,6 +138,73 @@ module CalendariumRomanum
     def pentecost(year=nil)
       year ||= @year
       return easter_sunday(year) + 7 * WEEK
+    end
+
+    # which liturgical season is it?
+    def season(date)
+      range_check date
+
+      if first_advent_sunday <= date and
+          nativity > date then
+        Seasons::ADVENT
+
+      elsif nativity <= date and
+          baptism_of_lord >= date then
+        Seasons::CHRISTMAS
+
+      elsif ash_wednesday <= date and
+          easter_sunday > date then
+        Seasons::LENT
+
+      elsif easter_sunday <= date and
+          pentecost >= date then
+        Seasons::EASTER
+
+      else
+        Seasons::ORDINARY
+      end
+    end
+
+    def season_beginning(s)
+      case s
+      when Seasons::ADVENT
+        first_advent_sunday
+      when Seasons::CHRISTMAS
+        nativity
+      when Seasons::LENT
+        ash_wednesday
+      when Seasons::EASTER
+        easter_sunday
+      else # ordinary time
+        monday_after(baptism_of_lord)
+      end
+    end
+
+    def season_week(seasonn, date)
+      week1_beginning = season_beginning = season_beginning(seasonn)
+      unless season_beginning.sunday?
+        week1_beginning = sunday_after(season_beginning)
+      end
+
+      week = date_difference(date, week1_beginning) / Temporale::WEEK + 1
+
+      if seasonn == Seasons::ORDINARY
+        # ordinary time does not begin with Sunday, but the first week
+        # is week 1, not 0
+        week += 1
+
+        if date > pentecost
+          # gap made by Lent and Easter time
+          week -= 12
+        end
+      end
+
+      return week
+    end
+
+    # helper: difference between two Dates in days
+    def date_difference(d1, d2)
+      return (d1 - d2).numerator
     end
   end
 end
