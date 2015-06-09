@@ -38,22 +38,23 @@ module CalendariumRomanum
 
   # ranks of celebrations
   module Ranks
-    # the shortcut after each constant is a reference to a section
-    # of the Table of Liturgical Days
-    TRIDUUM           = 10000 # I.1
-    PRIMARY           =  9900 # I.2
-    SOLEMNITY_GENERAL =  9800 # I.3
-    SOLEMNITY_PROPER  =  9700 # I.4
+    # Values are at the same time references to sections
+    # of the Table of Liturgical Days.
+    # The lower value, the higher rank.
+    TRIDUUM           = 1.1
+    PRIMARY           = 1.2
+    SOLEMNITY_GENERAL = 1.3
+    SOLEMNITY_PROPER  = 1.4
 
-    FEAST_LORD_GENERAL  = 1000 # II.5
-    SUNDAY_UNPRIVILEGED = 900 # II.6
-    FEAST_GENERAL       = 800 # II.7
-    FEAST_PROPER        = 700 # II.8
-    FERIAL_PRIVILEGED   = 600 # II.9
+    FEAST_LORD_GENERAL  = 2.5
+    SUNDAY_UNPRIVILEGED = 2.6
+    FEAST_GENERAL       = 2.7
+    FEAST_PROPER        = 2.8
+    FERIAL_PRIVILEGED   = 2.9
 
-    MEMORIAL_GENERAL  = 100 # III.10
-    MEMORIAL_PROPER   =  90 # III.11
-    MEMORIAL_OPTIONAL =  80 # III.12
-    FERIAL            =   1 # III.13
+    MEMORIAL_GENERAL  = 3.10
+    MEMORIAL_PROPER   = 3.11
+    MEMORIAL_OPTIONAL = 3.12
+    FERIAL            = 3.13
   end
 end
