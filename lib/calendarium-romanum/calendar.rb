@@ -7,13 +7,17 @@ module CalendariumRomanum
   # MP Mysterii Paschalis of Paul VI. (AAS 61 (1969), pp. 222-226)
   class Calendar
 
-    T_ADVENT = 'Advent'
-    T_CHRISTMAS = 'Christmas Time'
-    T_LENT = 'Lent'
-    T_EASTER = 'Easter Time'
-    T_ORDINARY = 'Ordinary Time'
-    # is Triduum Sacrum a special season? For now I count Friday and Saturday
-    # to the Lent, Sunday to the Easter time
+    module Seasons
+      ADVENT = :advent
+      CHRISTMAS = :christmas
+      LENT = :lent
+      EASTER = :easter
+      ORDINARY = :ordinary
+      # is Triduum Sacrum a special season? For now I count Friday and Saturday
+      # to the Lent, Sunday to the Easter time
+    end
+
+    include Seasons
 
     LECTIONARY_CYCLES = [:A, :B, :C]
 
@@ -57,19 +61,19 @@ module CalendariumRomanum
       range_check date
 
       if @temporale.advent_sunday(1) <= date and @temporale.nativity > date then
-        return T_ADVENT
+        return Seasons::ADVENT
 
       elsif @temporale.nativity <= date and @temporale.baptism_of_lord >= date then
-        return T_CHRISTMAS
+        return Seasons::CHRISTMAS
 
       elsif @temporale.ash_wednesday <= date and @temporale.easter_sunday > date then
-        return T_LENT
+        return Seasons::LENT
 
       elsif @temporale.easter_sunday <= date and @temporale.pentecost >= date then
-        return T_EASTER
+        return Seasons::EASTER
 
       else
-        return T_ORDINARY
+        return Seasons::ORDINARY
       end
     end
     

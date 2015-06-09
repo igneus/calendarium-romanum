@@ -26,28 +26,28 @@ describe Calendar do
 
     describe '#season' do
       it 'determines Advent' do
-        @c.season(Date.new(2013, 12, 15)).should eq Calendar::T_ADVENT
-        @c.season(Date.new(2013, 12, 1)).should eq Calendar::T_ADVENT
-        @c.season(Date.new(2013, 12, 24)).should eq Calendar::T_ADVENT
+        @c.season(Date.new(2013, 12, 15)).should eq :advent
+        @c.season(Date.new(2013, 12, 1)).should eq :advent
+        @c.season(Date.new(2013, 12, 24)).should eq :advent
       end
 
       it 'determines Christmas' do
-        @c.season(Date.new(2013, 12, 25)).should eq Calendar::T_CHRISTMAS
-        @c.season(Date.new(2014, 1, 12)).should eq Calendar::T_CHRISTMAS
-        @c.season(Date.new(2014, 1, 13)).should eq Calendar::T_ORDINARY
+        @c.season(Date.new(2013, 12, 25)).should eq :christmas
+        @c.season(Date.new(2014, 1, 12)).should eq :christmas
+        @c.season(Date.new(2014, 1, 13)).should eq :ordinary
       end
 
       it 'determines Lent' do
-        @c.season(Date.new(2014, 3, 4)).should eq Calendar::T_ORDINARY
-        @c.season(Date.new(2014, 3, 5)).should eq Calendar::T_LENT
-        @c.season(Date.new(2014, 4, 19)).should eq Calendar::T_LENT
-        @c.season(Date.new(2014, 4, 20)).should eq Calendar::T_EASTER
+        @c.season(Date.new(2014, 3, 4)).should eq :ordinary
+        @c.season(Date.new(2014, 3, 5)).should eq :lent
+        @c.season(Date.new(2014, 4, 19)).should eq :lent
+        @c.season(Date.new(2014, 4, 20)).should eq :easter
       end
 
       it 'determines Easter time' do
-        @c.season(Date.new(2014, 4, 20)).should eq Calendar::T_EASTER
-        @c.season(Date.new(2014, 6, 8)).should eq Calendar::T_EASTER
-        @c.season(Date.new(2014, 6, 9)).should eq Calendar::T_ORDINARY
+        @c.season(Date.new(2014, 4, 20)).should eq :easter
+        @c.season(Date.new(2014, 6, 8)).should eq :easter
+        @c.season(Date.new(2014, 6, 9)).should eq :ordinary
       end
     end
 
