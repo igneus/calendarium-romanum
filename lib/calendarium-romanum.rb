@@ -2,6 +2,7 @@
 %w{
 calendar
 temporale
+sanctorale
 day
 enums
 }.each do |f| 
