@@ -35,4 +35,22 @@ describe Sanctorale do
       end
     end
   end
+
+  describe '#add' do
+    it 'adds a Celebration to one month only' do
+      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      expect(@s.get(2, 17)).to be_empty
+    end
+  end
+
+  describe '#size' do
+    it 'knows when the Sanctorale is empty' do
+      expect(@s.size).to eq 0
+    end
+
+    it 'knows when there is something' do
+      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      expect(@s.size).to eq 1
+    end
+  end
 end

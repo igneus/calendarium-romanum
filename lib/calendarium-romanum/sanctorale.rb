@@ -4,7 +4,8 @@ module CalendariumRomanum
   class Sanctorale
 
     def initialize
-      @months = [{}] * 12
+      @months = []
+      13.times { @months << Hash.new } # 0 will be unused
     end
 
     def add(month, day, celebration)
@@ -32,6 +33,11 @@ module CalendariumRomanum
       end
 
       return @months[month][day] || []
+    end
+
+    # returns count of the _days_ with celebrations filled
+    def size
+      @months.inject(0) {|sum,n| sum + n.size }
     end
   end
 end
