@@ -18,19 +18,43 @@ module CalendariumRomanum
                   's' => Ranks::SOLEMNITY_GENERAL
                  }
 
-    def load_from_string(dest, src)
+    # dest should be a Sanctorale,
+    # src anything with #each_line
+    def load(dest, src)
+      month_section = nil
       src.each_line do |l|
-        l.strip!
+        # strip whitespace and comments
         l.sub!(/#.*/, '')
+        l.strip!
         next if l.empty?
 
-        m = l.match(/\A(\d{1,2})\/(\d{1,2})\s*([mfs])?\s*:(.*)\Z/)
-        puts 'skip' if m.nil?
+        # month section heading
+        n = l.match /^=\s*(\d+)\s*$/
+        unless n.nil?
+          month_section = n[1].to_i
+          next
+        end
+
+        # celebration record
+        m = l.match /^((\d{1,2})\/)?(\d{1,2})\s*([mfs])?\s*:(.*)$/
         next if m.nil?
 
-        month, day, rank, title = m.values_at 1, 2, 3, 4
-        dest.add month.to_i, day.to_i, Celebration.new(title.strip, RANK_CODES[rank])
+        month, day, rank, title = m.values_at 2, 3, 4, 5
+        month ||= month_section
+        month = month.to_i
+
+        unless dest.validate_month month
+          next
+        end
+
+        dest.add month, day.to_i, Celebration.new(title.strip, RANK_CODES[rank])
       end
+    end
+
+    alias_method :load_from_string, :load
+
+    def load_from_file(dest, filename)
+      self.load dest, File.open(filename)
     end
   end
 end

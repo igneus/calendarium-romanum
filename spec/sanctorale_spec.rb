@@ -41,6 +41,14 @@ describe Sanctorale do
       @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
       expect(@s.get(2, 17)).to be_empty
     end
+
+    it 'does not allow month 0' do
+      expect { @s.add 0, 1, Celebration.new('S. Nullius') }.to raise_exception RangeError
+    end
+
+    it 'does not allow month higher than 12' do
+      expect { @s.add 13, 1, Celebration.new('S. Nullius') }.to raise_exception RangeError
+    end
   end
 
   describe '#size' do
@@ -51,6 +59,17 @@ describe Sanctorale do
     it 'knows when there is something' do
       @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
       expect(@s.size).to eq 1
+    end
+  end
+
+  describe '#empty?' do
+    it 'is empty at the beginning' do
+      expect(@s).to be_empty
+    end
+
+    it 'is never more empty once a record is entered' do
+      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      expect(@s).not_to be_empty
     end
   end
 end

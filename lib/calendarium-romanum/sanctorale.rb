@@ -9,6 +9,8 @@ module CalendariumRomanum
     end
 
     def add(month, day, celebration)
+      check_date! month, day
+
       unless @months[month].has_key? day
         @months[month][day] = []
       end
@@ -28,9 +30,7 @@ module CalendariumRomanum
         month, day = args
       end
 
-      if month < 0 || month >= @months.size
-        raise RangeError.new("Invalid month #{month}")
-      end
+      check_date! month, day
 
       return @months[month][day] || []
     end
@@ -38,6 +38,22 @@ module CalendariumRomanum
     # returns count of the _days_ with celebrations filled
     def size
       @months.inject(0) {|sum,n| sum + n.size }
+    end
+
+    def empty?
+      size == 0
+    end
+
+    def validate_month(month)
+      month >= 1 && month <= 12
+    end
+
+    private
+
+    def check_date!(month, day)
+      unless validate_month month
+        raise RangeError.new("Invalid month #{month}")
+      end
     end
   end
 end
