@@ -7,6 +7,14 @@ module CalendariumRomanum
 
     WEEK = 7
 
+    SEASON_COLOUR = {
+                     Seasons::ADVENT => Colours::VIOLET,
+                     Seasons::CHRISTMAS => Colours::WHITE,
+                     Seasons::ORDINARY => Colours::GREEN,
+                     Seasons::LENT => Colours::VIOLET,
+                     Seasons::EASTER => Colours::WHITE,
+                    }
+
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year)
       @year = year
@@ -200,6 +208,41 @@ module CalendariumRomanum
       end
 
       return week
+    end
+
+    # returns a Celebrations
+    # scheduled for the given day
+    #
+    # expected arguments: Date or two Integers (month, day)
+    def get(*args)
+      if args.size == 1 && args[0].is_a?(Date)
+        date = args[0]
+      else
+        month, day = args
+        date = Date.new @year, month, day
+        unless dt_range.include? date
+          date = Date.new @year + 1, month, day
+        end
+      end
+
+      seas = season date
+      rank = Ranks::FERIAL
+      if date.sunday?
+        rank = Ranks::SUNDAY_UNPRIVILEGED
+      else
+        case seas
+        when Seasons::LENT
+          rank = Ranks::FERIAL_PRIVILEGED
+        when Seasons::ADVENT
+          if date >= Date.new(@year, 12, 17)
+            rank = Ranks::FERIAL_PRIVILEGED
+          end
+        end
+      end
+
+      colour = SEASON_COLOUR[seas]
+
+      return Celebration.new '', rank, colour
     end
 
     # helper: difference between two Dates in days

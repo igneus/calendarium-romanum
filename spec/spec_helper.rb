@@ -18,3 +18,5 @@ end
 
 require 'calendarium-romanum'
 include CalendariumRomanum
+include Ranks
+include Colours

@@ -40,7 +40,7 @@ module CalendariumRomanum
   # some days have no (ferial office is used), some have one,
   # some have more among which one may and may not be chosen
   class Celebration
-    def initialize(title, rank=Ranks::MEMORIAL_OPTIONAL, colour=nil)
+    def initialize(title='', rank=Ranks::FERIAL, colour=Colours::GREEN)
       @title = title
       @rank = rank
       @colour = colour
@@ -51,5 +51,6 @@ module CalendariumRomanum
     attr_reader :title
 
     attr_reader :colour
+    alias_method :color, :colour
   end
 end

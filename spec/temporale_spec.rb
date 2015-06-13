@@ -2,8 +2,9 @@ require_relative 'spec_helper'
 
 describe Temporale do
 
-  before :each do
+  before :all do
     @t = Temporale.new 2012
+    @t13 = Temporale.new 2013
   end
 
   describe '#weekday_before' do
@@ -82,10 +83,6 @@ describe Temporale do
   end
 
   describe '#season' do
-    before :all do
-      @t13 = Temporale.new 2013
-    end
-
     it 'determines Advent' do
       @t13.season(Date.new(2013, 12, 15)).should eq :advent
       @t13.season(Date.new(2013, 12, 1)).should eq :advent
@@ -109,6 +106,61 @@ describe Temporale do
       @t13.season(Date.new(2014, 4, 20)).should eq :easter
       @t13.season(Date.new(2014, 6, 8)).should eq :easter
       @t13.season(Date.new(2014, 6, 9)).should eq :ordinary
+    end
+  end
+
+  describe '#get' do
+    it 'returns a Celebration' do
+      expect(@t13.get(8, 12)).to be_a Celebration
+    end
+
+    describe 'for' do
+      describe 'ferial' do
+
+        it 'in Ordinary Time' do
+          c = @t13.get(8, 12)
+          expect(c.rank).to eq FERIAL
+          expect(c.color).to eq GREEN
+        end
+
+        it 'in Advent' do
+          c = @t13.get(12, 12)
+          expect(c.rank).to eq FERIAL
+          expect(c.color).to eq VIOLET
+        end
+
+        it 'in the last week of Advent' do
+          c = @t13.get(12, 23)
+          expect(c.rank).to eq FERIAL_PRIVILEGED
+          expect(c.color).to eq VIOLET
+        end
+
+        it 'in Christmas time' do
+          c = @t13.get(1, 3)
+          expect(c.rank).to eq FERIAL
+          expect(c.color).to eq WHITE
+        end
+
+        it 'in Lent' do
+          c = @t13.get(3, 18)
+          expect(c.rank).to eq FERIAL_PRIVILEGED
+          expect(c.color).to eq VIOLET
+        end
+
+        it 'in Easter Time' do
+          c = @t13.get(5, 5)
+          expect(c.rank).to eq FERIAL
+          expect(c.color).to eq WHITE
+        end
+      end
+
+      describe 'Sunday' do
+        it 'in Ordinary Time' do
+          c = @t13.get(8, 10)
+          expect(c.rank).to eq SUNDAY_UNPRIVILEGED
+          expect(c.color).to eq GREEN
+        end
+      end
     end
   end
 end
