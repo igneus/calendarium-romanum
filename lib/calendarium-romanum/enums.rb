@@ -16,7 +16,7 @@ module CalendariumRomanum
     include Comparable
 
     def <=>(b)
-      self.priority <=> b.priority
+      b.priority <=> self.priority
     end
 
     alias_method :to_f, :priority

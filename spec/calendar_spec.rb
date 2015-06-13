@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe Calendar do
 
   describe 'core functions' do
-    before :each do
+    before :all do
       @c = Calendar.new 2013
     end
 
@@ -47,7 +47,7 @@ describe Calendar do
         @c.day(2013, 12, 10).should be_a Day
       end
 
-      xit 'inserts correct year if not given' do
+      it 'inserts correct year if not given' do
         expect(@c.day(12, 10).date).to eq Date.new(2013, 12, 10)
       end
 
@@ -103,13 +103,43 @@ describe Calendar do
           end
         end
       end
+
+      describe 'Temporale x Sanctorale resolution' do
+        before :all do
+          loader = SanctoraleLoader.new
+          loader.load_from_file(@c, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
+        end
+
+        it 'ferial' do
+          d = @c.day(7, 2)
+          expect(d.celebrations.size).to eq 1
+          expect(d.celebrations[0].rank).to eq FERIAL
+        end
+
+        it 'feast' do
+          d = @c.day(7, 3)
+          expect(d.celebrations.size).to eq 1
+          expect(d.celebrations[0].rank).to eq FEAST_GENERAL
+          expect(d.celebrations[0].title).to include 'Thomas'
+        end
+
+        it 'optional memorial does not suppress ferial' do
+          d = @c.day(7, 14)
+          expect(d.celebrations.size).to eq 2
+
+          expect(d.celebrations[0].rank).to eq FERIAL
+
+          expect(d.celebrations[1].rank).to eq MEMORIAL_OPTIONAL
+          expect(d.celebrations[1].title).to include 'Lellis'
+        end
+      end
     end
   end
 end
 
 describe Date do
   describe 'substraction' do
-    it 'returns Integer' do
+    it 'returns Rational' do
       date_diff = Date.new(2013,5,5) - Date.new(2013,5,1)
       expect(date_diff).to be_a Rational
       expect(date_diff.numerator).to eq 4

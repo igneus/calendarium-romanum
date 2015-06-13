@@ -3,12 +3,13 @@ require 'date'
 module CalendariumRomanum
 
   # calendar computations according to the Roman Catholic liturgical
-  # calendar as instituted by 
+  # calendar as instituted by
   # MP Mysterii Paschalis of Paul VI. (AAS 61 (1969), pp. 222-226)
   class Calendar
 
     extend Forwardable
     def_delegators :@temporale, :range_check
+    def_delegators :@sanctorale, :add, :validate_date
 
     # year: Integer
     # returns a calendar for the liturgical year beginning with
@@ -16,6 +17,7 @@ module CalendariumRomanum
     def initialize(year)
       @year = year
       @temporale = Temporale.new(year)
+      @sanctorale = Sanctorale.new
     end
 
     attr_reader :year
@@ -27,17 +29,25 @@ module CalendariumRomanum
 
       return year == obj.year
     end
-    
+
     # returns filled Day for the specified day
     def day(*args)
-      date = self.class.mk_date *args
-      range_check date
+      if args.size == 2
+        date = Date.new(@year, *args)
+        unless @temporale.dt_range.include? date
+          date = Date.new(@year + 1, *args)
+        end
+      else
+        date = self.class.mk_date *args
+        range_check date
+      end
 
       s = @temporale.season(date)
       return Day.new(
                      date: date,
                      season: s,
-                     season_week: @temporale.season_week(s, date)
+                     season_week: @temporale.season_week(s, date),
+                     celebrations: celebrations_for(date)
                     )
     end
 
@@ -49,6 +59,24 @@ module CalendariumRomanum
     # Ferial lectionary cycle
     def ferial_lectionary
       @year % 2 + 1
+    end
+
+    def celebrations_for(date)
+      t = @temporale.get date
+      st = @sanctorale.get date
+
+      unless st.empty?
+        if st.first.rank > t.rank
+          if st.first.rank == MEMORIAL_OPTIONAL
+            st.unshift t
+            return st
+          else
+            return st
+          end
+        end
+      end
+
+      return [t]
     end
 
     class << self
@@ -64,7 +92,7 @@ module CalendariumRomanum
         ex = TypeError.new('Date, DateTime or three Integers expected')
 
         if args.size == 3 then
-          args.each do |a| 
+          args.each do |a|
             unless a.is_a? Integer
               raise ex
             end
