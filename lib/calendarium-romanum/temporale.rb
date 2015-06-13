@@ -229,6 +229,9 @@ module CalendariumRomanum
       rank = Ranks::FERIAL
       if date.sunday?
         rank = Ranks::SUNDAY_UNPRIVILEGED
+        if [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].include?(seas)
+          rank = Ranks::PRIMARY
+        end
       else
         case seas
         when Seasons::LENT

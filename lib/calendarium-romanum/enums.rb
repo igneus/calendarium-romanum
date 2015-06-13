@@ -29,8 +29,8 @@ module CalendariumRomanum
     # of the Table of Liturgical Days.
     # The lower value, the higher rank.
     TRIDUUM           = Rank.new 1.1, 'Easter triduum'
-    PRIMARY           = Rank.new 1.2, 'First class solemnities' # description may not be exact
-    SOLEMNITY_GENERAL = Rank.new 1.3, 'Second class solemnities' # description may not be exact
+    PRIMARY           = Rank.new 1.2, 'Primary liturgical days' # description may not be exact
+    SOLEMNITY_GENERAL = Rank.new 1.3, 'Solemnities in the General Calendar' # description may not be exact
     SOLEMNITY_PROPER  = Rank.new 1.4, 'Proper solemnities'
 
     FEAST_LORD_GENERAL  = Rank.new 2.5, 'Feasts of the Lord in the General Calendar'

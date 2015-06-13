@@ -160,6 +160,30 @@ describe Temporale do
           expect(c.rank).to eq SUNDAY_UNPRIVILEGED
           expect(c.color).to eq GREEN
         end
+
+        it 'in Advent' do
+          c = @t13.get(12, 15)
+          expect(c.rank).to eq PRIMARY
+          expect(c.color).to eq VIOLET
+        end
+
+        it 'in Christmas time' do
+          c = @t13.get(1, 5)
+          expect(c.rank).to eq SUNDAY_UNPRIVILEGED
+          expect(c.color).to eq WHITE
+        end
+
+        it 'in Lent' do
+          c = @t13.get(3, 23)
+          expect(c.rank).to eq PRIMARY
+          expect(c.color).to eq VIOLET
+        end
+
+        it 'in Easter Time' do
+          c = @t13.get(5, 11)
+          expect(c.rank).to eq PRIMARY
+          expect(c.color).to eq WHITE
+        end
       end
     end
   end
