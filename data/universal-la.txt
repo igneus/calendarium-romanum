@@ -26,7 +26,7 @@
 5 m :  S. Agathae, virginis et martyris
 6 m :  Ss. Pauli Miki et sociorum, martyrum
 8 : S. Hieronymi Emiliani
-S. Iosephinae Bakhita, virginis
+8 : S. Iosephinae Bakhita, virginis
 10 m :  S. Scholasticae, virginis
 11 : B. Mariae Virginis de Lourdes
 14 m :  Ss. Cyrilli, monachi, et Methodii, episcopi
@@ -77,7 +77,7 @@ S. Iosephinae Bakhita, virginis
 22 : S. Ritae de Cascia, religiosae
 25 : S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris
 25 : S. Gregorii VII, papae
-S. Mariae Magdalenae de' Pazzi, virginis
+25 : S. Mariae Magdalenae de' Pazzi, virginis
 26 m :  S. Philippi Neri, presbyteri
 27 : S. Augustini Cantuarensis, episcopi
 31 f :  In Visitatione B. Mariae Virginis
@@ -183,7 +183,7 @@ S. Mariae Magdalenae de' Pazzi, virginis
 6 : S. Brunonis, presbyteri
 7 m :  B. Mariae Virginis a Rosario
 9 : Ss. Dionysii, episcopi, et sociorum, martyrum
-S. Ioannis Leonardi, presbyteri
+9 : S. Ioannis Leonardi, presbyteri
 14 : S. Callisti I, papae et martyris
 15 m :  S. Teresiae a Iesu, virginis et Ecclesiae doctoris
 16 : S. Hedvigis, religiosae
