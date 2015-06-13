@@ -41,6 +41,7 @@ describe SanctoraleLoader do
       it 'loads something from file' do
         @l.load_from_file(@s, File.join(%w{data universal-la.txt}))
         expect(@s.size).to be > 190
+
       end
     end
   end
@@ -58,6 +59,62 @@ describe SanctoraleLoader do
         @l.load_from_string @s, str
         expect(@s).not_to be_empty
         expect(@s.get(1, 25)).not_to be_empty
+      end
+    end
+  end
+
+  describe 'logging' do
+    it 'has a logger' do
+      expect(CalendariumRomanum::SanctoraleLoader.logger).to be_a Log4r::Logger
+    end
+
+    it 'makes the logger accessible through Log4r\'s interface, too' do
+      expect(Log4r::Logger['CalendariumRomanum::SanctoraleLoader']).to \
+        be CalendariumRomanum::SanctoraleLoader.logger
+    end
+
+    describe 'events worth logging' do
+      before :each do
+        logger = CalendariumRomanum::SanctoraleLoader.logger
+        logger.outputters.clear
+        @buffer = ""
+        logger.outputters << Log4r::IOOutputter.new('John', StringIO.new(@buffer))
+      end
+
+      it 'does not log valid entry' do
+        str = '1/25 f : In conversione S. Pauli, apostoli'
+        @l.load_from_string @s, str
+        expect(@buffer).to be_empty
+      end
+
+      it 'logs line with invalid syntax' do
+        str = 'line without standard beginning'
+        @l.load_from_string @s, str
+        expect(@buffer).to include 'Syntax error'
+      end
+
+      it 'logs entry with invalid month' do
+        str = '100/25 f : In conversione S. Pauli, apostoli'
+        @l.load_from_string @s, str
+        expect(@buffer).to include 'Invalid date'
+      end
+
+      it 'logs entry with invalid day' do
+        str = '1/250 f : In conversione S. Pauli, apostoli'
+        @l.load_from_string @s, str
+        expect(@buffer).to include 'Invalid date'
+      end
+
+      it 'logs invalid month heading' do
+        str = '= 0'
+        @l.load_from_string @s, str
+        expect(@buffer).to include 'Invalid month'
+      end
+
+      it 'logs invalid rank' do
+        str = '1/25 X : In conversione S. Pauli, apostoli'
+        @l.load_from_string @s, str
+        expect(@buffer).to include 'Syntax error'
       end
     end
   end

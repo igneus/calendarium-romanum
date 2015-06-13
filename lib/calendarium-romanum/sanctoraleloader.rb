@@ -18,6 +18,11 @@ module CalendariumRomanum
                   's' => Ranks::SOLEMNITY_GENERAL
                  }
 
+    @@logger = Log4r::Logger.new(self.name)
+    def self.logger
+      @@logger
+    end
+
     # dest should be a Sanctorale,
     # src anything with #each_line
     def load(dest, src)
@@ -31,23 +36,34 @@ module CalendariumRomanum
         # month section heading
         n = l.match /^=\s*(\d+)\s*$/
         unless n.nil?
-          month_section = n[1].to_i
+          mi = n[1].to_i
+          if dest.validate_date mi
+            month_section = mi
+          else
+            @@logger.error "Invalid month #{mi}"
+          end
+
           next
         end
 
         # celebration record
-        m = l.match /^((\d{1,2})\/)?(\d{1,2})\s*([mfs])?\s*:(.*)$/
-        next if m.nil?
-
-        month, day, rank, title = m.values_at 2, 3, 4, 5
-        month ||= month_section
-        month = month.to_i
-
-        unless dest.validate_month month
+        m = l.match /^((\d+)\/)?(\d+)\s*([mfs])?\s*:(.*)$/
+        if m.nil?
+          @@logger.error "Syntax error, line skipped '#{l}'"
           next
         end
 
-        dest.add month, day.to_i, Celebration.new(title.strip, RANK_CODES[rank])
+        month, day, rank, title = m.values_at(2, 3, 4, 5)
+        month ||= month_section
+        day = day.to_i
+        month = month.to_i
+
+        unless dest.validate_date month, day
+          @@logger.error "Invalid date #{month}/#{day}"
+          next
+        end
+
+        dest.add month, day, Celebration.new(title.strip, RANK_CODES[rank])
       end
     end
 

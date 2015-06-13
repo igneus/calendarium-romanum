@@ -1,3 +1,4 @@
+require 'log4r'
 
 %w{
 enums
