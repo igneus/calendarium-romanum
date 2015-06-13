@@ -18,6 +18,7 @@ module CalendariumRomanum
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year)
       @year = year
+      prepare_solemnities
     end
 
     # DateTime of a year beginning
@@ -63,6 +64,10 @@ module CalendariumRomanum
       end
     end
 
+    def octave_of(date)
+      date + WEEK
+    end
+
     def method_missing(sym, *args)
       # translate messages like sunday_before and thursday_after
       weekdays = %w{sunday monday tuesday wednesday thursday friday saturday}
@@ -92,6 +97,14 @@ module CalendariumRomanum
     def nativity(year=nil)
       year ||= @year
       return Date.new(year, 12, 25)
+    end
+
+    def holy_family(year=nil)
+      sunday_after(nativity(year))
+    end
+
+    def mother_of_god(year=nil)
+      octave_of(nativity(year))
     end
 
     def epiphany(year=nil)
@@ -143,9 +156,34 @@ module CalendariumRomanum
       end
     end
 
+    def good_friday(year=nil)
+      return friday_before(easter_sunday(year))
+    end
+
+    def holy_saturday(year=nil)
+      return saturday_before(easter_sunday(year))
+    end
+
     def pentecost(year=nil)
       year ||= @year
       return easter_sunday(year) + 7 * WEEK
+    end
+
+    def holy_trinity(year=nil)
+      sunday_after(pentecost(year))
+    end
+
+    def body_blood(year=nil)
+      thursday_after(holy_trinity(year))
+    end
+
+    def sacred_heart(year=nil)
+      friday_after(sunday_after(body_blood(year)))
+    end
+
+    def christ_king(year=nil)
+      year ||= @year
+      sunday_before(first_advent_sunday(year + 1))
     end
 
     # which liturgical season is it?
@@ -225,32 +263,91 @@ module CalendariumRomanum
         end
       end
 
-      seas = season date
-      rank = Ranks::FERIAL
-      if date.sunday?
-        rank = Ranks::SUNDAY_UNPRIVILEGED
-        if [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].include?(seas)
-          rank = Ranks::PRIMARY
-        end
-      else
-        case seas
-        when Seasons::LENT
-          rank = Ranks::FERIAL_PRIVILEGED
-        when Seasons::ADVENT
-          if date >= Date.new(@year, 12, 17)
-            rank = Ranks::FERIAL_PRIVILEGED
-          end
+      return solemnity(date) || sunday(date) || ferial(date)
+    end
+
+    private
+
+    # the celebration determination split in methods:
+
+    def solemnity(date)
+      if @solemnities.has_key?(date)
+        return @solemnities[date]
+      end
+
+      seas = season(date)
+      case seas
+      when Seasons::EASTER
+        if date <= sunday_after(easter_sunday)
+          return Celebration.new '', Ranks::PRIMARY, SEASON_COLOUR[seas]
         end
       end
 
-      colour = SEASON_COLOUR[seas]
+      return nil
+    end
 
-      return Celebration.new '', rank, colour
+    def sunday(date)
+      return nil unless date.sunday?
+
+      seas = season date
+      rank = Ranks::SUNDAY_UNPRIVILEGED
+      if [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].include?(seas)
+        rank = Ranks::PRIMARY
+      end
+
+      return Celebration.new '', rank, SEASON_COLOUR[seas]
+    end
+
+    def ferial(date)
+      seas = season date
+      rank = Ranks::FERIAL
+      case seas
+      when Seasons::ADVENT
+        if date >= Date.new(@year, 12, 17)
+          rank = Ranks::FERIAL_PRIVILEGED
+        end
+      when Seasons::CHRISTMAS
+        if date < mother_of_god
+          rank = Ranks::FERIAL_PRIVILEGED
+        end
+      when Seasons::LENT
+        rank = Ranks::FERIAL_PRIVILEGED
+      end
+
+      return Celebration.new '', rank, SEASON_COLOUR[seas]
     end
 
     # helper: difference between two Dates in days
     def date_difference(d1, d2)
       return (d1 - d2).numerator
+    end
+
+    # prepare dates of temporale solemnities and their octaves
+    def prepare_solemnities
+      @solemnities = {}
+
+      {
+        nativity: ['The Nativity of the Lord', nil, nil],
+        holy_family: ['The Holy Family of Jesus, Mary and Joseph', Ranks::PRIMARY, nil],
+        epiphany: ['The Epiphany of the Lord', nil, nil],
+        baptism_of_lord: ['The Baptism of the Lord', Ranks::FEAST_LORD_GENERAL, nil],
+        good_friday: ['Friday of the Passion of the Lord', Ranks::TRIDUUM, Colours::RED],
+        holy_saturday: ['Holy Saturday', Ranks::TRIDUUM, nil],
+        easter_sunday: ['Easter Sunday of the Resurrection of the Lord', Ranks::TRIDUUM, nil],
+        pentecost: ['Pentecost Sunday', nil, Colours::RED],
+        holy_trinity: ['The Most Holy Trinity', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        body_blood: ['The Most Holy Body and Blood of Christ', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        sacred_heart: ['The Most Sacred Heart of Jesus', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        christ_king: ['Our Lord Jesus Christ, King of the Universe', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+      }.each_pair do |method_name, data|
+        date = send(method_name)
+        title, rank, colour = data
+        @solemnities[date] = Celebration.new(
+                                             title,
+                                             rank || Ranks::PRIMARY,
+                                             colour || SEASON_COLOUR[season(date)]
+                                            )
+      end
     end
   end
 end

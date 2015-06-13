@@ -185,6 +185,101 @@ describe Temporale do
           expect(c.color).to eq WHITE
         end
       end
+
+      describe 'solemnities and their cycles - ' do
+        it 'Nativity' do
+          c = @t13.get(12, 25)
+          expect(c.rank).to eq PRIMARY
+          expect(c.title).to eq 'The Nativity of the Lord'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'day in the octave of Nativity' do
+          c = @t13.get(12, 27)
+          expect(c.rank).to eq FERIAL_PRIVILEGED
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Holy Family' do
+          c = @t13.get(12, 29)
+          expect(c.rank).to eq PRIMARY
+          expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Epiphany' do
+          c = @t13.get(1, 6)
+          expect(c.rank).to eq PRIMARY
+          expect(c.title).to eq 'The Epiphany of the Lord'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Baptism of the Lord' do
+          c = @t13.get(1, 12)
+          expect(c.rank).to eq FEAST_LORD_GENERAL
+          expect(c.title).to eq 'The Baptism of the Lord'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Resurrection' do
+          c = @t13.get(4, 20)
+          expect(c.rank).to eq TRIDUUM
+          expect(c.title).to eq 'Easter Sunday of the Resurrection of the Lord'
+        end
+
+        it 'Good Friday' do
+          c = @t13.get(4, 18)
+          expect(c.rank).to eq TRIDUUM
+          expect(c.title).to eq 'Friday of the Passion of the Lord'
+        end
+
+        it 'Holy Saturday' do
+          c = @t13.get(4, 19)
+          expect(c.rank).to eq TRIDUUM
+          expect(c.title).to eq 'Holy Saturday'
+          expect(c.colour).to eq VIOLET
+        end
+
+        it 'day in the Easter Octave' do
+          c = @t13.get(4, 22)
+          expect(c.rank).to eq PRIMARY
+        end
+
+        it 'Pentecost' do
+          c = @t13.get(6, 8)
+          expect(c.rank).to eq PRIMARY
+          expect(c.title).to eq 'Pentecost Sunday'
+          expect(c.colour).to eq RED
+        end
+
+        it 'Trinity' do
+          c = @t13.get(6, 15)
+          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.title).to eq 'The Most Holy Trinity'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Body of Christ' do
+          c = @t13.get(6, 19)
+          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.title).to eq 'The Most Holy Body and Blood of Christ'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Sacred Heart' do
+          c = @t13.get(6, 27)
+          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.title).to eq 'The Most Sacred Heart of Jesus'
+          expect(c.colour).to eq WHITE
+        end
+
+        it 'Christ the King' do
+          c = @t13.get(11, 23)
+          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.title).to eq 'Our Lord Jesus Christ, King of the Universe'
+          expect(c.colour).to eq WHITE
+        end
+      end
     end
   end
 end
