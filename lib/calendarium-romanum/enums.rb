@@ -12,7 +12,7 @@ module CalendariumRomanum
 
   LECTIONARY_CYCLES = [:A, :B, :C]
 
-  class Rank < Struct.new(:priority, :desc)
+  class Rank < Struct.new(:priority, :desc, :short_desc)
     include Comparable
 
     def <=>(b)
@@ -30,17 +30,17 @@ module CalendariumRomanum
     # The lower value, the higher rank.
     TRIDUUM           = Rank.new 1.1, 'Easter triduum'
     PRIMARY           = Rank.new 1.2, 'Primary liturgical days' # description may not be exact
-    SOLEMNITY_GENERAL = Rank.new 1.3, 'Solemnities in the General Calendar' # description may not be exact
-    SOLEMNITY_PROPER  = Rank.new 1.4, 'Proper solemnities'
+    SOLEMNITY_GENERAL = Rank.new 1.3, 'Solemnities in the General Calendar', 'solemnity' # description may not be exact
+    SOLEMNITY_PROPER  = Rank.new 1.4, 'Proper solemnities', 'solemnity'
 
-    FEAST_LORD_GENERAL  = Rank.new 2.5, 'Feasts of the Lord in the General Calendar'
+    FEAST_LORD_GENERAL  = Rank.new 2.5, 'Feasts of the Lord in the General Calendar', 'feast'
     SUNDAY_UNPRIVILEGED = Rank.new 2.6, 'Unprivileged Sundays'
-    FEAST_GENERAL       = Rank.new 2.7, 'Feasts of saints in the General Calendar'
-    FEAST_PROPER        = Rank.new 2.8, 'Proper feasts'
+    FEAST_GENERAL       = Rank.new 2.7, 'Feasts of saints in the General Calendar', 'feast'
+    FEAST_PROPER        = Rank.new 2.8, 'Proper feasts', 'feast'
     FERIAL_PRIVILEGED   = Rank.new 2.9, 'Privileged ferials'
 
-    MEMORIAL_GENERAL  = Rank.new 3.10, 'Obligatory memorials in the General Calendar'
-    MEMORIAL_PROPER   = Rank.new 3.11, 'Proper obligatory memorials'
+    MEMORIAL_GENERAL  = Rank.new 3.10, 'Obligatory memorials in the General Calendar', 'memorial'
+    MEMORIAL_PROPER   = Rank.new 3.11, 'Proper obligatory memorials', 'memorial'
     MEMORIAL_OPTIONAL = Rank.new 3.12, 'Optional memorials'
     FERIAL            = Rank.new 3.13, 'Unprivileged ferials'
   end
