@@ -17,6 +17,13 @@ module CalendariumRomanum
                   'f' => Ranks::FEAST_GENERAL,
                   's' => Ranks::SOLEMNITY_GENERAL
                  }
+    COLOUR_CODES = {
+                    nil => Colours::WHITE,
+                    'W' => Colours::WHITE,
+                    'V' => Colours::VIOLET,
+                    'G' => Colours::GREEN,
+                    'R' => Colours::RED
+                   }
 
     @@logger = Log4r::Logger.new(self.name)
     def self.logger
@@ -47,13 +54,13 @@ module CalendariumRomanum
         end
 
         # celebration record
-        m = l.match /^((\d+)\/)?(\d+)\s*([mfs])?\s*:(.*)$/
+        m = l.match /^((\d+)\/)?(\d+)\s*([mfs])?\s*([WVRG])?\s*:(.*)$/
         if m.nil?
           @@logger.error "Syntax error, line skipped '#{l}'"
           next
         end
 
-        month, day, rank, title = m.values_at(2, 3, 4, 5)
+        month, day, rank, colour, title = m.values_at(2, 3, 4, 5, 6)
         month ||= month_section
         day = day.to_i
         month = month.to_i
@@ -63,7 +70,11 @@ module CalendariumRomanum
           next
         end
 
-        dest.add month, day, Celebration.new(title.strip, RANK_CODES[rank])
+        dest.add month, day, Celebration.new(
+                                             title.strip,
+                                             RANK_CODES[rank],
+                                             COLOUR_CODES[colour]
+                                            )
       end
     end
 

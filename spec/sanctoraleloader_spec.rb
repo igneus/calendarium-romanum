@@ -60,6 +60,12 @@ describe SanctoraleLoader do
         expect(@s).not_to be_empty
         expect(@s.get(1, 25)).not_to be_empty
       end
+
+      it 'sets colour if specified' do
+        str = '4/25 f R :  S. Marci, evangelistae'
+        @l.load_from_string @s, str
+        expect(@s.get(4, 25).first.colour).to eq Colours::RED
+      end
     end
   end
 
