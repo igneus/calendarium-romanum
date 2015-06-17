@@ -67,7 +67,7 @@ module CalendariumRomanum
 
       unless st.empty?
         if st.first.rank > t.rank
-          if st.first.rank == MEMORIAL_OPTIONAL
+          if st.first.rank == Ranks::MEMORIAL_OPTIONAL
             st.unshift t
             return st
           else
