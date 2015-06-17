@@ -41,7 +41,6 @@ describe SanctoraleLoader do
       it 'loads something from file' do
         @l.load_from_file(@s, File.join(%w{data universal-la.txt}))
         expect(@s.size).to be > 190
-
       end
     end
   end
@@ -60,11 +59,23 @@ describe SanctoraleLoader do
         expect(@s).not_to be_empty
         expect(@s.get(1, 25)).not_to be_empty
       end
+    end
 
+    describe 'colour' do
       it 'sets colour if specified' do
         str = '4/25 f R :  S. Marci, evangelistae'
         @l.load_from_string @s, str
         expect(@s.get(4, 25).first.colour).to eq Colours::RED
+      end
+    end
+
+    describe 'rank' do
+      it 'sets exact rank if specified' do
+        # say we specify a proper calendar of a church dedicated to St. George
+        str = '4/23 s1.4 R : S. Georgii, martyris'
+        @l.load_from_string @s, str
+        celeb = @s.get(4, 23).first
+        expect(celeb.rank).to eq Ranks::SOLEMNITY_PROPER
       end
     end
   end
@@ -121,6 +132,13 @@ describe SanctoraleLoader do
         str = '1/25 X : In conversione S. Pauli, apostoli'
         @l.load_from_string @s, str
         expect(@buffer).to include 'Syntax error'
+      end
+
+      it 'logs invalid numeric rank' do
+        str = '4/23 s8.4 R : S. Georgii, martyris'
+        @l.load_from_string @s, str
+        expect(@s.get(4, 23).first.rank).to eq Ranks::SOLEMNITY_GENERAL
+        expect(@buffer).to include 'rank'
       end
     end
   end

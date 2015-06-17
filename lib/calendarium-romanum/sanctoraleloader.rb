@@ -54,13 +54,13 @@ module CalendariumRomanum
         end
 
         # celebration record
-        m = l.match /^((\d+)\/)?(\d+)\s*([mfs])?\s*([WVRG])?\s*:(.*)$/
+        m = l.match /^((\d+)\/)?(\d+)\s*(([mfs])(\d\.\d+)?)?\s*([WVRG])?\s*:(.*)$/
         if m.nil?
           @@logger.error "Syntax error, line skipped '#{l}'"
           next
         end
 
-        month, day, rank, colour, title = m.values_at(2, 3, 4, 5, 6)
+        month, day, rank_char, rank_num, colour, title = m.values_at(2, 3, 5, 6, 7, 8)
         month ||= month_section
         day = day.to_i
         month = month.to_i
@@ -70,9 +70,19 @@ module CalendariumRomanum
           next
         end
 
+        rank = nil
+        if rank_num
+          rank_num = rank_num.to_f
+          rank = Ranks[rank_num]
+          if rank.nil?
+            @@logger.error "Invalid celebration rank code #{rank_num}"
+          end
+        end
+        rank ||= RANK_CODES[rank_char]
+
         dest.add month, day, Celebration.new(
                                              title.strip,
-                                             RANK_CODES[rank],
+                                             rank,
                                              COLOUR_CODES[colour]
                                             )
       end
