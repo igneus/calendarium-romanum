@@ -18,6 +18,20 @@ module CalendariumRomanum
       @months[month][day] << celebration
     end
 
+    # replaces content of the given day by given celebrations
+    def replace(month, day, celebrations)
+      check_date! month, day
+
+      @months[month][day] = celebrations
+    end
+
+    # adds all Celebrations from another instance
+    def update(sanctorale)
+      sanctorale.each_day do |month, day, celebrations|
+        replace month, day, celebrations
+      end
+    end
+
     # returns an Array with one or more Celebrations
     # scheduled for the given day
     #
@@ -33,6 +47,16 @@ module CalendariumRomanum
       check_date! month, day
 
       return @months[month][day] || []
+    end
+
+    # for each day for which an entry is available
+    # yields month, day (both Integers), Array of Celebrations
+    def each_day
+      @months.each_with_index do |month_content, month|
+        month_content.keys.sort.each do |day|
+          yield month, day, month_content[day]
+        end
+      end
     end
 
     # returns count of the _days_ with celebrations filled

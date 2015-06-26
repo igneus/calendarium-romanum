@@ -72,4 +72,36 @@ describe Sanctorale do
       expect(@s).not_to be_empty
     end
   end
+
+  describe '#each_day' do
+    it 'yields each date and corresponding Celebrations' do
+      cele = Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      @s.add 1, 17, cele
+
+      expect {|block| @s.each_day(&block) }.to yield_with_args 1, 17, [cele]
+    end
+  end
+
+  describe '#update' do
+    before :each do
+      @s2 = Sanctorale.new
+    end
+
+    it 'adds entries from the argument to receiver' do
+      @s2.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+
+      expect(@s).to be_empty
+      @s.update @s2
+      expect(@s.size).to eq 1
+    end
+
+    it 'overwrites eventual previous content of the day' do
+      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      cele = Celebration.new('S. Nulius, monachi')
+      @s2.add 1, 17, cele
+
+      @s.update @s2
+      expect(@s.get(1, 17)).to eq [cele]
+    end
+  end
 end
