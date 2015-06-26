@@ -30,6 +30,10 @@ describe SanctoraleLoader do
         expect(@s.get(1, 3)[0].rank).to eq Ranks::MEMORIAL_OPTIONAL
       end
 
+      it 'sets default colour - white' do
+        expect(@s.get(1, 3)[0].colour).to eq Colours::WHITE
+      end
+
       it 'loads explicit rank if given' do
         str = '1/25 f : In conversione S. Pauli, apostoli'
         @l.load_from_string @s, str
