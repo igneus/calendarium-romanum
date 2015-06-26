@@ -29,7 +29,7 @@ RANK is a single letter m=memorial, f=feast, s=solemnity.
 If omitted, optional memorial is default.
 The letter can be followed by a number, e.g. ```f2.5``` - the number
 must be valid celebration rank priority as defined in
-[lib/calendarium-romanum/enums.rb](lib/calendarium-romanum/enums.rb)
+[lib/calendarium-romanum/enums.rb](../lib/calendarium-romanum/enums.rb)
 
 COLOUR is a single letter R=red, W=white, G=green, V=violet.
 If not specified, white is default.
