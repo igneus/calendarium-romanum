@@ -20,7 +20,7 @@
 31 m :  S. Ioannis Bosco, presbyteri
 
 = 2
-2 f :  IN PRAESENTATIONE DOMINI
+2 f2.5 :  IN PRAESENTATIONE DOMINI
 3 R : S. Blasii, episcopi et martyris
 3 : S. Ansgarii, episcopi
 5 m R :  S. Agathae, virginis et martyris
@@ -130,7 +130,7 @@
 2 : S. Petri Iuliani Eymard, presbyteri
 4 m :  S. Ioannis Mariae Vianney, presbyteri
 5 : In Dedicatione basilicae S. Mariae
-6 f :  IN TRANSFIGURATIONE DOMINI
+6 f2.5 :  IN TRANSFIGURATIONE DOMINI
 7 R : Ss. Xysti, papae, et sociorum, martyrum
 7 : S. Caietani, presbyteri
 8 m :  S. Dominici, presbyteri

@@ -20,7 +20,7 @@
 31 m : Saint John Bosco, priest
 
 = 2
-2 f : Presentation of the Lord
+2 f2.5 : Presentation of the Lord
 3 R : Saint Blase, bishop and martyr
 3 R : Saint Ansgar, bishop
 5 m R : Saint Agatha, virgin and martyr
@@ -129,7 +129,7 @@
 2 : Saint Peter Julian Eymard, priest
 4 m : Saint Jean Vianney (the Curé of Ars), priest
 5 : Dedication of the Basilica of Saint Mary Major
-6 f : Transfiguration of the Lord
+6 f2.5 : Transfiguration of the Lord
 7 R : Saint Sixtus II, pope, and companions, martyrs
 7 : Saint Cajetan, priest
 8 m : Saint Dominic, priest

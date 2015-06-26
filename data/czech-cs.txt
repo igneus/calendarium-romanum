@@ -21,7 +21,7 @@
 31 m : Sv. Jana Boska, kněze
 
 = 2
-2 f : Uvedení Páně do chrámu
+2 f2.5 : Uvedení Páně do chrámu
 3 R : Sv. Blažeje, biskupa a mučedníka
 3 : Sv. Ansgara, biskupa
 5 m R : Sv. Agáty, panny a mučednice
@@ -143,7 +143,7 @@
 2 : Sv. Petra Juliána Eymarda, kněze
 4 m : Sv. Jana Marie Vianneye, kněze
 5 : Posvěcení římské baziliky Panny Marie
-6 f : Proměnění Páně
+6 f2.5 : Proměnění Páně
 7 R : Sv. Sixta II., papeže, a druhů, mučedníků
 7 : Sv. Kajetána, kněze
 8 m : Sv. Dominika, kněze
