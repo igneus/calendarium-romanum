@@ -8,10 +8,10 @@
 7 : S. Raimundi de Penyafort, presbyteri
 13 : S. Hilarii, episcopi et Ecclesiae doctoris
 17 m :  S. Antonii, abbatis
-20 : S. Fabiani, papae et martyris
-20 : S. Sebastiani, martyris
-21 m :  S. Agnetis, virginis et martyris
-22 : S. Vincentii, diaconi et martyris
+20 R : S. Fabiani, papae et martyris
+20 R : S. Sebastiani, martyris
+21 m R :  S. Agnetis, virginis et martyris
+22 R : S. Vincentii, diaconi et martyris
 24 m :  S. Francisci de Sales, episcopi et Ecclesiae doctoris
 25 f :  In conversione S. Pauli, apostoli
 26 m :  Ss. Timothei et Titi, episcoporum
@@ -21,10 +21,10 @@
 
 = 2
 2 f :  IN PRAESENTATIONE DOMINI
-3 : S. Blasii, episcopi et martyris
+3 R : S. Blasii, episcopi et martyris
 3 : S. Ansgarii, episcopi
-5 m :  S. Agathae, virginis et martyris
-6 m :  Ss. Pauli Miki et sociorum, martyrum
+5 m R :  S. Agathae, virginis et martyris
+6 m R :  Ss. Pauli Miki et sociorum, martyrum
 8 : S. Hieronymi Emiliani
 8 : S. Iosephinae Bakhita, virginis
 10 m :  S. Scholasticae, virginis
@@ -33,11 +33,11 @@
 17 : Ss. septem Fundatorum Ordinis Servorum B. M. V.
 21 : S. Petri Damiani, episcopi et Ecclesiae doctoris
 22 f :  Cathedrae S. Petri, apostoli
-23 m :  S. Polycarpi, episcopi et martyris
+23 m R :  S. Polycarpi, episcopi et martyris
 
 = 3
 4 : S. Casimiri
-7 m :  Ss. Perpetuae et Felicitatis, martyrum
+7 m R :  Ss. Perpetuae et Felicitatis, martyrum
 8 : S. Ioannis a Deo, religiosi
 9 : S. Franciscae Romanae, religiosae
 17 : S. Patricii, episcopi
@@ -51,14 +51,14 @@
 4 : S. Isidori, episcopi et Ecclesiae doctoris
 5 : S. Vincentii Ferrer, presbyteri
 7 m :  S. Ioannis Baptistae de la Salle, presbyteri
-11 m :  S. Stanislai, episcopi et martyris
-13 : S. Martini I, papae et martyris
+11 m R :  S. Stanislai, episcopi et martyris
+13 R : S. Martini I, papae et martyris
 21 : S. Anselmi, episcopi et Ecclesiae doctoris
-23 : S. Georgii, martyris
-23 : S. Adalberti, episcopi et martyris
-24 : S. Fidelis a Sigmaringen, presbyteri et martyris
-25 f :  S. Marci, evangelistae
-28 : S. Petri Chanel, presbyteri et martyris
+23 R : S. Georgii, martyris
+23 R : S. Adalberti, episcopi et martyris
+24 R : S. Fidelis a Sigmaringen, presbyteri et martyris
+25 f R :  S. Marci, evangelistae
+28 R : S. Petri Chanel, presbyteri et martyris
 28 : S. Ludovici Mariae Grignion de Montfort, presbyteri
 29 m :  S. Catharinae Senensis, virginis et Ecclesiae doctoris
 30 : S. Pii V, papae
@@ -66,14 +66,14 @@
 = 5
 1 : S. Ioseph Opificis
 2 m :  S. Athanasii, episcopi et Ecclesiae doctoris
-3 f :  Ss. Philippi et Iacobi, apostolorum
-12 : Ss. Nerei et Achillei, martyrum
-12 : S. Pancratii, martyris
+3 f R :  Ss. Philippi et Iacobi, apostolorum
+12 R : Ss. Nerei et Achillei, martyrum
+12 R : S. Pancratii, martyris
 13 : B. Mariae Virginis de Fatima
-14 f :  S. Matthiae, apostoli
-18 : S. Ioannis I, papae et martyris
+14 f R :  S. Matthiae, apostoli
+18 R : S. Ioannis I, papae et martyris
 20 : S. Bernardini Senensis, presbyteri
-21 : S. Christophori Magallanes, presbyteri, et sociorum, martyrum
+21 R : S. Christophori Magallanes, presbyteri, et sociorum, martyrum
 22 : S. Ritae de Cascia, religiosae
 25 : S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris
 25 : S. Gregorii VII, papae
@@ -83,44 +83,44 @@
 31 f :  In Visitatione B. Mariae Virginis
 
 = 6
-1 m :  S. Iustini, martyris
-2 : Ss. Marcellini et Petri, martyrum
-3 m :  Ss. Caroli Lwanga et sociorum, martyrum
-5 m :  S. Bonifatii, episcopi et martyris
+1 m R :  S. Iustini, martyris
+2 R : Ss. Marcellini et Petri, martyrum
+3 m R :  Ss. Caroli Lwanga et sociorum, martyrum
+5 m R :  S. Bonifatii, episcopi et martyris
 6 : S. Norberti, episcopi
 9 : S. Ephraem, diaconi et Ecclesiae doctoris
-11 m :  S. Barnabae, apostoli
+11 m R :  S. Barnabae, apostoli
 13 m :  S. Antonii de Padova, presbyteri et Ecclesiae doctoris
 19 : S. Romualdi, abbatis
 21 m :  S Aloisii Gonzaga, religiosi
 22 : S. Paulini Nolani
 22 : Ss. Ioannis Fisher, episcopi,
-22 : et Thomae More, martyrum
+22 R : et Thomae More, martyrum
 24 s :  IN NATIVITATE S. IOANNIS BAPTISTAE
 27 : S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris
-28 m :  S. Irenaei, episcopi et martyris
-29 s :  Ss. PETRI ET PAULI, APOSTOLORUM
-30 : Ss. Protomartyrum S. Romanae Ecclesiae
+28 m R :  S. Irenaei, episcopi et martyris
+29 s R :  Ss. PETRI ET PAULI, APOSTOLORUM
+30 R : Ss. Protomartyrum S. Romanae Ecclesiae
 
 = 7
-3 f :  S. Thomae, apostoli
+3 f R :  S. Thomae, apostoli
 4 : S. Elisabeth Lusitaniae
 5 : S. Antonii Mariae Zaccaria, presbyteri
-6 : S. Mariae Goretti, virginis et martyris
+6 R : S. Mariae Goretti, virginis et martyris
 9 : Ss. Augustini Zhao Rong, presbyteri
 11 m :  S. Benedicti, abbatis
 13 : S. Henrici
 14 : S. Camilli de Lellis, presbyteri
 15 m :  S. Bonaventurae, episcopi et Ecclesiae doctoris
 16 : B. Mariae Virginis de Monte Carmelo
-20 : S. Apollinaris, episcopi et martyris
+20 R : S. Apollinaris, episcopi et martyris
 21 : S. Laurentii de Brindisi, presbyteri et Ecclesiae doctoris
 22 m :  S. Mariae Magdalenae
 23 : S. Birgittae, religiosae
 24 : S. Sarbelii Makhlūf, presbyteri
-25 f :  S. Iacobi, apostoli
+25 f R :  S. Iacobi, apostoli
 26 m :  Ss. Ioachim et Annae, parentum B. Mariae Virginis
-29 m :  S. Marthae
+29 m R :  S. Marthae
 30 : S. Petri Chrysologi, episcopi et Ecclesiae doctoris
 31 m :  S. Ignatii de Loyola, presbyteri
 
@@ -131,15 +131,15 @@
 4 m :  S. Ioannis Mariae Vianney, presbyteri
 5 : In Dedicatione basilicae S. Mariae
 6 f :  IN TRANSFIGURATIONE DOMINI
-7 : Ss. Xysti, papae, et sociorum, martyrum
+7 R : Ss. Xysti, papae, et sociorum, martyrum
 7 : S. Caietani, presbyteri
 8 m :  S. Dominici, presbyteri
-9 : S. Teresiae Benedictae a Cruce, virginis et martyris
-10 f :  S. Laurentii, diaconi et martyris
+9 R : S. Teresiae Benedictae a Cruce, virginis et martyris
+10 f R :  S. Laurentii, diaconi et martyris
 11 m :  S. Clarae, virginis
 12 : S. Ioannae Franciscae de Chantal, religiosae
-13 : Ss. Pontiani, papae, et Hippolyti, presbyteri, martyrum
-14 m :  S. Maximiliani Mariae Kolbe, presbyteri et martyris
+13 R : Ss. Pontiani, papae, et Hippolyti, presbyteri, martyrum
+14 m R :  S. Maximiliani Mariae Kolbe, presbyteri et martyris
 15 s :  IN ASSUMPTIONE B. MARIAE VIRGINIS
 16 : S. Stephani Hungariae
 19 : S. Ioannis Eudes, presbyteri
@@ -147,12 +147,12 @@
 21 m :  S. Pii X, papae
 22 m :  B. Mariae Virginis Reginae
 23 : S. Rosae de Lima, virginis
-24 f :  S. Bartholomaei, apostoli
+24 f R :  S. Bartholomaei, apostoli
 25 : S. Ludovici
 25 : S. Ioseph de Calasanz, presbyteri
 27 m :  S. Monicae
 28 m :  S. Augustini, episcopi et Ecclesiae doctoris
-29 m :  In Passione S. Ioannis Baptistae, martyris
+29 m R :  In Passione S. Ioannis Baptistae, martyris
 
 = 9
 3 m :  S. Gregorii Magni, papae et Ecclesiae doctoris
@@ -160,19 +160,19 @@
 9 : S. Petri Claver, presbyteri
 12 : Ss.mi Nominis Mariae
 13 m :  S. Ioannis Chrysostomi, episcopi et Ecclesiae doctoris
-14 f :  IN EXALTATIONE SANCTAE CRUCIS
+14 f R :  IN EXALTATIONE SANCTAE CRUCIS
 15 m :  B. Mariae Virginis Perdolentis
-16 m :  Ss. Cornelii, papae, et Cypriani, episcopi, martyrum
+16 m R :  Ss. Cornelii, papae, et Cypriani, episcopi, martyrum
 17 : S. Roberti Bellarmino, episcopi et Ecclesiae doctoris
-19 : S. Ianuarii, episcopi et martyris
-20 m :  Ss. Andreae Kim Tae-gŏn et Pauli Chŏng Ha-sang et sociorum, martyrum
-21 f :  S. Matthaei, apostoli et evangelistae
+19 R : S. Ianuarii, episcopi et martyris
+20 m R :  Ss. Andreae Kim Tae-gŏn et Pauli Chŏng Ha-sang et sociorum, martyrum
+21 f R :  S. Matthaei, apostoli et evangelistae
 # what does the asterisk here mean?
 23 m :  S. Pii de Pietrelcina, presbyteri [*]
-26 : Ss. Cosmae et Damiani, martyrum
+26 R : Ss. Cosmae et Damiani, martyrum
 27 m :  S. Vincentii de Paul, presbyteri
-28 : S. Venceslai, martyris
-28 : S. Laurentii Ruiz et sociorum, martyrum
+28 R : S. Venceslai, martyris
+28 R : S. Laurentii Ruiz et sociorum, martyrum
 29 f :  Ss. Michaelis, Gabrielis et Raphaelis, archangelorum
 30 m :  S. Hieronymi, presbyteri et Ecclesiae doctoris
 
@@ -182,41 +182,41 @@
 4 m :  S. Francisci Assisiensis
 6 : S. Brunonis, presbyteri
 7 m :  B. Mariae Virginis a Rosario
-9 : Ss. Dionysii, episcopi, et sociorum, martyrum
+9 R : Ss. Dionysii, episcopi, et sociorum, martyrum
 9 : S. Ioannis Leonardi, presbyteri
-14 : S. Callisti I, papae et martyris
+14 R : S. Callisti I, papae et martyris
 15 m :  S. Teresiae a Iesu, virginis et Ecclesiae doctoris
 16 : S. Hedvigis, religiosae
 16 : S. Margaritae Mariae Alacoque, virginis
-17 m :  S. Ignatii Antiocheni, episcopi et martyris
-18 f :  S. Lucae, evangelistae
-19 : Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum
+17 m R :  S. Ignatii Antiocheni, episcopi et martyris
+18 f R :  S. Lucae, evangelistae
+19 R : Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum
 19 : S. Pauli a Cruce, presbyteri
 23 : S. Ioannis de Capestrano, presbyteri
 24 : S. Antonii Mariae Claret, episcopi
-28 f :  Ss. Simonis et Iudae, apostolorum
+28 f R :  Ss. Simonis et Iudae, apostolorum
 
 = 11
 1 s :  OMNIUM SANCTORUM
 2 : IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
-3 : S. Martini de Porres, religiosi
+3 R : S. Martini de Porres, religiosi
 4 m :  S. Caroli Borromeo, episcopi
 9 f :  IN DEDICATIONE BASILICAE LATERANENSIS
 10 m :  S. Leonis Magni, papae et Ecclesiae doctoris
-11 m :  S. Martini Turonensis, episcopi
-12 m :  S. Iosaphat, episcopi et martyris
+11 m R :  S. Martini Turonensis, episcopi
+12 m R :  S. Iosaphat, episcopi et martyris
 15 : S. Alberti Magni, episcopi et Ecclesiae doctoris
 16 : S. Margaritae Scotiae
 16 : S. Gertrudis, virginis
 17 m :  S. Elisabeth Hungariae, religiosae
 18 : In Dedicatione basilicarum Ss. Petri et Pauli, apostolorum
 21 m :  In Praesentatione B. Mariae Virginis
-22 m :  S. Caeciliae, virginis et martyris
-23 : S. Clementis I, papae et martyris
+22 m R :  S. Caeciliae, virginis et martyris
+23 R : S. Clementis I, papae et martyris
 23 : S. Columbani, abbatis
-24 m :  Ss. Andreae Dũng Lac, presbyteri, et sociorum, martyrum
-25 : S. Catharinae Alexandrinae, virginis et martyris
-30 f :  S. Andreae, apostoli
+24 m R :  Ss. Andreae Dũng Lac, presbyteri, et sociorum, martyrum
+25 R : S. Catharinae Alexandrinae, virginis et martyris
+30 f R :  S. Andreae, apostoli
 
 = 12
 3 m :  S. Francisci Xavier, presbyteri
@@ -227,13 +227,13 @@
 9 : S. Ioannis Didaci Cuahtlatoatzin [*]
 11 : S. Damasi I, papae
 12 : Beatae Mariae Virginis de Guadalupe [*]
-13 m :  S. Luciae, virginis et martyris
+13 m R :  S. Luciae, virginis et martyris
 14 m :  S. Ioannis a Cruce, presbyteri et Ecclesiae doctoris
 21 : S. Petri Canisii, presbyteri et Ecclesiae doctoris
 23 : S. Ioannis de Kęty, presbyteri
 25 s :  IN NATIVITATE DOMINI
-26 f :  S. Stephani, protomartyris
-27 f :  S. Ioannis, apostoli et evangelistae
-28 f :  Ss. Innocentium, martyrum
-29 : S. Thomae Becket, episcopi et martyris
+26 f R :  S. Stephani, protomartyris
+27 f R :  S. Ioannis, apostoli et evangelistae
+28 f R :  Ss. Innocentium, martyrum
+29 R : S. Thomae Becket, episcopi et martyris
 31 : S. Silvestri I, papae
