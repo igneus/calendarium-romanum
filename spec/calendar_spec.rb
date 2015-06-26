@@ -110,13 +110,13 @@ describe Calendar do
           loader.load_from_file(@c, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
         end
 
-        it 'ferial' do
+        it '"empty" day results in a ferial' do
           d = @c.day(7, 2)
           expect(d.celebrations.size).to eq 1
           expect(d.celebrations[0].rank).to eq FERIAL
         end
 
-        it 'feast' do
+        it 'sanctorale feast' do
           d = @c.day(7, 3)
           expect(d.celebrations.size).to eq 1
           expect(d.celebrations[0].rank).to eq FEAST_GENERAL
@@ -131,6 +131,26 @@ describe Calendar do
 
           expect(d.celebrations[1].rank).to eq MEMORIAL_OPTIONAL
           expect(d.celebrations[1].title).to include 'Lellis'
+        end
+
+        it 'obligate memorial does suppress ferial' do
+          d = @c.day(1, 17)
+          expect(d.celebrations.size).to eq 1
+
+          expect(d.celebrations[0].rank).to eq MEMORIAL_GENERAL
+        end
+
+        it 'Sunday suppresses feast' do
+          c = Calendar.new 2014
+
+          d = Date.new 2015, 6, 28
+          expect(d).to be_sunday
+
+          c.add d.month, d.day, Celebration.new('St. None, programmer', FEAST_GENERAL)
+
+          celebs = c.day(d).celebrations
+          expect(celebs.size).to eq 1
+          expect(celebs[0].rank).to eq SUNDAY_UNPRIVILEGED
         end
       end
     end
