@@ -56,3 +56,4 @@ DEPENDENCIES
   i18n
   log4r
   rspec
+  thor
