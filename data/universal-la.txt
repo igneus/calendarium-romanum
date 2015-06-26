@@ -1,3 +1,4 @@
+# General Roman Calendar in Latin
 # source: http://www.binetti.ru/collectio/liturgia/missale_files/crg.htm
 
 = 1
