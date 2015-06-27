@@ -6,23 +6,10 @@ require 'log4r'
 
 # load specified calendar files, print errors
 
-# utility class enumerating days of a year
-class Year
-  def initialize(i)
-    @year = i
-  end
-
-  def each_day
-    d = Date.new @year, 1, 1
-    begin
-      yield d
-      d = d.succ
-    end until d.year != @year
-  end
-end
-
 module CalendariumRomanum
+
   class CLI < Thor
+    include CalendariumRomanum::Util
 
     desc 'errors FILE1, ...', 'finds errors in sanctorale data files'
     def errors(*files)
