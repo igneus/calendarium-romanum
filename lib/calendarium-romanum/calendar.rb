@@ -22,6 +22,21 @@ module CalendariumRomanum
     end
 
     attr_reader :year
+    attr_accessor :sanctorale
+
+    # returns a Calendar for the subsequent year
+    def succ
+      c = Calendar.new @year + 1
+      c.sanctorale = @sanctorale
+      return c
+    end
+
+    # returns a Calendar for the previous year
+    def pred
+      c = Calendar.new @year - 1
+      c.sanctorale = @sanctorale
+      return c
+    end
 
     def ==(obj)
       unless obj.is_a? Calendar
