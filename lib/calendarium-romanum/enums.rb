@@ -53,8 +53,8 @@ module CalendariumRomanum
 
     MEMORIAL_GENERAL  = Rank.new 3.10, 'Obligatory memorials in the General Calendar', 'memorial'
     MEMORIAL_PROPER   = Rank.new 3.11, 'Proper obligatory memorials', 'memorial'
-    MEMORIAL_OPTIONAL = Rank.new 3.12, 'Optional memorials'
-    FERIAL            = Rank.new 3.13, 'Unprivileged ferials'
+    MEMORIAL_OPTIONAL = Rank.new 3.12, 'Optional memorials', 'optional memorial'
+    FERIAL            = Rank.new 3.13, 'Unprivileged ferials', 'ferial'
 
     def self.[](priority)
       Rank[priority]
