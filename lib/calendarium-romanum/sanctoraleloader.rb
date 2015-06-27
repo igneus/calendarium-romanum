@@ -90,8 +90,8 @@ module CalendariumRomanum
 
     alias_method :load_from_string, :load
 
-    def load_from_file(dest, filename)
-      self.load dest, File.open(filename)
+    def load_from_file(dest, filename, encoding='utf-8')
+      self.load dest, File.open(filename, 'r', encoding: encoding)
     end
   end
 end
