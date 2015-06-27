@@ -234,7 +234,7 @@
 23 : S. Ioannis de Kęty, presbyteri
 25 s :  IN NATIVITATE DOMINI
 26 f R :  S. Stephani, protomartyris
-27 f R :  S. Ioannis, apostoli et evangelistae
+27 f :  S. Ioannis, apostoli et evangelistae
 28 f R :  Ss. Innocentium, martyrum
 29 R : S. Thomae Becket, episcopi et martyris
 31 : S. Silvestri I, papae

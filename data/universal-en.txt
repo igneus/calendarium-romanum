@@ -23,7 +23,7 @@
 = 2
 2 f2.5 : Presentation of the Lord
 3 R : Saint Blase, bishop and martyr
-3 R : Saint Ansgar, bishop
+3 : Saint Ansgar, bishop
 5 m R : Saint Agatha, virgin and martyr
 6 m R : Saints Paul Miki and companions, martyrs
 8 : Saint Jerome Emiliani, priest
@@ -94,7 +94,7 @@
 13 m : Saint Anthony of Padua, priest and doctor
 19 : Saint Romuald, abbot
 21 m : Saint Aloysius Gonzaga, religious
-22 R : Saint Paulinus of Nola, bishop
+22 : Saint Paulinus of Nola, bishop
 22 R : Saints John Fisher, bishop and martyr and Thomas More, martyr
 24 s : Birth of Saint John the Baptist
 27 : Saint Cyril of Alexandria, bishop and doctor
