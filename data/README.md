@@ -47,3 +47,12 @@ and printing detected errors
 ```
 $ ruby bin/calendariumrom.rb errors path/to/my/datafile.txt
 ```
+
+## How to use the Czech calendars
+
+Because of being the author's home, Czech Republic is currently
+best covered by proper calendars.
+These are designed for loading in three layers:
+1. common calendar of the Czech Republic
+2. province calendar (Czech/Moravian)
+3. diocese calendar

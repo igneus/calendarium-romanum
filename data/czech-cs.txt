@@ -70,7 +70,7 @@
 1 : Sv. Josefa, dělníka
 2 m : Sv. Atanáše, biskupa a učitele církve
 3 f R : Sv. Filipa a Jakuba, apoštolů
-6 m R : Sv. Jana Sarkandra, kněze a mučedníka
+6 R : Sv. Jana Sarkandra, kněze a mučedníka
 8 : Panny Marie, Prostřednice všech milostí
 12 R : Sv. Nerea a Achillea, mučedníků
 12 R : Sv. Pankráce, mučedníka
@@ -78,7 +78,7 @@
 14 f R : Sv. Matěje, apoštola
 16 f R : Sv. Jana Nepomuckého, kněze a mučedníka, hlavního patrona Čech
 18 R : Sv. Jana I., papeže a mučedníka
-20 m : Sv. Klementa Marie Hofbauera, kněze
+20 : Sv. Klementa Marie Hofbauera, kněze
 20 : Sv. Bernardina Sienského, kněze
 21 R : Sv. Kryštofa Magallanese, kněze a druhů, mučedníků
 22 : Sv. Rity z Cascie, řeholnice
@@ -87,7 +87,7 @@
 25 : Sv. Marie Magdalény de 'Pazzi, panny
 26 m : Sv. Filipa Neriho, kněze
 27 : Sv. Augustina z Canterbury, biskupa
-30 m : Sv. Zdislavy
+30 : Sv. Zdislavy
 31 f : Navštívení Panny Marie
 
 = 6
@@ -132,7 +132,7 @@
 24 : Sv. Šarbela Makhlūfa, kněze
 25 f R : Sv. Jakuba, apoštola
 26 m : Sv. Jáchyma a Anny, rodičů Panny Marie
-27 m : Sv. Gorazda a druhů 	Na Moravě:
+27 : Sv. Gorazda a druhů
 29 m : Sv. Marty
 30 : Sv. Petra Chryzologa, biskupa a učitele církve
 31 m : Sv. Ignáce z Loyoly, kněze
@@ -180,12 +180,11 @@
 13 m : Sv. Jana Zlatoústého, biskupa a učitele církve
 14 f R : Povýšení svatého kříže
 15 m : Panny Marie Bolestné
-16 m R : Sv. Ludmily, mučednice 	V Čechách:
+16 R : Sv. Ludmily, mučednice
 17 R : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
 17 : Sv. Roberta Bellarmina, biskupa a učitele církve
 19 R : Sv. Januária, biskupa a mučedníka
-20 : Sv. Ondřeje Kim Tae-gỏna, kněze,
-20 m R : Pavla Chõng Ha-sanga a druhů, mučedníků
+20 m R : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
 21 f R : Sv. Matouše, apoštola a evangelisty
 23 : Sv. Pia z Pietrelciny, kněze
 26 R : Sv. Kosmy a Damiána, mučedníků
