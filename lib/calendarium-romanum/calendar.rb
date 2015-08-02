@@ -9,7 +9,7 @@ module CalendariumRomanum
   class Calendar
 
     extend Forwardable
-    def_delegators :@temporale, :range_check
+    def_delegators :@temporale, :range_check, :season
     def_delegators :@sanctorale, :add, :validate_date
 
     # year: Integer
@@ -22,7 +22,14 @@ module CalendariumRomanum
     end
 
     attr_reader :year
-    attr_accessor :sanctorale
+    attr_reader :temporale
+    attr_reader :sanctorale
+
+    protected
+
+    attr_writer :sanctorale
+
+    public
 
     # returns a Calendar for the subsequent year
     def succ
