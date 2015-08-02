@@ -3,8 +3,16 @@ require_relative 'spec_helper'
 describe Temporale do
 
   before :all do
-    @t = Temporale.new 2012
+    @t = @t12 = Temporale.new 2012
     @t13 = Temporale.new 2013
+  end
+
+  describe '.liturgical_year' do
+    it 'returns liturgical year for the given date' do
+      [].each do |date, year|
+        Temporale.liturgical_year(date).should eq year
+      end
+    end
   end
 
   describe '#weekday_before' do
@@ -278,6 +286,47 @@ describe Temporale do
           expect(c.rank).to eq SOLEMNITY_GENERAL
           expect(c.title).to eq 'Our Lord Jesus Christ, King of the Universe'
           expect(c.colour).to eq WHITE
+        end
+      end
+    end
+  end
+
+  describe 'initialized without a year' do
+    before :each do
+      @tny = Temporale.new
+    end
+
+    it 'is possible to initialize a Temporale without a year' do
+      expect { Temporale.new }.not_to raise_exception
+    end
+
+    it 'crashes when a date is requested without year' do
+      expect { @tny.first_advent_sunday }.to raise_exception
+    end
+
+    it 'computes dates as expected if year is given' do
+      days = %i(first_advent_sunday nativity holy_family mother_of_god
+      epiphany baptism_of_lord ash_wednesday easter_sunday good_friday
+      holy_saturday pentecost
+      holy_trinity body_blood sacred_heart christ_king
+
+      dt_range)
+      days.each do |msg|
+        @tny.send(msg, 2012).should eq @t12.send(msg)
+      end
+    end
+
+    describe '#get' do
+      it 'always raises an exception' do
+        # for get to work well is imoportant to have precomputed
+        # solemnity dates. That is only possible when a year
+        # is specified on initialization.
+        [
+          Date.new(2015, 1, 1),
+          Date.new(2015, 9, 23),
+          Date.new(2015, 3, 4)
+        ].each do |date|
+          expect { @tny.get(date) }.to raise_exception
         end
       end
     end

@@ -16,26 +16,27 @@ module CalendariumRomanum
                     }
 
     # year is Integer - the civil year when the liturgical year begins
-    def initialize(year)
+    def initialize(year=nil)
       @year = year
-      prepare_solemnities
+      prepare_solemnities unless @year.nil?
     end
 
     # DateTime of a year beginning
     # 00:00 of the first Advent Sunday
-    def dt_beginning
-      first_advent_sunday.to_datetime
+    def dt_beginning(year=nil)
+      first_advent_sunday(year).to_datetime
     end
 
     # DateTime of a year end
     # 23:59 of the last Saturday
-    def dt_end
-      day = advent_sunday(1, @year+1) - 1
+    def dt_end(year=nil)
+      year ||= @year
+      day = first_advent_sunday(year+1) - 1
       return DateTime.new(day.year, day.month, day.day, 23, 59, 59)
     end
 
-    def dt_range
-      dt_beginning .. dt_end
+    def dt_range(year=nil)
+      dt_beginning(year) .. dt_end(year)
     end
 
     def range_check(date)
