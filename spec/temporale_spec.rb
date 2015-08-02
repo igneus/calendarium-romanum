@@ -9,7 +9,10 @@ describe Temporale do
 
   describe '.liturgical_year' do
     it 'returns liturgical year for the given date' do
-      [].each do |date, year|
+      [
+        [Date.new(2014, 11, 1), 2013],
+        [Date.new(2014, 12, 1), 2014]
+      ].each do |date, year|
         Temporale.liturgical_year(date).should eq year
       end
     end

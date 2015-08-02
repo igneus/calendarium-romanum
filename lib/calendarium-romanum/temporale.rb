@@ -21,6 +21,20 @@ module CalendariumRomanum
       prepare_solemnities unless @year.nil?
     end
 
+    class << self
+      # Determines liturgical year for the given date
+      def liturgical_year(date)
+        year = date.year
+        temporale = Temporale.new year
+
+        if date < temporale.first_advent_sunday
+          return year - 1
+        end
+
+        return year
+      end
+    end
+
     # DateTime of a year beginning
     # 00:00 of the first Advent Sunday
     def dt_beginning(year=nil)

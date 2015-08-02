@@ -130,13 +130,7 @@ module CalendariumRomanum
       # creates a Calendar for the liturgical year including given
       # date
       def for_day(date)
-        year = date.year
-        temporale = Temporale.new year
-
-        if date < temporale.first_advent_sunday
-          return new(year - 1)
-        end
-        return new(year)
+        return new(Temporale.liturgical_year(date))
       end
     end # class << self
   end # class Calendar
