@@ -83,22 +83,24 @@ module CalendariumRomanum
       date + WEEK
     end
 
-    def method_missing(sym, *args)
-      # translate messages like sunday_before and thursday_after
-      weekdays = %w{sunday monday tuesday wednesday thursday friday saturday}
-      if sym.to_s =~ /^(#{weekdays.join('|')})_(before|after)$/ then
-        return send("weekday_#{$2}", weekdays.index($1), *args)
+    WEEKDAYS = %w{sunday monday tuesday wednesday thursday friday saturday}
+    WEEKDAYS.each_with_index do |weekday, weekday_i|
+      define_method "#{weekday}_before" do |date|
+        send('weekday_before', weekday_i, date)
       end
 
-      # first_advent_sunday -> advent_sunday(1)
-      four = %w{first second third fourth}
-      if sym.to_s =~ /^(#{four.join('|')})_advent_sunday$/ then
-        return send("advent_sunday", four.index($1) + 1, *args)
+      define_method "#{weekday}_after" do |date|
+        send('weekday_after', weekday_i, date)
       end
-
-      raise NoMethodError.new sym
     end
-1
+
+    # first_advent_sunday -> advent_sunday(1)
+    %w{first second third fourth}.each_with_index do |word,i|
+      define_method "#{word}_advent_sunday" do |year=nil|
+        send("advent_sunday", i + 1, year)
+      end
+    end
+
     def advent_sunday(num, year=nil)
       advent_sundays_total = 4
       unless (1..advent_sundays_total).include? num
