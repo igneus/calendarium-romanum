@@ -33,6 +33,12 @@ module CalendariumRomanum
 
         return year
       end
+
+      # creates a Calendar for the liturgical year including given
+      # date
+      def for_day(date)
+        return new(liturgical_year(date))
+      end
     end
 
     # DateTime of a year beginning
