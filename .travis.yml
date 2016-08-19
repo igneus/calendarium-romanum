@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.3.0
+  - jruby-19mode
+  - rbx-2.7
+
+script: bundle exec rspec
+
+git:
+  depth: 3
+
+matrix:
+  allow_failures:
+    - rvm: jruby-19mode
