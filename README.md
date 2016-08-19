@@ -1,5 +1,7 @@
 # calendarium-romanum
 
+[API documentation](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
+
 Ruby gem for
 calendar computations according to the Roman Catholic liturgical
 calendar as instituted by 
