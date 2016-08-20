@@ -5,7 +5,11 @@ module CalendariumRomanum
     def initialize(temporale, sanctorale)
       @transferred = {}
 
-      temporale.date_range.each do |date|
+      dates = sanctorale.solemnities.keys.collect do |abstract_date|
+        temporale.concretize_abstract_date abstract_date
+      end.sort
+
+      dates.each do |date|
         tc = temporale.get(date)
         next unless tc.solemnity?
 

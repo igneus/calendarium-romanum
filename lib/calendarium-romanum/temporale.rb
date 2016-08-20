@@ -60,6 +60,17 @@ module CalendariumRomanum
       end
     end
 
+    # converts an AbstractDate to a Date in the given
+    # liturgical year
+    def concretize_abstract_date(abstract_date)
+      d = abstract_date.concretize(@year + 1)
+      if date_range.include? d
+        d
+      else
+        abstract_date.concretize(@year)
+      end
+    end
+
     def weekday_before(weekday, date)
       if date.wday == weekday then
         return date - WEEK

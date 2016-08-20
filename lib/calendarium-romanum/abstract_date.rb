@@ -28,6 +28,10 @@ module CalendariumRomanum
       month == other.month && day == other.day
     end
 
+    def concretize(year)
+      Date.new(year, month, day)
+    end
+
     private
 
     def validate!(month, day)
