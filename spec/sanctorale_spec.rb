@@ -26,7 +26,7 @@ describe Sanctorale do
         expect(@s.get(Date.new(2014, 1, 17))).to eq [@c]
       end
 
-      it 'can have more Celebrations for a day' do
+      it 'may have more Celebrations for a day' do
         [
          'S. Fabiani, papae et martyris',
          'S. Sebastiani, martyris'
@@ -48,6 +48,66 @@ describe Sanctorale do
 
     it 'does not allow month higher than 12' do
       expect { @s.add 13, 1, Celebration.new('S. Nullius') }.to raise_exception RangeError
+    end
+
+    it 'adds solemnity to a dedicated container' do
+      expect { @s.add 1, 13, Celebration.new('S. Nullius', Ranks::SOLEMNITY_PROPER) }.to change { @s.solemnities.size }.by 1
+    end
+
+    it 'does not add non-solemnity to solemnities' do
+      expect { @s.add 1, 13, Celebration.new('S. Nullius') }.not_to change { @s.solemnities.size }
+    end
+  end
+
+  describe '#replace' do
+    it 'replaces the original celebration(s)' do
+      nemo = Celebration.new('S. Nullius')
+      nonus = Celebration.new('S. Noni', Ranks::SOLEMNITY_PROPER)
+
+      @s.add 1, 13, nemo
+      @s.replace 1, 13, [nonus]
+
+      expect(@s.get(1, 13)).to eq [nonus]
+    end
+
+    it 'adds solemnity to a dedicated container' do
+      nonus = Celebration.new('S. Noni', Ranks::SOLEMNITY_PROPER)
+      expect do
+        @s.replace 1, 13, [nonus]
+      end.to change { @s.solemnities.size }.by 1
+    end
+
+    it 'removes solemnity' do
+      nemo = Celebration.new('S. Nullius', Ranks::SOLEMNITY_PROPER)
+      nonus = Celebration.new('S. Noni')
+
+      @s.add 1, 13, nemo
+      expect do
+        @s.replace 1, 13, [nonus]
+      end.to change { @s.solemnities.size }.by -1
+    end
+  end
+
+  describe '#update' do
+    before :each do
+      @s2 = Sanctorale.new
+    end
+
+    it 'adds entries from the argument to receiver' do
+      @s2.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+
+      expect(@s).to be_empty
+      @s.update @s2
+      expect(@s.size).to eq 1
+    end
+
+    it 'overwrites eventual previous content of the day' do
+      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
+      cele = Celebration.new('S. Nulius, monachi')
+      @s2.add 1, 17, cele
+
+      @s.update @s2
+      expect(@s.get(1, 17)).to eq [cele]
     end
   end
 
@@ -78,30 +138,7 @@ describe Sanctorale do
       cele = Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
       @s.add 1, 17, cele
 
-      expect {|block| @s.each_day(&block) }.to yield_with_args 1, 17, [cele]
-    end
-  end
-
-  describe '#update' do
-    before :each do
-      @s2 = Sanctorale.new
-    end
-
-    it 'adds entries from the argument to receiver' do
-      @s2.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
-
-      expect(@s).to be_empty
-      @s.update @s2
-      expect(@s.size).to eq 1
-    end
-
-    it 'overwrites eventual previous content of the day' do
-      @s.add 1, 17, Celebration.new('S. Antonii, abbatis', Ranks::MEMORIAL_GENERAL)
-      cele = Celebration.new('S. Nulius, monachi')
-      @s2.add 1, 17, cele
-
-      @s.update @s2
-      expect(@s.get(1, 17)).to eq [cele]
+      expect {|block| @s.each_day(&block) }.to yield_with_args(AbstractDate.new(1, 17), [cele])
     end
   end
 end

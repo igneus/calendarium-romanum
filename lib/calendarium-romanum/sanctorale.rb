@@ -4,31 +4,43 @@ module CalendariumRomanum
   class Sanctorale
 
     def initialize
-      @months = []
-      13.times { @months << Hash.new } # 0 will be unused
+      @days = {}
+
+      @solemnities = {}
     end
 
-    def add(month, day, celebration)
-      check_date! month, day
+    attr_reader :solemnities
 
-      unless @months[month].has_key? day
-        @months[month][day] = []
+    def add(month, day, celebration)
+      date = AbstractDate.new(month, day)
+      unless @days.has_key? date
+        @days[date] = []
       end
 
-      @months[month][day] << celebration
+      if celebration.solemnity?
+        @solemnities[date] = celebration
+      end
+
+      @days[date] << celebration
     end
 
     # replaces content of the given day by given celebrations
     def replace(month, day, celebrations)
-      check_date! month, day
+      date = AbstractDate.new(month, day)
 
-      @months[month][day] = celebrations
+      if celebrations.first.solemnity?
+        @solemnities[date] = celebrations.first
+      elsif @solemnities.has_key? date
+        @solemnities.delete date
+      end
+
+      @days[date] = celebrations
     end
 
     # adds all Celebrations from another instance
     def update(sanctorale)
-      sanctorale.each_day do |month, day, celebrations|
-        replace month, day, celebrations
+      sanctorale.each_day do |date, celebrations|
+        replace date.month, date.day, celebrations
       end
     end
 
@@ -44,52 +56,25 @@ module CalendariumRomanum
         month, day = args
       end
 
-      check_date! month, day
-
-      return @months[month][day] || []
+      date = AbstractDate.new(month, day)
+      return @days[date] || []
     end
 
     # for each day for which an entry is available
-    # yields month, day (both Integers), Array of Celebrations
+    # yields an AbstractDate and an Array of Celebrations
     def each_day
-      @months.each_with_index do |month_content, month|
-        month_content.keys.sort.each do |day|
-          yield month, day, month_content[day]
-        end
+      @days.each_pair do |date, celebrations|
+        yield date, celebrations
       end
     end
 
     # returns count of the _days_ with celebrations filled
     def size
-      @months.inject(0) {|sum,n| sum + n.size }
+      @days.size
     end
 
     def empty?
-      size == 0
-    end
-
-    private
-
-    def check_date!(month, day)
-      unless month >= 1 && month <= 12
-        raise RangeError.new("Invalid month #{month}.")
-      end
-
-      day_lte = case month
-                when 2
-                  28
-                when 1, 3, 5, 7, 8, 10, 12
-                  31
-                else
-                  30
-                end
-
-      unless day > 0 && day <= 31
-        raise RangeError.new("Invalid day #{day}.")
-      end
-      unless day <= day_lte
-        raise RangeError.new("Invalid day #{day} for month #{month}.")
-      end
+      @days.empty?
     end
   end
 end
