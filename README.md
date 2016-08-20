@@ -15,7 +15,7 @@ MP Mysterii Paschalis of Paul VI. (AAS 61 (1969), pp. 222-226).
 - [x] Sundays, temporale feasts
 - [x] sanctorale calendars: data format, example data files, their loading
 - [x] resolution of precedence of concurrent celebrations
-- [ ] octave days
+- [x] octave days
 - [ ] commemorations in the privileged seasons where memorials are suppressed
 - [ ] transfer of suppressed solemnities
 - [ ] additional temporale feasts (Christ the Eternal Priest and similar)

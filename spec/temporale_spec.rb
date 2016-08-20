@@ -127,7 +127,6 @@ describe Temporale do
 
     describe 'for' do
       describe 'ferial' do
-
         it 'in Ordinary Time' do
           c = @t13.get(8, 12)
           expect(c.rank).to eq FERIAL
@@ -198,6 +197,12 @@ describe Temporale do
       end
 
       describe 'solemnities and their cycles - ' do
+        it 'end of Advent time' do
+          c = @t13.get(12, 17)
+          expect(c.rank).to eq FERIAL_PRIVILEGED
+          expect(c.colour).to eq VIOLET
+        end
+
         it 'Nativity' do
           c = @t13.get(12, 25)
           expect(c.rank).to eq PRIMARY
@@ -232,12 +237,6 @@ describe Temporale do
           expect(c.colour).to eq WHITE
         end
 
-        it 'Resurrection' do
-          c = @t13.get(4, 20)
-          expect(c.rank).to eq TRIDUUM
-          expect(c.title).to eq 'Easter Sunday of the Resurrection of the Lord'
-        end
-
         it 'Good Friday' do
           c = @t13.get(4, 18)
           expect(c.rank).to eq TRIDUUM
@@ -249,6 +248,12 @@ describe Temporale do
           expect(c.rank).to eq TRIDUUM
           expect(c.title).to eq 'Holy Saturday'
           expect(c.colour).to eq VIOLET
+        end
+
+        it 'Resurrection' do
+          c = @t13.get(4, 20)
+          expect(c.rank).to eq TRIDUUM
+          expect(c.title).to eq 'Easter Sunday of the Resurrection of the Lord'
         end
 
         it 'day in the Easter Octave' do
