@@ -25,7 +25,6 @@ GEM
       celluloid-io (>= 0.15.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    log4r (1.1.10)
     lumberjack (1.0.4)
     method_source (0.8.2)
     nio4r (1.0.0)
@@ -54,6 +53,5 @@ PLATFORMS
 DEPENDENCIES
   guard-rspec
   i18n
-  log4r
   rspec
   thor

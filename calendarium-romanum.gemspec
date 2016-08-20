@@ -15,9 +15,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
 
-  %w{i18n log4r}.each do |dep|
-    s.add_dependency dep
-  end
-
+  s.add_dependency 'i18n'
   s.add_development_dependency 'rspec', '~> 2.14'
 end

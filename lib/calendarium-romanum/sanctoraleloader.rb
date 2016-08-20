@@ -25,16 +25,13 @@ module CalendariumRomanum
                     'R' => Colours::RED
                    }
 
-    @@logger = Log4r::Logger.new(self.name)
-    def self.logger
-      @@logger
-    end
-
     # dest should be a Sanctorale,
     # src anything with #each_line
     def load(dest, src)
       month_section = nil
-      src.each_line do |l|
+      src.each_line.each_with_index do |l, li|
+        line_num = li + 1
+
         # strip whitespace and comments
         l.sub!(/#.*/, '')
         l.strip!
@@ -47,7 +44,7 @@ module CalendariumRomanum
           if dest.validate_date mi
             month_section = mi
           else
-            @@logger.error "Invalid month #{mi}"
+            raise error("Invalid month #{mi}", line_num)
           end
 
           next
@@ -56,7 +53,7 @@ module CalendariumRomanum
         # celebration record
         m = l.match /^((\d+)\/)?(\d+)\s*(([mfs])(\d\.\d+)?)?\s*([WVRG])?\s*:(.*)$/
         if m.nil?
-          @@logger.error "Syntax error, line skipped '#{l}'"
+          raise error("Syntax error, line skipped '#{l}'", line_num)
           next
         end
 
@@ -66,7 +63,7 @@ module CalendariumRomanum
         month = month.to_i
 
         unless dest.validate_date month, day
-          @@logger.error "Invalid date #{month}/#{day}"
+          raise error("Invalid date #{month}/#{day}", line_num)
           next
         end
 
@@ -75,7 +72,7 @@ module CalendariumRomanum
           rank_num = rank_num.to_f
           rank = Ranks[rank_num]
           if rank.nil?
-            @@logger.error "Invalid celebration rank code #{rank_num}"
+            raise error("Invalid celebration rank code #{rank_num}", line_num)
           end
         end
         rank ||= RANK_CODES[rank_char]
@@ -92,6 +89,12 @@ module CalendariumRomanum
 
     def load_from_file(dest, filename, encoding='utf-8')
       self.load dest, File.open(filename, 'r', encoding: encoding)
+    end
+
+    private
+
+    def error(message, line_number)
+      RuntimeError.new("L#{line_number}: #{message}")
     end
   end
 end

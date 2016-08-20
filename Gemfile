@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'i18n'
-gem 'log4r'
-
 gem 'thor'
 
 group :test do
