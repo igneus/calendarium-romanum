@@ -97,14 +97,6 @@ module CalendariumRomanum
     end
 
     class << self
-      # day(Date d)
-      # day(Integer year, Integer month, Integer day)
-      def day(*args)
-        date = mk_date(*args)
-
-        return for_day(date).day(date)
-      end
-
       def mk_date(*args)
         ex = TypeError.new('Date, DateTime or three Integers expected')
 
