@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name        = 'calendarium-romanum'
-  s.version     = '0.0.0'
-  # s.date        = '2014-07-20'
+  s.version     = '0.0.1'
+  s.date        = '2016-08-20'
   s.summary     = 'Roman Catholic liturgical calendar computations'
 
   s.description = File.read 'README.md'
