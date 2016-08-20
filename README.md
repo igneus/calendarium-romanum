@@ -79,7 +79,7 @@ Actually, no. Not yet. We need to load some calendar data first:
 ```ruby
 sanctorale = CalendariumRomanum::Sanctorale.new
 loader = CalendariumRomanum::SanctoraleLoader.new
-loader.load_from_file sanctorale, 'data/universal-en.txt'
+loader.load_from_file sanctorale, 'data/universal-en.txt' # insert path to your data file
 calendar = CalendariumRomanum::Calendar.for_day(Date.today, sanctorale)
 day = calendar.day(Date.new(2016, 8, 19))
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000016ed330 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x00000001715790 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
