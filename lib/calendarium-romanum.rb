@@ -4,6 +4,7 @@ calendar
 temporale
 sanctorale
 sanctoraleloader
+transfers
 day
 util
 }.each do |f| 

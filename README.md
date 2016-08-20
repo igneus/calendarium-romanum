@@ -20,7 +20,7 @@ and the Calendar
 - [x] resolution of precedence of concurrent celebrations
 - [x] octave days
 - [ ] commemorations in the privileged seasons where memorials are suppressed
-- [ ] transfer of suppressed solemnities
+- [x] transfer of suppressed solemnities
 - [ ] additional temporale feasts (Christ the Eternal Priest and similar)
 - [ ] optional transfer of important solemnities on a nearby Sunday
 

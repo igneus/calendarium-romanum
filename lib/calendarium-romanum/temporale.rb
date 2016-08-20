@@ -41,26 +41,21 @@ module CalendariumRomanum
       end
     end
 
-    # DateTime of a year beginning
-    # 00:00 of the first Advent Sunday
-    def dt_beginning(year=nil)
-      first_advent_sunday(year).to_datetime
+    def start_date(year=nil)
+      first_advent_sunday(year)
     end
 
-    # DateTime of a year end
-    # 23:59 of the last Saturday
-    def dt_end(year=nil)
+    def end_date(year=nil)
       year ||= @year
-      day = first_advent_sunday(year+1) - 1
-      return DateTime.new(day.year, day.month, day.day, 23, 59, 59)
+      first_advent_sunday(year+1) - 1
     end
 
-    def dt_range(year=nil)
-      dt_beginning(year) .. dt_end(year)
+    def date_range(year=nil)
+      start_date(year) .. end_date(year)
     end
 
     def range_check(date)
-      unless dt_range.include? date
+      unless date_range.include? date
         raise RangeError.new "Date out of range #{date}"
       end
     end
@@ -271,7 +266,7 @@ module CalendariumRomanum
       return week
     end
 
-    # returns a Celebrations
+    # returns a Celebration
     # scheduled for the given day
     #
     # expected arguments: Date or two Integers (month, day)
@@ -281,7 +276,7 @@ module CalendariumRomanum
       else
         month, day = args
         date = Date.new @year, month, day
-        unless dt_range.include? date
+        unless date_range.include? date
           date = Date.new @year + 1, month, day
         end
       end

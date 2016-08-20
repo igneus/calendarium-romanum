@@ -1,4 +1,4 @@
-
+require 'forwardable'
 
 module CalendariumRomanum
 
@@ -40,6 +40,8 @@ module CalendariumRomanum
   # some days have no (ferial office is used), some have one,
   # some have more among which one may and may not be chosen
   class Celebration
+    extend Forwardable
+
     def initialize(title='', rank=Ranks::FERIAL, colour=Colours::GREEN)
       @title = title
       @rank = rank
@@ -47,6 +49,7 @@ module CalendariumRomanum
     end
 
     attr_reader :rank
+    def_delegators :@rank, :solemnity?, :feast?, :memorial?
 
     attr_reader :title
 

@@ -86,10 +86,10 @@ describe Temporale do
     end
   end
 
-  describe '#dt_range' do
+  describe '#date_range' do
     it 'includes days of the year' do
-      @t.dt_range.should include Date.new(2012, 12, 3)
-      @t.dt_range.should include Date.new(2013, 11, 5)
+      @t.date_range.should include Date.new(2012, 12, 3)
+      @t.date_range.should include Date.new(2013, 11, 5)
     end
   end
 
@@ -318,7 +318,7 @@ describe Temporale do
       holy_saturday pentecost
       holy_trinity body_blood sacred_heart christ_king
 
-      dt_range)
+      date_range)
       days.each do |msg|
         @tny.send(msg, 2012).should eq @t12.send(msg)
       end

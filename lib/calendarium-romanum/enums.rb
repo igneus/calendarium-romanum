@@ -33,6 +33,18 @@ module CalendariumRomanum
     def self.[](priority)
       @@instances[priority]
     end
+
+    def solemnity?
+      priority.to_i == 1
+    end
+
+    def feast?
+      priority.to_i == 2
+    end
+
+    def memorial?
+      priority.to_i == 3
+    end
   end
 
   # ranks of celebrations

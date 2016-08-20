@@ -3,45 +3,36 @@ require 'forwardable'
 
 module CalendariumRomanum
 
-  # calendar computations according to the Roman Catholic liturgical
-  # calendar as instituted by
-  # MP Mysterii Paschalis of Paul VI. (AAS 61 (1969), pp. 222-226)
+  # Provides complete information concerning a liturgical year,
+  # it's days and celebrations occurring on them.
   class Calendar
 
     extend Forwardable
     def_delegators :@temporale, :range_check, :season
-    def_delegators :@sanctorale, :add, :validate_date
 
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
-    def initialize(year)
+    def initialize(year, sanctorale=nil)
       @year = year
       @temporale = Temporale.new(year)
-      @sanctorale = Sanctorale.new
+      @sanctorale = sanctorale || Sanctorale.new
+      @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
     attr_reader :year
     attr_reader :temporale
     attr_reader :sanctorale
 
-    protected
-
-    attr_writer :sanctorale
-
-    public
-
     # returns a Calendar for the subsequent year
     def succ
-      c = Calendar.new @year + 1
-      c.sanctorale = @sanctorale
+      c = Calendar.new @year + 1, @sanctorale
       return c
     end
 
     # returns a Calendar for the previous year
     def pred
-      c = Calendar.new @year - 1
-      c.sanctorale = @sanctorale
+      c = Calendar.new @year - 1, @sanctorale
       return c
     end
 
@@ -57,7 +48,7 @@ module CalendariumRomanum
     def day(*args)
       if args.size == 2
         date = Date.new(@year, *args)
-        unless @temporale.dt_range.include? date
+        unless @temporale.date_range.include? date
           date = Date.new(@year + 1, *args)
         end
       else
@@ -85,6 +76,9 @@ module CalendariumRomanum
     end
 
     def celebrations_for(date)
+      tr = @transferred.get(date)
+      return [tr] if tr
+
       t = @temporale.get date
       st = @sanctorale.get date
 

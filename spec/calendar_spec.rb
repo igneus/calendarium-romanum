@@ -43,7 +43,7 @@ describe Calendar do
     end
 
     describe '#day' do
-      it 'returns Day' do
+      it 'returns a Day' do
         @c.day(2013, 12, 10).should be_a Day
       end
 
@@ -106,8 +106,10 @@ describe Calendar do
 
       describe 'Temporale x Sanctorale resolution' do
         before :all do
+          @s = Sanctorale.new
           loader = SanctoraleLoader.new
-          loader.load_from_file(@c, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
+          loader.load_from_file(@s, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
+          @c = Calendar.new 2013, @s
         end
 
         it '"empty" day results in a ferial' do
@@ -141,28 +143,75 @@ describe Calendar do
         end
 
         it 'Sunday suppresses feast' do
-          c = Calendar.new 2014
+          san = Sanctorale.new
 
           d = Date.new 2015, 6, 28
-          expect(d).to be_sunday
+          expect(d).to be_sunday # ensure
+          san.add d.month, d.day, Celebration.new('St. None, programmer', FEAST_GENERAL)
 
-          c.add d.month, d.day, Celebration.new('St. None, programmer', FEAST_GENERAL)
+          c = Calendar.new 2014, san
 
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
           expect(celebs[0].rank).to eq SUNDAY_UNPRIVILEGED
         end
+
+        it 'suppressed fictive solemnity is transferred' do
+          san = Sanctorale.new
+
+          d = Temporale.new(2014).good_friday
+          st_none = Celebration.new('St. None, abbot, founder of the Order of Programmers (OProg)', SOLEMNITY_PROPER)
+          san.add d.month, d.day, st_none
+
+          c = Calendar.new 2014, san
+
+          # Good Friday suppresses the solemnity
+          celebs = c.day(d).celebrations
+          expect(celebs.size).to eq 1
+          expect(celebs[0].rank).to eq TRIDUUM
+          expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
+
+          # it is transferred on a day after the Easter octave
+          d = c.temporale.easter_sunday + 8
+          celebs = c.day(d).celebrations
+          expect(celebs.size).to eq 1
+          expect(celebs[0]).to eq st_none
+        end
+
+        it 'transfer of suppressed Annunciation (real world example)' do
+          c = Calendar.new 2015, @s
+
+          d = Date.new(2016, 3, 25)
+
+          # Good Friday suppresses the solemnity
+          celebs = c.day(d).celebrations
+          expect(celebs.size).to eq 1
+          expect(celebs[0].rank).to eq TRIDUUM
+          expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
+
+          # it is transferred on a day after the Easter octave
+          d = c.temporale.easter_sunday + 8
+          celebs = c.day(d).celebrations
+          expect(celebs.size).to eq 1
+          expect(celebs[0].title).to eq 'Annunciation of the Lord'
+        end
       end
     end
-  end
-end
 
-describe Date do
-  describe 'substraction' do
-    it 'returns Rational' do
-      date_diff = Date.new(2013,5,5) - Date.new(2013,5,1)
-      expect(date_diff).to be_a Rational
-      expect(date_diff.numerator).to eq 4
+    describe '#pred' do
+      it 'returns a calendar for the previous year' do
+        new_cal = @c.pred
+        expect(new_cal.year).to eq(@c.year - 1)
+        expect(new_cal.sanctorale).to eq (@c.sanctorale)
+      end
+    end
+
+    describe '#succ' do
+      it 'returns a calendar for the subsequent year' do
+        new_cal = @c.succ
+        expect(new_cal.year).to eq(@c.year + 1)
+        expect(new_cal.sanctorale).to eq (@c.sanctorale)
+      end
     end
   end
 end

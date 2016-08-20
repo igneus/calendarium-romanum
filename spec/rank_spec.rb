@@ -12,4 +12,19 @@ describe Rank do
       expect(Ranks[1.1]).to eq Ranks::TRIDUUM
     end
   end
+
+  describe '#<' do
+    it { expect(Ranks[1.2]).to be < Ranks[1.1] }
+    it { expect(Ranks[1.1]).not_to be < Ranks[1.2] }
+  end
+
+  describe '#>' do
+    it { expect(Ranks[1.1]).to be > Ranks[1.2] }
+    it { expect(Ranks[1.2]).not_to be > Ranks[1.1] }
+  end
+
+  describe '#==' do
+    it { expect(Ranks[1.2]).to be == Ranks[1.2] }
+    it { expect(Ranks[1.2]).not_to be == Ranks[1.1] }
+  end
 end
