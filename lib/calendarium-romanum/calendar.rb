@@ -8,7 +8,6 @@ module CalendariumRomanum
   class Calendar
 
     extend Forwardable
-    def_delegators :@temporale, :range_check, :season
 
     # year: Integer
     # returns a calendar for the liturgical year beginning with
@@ -20,6 +19,38 @@ module CalendariumRomanum
       @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
+    class << self
+      def mk_date(*args)
+        ex = TypeError.new('Date, DateTime or three Integers expected')
+
+        if args.size == 3 then
+          args.each do |a|
+            unless a.is_a? Integer
+              raise ex
+            end
+          end
+          return Date.new *args
+
+        elsif args.size == 1 then
+          a = args.first
+          unless a.is_a? Date or a.is_a? DateTime
+            raise ex
+          end
+          return a
+
+        else
+          raise ex
+        end
+      end
+
+      # creates a Calendar for the liturgical year including given
+      # date
+      def for_day(date, sanctorale=nil)
+        return new(Temporale.liturgical_year(date), sanctorale)
+      end
+    end # class << self
+
+    def_delegators :@temporale, :range_check, :season
     attr_reader :year
     attr_reader :temporale
     attr_reader :sanctorale
@@ -95,36 +126,5 @@ module CalendariumRomanum
 
       return [t]
     end
-
-    class << self
-      def mk_date(*args)
-        ex = TypeError.new('Date, DateTime or three Integers expected')
-
-        if args.size == 3 then
-          args.each do |a|
-            unless a.is_a? Integer
-              raise ex
-            end
-          end
-          return Date.new *args
-
-        elsif args.size == 1 then
-          a = args.first
-          unless a.is_a? Date or a.is_a? DateTime
-            raise ex
-          end
-          return a
-
-        else
-          raise ex
-        end
-      end
-
-      # creates a Calendar for the liturgical year including given
-      # date
-      def for_day(date, sanctorale=nil)
-        return new(Temporale.liturgical_year(date), sanctorale)
-      end
-    end # class << self
   end # class Calendar
 end
