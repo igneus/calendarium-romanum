@@ -1,5 +1,7 @@
 # calendarium-romanum
 
+[![Build Status](https://travis-ci.org/igneus/calendarium-romanum.svg?branch=master)](https://travis-ci.org/igneus/calendarium-romanum)
+
 [API documentation](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
 
 Ruby gem for
