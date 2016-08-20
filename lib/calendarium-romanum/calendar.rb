@@ -122,8 +122,8 @@ module CalendariumRomanum
 
       # creates a Calendar for the liturgical year including given
       # date
-      def for_day(date)
-        return new(Temporale.liturgical_year(date))
+      def for_day(date, sanctorale=nil)
+        return new(Temporale.liturgical_year(date), sanctorale)
       end
     end # class << self
   end # class Calendar
