@@ -4,8 +4,6 @@ require 'thor'
 require 'calendarium-romanum'
 require 'log4r'
 
-# load specified calendar files, print errors
-
 module CalendariumRomanum
 
   class CLI < Thor
