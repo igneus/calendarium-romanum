@@ -5,6 +5,7 @@ rvm:
   - jruby-19mode
   - rbx-2.7
 
+install: bundle install --jobs=3 --deployment --without development
 script: bundle exec rspec
 
 git:
