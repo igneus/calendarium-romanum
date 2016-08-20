@@ -59,15 +59,23 @@ module CalendariumRomanum
         day = day.to_i
         month = month.to_i
 
-        rank = nil
+        rank = RANK_CODES[rank_char]
+        if rank.nil?
+          raise error("Invalid celebration rank code #{rank_char}", line_num)
+        end
+
         if rank_num
           rank_num = rank_num.to_f
-          rank = Ranks[rank_num]
-          if rank.nil?
+          rank_by_num = Ranks[rank_num]
+
+          if rank_by_num.nil?
             raise error("Invalid celebration rank code #{rank_num}", line_num)
+          elsif rank.priority.to_i != rank_by_num.priority.to_i
+            raise error("Invalid combination of rank letter #{rank_char.inspect} and number #{rank_num}.", line_num)
           end
+
+          rank = rank_by_num
         end
-        rank ||= RANK_CODES[rank_char]
 
         dest.add month, day, Celebration.new(
                                              title.strip,

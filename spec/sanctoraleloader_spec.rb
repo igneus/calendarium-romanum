@@ -130,6 +130,13 @@ describe SanctoraleLoader do
           @l.load_from_string @s, str
         end.to raise_exception /rank/
       end
+
+      it 'invalid combination of rank latter and number' do
+        str = '4/23 m2.5 R : S. Georgii, martyris'
+        expect do
+          @l.load_from_string @s, str
+        end.to raise_exception /rank/
+      end
     end
   end
 end
