@@ -33,10 +33,10 @@ module CalendariumRomanum
     private
 
     def valid_destination?(day, temporale, sanctorale)
-      return false if temporale.get(day).rank >= FEAST_PROPER
+      return false if temporale.get(day).rank >= Ranks::FEAST_PROPER
 
       sc = sanctorale.get(day)
-      return false if sc.size > 0 && sc.first.rank >= FEAST_PROPER
+      return false if sc.size > 0 && sc.first.rank >= Ranks::FEAST_PROPER
 
       true
     end
