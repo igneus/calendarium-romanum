@@ -1,6 +1,6 @@
 # Czech Republic
 # diocese of Ostrava and Opava
 
-7/16 f : Výročí posvěcení katedrály Božského Spasitele
+7/16 f2.8 : Výročí posvěcení katedrály Božského Spasitele
 
-10/16 f : Sv. Hedviky, řeholnice, hlavní patronky Slezska
+10/16 f2.8 : Sv. Hedviky, řeholnice, hlavní patronky Slezska

@@ -160,7 +160,7 @@
 9 : Saint Peter Claver, priest
 12 : Holy Name of the Blessed Virgin Mary
 13 m : Saint John Chrysostom, bishop and doctor
-14 f R : Triumph of the Holy Cross
+14 f2.5 R : Triumph of the Holy Cross
 15 m : Our Lady of Sorrows
 16 m R : Saints Cornelius, pope, and Cyprian, bishop, martyrs
 17 : Saint Robert Bellarmine, bishop and doctor

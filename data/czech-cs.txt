@@ -9,7 +9,7 @@
 7 : sv. Rajmunda z Peñafortu, kněze
 13 : sv. Hilaria, biskupa a učitele církve
 17 m : Sv. Antonína, opata
-18 m : Panny Marie, Matky jednoty křesťanů
+18 m3.11 : Panny Marie, Matky jednoty křesťanů
 20 R : Sv. Fabiána, papeže a mučedníka
 20 R : Sv. Šebestiána, mučedníka
 21 m R : Sv. Anežky Římské, panny a mučednice
@@ -56,7 +56,7 @@
 11 m R : Sv. Stanislava, biskupa a mučedníka
 13 R : Sv. Martina I., papeže a mučedníka
 21 : Sv. Anselma, biskupa a učitele církve
-23 f R : Sv. Vojtěcha, biskupa a mučedníka, hlavního patrona pražské arcidiecéze
+23 f2.8 R : Sv. Vojtěcha, biskupa a mučedníka, hlavního patrona pražské arcidiecéze
 24 R : Sv. Jiří, mučedníka
 24 R : Sv. Fidela ze Sigmaringy, kněze a mučedníka
 25 f R : Sv. Marka, evangelisty
@@ -76,7 +76,7 @@
 12 R : Sv. Pankráce, mučedníka
 13 : Panny Marie Fatimské
 14 f R : Sv. Matěje, apoštola
-16 f R : Sv. Jana Nepomuckého, kněze a mučedníka, hlavního patrona Čech
+16 f2.8 R : Sv. Jana Nepomuckého, kněze a mučedníka, hlavního patrona Čech
 18 R : Sv. Jana I., papeže a mučedníka
 20 : Sv. Klementa Marie Hofbauera, kněze
 20 : Sv. Bernardina Sienského, kněze
@@ -115,7 +115,7 @@
 3 f R : Sv. Tomáše, apoštola
 4 : Sv. Prokopa, opata
 4 : Sv. Alžběty Portugalské
-5 s : Sv. Cyrila, mnicha, a Metoděje, biskupa, patronů Evropy, hlavních patronů Moravy
+5 s1.4 : Sv. Cyrila, mnicha, a Metoděje, biskupa, patronů Evropy, hlavních patronů Moravy
 6 R : Sv. Marie Gorettiové, panny a mučednice
 9 R : Sv. Augustina Čao Žung, kněze, a druhů, mučedníků.
 11 f : Sv. Benedikta, opata, patrona Evropy
@@ -178,7 +178,7 @@
 10 R : Bl. Karla Spinoly, kněze a mučedníka
 12 : Jména Panny Marie
 13 m : Sv. Jana Zlatoústého, biskupa a učitele církve
-14 f R : Povýšení svatého kříže
+14 f2.5 R : Povýšení svatého kříže
 15 m : Panny Marie Bolestné
 16 R : Sv. Ludmily, mučednice
 17 R : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
@@ -189,7 +189,7 @@
 23 : Sv. Pia z Pietrelciny, kněze
 26 R : Sv. Kosmy a Damiána, mučedníků
 27 m : Sv. Vincence z Paula, kněze
-28 s R : Sv. Václava, mučedníka, hlavního patrona českého národa
+28 s1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
 29 f : Sv. Michaela, Gabriela a Rafaela, archandělů
 30 m : Sv. Jeronýma, kněze a učitele církve
 
@@ -215,7 +215,6 @@
 23 : Sv. Jana Kapistránského, kněze
 24 : Sv. Antonína Marie Klareta, biskupa
 28 f R : Sv. Šimona a Judy, apoštolů
-29 R : V brněnské diecézi: Bl. Marie Restituty Kafkové, panny a mučednice
 31 : Sv. Wolfganga, biskupa
 
 = 11

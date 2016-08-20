@@ -161,7 +161,7 @@
 9 : S. Petri Claver, presbyteri
 12 : Ss.mi Nominis Mariae
 13 m :  S. Ioannis Chrysostomi, episcopi et Ecclesiae doctoris
-14 f R :  IN EXALTATIONE SANCTAE CRUCIS
+14 f2.5 R :  IN EXALTATIONE SANCTAE CRUCIS
 15 m :  B. Mariae Virginis Perdolentis
 16 m R :  Ss. Cornelii, papae, et Cypriani, episcopi, martyrum
 17 : S. Roberti Bellarmino, episcopi et Ecclesiae doctoris

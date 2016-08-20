@@ -1,7 +1,7 @@
 # Czech Republic
 # province of Moravia
 
-5/6 m R : Sv. Jana Sarkandra, kněze a mučedníka
-5/20 m : Sv. Klementa Marie Hofbauera, kněze
+5/6 m3.11 R : Sv. Jana Sarkandra, kněze a mučedníka
+5/20 m3.11 : Sv. Klementa Marie Hofbauera, kněze
 
-7/27 m : Sv. Gorazda a druhů
+7/27 m3.11 : Sv. Gorazda a druhů
