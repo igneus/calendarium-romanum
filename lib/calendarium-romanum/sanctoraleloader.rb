@@ -40,13 +40,10 @@ module CalendariumRomanum
         # month section heading
         n = l.match /^=\s*(\d+)\s*$/
         unless n.nil?
-          mi = n[1].to_i
-          if dest.validate_date mi
-            month_section = mi
-          else
-            raise error("Invalid month #{mi}", line_num)
+          month_section = n[1].to_i
+          unless month_section >= 1 && month_section <= 12
+            raise error("Invalid month #{month_section}", line_num)
           end
-
           next
         end
 
@@ -61,11 +58,6 @@ module CalendariumRomanum
         month ||= month_section
         day = day.to_i
         month = month.to_i
-
-        unless dest.validate_date month, day
-          raise error("Invalid date #{month}/#{day}", line_num)
-          next
-        end
 
         rank = nil
         if rank_num

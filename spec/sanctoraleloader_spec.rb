@@ -93,21 +93,21 @@ describe SanctoraleLoader do
         str = '100/25 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string @s, str
-        end.to raise_exception /Invalid date/
+        end.to raise_exception /Invalid month/
       end
 
       it 'line with day only, without preceding month heading' do
         str = '25 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string @s, str
-        end.to raise_exception /Invalid date/
+        end.to raise_exception /Invalid month/
       end
 
       it 'invalid day' do
         str = '1/250 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string @s, str
-        end.to raise_exception /Invalid date/
+        end.to raise_exception /Invalid day/
       end
 
       it 'invalid month heading' do

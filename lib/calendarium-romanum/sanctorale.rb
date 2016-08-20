@@ -68,10 +68,11 @@ module CalendariumRomanum
       size == 0
     end
 
-    def validate_date(month, day=nil)
-      month_valid = month >= 1 && month <= 12
-      if day.nil? or not month_valid
-        return month_valid
+    private
+
+    def check_date!(month, day)
+      unless month >= 1 && month <= 12
+        raise RangeError.new("Invalid month #{month}.")
       end
 
       day_lte = case month
@@ -82,16 +83,12 @@ module CalendariumRomanum
                 else
                   30
                 end
-      day_valid = day > 0 && day <= day_lte
 
-      return month_valid && day_valid
-    end
-
-    private
-
-    def check_date!(month, day)
-      unless validate_date month, day
-        raise RangeError.new("Invalid month #{month}")
+      unless day > 0 && day <= 31
+        raise RangeError.new("Invalid day #{day}.")
+      end
+      unless day <= day_lte
+        raise RangeError.new("Invalid day #{day} for month #{month}.")
       end
     end
   end
