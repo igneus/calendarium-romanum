@@ -4,7 +4,7 @@ module CalendariumRomanum
 
   # information on one particular day of the liturgical year
   class Day
-    def initialize(**args)
+    def initialize(args={})
       %i(date season season_week celebrations).each do |a|
         if args.include? a
           instance_variable_set "@#{a}", args.delete(a)
