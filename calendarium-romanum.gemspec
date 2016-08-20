@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = 'jkb.pavlik@gmail.com'
   s.files       = (Dir['bin/*'] + Dir['lib/*.rb'] + Dir['lib/*/*.rb'] +
                    Dir['spec/*.rb'])
-  s.executables = ['calendariumrom']
+  s.executables = []
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
 
