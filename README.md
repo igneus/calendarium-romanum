@@ -77,8 +77,10 @@ colour.
 Actually, no. Not yet. We need to load some calendar data first:
 
 ```ruby
+sanctorale = CalendariumRomanum::Sanctorale.new
 loader = CalendariumRomanum::SanctoraleLoader.new
-loader.load_from_file calendar.sanctorale, 'data/universal-en.txt'
+loader.load_from_file sanctorale, 'data/universal-en.txt'
+calendar = CalendariumRomanum::Calendar.for_day(Date.today, sanctorale)
 day = calendar.day(Date.new(2016, 8, 19))
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000016ed330 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x00000001715790 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
@@ -137,10 +139,10 @@ a day (as integers) and a `Celebration`:
 
 ```ruby
 include CalendariumRomanum
-calendar = Calendar.for_day(Date.today)
-sanctorale = calendar.sanctorale
+sanctorale = Sanctorale.new
 celebration = Celebration.new('Saint John Eudes, priest', Ranks::MEMORIAL_OPTIONAL, Colours::WHITE)
 sanctorale.add 8, 19, celebration
+calendar = Calendar.for_day(Date.today, sanctorale)
 ```
 
 Now our `Sanctorale` knows one feast and the `Calendar` resolves
