@@ -11,10 +11,9 @@ Gem::Specification.new do |s|
   s.email       = 'jkb.pavlik@gmail.com'
   s.files       = (Dir['bin/*'] + Dir['lib/*.rb'] + Dir['lib/*/*.rb'] +
                    Dir['spec/*.rb'])
-  s.executables = []
+  s.executables = ['calendariumrom']
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
 
-  s.add_dependency 'i18n'
   s.add_development_dependency 'rspec', '~> 2.14'
 end
