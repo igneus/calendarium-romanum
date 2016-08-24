@@ -127,7 +127,7 @@
 17 : Bl. Česlava a sv. Hyacinta, kněží
 20 R : Sv. Apolináře, biskupa a mučedníka
 21 : Sv. Vavřince z Brindisi, kněze a učitele církve
-22 m : Sv. Marie Magdalény
+22 f : Sv. Marie Magdalény
 23 f : Sv. Brigity, řeholnice, patronky Evropy
 24 : Sv. Šarbela Makhlūfa, kněze
 25 f R : Sv. Jakuba, apoštola

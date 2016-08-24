@@ -116,7 +116,7 @@
 16 : B. Mariae Virginis de Monte Carmelo
 20 R : S. Apollinaris, episcopi et martyris
 21 : S. Laurentii de Brindisi, presbyteri et Ecclesiae doctoris
-22 m :  S. Mariae Magdalenae
+22 f :  S. Mariae Magdalenae
 23 : S. Birgittae, religiosae
 24 : S. Sarbelii Makhlūf, presbyteri
 25 f R :  S. Iacobi, apostoli

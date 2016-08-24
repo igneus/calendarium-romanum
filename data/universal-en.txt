@@ -115,7 +115,7 @@
 16 : Our Lady of Mount Carmel
 20 : Saint Apollinaris
 21 : Saint Lawrence of Brindisi, priest and doctor
-22 m : Saint Mary Magdalene
+22 f : Saint Mary Magdalene
 23 : Saint Birgitta, religious
 24 : Saint Sharbel Makhluf, hermit
 25 f R : Saint James, apostle
