@@ -218,7 +218,7 @@ describe Temporale do
 
         it 'Holy Family' do
           c = @t13.get(12, 29)
-          expect(c.rank).to eq PRIMARY
+          expect(c.rank).to eq FEAST_LORD_GENERAL
           expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
           expect(c.colour).to eq WHITE
         end
