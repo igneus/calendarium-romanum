@@ -2,10 +2,8 @@
 # source: http://cs.wikipedia.org/wiki/%C4%8Cesk%C3%BD_liturgick%C3%BD_kalend%C3%A1%C5%99
 
 = 1
-1 s : Oktáv Narození Páně - Matky Boží, Panny Marie
 2 m : Sv. Basila Velikého a Řehoře Naziánského, biskupů a učitelů církve
 3 : Nejsvětějšího Jména Ježíš
-6 s : Zjevení Páně
 7 : sv. Rajmunda z Peñafortu, kněze
 13 : sv. Hilaria, biskupa a učitele církve
 17 m : Sv. Antonína, opata
@@ -254,7 +252,6 @@
 14 m : Sv. Jana od Kříže, kněze a učitele církve
 21 : Sv. Petra Kanisia, kněze a učitele církve
 23 : Sv. Jana Kentského, kněze
-25 s : Narození Páně
 26 f R : Sv. Štěpána, prvomučedníka
 27 f : Sv. Jana, apoštola a evangelisty
 28 f R : Svatých Mláďátek, mučedníků
