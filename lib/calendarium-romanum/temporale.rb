@@ -357,7 +357,8 @@ module CalendariumRomanum
 
       {
         nativity: ['The Nativity of the Lord', nil, nil],
-        holy_family: ['The Holy Family of Jesus, Mary and Joseph', Ranks::PRIMARY, nil],
+        holy_family: ['The Holy Family of Jesus, Mary and Joseph', Ranks::FEAST_LORD_GENERAL, nil],
+        mother_of_god: ['Octave Day of Christmas, of Mary, Mother of God', Rank::SOLEMNITY_GENERAL],
         epiphany: ['The Epiphany of the Lord', nil, nil],
         baptism_of_lord: ['The Baptism of the Lord', Ranks::FEAST_LORD_GENERAL, nil],
         good_friday: ['Friday of the Passion of the Lord', Ranks::TRIDUUM, Colours::RED],
