@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+require_relative 'lib/calendarium-romanum'
+
 Gem::Specification.new do |s|
   s.name        = 'calendarium-romanum'
-  s.version     = '0.0.1'
+  s.version     = CalendariumRomanum::VERSION
   s.date        = '2016-08-20'
   s.summary     = 'Roman Catholic liturgical calendar computations'
 

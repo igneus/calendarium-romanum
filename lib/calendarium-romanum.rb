@@ -1,4 +1,5 @@
 %w{
+version
 enums
 calendar
 temporale
