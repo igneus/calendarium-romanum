@@ -1,6 +1,15 @@
 # Changelog
 
-## [0.0.2] 2016-08-27
+## [0.0.3] 2016-08-27
+
+### Fixed
+- fatal constant reference bug in `Temporale`
+- the specs that covered it
+
+## [0.0.2] 2016-08-27 YANKED
+
+release yanked, as it contained a fatal bug in `Temporale`,
+resulting in `NameError` being raised on each initialization
 
 ### Fixed
 - all celebrations handled by `Temporale` purged from the sanctorale
