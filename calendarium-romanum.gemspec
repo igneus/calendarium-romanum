@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.date        = '2016-08-20'
   s.summary     = 'Roman Catholic liturgical calendar computations'
 
-  s.description = File.read 'README.md'
+  s.description = "calendar computations according to the Roman Catholic liturgical calendar as instituted by MP Mysterii Paschalis of Paul VI (1969)."
 
   s.authors     = ['Jakub Pavlík']
   s.email       = 'jkb.pavlik@gmail.com'
