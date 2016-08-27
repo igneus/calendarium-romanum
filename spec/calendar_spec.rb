@@ -1,50 +1,50 @@
 require_relative 'spec_helper'
 
-describe Calendar do
+describe CR::Calendar do
 
   describe 'core functions' do
     before :all do
-      @c = Calendar.new 2013
+      @c = described_class.new 2013
     end
 
     describe '#==' do
       it 'considers calendars with the same year same' do
-        Calendar.new(2014).should == Calendar.new(2014)
+        described_class.new(2014).should == described_class.new(2014)
       end
 
       it 'considers calendars with different year different' do
-        Calendar.new(2014).should_not == Calendar.new(2010)
+        described_class.new(2014).should_not == described_class.new(2010)
       end
     end
 
     describe '#lectionary' do
       it 'detects correctly' do
-        Calendar.new(2014).lectionary.should eq :B
-        Calendar.new(2013).lectionary.should eq :A
-        Calendar.new(2012).lectionary.should eq :C
+        described_class.new(2014).lectionary.should eq :B
+        described_class.new(2013).lectionary.should eq :A
+        described_class.new(2012).lectionary.should eq :C
       end
     end
 
     describe '#ferial_lectionary' do
       it 'detects correctly' do
-        Calendar.new(2014).ferial_lectionary.should eq 1
-        Calendar.new(2013).ferial_lectionary.should eq 2
+        described_class.new(2014).ferial_lectionary.should eq 1
+        described_class.new(2013).ferial_lectionary.should eq 2
       end
     end
 
     describe '.for_day' do
       it 'continues the previous year\'s calendar in summer' do
-        Calendar.for_day(Date.new(2014, 6, 9)).should eq Calendar.new(2013)
+        described_class.for_day(Date.new(2014, 6, 9)).should eq described_class.new(2013)
       end
 
       it 'provides the current year\'s calendar in December' do
-        Calendar.for_day(Date.new(2014, 12, 20)).should eq Calendar.new(2014)
+        described_class.for_day(Date.new(2014, 12, 20)).should eq described_class.new(2014)
       end
     end
 
     describe '#day' do
       it 'returns a Day' do
-        @c.day(2013, 12, 10).should be_a Day
+        @c.day(2013, 12, 10).should be_a CR::Day
       end
 
       it 'inserts correct year if not given' do
@@ -106,22 +106,22 @@ describe Calendar do
 
       describe 'Temporale x Sanctorale resolution' do
         before :all do
-          @s = Sanctorale.new
-          loader = SanctoraleLoader.new
+          @s = CR::Sanctorale.new
+          loader = CR::SanctoraleLoader.new
           loader.load_from_file(@s, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
-          @c = Calendar.new 2013, @s
+          @c = described_class.new 2013, @s
         end
 
         it '"empty" day results in a ferial' do
           d = @c.day(7, 2)
           expect(d.celebrations.size).to eq 1
-          expect(d.celebrations[0].rank).to eq FERIAL
+          expect(d.celebrations[0].rank).to eq CR::Ranks::FERIAL
         end
 
         it 'sanctorale feast' do
           d = @c.day(7, 3)
           expect(d.celebrations.size).to eq 1
-          expect(d.celebrations[0].rank).to eq FEAST_GENERAL
+          expect(d.celebrations[0].rank).to eq CR::Ranks::FEAST_GENERAL
           expect(d.celebrations[0].title).to include 'Thomas'
         end
 
@@ -129,9 +129,9 @@ describe Calendar do
           d = @c.day(7, 14)
           expect(d.celebrations.size).to eq 2
 
-          expect(d.celebrations[0].rank).to eq FERIAL
+          expect(d.celebrations[0].rank).to eq CR::Ranks::FERIAL
 
-          expect(d.celebrations[1].rank).to eq MEMORIAL_OPTIONAL
+          expect(d.celebrations[1].rank).to eq CR::Ranks::MEMORIAL_OPTIONAL
           expect(d.celebrations[1].title).to include 'Lellis'
         end
 
@@ -139,36 +139,36 @@ describe Calendar do
           d = @c.day(1, 17)
           expect(d.celebrations.size).to eq 1
 
-          expect(d.celebrations[0].rank).to eq MEMORIAL_GENERAL
+          expect(d.celebrations[0].rank).to eq CR::Ranks::MEMORIAL_GENERAL
         end
 
         it 'Sunday suppresses feast' do
-          san = Sanctorale.new
+          san = CR::Sanctorale.new
 
           d = Date.new 2015, 6, 28
           expect(d).to be_sunday # ensure
-          san.add d.month, d.day, Celebration.new('St. None, programmer', FEAST_GENERAL)
+          san.add d.month, d.day, CR::Celebration.new('St. None, programmer', CR::Ranks::FEAST_GENERAL)
 
-          c = Calendar.new 2014, san
+          c = described_class.new 2014, san
 
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
-          expect(celebs[0].rank).to eq SUNDAY_UNPRIVILEGED
+          expect(celebs[0].rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
         end
 
         it 'suppressed fictive solemnity is transferred' do
-          san = Sanctorale.new
+          san = CR::Sanctorale.new
 
-          d = Temporale.new(2014).good_friday
-          st_none = Celebration.new('St. None, abbot, founder of the Order of Programmers (OProg)', SOLEMNITY_PROPER)
+          d = CR::Temporale.new(2014).good_friday
+          st_none = CR::Celebration.new('St. None, abbot, founder of the Order of Programmers (OProg)', CR::Ranks::SOLEMNITY_PROPER)
           san.add d.month, d.day, st_none
 
-          c = Calendar.new 2014, san
+          c = described_class.new 2014, san
 
           # Good Friday suppresses the solemnity
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
-          expect(celebs[0].rank).to eq TRIDUUM
+          expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
           expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
 
           # it is transferred on a day after the Easter octave
@@ -179,14 +179,14 @@ describe Calendar do
         end
 
         it 'transfer of suppressed Annunciation (real world example)' do
-          c = Calendar.new 2015, @s
+          c = described_class.new 2015, @s
 
           d = Date.new(2016, 3, 25)
 
           # Good Friday suppresses the solemnity
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
-          expect(celebs[0].rank).to eq TRIDUUM
+          expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
           expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
 
           # it is transferred on a day after the Easter octave

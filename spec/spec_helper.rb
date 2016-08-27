@@ -17,6 +17,4 @@ RSpec.configure do |config|
 end
 
 require 'calendarium-romanum'
-include CalendariumRomanum
-include Ranks
-include Colours
+CR = CalendariumRomanum

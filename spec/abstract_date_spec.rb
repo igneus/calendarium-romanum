@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
-describe AbstractDate do
-  AD = AbstractDate
+describe CR::AbstractDate do
+  AD = CR::AbstractDate
 
   describe '.new' do
     describe 'fails on invalid' do

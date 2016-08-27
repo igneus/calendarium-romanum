@@ -1,10 +1,10 @@
 require_relative 'spec_helper'
 
-describe Temporale do
+describe CR::Temporale do
 
   before :all do
-    @t = @t12 = Temporale.new 2012
-    @t13 = Temporale.new 2013
+    @t = @t12 = described_class.new 2012
+    @t13 = described_class.new 2013
   end
 
   describe '.liturgical_year' do
@@ -13,7 +13,7 @@ describe Temporale do
         [Date.new(2014, 11, 1), 2013],
         [Date.new(2014, 12, 1), 2014]
       ].each do |date, year|
-        Temporale.liturgical_year(date).should eq year
+        described_class.liturgical_year(date).should eq year
       end
     end
   end
@@ -122,178 +122,178 @@ describe Temporale do
 
   describe '#get' do
     it 'returns a Celebration' do
-      expect(@t13.get(8, 12)).to be_a Celebration
+      expect(@t13.get(8, 12)).to be_a CR::Celebration
     end
 
     describe 'for' do
       describe 'ferial' do
         it 'in Ordinary Time' do
           c = @t13.get(8, 12)
-          expect(c.rank).to eq FERIAL
-          expect(c.color).to eq GREEN
+          expect(c.rank).to eq CR::Ranks::FERIAL
+          expect(c.color).to eq CR::Colours::GREEN
         end
 
         it 'in Advent' do
           c = @t13.get(12, 12)
-          expect(c.rank).to eq FERIAL
-          expect(c.color).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::FERIAL
+          expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in the last week of Advent' do
           c = @t13.get(12, 23)
-          expect(c.rank).to eq FERIAL_PRIVILEGED
-          expect(c.color).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
+          expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Christmas time' do
           c = @t13.get(1, 3)
-          expect(c.rank).to eq FERIAL
-          expect(c.color).to eq WHITE
+          expect(c.rank).to eq CR::Ranks::FERIAL
+          expect(c.color).to eq CR::Colours::WHITE
         end
 
         it 'in Lent' do
           c = @t13.get(3, 18)
-          expect(c.rank).to eq FERIAL_PRIVILEGED
-          expect(c.color).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
+          expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Easter Time' do
           c = @t13.get(5, 5)
-          expect(c.rank).to eq FERIAL
-          expect(c.color).to eq WHITE
+          expect(c.rank).to eq CR::Ranks::FERIAL
+          expect(c.color).to eq CR::Colours::WHITE
         end
       end
 
       describe 'Sunday' do
         it 'in Ordinary Time' do
           c = @t13.get(8, 10)
-          expect(c.rank).to eq SUNDAY_UNPRIVILEGED
-          expect(c.color).to eq GREEN
+          expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
+          expect(c.color).to eq CR::Colours::GREEN
         end
 
         it 'in Advent' do
           c = @t13.get(12, 15)
-          expect(c.rank).to eq PRIMARY
-          expect(c.color).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Christmas time' do
           c = @t13.get(1, 5)
-          expect(c.rank).to eq SUNDAY_UNPRIVILEGED
-          expect(c.color).to eq WHITE
+          expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
+          expect(c.color).to eq CR::Colours::WHITE
         end
 
         it 'in Lent' do
           c = @t13.get(3, 23)
-          expect(c.rank).to eq PRIMARY
-          expect(c.color).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Easter Time' do
           c = @t13.get(5, 11)
-          expect(c.rank).to eq PRIMARY
-          expect(c.color).to eq WHITE
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.color).to eq CR::Colours::WHITE
         end
       end
 
       describe 'solemnities and their cycles - ' do
         it 'end of Advent time' do
           c = @t13.get(12, 17)
-          expect(c.rank).to eq FERIAL_PRIVILEGED
-          expect(c.colour).to eq VIOLET
+          expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
+          expect(c.colour).to eq CR::Colours::VIOLET
         end
 
         it 'Nativity' do
           c = @t13.get(12, 25)
-          expect(c.rank).to eq PRIMARY
+          expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to eq 'The Nativity of the Lord'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'day in the octave of Nativity' do
           c = @t13.get(12, 27)
-          expect(c.rank).to eq FERIAL_PRIVILEGED
-          expect(c.colour).to eq WHITE
+          expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Holy Family' do
           c = @t13.get(12, 29)
-          expect(c.rank).to eq FEAST_LORD_GENERAL
+          expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
           expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Epiphany' do
           c = @t13.get(1, 6)
-          expect(c.rank).to eq PRIMARY
+          expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to eq 'The Epiphany of the Lord'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Baptism of the Lord' do
           c = @t13.get(1, 12)
-          expect(c.rank).to eq FEAST_LORD_GENERAL
+          expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
           expect(c.title).to eq 'The Baptism of the Lord'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Good Friday' do
           c = @t13.get(4, 18)
-          expect(c.rank).to eq TRIDUUM
+          expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to eq 'Friday of the Passion of the Lord'
         end
 
         it 'Holy Saturday' do
           c = @t13.get(4, 19)
-          expect(c.rank).to eq TRIDUUM
+          expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to eq 'Holy Saturday'
-          expect(c.colour).to eq VIOLET
+          expect(c.colour).to eq CR::Colours::VIOLET
         end
 
         it 'Resurrection' do
           c = @t13.get(4, 20)
-          expect(c.rank).to eq TRIDUUM
+          expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to eq 'Easter Sunday of the Resurrection of the Lord'
         end
 
         it 'day in the Easter Octave' do
           c = @t13.get(4, 22)
-          expect(c.rank).to eq PRIMARY
+          expect(c.rank).to eq CR::Ranks::PRIMARY
         end
 
         it 'Pentecost' do
           c = @t13.get(6, 8)
-          expect(c.rank).to eq PRIMARY
+          expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to eq 'Pentecost Sunday'
-          expect(c.colour).to eq RED
+          expect(c.colour).to eq CR::Colours::RED
         end
 
         it 'Trinity' do
           c = @t13.get(6, 15)
-          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to eq 'The Most Holy Trinity'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Body of Christ' do
           c = @t13.get(6, 19)
-          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to eq 'The Most Holy Body and Blood of Christ'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Sacred Heart' do
           c = @t13.get(6, 27)
-          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to eq 'The Most Sacred Heart of Jesus'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Christ the King' do
           c = @t13.get(11, 23)
-          expect(c.rank).to eq SOLEMNITY_GENERAL
+          expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to eq 'Our Lord Jesus Christ, King of the Universe'
-          expect(c.colour).to eq WHITE
+          expect(c.colour).to eq CR::Colours::WHITE
         end
       end
     end
@@ -301,11 +301,11 @@ describe Temporale do
 
   describe 'initialized without a year' do
     before :each do
-      @tny = Temporale.new
+      @tny = described_class.new
     end
 
     it 'is possible to initialize a Temporale without a year' do
-      expect { Temporale.new }.not_to raise_exception
+      expect { described_class.new }.not_to raise_exception
     end
 
     it 'crashes when a date is requested without year' do

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe SanctoraleLoader do
+describe CR::SanctoraleLoader do
 
   before :each do
-    @s = Sanctorale.new
-    @l = SanctoraleLoader.new
+    @s = CR::Sanctorale.new
+    @l = CR::SanctoraleLoader.new
   end
 
   describe 'data sources' do
@@ -27,17 +27,17 @@ describe SanctoraleLoader do
       end
 
       it 'sets default rank' do
-        expect(@s.get(1, 3)[0].rank).to eq Ranks::MEMORIAL_OPTIONAL
+        expect(@s.get(1, 3)[0].rank).to eq CR::Ranks::MEMORIAL_OPTIONAL
       end
 
       it 'sets default colour - white' do
-        expect(@s.get(1, 3)[0].colour).to eq Colours::WHITE
+        expect(@s.get(1, 3)[0].colour).to eq CR::Colours::WHITE
       end
 
       it 'loads explicit rank if given' do
         str = '1/25 f : In conversione S. Pauli, apostoli'
         @l.load_from_string @s, str
-        expect(@s.get(1, 25)[0].rank).to eq Ranks::FEAST_GENERAL
+        expect(@s.get(1, 25)[0].rank).to eq CR::Ranks::FEAST_GENERAL
       end
     end
 
@@ -63,7 +63,7 @@ describe SanctoraleLoader do
       it 'sets colour if specified' do
         str = '4/25 f R :  S. Marci, evangelistae'
         @l.load_from_string @s, str
-        expect(@s.get(4, 25).first.colour).to eq Colours::RED
+        expect(@s.get(4, 25).first.colour).to eq CR::Colours::RED
       end
     end
 
@@ -73,7 +73,7 @@ describe SanctoraleLoader do
         str = '4/23 s1.4 R : S. Georgii, martyris'
         @l.load_from_string @s, str
         celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq Ranks::SOLEMNITY_PROPER
+        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_PROPER
       end
     end
   end
