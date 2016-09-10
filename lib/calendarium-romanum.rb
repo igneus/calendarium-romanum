@@ -7,6 +7,7 @@ calendar
 temporale
 sanctorale
 sanctoraleloader
+sanctorale_factory
 transfers
 day
 abstract_date
