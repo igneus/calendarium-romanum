@@ -108,7 +108,7 @@ describe CR::Calendar do
         before :all do
           @s = CR::Sanctorale.new
           loader = CR::SanctoraleLoader.new
-          loader.load_from_file(@s, File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'))
+          loader.load_from_file(File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'), @s)
           @c = described_class.new 2013, @s
         end
 

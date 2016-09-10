@@ -27,7 +27,9 @@ module CalendariumRomanum
 
     # dest should be a Sanctorale,
     # src anything with #each_line
-    def load(dest, src)
+    def load(src, dest=nil)
+      dest ||= Sanctorale.new
+
       month_section = nil
       src.each_line.each_with_index do |l, li|
         line_num = li + 1
@@ -83,12 +85,14 @@ module CalendariumRomanum
                                              COLOUR_CODES[colour]
                                             )
       end
+
+      dest
     end
 
     alias_method :load_from_string, :load
 
-    def load_from_file(dest, filename, encoding='utf-8')
-      self.load dest, File.open(filename, 'r', encoding: encoding)
+    def load_from_file(filename, dest=nil, encoding='utf-8')
+      self.load File.open(filename, 'r', encoding: encoding), dest
     end
 
     private
