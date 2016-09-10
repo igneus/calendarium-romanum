@@ -1,6 +1,7 @@
 %w{
 version
 i18n_setup
+rank
 enums
 calendar
 temporale
