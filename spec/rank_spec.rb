@@ -27,4 +27,16 @@ describe CR::Rank do
     it { expect(CR::Ranks[1.2]).to be == CR::Ranks[1.2] }
     it { expect(CR::Ranks[1.2]).not_to be == CR::Ranks[1.1] }
   end
+
+  describe '#desc' do
+    it { expect(CR::Ranks[1.1].desc).to eq 'Easter triduum' }
+  end
+
+  describe '#short_desc' do
+    it 'is not always set' do
+      expect(CR::Ranks[1.1].short_desc).to be_nil
+    end
+
+    it { expect(CR::Ranks[2.8].short_desc).to eq 'feast' }
+  end
 end

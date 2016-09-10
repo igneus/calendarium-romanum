@@ -52,21 +52,21 @@ module CalendariumRomanum
     # Values are at the same time references to sections
     # of the Table of Liturgical Days.
     # The lower value, the higher rank.
-    TRIDUUM           = Rank.new 1.1, 'Easter triduum'
-    PRIMARY           = Rank.new 1.2, 'Primary liturgical days' # description may not be exact
-    SOLEMNITY_GENERAL = Rank.new 1.3, 'Solemnities in the General Calendar', 'solemnity' # description may not be exact
-    SOLEMNITY_PROPER  = Rank.new 1.4, 'Proper solemnities', 'solemnity'
+    TRIDUUM           = Rank.new 1.1, I18n.t('rank.1_1')
+    PRIMARY           = Rank.new 1.2, I18n.t('rank.1_2') # description may not be exact
+    SOLEMNITY_GENERAL = Rank.new 1.3, I18n.t('rank.1_3'), I18n.t('rank.short.solemnity') # description may not be exact
+    SOLEMNITY_PROPER  = Rank.new 1.4, I18n.t('rank.1_4'), I18n.t('rank.short.solemnity')
 
-    FEAST_LORD_GENERAL  = Rank.new 2.5, 'Feasts of the Lord in the General Calendar', 'feast'
-    SUNDAY_UNPRIVILEGED = Rank.new 2.6, 'Unprivileged Sundays'
-    FEAST_GENERAL       = Rank.new 2.7, 'Feasts of saints in the General Calendar', 'feast'
-    FEAST_PROPER        = Rank.new 2.8, 'Proper feasts', 'feast'
-    FERIAL_PRIVILEGED   = Rank.new 2.9, 'Privileged ferials'
+    FEAST_LORD_GENERAL  = Rank.new 2.5, I18n.t('rank.2_5'), I18n.t('rank.short.feast')
+    SUNDAY_UNPRIVILEGED = Rank.new 2.6, I18n.t('rank.2_6')
+    FEAST_GENERAL       = Rank.new 2.7, I18n.t('rank.2_7'), I18n.t('rank.short.feast')
+    FEAST_PROPER        = Rank.new 2.8, I18n.t('rank.2_8'), I18n.t('rank.short.feast')
+    FERIAL_PRIVILEGED   = Rank.new 2.9, I18n.t('rank.2_9')
 
-    MEMORIAL_GENERAL  = Rank.new 3.10, 'Obligatory memorials in the General Calendar', 'memorial'
-    MEMORIAL_PROPER   = Rank.new 3.11, 'Proper obligatory memorials', 'memorial'
-    MEMORIAL_OPTIONAL = Rank.new 3.12, 'Optional memorials', 'optional memorial'
-    FERIAL            = Rank.new 3.13, 'Unprivileged ferials', 'ferial'
+    MEMORIAL_GENERAL  = Rank.new 3.10, I18n.t('rank.3_10'), I18n.t('rank.short.memorial')
+    MEMORIAL_PROPER   = Rank.new 3.11, I18n.t('rank.3_11'), I18n.t('rank.short.memorial')
+    MEMORIAL_OPTIONAL = Rank.new 3.12, I18n.t('rank.3_12'), I18n.t('rank.short.memorial_opt')
+    FERIAL            = Rank.new 3.13, I18n.t('rank.3_13'), I18n.t('rank.short.ferial')
 
     def self.[](priority)
       Rank[priority]
