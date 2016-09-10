@@ -1,5 +1,6 @@
 %w{
 version
+i18n_setup
 enums
 calendar
 temporale

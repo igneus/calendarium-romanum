@@ -356,24 +356,24 @@ module CalendariumRomanum
       @solemnities = {}
 
       {
-        nativity: ['The Nativity of the Lord', nil, nil],
-        holy_family: ['The Holy Family of Jesus, Mary and Joseph', Ranks::FEAST_LORD_GENERAL, nil],
-        mother_of_god: ['Octave Day of Christmas, of Mary, Mother of God', Ranks::SOLEMNITY_GENERAL],
-        epiphany: ['The Epiphany of the Lord', nil, nil],
-        baptism_of_lord: ['The Baptism of the Lord', Ranks::FEAST_LORD_GENERAL, nil],
-        good_friday: ['Friday of the Passion of the Lord', Ranks::TRIDUUM, Colours::RED],
-        holy_saturday: ['Holy Saturday', Ranks::TRIDUUM, nil],
-        easter_sunday: ['Easter Sunday of the Resurrection of the Lord', Ranks::TRIDUUM, nil],
-        pentecost: ['Pentecost Sunday', nil, Colours::RED],
-        holy_trinity: ['The Most Holy Trinity', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        body_blood: ['The Most Holy Body and Blood of Christ', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        sacred_heart: ['The Most Sacred Heart of Jesus', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        christ_king: ['Our Lord Jesus Christ, King of the Universe', Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        nativity: [nil, nil],
+        holy_family: [Ranks::FEAST_LORD_GENERAL, nil],
+        mother_of_god: [Ranks::SOLEMNITY_GENERAL],
+        epiphany: [nil, nil],
+        baptism_of_lord: [Ranks::FEAST_LORD_GENERAL, nil],
+        good_friday: [Ranks::TRIDUUM, Colours::RED],
+        holy_saturday: [Ranks::TRIDUUM, nil],
+        easter_sunday: [Ranks::TRIDUUM, nil],
+        pentecost: [nil, Colours::RED],
+        holy_trinity: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        body_blood: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        sacred_heart: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
+        christ_king: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
       }.each_pair do |method_name, data|
         date = send(method_name)
-        title, rank, colour = data
+        rank, colour = data
         @solemnities[date] = Celebration.new(
-                                             title,
+                                             I18n.t("temporale.solemnity.#{method_name}"),
                                              rank || Ranks::PRIMARY,
                                              colour || SEASON_COLOUR[season(date)]
                                             )

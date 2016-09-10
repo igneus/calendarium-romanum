@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'thor'
+gem 'i18n'
 
 group :test do
   gem 'rspec'
