@@ -23,7 +23,7 @@ and the Calendar
 - [ ] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
 - [ ] additional temporale feasts (Christ the Eternal Priest and similar)
-- [ ] optional transfer of important solemnities on a nearby Sunday
+- [ ] optional transfer of important solemnities to a nearby Sunday
 
 ## Credits
 
@@ -102,29 +102,6 @@ Roman Calendar in English and Latin.
 
 The other files, when layered properly, can be used to assemble
 proper calendar of any diocese in the Czech Republic.
-They were made for the author's practical purposes, but also
-as an example of organization of structured calendar data.
-Data for any other country could be prepared similarly.
-
-There are three layers:
-
-1. country
-2. ecclesiastical province
-3. diocese
-
-The tree of correct combinations looks like this:
-
-* `czech-cs.txt`
-  * `czech-cechy-cs.txt`
-    * `czech-praha-cs.txt`
-    * `czech-hradec-cs.txt`
-    * `czech-litomerice-cs.txt`
-    * `czech-budejovice-cs.txt`
-    * `czech-plzen-cs.txt`
-  * `czech-morava-cs.txt`
-    * `czech-olomouc-cs.txt`
-    * `czech-brno-cs.txt`
-    * `czech-ostrava-cs.txt`
 
 ### Implement custom loading strategy
 
