@@ -23,10 +23,10 @@ module CalendariumRomanum
     SOLEMNITY_PROPER  = Rank.new 1.4, I18n.t('rank.1_4'), I18n.t('rank.short.solemnity')
 
     FEAST_LORD_GENERAL  = Rank.new 2.5, I18n.t('rank.2_5'), I18n.t('rank.short.feast')
-    SUNDAY_UNPRIVILEGED = Rank.new 2.6, I18n.t('rank.2_6')
+    SUNDAY_UNPRIVILEGED = Rank.new 2.6, I18n.t('rank.2_6'), I18n.t('rank.short.sunday')
     FEAST_GENERAL       = Rank.new 2.7, I18n.t('rank.2_7'), I18n.t('rank.short.feast')
     FEAST_PROPER        = Rank.new 2.8, I18n.t('rank.2_8'), I18n.t('rank.short.feast')
-    FERIAL_PRIVILEGED   = Rank.new 2.9, I18n.t('rank.2_9')
+    FERIAL_PRIVILEGED   = Rank.new 2.9, I18n.t('rank.2_9'), I18n.t('rank.short.ferial')
 
     MEMORIAL_GENERAL  = Rank.new 3.10, I18n.t('rank.3_10'), I18n.t('rank.short.memorial')
     MEMORIAL_PROPER   = Rank.new 3.11, I18n.t('rank.3_11'), I18n.t('rank.short.memorial')
