@@ -221,6 +221,12 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
           expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
           expect(c.colour).to eq CR::Colours::WHITE
+
+          @t17 = described_class.new 2016
+          c = @t17.get(12, 30)
+          expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
+          expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Epiphany' do
