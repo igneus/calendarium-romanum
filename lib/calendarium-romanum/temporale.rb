@@ -129,7 +129,13 @@ module CalendariumRomanum
     end
 
     def holy_family(year=nil)
-      sunday_after(nativity(year))
+      year ||= @year
+      xmas = nativity(year)
+      if xmas.sunday?
+        return Date.new(year, 12, 30)
+      else
+        sunday_after(xmas)
+      end
     end
 
     def mother_of_god(year=nil)

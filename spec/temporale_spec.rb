@@ -223,6 +223,14 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
+        context 'when a Sunday does not occur between Dec 25 and Jan 1' do
+          it 'is Holy Family on Friday Dec 30' do
+            @t16 = described_class.new 2016
+            c = @t16.get(12, 30)
+            expect(c.title).to eq 'The Holy Family of Jesus, Mary and Joseph'
+          end
+        end
+
         it 'Epiphany' do
           c = @t13.get(1, 6)
           expect(c.rank).to eq CR::Ranks::PRIMARY
