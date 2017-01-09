@@ -8,7 +8,7 @@
 Ruby gem for
 calendar computations according to the Roman Catholic liturgical
 calendar as instituted by
-[MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.htm) of Paul VI. (AAS 61 (1969), pp. 222-226).
+[MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html) of Paul VI. (AAS 61 (1969), pp. 222-226).
 The rules are defined in General Norms for the Liturgical Year
 and the Calendar
 ([English translation](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM)).
