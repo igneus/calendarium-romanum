@@ -132,7 +132,7 @@ module CalendariumRomanum
       year ||= @year
       xmas = nativity(year)
       if xmas.sunday?
-        return Date.new(year, 12, 30) # and only 1 reading before Gospel
+        return Date.new(year, 12, 30)
       else
         sunday_after(xmas)
       end
