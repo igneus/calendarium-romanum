@@ -1,0 +1,236 @@
+# Calendario Romano Generale
+
+= 1
+2 m : Santi Basilio Magno e Gregorio Nazianzeno, vescovi e dottori della Chiesa
+3 : Santissimo Nome di Gesù
+7 : San Raimondo di Peñafort, sacerdote
+13 : Sant'Ilario di Poitiers, vescovo e dottore della Chiesa
+17 m : Sant'Antonio, abate
+20 R : San Fabiano, papa e martire
+20 R : San Sebastiano, martire
+21 m R : Sant'Agnese, vergine e martire
+22 R : San Vincenzo, diacono e martire
+24 m : San Francesco di Sales, vescovo e dottore della Chiesa
+25 f : Conversione di San Paolo, apostolo
+26 m : Santi Timoteo e Tito, vescovi
+27 : Sant'Angela Merici, vergine
+28 m : San Tommaso d'Aquino, sacerdote e dottore della Chiesa
+31 m : San Giovanni Bosco, sacerdote
+
+= 2
+2 f2.5 : Presentazione del Signore
+3 R : San Biagio, vescovo e martire
+3 : Sant'Oscar o Ansgario, vescovo
+5 m R : Sant'Agata, vergine e martire
+6 m R : San Paolo Miki, sacerdote, e compagni, martiri
+8 : San Girolamo Emiliani, sacerdote
+8 : Santa Giuseppina Bakhita, vergine
+10 m : Santa Scolastica, vergine
+11 : Nostra Signora di Lourdes
+14 m : Santi Cirillo, monaco, e Metodio, vescovo
+17 : Santi sette fondatori dell'ordine dei Servi di Maria
+21 : San Pier Damiani, vescovo e dottore della Chiesa
+22 f : Cattedra di San Pietro, apostolo
+23 m R : San Policarpo, vescovo e martire
+
+= 3
+4 : San Casimiro
+7 m R : Sante Perpetua e Felicita, martiri
+8 : San Giovanni di Dio, religioso
+9 : Santa Francesca Romana, religiosa
+17 : San Patrizio, vescovo
+18 : San Cirillo di Gerusalemme, vescovo e dottore della Chiesa
+19 s : San Giuseppe, sposo della Beata Vergine Maria
+23 : San Turibio de Mogrovejo, vescovo
+25 s : Annunciazione del Signore
+
+= 4
+2 : San Francesco di Paola, eremita
+4 : Sant'Isidoro, vescovo e dottore della Chiesa
+5 : San Vincenzo Ferrer, sacerdote
+7 m : San Giovanni Battista de La Salle, sacerdote
+11 m R : San Stanislao, vescovo e martire
+13 R : San Martino I, papa e martire
+21 : Sant'Anselmo, vescovo e dottore della Chiesa
+23 R : San Giorgio, martire
+23 R : Sant'Adalberto di Praga, vescovo e martire
+24 R : San Fedele di Sigmaringa, sacerdote e martire
+25 f R : San Marco, evangelista
+28 R : San Pietro Chanel, sacerdote e martire
+28 : San Luigi Maria Grignion de Montfort, sacerdote
+29 m : Santa Caterina da Siena
+30 : San Pio V, papa
+
+= 5
+1 : San Giuseppe, lavoratore
+2 m : Sant'Atanasio, vescovo e dottore della Chiesa
+3 f R : Santi Filippo e Giacomo, apostoli
+12 R : Santi Nereo e Achilleo, martiri
+12 R : San Pancrazio, martire
+13 : Nostra Signora di Fatima
+14 f R : San Mattia, apostolo
+18 R : San Giovanni I, papa e martire
+20 : San Bernardino da Siena, sacerdote
+21 R : San Cristoforo Magallanes, sacerdote, e compagni, martiri
+22 : Santa Rita da Cascia, religiosa
+25 : San Beda il Venerabile, sacerdote e dottore della Chiesa
+25 : San Gregorio VII, papa
+25 : Santa Maria Maddalena de' Pazzi, vergine
+26 m : San Filippo Neri, sacerdote
+27 : Sant'Agostino di Canterbury, vescovo
+31 f : Visitazione della Beata Vergine Maria
+
+= 6
+1 m R : San Giustino, martire
+2 R : Santi Marcellino e Pietro, martiri
+3 m R : San Carlo Lwanga e compagni, martiri
+5 m R : San Bonifacio, vescovo e martire
+6 : San Norberto, vescovo
+9 : Sant'Efrem il Siro, diacono e dottore della Chiesa
+11 m R : San Barnaba, apostolo
+13 m : Sant'Antonio da Padova, sacerdote e dottore della Chiesa
+19 : San Romualdo, abate
+21 m : San Luigi Gonzaga, religioso
+22 : San Paolino di Nola, vescovo
+22 R : Santi Giovanni Fisher, vescovo, e Tommaso Moro, martiri
+24 s : Natività di San Giovanni Battista
+27 : San Cirillo di Alessandria, vescovo e dottore della Chiesa
+28 m R : Sant'Ireneo di Lione, vescovo e martire
+29 s R : Santi Pietro e Paolo, apostoli
+30 R : Santi Primi martiri della Chiesa romana
+
+= 7
+3 f R : San Tommaso, apostolo
+4 : Sant'Elisabetta di Portogallo
+5 : Sant'Antonio Maria Zaccaria, sacerdote
+6 R : Santa Maria Goretti, vergine e martire
+9 R : Sant'Agostino Zhao Rong, sacerdote, e compagni, martiri
+11 m : San Benedetto, abate
+13 : Sant'Enrico
+14 : San Camillo de Lellis, sacerdote
+15 m : San Bonaventura, vescovo e dottore della Chiesa
+16 : Beata Vergine Maria del Monte Carmelo
+20 R : Sant'Apollinare, vescovo e martire
+21 : San Lorenzo da Brindisi, sacerdote e dottore della Chiesa
+22 f : Santa Maria Maddalena
+23 : Santa Brigida di Svezia, religiosa
+24 : San Charbel Makhlouf, eremita
+25 f R : San Giacomo, apostolo
+26 m : Santi Gioacchino ed Anna, genitori della Beata Vergine Maria
+29 m R : Santa Marta
+30 : San Pietro Crisologo, vescovo e dottore della Chiesa
+31 m : Sant'Ignazio di Loyola, sacerdote
+
+= 8
+1 m : Sant'Alfonso Maria de' Liguori, vescovo e dottore della Chiesa
+2 : Sant'Eusebio di Vercelli, vescovo
+2 : San Pietro Giuliano Eymard, sacerdote
+4 m : San Giovanni Maria Vianney, sacerdote
+5 : Dedicazione della basilica di Santa Maria Maggiore
+6 f2.5 : Trasfigurazione del Signore
+7 R : San Sisto II, papa, e compagni, martiri
+7 : San Gaetano, sacerdote
+8 m : San Domenico, sacerdote
+9 R : Santa Teresa Benedetta della Croce, vergine e martire
+10 f R : San Lorenzo, diacono e martire
+11 m : Santa Chiara, vergine
+12 : Santa Giovanna Francesca Frémiot de Chantal, religiosa
+13 R : Santi Ponziano, papa, e Ippolito, sacerdote, martiri
+14 m R : San Massimiliano Maria Kolbe, sacerdote e martire
+15 s : Assunzione di Maria
+16 : Santo Stefano d'Ungheria
+19 : San Giovanni Eudes, sacerdote
+20 m : San Bernardo, abate e dottore della Chiesa
+21 m : San Pio X, papa
+22 m : Beata Vergine Maria Regina
+23 : Santa Rosa da Lima, vergine
+24 f R : San Bartolomeo, apostolo
+25 : San Ludovico, re di Francia
+25 : San Giuseppe Calasanzio, sacerdote
+27 m : Santa Monica
+28 m : Sant'Agostino, vescovo e dottore della Chiesa
+29 m R : Martirio di San Giovanni Battista
+
+= 9
+3 m : San Gregorio Magno, papa e dottore della Chiesa
+8 f : Natività della Beata Vergine Maria
+9 : San Pietro Claver, sacerdote
+12 : Santissimo Nome di Maria
+13 m : San Giovanni Crisostomo, vescovo e dottore della Chiesa
+14 f2.5 R : Esaltazione della Santa Croce
+15 m : Beata Vergine Maria Addolorata
+16 m R : Santi Cornelio, papa, e Cipriano vescovo, martiri
+17 : San Roberto Bellarmino, vescovo e dottore della Chiesa
+19 R : San Gennaro, vescovo e martire
+20 m R : Santi Andrea Kim Taegŏn, Paolo Chŏng Hasang e compagni, martiri
+21 f R : San Matteo, apostolo ed evangelista
+23 m : San Pio da Pietrelcina, sacerdote
+26 R : Santi Cosma e Damiano, martiri
+27 m : San Vincenzo de' Paoli, sacerdote
+28 R : San Venceslao, martire
+28 R : San Lorenzo Ruiz, sacerdote, e compagni, martiri
+29 f : Santi Michele, Gabriele e Raffaele, Arcangeli
+30 m : San Girolamo, sacerdote e dottore della Chiesa
+
+= 10
+1 m :  Santa Teresa del Bambino Gesù, vergine e dottore della Chiesa
+2 m : Santi Angeli custodi
+4 m : San Francesco d'Assisi
+6 : San Bruno, sacerdote
+7 m : Beata Vergine Maria del Rosario
+9 R : San Dionigi, vescovo, e compagni, martiri
+9 : San Giovanni Leonardi, sacerdote
+11 : San Giovanni XXIII, papa
+14 R : San Callisto I, papa e martire
+15 m : Santa Teresa di Gesù, vergine e dottore della Chiesa
+16 : Sant'Edvige, religiosa
+16 : Santa Margherita Maria Alacoque, religiosa
+17 m R : Sant'Ignazio di Antiochia, vescovo e martire
+18 f R : San Luca, evangelista
+19 R : Santi Giovanni de Brébeuf, Isacco Jogues e compagni, martiri
+19 : San Paolo della Croce, sacerdote
+22 : San Giovanni Paolo II, papa
+23 : San Giovanni da Capestrano, sacerdote
+24 : Sant'Antonio Maria Claret, vescovo
+28 f R : Santi Simone e Giuda, apostoli
+
+= 11
+1 s : Tutti i Santi
+2 : Commemorazione di tutti i fedeli defunti
+3 R : San Martino de Porres, religioso
+4 m : San Carlo Borromeo, vescovo
+9 f : Dedicazione della basilica Lateranense
+10 m : San Leone Magno, papa e dottore della Chiesa
+11 m R : San Martino di Tours, vescovo
+12 m R : San Giosafat, vescovo e martire
+15 : Sant'Alberto Magno, vescovo e dottore della Chiesa
+16 : Santa Margherita di Scozia
+16 : Santa Gertrude, vergine
+17 m : Santa Elisabetta d'Ungheria, religiosa
+18 : Dedicazione delle basiliche dei Santi Pietro e Paolo, apostoli
+21 m : Presentazione della Beata Vergine Maria
+22 m R : Santa Cecilia, vergine e martire
+23 R : San Clemente I, papa e martire
+23 : San Colombano, abate
+24 m R : Sant'Andrea Dung-Lac e compagni, martiri
+25 : Santa Caterina d'Alessandria, vergine e martire
+30 f R : Sant'Andrea, apostolo
+
+= 12
+3 m : San Francesco Saverio, sacerdote
+4 : San Giovanni Damasceno, sacerdote e dottore della Chiesa
+6 : San Nicola, vescovo
+7 m : Sant'Ambrogio, vescovo e dottore della Chiesa
+8 s : Immacolata Concezione della Beata Vergine Maria
+9 : San Juan Diego Cuauhtlatoatzin
+11 : San Damaso I, papa
+12 : Nostra Signora di Guadalupe
+13 m R : Santa Lucia, vergine e martire
+14 m : San Giovanni della Croce, sacerdote e dottore della Chiesa
+21 : San Pietro Canisio, sacerdote e dottore della Chiesa
+23 : San Giovanni da Kety, sacerdote
+26 f R : Santo Stefano, primo martire
+27 f : San Giovanni, apostolo ed evangelista
+28 f R : Santi Innocenti, martiri
+29 R : San Tommaso Becket, vescovo e martire
+31 : San Silvestro I, papa
