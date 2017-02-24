@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'thor'
 gem 'i18n'
+gem 'rake'
 
 group :test do
   gem 'rspec'

@@ -10,7 +10,7 @@ rvm:
 
 install: bundle install --jobs=3 --deployment --without development
 
-script: bundle exec rspec
+script: bundle exec rake spec
 
 git:
   depth: 3
