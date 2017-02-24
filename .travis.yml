@@ -1,9 +1,9 @@
 language: ruby
 rvm:
   - 2.0.0
-  - 2.3.0
-  - jruby-19mode
-  - rbx-2.7
+  - 2.4.0
+  - jruby-head
+  - rbx-2.2.7
 
 install: bundle install --jobs=3 --deployment --without development
 script: bundle exec rspec
@@ -13,4 +13,5 @@ git:
 
 matrix:
   allow_failures:
-    - rvm: jruby-19mode
+    - rvm: jruby-head
+    - rvm: rbx-2.2.7
