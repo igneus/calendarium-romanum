@@ -1,11 +1,15 @@
 language: ruby
+
+dist: trusty
+
 rvm:
   - 2.0.0
   - 2.4.0
-  - jruby-head
+  - jruby-9.1.5.0
   - rbx-2.2.7
 
 install: bundle install --jobs=3 --deployment --without development
+
 script: bundle exec rspec
 
 git:
@@ -13,5 +17,5 @@ git:
 
 matrix:
   allow_failures:
-    - rvm: jruby-head
+    - rvm: jruby-9.1.5.0
     - rvm: rbx-2.2.7
