@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.0] 2017-02-25
+
+### Fixed
+- computing date of Holy Family when there is no Sunday between December 25th and January 1st (by Eddy Mulyono @eddymul)
+- missing information for some celebrations added to the General Roman Calendar in English (by Andrea Ferrato @ferra-andre)
+
+### Added
+- General Roman Calendar in Italian (by Andrea Ferrato @ferra-andre)
+- `CalendariumRomanum::SanctoraleFactory` for loading of layered sanctorale calendars
+- `Rank#short_desc` value for unprivileged Sunday and privileged ferial
+- Temporale feast titles and some other strings can be translated (gem `i18n` used)
+
+### Changed
+- [breaking change] `SanctoraleLoader#load` argument order changed
+
 ## [0.0.3] 2016-08-27
 
 ### Fixed
