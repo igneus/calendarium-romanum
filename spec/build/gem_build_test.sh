@@ -15,7 +15,7 @@ VERSION=`ruby -Ilib -rcalendarium-romanum/version -e 'puts CalendariumRomanum::V
 GEM=calendarium-romanum-$VERSION.gem
 
 rvm gemset create $GEMSET
-rvm @$GEMSET do gem install $GEM
+rvm @$GEMSET do gem install --no-document $GEM
 
 ## test loading in a program
 rvm @$GEMSET do ruby -rcalendarium-romanum -e 'p CalendariumRomanum::Ranks::FERIAL'
