@@ -1,0 +1,37 @@
+cs:
+  temporale:
+    solemnity:
+      nativity: Narození Páně
+      holy_family: Svaté rodiny Ježíše, Marie a Josefa
+      mother_of_god: Oktáv Narození Páně. Matky Boží, Panny Marie
+      epiphany: Zjevení Páně
+      baptism_of_lord: Křtu Páně
+      good_friday: Velký pátek
+      holy_saturday: Bílá sobota
+      easter_sunday: Zmrtvýchvstání Páně
+      pentecost: Seslání Ducha svatého
+      holy_trinity: Nejsvětější Trojice
+      body_blood: Těla a krve Páně
+      sacred_heart: Nejsvětějšího srdce Ježíšova
+      christ_king: Ježíše Krista krále
+  rank:
+    '1_1': Velikonoční triduum
+    '1_2': Primární liturgické dny
+    '1_3': Slavnosti zapsané ve všeobecném kalendáři
+    '1_4': Vlastní slavnosti
+    '2_5': Svátky Páně zapsané ve všeobecném kalendáři
+    '2_6': Neprivilegované neděle
+    '2_7': Svátky svatých zapsané ve všeobecném kalendáři
+    '2_8': Vlastní svátky
+    '2_9': Privilegované ferie
+    '3_10': Závazné památky všeobecného kalendáře
+    '3_11': Vlastní závazné památky
+    '3_12': Nezávazné památky
+    '3_13': Neprivilegované ferie
+    short:
+      solemnity: slavnost
+      feast: svátek
+      sunday: neděle
+      memorial: památka
+      memorial_opt: nezávazná památka
+      ferial: ferie
