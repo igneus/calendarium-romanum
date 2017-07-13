@@ -275,8 +275,9 @@ module CalendariumRomanum
         week += 1
 
         if date > pentecost
-          # gap made by Lent and Easter time
-          week -= 12
+          weeks_after_date = date_difference(first_advent_sunday(@year + 1), date) / 7
+          week = 34 - weeks_after_date
+          week += 1 if date.sunday?
         end
       end
 

@@ -97,8 +97,60 @@ describe CR::Calendar do
               expect(@c.day(2014, 1, 13).season_week).to eq 1
             end
 
-            it 'Continue after Pentecost' do
-              expect(@c.day(2014, 6, 9).season_week).to eq 10
+            describe 'after Pentecost' do
+              it '2014' do
+                c = described_class.new(2013)
+                expect(c.day(2014, 6, 9).season_week).to eq 10
+              end
+
+              it '2015' do
+                c = described_class.new(2014)
+                expect(c.day(2015, 5, 25).season_week).to eq 8
+              end
+
+              it '2016' do
+                c = described_class.new(2015)
+                expect(c.day(2016, 5, 16).season_week).to eq 7
+              end
+
+              it '2017' do
+                c = described_class.new(2016)
+                expect(c.day(2017, 6, 5).season_week).to eq 9
+              end
+
+              describe 'works correctly for the whole week' do
+                describe 'first' do
+                  Date.new(2014, 6, 9).upto(Date.new(2014, 6, 14)) do |date|
+                    it date do
+                      expect(@c.day(date).season_week).to eq 10
+                    end
+                  end
+                end
+
+                describe 'second' do
+                  Date.new(2014, 6, 15).upto(Date.new(2014, 6, 21)) do |date|
+                    it date do
+                      expect(@c.day(date).season_week).to eq 11
+                    end
+                  end
+                end
+
+                describe 'second last'  do
+                  Date.new(2014, 11, 16).upto(Date.new(2014, 11, 22)) do |date|
+                    it date do
+                      expect(@c.day(date).season_week).to eq 33
+                    end
+                  end
+                end
+
+                describe 'last' do
+                  Date.new(2014, 11, 23).upto(Date.new(2014, 11, 29)) do |date|
+                    it date do
+                      expect(@c.day(date).season_week).to eq 34
+                    end
+                  end
+                end
+              end
             end
           end
         end
