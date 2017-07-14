@@ -191,12 +191,20 @@ module CalendariumRomanum
       end
     end
 
+    def palm_sunday(year=nil)
+      return easter_sunday(year) - 7
+    end
+
     def good_friday(year=nil)
-      return friday_before(easter_sunday(year))
+      return easter_sunday(year) - 2
     end
 
     def holy_saturday(year=nil)
-      return saturday_before(easter_sunday(year))
+      return easter_sunday(year) - 1
+    end
+
+    def ascension(year=nil)
+      return pentecost(year) - 10
     end
 
     def pentecost(year=nil)
@@ -363,15 +371,18 @@ module CalendariumRomanum
       @solemnities = {}
 
       {
-        nativity: [nil, nil],
+        nativity: [Ranks::PRIMARY, nil],
         holy_family: [Ranks::FEAST_LORD_GENERAL, nil],
         mother_of_god: [Ranks::SOLEMNITY_GENERAL],
-        epiphany: [nil, nil],
+        epiphany: [Ranks::PRIMARY, nil],
         baptism_of_lord: [Ranks::FEAST_LORD_GENERAL, nil],
+        ash_wednesday: [Ranks::PRIMARY, nil],
         good_friday: [Ranks::TRIDUUM, Colours::RED],
         holy_saturday: [Ranks::TRIDUUM, nil],
+        palm_sunday: [Ranks::PRIMARY, Colours::RED],
         easter_sunday: [Ranks::TRIDUUM, nil],
-        pentecost: [nil, Colours::RED],
+        ascension: [Ranks::PRIMARY, Colours::WHITE],
+        pentecost: [Ranks::PRIMARY, Colours::RED],
         holy_trinity: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
         body_blood: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
         sacred_heart: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
@@ -381,7 +392,7 @@ module CalendariumRomanum
         rank, colour = data
         @solemnities[date] = Celebration.new(
                                              I18n.t("temporale.solemnity.#{method_name}"),
-                                             rank || Ranks::PRIMARY,
+                                             rank,
                                              colour || SEASON_COLOUR[season(date)]
                                             )
       end

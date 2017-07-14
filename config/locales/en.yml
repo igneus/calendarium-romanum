@@ -6,9 +6,12 @@ en:
       mother_of_god: Octave Day of Christmas, of Mary, Mother of God
       epiphany: The Epiphany of the Lord
       baptism_of_lord: The Baptism of the Lord
+      ash_wednesday: Ash Wednesday
+      palm_sunday: Palm Sunday of the Passion of the Lord
       good_friday: Friday of the Passion of the Lord
       holy_saturday: Holy Saturday
       easter_sunday: Easter Sunday of the Resurrection of the Lord
+      ascension: Ascension of the Lord
       pentecost: Pentecost Sunday
       holy_trinity: The Most Holy Trinity
       body_blood: The Most Holy Body and Blood of Christ
@@ -27,7 +30,7 @@ en:
     '3_10': Obligatory memorials in the General Calendar
     '3_11': Proper obligatory memorials
     '3_12': Optional memorials
-    '3_13': Unprivileged ferials
+    '3_13': Ferials
     short:
       solemnity: solemnity
       feast: feast

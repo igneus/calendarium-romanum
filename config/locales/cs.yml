@@ -6,9 +6,12 @@ cs:
       mother_of_god: Oktáv Narození Páně. Matky Boží, Panny Marie
       epiphany: Zjevení Páně
       baptism_of_lord: Křtu Páně
+      ash_wednesday: Popeleční středa
+      palm_sunday: Květná neděle
       good_friday: Velký pátek
       holy_saturday: Bílá sobota
       easter_sunday: Zmrtvýchvstání Páně
+      ascension: Nanebevstoupení Páně
       pentecost: Seslání Ducha svatého
       holy_trinity: Nejsvětější Trojice
       body_blood: Těla a krve Páně
@@ -27,7 +30,7 @@ cs:
     '3_10': Závazné památky všeobecného kalendáře
     '3_11': Vlastní závazné památky
     '3_12': Nezávazné památky
-    '3_13': Neprivilegované ferie
+    '3_13': Ferie
     short:
       solemnity: slavnost
       feast: svátek

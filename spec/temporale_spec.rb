@@ -245,10 +245,25 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
+        it 'Ash Wednesday' do
+          c = @t13.get(3, 5)
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.title).to eq 'Ash Wednesday'
+          expect(c.colour).to eq CR::Colours::VIOLET
+        end
+
+        it 'Palm Sunday' do
+          c = @t13.get(4, 13)
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.title).to eq 'Palm Sunday of the Passion of the Lord'
+          expect(c.colour).to eq CR::Colours::RED
+        end
+
         it 'Good Friday' do
           c = @t13.get(4, 18)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to eq 'Friday of the Passion of the Lord'
+          expect(c.colour).to eq CR::Colours::RED
         end
 
         it 'Holy Saturday' do
@@ -262,11 +277,20 @@ describe CR::Temporale do
           c = @t13.get(4, 20)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to eq 'Easter Sunday of the Resurrection of the Lord'
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'day in the Easter Octave' do
           c = @t13.get(4, 22)
           expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.colour).to eq CR::Colours::WHITE
+        end
+
+        it 'Ascension' do
+          c = @t13.get(5, 29)
+          expect(c.rank).to eq CR::Ranks::PRIMARY
+          expect(c.title).to eq 'Ascension of the Lord'
+          expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Pentecost' do
