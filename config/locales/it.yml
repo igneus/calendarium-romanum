@@ -1,0 +1,40 @@
+it:
+  temporale:
+    solemnity:
+      nativity: Natale del Signore
+      holy_family: Santa Famiglia di Gesù, Maria e Giuseppe
+      mother_of_god: Ottava di Natale. Maria Santissima Madre di Dio
+      epiphany: Epifania del Signore
+      baptism_of_lord: Battesimo del Signore
+      ash_wednesday:
+      palm_sunday: Domenica delle palme
+      good_friday: Venerdì santo
+      holy_saturday: Sabato santo
+      easter_sunday: Domenica di Resurrezione
+      ascension: Ascensione di Gesù
+      pentecost: Domenica Pentecoste
+      holy_trinity: Santissima Trinità
+      body_blood: Santissimo Corpo e Sangue di Cristo
+      sacred_heart: Sacro Cuore di Gesù
+      christ_king: "Nostro Signore Gesù Cristo Re dell'universo"
+  rank:
+    '1_1': Easter triduum
+    '1_2': Primary liturgical days
+    '1_3': Solemnities in the General Calendar
+    '1_4': Proper solemnities
+    '2_5': Feasts of the Lord in the General Calendar
+    '2_6': Unprivileged Sundays
+    '2_7': Feasts of saints in the General Calendar
+    '2_8': Proper feasts
+    '2_9': Privileged ferials
+    '3_10': Obligatory memorials in the General Calendar
+    '3_11': Proper obligatory memorials
+    '3_12': Optional memorials
+    '3_13': Ferials
+    short:
+      solemnity: solennità
+      feast: festa
+      sunday: domenica
+      memorial: memoria
+      memorial_opt: memoria facoltative
+      ferial: feria
