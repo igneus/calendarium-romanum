@@ -51,7 +51,13 @@ module CalendariumRomanum
     attr_reader :rank
     def_delegators :@rank, :solemnity?, :feast?, :memorial?
 
-    attr_reader :title
+    def title
+      if @title.respond_to? :call
+        @title.call
+      else
+        @title
+      end
+    end
 
     attr_reader :colour
     alias_method :color, :colour

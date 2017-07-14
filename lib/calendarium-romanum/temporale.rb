@@ -391,7 +391,7 @@ module CalendariumRomanum
         date = send(method_name)
         rank, colour = data
         @solemnities[date] = Celebration.new(
-                                             I18n.t("temporale.solemnity.#{method_name}"),
+                                             proc { I18n.t("temporale.solemnity.#{method_name}") },
                                              rank,
                                              colour || SEASON_COLOUR[season(date)]
                                             )
