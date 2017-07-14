@@ -1,0 +1,40 @@
+la:
+  temporale:
+    solemnity:
+      nativity: In Nativitate Domini
+      holy_family: Sanctae Familiae Iesu, Mariae et Ioseph
+      mother_of_god: In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae
+      epiphany: In Epiphania Domini
+      baptism_of_lord: In Baptismate Domini
+      ash_wednesday: Feria IV Cinerum
+      palm_sunday: Dominica in Palmis de Passione Domini
+      good_friday: Feria VI in Passione Domini
+      holy_saturday: Sabbato sancto
+      easter_sunday: Dominica Paschae in Resurrectione Domini
+      ascension: In Ascensione Domini
+      pentecost: Dominica Pentecostes
+      holy_trinity: Sanctissimae Trinitatis
+      body_blood: Sanctissimi Corporis et Sanguinis Christi
+      sacred_heart: Sacratissimi Cordis Iesu
+      christ_king: Domini nostri Iesu Christi universorum regis
+  rank:
+    '1_1': Triduum paschale
+    '1_2': Dies liturgici primarii
+    '1_3': Sollemnitates in Calendario generali inscriptae
+    '1_4': Sollemnitates propriae
+    '2_5': Festa Domini in Calendario generali inscripta
+    '2_6': Dominicae temporis Nativitatis et dominicae per annum
+    '2_7': Festa sanctorum in Calendario generali inscripta
+    '2_8': Festa propria
+    '2_9': Feriae privilegiatae
+    '3_10': Memoriae obligatoriae in Calendario generali inscriptae
+    '3_11': Memoriae obligatoriae propriae
+    '3_12': Memoriae ad libitum
+    '3_13': Feriae
+    short:
+      solemnity: sollemnitas
+      feast: festum
+      sunday: dominica
+      memorial: memoria
+      memorial_opt: memoria ad libitum
+      ferial: feria
