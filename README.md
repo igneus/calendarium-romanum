@@ -138,6 +138,27 @@ day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000010deea8 @title
 (Note that this time some typing was saved by *including*
 the `CalendariumRomanum` module into the current namespace.)
 
+## I18n, or, how to fix names of temporale feasts
+
+One drawback of the current implementation is that names
+of *temporale* feasts are totally independent of *sanctorale* feast
+names. They are hardcoded in the gem, as [i18n][]
+[translation strings][translations].
+
+When you load *sanctorale* data in your favourite language,
+the `Calendar` will by default still produce *temporale*
+feasts with names in English.
+This can be fixed by changing locale to match your *sanctorale*
+data.
+
+`I18n.locale = :la # or :it, :cs`
+
+The gem ships with English, Latin, Italian and Czech translation.
+Contributed translations to other languages are most welcome.
+
 ## Run tests
 
 `rake spec`
+
+[i18n]: https://github.com/svenfuchs/i18n
+[translations]: /tree/master/config/locales
