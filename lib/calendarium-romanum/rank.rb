@@ -2,14 +2,10 @@ module CalendariumRomanum
   class Rank
     include Comparable
 
-    @@instances = {}
-
     def initialize(priority=nil, desc=nil, short_desc=nil)
       @priority = priority
       @desc = desc
       @short_desc = short_desc
-
-      @@instances[self.priority] = self
     end
 
     attr_reader :priority
@@ -27,10 +23,6 @@ module CalendariumRomanum
 
     def <=>(b)
       b.priority <=> self.priority
-    end
-
-    def self.[](priority)
-      @@instances[priority]
     end
 
     def solemnity?
