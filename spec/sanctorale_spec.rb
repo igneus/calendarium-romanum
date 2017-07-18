@@ -30,7 +30,7 @@ describe CR::Sanctorale do
         [
          'S. Fabiani, papae et martyris',
          'S. Sebastiani, martyris'
-        ].each {|t| @s.add 1, 20, CR::Celebration.new(t) }
+        ].each {|t| @s.add 1, 20, CR::Celebration.new(t, CR::Ranks::MEMORIAL_OPTIONAL) }
         expect(@s.get(1, 20).size).to eq 2
       end
     end
@@ -56,6 +56,29 @@ describe CR::Sanctorale do
 
     it 'does not add non-solemnity to solemnities' do
       expect { @s.add 1, 13, CR::Celebration.new('S. Nullius') }.not_to change { @s.solemnities.size }
+    end
+
+    describe 'multiple celebrations on a single day' do
+      it 'succeeds for any number of optional memorials' do
+        expect do
+          @s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_OPTIONAL)
+          @s.add 1, 13, CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_OPTIONAL)
+        end.not_to raise_exception
+      end
+
+      it 'fails when adding a non-optional memorial' do
+        expect do
+          @s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_OPTIONAL)
+          @s.add 1, 13, CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_GENERAL)
+        end.to raise_exception ArgumentError
+      end
+
+      it 'fails when adding to a non-optional memorial' do
+        expect do
+          @s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_GENERAL)
+          @s.add 1, 13, CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_OPTIONAL)
+        end.to raise_exception ArgumentError
+      end
     end
   end
 
