@@ -66,6 +66,9 @@ element, but in case of optional celebrations (several optional
 memorials occurring on a ferial) it may have two or more.
 
 ```ruby
+date = Date.new(2016, 8, 19)
+calendar = CalendariumRomanum::Calendar.for_day(date)
+day = calendar.day(date)
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x00000001741c78 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>]
 ```
 
@@ -78,12 +81,17 @@ colour.
 Actually, no. Not yet. We need to load some calendar data first:
 
 ```ruby
-loader = CalendariumRomanum::SanctoraleLoader.new
+CR = CalendariumRomanum
+loader = CR::SanctoraleLoader.new
 sanctorale = loader.load_from_file 'data/universal-en.txt' # insert path to your data file
-calendar = CalendariumRomanum::Calendar.for_day(Date.today, sanctorale)
-day = calendar.day(Date.new(2016, 8, 19))
+date = Date.new(2016, 8, 19)
+calendar = CR::Calendar.for_day(date, sanctorale)
+day = calendar.day(date)
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000016ed330 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x00000001715790 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
+
+(Note how we saved some typing by defining new constant `CR`
+referencing the `CalendariumRomanum` module.)
 
 Unless a sanctorale is loaded, `Calendar` only counts with
 temporale feasts, Sundays and ferials.
@@ -119,16 +127,16 @@ include CalendariumRomanum
 sanctorale = Sanctorale.new
 celebration = Celebration.new('Saint John Eudes, priest', Ranks::MEMORIAL_OPTIONAL, Colours::WHITE)
 sanctorale.add 8, 19, celebration
-calendar = Calendar.for_day(Date.today, sanctorale)
-```
 
-Now our `Sanctorale` knows one feast and the `Calendar` resolves
-it correctly:
+date = Date.new(2016, 8, 19)
+calendar = Calendar.for_day(date, sanctorale)
 
-```ruby
-day = calendar.day(Date.new(2016, 8, 19))
+day = calendar.day(date)
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000010deea8 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x000000010fec08 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
+
+(Note that this time some typing was saved by *including*
+the `CalendariumRomanum` module into the current namespace.)
 
 ## Run tests
 
