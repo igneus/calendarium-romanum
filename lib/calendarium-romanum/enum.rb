@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module CalendariumRomanum
   # Utility class for definition of enumerated "types"
   class Enum
