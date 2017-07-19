@@ -214,7 +214,7 @@
 23 R : Saint Clement I, pope and martyr
 23 : Saint Columban, religious
 24 m R : Saint Andrew Dung Lac and his companions, martyrs
-25 : Saint Catherine of Alexandria
+25 R : Saint Catherine of Alexandria
 30 f R : Saint Andrew the Apostle
 
 = 12

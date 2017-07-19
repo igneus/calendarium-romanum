@@ -93,8 +93,7 @@
 19 : S. Romualdi, abbatis
 21 m :  S Aloisii Gonzaga, religiosi
 22 : S. Paulini Nolani
-22 : Ss. Ioannis Fisher, episcopi,
-22 R : et Thomae More, martyrum
+22 R : Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum
 24 s :  IN NATIVITATE S. IOANNIS BAPTISTAE
 27 : S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris
 28 m R :  S. Irenaei, episcopi et martyris
@@ -106,7 +105,7 @@
 4 : S. Elisabeth Lusitaniae
 5 : S. Antonii Mariae Zaccaria, presbyteri
 6 R : S. Mariae Goretti, virginis et martyris
-9 : Ss. Augustini Zhao Rong, presbyteri
+9 R : Ss. Augustini Zhao Rong, presbyteri
 11 m :  S. Benedicti, abbatis
 13 : S. Henrici
 14 : S. Camilli de Lellis, presbyteri

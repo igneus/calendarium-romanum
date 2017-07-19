@@ -213,7 +213,7 @@
 23 R : San Clemente I, papa e martire
 23 : San Colombano, abate
 24 m R : Sant'Andrea Dung-Lac e compagni, martiri
-25 : Santa Caterina d'Alessandria, vergine e martire
+25 R : Santa Caterina d'Alessandria, vergine e martire
 30 f R : Sant'Andrea, apostolo
 
 = 12
