@@ -19,10 +19,10 @@ module CalendariumRomanum
                  }
     COLOUR_CODES = {
                     nil => Colours::WHITE,
-                    'W' => Colours::WHITE,
-                    'V' => Colours::VIOLET,
-                    'G' => Colours::GREEN,
-                    'R' => Colours::RED
+                    'w' => Colours::WHITE,
+                    'v' => Colours::VIOLET,
+                    'g' => Colours::GREEN,
+                    'r' => Colours::RED
                    }
 
     # dest should be a Sanctorale,
@@ -50,7 +50,7 @@ module CalendariumRomanum
         end
 
         # celebration record
-        m = l.match /^((\d+)\/)?(\d+)\s*(([mfs])(\d\.\d+)?)?\s*([WVRG])?\s*:(.*)$/
+        m = l.match /^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i
         if m.nil?
           raise error("Syntax error, line skipped '#{l}'", line_num)
           next
@@ -61,7 +61,7 @@ module CalendariumRomanum
         day = day.to_i
         month = month.to_i
 
-        rank = RANK_CODES[rank_char]
+        rank = RANK_CODES[rank_char && rank_char.downcase]
         if rank.nil?
           raise error("Invalid celebration rank code #{rank_char}", line_num)
         end
@@ -72,7 +72,7 @@ module CalendariumRomanum
 
           if rank_by_num.nil?
             raise error("Invalid celebration rank code #{rank_num}", line_num)
-          elsif rank.priority.to_i != rank_by_num.priority.to_i
+          elsif rank_char && (rank.priority.to_i != rank_by_num.priority.to_i)
             raise error("Invalid combination of rank letter #{rank_char.inspect} and number #{rank_num}.", line_num)
           end
 
@@ -82,7 +82,7 @@ module CalendariumRomanum
         dest.add month, day, Celebration.new(
                                              title.strip,
                                              rank,
-                                             COLOUR_CODES[colour]
+                                             COLOUR_CODES[colour && colour.downcase]
                                             )
       end
 

@@ -65,12 +65,41 @@ describe CR::SanctoraleLoader do
         @l.load_from_string str, @s
         expect(@s.get(4, 25).first.colour).to eq CR::Colours::RED
       end
+
+      it 'sets colour if specified (lowercase)' do
+        str = '4/25 f r :  S. Marci, evangelistae'
+        @l.load_from_string str, @s
+        expect(@s.get(4, 25).first.colour).to eq CR::Colours::RED
+      end
     end
 
     describe 'rank' do
+      # say we specify a proper calendar of a church dedicated to St. George
+
+      it 'sets rank if specified' do
+
+        str = '4/23 s R : S. Georgii, martyris'
+        @l.load_from_string str, @s
+        celeb = @s.get(4, 23).first
+        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
+      end
+
+      it 'sets rank if specified (uppercase)' do
+        str = '4/23 S R : S. Georgii, martyris'
+        @l.load_from_string str, @s
+        celeb = @s.get(4, 23).first
+        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
+      end
+
       it 'sets exact rank if specified' do
-        # say we specify a proper calendar of a church dedicated to St. George
         str = '4/23 s1.4 R : S. Georgii, martyris'
+        @l.load_from_string str, @s
+        celeb = @s.get(4, 23).first
+        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_PROPER
+      end
+
+      it 'sets exact rank if specified only by number' do
+        str = '4/23 1.4 R : S. Georgii, martyris'
         @l.load_from_string str, @s
         celeb = @s.get(4, 23).first
         expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_PROPER
