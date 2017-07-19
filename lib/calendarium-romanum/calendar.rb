@@ -33,7 +33,7 @@ module CalendariumRomanum
 
         elsif args.size == 1 then
           a = args.first
-          unless a.is_a? Date or a.is_a? DateTime
+          unless a.is_a? Date
             raise ex
           end
           return a
@@ -75,6 +75,9 @@ module CalendariumRomanum
       return year == obj.year
     end
 
+    # accepts date information represented as
+    # Date, DateTime, or two to three integers
+    # (month - day or year - month - day);
     # returns filled Day for the specified day
     def day(*args)
       if args.size == 2

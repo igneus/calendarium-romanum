@@ -55,6 +55,9 @@ module CalendariumRomanum
     end
 
     def range_check(date)
+      # necessary in order to handle Date correctly
+      date = date.to_date if date.class != Date
+
       unless date_range.include? date
         raise RangeError.new "Date out of range #{date}"
       end

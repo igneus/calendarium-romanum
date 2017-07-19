@@ -43,12 +43,42 @@ describe CR::Calendar do
     end
 
     describe '#day' do
-      it 'returns a Day' do
-        @c.day(2013, 12, 10).should be_a CR::Day
-      end
+      describe 'received arguments' do
+        describe 'Date' do
+          it 'returns a Day' do
+            @c.day(Date.new(2013, 12, 10)).should be_a CR::Day
+          end
+        end
 
-      it 'inserts correct year if not given' do
-        expect(@c.day(12, 10).date).to eq Date.new(2013, 12, 10)
+        describe 'DateTime' do
+          it 'returns a Day' do
+            @c.day(DateTime.new(2013, 12, 10, 12, 10, 0)).should be_a CR::Day
+          end
+        end
+
+        describe 'three Integers' do
+          it 'returns a Day' do
+            @c.day(2013, 12, 10).should be_a CR::Day
+          end
+        end
+
+        describe 'two integers' do
+          describe 'autumn' do
+            it 'supplies year' do
+              day = @c.day(12, 10)
+              expect(day).to be_a CR::Day
+              expect(day.date).to eq Date.new(2013, 12, 10)
+            end
+          end
+
+          describe 'spring' do
+            it 'supplies year' do
+              day = @c.day(4, 10)
+              expect(day).to be_a CR::Day
+              expect(day.date).to eq Date.new(2014, 4, 10)
+            end
+          end
+        end
       end
 
       it 'throws RangeError if given date not included in the year' do
