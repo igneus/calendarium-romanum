@@ -1,6 +1,9 @@
 module CalendariumRomanum
+  # Utility class for definition of enumerated "types"
   class Enum
     class << self
+      extend Forwardable
+
       def values(index_by: nil, &blk)
         defined?(@indexed) && raise(RuntimeError.new('initialized repeatedly'))
 
@@ -21,13 +24,8 @@ module CalendariumRomanum
         @all
       end
 
-      def each
-        @all.each {|i| yield i }
-      end
-
-      def [](key)
-        @indexed[key]
-      end
+      def_delegators :@all, :each
+      def_delegators :@indexed, :[]
     end
   end
 end
