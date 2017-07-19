@@ -96,6 +96,23 @@ referencing the `CalendariumRomanum` module.)
 Unless a sanctorale is loaded, `Calendar` only counts with
 temporale feasts, Sundays and ferials.
 
+### 4. Isn't there an easier way to get sanctorale data?
+
+Yes! There are a few data files bundled in the gem.
+You can explore them by iterating over `CalendariumRomanum::Data.all`.
+The more interesting ones are identified by their proper constants,
+e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
+Bundled data files can be loaded by a handy shortcut method
+`#load`:
+
+```ruby
+CR = CalendariumRomanum
+sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load # easy loading
+date = Date.new(2016, 8, 19)
+calendar = CR::Calendar.for_day(date, sanctorale)
+day = calendar.day(date)
+```
+
 ## Sanctorale Data
 
 ### Use prepared data or create your own

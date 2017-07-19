@@ -4,6 +4,7 @@ i18n_setup
 rank
 enum
 enums
+data
 calendar
 temporale
 sanctorale
