@@ -100,10 +100,9 @@ temporale feasts, Sundays and ferials.
 
 Yes! There are a few data files bundled in the gem.
 You can explore them by iterating over `CalendariumRomanum::Data.all`.
-The more interesting ones are identified by their proper constants,
-e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
-Bundled data files can be loaded by a handy shortcut method
-`#load`:
+The more interesting ones are additionally identified by their proper
+constants, e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
+Bundled data files can be loaded by a handy shortcut method `#load`:
 
 ```ruby
 CR = CalendariumRomanum
