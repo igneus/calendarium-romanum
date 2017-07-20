@@ -18,7 +18,7 @@ rvm gemset create $GEMSET
 rvm @$GEMSET do gem install --no-document $GEM
 
 ## test loading in a program
-rvm @$GEMSET do ruby -rcalendarium-romanum -e 'p CalendariumRomanum::Ranks::FERIAL'
+rvm @$GEMSET do calendariumrom query
 echo $?
 
 ## clean
