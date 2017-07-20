@@ -5,6 +5,50 @@ module CalendariumRomanum
   class CLI < Thor
     include CalendariumRomanum::Util
 
+    desc 'query 2007-06-05', 'show calendar information for a specified date'
+    option :calendar, default: 'universal-en', aliases: :c
+    option :locale, default: 'en', aliases: :l
+    def query(date_str=nil)
+      I18n.locale = options[:locale]
+
+      data_file = Data[options[:calendar]]
+      if data_file.nil?
+        STDERR.puts 'Invalid calendar. See subcommand `calendars` for valid options.'
+        exit 1
+      end
+      sanctorale = data_file.load
+
+      date =
+        if date_str
+          begin
+            Date.parse(date_str)
+          rescue ArgumentError
+            STDERR.puts 'Invalid date.'
+            exit 1
+          end
+        else
+          Date.today
+        end
+      calendar = Calendar.for_day(date, sanctorale)
+      day = calendar.day date
+
+      puts date
+      puts "season: #{day.season}"
+      puts
+
+      rank_length = day.celebrations.collect {|c| c.rank.short_desc.size }.max
+      day.celebrations.each do |c|
+        print c.rank.short_desc.rjust(rank_length)
+        print ' : '
+        puts c.title
+      end
+    end
+
+    desc 'calendars', 'lists calendars available for querying'
+    def calendars
+      Data.each {|c| puts c.siglum }
+    end
+
     desc 'errors FILE1, ...', 'finds errors in sanctorale data files'
     def errors(*files)
       loader = SanctoraleLoader.new
