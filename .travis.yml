@@ -6,7 +6,6 @@ rvm:
   - 2.0.0
   - 2.4.1
   - jruby-head
-  - rubinius-3.15
 
 install: bundle install --jobs=3 --deployment --without development
 
@@ -18,4 +17,3 @@ git:
 matrix:
   allow_failures:
     - rvm: jruby-head
-    - rvm: rubinius-3.15
