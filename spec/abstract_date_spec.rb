@@ -25,6 +25,23 @@ describe CR::AbstractDate do
     end
   end
 
+  # test .new through .from_date on a complete leap year
+  describe '.from_date' do
+    YEAR = 2000
+
+    it 'the test year is leap' do
+      expect(Date.new(YEAR)).to be_leap
+    end
+
+    CR::Util::Year.new(YEAR).each do |date|
+      it date.to_s do
+        expect do
+          AD.from_date date
+        end.not_to raise_exception
+      end
+    end
+  end
+
   describe '#<' do
     it { expect(AD.new(1, 1)).to be < AD.new(1, 2) }
     it { expect(AD.new(1, 1)).to be < AD.new(2, 1) }

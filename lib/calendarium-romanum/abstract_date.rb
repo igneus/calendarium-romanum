@@ -10,6 +10,10 @@ module CalendariumRomanum
       @day = day
     end
 
+    def self.from_date(date)
+      new(date.month, date.day)
+    end
+
     attr_reader :month, :day
 
     def <=>(other)
@@ -41,7 +45,7 @@ module CalendariumRomanum
 
       day_lte = case month
                 when 2
-                  28
+                  29
                 when 1, 3, 5, 7, 8, 10, 12
                   31
                 else
