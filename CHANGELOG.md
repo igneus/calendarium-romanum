@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.0] 2017-07-20
+
+### Fixed
+
+- numbering of Ordinary Time Sundays after Pentecost
+- `Calendar#day` when an instance of `DateTime` is supplied as argument
+- minor fixes in data files
+- `calendariumrom` executable (broken in recent releases)
+
+### Added
+
+- missing *temporale* feast days: Ash Wednesday, Palm Sunday, Ascension,
+- new bundled locales: Latin, Italian, Czech
+- contents of `Seasons`, `Ranks` and `Colours` can be explored via `each` and `all`
+- bundled data files easily accessible through `CalendariumRomanum::Data`
+
+### Changed
+
+- `Rank` never more inherits from `Struct`
+- `Seasons`, `Ranks` and `Colours` changed from modules to classes
+- `Sanctorale` raises `ArgumentError` on attempt to load two celebrations of rank other than optional memorial on a single day
+- data file format: rank letter is optional when the rank is specified by number
+- data file format: rank and colour letters are treated case-insensitively
+
 ## [0.1.0] 2017-02-25
 
 ### Fixed
