@@ -11,11 +11,11 @@ Gem::Specification.new do |s|
 
   s.authors     = ['Jakub Pavlík']
   s.email       = 'jkb.pavlik@gmail.com'
-  s.files       = %w(bin/* lib/*.rb lib/*/*.rb spec/*.rb config/**/*)
+  s.files       = %w(lib/*.rb lib/*/*.rb data/* spec/*.rb config/**/*)
                   .collect {|glob| Dir[glob] }
                   .flatten
                   .reject {|path| path.end_with? '~' } # Emacs backups
-  s.executables = []
+  s.executables = %w(calendariumrom)
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
 
