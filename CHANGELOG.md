@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1] 2017-07-21
+
+### Fixed
+
+- `AbstractDate` validity checks refusing 29th February
+
 ## [0.2.0] 2017-07-20
 
 ### Fixed
