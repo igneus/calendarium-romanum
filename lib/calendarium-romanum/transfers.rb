@@ -4,9 +4,11 @@ module CalendariumRomanum
   class Transfers
     def initialize(temporale, sanctorale)
       @transferred = {}
+      @temporale = temporale
+      @sanctorale = sanctorale
 
       dates = sanctorale.solemnities.keys.collect do |abstract_date|
-        temporale.concretize_abstract_date abstract_date
+        concretize_abstract_date abstract_date
       end.sort
 
       dates.each do |date|
@@ -21,7 +23,7 @@ module CalendariumRomanum
         transfer_to = date
         begin
           transfer_to = transfer_to.succ
-        end until valid_destination?(transfer_to, temporale, sanctorale)
+        end until valid_destination?(transfer_to)
         @transferred[transfer_to] = loser
       end
     end
@@ -32,13 +34,29 @@ module CalendariumRomanum
 
     private
 
-    def valid_destination?(day, temporale, sanctorale)
-      return false if temporale.get(day).rank >= Ranks::FEAST_PROPER
+    def valid_destination?(day)
+      return false if @temporale.get(day).rank >= Ranks::FEAST_PROPER
 
-      sc = sanctorale.get(day)
+      sc = @sanctorale.get(day)
       return false if sc.size > 0 && sc.first.rank >= Ranks::FEAST_PROPER
 
       true
+    end
+
+    # Converts an AbstractDate to a Date in the given
+    # liturgical year.
+    # It isn't guaranteed to work well (and probably doesn't work well)
+    # for the grey zone of dates between earliest and latest
+    # possible date of the first Advent Sunday, but that's no problem
+    # as long as there are no sanctorale solemnities in this
+    # date range.
+    def concretize_abstract_date(abstract_date)
+      d = abstract_date.concretize(@temporale.year + 1)
+      if @temporale.date_range.include? d
+        d
+      else
+        abstract_date.concretize(@temporale.year)
+      end
     end
   end
 end

@@ -13,6 +13,8 @@ module CalendariumRomanum
       prepare_solemnities unless @year.nil?
     end
 
+    attr_reader :year
+
     class << self
       # Determines liturgical year for the given date
       def liturgical_year(date)
@@ -52,17 +54,6 @@ module CalendariumRomanum
 
       unless date_range.include? date
         raise RangeError.new "Date out of range #{date}"
-      end
-    end
-
-    # converts an AbstractDate to a Date in the given
-    # liturgical year
-    def concretize_abstract_date(abstract_date)
-      d = abstract_date.concretize(@year + 1)
-      if date_range.include? d
-        d
-      else
-        abstract_date.concretize(@year)
       end
     end
 
