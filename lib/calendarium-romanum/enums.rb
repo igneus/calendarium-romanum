@@ -1,15 +1,35 @@
 module CalendariumRomanum
 
+  class Colours < Enum
+    values do
+      [
+        GREEN = :green,
+        VIOLET = :violet,
+        WHITE = :white,
+        RED = :red
+      ]
+    end
+  end
+
+  Colors = Colours
+
+  class Season
+    def initialize(symbol, colour)
+      @symbol = symbol
+      @colour = colour
+    end
+
+    attr_reader :symbol, :colour
+  end
+
   class Seasons < Enum
     values do
       [
-        ADVENT = :advent,
-        CHRISTMAS = :christmas,
-        LENT = :lent,
-        EASTER = :easter,
-        ORDINARY = :ordinary,
-        # is Triduum Sacrum a special season? For now I count Friday and Saturday
-        # to the Lent, Sunday to the Easter time
+        ADVENT = Season.new(:advent, Colours::VIOLET),
+        CHRISTMAS = Season.new(:christmas, Colours::WHITE),
+        LENT = Season.new(:lent, Colours::VIOLET),
+        EASTER = Season.new(:easter, Colours::WHITE),
+        ORDINARY = Season.new(:ordinary, Colours::GREEN)
       ]
     end
   end
@@ -41,17 +61,4 @@ module CalendariumRomanum
       ]
     end
   end
-
-  class Colours < Enum
-    values do
-      [
-        GREEN = :green,
-        VIOLET = :violet,
-        WHITE = :white,
-        RED = :red
-      ]
-    end
-  end
-
-  Colors = Colours
 end

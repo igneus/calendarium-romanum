@@ -88,7 +88,7 @@ describe CR::Calendar do
       describe 'temporale features' do
         describe 'season' do
           it 'detects Advent correctly' do
-            @c.day(2013, 12, 10).season.should eq :advent
+            @c.day(2013, 12, 10).season.should eq CR::Seasons::ADVENT
           end
         end
 

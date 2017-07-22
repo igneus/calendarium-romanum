@@ -7,14 +7,6 @@ module CalendariumRomanum
 
     WEEK = 7
 
-    SEASON_COLOUR = {
-                     Seasons::ADVENT => Colours::VIOLET,
-                     Seasons::CHRISTMAS => Colours::WHITE,
-                     Seasons::ORDINARY => Colours::GREEN,
-                     Seasons::LENT => Colours::VIOLET,
-                     Seasons::EASTER => Colours::WHITE,
-                    }
-
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year=nil)
       @year = year
@@ -326,23 +318,26 @@ module CalendariumRomanum
       case seas
       when Seasons::EASTER
         if date <= sunday_after(easter_sunday)
-          return Celebration.new '', Ranks::PRIMARY, SEASON_COLOUR[seas]
+          return Celebration.new '', Ranks::PRIMARY, seas.colour
         end
       end
 
       return nil
     end
 
+    # seasons when Sundays have higher rank
+    SEASONS_SUNDAY_PRIMARY = [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].freeze
+
     def sunday(date)
       return nil unless date.sunday?
 
       seas = season date
       rank = Ranks::SUNDAY_UNPRIVILEGED
-      if [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].include?(seas)
+      if SEASONS_SUNDAY_PRIMARY.include?(seas)
         rank = Ranks::PRIMARY
       end
 
-      return Celebration.new '', rank, SEASON_COLOUR[seas]
+      return Celebration.new '', rank, seas.colour
     end
 
     def ferial(date)
@@ -361,7 +356,7 @@ module CalendariumRomanum
         rank = Ranks::FERIAL_PRIVILEGED
       end
 
-      return Celebration.new '', rank, SEASON_COLOUR[seas]
+      return Celebration.new '', rank, seas.colour
     end
 
     # helper: difference between two Dates in days
@@ -396,7 +391,7 @@ module CalendariumRomanum
         @solemnities[date] = Celebration.new(
                                              proc { I18n.t("temporale.solemnity.#{method_name}") },
                                              rank,
-                                             colour || SEASON_COLOUR[season(date)]
+                                             colour || season(date).colour
                                             )
       end
     end
