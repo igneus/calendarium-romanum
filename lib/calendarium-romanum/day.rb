@@ -30,9 +30,6 @@ module CalendariumRomanum
 
     # an Array of Celebrations, possibly empty
     attr_reader :celebrations
-
-    # Celebration of the following day if it has first vespers
-    attr_reader :vespers
   end
 
   # information on one particular celebration of the liturgical year
