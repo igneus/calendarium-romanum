@@ -78,6 +78,24 @@ describe CR::Calendar do
               expect(day.date).to eq Date.new(2014, 4, 10)
             end
           end
+
+          describe 'invalid' do
+            describe 'absolutely' do
+              it 'fails' do
+                expect do
+                  day = @c.day(0, 34)
+                end.to raise_exception(ArgumentError, 'invalid date')
+              end
+            end
+
+            describe 'for the given year' do
+              it 'fails' do
+                expect do
+                  day = @c.day(2, 29)
+                end.to raise_exception(ArgumentError, 'invalid date')
+              end
+            end
+          end
         end
       end
 
