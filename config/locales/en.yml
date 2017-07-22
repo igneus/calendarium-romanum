@@ -17,6 +17,18 @@ en:
       body_blood: The Most Holy Body and Blood of Christ
       sacred_heart: The Most Sacred Heart of Jesus
       christ_king: Our Lord Jesus Christ, King of the Universe
+    ordinary:
+      sunday: '%{week} Sunday in Ordinary Time'
+      ferial: '%{weekday}, %{week} week in Ordinary Time'
+    advent:
+      sunday: '%{week} Sunday of Advent'
+      ferial: '%{weekday}, %{week} week of Advent'
+    lent:
+      sunday: '%{week} Sunday of Lent'
+      ferial: '%{weekday}, %{week} week of Lent'
+    easter:
+      sunday: '%{week} Sunday of Easter'
+      ferial: '%{weekday}, %{week} week of Easter'
   rank:
     '1_1': Easter triduum
     '1_2': Primary liturgical days
@@ -38,3 +50,11 @@ en:
       memorial: memorial
       memorial_opt: optional memorial
       ferial: ferial
+  weekday:
+    '0': Sunday
+    '1': Monday
+    '2': Tuesday
+    '3': Wednesday
+    '4': Thursday
+    '5': Friday
+    '6': Saturday

@@ -337,7 +337,10 @@ module CalendariumRomanum
         rank = Ranks::PRIMARY
       end
 
-      return Celebration.new '', rank, seas.colour
+      week = season_week(seas, date)
+      title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
+
+      return Celebration.new title, rank, seas.colour
     end
 
     def ferial(date)
@@ -356,7 +359,10 @@ module CalendariumRomanum
         rank = Ranks::FERIAL_PRIVILEGED
       end
 
-      return Celebration.new '', rank, seas.colour
+      week = season_week(seas, date)
+      title = I18n.t "temporale.#{seas.to_sym}.ferial", week: week, weekday: I18n.t("weekday.#{date.wday}")
+
+      return Celebration.new title, rank, seas.colour
     end
 
     # helper: difference between two Dates in days

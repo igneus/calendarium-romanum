@@ -20,6 +20,7 @@ module CalendariumRomanum
     end
 
     attr_reader :symbol, :colour
+    alias to_sym symbol
   end
 
   class Seasons < Enum
