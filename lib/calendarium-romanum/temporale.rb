@@ -328,7 +328,7 @@ module CalendariumRomanum
         rank = Ranks::PRIMARY
       end
 
-      week = season_week(seas, date)
+      week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
 
       return Celebration.new title, rank, seas.colour
@@ -350,7 +350,7 @@ module CalendariumRomanum
         rank = Ranks::FERIAL_PRIVILEGED
       end
 
-      week = season_week(seas, date)
+      week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.ferial", week: week, weekday: I18n.t("weekday.#{date.wday}")
 
       return Celebration.new title, rank, seas.colour

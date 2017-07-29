@@ -330,28 +330,28 @@ describe CR::Temporale do
       end
     end
 
-    describe 'celebration titles' do
+    describe 'titles of Sundays and ferials' do
       def title_for(month, day)
         @t13.get(month, day).title
       end
 
       describe 'Ordinary time' do
         it 'Sunday' do
-          expect(title_for(1, 19)).to eq '2 Sunday in Ordinary Time'
+          expect(title_for(1, 19)).to eq '2nd Sunday in Ordinary Time'
         end
 
         it 'ferial' do
-          expect(title_for(1, 13)).to eq 'Monday, 1 week in Ordinary Time'
+          expect(title_for(1, 13)).to eq 'Monday, 1st week in Ordinary Time'
         end
       end
 
       describe 'Advent' do
         it 'Sunday' do
-          expect(title_for(12, 1)).to eq '1 Sunday of Advent'
+          expect(title_for(12, 1)).to eq '1st Sunday of Advent'
         end
 
         it 'ferial' do
-          expect(title_for(12, 2)).to eq 'Monday, 1 week of Advent'
+          expect(title_for(12, 2)).to eq 'Monday, 1st week of Advent'
         end
       end
 
@@ -359,21 +359,21 @@ describe CR::Temporale do
 
       describe 'Lent' do
         it 'Sunday' do
-          expect(title_for(3, 9)).to eq '1 Sunday of Lent'
+          expect(title_for(3, 9)).to eq '1st Sunday of Lent'
         end
 
         it 'ferial' do
-          expect(title_for(3, 10)).to eq 'Monday, 1 week of Lent'
+          expect(title_for(3, 10)).to eq 'Monday, 1st week of Lent'
         end
       end
 
       describe 'Easter' do
         it 'Sunday' do
-          expect(title_for(5, 4)).to eq '3 Sunday of Easter'
+          expect(title_for(5, 4)).to eq '3rd Sunday of Easter'
         end
 
         it 'ferial' do
-          expect(title_for(5, 5)).to eq 'Monday, 3 week of Easter'
+          expect(title_for(5, 5)).to eq 'Monday, 3rd week of Easter'
         end
       end
     end
