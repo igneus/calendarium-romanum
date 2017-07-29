@@ -8,9 +8,9 @@ module CalendariumRomanum
     WEEK = 7
 
     # year is Integer - the civil year when the liturgical year begins
-    def initialize(year=nil)
+    def initialize(year)
       @year = year
-      prepare_solemnities unless @year.nil?
+      prepare_solemnities
     end
 
     attr_reader :year
@@ -35,17 +35,16 @@ module CalendariumRomanum
       end
     end
 
-    def start_date(year=nil)
-      first_advent_sunday(year)
+    def start_date
+      first_advent_sunday
     end
 
-    def end_date(year=nil)
-      year ||= @year
-      first_advent_sunday(year+1) - 1
+    def end_date
+      Dates.first_advent_sunday(year+1) - 1
     end
 
-    def date_range(year=nil)
-      start_date(year) .. end_date(year)
+    def date_range
+      start_date .. end_date
     end
 
     def range_check(date)
@@ -57,162 +56,28 @@ module CalendariumRomanum
       end
     end
 
-    def weekday_before(weekday, date)
-      if date.wday == weekday then
-        return date - WEEK
-      elsif weekday < date.wday
-        return date - (date.wday - weekday)
-      else
-        return date - (date.wday + WEEK - weekday)
+    %i(
+    first_advent_sunday
+    nativity
+    holy_family
+    mother_of_god
+    epiphany
+    baptism_of_lord
+    ash_wednesday
+    palm_sunday
+    good_friday
+    holy_saturday
+    easter_sunday
+    ascension
+    pentecost
+    holy_trinity
+    body_blood
+    sacred_heart
+    christ_king
+    ).each do |feast|
+      define_method feast do
+        Dates.public_send feast, year
       end
-    end
-
-    def weekday_after(weekday, date)
-      if date.wday == weekday then
-        return date + WEEK
-      elsif weekday > date.wday
-        return date + (weekday - date.wday)
-      else
-        return date + (WEEK - date.wday + weekday)
-      end
-    end
-
-    def octave_of(date)
-      date + WEEK
-    end
-
-    WEEKDAYS = %w{sunday monday tuesday wednesday thursday friday saturday}
-    WEEKDAYS.each_with_index do |weekday, weekday_i|
-      define_method "#{weekday}_before" do |date|
-        send('weekday_before', weekday_i, date)
-      end
-
-      define_method "#{weekday}_after" do |date|
-        send('weekday_after', weekday_i, date)
-      end
-    end
-
-    # first_advent_sunday -> advent_sunday(1)
-    %w{first second third fourth}.each_with_index do |word,i|
-      define_method "#{word}_advent_sunday" do |year=nil|
-        send("advent_sunday", i + 1, year)
-      end
-    end
-
-    def advent_sunday(num, year=nil)
-      advent_sundays_total = 4
-      unless (1..advent_sundays_total).include? num
-        raise ArgumentError.new "Invalid Advent Sunday #{num}"
-      end
-
-      year ||= @year
-      return sunday_before(nativity(year)) - ((advent_sundays_total - num) * WEEK)
-    end
-
-    def nativity(year=nil)
-      year ||= @year
-      return Date.new(year, 12, 25)
-    end
-
-    def holy_family(year=nil)
-      year ||= @year
-      xmas = nativity(year)
-      if xmas.sunday?
-        return Date.new(year, 12, 30)
-      else
-        sunday_after(xmas)
-      end
-    end
-
-    def mother_of_god(year=nil)
-      octave_of(nativity(year))
-    end
-
-    def epiphany(year=nil)
-      year ||= @year
-      return Date.new(year+1, 1, 6)
-    end
-
-    def baptism_of_lord(year=nil)
-      year ||= @year
-      return sunday_after epiphany(year)
-    end
-
-    def ash_wednesday(year=nil)
-      year ||= @year
-      return easter_sunday(year) - (6 * WEEK + 4)
-    end
-
-    def easter_sunday(year=nil)
-      year ||= @year
-      year += 1
-
-      # algorithm below taken from the 'easter' gem:
-      # https://github.com/jrobertson/easter
-
-      golden_number = (year % 19) + 1
-      if year <= 1752 then
-        # Julian calendar
-        dominical_number = (year + (year / 4) + 5) % 7
-        paschal_full_moon = (3 - (11 * golden_number) - 7) % 30
-      else
-        # Gregorian calendar
-        dominical_number = (year + (year / 4) - (year / 100) + (year / 400)) % 7
-        solar_correction = (year - 1600) / 100 - (year - 1600) / 400
-        lunar_correction = (((year - 1400) / 100) * 8) / 25
-        paschal_full_moon = (3 - 11 * golden_number + solar_correction - lunar_correction) % 30
-      end
-      dominical_number += 7 until dominical_number > 0
-      paschal_full_moon += 30 until paschal_full_moon > 0
-      paschal_full_moon -= 1 if paschal_full_moon == 29 or (paschal_full_moon == 28 and golden_number > 11)
-      difference = (4 - paschal_full_moon - dominical_number) % 7
-      difference += 7 if difference < 0
-      day_easter = paschal_full_moon + difference + 1
-      if day_easter < 11 then
-        # Easter occurs in March.
-        return Date.new(y=year, m=3, d=day_easter + 21)
-      else
-        # Easter occurs in April.
-        return Date.new(y=year, m=4, d=day_easter - 10)
-      end
-    end
-
-    def palm_sunday(year=nil)
-      return easter_sunday(year) - 7
-    end
-
-    def good_friday(year=nil)
-      return easter_sunday(year) - 2
-    end
-
-    def holy_saturday(year=nil)
-      return easter_sunday(year) - 1
-    end
-
-    def ascension(year=nil)
-      return pentecost(year) - 10
-    end
-
-    def pentecost(year=nil)
-      year ||= @year
-      return easter_sunday(year) + 7 * WEEK
-    end
-
-    def holy_trinity(year=nil)
-      sunday_after(pentecost(year))
-    end
-
-    def body_blood(year=nil)
-      thursday_after(holy_trinity(year))
-    end
-
-    def sacred_heart(year=nil)
-      friday_after(sunday_after(body_blood(year)))
-    end
-
-    def christ_king(year=nil)
-      year ||= @year
-      sunday_before(first_advent_sunday(year + 1))
     end
 
     # which liturgical season is it?
@@ -251,14 +116,14 @@ module CalendariumRomanum
       when Seasons::EASTER
         easter_sunday
       else # ordinary time
-        monday_after(baptism_of_lord)
+        Dates.monday_after(baptism_of_lord)
       end
     end
 
     def season_week(seasonn, date)
       week1_beginning = season_beginning = season_beginning(seasonn)
       unless season_beginning.sunday?
-        week1_beginning = sunday_after(season_beginning)
+        week1_beginning = Dates.sunday_after(season_beginning)
       end
 
       week = date_difference(date, week1_beginning) / Temporale::WEEK + 1
@@ -269,7 +134,7 @@ module CalendariumRomanum
         week += 1
 
         if date > pentecost
-          weeks_after_date = date_difference(first_advent_sunday(@year + 1), date) / 7
+          weeks_after_date = date_difference(Dates.first_advent_sunday(@year + 1), date) / 7
           week = 34 - weeks_after_date
           week += 1 if date.sunday?
         end
@@ -308,7 +173,7 @@ module CalendariumRomanum
       seas = season(date)
       case seas
       when Seasons::EASTER
-        if date <= sunday_after(easter_sunday)
+        if date <= Dates.sunday_after(easter_sunday)
           return Celebration.new '', Ranks::PRIMARY, seas.colour
         end
       end

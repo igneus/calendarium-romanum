@@ -7,6 +7,7 @@ enums
 data
 calendar
 temporale
+temporale/dates
 sanctorale
 sanctoraleloader
 sanctorale_factory

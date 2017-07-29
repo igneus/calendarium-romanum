@@ -18,70 +18,34 @@ describe CR::Temporale do
     end
   end
 
-  describe '#weekday_before' do
-    it 'works well for all 7 weekdays' do
-      today = Date.new 2014, 3, 16
-      @t.weekday_before(0, today).should eq Date.new(2014, 3, 9)
-      @t.weekday_before(1, today).should eq Date.new(2014, 3, 10)
-      @t.weekday_before(2, today).should eq Date.new(2014, 3, 11)
-      @t.weekday_before(3, today).should eq Date.new(2014, 3, 12)
-      @t.weekday_before(4, today).should eq Date.new(2014, 3, 13)
-      @t.weekday_before(5, today).should eq Date.new(2014, 3, 14)
-      @t.weekday_before(6, today).should eq Date.new(2014, 3, 15)
-    end
-  end
-
-  describe '#weekday_after' do
-    it 'works well for all 7 weekdays' do
-      today = Date.new 2014, 3, 16
-      @t.monday_after(today).should eq Date.new(2014, 3, 17)
-      @t.tuesday_after(today).should eq Date.new(2014, 3, 18)
-      @t.wednesday_after(today).should eq Date.new(2014, 3, 19)
-      @t.thursday_after(today).should eq Date.new(2014, 3, 20)
-      @t.friday_after(today).should eq Date.new(2014, 3, 21)
-      @t.saturday_after(today).should eq Date.new(2014, 3, 22)
-      @t.sunday_after(today).should eq Date.new(2014, 3, 23)
-    end
-  end
-
-  describe '#advent_sunday' do
-    it 'determines first Sunday of Advent' do
-      [
-       [2004, [11, 28]],
-       [2010, [11, 28]],
-       [2011, [11, 27]],
-       [2012, [12, 2]],
-       [2013, [12, 1]]
-      ].each do |d|
-        year, date = d
-        @t.advent_sunday(1, year).should eq Date.new(year, *date)
+  describe '#first_advent_sunday determines first Sunday of Advent' do
+    [
+      [2004, [11, 28]],
+      [2010, [11, 28]],
+      [2011, [11, 27]],
+      [2012, [12, 2]],
+      [2013, [12, 1]]
+    ].each do |d|
+      year, date = d
+      it year do
+        temporale = described_class.new(year)
+        temporale.first_advent_sunday.should eq Date.new(year, *date)
       end
     end
-
-    it 'determines second Sunday of Advent' do
-      @t.advent_sunday(2, 2013).should eq Date.new(2013,12,8)
-    end
   end
 
-  describe '#second_advent_sunday' do
-    # alias of advent_sunday through method_missing
-
-    it 'determines second Sunday of Advent' do
-      @t.second_advent_sunday(2013).should eq Date.new(2013,12,8)
-    end
-  end
-
-  describe '#easter_sunday' do
-    it 'determines Easter Sunday' do
-      [
-       [2003, [2004, 4, 11]],
-       [2004, [2005, 3, 27]],
-       [2005, [2006, 4, 16]],
-       [2006, [2007, 4, 8]],
-       [2014, [2015, 4, 5]]
-      ].each do |d|
-        year, date = d
-        @t.easter_sunday(year).should eq Date.new(*date)
+  describe '#easter_sunday determines Easter Sunday' do
+    [
+      [2003, [2004, 4, 11]],
+      [2004, [2005, 3, 27]],
+      [2005, [2006, 4, 16]],
+      [2006, [2007, 4, 8]],
+      [2014, [2015, 4, 5]]
+    ].each do |d|
+      year, date = d
+      it year do
+        temporale = described_class.new(year)
+        temporale.easter_sunday.should eq Date.new(*date)
       end
     end
   end
@@ -374,47 +338,6 @@ describe CR::Temporale do
 
         it 'ferial' do
           expect(title_for(5, 5)).to eq 'Monday, 3rd week of Easter'
-        end
-      end
-    end
-  end
-
-  describe 'initialized without a year' do
-    before :each do
-      @tny = described_class.new
-    end
-
-    it 'is possible to initialize a Temporale without a year' do
-      expect { described_class.new }.not_to raise_exception
-    end
-
-    it 'crashes when a date is requested without year' do
-      expect { @tny.first_advent_sunday }.to raise_exception
-    end
-
-    it 'computes dates as expected if year is given' do
-      days = %i(first_advent_sunday nativity holy_family mother_of_god
-      epiphany baptism_of_lord ash_wednesday easter_sunday good_friday
-      holy_saturday pentecost
-      holy_trinity body_blood sacred_heart christ_king
-
-      date_range)
-      days.each do |msg|
-        @tny.send(msg, 2012).should eq @t12.send(msg)
-      end
-    end
-
-    describe '#get' do
-      it 'always raises an exception' do
-        # for get to work well is imoportant to have precomputed
-        # solemnity dates. That is only possible when a year
-        # is specified on initialization.
-        [
-          Date.new(2015, 1, 1),
-          Date.new(2015, 9, 23),
-          Date.new(2015, 3, 4)
-        ].each do |date|
-          expect { @tny.get(date) }.to raise_exception
         end
       end
     end
