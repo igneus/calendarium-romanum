@@ -1,4 +1,12 @@
-# Czech Republic
-# archdiocese of Prague
+---
+title: kalendář pražské arcidiecéze
+description: Calendar for archdiocese of Prague, Czech Republic
+locale: cs
+country: cz
+diocese: Praha
+extends:
+  - czech-cs.txt
+  - czech-cechy-cs.txt
+---
 
 5/12 f2.8 : Výročí posvěcení katedrály sv. Víta, Václava a Vojtěcha

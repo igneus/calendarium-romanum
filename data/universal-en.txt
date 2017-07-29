@@ -1,5 +1,8 @@
-# General Roman Calendar in English
+---
+title: General Roman Calendar
+locale: en
 # source: https://en.wikipedia.org/wiki/General_Roman_Calendar
+---
 
 = 1
 2 m : Saints Basil the Great and Gregory Nazianzen, bishops and doctors

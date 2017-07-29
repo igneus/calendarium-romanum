@@ -1,4 +1,7 @@
-# Calendario Romano Generale
+---
+title: Calendario Romano Generale
+locale: it
+---
 
 = 1
 2 m : Santi Basilio Magno e Gregorio Nazianzeno, vescovi e dottori della Chiesa

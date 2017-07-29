@@ -1,5 +1,12 @@
-# Czech Republic
-# province of Bohemia
+---
+title: kalendář české církevní provincie
+description: Calendar for province of Bohemia
+locale: cs
+country: cz
+province: Bohemia
+extends:
+  - czech-cs.txt
+---
 
 5/30 m3.11 : Sv. Zdislavy
 

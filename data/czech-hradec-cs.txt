@@ -1,5 +1,13 @@
-# Czech Republic
-# diocese of Hradec Králové
+---
+title: kalendář královéhradecké diecéze
+description: Calendar for diocese of Hradec Králové, Czech Republic
+locale: cs
+country: cz
+diocese: Hradec Králové
+extends:
+  - czech-cs.txt
+  - czech-cechy-cs.txt
+---
 
 10/30 f2.8 : Výročí posvěcení katedrály Sv. Ducha
 

@@ -1,5 +1,12 @@
-# Czech Republic
-# province of Moravia
+---
+title: kalendář moravské církevní provincie
+description: Calendar for province of Moravia
+locale: cs
+country: cz
+province: Moravia
+extends:
+  - czech-cs.txt
+---
 
 5/6 m3.11 R : Sv. Jana Sarkandra, kněze a mučedníka
 5/20 m3.11 : Sv. Klementa Marie Hofbauera, kněze

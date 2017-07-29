@@ -1,4 +1,12 @@
-# Czech Republic
-# archdiocese of Olomouc
+---
+title: kalendář olomoucké arcidiecéze
+description: Calendar for archdiocese of Olomouc, Czech Republic
+locale: cs
+country: cz
+diocese: Olomouc
+extends:
+  - czech-cs.txt
+  - czech-morava-cs.txt
+---
 
 6/30 f2.8 : Výročí posvěcení katedrály sv. Václava

@@ -1,5 +1,13 @@
-# Czech Republic
-# diocese of České Budějovice
+---
+title: kalendář českobudějovické diecéze
+description: Calendar for diocese of České Budějovice, Czech Republic
+locale: cs
+country: cz
+diocese: České Budějovice
+extends:
+  - czech-cs.txt
+  - czech-cechy-cs.txt
+---
 
 6/19 m3.11 : Sv. Jana Nepomuckého Neumanna, biskupa
 

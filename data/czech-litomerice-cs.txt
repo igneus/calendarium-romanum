@@ -1,5 +1,13 @@
-# Czech Republic
-# diocese of Litomerice
+---
+title: kalendář litoměřické diecéze
+description: Calendar for diocese of Litoměřice, Czech Republic
+locale: cs
+country: cz
+diocese: Litoměřice
+extends:
+  - czech-cs.txt
+  - czech-cechy-cs.txt
+---
 
 5/30 f2.8 : Sv. Zdislavy, hlavní patronky diecéze
 

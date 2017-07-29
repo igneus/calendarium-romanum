@@ -1,5 +1,13 @@
-# Czech Republic
-# diocese of Plzeň
+---
+title: kalendář plzeňské diecéze
+description: Calendar for diocese of Plzeň, Czech Republic
+locale: cs
+country: cz
+diocese: Plzeň
+extends:
+  - czech-cs.txt
+  - czech-cechy-cs.txt
+---
 
 7/14 f2.8 R : Bl. Hroznaty, mučedníka, hlavního patrona diecéze
 

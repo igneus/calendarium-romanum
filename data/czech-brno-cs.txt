@@ -1,5 +1,13 @@
-# Czech Republic
-# diocese of Brno
+---
+title: kalendář brněnské diecéze
+description: Calendar for diocese of Brno, Czech Republic
+locale: cs
+country: cz
+diocese: Brno
+extends:
+  - czech-cs.txt
+  - czech-morava-cs.txt
+---
 
 5/21 f2.8 : Výročí posvěcení katedrály sv. Petra a Pavla
 5/30 m3.11 : Sv. Zdislavy

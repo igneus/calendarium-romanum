@@ -30,8 +30,21 @@ module CalendariumRomanum
     def load(src, dest=nil)
       dest ||= Sanctorale.new
 
+      in_front_matter = false
       month_section = nil
       src.each_line.with_index(1) do |l, line_num|
+        # skip YAML front matter
+        if line_num == 1 && l.start_with?('---')
+          in_front_matter = true
+          next
+        elsif in_front_matter
+          if l.start_with?('---')
+            in_front_matter = false
+          end
+
+          next
+        end
+
         # strip whitespace and comments
         l.sub!(/#.*/, '')
         l.strip!

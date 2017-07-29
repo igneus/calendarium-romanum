@@ -1,5 +1,10 @@
-# Calendar for the dioceses of Czech Republic
+---
+title: Český národní kalendář
+description: Calendar for the dioceses of Czech Republic
+locale: cs
+country: cz
 # source: http://cs.wikipedia.org/wiki/%C4%8Cesk%C3%BD_liturgick%C3%BD_kalend%C3%A1%C5%99
+---
 
 = 1
 2 m : Sv. Basila Velikého a Řehoře Naziánského, biskupů a učitelů církve
