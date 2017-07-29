@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.authors     = ['Jakub Pavlík']
   s.email       = 'jkb.pavlik@gmail.com'
-  s.files       = %w(lib/*.rb lib/*/*.rb data/* spec/*.rb config/**/*)
+  s.files       = %w(lib/**/*.rb data/* spec/*.rb config/**/*)
                   .collect {|glob| Dir[glob] }
                   .flatten
                   .reject {|path| path.end_with? '~' } # Emacs backups
