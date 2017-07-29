@@ -1,12 +1,21 @@
 module CalendariumRomanum
 
+  class Colour
+    def initialize(symbol)
+      @symbol = symbol
+    end
+
+    attr_reader :symbol
+    alias to_sym symbol
+  end
+
   class Colours < Enum
     values do
       [
-        GREEN = :green,
-        VIOLET = :violet,
-        WHITE = :white,
-        RED = :red
+        GREEN = Colour.new(:green),
+        VIOLET = Colour.new(:violet),
+        WHITE = Colour.new(:white),
+        RED = Colour.new(:red)
       ]
     end
   end
