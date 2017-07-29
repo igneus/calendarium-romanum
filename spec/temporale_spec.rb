@@ -243,12 +243,6 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
-        it 'day in the Easter Octave' do
-          c = @t13.get(4, 22)
-          expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.colour).to eq CR::Colours::WHITE
-        end
-
         it 'Ascension' do
           c = @t13.get(5, 29)
           expect(c.rank).to eq CR::Ranks::PRIMARY
@@ -318,9 +312,39 @@ describe CR::Temporale do
         end
       end
 
-      # TODO Christmas are a special case
+      describe 'Christmas time' do
+        describe 'Octave of Christmas' do
+          it 'ferial' do
+            day = @t13.get(12, 30)
+            expect(day.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
+            expect(day.title).to eq '6th day of Christmas Octave'
+          end
+        end
+
+        describe 'after Octave of Christmas' do
+          it 'ferial' do
+            expect(title_for(1, 2)).to eq 'Thursday after Christmas Octave'
+          end
+
+          it 'Sunday' do
+            expect(title_for(1, 5)).to eq '2nd Sunday after the Nativity of the Lord'
+          end
+        end
+
+        describe 'after Epiphany' do
+          it 'ferial' do
+            expect(title_for(1, 7)).to eq 'Tuesday after Epiphany'
+          end
+        end
+      end
 
       describe 'Lent' do
+        describe 'before first Sunday' do
+          it 'ferial' do
+            expect(title_for(3, 6)).to eq 'Thursday after Ash Wednesday'
+          end
+        end
+
         it 'Sunday' do
           expect(title_for(3, 9)).to eq '1st Sunday of Lent'
         end
@@ -328,9 +352,31 @@ describe CR::Temporale do
         it 'ferial' do
           expect(title_for(3, 10)).to eq 'Monday, 1st week of Lent'
         end
+
+        describe 'Holy Week' do
+          it 'ferial' do
+            day = @t13.get(4, 14)
+            expect(day.rank).to eq CR::Ranks::PRIMARY
+            expect(day.title).to eq 'Monday of Holy Week'
+          end
+        end
       end
 
       describe 'Easter' do
+        describe 'Easter Octave' do
+          it 'ferial' do
+            c = @t13.get(4, 22)
+            expect(c.rank).to eq CR::Ranks::PRIMARY
+            expect(c.title).to eq 'Easter Tuesday'
+          end
+
+          it 'Sunday (the octave day)' do
+            c = @t13.get(4, 27)
+            expect(c.rank).to eq CR::Ranks::PRIMARY
+            expect(c.title).to eq '2nd Sunday of Easter'
+          end
+        end
+
         it 'Sunday' do
           expect(title_for(5, 4)).to eq '3rd Sunday of Easter'
         end

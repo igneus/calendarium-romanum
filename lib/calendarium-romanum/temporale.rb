@@ -170,15 +170,7 @@ module CalendariumRomanum
         return @solemnities[date]
       end
 
-      seas = season(date)
-      case seas
-      when Seasons::EASTER
-        if date <= Dates.sunday_after(easter_sunday)
-          return Celebration.new '', Ranks::PRIMARY, seas.colour
-        end
-      end
-
-      return nil
+      nil
     end
 
     # seasons when Sundays have higher rank
@@ -201,7 +193,9 @@ module CalendariumRomanum
 
     def ferial(date)
       seas = season date
+      week = season_week(seas, date)
       rank = Ranks::FERIAL
+      title = nil
       case seas
       when Seasons::ADVENT
         if date >= Date.new(@year, 12, 17)
@@ -210,13 +204,29 @@ module CalendariumRomanum
       when Seasons::CHRISTMAS
         if date < mother_of_god
           rank = Ranks::FERIAL_PRIVILEGED
+
+          nth = Ordinalizer.ordinal(date.day - nativity.day + 1) # 1-based counting
+          title = I18n.t 'temporale.christmas.nativity_octave.ferial', day: nth
+        elsif date > epiphany
+          title = I18n.t "temporale.christmas.after_epiphany.ferial", weekday: I18n.t("weekday.#{date.wday}")
         end
       when Seasons::LENT
-        rank = Ranks::FERIAL_PRIVILEGED
+        if week == 0
+          title = I18n.t "temporale.lent.after_ashes.ferial", weekday: I18n.t("weekday.#{date.wday}")
+        elsif date > palm_sunday
+          rank = Ranks::PRIMARY
+          title = I18n.t "temporale.lent.holy_week.ferial", weekday: I18n.t("weekday.#{date.wday}")
+        end
+        rank = Ranks::FERIAL_PRIVILEGED unless rank > Ranks::FERIAL_PRIVILEGED
+      when Seasons::EASTER
+        if week == 1
+          rank = Ranks::PRIMARY
+          title = I18n.t "temporale.easter.octave.ferial", weekday: I18n.t("weekday.#{date.wday}")
+        end
       end
 
-      week = Ordinalizer.ordinal season_week(seas, date)
-      title = I18n.t "temporale.#{seas.to_sym}.ferial", week: week, weekday: I18n.t("weekday.#{date.wday}")
+      week_ord = Ordinalizer.ordinal week
+      title ||= I18n.t "temporale.#{seas.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
 
       return Celebration.new title, rank, seas.colour
     end
@@ -226,7 +236,7 @@ module CalendariumRomanum
       return (d1 - d2).numerator
     end
 
-    # prepare dates of temporale solemnities and their octaves
+    # prepare dates of temporale solemnities
     def prepare_solemnities
       @solemnities = {}
 

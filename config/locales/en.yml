@@ -23,10 +23,23 @@ en:
     advent:
       sunday: '%{week} Sunday of Advent'
       ferial: '%{weekday}, %{week} week of Advent'
+    christmas:
+      nativity_octave:
+        ferial: '%{day} day of Christmas Octave'
+      sunday: '%{week} Sunday after the Nativity of the Lord'
+      ferial: '%{weekday} after Christmas Octave'
+      after_epiphany:
+        ferial: '%{weekday} after Epiphany'
     lent:
+      after_ashes:
+        ferial: '%{weekday} after Ash Wednesday'
       sunday: '%{week} Sunday of Lent'
       ferial: '%{weekday}, %{week} week of Lent'
+      holy_week:
+        ferial: '%{weekday} of Holy Week'
     easter:
+      octave:
+        ferial: 'Easter %{weekday}'
       sunday: '%{week} Sunday of Easter'
       ferial: '%{weekday}, %{week} week of Easter'
   rank:
