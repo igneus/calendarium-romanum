@@ -18,3 +18,5 @@ end
 
 require 'calendarium-romanum'
 CR = CalendariumRomanum
+
+I18n.enforce_available_locales = true

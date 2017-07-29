@@ -13,7 +13,7 @@ describe CR::Temporale do
         [Date.new(2014, 11, 1), 2013],
         [Date.new(2014, 12, 1), 2014]
       ].each do |date, year|
-        described_class.liturgical_year(date).should eq year
+        expect(described_class.liturgical_year(date)).to eq year
       end
     end
   end
@@ -29,7 +29,7 @@ describe CR::Temporale do
       year, date = d
       it year do
         temporale = described_class.new(year)
-        temporale.first_advent_sunday.should eq Date.new(year, *date)
+        expect(temporale.first_advent_sunday).to eq Date.new(year, *date)
       end
     end
   end
@@ -45,42 +45,41 @@ describe CR::Temporale do
       year, date = d
       it year do
         temporale = described_class.new(year)
-        temporale.easter_sunday.should eq Date.new(*date)
+        expect(temporale.easter_sunday).to eq Date.new(*date)
       end
     end
   end
 
   describe '#date_range' do
     it 'includes days of the year' do
-      @t.date_range.should include Date.new(2012, 12, 3)
-      @t.date_range.should include Date.new(2013, 11, 5)
+      expect(@t.date_range).to include Date.new(2012, 12, 3)
+      expect(@t.date_range).to include Date.new(2013, 11, 5)
     end
   end
 
   describe '#season' do
     it 'determines Advent' do
-      @t13.season(Date.new(2013, 12, 15)).should eq CR::Seasons::ADVENT
-      @t13.season(Date.new(2013, 12, 1)).should eq CR::Seasons::ADVENT
-      @t13.season(Date.new(2013, 12, 24)).should eq CR::Seasons::ADVENT
+      expect(@t13.season(Date.new(2013, 12, 1))).to eq CR::Seasons::ADVENT
+      expect(@t13.season(Date.new(2013, 12, 24))).to eq CR::Seasons::ADVENT
     end
 
     it 'determines Christmas' do
-      @t13.season(Date.new(2013, 12, 25)).should eq CR::Seasons::CHRISTMAS
-      @t13.season(Date.new(2014, 1, 12)).should eq CR::Seasons::CHRISTMAS
-      @t13.season(Date.new(2014, 1, 13)).should eq CR::Seasons::ORDINARY
+      expect(@t13.season(Date.new(2013, 12, 25))).to eq CR::Seasons::CHRISTMAS
+      expect(@t13.season(Date.new(2014, 1, 12))).to eq CR::Seasons::CHRISTMAS
+      expect(@t13.season(Date.new(2014, 1, 13))).to eq CR::Seasons::ORDINARY
     end
 
     it 'determines Lent' do
-      @t13.season(Date.new(2014, 3, 4)).should eq CR::Seasons::ORDINARY
-      @t13.season(Date.new(2014, 3, 5)).should eq CR::Seasons::LENT
-      @t13.season(Date.new(2014, 4, 19)).should eq CR::Seasons::LENT
-      @t13.season(Date.new(2014, 4, 20)).should eq CR::Seasons::EASTER
+      expect(@t13.season(Date.new(2014, 3, 4))).to eq CR::Seasons::ORDINARY
+      expect(@t13.season(Date.new(2014, 3, 5))).to eq CR::Seasons::LENT
+      expect(@t13.season(Date.new(2014, 4, 19))).to eq CR::Seasons::LENT
+      expect(@t13.season(Date.new(2014, 4, 20))).to eq CR::Seasons::EASTER
     end
 
     it 'determines Easter time' do
-      @t13.season(Date.new(2014, 4, 20)).should eq CR::Seasons::EASTER
-      @t13.season(Date.new(2014, 6, 8)).should eq CR::Seasons::EASTER
-      @t13.season(Date.new(2014, 6, 9)).should eq CR::Seasons::ORDINARY
+      expect(@t13.season(Date.new(2014, 4, 20))).to eq CR::Seasons::EASTER
+      expect(@t13.season(Date.new(2014, 6, 8))).to eq CR::Seasons::EASTER
+      expect(@t13.season(Date.new(2014, 6, 9))).to eq CR::Seasons::ORDINARY
     end
   end
 

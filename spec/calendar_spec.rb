@@ -9,36 +9,36 @@ describe CR::Calendar do
 
     describe '#==' do
       it 'considers calendars with the same year same' do
-        described_class.new(2014).should == described_class.new(2014)
+        expect(described_class.new(2014) == described_class.new(2014)).to be true
       end
 
       it 'considers calendars with different year different' do
-        described_class.new(2014).should_not == described_class.new(2010)
+        expect(described_class.new(2014) == described_class.new(2010)).to be false
       end
     end
 
     describe '#lectionary' do
       it 'detects correctly' do
-        described_class.new(2014).lectionary.should eq :B
-        described_class.new(2013).lectionary.should eq :A
-        described_class.new(2012).lectionary.should eq :C
+        expect(described_class.new(2014).lectionary).to eq :B
+        expect(described_class.new(2013).lectionary).to eq :A
+        expect(described_class.new(2012).lectionary).to eq :C
       end
     end
 
     describe '#ferial_lectionary' do
       it 'detects correctly' do
-        described_class.new(2014).ferial_lectionary.should eq 1
-        described_class.new(2013).ferial_lectionary.should eq 2
+        expect(described_class.new(2014).ferial_lectionary).to eq 1
+        expect(described_class.new(2013).ferial_lectionary).to eq 2
       end
     end
 
     describe '.for_day' do
       it 'continues the previous year\'s calendar in summer' do
-        described_class.for_day(Date.new(2014, 6, 9)).should eq described_class.new(2013)
+        expect(described_class.for_day(Date.new(2014, 6, 9))).to eq described_class.new(2013)
       end
 
       it 'provides the current year\'s calendar in December' do
-        described_class.for_day(Date.new(2014, 12, 20)).should eq described_class.new(2014)
+        expect(described_class.for_day(Date.new(2014, 12, 20))).to eq described_class.new(2014)
       end
     end
 
@@ -46,19 +46,19 @@ describe CR::Calendar do
       describe 'received arguments' do
         describe 'Date' do
           it 'returns a Day' do
-            @c.day(Date.new(2013, 12, 10)).should be_a CR::Day
+            expect(@c.day(Date.new(2013, 12, 10))).to be_a CR::Day
           end
         end
 
         describe 'DateTime' do
           it 'returns a Day' do
-            @c.day(DateTime.new(2013, 12, 10, 12, 10, 0)).should be_a CR::Day
+            expect(@c.day(DateTime.new(2013, 12, 10, 12, 10, 0))).to be_a CR::Day
           end
         end
 
         describe 'three Integers' do
           it 'returns a Day' do
-            @c.day(2013, 12, 10).should be_a CR::Day
+            expect(@c.day(2013, 12, 10)).to be_a CR::Day
           end
         end
 
@@ -106,7 +106,7 @@ describe CR::Calendar do
       describe 'temporale features' do
         describe 'season' do
           it 'detects Advent correctly' do
-            @c.day(2013, 12, 10).season.should eq CR::Seasons::ADVENT
+            expect(@c.day(2013, 12, 10).season).to eq CR::Seasons::ADVENT
           end
         end
 
