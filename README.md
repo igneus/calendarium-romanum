@@ -20,7 +20,7 @@ and the Calendar
 - [x] sanctorale calendars: data format, example data files, their loading
 - [x] resolution of precedence of concurrent celebrations
 - [x] octave days
-- [ ] commemorations in the privileged seasons where memorials are suppressed
+- [x] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
 - [ ] additional temporale feasts (Christ the Eternal Priest and similar)
 - [ ] optional transfer of important solemnities to a nearby Sunday

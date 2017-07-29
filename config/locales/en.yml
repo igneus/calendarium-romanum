@@ -56,6 +56,7 @@ en:
     '3_11': Proper obligatory memorials
     '3_12': Optional memorials
     '3_13': Ferials
+    '4_0': Commemorations
     short:
       solemnity: solemnity
       feast: feast
@@ -63,6 +64,7 @@ en:
       memorial: memorial
       memorial_opt: optional memorial
       ferial: ferial
+      commemoration: commemoration
   weekday:
     '0': Sunday
     '1': Monday

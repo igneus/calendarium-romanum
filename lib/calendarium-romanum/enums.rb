@@ -67,7 +67,10 @@ module CalendariumRomanum
         MEMORIAL_GENERAL  = Rank.new(3.10, 'rank.3_10', 'rank.short.memorial'),
         MEMORIAL_PROPER   = Rank.new(3.11, 'rank.3_11', 'rank.short.memorial'),
         MEMORIAL_OPTIONAL = Rank.new(3.12, 'rank.3_12', 'rank.short.memorial_opt'),
-        FERIAL            = Rank.new(3.13, 'rank.3_13', 'rank.short.ferial')
+        FERIAL            = Rank.new(3.13, 'rank.3_13', 'rank.short.ferial'),
+        # not included as a celebration rank on it's own
+        # in the Table of Liturgical Days
+        COMMEMORATION     = Rank.new(4.0,  'rank.4_0', 'rank.short.commemoration')
       ]
     end
   end

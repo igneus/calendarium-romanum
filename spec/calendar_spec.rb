@@ -206,9 +206,7 @@ describe CR::Calendar do
 
       describe 'Temporale x Sanctorale resolution' do
         before :all do
-          @s = CR::Sanctorale.new
-          loader = CR::SanctoraleLoader.new
-          loader.load_from_file(File.join(File.dirname(__FILE__), '..', 'data', 'universal-en.txt'), @s)
+          @s = CR::Data::GENERAL_ROMAN_ENGLISH.load
           @c = described_class.new 2013, @s
         end
 
@@ -235,11 +233,20 @@ describe CR::Calendar do
           expect(d.celebrations[1].title).to include 'Lellis'
         end
 
-        it 'obligate memorial does suppress ferial' do
+        it 'obligatory memorial does suppress ferial' do
           d = @c.day(1, 17)
           expect(d.celebrations.size).to eq 1
 
           expect(d.celebrations[0].rank).to eq CR::Ranks::MEMORIAL_GENERAL
+        end
+
+        it 'memorial in Lent becomes mere commemoration' do
+          d = @c.day(4, 2)
+          expect(d.celebrations.size).to eq 2
+
+          comm = d.celebrations[1]
+          expect(comm.rank).to eq CR::Ranks::COMMEMORATION
+          expect(comm.title).to eq 'Saint Francis of Paola, hermit'
         end
 
         it 'Sunday suppresses feast' do

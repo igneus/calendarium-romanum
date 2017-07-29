@@ -124,6 +124,12 @@ module CalendariumRomanum
           else
             return st
           end
+        elsif t.rank == Ranks::FERIAL_PRIVILEGED && st.first.rank.memorial?
+          st = st.collect do |c|
+            Celebration.new(c.title, Ranks::COMMEMORATION, t.colour)
+          end
+          st.unshift t
+          return st
         end
       end
 
