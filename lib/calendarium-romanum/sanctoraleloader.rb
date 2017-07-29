@@ -31,9 +31,7 @@ module CalendariumRomanum
       dest ||= Sanctorale.new
 
       month_section = nil
-      src.each_line.each_with_index do |l, li|
-        line_num = li + 1
-
+      src.each_line.with_index(1) do |l, line_num|
         # strip whitespace and comments
         l.sub!(/#.*/, '')
         l.strip!
