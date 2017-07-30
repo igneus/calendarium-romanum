@@ -17,6 +17,31 @@ la:
       body_blood: Sanctissimi Corporis et Sanguinis Christi
       sacred_heart: Sacratissimi Cordis Iesu
       christ_king: Domini nostri Iesu Christi universorum regis
+    ordinary:
+      sunday: 'Dominica %{week} per annum'
+      ferial: '%{weekday}, hebdomada %{week} per annum'
+    advent:
+      sunday: 'Dominica %{week} Adventus'
+      ferial: '%{weekday}, hebdomada %{week} Adventus'
+    christmas:
+      nativity_octave:
+        ferial: 'De die %{day} infra octavam Nativitatis'
+      sunday: 'Dominica %{week} post Nativitatem'
+      ferial: '%{weekday} post octavam Nativitatis'
+      after_epiphany:
+        ferial: '%{weekday} post Epiphaniam'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} post Cineres'
+      sunday: 'Dominica %{week} Quadragesimae'
+      ferial: '%{weekday}, hebdomada %{week} Quadragesimae'
+      holy_week:
+        ferial: '%{weekday} Hebdomadae Sanctae'
+    easter:
+      octave:
+        ferial: '%{weekday} infra octavam Paschae'
+      sunday: 'Dominica %{week} Paschae'
+      ferial: '%{weekday}, hebdomada %{week} temporis paschalis'
   rank:
     '1_1': Triduum paschale
     '1_2': Dies liturgici primarii
@@ -38,3 +63,11 @@ la:
       memorial: memoria
       memorial_opt: memoria ad libitum
       ferial: feria
+  weekday:
+    '0': Dominica
+    '1': Feria secunda
+    '2': Feria tertia
+    '3': Feria quarta
+    '4': Feria quinta
+    '5': Feria sexta
+    '6': Sabbato

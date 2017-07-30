@@ -287,6 +287,13 @@ describe CR::Temporale do
         end
 
         describe 'other locales' do
+          it 'Latin' do
+            I18n.with_locale(:la) do
+              c = @t13.get(11, 23)
+              expect(c.title).to eq 'Domini nostri Iesu Christi universorum regis'
+            end
+          end
+
           it 'Czech' do
             I18n.with_locale(:cs) do
               c = @t13.get(11, 23)
@@ -397,6 +404,12 @@ describe CR::Temporale do
       end
 
       describe 'other locales' do
+        it 'Latin' do
+          I18n.with_locale(:la) do
+            expect(title_for(5, 5)).to eq 'Feria secunda, hebdomada III temporis paschalis'
+          end
+        end
+
         it 'Czech' do
           I18n.with_locale(:cs) do
             expect(title_for(5, 5)).to eq 'Pondělí po 3. neděli velikonoční'
