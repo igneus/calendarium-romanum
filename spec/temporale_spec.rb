@@ -288,8 +288,10 @@ describe CR::Temporale do
 
         describe 'other locales' do
           it 'Czech' do
-            c = @t13.get(11, 23)
-            expect(c.title).to have_translation('Ježíše Krista krále', :cs)
+            I18n.with_locale(:cs) do
+              c = @t13.get(11, 23)
+              expect(c.title).to eq 'Ježíše Krista krále'
+            end
           end
         end
       end
@@ -396,7 +398,9 @@ describe CR::Temporale do
 
       describe 'other locales' do
         it 'Czech' do
-          expect(title_for(5, 5)).to have_translation('Pondělí po 3. neděli velikonoční', :cs)
+          I18n.with_locale(:cs) do
+            expect(title_for(5, 5)).to eq 'Pondělí po 3. neděli velikonoční'
+          end
         end
       end
     end
