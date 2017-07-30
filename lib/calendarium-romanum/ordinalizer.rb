@@ -13,7 +13,7 @@ module CalendariumRomanum
         when :en
           english_ordinal(number)
         # when :it # TODO
-        when :la
+        when :la, :it
           RomanNumerals.to_roman number
         else
           number

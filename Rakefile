@@ -3,7 +3,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 desc 'Run specs with each fully supported locale'
 task :spec_all_locales do
-  %w(en la cs).each do |locale|
+  %w(en la cs it).each do |locale|
     sh "LOCALE=#{locale} rake spec"
   end
 end

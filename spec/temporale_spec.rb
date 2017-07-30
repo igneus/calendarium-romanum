@@ -300,6 +300,13 @@ describe CR::Temporale do
               expect(c.title).to eq 'Ježíše Krista krále'
             end
           end
+
+          it 'Italian' do
+            I18n.with_locale(:it) do
+              c = @t13.get(11, 23)
+              expect(c.title).to eq "Nostro Signore Gesù Cristo Re dell'universo"
+            end
+          end
         end
       end
     end
@@ -413,6 +420,12 @@ describe CR::Temporale do
         it 'Czech' do
           I18n.with_locale(:cs) do
             expect(title_for(5, 5)).to eq 'Pondělí po 3. neděli velikonoční'
+          end
+        end
+
+        it 'Italian' do
+          I18n.with_locale(:it) do
+            expect(title_for(5, 5)).to eq 'Lunedì, III di Pasqua'
           end
         end
       end

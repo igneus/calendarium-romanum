@@ -6,7 +6,7 @@ it:
       mother_of_god: Ottava di Natale. Maria Santissima Madre di Dio
       epiphany: Epifania del Signore
       baptism_of_lord: Battesimo del Signore
-      ash_wednesday:
+      ash_wednesday: Mercoledì delle ceneri
       palm_sunday: Domenica delle palme
       good_friday: Venerdì santo
       holy_saturday: Sabato santo
@@ -17,6 +17,31 @@ it:
       body_blood: Santissimo Corpo e Sangue di Cristo
       sacred_heart: Sacro Cuore di Gesù
       christ_king: "Nostro Signore Gesù Cristo Re dell'universo"
+    ordinary:
+      sunday: '%{week} Domenica del Tempo Ordinario'
+      ferial: '%{weekday} della %{week} settimana del Tempo Ordinario'
+    advent:
+      sunday: '%{week} Domenica Avvento'
+      ferial: '%{weekday}, %{week} Avvento'
+    christmas:
+      nativity_octave:
+        ferial: '%{day}, Ottava di Natale'
+      sunday: 'Domenica %{week}, Tempo di Natale'
+      ferial: '%{weekday}, Tempo di Natale'
+      after_epiphany:
+        ferial: '%{weekday} dopo la Epifania del Signore'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} dopo le Ceneri'
+      sunday: 'Domenica %{week} di Quaresima'
+      ferial: '%{weekday}, %{week} di Quaresima'
+      holy_week:
+        ferial: '%{weekday}, Settimana Santa'
+    easter:
+      octave:
+        ferial: '%{weekday}, Ottava di Pasqua'
+      sunday: 'Domenica %{week} di Pasqua'
+      ferial: '%{weekday}, %{week} di Pasqua'
   rank:
     '1_1': Easter triduum
     '1_2': Primary liturgical days
@@ -38,3 +63,11 @@ it:
       memorial: memoria
       memorial_opt: memoria facoltative
       ferial: feria
+  weekday:
+    '0': Domenica
+    '1': Lunedì
+    '2': Martedì
+    '3': Mercoledì
+    '4': Giovedì
+    '5': Venerdì
+    '6': Sabato
