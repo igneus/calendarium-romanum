@@ -29,7 +29,7 @@ describe CR::Rank do
   end
 
   describe '#desc' do
-    it { expect(CR::Ranks[1.1].desc).to eq 'Easter triduum' }
+    it { expect(CR::Ranks[1.1].desc).to have_translation 'Easter triduum' }
   end
 
   describe '#short_desc' do
@@ -37,6 +37,6 @@ describe CR::Rank do
       expect(CR::Ranks[1.1].short_desc).to be_nil
     end
 
-    it { expect(CR::Ranks[2.8].short_desc).to eq 'feast' }
+    it { expect(CR::Ranks[2.8].short_desc).to have_translation 'feast' }
   end
 end

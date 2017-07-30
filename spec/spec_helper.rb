@@ -15,7 +15,21 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
+RSpec::Matchers.define :have_translation do |expected, locale|
+  match do |actual|
+    locale ||= :en
+    if I18n.locale == locale
+      actual == expected
+    else
+      # with locale different from the one the spec is written for
+      # just test that the string isn't left untranslated
+      !(actual.empty? || actual.include?('translation missing'))
+    end
+  end
+end
+
 require 'calendarium-romanum'
 CR = CalendariumRomanum
 
 I18n.enforce_available_locales = true
+I18n.locale = ENV['LOCALE'] || :en

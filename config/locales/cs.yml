@@ -17,6 +17,31 @@ cs:
       body_blood: Těla a krve Páně
       sacred_heart: Nejsvětějšího srdce Ježíšova
       christ_king: Ježíše Krista krále
+    ordinary:
+      sunday: '%{week} neděle v mezidobí'
+      ferial: '%{weekday} %{week} týdne v mezidobí'
+    advent:
+      sunday: '%{week} neděle adventní'
+      ferial: '%{weekday} po %{week} neděli adventní'
+    christmas:
+      nativity_octave:
+        ferial: '%{day} den v oktávu Narození Páně'
+      sunday: '%{week} neděle po Narození Páně'
+      ferial: '%{weekday} po oktávu Narození Páně'
+      after_epiphany:
+        ferial: '%{weekday} po Zjevení Páně'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} po Popeleční středě'
+      sunday: '%{week} neděle postní'
+      ferial: '%{weekday} po %{week} neděli postní'
+      holy_week:
+        ferial: '%{weekday} Svatého týdne'
+    easter:
+      octave:
+        ferial: '%{weekday} v oktávu velikonočním'
+      sunday: '%{week} neděle velikonoční'
+      ferial: '%{weekday} po %{week} neděli velikonoční'
   rank:
     '1_1': Velikonoční triduum
     '1_2': Primární liturgické dny
@@ -38,3 +63,11 @@ cs:
       memorial: památka
       memorial_opt: nezávazná památka
       ferial: ferie
+  weekday:
+    '0': Neděle
+    '1': Pondělí
+    '2': Úterý
+    '3': Středa
+    '4': Čtvrtek
+    '5': Pátek
+    '6': Sobota

@@ -276,7 +276,7 @@ describe CR::Calendar do
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
           expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
-          expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
+          expect(celebs[0].title).to have_translation 'Friday of the Passion of the Lord'
 
           # it is transferred on a day after the Easter octave
           d = c.temporale.easter_sunday + 8
@@ -294,7 +294,7 @@ describe CR::Calendar do
           celebs = c.day(d).celebrations
           expect(celebs.size).to eq 1
           expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
-          expect(celebs[0].title).to eq 'Friday of the Passion of the Lord'
+          expect(celebs[0].title).to have_translation 'Friday of the Passion of the Lord'
 
           # it is transferred on a day after the Easter octave
           d = c.temporale.easter_sunday + 8

@@ -1,5 +1,5 @@
 module CalendariumRomanum
-  # allows easy access to the bundled data files
+  # allows easy access to bundled data files
   class Data < Enum
 
     class SanctoraleFile

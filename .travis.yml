@@ -9,7 +9,7 @@ rvm:
 
 install: bundle install --jobs=3 --deployment --without development
 
-script: bundle exec rake spec && bash spec/build/gem_build_test.sh
+script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
 
 git:
   depth: 3
