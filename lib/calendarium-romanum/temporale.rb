@@ -45,6 +45,7 @@ module CalendariumRomanum
       C = Struct.new(:date_method, :rank, :colour, :title)
       private_constant :C
 
+      # implementation detail, not to be touched by client code
       def celebrations
         @celebrations ||=
           begin
