@@ -3,11 +3,11 @@ module CalendariumRomanum
     # dates of movable feasts
     module Dates
       def self.first_advent_sunday(year)
-        return sunday_before(nativity(year)) - 3 * Temporale::WEEK
+        sunday_before(nativity(year)) - 3 * Temporale::WEEK
       end
 
       def self.nativity(year)
-        return Date.new(year, 12, 25)
+        Date.new(year, 12, 25)
       end
 
       def self.holy_family(year)
@@ -24,15 +24,15 @@ module CalendariumRomanum
       end
 
       def self.epiphany(year)
-        return Date.new(year+1, 1, 6)
+        Date.new(year+1, 1, 6)
       end
 
       def self.baptism_of_lord(year)
-        return sunday_after epiphany(year)
+        sunday_after epiphany(year)
       end
 
       def self.ash_wednesday(year)
-        return easter_sunday(year) - (6 * Temporale::WEEK + 4)
+        easter_sunday(year) - (6 * Temporale::WEEK + 4)
       end
 
       def self.easter_sunday(year)
@@ -69,35 +69,35 @@ module CalendariumRomanum
       end
 
       def self.palm_sunday(year)
-        return easter_sunday(year) - 7
+        easter_sunday(year) - 7
       end
 
       def self.good_friday(year)
-        return easter_sunday(year) - 2
+        easter_sunday(year) - 2
       end
 
       def self.holy_saturday(year)
-        return easter_sunday(year) - 1
+        easter_sunday(year) - 1
       end
 
       def self.ascension(year)
-        return pentecost(year) - 10
+        pentecost(year) - 10
       end
 
       def self.pentecost(year)
-        return easter_sunday(year) + 7 * Temporale::WEEK
+        easter_sunday(year) + 7 * Temporale::WEEK
       end
 
       def self.holy_trinity(year)
-        sunday_after(pentecost(year))
+        octave_of(pentecost(year))
       end
 
       def self.body_blood(year)
-        thursday_after(holy_trinity(year))
+        holy_trinity(year) + 4
       end
 
       def self.sacred_heart(year)
-        friday_after(sunday_after(body_blood(year)))
+        body_blood(year) + 8
       end
 
       def self.immaculate_heart(year)
@@ -105,7 +105,7 @@ module CalendariumRomanum
       end
 
       def self.christ_king(year)
-        sunday_before(first_advent_sunday(year + 1))
+        first_advent_sunday(year + 1) - 7
       end
 
       # utility methods
