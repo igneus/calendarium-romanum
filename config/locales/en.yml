@@ -16,6 +16,7 @@ en:
       holy_trinity: The Most Holy Trinity
       body_blood: The Most Holy Body and Blood of Christ
       sacred_heart: The Most Sacred Heart of Jesus
+      immaculate_heart: Immaculate Heart of Mary
       christ_king: Our Lord Jesus Christ, King of the Universe
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'

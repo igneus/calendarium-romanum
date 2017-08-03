@@ -16,6 +16,7 @@ cs:
       holy_trinity: Nejsvětější Trojice
       body_blood: Těla a krve Páně
       sacred_heart: Nejsvětějšího srdce Ježíšova
+      immaculate_heart: Neposkvrněného Srdce Panny Marie
       christ_king: Ježíše Krista krále
     ordinary:
       sunday: '%{week} neděle v mezidobí'

@@ -73,6 +73,7 @@ module CalendariumRomanum
     holy_trinity
     body_blood
     sacred_heart
+    immaculate_heart
     christ_king
     ).each do |feast|
       define_method feast do
@@ -158,20 +159,10 @@ module CalendariumRomanum
         end
       end
 
-      return solemnity(date) || sunday(date) || ferial(date)
+      return @solemnities[date] || sunday(date) || @memorials[date] || ferial(date)
     end
 
     private
-
-    # the celebration determination split in methods:
-
-    def solemnity(date)
-      if @solemnities.has_key?(date)
-        return @solemnities[date]
-      end
-
-      nil
-    end
 
     # seasons when Sundays have higher rank
     SEASONS_SUNDAY_PRIMARY = [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].freeze
@@ -265,6 +256,18 @@ module CalendariumRomanum
           rank,
           colour || season(date).colour
         )
+
+        # Immaculate Heart of Mary is actually (currently the only one)
+        # movable *sanctorale* feast, but as it would make little sense
+        # to add support for movable sanctorale feasts because of
+        # a single one, we cheat a bit and handle it in temporale.
+        @memorials = {
+          immaculate_heart => Celebration.new(
+            proc { I18n.t('temporale.solemnity.immaculate_heart') },
+            Ranks::MEMORIAL_GENERAL,
+            Colours::WHITE
+          )
+        }
       end
     end
   end

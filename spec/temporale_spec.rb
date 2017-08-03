@@ -309,6 +309,15 @@ describe CR::Temporale do
           end
         end
       end
+
+      # movable sanctorale feasts don't really belong in Temporale, but ...
+      describe 'movable sanctorale feasts' do
+        it 'Immaculate Heart' do
+          c = @t13.get(6, 28)
+          expect(c.title).to have_translation 'Immaculate Heart of Mary'
+          expect(c.rank).to eq CR::Ranks::MEMORIAL_GENERAL
+        end
+      end
     end
 
     describe 'titles of Sundays and ferials' do

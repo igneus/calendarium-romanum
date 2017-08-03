@@ -100,6 +100,10 @@ module CalendariumRomanum
         friday_after(sunday_after(body_blood(year)))
       end
 
+      def self.immaculate_heart(year)
+        pentecost(year) + 20
+      end
+
       def self.christ_king(year)
         sunday_before(first_advent_sunday(year + 1))
       end
