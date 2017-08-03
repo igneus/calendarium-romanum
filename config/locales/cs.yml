@@ -18,6 +18,8 @@ cs:
       sacred_heart: Nejsvětějšího srdce Ježíšova
       immaculate_heart: Neposkvrněného Srdce Panny Marie
       christ_king: Ježíše Krista krále
+    extension:
+      christ_eternal_priest: Ježíše Krista, nejvyššího a věčného kněze
     ordinary:
       sunday: '%{week} neděle v mezidobí'
       ferial: '%{weekday} %{week} týdne v mezidobí'

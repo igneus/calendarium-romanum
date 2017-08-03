@@ -8,6 +8,7 @@ data
 calendar
 temporale
 temporale/dates
+temporale/extensions/christ_eternal_priest
 sanctorale
 sanctoraleloader
 sanctorale_factory

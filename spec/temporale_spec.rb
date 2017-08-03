@@ -440,4 +440,20 @@ describe CR::Temporale do
       end
     end
   end
+
+  describe 'extensions' do
+    describe 'ChristEternalPriest' do
+      let(:klass) { described_class.with_extensions(CR::Temporale::Extensions::ChristEternalPriest) }
+      let(:t) { klass.new(2016) }
+
+      it 'adds the feast' do
+        I18n.with_locale(:cs) do
+          c = t.get(6, 8)
+          expect(c.title).to eq 'Ježíše Krista, nejvyššího a věčného kněze'
+          expect(c.rank).to eq CR::Ranks::FEAST_PROPER
+          expect(c.colour).to eq CR::Colours::WHITE
+        end
+      end
+    end
+  end
 end

@@ -22,7 +22,7 @@ and the Calendar
 - [x] octave days
 - [x] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
-- [ ] additional temporale feasts (Christ the Eternal Priest and similar)
+- [x] additional temporale feasts (Christ the Eternal Priest and similar)
 - [ ] optional transfer of important solemnities to a nearby Sunday
 
 ## Credits

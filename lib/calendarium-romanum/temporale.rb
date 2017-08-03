@@ -16,6 +16,13 @@ module CalendariumRomanum
     attr_reader :year
 
     class << self
+      # Creates a subclass with specified extension modules included
+      def with_extensions(*extensions)
+        Class.new(self) do
+          extensions.each {|e| include e }
+        end
+      end
+
       # Determines liturgical year for the given date
       def liturgical_year(date)
         year = date.year
@@ -32,6 +39,45 @@ module CalendariumRomanum
       # date
       def for_day(date)
         return new(liturgical_year(date))
+      end
+
+      # internal utility class, never to be touched by client code
+      C = Struct.new(:date_method, :rank, :colour, :title)
+      private_constant :C
+
+      def celebrations
+        @celebrations ||=
+          begin
+            [
+              C.new(:nativity, Ranks::PRIMARY, nil),
+              C.new(:holy_family, Ranks::FEAST_LORD_GENERAL, nil),
+              C.new(:mother_of_god, Ranks::SOLEMNITY_GENERAL),
+              C.new(:epiphany, Ranks::PRIMARY, nil),
+              C.new(:baptism_of_lord, Ranks::FEAST_LORD_GENERAL, nil),
+              C.new(:ash_wednesday, Ranks::PRIMARY, nil),
+              C.new(:good_friday, Ranks::TRIDUUM, Colours::RED),
+              C.new(:holy_saturday, Ranks::TRIDUUM, nil),
+              C.new(:palm_sunday, Ranks::PRIMARY, Colours::RED),
+              C.new(:easter_sunday, Ranks::TRIDUUM, nil),
+              C.new(:ascension, Ranks::PRIMARY, Colours::WHITE),
+              C.new(:pentecost, Ranks::PRIMARY, Colours::RED),
+              C.new(:holy_trinity, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
+              C.new(:body_blood, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
+              C.new(:sacred_heart, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
+              C.new(:christ_king, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
+
+              # Immaculate Heart of Mary is actually (currently the only one)
+              # movable *sanctorale* feast, but as it would make little sense
+              # to add support for movable sanctorale feasts because of
+              # a single one, we cheat a bit and handle it in temporale.
+              C.new(:immaculate_heart, Ranks::MEMORIAL_GENERAL, Colours::WHITE),
+            ]
+          end
+      end
+
+      # Hook point for extensions to add new celebrations
+      def add_celebration(date_method, rank, colour=nil, title=nil)
+        celebrations << C.new(date_method, rank, colour, title)
       end
     end
 
@@ -159,7 +205,7 @@ module CalendariumRomanum
         end
       end
 
-      return @solemnities[date] || sunday(date) || @memorials[date] || ferial(date)
+      return @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
     end
 
     private
@@ -230,44 +276,28 @@ module CalendariumRomanum
     # prepare dates of temporale solemnities
     def prepare_solemnities
       @solemnities = {}
+      @feasts = {}
+      @memorials = {}
 
-      {
-        nativity: [Ranks::PRIMARY, nil],
-        holy_family: [Ranks::FEAST_LORD_GENERAL, nil],
-        mother_of_god: [Ranks::SOLEMNITY_GENERAL],
-        epiphany: [Ranks::PRIMARY, nil],
-        baptism_of_lord: [Ranks::FEAST_LORD_GENERAL, nil],
-        ash_wednesday: [Ranks::PRIMARY, nil],
-        good_friday: [Ranks::TRIDUUM, Colours::RED],
-        holy_saturday: [Ranks::TRIDUUM, nil],
-        palm_sunday: [Ranks::PRIMARY, Colours::RED],
-        easter_sunday: [Ranks::TRIDUUM, nil],
-        ascension: [Ranks::PRIMARY, Colours::WHITE],
-        pentecost: [Ranks::PRIMARY, Colours::RED],
-        holy_trinity: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        body_blood: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        sacred_heart: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-        christ_king: [Ranks::SOLEMNITY_GENERAL, Colours::WHITE],
-      }.each_pair do |method_name, data|
-        date = send(method_name)
-        rank, colour = data
-        @solemnities[date] = Celebration.new(
-          proc { I18n.t("temporale.solemnity.#{method_name}") },
-          rank,
-          colour || season(date).colour
+      self.class.celebrations.each do |c|
+        date = send(c.date_method)
+        title = c.title || proc { I18n.t("temporale.solemnity.#{c.date_method}") }
+
+        celebration = Celebration.new(
+          title,
+          c.rank,
+          c.colour || season(date).colour
         )
 
-        # Immaculate Heart of Mary is actually (currently the only one)
-        # movable *sanctorale* feast, but as it would make little sense
-        # to add support for movable sanctorale feasts because of
-        # a single one, we cheat a bit and handle it in temporale.
-        @memorials = {
-          immaculate_heart => Celebration.new(
-            proc { I18n.t('temporale.solemnity.immaculate_heart') },
-            Ranks::MEMORIAL_GENERAL,
-            Colours::WHITE
-          )
-        }
+        add_to =
+          if celebration.feast?
+            @feasts
+          elsif celebration.memorial?
+            @memorials
+          else
+            @solemnities
+          end
+        add_to[date] = celebration
       end
     end
   end
