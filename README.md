@@ -172,9 +172,87 @@ data.
 The gem ships with English, Latin, Italian and Czech translation.
 Contributed translations to other languages are most welcome.
 
-## Run tests
+## Custom movable feasts
+
+Some local calendars may include proper movable feasts.
+In Czech Republic this has recently been the case with the newly
+introduced feast of *Christ the Priest* (celebrated on Thursday
+after Pentecost).
+
+This feast, by it's nature, extends the cycle of
+*Feasts of the Lord in the Ordinary Time* and thus belongs
+to the *temporale.* Please note that even if your proper movable feast
+is by it's nature a *sanctorale* feast, only having a movable
+date, the only way to handle it with this gem is to write
+a *temporale* extension. There is no support for movable feasts
+in the `Sanctorale` class. Even the single movable sanctorale
+feast of the General Roman Calendar,
+the memorial of *Immaculate Heart of Mary,* is, by a little cheat,
+currently implemented in the `Temporale`.
+
+Temporale extensions are implemented as mixin modules
+which can be included in subclasses of `Temporale`.
+The sole responsibility of such a module is to define
+callback method [included][module-included]
+and in this call `add_celebration` method of the receiving
+`Temporale` class at least once.
+
+```ruby
+CR = CalendariumRomanum
+
+module MyExtension
+  # registers celebration defined by the extension
+  def self.included(mod)
+    mod.add_celebration(
+      :my_feast_date, # name of a method computing date of the feast
+      CR::Ranks::FEAST_PROPER, # rank
+      CR::Colours::WHITE, # colour
+      'My Feast' # feast title
+    )
+
+    # It is possible to use a Proc as feast title if you want it
+    # to be determined at runtime - e.g. because you want to
+    # have the feast title translated follow changes of `I18n.locale`
+    mod.add_celebration(
+      :another_feast_date,
+      CR::Ranks::MEMORIAL_PROPER,
+      CR::Colours::WHITE,
+      proc { I18n.t('my_feasts.another_feast') }
+    )
+  end
+
+  # computes date of the feast
+  def my_feast_date
+    # Let the feast fall on Saturday before Christ the King.
+    # All Temporale instance methods can be used for the computation.
+    christ_king - 1
+  end
+
+  def another_feast_date
+    easter_sunday + 9
+  end
+end
+
+# create Temporale subclass with the extension, instantiate it
+extended_temporale_cls = CR::Temporale.with_extensions(MyExtension)
+temporale = extended_temporale_cls.new(2016)
+
+# the feast is there!
+temporale.get(Date.new(2017, 11, 25)) # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
+```
+
+## How to run tests
+
+Get the sources, install development dependencies
+
+`bundle install`
+
+then execute tests with
 
 `rake spec`
 
+See also `.travis.yml` for comprehensive tests run on the CI.
+
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
+[module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
