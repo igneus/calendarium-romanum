@@ -41,8 +41,7 @@ module CalendariumRomanum
         return new(liturgical_year(date))
       end
 
-      # internal utility class, never to be touched by client code
-      C = Struct.new(:date_method, :rank, :colour, :title)
+      C = Struct.new(:date_method, :celebration)
       private_constant :C
 
       # implementation detail, not to be touched by client code
@@ -50,35 +49,46 @@ module CalendariumRomanum
         @celebrations ||=
           begin
             [
-              C.new(:nativity, Ranks::PRIMARY, nil),
-              C.new(:holy_family, Ranks::FEAST_LORD_GENERAL, nil),
-              C.new(:mother_of_god, Ranks::SOLEMNITY_GENERAL),
-              C.new(:epiphany, Ranks::PRIMARY, nil),
-              C.new(:baptism_of_lord, Ranks::FEAST_LORD_GENERAL, nil),
-              C.new(:ash_wednesday, Ranks::PRIMARY, nil),
-              C.new(:good_friday, Ranks::TRIDUUM, Colours::RED),
-              C.new(:holy_saturday, Ranks::TRIDUUM, nil),
-              C.new(:palm_sunday, Ranks::PRIMARY, Colours::RED),
-              C.new(:easter_sunday, Ranks::TRIDUUM, nil),
-              C.new(:ascension, Ranks::PRIMARY, Colours::WHITE),
-              C.new(:pentecost, Ranks::PRIMARY, Colours::RED),
-              C.new(:holy_trinity, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
-              C.new(:body_blood, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
-              C.new(:sacred_heart, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
-              C.new(:christ_king, Ranks::SOLEMNITY_GENERAL, Colours::WHITE),
+              c(:nativity, Ranks::PRIMARY),
+              c(:holy_family, Ranks::FEAST_LORD_GENERAL),
+              c(:mother_of_god, Ranks::SOLEMNITY_GENERAL),
+              c(:epiphany, Ranks::PRIMARY),
+              c(:baptism_of_lord, Ranks::FEAST_LORD_GENERAL),
+              c(:ash_wednesday, Ranks::PRIMARY, Colours::VIOLET),
+              c(:good_friday, Ranks::TRIDUUM, Colours::RED),
+              c(:holy_saturday, Ranks::TRIDUUM, Colours::VIOLET),
+              c(:palm_sunday, Ranks::PRIMARY, Colours::RED),
+              c(:easter_sunday, Ranks::TRIDUUM),
+              c(:ascension, Ranks::PRIMARY),
+              c(:pentecost, Ranks::PRIMARY, Colours::RED),
+              c(:holy_trinity, Ranks::SOLEMNITY_GENERAL),
+              c(:body_blood, Ranks::SOLEMNITY_GENERAL),
+              c(:sacred_heart, Ranks::SOLEMNITY_GENERAL),
+              c(:christ_king, Ranks::SOLEMNITY_GENERAL),
 
               # Immaculate Heart of Mary is actually (currently the only one)
               # movable *sanctorale* feast, but as it would make little sense
               # to add support for movable sanctorale feasts because of
               # a single one, we cheat a bit and handle it in temporale.
-              C.new(:immaculate_heart, Ranks::MEMORIAL_GENERAL, Colours::WHITE),
+              c(:immaculate_heart, Ranks::MEMORIAL_GENERAL),
             ]
           end
       end
 
       # Hook point for extensions to add new celebrations
-      def add_celebration(date_method, rank, colour=nil, title=nil)
-        celebrations << C.new(date_method, rank, colour, title)
+      def add_celebration(date_method, celebration)
+        celebrations << C.new(date_method, celebration)
+      end
+
+      private
+
+      def c(date_method, rank, colour=Colours::WHITE)
+        title = proc { I18n.t("temporale.solemnity.#{date_method}") }
+
+        C.new(
+          date_method,
+          Celebration.new(title, rank, colour)
+        )
       end
     end
 
@@ -282,13 +292,7 @@ module CalendariumRomanum
 
       self.class.celebrations.each do |c|
         date = send(c.date_method)
-        title = c.title || proc { I18n.t("temporale.solemnity.#{c.date_method}") }
-
-        celebration = Celebration.new(
-          title,
-          c.rank,
-          c.colour || season(date).colour
-        )
+        celebration = c.celebration
 
         add_to =
           if celebration.feast?

@@ -205,19 +205,23 @@ module MyExtension
   def self.included(mod)
     mod.add_celebration(
       :my_feast_date, # name of a method computing date of the feast
-      CR::Ranks::FEAST_PROPER, # rank
-      CR::Colours::WHITE, # colour
-      'My Feast' # feast title
+      CR::Celebration.new(
+        'My Feast', # feast title
+        CR::Ranks::FEAST_PROPER, # rank
+        CR::Colours::WHITE # colour
+      )
     )
 
     # It is possible to use a Proc as feast title if you want it
     # to be determined at runtime - e.g. because you want to
-    # have the feast title translated follow changes of `I18n.locale`
+    # have the feast title translated and follow changes of `I18n.locale`
     mod.add_celebration(
       :another_feast_date,
-      CR::Ranks::MEMORIAL_PROPER,
-      CR::Colours::WHITE,
-      proc { I18n.t('my_feasts.another_feast') }
+      CR::Celebration.new(
+        proc { I18n.t('my_feasts.another_feast') },
+        CR::Ranks::MEMORIAL_PROPER,
+        CR::Colours::WHITE
+      )
     )
   end
 

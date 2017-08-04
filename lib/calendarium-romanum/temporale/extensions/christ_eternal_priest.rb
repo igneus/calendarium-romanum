@@ -5,7 +5,14 @@ module CalendariumRomanum
       # included in some local calendars
       module ChristEternalPriest
         def self.included(mod)
-          mod.add_celebration(:christ_eternal_priest, Ranks::FEAST_PROPER, Colours::WHITE, proc { I18n.t('temporale.extension.christ_eternal_priest') })
+          mod.add_celebration(
+            :christ_eternal_priest,
+            Celebration.new(
+              proc { I18n.t('temporale.extension.christ_eternal_priest') },
+              Ranks::FEAST_PROPER,
+              Colours::WHITE
+            )
+          )
         end
 
         # method computing date
