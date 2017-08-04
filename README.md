@@ -51,11 +51,11 @@ require 'calendarium-romanum'
 ```ruby
 calendar = CalendariumRomanum::Calendar.for_day(Date.today)
 day = calendar.day(Date.today)
-day.season # => :ordinary
+day.season # => #<CalendariumRomanum::Season:0x000000029e1a40 @symbol=:ordinary, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>
 ```
 
-`Day#season` returns a `Symbol` representing the current liturgical
-season.
+`Day#season` returns a `Season` instance representing
+the current liturgical season.
 
 ### 2. What liturgical day is it today?
 
@@ -69,11 +69,11 @@ memorials occurring on a ferial) it may have two or more.
 date = Date.new(2016, 8, 19)
 calendar = CalendariumRomanum::Calendar.for_day(date)
 day = calendar.day(date)
-day.celebrations # => [#<CalendariumRomanum::Celebration:0x00000001741c78 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>]
+day.celebrations # => [#<CalendariumRomanum::Celebration:0x0000000250fdf0 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x000000029e1108 @priority=3.13, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>]
 ```
 
 In this case the single `Celebration` available is a ferial,
-described by it's title (empty in this case), rank and liturgical
+described by it's title, rank and liturgical
 colour.
 
 ### 3. But does it take feasts of saints in account?
@@ -87,7 +87,7 @@ sanctorale = loader.load_from_file 'data/universal-en.txt' # insert path to your
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
 day = calendar.day(date)
-day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000016ed330 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x00000001715790 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
+day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000027d9590 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x000000029e1108 @priority=3.13, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>, #<CalendariumRomanum::Celebration:0x000000029c96c0 @title="Saint John Eudes, priest", @rank=#<CalendariumRomanum::Rank:0x000000029e1180 @priority=3.12, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f18 @symbol=:white>>]
 ```
 
 (Note how we saved some typing by defining new constant `CR`
