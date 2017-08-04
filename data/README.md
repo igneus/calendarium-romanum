@@ -34,10 +34,56 @@ DAY must be a number valid as a possible date in the given month.
 31 is not valid in April, as there is never April 31st.)
 
 RANK is a single letter m=memorial, f=feast, s=solemnity.
-If omitted, optional memorial is default.
-The letter can be followed by a number, e.g. ```f2.5``` - the number
-must be valid celebration rank priority as defined in
+If omitted, optional memorial is assumed.
+
+When it is desirable to specify rank of a celebration
+with greater precision, e.g. in order to distinguish feasts
+inscribed in the General Roman Calendar from proper feasts,
+use rank number instead of a rank letter.
+Rank priority numbers are defined in
 [lib/calendarium-romanum/enums.rb](../lib/calendarium-romanum/enums.rb)
+and correspond to section and subsection numbers in
+the Table of Liturgical Days
+(see end of the [General Norms](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM)).
+This is why the sequence is non-continuous:
+`1.4` is followed by `2.5` and `2.9` by `3.10`.
+
+The example below presents pairs of equivalent lines,
+the first one specifying rank by letter, the second one by number.
+Rank letters are always interpreted as if the celebration
+was inscribed in the General Roman Calendar.
+
+```
+3/19 s : Saint Joseph Husband of the Blessed Virgin Mary
+3/19 1.3 : Saint Joseph Husband of the Blessed Virgin Mary
+
+1/25 f : The Conversion of Saint Paul, apostle
+1/25 2.7 : The Conversion of Saint Paul, apostle
+
+1/26 m : Saints Timothy and Titus, bishops
+1/26 3.10 : Saints Timothy and Titus, bishops
+
+1/27 : Saint Angela Merici, virgin
+1/27 3.12 : Saint Angela Merici, virgin
+```
+
+As an example of a proper celebration (which requires rank number
+when exact ranking is important) let's use solemnity of the
+principal patron of Bohemia, martyr duke St. Wenceslas:
+
+```
+9/28 1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
+```
+
+When you have dificulties remembering meanings of the numbers,
+but are comfortable with rank letters, it might be helpful for you
+to use rank numbers *alongside* the letters.
+This is supported too, you will find this format used throughout
+the bundled data files.
+
+```
+9/28 s1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
+```
 
 COLOUR is a single letter R=red, W=white (G=green, V=violet normally
 shouldn't be necessary in a sanctorale calendar, but both are available
@@ -54,7 +100,7 @@ Included is a script controlling correctness of data files
 and printing detected errors
 
 ```
-$ ruby bin/calendariumrom.rb errors path/to/my/datafile.txt
+$ calendariumrom errors path/to/my/datafile.txt
 ```
 
 ## How to use the Czech calendars
@@ -85,3 +131,15 @@ The tree of correct combinations looks like this:
     * `czech-olomouc-cs.txt`
     * `czech-brno-cs.txt`
     * `czech-ostrava-cs.txt`
+
+`SanctoraleFactory` is a helper class making it really easy
+to build `Sanctorale` from multiple layers:
+
+```ruby
+CR = CalendariumRomanum
+layers = %w(czech-cs czech-cechy-cs czech-praha-cs).collect do |id|
+  CR::Data[id].load
+end
+
+layered_sanctorale = CR::SanctoraleFactory.create_layered(*layers)
+```

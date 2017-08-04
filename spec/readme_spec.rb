@@ -34,16 +34,18 @@ class MarkdownDocument
   end
 end
 
-describe 'README.md' do
-  readme_path = File.expand_path('../../README.md', __FILE__)
-  readme = File.read readme_path
-  doc = MarkdownDocument.new readme
+%w(README.md data/README.md).each do |path|
+  describe path do
+    readme_path = File.expand_path('../../' + path, __FILE__)
+    readme = File.read readme_path
+    doc = MarkdownDocument.new readme
 
-  doc.each_ruby_example do |code, line|
-    describe "example L#{line}" do
-      it 'executes without failure' do
-        cls = Class.new
-        cls.class_eval(code, readme_path, line)
+    doc.each_ruby_example do |code, line|
+      describe "example L#{line}" do
+        it 'executes without failure' do
+          cls = Class.new
+          cls.class_eval(code, readme_path, line)
+        end
       end
     end
   end
