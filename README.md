@@ -35,6 +35,28 @@ by James Robertson
 
 freely choose between GNU/LGPL 3 and MIT
 
+## Project status, Backward compatibility
+
+The gem's public interface still evolves and each minor release
+contains several breaking changes. There is no backward compatibility
+between minor versions.
+This will continue until release of v1.0.0.
+
+When using the gem in your projects, it is recommended to lock
+the dependency to a particular minor version.
+
+In your app's Gemfile
+
+```
+gem 'calendarium-romanum', '~>0.2.0'
+```
+
+or in gemspec of your gem
+
+```
+spec.add_dependency 'calendarium-romanum', '~>0.2.0'
+```
+
 ## Basic Usage
 
 For more self-explaining, commented and copy-pastable
