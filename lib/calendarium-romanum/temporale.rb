@@ -77,6 +77,10 @@ module CalendariumRomanum
 
       # Hook point for extensions to add new celebrations
       def add_celebration(date_method, celebration)
+        if self == Temporale
+          raise RuntimeError.new("Don't add celebrations to Temporale itself, subclass it and modify the subclass.")
+        end
+
         celebrations << C.new(date_method, celebration)
       end
 
@@ -291,7 +295,11 @@ module CalendariumRomanum
       @memorials = {}
 
       self.class.celebrations.each do |c|
-        date = send(c.date_method)
+        if c.date_method.is_a? Proc
+          date = instance_eval &c.date_method
+        else
+          date = public_send(c.date_method)
+        end
         celebration = c.celebration
 
         add_to =

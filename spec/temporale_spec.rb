@@ -441,7 +441,48 @@ describe CR::Temporale do
     end
   end
 
-  describe 'extensions' do
+  describe '.add_celebration' do
+    let(:celebration) { CR::Celebration.new('Monday after Pentecost', CR::Ranks::FEAST_PROPER, CR::Colours::WHITE) }
+    let(:date_proc) { proc { pentecost + 1 } }
+    let(:subclass) { Class.new(described_class) }
+    let(:date) { Date.new(2017, 6, 5) }
+
+    describe 'on Temporale itself' do
+      it 'fails' do
+        expect do
+          described_class.add_celebration date_proc, celebration
+        end.to raise_exception(RuntimeError, /Don't add celebrations to Temporale itself/)
+      end
+    end
+
+    describe 'on a subclass' do
+      describe 'with date method' do
+        it 'adds the celebration' do
+          subclass.instance_eval do
+            define_method :date_method do
+              pentecost + 1
+            end
+          end
+
+          subclass.add_celebration :date_method, celebration
+
+          instance = subclass.new 2016
+          expect(instance.get(date)).to eq celebration
+        end
+      end
+
+      describe 'with date Proc' do
+        it 'adds the celebration' do
+          subclass.add_celebration date_proc, celebration
+
+          instance = subclass.new 2016
+          expect(instance.get(date)).to eq celebration
+        end
+      end
+    end
+  end
+
+  describe 'packaged extensions' do
     describe 'ChristEternalPriest' do
       let(:klass) { described_class.with_extensions(CR::Temporale::Extensions::ChristEternalPriest) }
       let(:t) { klass.new(2016) }

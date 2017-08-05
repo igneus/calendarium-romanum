@@ -212,12 +212,14 @@ module MyExtension
       )
     )
 
-    # It is possible to use a Proc as feast title if you want it
-    # to be determined at runtime - e.g. because you want to
-    # have the feast title translated and follow changes of `I18n.locale`
     mod.add_celebration(
-      :another_feast_date,
+      # Proc can be used for date computation instead of a method
+      # referenced by name
+      proc { easter_sunday + 9 },
       CR::Celebration.new(
+        # It is possible to use a Proc as feast title if you want it
+        # to be determined at runtime - e.g. because you want to
+        # have the feast title translated and follow changes of `I18n.locale`
         proc { I18n.t('my_feasts.another_feast') },
         CR::Ranks::MEMORIAL_PROPER,
         CR::Colours::WHITE
@@ -230,10 +232,6 @@ module MyExtension
     # Let the feast fall on Saturday before Christ the King.
     # All Temporale instance methods can be used for the computation.
     christ_king - 1
-  end
-
-  def another_feast_date
-    easter_sunday + 9
   end
 end
 
