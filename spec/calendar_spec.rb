@@ -311,6 +311,20 @@ describe CR::Calendar do
         expect(new_cal.year).to eq(@c.year - 1)
         expect(new_cal.sanctorale).to eq (@c.sanctorale)
       end
+
+      it 'preserves sanctorale' do
+        sanctorale = CR::Sanctorale.new
+        cal = described_class.new(2000, sanctorale)
+        new_cal = cal.pred
+        expect(new_cal.sanctorale).to be sanctorale
+      end
+
+      it 'preserves temporale class' do
+        t_class = Class.new(CR::Temporale)
+        cal = described_class.new(2000, nil, t_class)
+        new_cal = cal.pred
+        expect(new_cal.temporale).to be_a t_class
+      end
     end
 
     describe '#succ' do
@@ -318,6 +332,20 @@ describe CR::Calendar do
         new_cal = @c.succ
         expect(new_cal.year).to eq(@c.year + 1)
         expect(new_cal.sanctorale).to eq (@c.sanctorale)
+      end
+
+      it 'preserves sanctorale' do
+        sanctorale = CR::Sanctorale.new
+        cal = described_class.new(2000, sanctorale)
+        new_cal = cal.succ
+        expect(new_cal.sanctorale).to be sanctorale
+      end
+
+      it 'preserves temporale class' do
+        t_class = Class.new(CR::Temporale)
+        cal = described_class.new(2000, nil, t_class)
+        new_cal = cal.succ
+        expect(new_cal.temporale).to be_a t_class
       end
     end
   end
