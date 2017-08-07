@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.3.0] 2017-08-07
+
+### Fixed
+
+*This is a feature release - bugs were only introduced, not fixed :)*
+
+### Added
+
+- `Celebration#title` is now being generated for all Sundays and
+  ferials (was empty)
+- ferials of the Holy Week and of the last week of Advent
+  have proper ranks
+- new rank `Ranks::COMMEMORATION` introduced;
+  during privileged seasons, suppressed memorials, which
+  can be commemorated in the Divine Office (see GILH 239),
+  appear in `Day#celebrations` with this rank
+- memorial of the *Immaculate Heart of Mary*
+  (although it really belongs to the sanctorale, as a movable feast
+  it is implemented in `Temporale`)
+- support for extending `Temporale` with additional feasts
+  (`Temporale.with_extensions`, `Temporale.add_celebration`,
+  additional optional argument accepted by `Calendar.new` and
+  `Calendar.for_date`)
+- `Temporale::Extensions::ChristEternalPriest` - `Temporale` extension
+  implementing the feast of *Christ the Eternal Priest*,
+  celebrated in some dioceses and religious institutes
+  on Thursday after Pentecost
+- `Temporale::Dates` - module containing all the
+  temporale-solemnity-date-computing algorithms used in `Temporale`
+- `Temporale#year`
+- sanctorale data files may have YAML front matter
+  (a YAML document with metadata placed before the main content)
+
+### Changed
+
+- seasons and colours are represented by `Season` and `Colour`
+  instances, not by `Symbol`s
+- `Temporale#advent_sunday` and most `#*_advent_sunday`
+  removed, only `Temporale#first_advent_sunday` remains
+- `Temporale#weekday_before`, `#weekday_after`, `#octave_of`,
+  `#monday_before` etc., `#monday_after` etc. removed
+  (all these general date helpers now reside in `Temporale::Dates`)
+- unused attribute `Day#vespers` removed
+- `Temporale#concretize_abstract_date` removed
+
 ## [0.2.1] 2017-07-21
 
 ### Fixed
