@@ -23,7 +23,12 @@ module CalendariumRomanum
         octave_of(nativity(year))
       end
 
-      def self.epiphany(year)
+      def self.epiphany(year, sunday: false)
+        if sunday
+          # GNLYC 7 a)
+          return sunday_after(Date.new(year + 1, 1, 1))
+        end
+
         Date.new(year+1, 1, 6)
       end
 
@@ -80,7 +85,12 @@ module CalendariumRomanum
         easter_sunday(year) - 1
       end
 
-      def self.ascension(year)
+      def self.ascension(year, sunday: false)
+        if sunday
+          # GNLYC 7 b)
+          return easter_sunday(year) + 6 * WEEK
+        end
+
         pentecost(year) - 10
       end
 
@@ -92,7 +102,12 @@ module CalendariumRomanum
         octave_of(pentecost(year))
       end
 
-      def self.body_blood(year)
+      def self.body_blood(year, sunday: false)
+        if sunday
+          # GNLYC 7 c)
+          return holy_trinity(year) + WEEK
+        end
+
         holy_trinity(year) + 4
       end
 

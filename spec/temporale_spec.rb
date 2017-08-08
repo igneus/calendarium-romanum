@@ -497,4 +497,116 @@ describe CR::Temporale do
       end
     end
   end
+
+  describe 'Solemnities transferred on Sunday' do
+    let(:transferred) { [:epiphany, :ascension, :body_blood] }
+    let(:klass) { described_class.with_transfer_on_sunday(*transferred) }
+    let(:t) { klass.new(2016) }
+
+    it '.transferred_on_sunday' do
+      expect(klass.transferred_on_sunday).to eq transferred
+    end
+
+    it 'Epiphany' do
+      date = Date.new(2017, 1, 8)
+      expect(date).to be_sunday # make sure
+
+      expect(t.epiphany).to eq date
+
+      c = t.get(date)
+      expect(c.rank).to eq CR::Ranks::PRIMARY
+      expect(c.title).to have_translation 'The Epiphany of the Lord'
+    end
+
+    it 'Ascension' do
+      date = Date.new(2017, 5, 28)
+      expect(date).to be_sunday # make sure
+
+      expect(t.ascension).to eq date
+
+      c = t.get(date)
+      expect(c.rank).to eq CR::Ranks::PRIMARY
+      expect(c.title).to have_translation 'Ascension of the Lord'
+    end
+
+    it 'Corpus Christi' do
+      date = Date.new(2017, 6, 18)
+      expect(date).to be_sunday # make sure
+
+      expect(t.body_blood).to eq date
+
+      c = t.get(date)
+      expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
+      expect(c.title).to have_translation 'The Most Holy Body and Blood of Christ'
+    end
+
+    it 'fails on an unsupported solemnity' do
+      expect do
+        described_class.with_transfer_on_sunday(:sacred_heart)
+      end.to raise_exception(RuntimeError, /not supported/)
+    end
+
+    describe 'can be chained' do
+      let(:klass) do
+        described_class
+          .with_transfer_on_sunday(:epiphany)
+          .with_transfer_on_sunday(:ascension)
+      end
+
+      it '.transferred_on_sunday' do
+        expect(klass.transferred_on_sunday).to eq %i(epiphany ascension)
+      end
+
+      it 'Epiphany' do
+        date = Date.new(2017, 1, 8)
+        expect(date).to be_sunday # make sure
+        expect(t.epiphany).to eq date
+      end
+
+      it 'Ascension' do
+        date = Date.new(2017, 5, 28)
+        expect(date).to be_sunday # make sure
+        expect(t.ascension).to eq date
+      end
+    end
+
+    describe 'can be combined with extension' do
+      shared_examples 'transfer-extension chaining specs' do
+        it 'solemnity transferred on Sunday works' do
+          date = Date.new(2017, 1, 8)
+          expect(date).to be_sunday # make sure
+          expect(t.epiphany).to eq date
+        end
+
+        it 'feast from the extension works' do
+          I18n.with_locale(:cs) do
+            date = Date.new(2017, 6, 8)
+            c = t.get(date)
+            expect(c.rank).to eq CR::Ranks::FEAST_PROPER
+            expect(c.title).to eq 'Ježíše Krista, nejvyššího a věčného kněze'
+          end
+        end
+      end
+
+      describe 'one way' do
+        let(:klass) do
+          described_class
+            .with_transfer_on_sunday(:epiphany)
+            .with_extensions(CR::Temporale::Extensions::ChristEternalPriest)
+        end
+
+        include_examples 'transfer-extension chaining specs'
+      end
+
+      describe 'the other way' do
+        let(:klass) do
+          described_class
+            .with_extensions(CR::Temporale::Extensions::ChristEternalPriest)
+            .with_transfer_on_sunday(:epiphany)
+        end
+
+        include_examples 'transfer-extension chaining specs'
+      end
+    end
+  end
 end

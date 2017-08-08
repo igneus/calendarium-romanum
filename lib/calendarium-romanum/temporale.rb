@@ -7,6 +7,9 @@ module CalendariumRomanum
 
     WEEK = 7
 
+    SUNDAY_TRANSFERABLE_SOLEMNITIES =
+      %i(epiphany ascension body_blood).freeze
+
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year)
       @year = year
@@ -18,9 +21,37 @@ module CalendariumRomanum
     class << self
       # Creates a subclass with specified extension modules included
       def with_extensions(*extensions)
-        Class.new(self) do
+        parent = self
+        Class.new(self) do |klass|
           extensions.each {|e| include e }
+
+          klass.transferred_on_sunday = parent.transferred_on_sunday
         end
+      end
+
+      def with_transfer_on_sunday(*solemnities)
+        unsupported = solemnities - SUNDAY_TRANSFERABLE_SOLEMNITIES
+        unless unsupported.empty?
+          raise RuntimeError.new("Transfer of #{unsupported.inspect} on Sunday not supported. Only #{SUNDAY_TRANSFERABLE_SOLEMNITIES} are allowed.")
+        end
+
+        parent = self
+        Class.new(self) do |klass|
+          klass.transferred_on_sunday =
+            (parent.transferred_on_sunday + solemnities).uniq.freeze
+
+          klass.celebrations = parent.celebrations
+        end
+      end
+
+      def transferred_on_sunday
+        @transferred_on_sunday ||= []
+      end
+
+      attr_writer :transferred_on_sunday
+
+      def transferred_on_sunday?(solemnity)
+        transferred_on_sunday.include?(solemnity)
       end
 
       # Determines liturgical year for the given date
@@ -74,6 +105,8 @@ module CalendariumRomanum
             ]
           end
       end
+
+      attr_writer :celebrations
 
       # Hook point for extensions to add new celebrations
       def add_celebration(date_method, celebration)
@@ -137,8 +170,14 @@ module CalendariumRomanum
     immaculate_heart
     christ_king
     ).each do |feast|
-      define_method feast do
-        Dates.public_send feast, year
+      if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
+        define_method feast do
+          Dates.public_send feast, year, sunday: self.class.transferred_on_sunday?(feast)
+        end
+      else
+        define_method feast do
+          Dates.public_send feast, year
+        end
       end
     end
 
