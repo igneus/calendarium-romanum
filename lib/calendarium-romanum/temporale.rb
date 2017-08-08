@@ -188,7 +188,7 @@ module CalendariumRomanum
         week1_beginning = Dates.sunday_after(season_beginning)
       end
 
-      week = date_difference(date, week1_beginning) / Temporale::WEEK + 1
+      week = date_difference(date, week1_beginning) / WEEK + 1
 
       if seasonn == Seasons::ORDINARY
         # ordinary time does not begin with Sunday, but the first week

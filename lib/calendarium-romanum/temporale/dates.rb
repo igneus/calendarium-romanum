@@ -3,7 +3,7 @@ module CalendariumRomanum
     # dates of movable feasts
     module Dates
       def self.first_advent_sunday(year)
-        sunday_before(nativity(year)) - 3 * Temporale::WEEK
+        sunday_before(nativity(year)) - 3 * WEEK
       end
 
       def self.nativity(year)
@@ -32,7 +32,7 @@ module CalendariumRomanum
       end
 
       def self.ash_wednesday(year)
-        easter_sunday(year) - (6 * Temporale::WEEK + 4)
+        easter_sunday(year) - (6 * WEEK + 4)
       end
 
       def self.easter_sunday(year)
@@ -85,7 +85,7 @@ module CalendariumRomanum
       end
 
       def self.pentecost(year)
-        easter_sunday(year) + 7 * Temporale::WEEK
+        easter_sunday(year) + 7 * WEEK
       end
 
       def self.holy_trinity(year)
@@ -112,26 +112,26 @@ module CalendariumRomanum
 
       def self.weekday_before(weekday, date)
         if date.wday == weekday then
-          return date - Temporale::WEEK
+          return date - WEEK
         elsif weekday < date.wday
           return date - (date.wday - weekday)
         else
-          return date - (date.wday + Temporale::WEEK - weekday)
+          return date - (date.wday + WEEK - weekday)
         end
       end
 
       def self.weekday_after(weekday, date)
         if date.wday == weekday then
-          return date + Temporale::WEEK
+          return date + WEEK
         elsif weekday > date.wday
           return date + (weekday - date.wday)
         else
-          return date + (Temporale::WEEK - date.wday + weekday)
+          return date + (WEEK - date.wday + weekday)
         end
       end
 
       def self.octave_of(date)
-        date + Temporale::WEEK
+        date + WEEK
       end
 
       class << self
