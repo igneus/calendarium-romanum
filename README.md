@@ -11,7 +11,7 @@ calendar as instituted by
 [MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html) of Paul VI. (AAS 61 (1969), pp. 222-226).
 The rules are defined in General Norms for the Liturgical Year
 and the Calendar
-([English translation](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM)).
+([English translation][gnlyc]).
 
 ## Features
 
@@ -23,7 +23,7 @@ and the Calendar
 - [x] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
 - [x] additional temporale feasts (Christ the Eternal Priest and similar)
-- [ ] optional transfer of important solemnities to a nearby Sunday
+- [x] optional transfer of important solemnities on a nearby Sunday
 
 ## Credits
 
@@ -194,6 +194,41 @@ data.
 The gem ships with English, Latin, Italian and Czech translation.
 Contributed translations to other languages are most welcome.
 
+## Transfer of solemnities to a Sunday
+
+As specified in
+[General Norms for the Liturgical Year and the Calendar][gnlyc] 7,
+the solemnities of Epiphany, Ascension and Corpus Christi
+can be transferred to a Sunday.
+`Temporale` by default preserves the regular dates of these
+solemnities, but has an option to enable the transfer:
+
+```ruby
+CR = CalendariumRomanum
+
+# transfer all three to Sunday
+temporale = CR::Temporale.new(2016, transfer_on_sunday: [:epiphany, :ascension, :body_blood])
+```
+
+Usually you don't want to work with `Temporale` alone, but with
+a `Calendar`. In order to create a `Calendar` with non-default
+`Temporale` settings, it is necessary to provide a temporale
+*factory* as a third argument to the constructor.
+
+```ruby
+CR = CalendariumRomanum
+
+# temporale factory is a callable (e.g. a Proc) receiving a year
+# and returning a Temporale instance for the year
+temporale_factory = lambda do |year|
+  CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+end
+
+sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
+
+calendar = CR::Calendar.for_day(Date.today, sanctorale, temporale_factory)
+```
+
 ## Custom movable feasts
 
 Some local calendars may include proper movable feasts.
@@ -201,18 +236,21 @@ In Czech Republic this has recently been the case with the newly
 introduced feast of *Christ the Priest* (celebrated on Thursday
 after Pentecost). Support for this feast, celebrated in several other
 dioceses and religious institutes, is included in the gem
-as `Temporale` extension mixin.
-A complete Czech `Calendar` with proper sanctorale feasts and
-the feast of *Christ the Priest* can be built this way:
+as `Temporale` extension.
+
+In order to build a complete Czech `Calendar` with proper sanctorale
+feasts and the additional temporale feast of *Christ the Priest*,
+it is necessary, apart of loading the sanctorale data,
+to provide a factory (a simple `Proc` serves this purpose well)
+producing `Temporale` instances with the extension applied:
 
 ```ruby
 CR = CalendariumRomanum
 
-# Calendar has to be able to produce new Temporale instances
-# with the same settings as needed. We use a Proc for this purpose
 temporale_factory = lambda do |year|
   CR::Temporale.new(
     year,
+    # the important bit: use the extension
     extensions: [CR::Temporale::Extensions::ChristEternalPriest]
   )
 end
@@ -224,7 +262,7 @@ calendar = CR::Calendar.new(2016, sanctorale, temporale_factory)
 calendar = CR::Calendar.for_day(Date.today, sanctorale, temporale_factory)
 ```
 
-This feast, by it's nature, extends the cycle of
+The feast of *Christ the Priest*, by it's nature, extends the cycle of
 *Feasts of the Lord in the Ordinary Time* and thus clearly belongs
 to the *temporale.* Even if your proper movable feast
 is by it's nature a *sanctorale* feast, just having a movable
@@ -235,12 +273,11 @@ feast of the General Roman Calendar,
 the memorial of *Immaculate Heart of Mary,* is, by a little cheat,
 currently implemented in the `Temporale`.
 
-Temporale extensions are implemented as mixin modules
-which can be included in subclasses of `Temporale`.
-The sole responsibility of such a module is to define
-callback method [included][module-included]
-and in this method to call `add_celebration` method of the receiving
-`Temporale` class at least once.
+Any object defining method `each_celebration`, which yields
+pairs of "date computer" and `Celebration`, can be used as
+temporale extension. Unless you have a good reason to do otherwise,
+a class or module defining `each_celebration` as class/module method
+is a convenient choice.
 
 ```ruby
 CR = CalendariumRomanum
@@ -260,7 +297,7 @@ module MyExtension
     yield(
       # Proc can be used for date computation instead of a method
       # referenced by name
-      proc { easter_sunday + 9 },
+      lambda {|year| CR::Temporale::Dates.easter_sunday(year) + 9 },
       CR::Celebration.new(
         # It is possible to use a Proc as feast title if you want it
         # to be determined at runtime - e.g. because you want to
@@ -272,11 +309,12 @@ module MyExtension
     )
   end
 
-  # computes date of the feast
-  def my_feast_date
-    # Let the feast fall on Saturday before Christ the King.
-    # All Temporale instance methods can be used for the computation.
-    christ_king - 1
+  # computes date of the feast;
+  # the year passed as argument is year when the liturgical
+  # year in question _begun_
+  def self.my_feast_date(year)
+    # the day before Christ the King
+    CR::Temporale::Dates.christ_king(year) - 1
   end
 end
 
@@ -298,6 +336,7 @@ then execute tests with
 
 See also `.travis.yml` for comprehensive tests run on the CI.
 
+[gnlyc]: https://www.ewtn.com/library/CURIA/CDWLITYR.HTM
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
 [module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
