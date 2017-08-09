@@ -208,14 +208,20 @@ the feast of *Christ the Priest* can be built this way:
 ```ruby
 CR = CalendariumRomanum
 
-# create Temporale subclass including the extension
-CzechTemporale = CR::Temporale.with_extensions(CR::Temporale::Extensions::ChristEternalPriest)
+# Calendar has to be able to produce new Temporale instances
+# with the same settings as needed. We use a Proc for this purpose
+temporale_factory = lambda do |year|
+  CR::Temporale.new(
+    year,
+    extensions: [CR::Temporale::Extensions::ChristEternalPriest]
+  )
+end
 
 sanctorale = CR::Data::CZECH.load
 
-calendar = CR::Calendar.new(2016, sanctorale, CzechTemporale)
+calendar = CR::Calendar.new(2016, sanctorale, temporale_factory)
 # or
-calendar = CR::Calendar.for_day(Date.today, sanctorale, CzechTemporale)
+calendar = CR::Calendar.for_day(Date.today, sanctorale, temporale_factory)
 ```
 
 This feast, by it's nature, extends the cycle of
@@ -241,8 +247,8 @@ CR = CalendariumRomanum
 
 module MyExtension
   # registers celebration defined by the extension
-  def self.included(mod)
-    mod.add_celebration(
+  def self.each_celebration
+    yield(
       :my_feast_date, # name of a method computing date of the feast
       CR::Celebration.new(
         'My Feast', # feast title
@@ -251,7 +257,7 @@ module MyExtension
       )
     )
 
-    mod.add_celebration(
+    yield(
       # Proc can be used for date computation instead of a method
       # referenced by name
       proc { easter_sunday + 9 },
@@ -274,9 +280,7 @@ module MyExtension
   end
 end
 
-# create Temporale subclass with the extension, instantiate it
-extended_temporale_cls = CR::Temporale.with_extensions(MyExtension)
-temporale = extended_temporale_cls.new(2016)
+temporale = CR::Temporale.new(2016, extensions: [MyExtension])
 
 # the feast is there!
 temporale.get(Date.new(2017, 11, 25)) # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
