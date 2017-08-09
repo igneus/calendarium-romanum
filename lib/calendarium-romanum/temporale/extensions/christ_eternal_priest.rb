@@ -4,8 +4,8 @@ module CalendariumRomanum
       # Temporale extension adding feast of Christ Eternal Priests,
       # included in some local calendars
       module ChristEternalPriest
-        def self.included(mod)
-          mod.add_celebration(
+        def self.each_celebration
+          yield(
             :christ_eternal_priest,
             Celebration.new(
               proc { I18n.t('temporale.extension.christ_eternal_priest') },

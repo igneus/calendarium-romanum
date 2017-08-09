@@ -441,51 +441,9 @@ describe CR::Temporale do
     end
   end
 
-  describe '.add_celebration' do
-    let(:celebration) { CR::Celebration.new('Monday after Pentecost', CR::Ranks::FEAST_PROPER, CR::Colours::WHITE) }
-    let(:date_proc) { proc { pentecost + 1 } }
-    let(:subclass) { Class.new(described_class) }
-    let(:date) { Date.new(2017, 6, 5) }
-
-    describe 'on Temporale itself' do
-      it 'fails' do
-        expect do
-          described_class.add_celebration date_proc, celebration
-        end.to raise_exception(RuntimeError, /Don't add celebrations to Temporale itself/)
-      end
-    end
-
-    describe 'on a subclass' do
-      describe 'with date method' do
-        it 'adds the celebration' do
-          subclass.instance_eval do
-            define_method :date_method do
-              pentecost + 1
-            end
-          end
-
-          subclass.add_celebration :date_method, celebration
-
-          instance = subclass.new 2016
-          expect(instance.get(date)).to eq celebration
-        end
-      end
-
-      describe 'with date Proc' do
-        it 'adds the celebration' do
-          subclass.add_celebration date_proc, celebration
-
-          instance = subclass.new 2016
-          expect(instance.get(date)).to eq celebration
-        end
-      end
-    end
-  end
-
   describe 'packaged extensions' do
     describe 'ChristEternalPriest' do
-      let(:klass) { described_class.with_extensions(CR::Temporale::Extensions::ChristEternalPriest) }
-      let(:t) { klass.new(2016) }
+      let(:t) { described_class.new(2016, extensions: [CR::Temporale::Extensions::ChristEternalPriest]) }
 
       it 'adds the feast' do
         I18n.with_locale(:cs) do
@@ -500,12 +458,7 @@ describe CR::Temporale do
 
   describe 'Solemnities transferred on Sunday' do
     let(:transferred) { [:epiphany, :ascension, :body_blood] }
-    let(:klass) { described_class.with_transfer_on_sunday(*transferred) }
-    let(:t) { klass.new(2016) }
-
-    it '.transferred_on_sunday' do
-      expect(klass.transferred_on_sunday).to eq transferred
-    end
+    let(:t) { described_class.new(2016, transfer_on_sunday: transferred) }
 
     it 'Epiphany' do
       date = Date.new(2017, 1, 8)
@@ -542,71 +495,8 @@ describe CR::Temporale do
 
     it 'fails on an unsupported solemnity' do
       expect do
-        described_class.with_transfer_on_sunday(:sacred_heart)
+        described_class.new(2016, transfer_on_sunday: [:sacred_heart])
       end.to raise_exception(RuntimeError, /not supported/)
-    end
-
-    describe 'can be chained' do
-      let(:klass) do
-        described_class
-          .with_transfer_on_sunday(:epiphany)
-          .with_transfer_on_sunday(:ascension)
-      end
-
-      it '.transferred_on_sunday' do
-        expect(klass.transferred_on_sunday).to eq %i(epiphany ascension)
-      end
-
-      it 'Epiphany' do
-        date = Date.new(2017, 1, 8)
-        expect(date).to be_sunday # make sure
-        expect(t.epiphany).to eq date
-      end
-
-      it 'Ascension' do
-        date = Date.new(2017, 5, 28)
-        expect(date).to be_sunday # make sure
-        expect(t.ascension).to eq date
-      end
-    end
-
-    describe 'can be combined with extension' do
-      shared_examples 'transfer-extension chaining specs' do
-        it 'solemnity transferred on Sunday works' do
-          date = Date.new(2017, 1, 8)
-          expect(date).to be_sunday # make sure
-          expect(t.epiphany).to eq date
-        end
-
-        it 'feast from the extension works' do
-          I18n.with_locale(:cs) do
-            date = Date.new(2017, 6, 8)
-            c = t.get(date)
-            expect(c.rank).to eq CR::Ranks::FEAST_PROPER
-            expect(c.title).to eq 'Ježíše Krista, nejvyššího a věčného kněze'
-          end
-        end
-      end
-
-      describe 'one way' do
-        let(:klass) do
-          described_class
-            .with_transfer_on_sunday(:epiphany)
-            .with_extensions(CR::Temporale::Extensions::ChristEternalPriest)
-        end
-
-        include_examples 'transfer-extension chaining specs'
-      end
-
-      describe 'the other way' do
-        let(:klass) do
-          described_class
-            .with_extensions(CR::Temporale::Extensions::ChristEternalPriest)
-            .with_transfer_on_sunday(:epiphany)
-        end
-
-        include_examples 'transfer-extension chaining specs'
-      end
     end
   end
 end

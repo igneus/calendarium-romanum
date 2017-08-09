@@ -12,11 +12,11 @@ module CalendariumRomanum
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
-    def initialize(year, sanctorale=nil, temporale_class=nil)
+    def initialize(year, sanctorale=nil, temporale_factory=nil)
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
-      @temporale_class = temporale_class || Temporale
-      @temporale = @temporale_class.new(year)
+      @temporale_factory = temporale_factory || lambda {|year| Temporale.new(year) }
+      @temporale = @temporale_factory.call(year)
       @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
@@ -58,13 +58,13 @@ module CalendariumRomanum
 
     # returns a Calendar for the subsequent year
     def succ
-      c = Calendar.new @year + 1, @sanctorale, @temporale_class
+      c = Calendar.new @year + 1, @sanctorale, @temporale_factory
       return c
     end
 
     # returns a Calendar for the previous year
     def pred
-      c = Calendar.new @year - 1, @sanctorale, @temporale_class
+      c = Calendar.new @year - 1, @sanctorale, @temporale_factory
       return c
     end
 

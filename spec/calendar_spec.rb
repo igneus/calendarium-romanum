@@ -319,11 +319,17 @@ describe CR::Calendar do
         expect(new_cal.sanctorale).to be sanctorale
       end
 
-      it 'preserves temporale class' do
-        t_class = Class.new(CR::Temporale)
-        cal = described_class.new(2000, nil, t_class)
+      it 'preserves temporale settings' do
+        factory = lambda do |year|
+          CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+        end
+
+        cal = described_class.new(2016, nil, factory)
         new_cal = cal.pred
-        expect(new_cal.temporale).to be_a t_class
+
+        # the transfer is preserved also in the new calendar
+        d = new_cal.day(Date.new(2016, 1, 3))
+        expect(d.celebrations[0].title).to eq 'The Epiphany of the Lord'
       end
     end
 
@@ -341,11 +347,17 @@ describe CR::Calendar do
         expect(new_cal.sanctorale).to be sanctorale
       end
 
-      it 'preserves temporale class' do
-        t_class = Class.new(CR::Temporale)
-        cal = described_class.new(2000, nil, t_class)
+      it 'preserves temporale settings' do
+        factory = lambda do |year|
+          CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+        end
+
+        cal = described_class.new(2016, nil, factory)
         new_cal = cal.succ
-        expect(new_cal.temporale).to be_a t_class
+
+        # the transfer is preserved also in the new calendar
+        d = new_cal.day(Date.new(2018, 1, 7))
+        expect(d.celebrations[0].title).to eq 'The Epiphany of the Lord'
       end
     end
   end

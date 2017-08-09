@@ -11,49 +11,21 @@ module CalendariumRomanum
       %i(epiphany ascension body_blood).freeze
 
     # year is Integer - the civil year when the liturgical year begins
-    def initialize(year)
+    def initialize(year, extensions: [], transfer_on_sunday: [])
       @year = year
+
+      @extensions = extensions
+      @extensions.each {|e| extend e }
+
+      @transfer_on_sunday = transfer_on_sunday
+      validate_sunday_transfer!
+
       prepare_solemnities
     end
 
     attr_reader :year
 
     class << self
-      # Creates a subclass with specified extension modules included
-      def with_extensions(*extensions)
-        parent = self
-        Class.new(self) do |klass|
-          extensions.each {|e| include e }
-
-          klass.transferred_on_sunday = parent.transferred_on_sunday
-        end
-      end
-
-      def with_transfer_on_sunday(*solemnities)
-        unsupported = solemnities - SUNDAY_TRANSFERABLE_SOLEMNITIES
-        unless unsupported.empty?
-          raise RuntimeError.new("Transfer of #{unsupported.inspect} on Sunday not supported. Only #{SUNDAY_TRANSFERABLE_SOLEMNITIES} are allowed.")
-        end
-
-        parent = self
-        Class.new(self) do |klass|
-          klass.transferred_on_sunday =
-            (parent.transferred_on_sunday + solemnities).uniq.freeze
-
-          klass.celebrations = parent.celebrations
-        end
-      end
-
-      def transferred_on_sunday
-        @transferred_on_sunday ||= []
-      end
-
-      attr_writer :transferred_on_sunday
-
-      def transferred_on_sunday?(solemnity)
-        transferred_on_sunday.include?(solemnity)
-      end
-
       # Determines liturgical year for the given date
       def liturgical_year(date)
         year = date.year
@@ -106,17 +78,6 @@ module CalendariumRomanum
           end
       end
 
-      attr_writer :celebrations
-
-      # Hook point for extensions to add new celebrations
-      def add_celebration(date_method, celebration)
-        if self == Temporale
-          raise RuntimeError.new("Don't add celebrations to Temporale itself, subclass it and modify the subclass.")
-        end
-
-        celebrations << C.new(date_method, celebration)
-      end
-
       private
 
       def c(date_method, rank, colour=Colours::WHITE)
@@ -127,6 +88,10 @@ module CalendariumRomanum
           Celebration.new(title, rank, colour)
         )
       end
+    end
+
+    def transferred_on_sunday?(solemnity)
+      @transfer_on_sunday.include?(solemnity)
     end
 
     def start_date
@@ -172,7 +137,7 @@ module CalendariumRomanum
     ).each do |feast|
       if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
         define_method feast do
-          Dates.public_send feast, year, sunday: self.class.transferred_on_sunday?(feast)
+          Dates.public_send feast, year, sunday: transferred_on_sunday?(feast)
         end
       else
         define_method feast do
@@ -334,22 +299,38 @@ module CalendariumRomanum
       @memorials = {}
 
       self.class.celebrations.each do |c|
-        if c.date_method.is_a? Proc
-          date = instance_eval &c.date_method
-        else
-          date = public_send(c.date_method)
-        end
-        celebration = c.celebration
+        prepare_celebration_date c.date_method, c.celebration
+      end
 
-        add_to =
-          if celebration.feast?
-            @feasts
-          elsif celebration.memorial?
-            @memorials
-          else
-            @solemnities
-          end
-        add_to[date] = celebration
+      @extensions.each do |extension|
+        extension.each_celebration do |date_method, celebration|
+          prepare_celebration_date date_method, celebration
+        end
+      end
+    end
+
+    def prepare_celebration_date(date_method, celebration)
+      if date_method.is_a? Proc
+        date = instance_eval &date_method
+      else
+        date = public_send(date_method)
+      end
+
+      add_to =
+        if celebration.feast?
+          @feasts
+        elsif celebration.memorial?
+          @memorials
+        else
+          @solemnities
+        end
+      add_to[date] = celebration
+    end
+
+    def validate_sunday_transfer!
+      unsupported = @transfer_on_sunday - SUNDAY_TRANSFERABLE_SOLEMNITIES
+      unless unsupported.empty?
+        raise RuntimeError.new("Transfer of #{unsupported.inspect} on Sunday not supported. Only #{SUNDAY_TRANSFERABLE_SOLEMNITIES} are allowed.")
       end
     end
   end
