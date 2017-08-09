@@ -457,7 +457,7 @@ describe CR::Temporale do
   end
 
   describe 'Solemnities transferred to a Sunday' do
-    let(:transferred) { [:epiphany, :ascension, :body_blood] }
+    let(:transferred) { [:epiphany, :ascension, :corpus_christi] }
     let(:t) { described_class.new(2016, transfer_to_sunday: transferred) }
 
     it 'Epiphany' do
@@ -486,7 +486,7 @@ describe CR::Temporale do
       date = Date.new(2017, 6, 18)
       expect(date).to be_sunday # make sure
 
-      expect(t.body_blood).to eq date
+      expect(t.corpus_christi).to eq date
 
       c = t.get(date)
       expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL

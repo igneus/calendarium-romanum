@@ -207,7 +207,7 @@ solemnities, but has an option to enable the transfer:
 CR = CalendariumRomanum
 
 # transfer all three to Sunday
-temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, :body_blood])
+temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, :corpus_christi])
 ```
 
 Usually you don't want to work with `Temporale` alone, but with

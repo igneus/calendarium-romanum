@@ -8,7 +8,7 @@ module CalendariumRomanum
     WEEK = 7
 
     SUNDAY_TRANSFERABLE_SOLEMNITIES =
-      %i(epiphany ascension body_blood).freeze
+      %i(epiphany ascension corpus_christi).freeze
 
     # year is Integer - the civil year when the liturgical year begins
     def initialize(year, extensions: [], transfer_to_sunday: [])
@@ -63,7 +63,7 @@ module CalendariumRomanum
               c(:ascension, Ranks::PRIMARY),
               c(:pentecost, Ranks::PRIMARY, Colours::RED),
               c(:holy_trinity, Ranks::SOLEMNITY_GENERAL),
-              c(:body_blood, Ranks::SOLEMNITY_GENERAL),
+              c(:corpus_christi, Ranks::SOLEMNITY_GENERAL),
               c(:sacred_heart, Ranks::SOLEMNITY_GENERAL),
               c(:christ_king, Ranks::SOLEMNITY_GENERAL),
 
@@ -128,7 +128,7 @@ module CalendariumRomanum
     ascension
     pentecost
     holy_trinity
-    body_blood
+    corpus_christi
     sacred_heart
     immaculate_heart
     christ_king

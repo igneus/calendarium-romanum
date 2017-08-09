@@ -102,7 +102,7 @@ module CalendariumRomanum
         octave_of(pentecost(year))
       end
 
-      def self.body_blood(year, sunday: false)
+      def self.corpus_christi(year, sunday: false)
         if sunday
           # GNLYC 7 c)
           return holy_trinity(year) + WEEK
@@ -112,7 +112,7 @@ module CalendariumRomanum
       end
 
       def self.sacred_heart(year)
-        body_blood(year) + 8
+        corpus_christi(year) + 8
       end
 
       def self.immaculate_heart(year)
