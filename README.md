@@ -23,7 +23,7 @@ and the Calendar
 - [x] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
 - [x] additional temporale feasts (Christ the Eternal Priest and similar)
-- [x] optional transfer of important solemnities on a nearby Sunday
+- [x] optional transfer of important solemnities to a Sunday
 
 ## Credits
 
@@ -207,7 +207,7 @@ solemnities, but has an option to enable the transfer:
 CR = CalendariumRomanum
 
 # transfer all three to Sunday
-temporale = CR::Temporale.new(2016, transfer_on_sunday: [:epiphany, :ascension, :body_blood])
+temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, :body_blood])
 ```
 
 Usually you don't want to work with `Temporale` alone, but with
@@ -221,7 +221,7 @@ CR = CalendariumRomanum
 # temporale factory is a callable (e.g. a Proc) receiving a year
 # and returning a Temporale instance for the year
 temporale_factory = lambda do |year|
-  CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+  CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
 end
 
 sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load

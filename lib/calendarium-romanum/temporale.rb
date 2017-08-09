@@ -11,11 +11,11 @@ module CalendariumRomanum
       %i(epiphany ascension body_blood).freeze
 
     # year is Integer - the civil year when the liturgical year begins
-    def initialize(year, extensions: [], transfer_on_sunday: [])
+    def initialize(year, extensions: [], transfer_to_sunday: [])
       @year = year
 
       @extensions = extensions
-      @transfer_on_sunday = transfer_on_sunday
+      @transfer_to_sunday = transfer_to_sunday
       validate_sunday_transfer!
 
       prepare_solemnities
@@ -88,8 +88,8 @@ module CalendariumRomanum
       end
     end
 
-    def transferred_on_sunday?(solemnity)
-      @transfer_on_sunday.include?(solemnity)
+    def transferred_to_sunday?(solemnity)
+      @transfer_to_sunday.include?(solemnity)
     end
 
     def start_date
@@ -135,7 +135,7 @@ module CalendariumRomanum
     ).each do |feast|
       if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
         define_method feast do
-          Dates.public_send feast, year, sunday: transferred_on_sunday?(feast)
+          Dates.public_send feast, year, sunday: transferred_to_sunday?(feast)
         end
       else
         define_method feast do
@@ -331,9 +331,9 @@ module CalendariumRomanum
     end
 
     def validate_sunday_transfer!
-      unsupported = @transfer_on_sunday - SUNDAY_TRANSFERABLE_SOLEMNITIES
+      unsupported = @transfer_to_sunday - SUNDAY_TRANSFERABLE_SOLEMNITIES
       unless unsupported.empty?
-        raise RuntimeError.new("Transfer of #{unsupported.inspect} on Sunday not supported. Only #{SUNDAY_TRANSFERABLE_SOLEMNITIES} are allowed.")
+        raise RuntimeError.new("Transfer of #{unsupported.inspect} to a Sunday not supported. Only #{SUNDAY_TRANSFERABLE_SOLEMNITIES} are allowed.")
       end
     end
   end

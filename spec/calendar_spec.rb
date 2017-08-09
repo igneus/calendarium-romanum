@@ -321,7 +321,7 @@ describe CR::Calendar do
 
       it 'preserves temporale settings' do
         factory = lambda do |year|
-          CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+          CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
         end
 
         cal = described_class.new(2016, nil, factory)
@@ -349,7 +349,7 @@ describe CR::Calendar do
 
       it 'preserves temporale settings' do
         factory = lambda do |year|
-          CR::Temporale.new(year, transfer_on_sunday: [:epiphany])
+          CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
         end
 
         cal = described_class.new(2016, nil, factory)

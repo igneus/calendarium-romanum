@@ -456,9 +456,9 @@ describe CR::Temporale do
     end
   end
 
-  describe 'Solemnities transferred on Sunday' do
+  describe 'Solemnities transferred to a Sunday' do
     let(:transferred) { [:epiphany, :ascension, :body_blood] }
-    let(:t) { described_class.new(2016, transfer_on_sunday: transferred) }
+    let(:t) { described_class.new(2016, transfer_to_sunday: transferred) }
 
     it 'Epiphany' do
       date = Date.new(2017, 1, 8)
@@ -495,7 +495,7 @@ describe CR::Temporale do
 
     it 'fails on an unsupported solemnity' do
       expect do
-        described_class.new(2016, transfer_on_sunday: [:sacred_heart])
+        described_class.new(2016, transfer_to_sunday: [:sacred_heart])
       end.to raise_exception(RuntimeError, /not supported/)
     end
   end
