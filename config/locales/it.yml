@@ -62,7 +62,7 @@ it:
       feast: festa
       sunday: domenica
       memorial: memoria
-      memorial_opt: memoria facoltative
+      memorial_opt: memoria facoltativa
       ferial: feria
   weekday:
     '0': Domenica
