@@ -16,8 +16,8 @@ module CalendariumRomanum
         end
 
         # method computing date
-        def christ_eternal_priest
-          pentecost + 4
+        def self.christ_eternal_priest(year)
+          Dates.pentecost(year) + 4
         end
       end
     end

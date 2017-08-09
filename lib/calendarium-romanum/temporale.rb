@@ -15,8 +15,6 @@ module CalendariumRomanum
       @year = year
 
       @extensions = extensions
-      @extensions.each {|e| extend e }
-
       @transfer_on_sunday = transfer_on_sunday
       validate_sunday_transfer!
 
@@ -304,14 +302,19 @@ module CalendariumRomanum
 
       @extensions.each do |extension|
         extension.each_celebration do |date_method, celebration|
-          prepare_celebration_date date_method, celebration
+          date_proc = date_method
+          if date_method.is_a? Symbol
+            date_proc = extension.method(date_method)
+          end
+
+          prepare_celebration_date date_proc, celebration
         end
       end
     end
 
     def prepare_celebration_date(date_method, celebration)
-      if date_method.is_a? Proc
-        date = instance_eval &date_method
+      if date_method.respond_to? :call
+        date = date_method.call(year)
       else
         date = public_send(date_method)
       end
