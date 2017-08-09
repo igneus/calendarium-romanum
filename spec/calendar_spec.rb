@@ -329,7 +329,7 @@ describe CR::Calendar do
 
         # the transfer is preserved also in the new calendar
         d = new_cal.day(Date.new(2016, 1, 3))
-        expect(d.celebrations[0].title).to eq 'The Epiphany of the Lord'
+        expect(d.celebrations[0].title).to have_translation 'The Epiphany of the Lord'
       end
     end
 
@@ -357,7 +357,7 @@ describe CR::Calendar do
 
         # the transfer is preserved also in the new calendar
         d = new_cal.day(Date.new(2018, 1, 7))
-        expect(d.celebrations[0].title).to eq 'The Epiphany of the Lord'
+        expect(d.celebrations[0].title).to have_translation 'The Epiphany of the Lord'
       end
     end
   end
