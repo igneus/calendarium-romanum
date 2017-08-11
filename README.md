@@ -283,7 +283,7 @@ is a convenient choice.
 CR = CalendariumRomanum
 
 module MyExtension
-  # registers celebration defined by the extension
+  # yields celebrations defined by the extension
   def self.each_celebration
     yield(
       :my_feast_date, # name of a method computing date of the feast
