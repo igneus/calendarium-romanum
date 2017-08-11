@@ -1,0 +1,76 @@
+fr:
+  temporale:
+    solemnity:
+      nativity: La Nativité du Seigneur
+      holy_family: La Sainte Famille de Jésus, Marie et Joseph
+      mother_of_god: Octave de Noël, de Marie, Mère de Dieu
+      epiphany: L'Epiphanie du Seigneur
+      baptism_of_lord: Le Baptême du Seigneur
+      ash_wednesday: Mercredi des Cendres
+      palm_sunday: Dimanche des Rameaux de la Passion du Seigneur
+      good_friday: Vendredi de la Passion du Seigneur
+      holy_saturday: Samedi Saint
+      easter_sunday: Dimanche de Pâques de la Résurrection du Seigneur
+      ascension: Ascension du Seigneur
+      pentecost: Dimanche de Pentecôte
+      holy_trinity: La Très Sainte Trinité
+      corpus_christi: Le Très Saint Corps et Sang du Christ
+      sacred_heart: Le Sacré-Coeur de Jésus
+      immaculate_heart: Le Coeur Immaculé de Marie
+      christ_king: Notre Seigneur Jésus Christ, Roi de l'Univers
+    ordinary:
+      sunday: '%{week} Dimanche de Temps Ordinaire'
+      ferial: '%{weekday}, %{week} semaine de Temps Ordinaire'
+    advent:
+      sunday: '%{week} Dimanche de l''Avent'
+      ferial: '%{weekday}, %{week} semaine de L''Avent'
+    christmas:
+      nativity_octave:
+        ferial: 'Jour %{day} de l''Octave de Noël'
+      sunday: '%{week} Dimanche après la Naissance du Seigneur'
+      ferial: '%{weekday} après l''Octave de Noël'
+      after_epiphany:
+        ferial: '%{weekday} après l''Epiphanie'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} après le Mercredi des Cendres'
+      sunday: '%{week} Dimanche de Carême'
+      ferial: '%{weekday}, %{week} semaine de Carême'
+      holy_week:
+        ferial: '%{weekday} de la Semaine Sainte'
+    easter:
+      octave:
+        ferial: 'Pâques %{weekday}'
+      sunday: '%{week} Dimanche de Pâques'
+      ferial: '%{weekday}, %{week} semaine de Pâques'
+  rank:
+    '1_1': Triduum Pascal
+    '1_2': Jours liturgiques primaires
+    '1_3': Solennités du Calendrier Général
+    '1_4': Solennités appropriées
+    '2_5': Fête du Seigneur du Calendrier Général
+    '2_6': Dimanches du temps de Noël et les dimanches per annum
+    '2_7': Fête des Saints du Calendrier Général
+    '2_8': Fête appropriées
+    '2_9': Jours fériés privilégiés
+    '3_10': Mémoriaux obligatoire du Calendrier Général
+    '3_11': Mémoriaux obligatoire appropriés
+    '3_12': Mémoriaux optionnels
+    '3_13': Fériés
+    '4_0': Commémorations
+    short:
+      solemnity: solennité
+      feast: fête
+      sunday: Dimanche
+      memorial: mémorial
+      memorial_opt: mémorial optionnel
+      ferial: férié
+      commemoration: commémoration
+  weekday:
+    '0': Dimanche
+    '1': Lundi
+    '2': Mardi
+    '3': Mercredi
+    '4': Jeudi
+    '5': Vendredi
+    '6': Samedi
