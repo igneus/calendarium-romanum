@@ -6,13 +6,13 @@ describe CR::Sanctorale do
   end
 
   describe '#get' do
-    describe 'for empty day' do
+    describe 'for an empty day' do
       it 'returns an Array' do
         expect(@s.get(1,3)).to be_an Array
       end
     end
 
-    describe 'for unempty day' do
+    describe 'for an unempty day' do
       before :each do
         @c = CR::Celebration.new('S. Antonii, abbatis', CR::Ranks::MEMORIAL_GENERAL)
         @s.add 1, 17, @c
