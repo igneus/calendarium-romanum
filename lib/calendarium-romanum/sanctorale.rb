@@ -85,5 +85,11 @@ module CalendariumRomanum
     def empty?
       @days.empty?
     end
+
+    def freeze
+      @days.freeze
+      @solemnities.freeze
+      super
+    end
   end
 end

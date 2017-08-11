@@ -164,4 +164,21 @@ describe CR::Sanctorale do
       expect {|block| @s.each_day(&block) }.to yield_with_args(CR::AbstractDate.new(1, 17), [cele])
     end
   end
+
+  describe '#freeze' do
+    it 'makes the instance frozen' do
+      expect(@s).not_to be_frozen # make sure
+      @s.freeze
+      expect(@s).to be_frozen
+    end
+
+    it 'prevents modification' do
+      @s.freeze
+
+      cele = CR::Celebration.new('S. Antonii, abbatis', CR::Ranks::MEMORIAL_GENERAL)
+      expect do
+        @s.add 1, 17, cele
+      end.to raise_exception(RuntimeError, /can't modify frozen/)
+    end
+  end
 end
