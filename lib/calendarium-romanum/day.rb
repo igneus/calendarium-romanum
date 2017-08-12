@@ -30,6 +30,14 @@ module CalendariumRomanum
 
     # an Array of Celebrations, possibly empty
     attr_reader :celebrations
+
+    def ==(other)
+      self.class == other.class &&
+        date == other.date &&
+        season == other.season &&
+        season_week == other.season_week &&
+        celebrations == other.celebrations
+    end
   end
 
   # information on one particular celebration of the liturgical year
@@ -58,5 +66,12 @@ module CalendariumRomanum
 
     attr_reader :colour
     alias_method :color, :colour
+
+    def ==(other)
+      self.class == other.class &&
+        title == other.title &&
+        rank == other.rank &&
+        colour == other.colour
+    end
   end
 end
