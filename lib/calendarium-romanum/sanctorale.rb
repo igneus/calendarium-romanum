@@ -43,7 +43,7 @@ module CalendariumRomanum
         @solemnities.delete date
       end
 
-      @days[date] = celebrations
+      @days[date] = celebrations.dup
     end
 
     # adds all Celebrations from another instance

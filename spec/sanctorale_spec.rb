@@ -105,6 +105,15 @@ describe CR::Sanctorale do
         s.replace 1, 13, [opt_memorial_2]
       end.to change { s.solemnities.size }.by -1
     end
+
+    it 'does not simply save the passed Array' do
+      array = [opt_memorial]
+      s.replace 1, 13, array
+
+      array << nil
+
+      expect(s.get(1, 13)).not_to include nil
+    end
   end
 
   describe '#update' do
