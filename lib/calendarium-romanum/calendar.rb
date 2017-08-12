@@ -120,8 +120,7 @@ module CalendariumRomanum
       unless st.empty?
         if st.first.rank > t.rank
           if st.first.rank == Ranks::MEMORIAL_OPTIONAL
-            st.unshift t
-            return st
+            return st.dup.unshift t
           else
             return st
           end
@@ -135,6 +134,12 @@ module CalendariumRomanum
       end
 
       return [t]
+    end
+
+    def freeze
+      @temporale.freeze
+      @sanctorale.freeze
+      super
     end
   end # class Calendar
 end

@@ -4,7 +4,7 @@ describe CR::Calendar do
 
   describe 'core functions' do
     before :all do
-      @c = described_class.new 2013
+      @c = described_class.new(2013).freeze
     end
 
     describe '#==' do
@@ -207,7 +207,7 @@ describe CR::Calendar do
       describe 'Temporale x Sanctorale resolution' do
         before :all do
           @s = CR::Data::GENERAL_ROMAN_ENGLISH.load
-          @c = described_class.new 2013, @s
+          @c = described_class.new(2013, @s).freeze
         end
 
         it '"empty" day results in a ferial' do
