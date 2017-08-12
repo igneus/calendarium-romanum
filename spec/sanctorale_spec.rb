@@ -125,6 +125,13 @@ describe CR::Sanctorale do
       s.update s2
       expect(s.get(1, 17)).to eq [opt_memorial]
     end
+
+    it 'does not overwrite content of days for which it does not have any' do
+      s.add 1, 17, antonius
+
+      s.update s2
+      expect(s.get(1, 17)).to eq [antonius]
+    end
   end
 
   describe '#size' do
