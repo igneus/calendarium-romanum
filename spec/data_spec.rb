@@ -6,7 +6,7 @@ describe CalendariumRomanum::Data do
     glob = File.join(data_path, '*.txt')
 
     Dir[glob].each do |file|
-      it file do
+      it "#{file} has it's Data entry" do
         in_data = described_class.all.find {|f| f.path == file }
         expect(in_data).not_to be nil
       end
