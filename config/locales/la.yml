@@ -57,6 +57,7 @@ la:
     '3_11': Memoriae obligatoriae propriae
     '3_12': Memoriae ad libitum
     '3_13': Feriae
+    '4_0': Commemorationes
     short:
       solemnity: sollemnitas
       feast: festum
@@ -64,6 +65,7 @@ la:
       memorial: memoria
       memorial_opt: memoria ad libitum
       ferial: feria
+      commemoration: commemoratio
   weekday:
     '0': Dominica
     '1': Feria secunda

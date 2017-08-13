@@ -59,6 +59,7 @@ cs:
     '3_11': Vlastní závazné památky
     '3_12': Nezávazné památky
     '3_13': Ferie
+    '4_0': Připomínky
     short:
       solemnity: slavnost
       feast: svátek
@@ -66,6 +67,7 @@ cs:
       memorial: památka
       memorial_opt: nezávazná památka
       ferial: ferie
+      commemoration: připomínka
   weekday:
     '0': Neděle
     '1': Pondělí

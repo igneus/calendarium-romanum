@@ -28,15 +28,25 @@ describe CR::Rank do
     it { expect(CR::Ranks[1.2]).not_to be == CR::Ranks[1.1] }
   end
 
-  describe '#desc' do
-    it { expect(CR::Ranks[1.1].desc).to have_translation 'Easter triduum' }
-  end
+  describe 'descriptions' do
+    CR::Ranks.each do |rank|
+      describe "#{rank.priority} #{rank.short_desc}" do
+        it 'has #desc translated' do
+          expect(rank.desc).to have_translation
+        end
 
-  describe '#short_desc' do
-    it 'is not always set' do
-      expect(CR::Ranks[1.1].short_desc).to be_nil
+        it 'is has #short_desc translated' do
+          if rank.short_desc # not set for some ranks
+            expect(rank.short_desc).to have_translation
+          end
+        end
+      end
     end
 
-    it { expect(CR::Ranks[2.8].short_desc).to have_translation 'feast' }
+    describe '#short_desc' do
+      it 'is not always set' do
+        expect(CR::Ranks[1.1].short_desc).to be_nil
+      end
+    end
   end
 end

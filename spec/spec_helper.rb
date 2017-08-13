@@ -18,12 +18,12 @@ end
 RSpec::Matchers.define :have_translation do |expected, locale|
   match do |actual|
     locale ||= :en
-    if I18n.locale == locale
+    if expected && I18n.locale == locale
       actual == expected
     else
       # with locale different from the one the spec is written for
       # just test that the string isn't left untranslated
-      !(actual.empty? || actual.include?('translation missing'))
+      !(actual.nil? || actual.empty? || actual.include?('translation missing'))
     end
   end
 end

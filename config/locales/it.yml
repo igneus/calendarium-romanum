@@ -57,6 +57,7 @@ it:
     '3_11': Proper obligatory memorials
     '3_12': Optional memorials
     '3_13': Ferials
+    '4_0': Commemorations
     short:
       solemnity: solennità
       feast: festa
@@ -64,6 +65,7 @@ it:
       memorial: memoria
       memorial_opt: memoria facoltativa
       ferial: feria
+      commemoration: commemorazione
   weekday:
     '0': Domenica
     '1': Lunedì
