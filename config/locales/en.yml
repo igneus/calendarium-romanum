@@ -1,5 +1,11 @@
 en:
   temporale:
+    season:
+      advent: Advent
+      christmas: Christmas Season
+      lent: Lent
+      easter: Easter Season
+      ordinary: Ordinary Time
     solemnity:
       nativity: The Nativity of the Lord
       holy_family: The Holy Family of Jesus, Mary and Joseph
@@ -74,3 +80,8 @@ en:
     '4': Thursday
     '5': Friday
     '6': Saturday
+  colour:
+    violet: violet
+    white: white
+    green: green
+    red: red

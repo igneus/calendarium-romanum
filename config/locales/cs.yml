@@ -1,5 +1,11 @@
 cs:
   temporale:
+    season:
+      advent: Doba adventní
+      christmas: Doba vánoční
+      lent: Doba postní
+      easter: Doba velikonoční
+      ordinary: Liturgické mezidobí
     solemnity:
       nativity: Narození Páně
       holy_family: Svaté rodiny Ježíše, Marie a Josefa
@@ -76,3 +82,8 @@ cs:
     '4': Čtvrtek
     '5': Pátek
     '6': Sobota
+  colour:
+    violet: fialová
+    white: bílá
+    green: zelená
+    red: červená

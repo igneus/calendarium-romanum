@@ -1,5 +1,11 @@
 fr:
   temporale:
+    season:
+      advent: "Temps de l'Avent"
+      christmas: Temps de Noël
+      lent: Temps du Carême
+      easter: Temps de Pâques
+      ordinary: Temps ordinaire
     solemnity:
       nativity: La Nativité du Seigneur
       holy_family: La Sainte Famille de Jésus, Marie et Joseph
@@ -74,3 +80,8 @@ fr:
     '4': Jeudi
     '5': Vendredi
     '6': Samedi
+  colour:
+    violet: violet
+    white: blanc
+    green: vert
+    red: rouge

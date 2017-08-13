@@ -1,5 +1,11 @@
 it:
   temporale:
+    season:
+      advent: Tempo di Avvento
+      christmas: Tempo di Natale
+      lent: Tempo di Quaresima
+      easter: Tempo pasquale
+      ordinary: Tempo ordinario
     solemnity:
       nativity: Natale del Signore
       holy_family: Santa Famiglia di Gesù, Maria e Giuseppe
@@ -74,3 +80,8 @@ it:
     '4': Giovedì
     '5': Venerdì
     '6': Sabato
+  colour:
+    violet: viola
+    white: bianco
+    green: verde
+    red: rosso

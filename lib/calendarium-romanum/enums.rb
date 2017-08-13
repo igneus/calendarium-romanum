@@ -3,10 +3,15 @@ module CalendariumRomanum
   class Colour
     def initialize(symbol)
       @symbol = symbol
+      @i18n_key = "colour.#{@symbol}"
     end
 
     attr_reader :symbol
     alias to_sym symbol
+
+    def name
+      I18n.t @i18n_key
+    end
   end
 
   class Colours < Enum
@@ -26,10 +31,15 @@ module CalendariumRomanum
     def initialize(symbol, colour)
       @symbol = symbol
       @colour = colour
+      @i18n_key = "temporale.season.#{@symbol}"
     end
 
     attr_reader :symbol, :colour
     alias to_sym symbol
+
+    def name
+      I18n.t @i18n_key
+    end
   end
 
   class Seasons < Enum

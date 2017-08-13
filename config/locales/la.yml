@@ -1,5 +1,11 @@
 la:
   temporale:
+    season:
+      advent: Tempus Adventus
+      christmas: Tempus Nativitatis
+      lent: Tempus Quadragesimae
+      easter: Tempus Paschale
+      ordinary: Tempus per annum
     solemnity:
       nativity: In Nativitate Domini
       holy_family: Sanctae Familiae Iesu, Mariae et Ioseph
@@ -74,3 +80,8 @@ la:
     '4': Feria quinta
     '5': Feria sexta
     '6': Sabbato
+  colour:
+    violet: violaceus # sc. color
+    white: albus
+    green: viridis
+    red: rubeus
