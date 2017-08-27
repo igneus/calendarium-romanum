@@ -8,4 +8,10 @@ describe CR::Colour do
       end
     end
   end
+
+  describe 'indexing' do
+    it 'is indexed by symbol' do
+      expect(CR::Colours[:red]).to be CR::Colours::RED
+    end
+  end
 end

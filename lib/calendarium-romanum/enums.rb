@@ -15,7 +15,7 @@ module CalendariumRomanum
   end
 
   class Colours < Enum
-    values do
+    values(index_by: :symbol) do
       [
         GREEN = Colour.new(:green),
         VIOLET = Colour.new(:violet),
@@ -43,7 +43,7 @@ module CalendariumRomanum
   end
 
   class Seasons < Enum
-    values do
+    values(index_by: :symbol) do
       [
         ADVENT = Season.new(:advent, Colours::VIOLET),
         CHRISTMAS = Season.new(:christmas, Colours::WHITE),

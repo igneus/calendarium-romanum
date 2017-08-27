@@ -8,4 +8,10 @@ describe CR::Season do
       end
     end
   end
+
+  describe 'indexing' do
+    it 'is indexed by symbol' do
+      expect(CR::Seasons[:lent]).to be CR::Seasons::LENT
+    end
+  end
 end
