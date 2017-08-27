@@ -5,6 +5,24 @@ describe CR::Calendar do
     @c = described_class.new(2013).freeze
   end
 
+  describe '.new' do
+    it 'throws RangeError on invalid year' do
+      expect do
+        described_class.new(1968)
+      end.to raise_exception(RangeError, /in use only since 1st January 1970/)
+    end
+  end
+
+  describe '.for_day' do
+    it 'continues the previous year\'s calendar in summer' do
+      expect(described_class.for_day(Date.new(2014, 6, 9))).to eq described_class.new(2013)
+    end
+
+    it 'provides the current year\'s calendar in December' do
+      expect(described_class.for_day(Date.new(2014, 12, 20))).to eq described_class.new(2014)
+    end
+  end
+
   describe '#==' do
     it 'considers calendars with the same year same' do
       expect(described_class.new(2014) == described_class.new(2014)).to be true
@@ -27,16 +45,6 @@ describe CR::Calendar do
     it 'detects correctly' do
       expect(described_class.new(2014).ferial_lectionary).to eq 1
       expect(described_class.new(2013).ferial_lectionary).to eq 2
-    end
-  end
-
-  describe '.for_day' do
-    it 'continues the previous year\'s calendar in summer' do
-      expect(described_class.for_day(Date.new(2014, 6, 9))).to eq described_class.new(2013)
-    end
-
-    it 'provides the current year\'s calendar in December' do
-      expect(described_class.for_day(Date.new(2014, 12, 20))).to eq described_class.new(2014)
     end
   end
 
@@ -97,8 +105,17 @@ describe CR::Calendar do
       end
     end
 
-    it 'throws RangeError if given date not included in the year' do
-      expect { @c.day(2000, 1, 1) }.to raise_error RangeError
+    describe "date not included in the calendar's year" do
+      it 'throws RangeError' do
+        expect { @c.day(2000, 1, 1) }.to raise_exception RangeError
+      end
+    end
+
+    describe 'date before system effectiveness' do
+      it 'throws RangeError' do
+        c = described_class.new 1969
+        expect { c.day(1969, 12, 20) }.to raise_exception RangeError
+      end
     end
 
     describe 'temporale features' do

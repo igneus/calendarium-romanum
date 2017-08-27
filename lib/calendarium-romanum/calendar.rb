@@ -6,13 +6,19 @@ module CalendariumRomanum
   # Provides complete information concerning a liturgical year,
   # it's days and celebrations occurring on them.
   class Calendar
-
     extend Forwardable
+
+    # Day when the implemented calendar system became effective
+    EFFECTIVE_FROM = Date.new(1970, 1, 1).freeze
 
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
     def initialize(year, sanctorale=nil, temporale_factory=nil)
+      if year < (EFFECTIVE_FROM.year - 1)
+        raise system_not_effective
+      end
+
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
       @temporale_factory = temporale_factory || lambda {|year| Temporale.new(year) }
@@ -91,6 +97,10 @@ module CalendariumRomanum
         range_check date
       end
 
+      if date < EFFECTIVE_FROM
+        raise system_not_effective
+      end
+
       s = @temporale.season(date)
       return Day.new(
                      date: date,
@@ -140,6 +150,12 @@ module CalendariumRomanum
       @temporale.freeze
       @sanctorale.freeze
       super
+    end
+
+    private
+
+    def system_not_effective
+      RangeError.new('Year out of range. Implemented calendar system has been in use only since 1st January 1970.')
     end
   end # class Calendar
 end
