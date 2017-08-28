@@ -21,13 +21,16 @@ module CalendariumRomanum
       end
 
       def english_ordinal(number)
-        case number
+        modulo = number % 10
+        modulo = 9 if number / 10 == 1
+
+        case modulo
         when 1
-          '1st'
+          "#{number}st"
         when 2
-          '2nd'
+          "#{number}nd"
         when 3
-          '3rd'
+          "#{number}rd"
         else
           "#{number}th"
         end
