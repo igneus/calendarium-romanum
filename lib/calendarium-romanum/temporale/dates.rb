@@ -47,17 +47,10 @@ module CalendariumRomanum
         # https://github.com/jrobertson/easter
 
         golden_number = (year % 19) + 1
-        if year <= 1752 then
-          # Julian calendar
-          dominical_number = (year + (year / 4) + 5) % 7
-          paschal_full_moon = (3 - (11 * golden_number) - 7) % 30
-        else
-          # Gregorian calendar
-          dominical_number = (year + (year / 4) - (year / 100) + (year / 400)) % 7
-          solar_correction = (year - 1600) / 100 - (year - 1600) / 400
-          lunar_correction = (((year - 1400) / 100) * 8) / 25
-          paschal_full_moon = (3 - 11 * golden_number + solar_correction - lunar_correction) % 30
-        end
+        dominical_number = (year + (year / 4) - (year / 100) + (year / 400)) % 7
+        solar_correction = (year - 1600) / 100 - (year - 1600) / 400
+        lunar_correction = (((year - 1400) / 100) * 8) / 25
+        paschal_full_moon = (3 - 11 * golden_number + solar_correction - lunar_correction) % 30
         dominical_number += 7 until dominical_number > 0
         paschal_full_moon += 30 until paschal_full_moon > 0
         paschal_full_moon -= 1 if paschal_full_moon == 29 or (paschal_full_moon == 28 and golden_number > 11)
