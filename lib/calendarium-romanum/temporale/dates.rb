@@ -32,8 +32,13 @@ module CalendariumRomanum
         Date.new(year+1, 1, 6)
       end
 
-      def self.baptism_of_lord(year)
-        sunday_after epiphany(year)
+      def self.baptism_of_lord(year, epiphany_on_sunday: false)
+        e = epiphany(year, sunday: epiphany_on_sunday)
+        if epiphany_on_sunday
+          e + 1
+        else
+          sunday_after e
+        end
       end
 
       def self.ash_wednesday(year)

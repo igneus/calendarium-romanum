@@ -477,6 +477,17 @@ describe CR::Temporale do
       expect(c.title).to have_translation 'The Epiphany of the Lord'
     end
 
+    it 'Baptism of the Lord after transferred Epiphany' do
+      date = Date.new(2017, 1, 9)
+      expect(date).to be_monday # make sure
+
+      expect(t.baptism_of_lord).to eq date
+
+      c = t.get(date)
+      expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
+      expect(c.title).to have_translation 'The Baptism of the Lord'
+    end
+
     it 'Ascension' do
       date = Date.new(2017, 5, 28)
       expect(date).to be_sunday # make sure
