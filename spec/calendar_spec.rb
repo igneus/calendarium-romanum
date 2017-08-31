@@ -11,6 +11,14 @@ describe CR::Calendar do
         described_class.new(1968)
       end.to raise_exception(RangeError, /in use only since 1st January 1970/)
     end
+
+    it 'throws ArgumentError when Temporale year does not match' do
+      year = 2000
+      temporale = CR::Temporale.new year
+      expect do
+        CR::Calendar.new(year + 1, nil, temporale)
+      end.to raise_exception ArgumentError
+    end
   end
 
   describe '.for_day' do

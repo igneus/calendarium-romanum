@@ -19,6 +19,10 @@ module CalendariumRomanum
         raise system_not_effective
       end
 
+      if temporale && temporale.year != year
+        raise ArgumentError.new("Temporale year must be the same as year.")
+      end
+
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
       @temporale = temporale || Temporale.new(year)
