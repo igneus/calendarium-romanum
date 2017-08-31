@@ -120,6 +120,14 @@ module CalendariumRomanum
       @year % 2 + 1
     end
 
+    def freeze
+      @temporale.freeze
+      @sanctorale.freeze
+      super
+    end
+
+    private
+
     def celebrations_for(date)
       tr = @transferred.get(date)
       return [tr] if tr
@@ -145,14 +153,6 @@ module CalendariumRomanum
 
       return [t]
     end
-
-    def freeze
-      @temporale.freeze
-      @sanctorale.freeze
-      super
-    end
-
-    private
 
     def system_not_effective
       RangeError.new('Year out of range. Implemented calendar system has been in use only since 1st January 1970.')
