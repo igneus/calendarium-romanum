@@ -34,7 +34,7 @@ module CalendariumRomanum
     end
 
     def memorial?
-      priority.to_i == 3
+      priority.to_i == 3 && priority <= 3.12
     end
   end
 end

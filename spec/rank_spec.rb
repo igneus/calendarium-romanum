@@ -49,4 +49,9 @@ describe CR::Rank do
       end
     end
   end
+
+  describe '#memorial?' do
+    it { expect(CR::Ranks::MEMORIAL_OPTIONAL.memorial?).to be true }
+    it { expect(CR::Ranks::FERIAL.memorial?).to be false }
+  end
 end
