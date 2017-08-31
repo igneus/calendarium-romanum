@@ -6,6 +6,7 @@ enum
 enums
 data
 calendar
+perpetual_calendar
 temporale
 temporale/dates
 temporale/extensions/christ_eternal_priest
