@@ -14,15 +14,14 @@ module CalendariumRomanum
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
-    def initialize(year, sanctorale=nil, temporale_factory=nil)
+    def initialize(year, sanctorale=nil, temporale=nil)
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
       end
 
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
-      @temporale_factory = temporale_factory || lambda {|year| Temporale.new(year) }
-      @temporale = @temporale_factory.call(year)
+      @temporale = temporale || Temporale.new(year)
       @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
@@ -61,18 +60,6 @@ module CalendariumRomanum
     attr_reader :year
     attr_reader :temporale
     attr_reader :sanctorale
-
-    # returns a Calendar for the subsequent year
-    def succ
-      c = Calendar.new @year + 1, @sanctorale, @temporale_factory
-      return c
-    end
-
-    # returns a Calendar for the previous year
-    def pred
-      c = Calendar.new @year - 1, @sanctorale, @temporale_factory
-      return c
-    end
 
     def ==(obj)
       unless obj.is_a? Calendar
