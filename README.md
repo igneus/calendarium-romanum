@@ -141,11 +141,13 @@ day = calendar.day(date)
 The gem expects data files following a custom format -
 see README in the [data](/data) directory for it's description.
 The same directory contains a bunch of example data files.
+(All of them are also bundled in the gem and accessible via
+`CalendariumRomanum::Data`, as described above.)
 
 `universal-en.txt` and `universal-la.txt` are data of the General
 Roman Calendar in English and Latin.
 
-The other files, when layered properly, can be used to assemble
+The `czech-*.txt` files, when layered properly, can be used to assemble
 proper calendar of any diocese in the Czech Republic.
 
 ### Implement custom loading strategy
