@@ -134,6 +134,91 @@ calendar = CR::Calendar.for_day(date, sanctorale)
 day = calendar.day(date)
 ```
 
+### 5. I don't want to care about (liturgical) years
+
+Each Calendar instance is bound to a particular *liturgical* year.
+Calling `Calendar#day` with a date out of the year's range
+results in a `RangeError`:
+
+```ruby
+CR = CalendariumRomanum
+calendar = CR::Calendar.new(2000)
+begin
+  day = calendar.day(Date.new(2000, 1, 1))
+rescue RangeError
+  # ouch
+end
+```
+
+The example demonstrates the well known fact, that the civil
+and liturgical year don't match: 1st January 2000
+does not belong to the liturgical year 2000-2001
+(which will begin on the first Sunday of Advent,
+i.e. on 3rd December 2000), but to the year 1999-2000.
+For the sake of simplicity, `calendarium-romanum` denotes
+liturgical years by the starting year only, so you create
+a `Calendar` for liturgical year 2000-2001 by calling
+`Calendar.new(2000)`.
+
+When you want to query a calendar without caring about liturgical
+years, possibly picking days across multiple years,
+the tool you are looking for is `PerpetualCalendar`.
+
+```ruby
+CR = CalendariumRomanum
+pcal = CR::PerpetualCalendar.new
+
+# get days
+d1 = pcal.day(Date.new(2000, 1, 1))
+d2 = pcal.day(Date.new(2100, 1, 1))
+d3 = pcal.day(Date.new(1970, 1, 1))
+
+# get Calendar instances if you need them
+calendar = pcal.calendar_for_year(1987)
+```
+
+Just like `Calendar` with the default settings (no sanctorale data
+etc.) is usually of little use, so is a `PerpetualCalendar`
+creating such `Calendar`s. Of course it is possible to specify
+configuration which is then applied on the `Calendar`s
+being created:
+
+```ruby
+CR = CalendariumRomanum
+
+pcal = CR::PerpetualCalendar.new(
+  # Sanctorale instance
+  sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load,
+  # options that will be passed to Temporale.new
+  temporale_options: {
+    transfer_to_sunday: [:epiphany],
+    extensions: [CR::Temporale::Extensions::ChristEternalPriest]
+  }
+)
+
+# It is also possible to supply Temporale factory instead of options:
+pcal = CR::PerpetualCalendar.new(
+  # Proc returning a Temporale instance for the specified year
+  temporale_factory: lambda do |year|
+    Temporale.new(year, transfer_to_sunday: [:ascension])
+  end
+)
+```
+
+**Memory management note:**
+By default, `PerpetualCalendar` caches each created `Calendar`
+instance *perpetually.* This is OK in most cases,
+but can lead to memory exhaustion if you traverse an excessive
+amount of liturgical years. In such cases you can supply
+your own cache (a `Hash` or anything with hash-like interface)
+and implement some kind of cache size limit.
+
+```ruby
+CR = CalendariumRomanum
+my_cache = {}
+pcal = CR::PerpetualCalendar.new(cache: my_cache)
+```
+
 ## Sanctorale Data
 
 ### Use prepared data or create your own
@@ -203,7 +288,7 @@ As specified in
 the solemnities of Epiphany, Ascension and Corpus Christi
 can be transferred to a Sunday.
 `Temporale` by default preserves the regular dates of these
-solemnities, but has an option to enable the transfer:
+solemnities, but it has an option to enable the transfer:
 
 ```ruby
 CR = CalendariumRomanum
@@ -214,21 +299,17 @@ temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, 
 
 Usually you don't want to work with `Temporale` alone, but with
 a `Calendar`. In order to create a `Calendar` with non-default
-`Temporale` settings, it is necessary to provide a temporale
-*factory* as a third argument to the constructor.
+`Temporale` settings, it is necessary to provide a `Temporale`
+as third argument to the constructor.
 
 ```ruby
 CR = CalendariumRomanum
 
-# temporale factory is a callable (e.g. a Proc) receiving a year
-# and returning a Temporale instance for the year
-temporale_factory = lambda do |year|
-  CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
-end
-
+year = 2000
 sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
+temporale = CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
 
-calendar = CR::Calendar.for_day(Date.today, sanctorale, temporale_factory)
+calendar = CR::Calendar.new(year, sanctorale, temporale)
 ```
 
 ## Custom movable feasts
@@ -243,25 +324,21 @@ as `Temporale` extension.
 In order to build a complete Czech `Calendar` with proper sanctorale
 feasts and the additional temporale feast of *Christ the Priest*,
 it is necessary, apart of loading the sanctorale data,
-to provide a factory (a simple `Proc` serves this purpose well)
-producing `Temporale` instances with the extension applied:
+to provide a `Temporale` instance with the extension applied:
 
 ```ruby
 CR = CalendariumRomanum
 
-temporale_factory = lambda do |year|
+year = 2016
+sanctorale = CR::Data::CZECH.load
+temporale =
   CR::Temporale.new(
     year,
-    # the important bit: use the extension
+    # the important bit: apply the Temporale extension
     extensions: [CR::Temporale::Extensions::ChristEternalPriest]
   )
-end
 
-sanctorale = CR::Data::CZECH.load
-
-calendar = CR::Calendar.new(2016, sanctorale, temporale_factory)
-# or
-calendar = CR::Calendar.for_day(Date.today, sanctorale, temporale_factory)
+calendar = CR::Calendar.new(year, sanctorale, temporale)
 ```
 
 The feast of *Christ the Priest*, by it's nature, extends the cycle of
