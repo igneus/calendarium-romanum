@@ -27,7 +27,7 @@ describe CR::PerpetualCalendar do
         epiphany_date = CR::Temporale::Dates.epiphany(y, sunday: true)
         expect(epiphany_date).not_to eq CR::Temporale::Dates.epiphany(y) # make sure
 
-        expect(calendar.day(epiphany_date).celebrations[0].title).to eq 'The Epiphany of the Lord'
+        expect(calendar.day(epiphany_date).celebrations[0].title).to have_translation 'The Epiphany of the Lord'
       end
     end
 
