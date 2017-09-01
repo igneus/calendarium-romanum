@@ -85,7 +85,7 @@ module CalendariumRomanum
           ca = celebs[0][i]
           cb = celebs[1][i]
 
-          _print_cel = Proc.new {|c| puts "#{c.rank.priority} #{c.colour} | #{c.title}" }
+          _print_cel = Proc.new {|c| puts "#{c.rank.priority} #{c.colour.symbol} | #{c.title}" }
 
           if ca.rank != cb.rank || ca.colour != cb.colour
             puts "#{d.month}/#{d.day}"
