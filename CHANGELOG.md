@@ -1,5 +1,51 @@
 # Changelog
 
+## [0.4.0] 2017-09-02
+
+### Fixed
+
+- `Sanctorale#replace` saving the supplied array as part of
+  the internal data structures (and thus allowing their -
+  usually unintentional - modification by external code)
+- `Calendar` unintentionally modifying `Sanctorale` internal data
+  when handling optional memorials
+- errors in English ordinals greater than 10 ("21th" -> "21st" etc.)
+- `Ranks::FERIAL.memorial?` wrongly returning `true`
+- rank of *All Souls* fixed in all data files
+
+### Added
+
+- support for transfer of Epiphany, Ascension and Corpus Christi
+  to a Sunday (GNLYC 7)
+- General Roman Calendar in French and French localization
+  (by Azarias Boutin @AzariasB)
+- `PerpetualCalendar`
+- `Season#name`, `Colour#name` - localized human-readable names
+
+### Changed
+
+- interface for `Temporale` extensions changed completely:
+  extensions are self-contained, isolated; their sole responsibility
+  is to yield data
+- `Calendar` stripped of the ability to create new instances
+  with the same settings:
+  - `Calendar#pred` and `#succ` removed
+  - `Calendar.new` receives `Temporale` *instance*
+    (instead of a temporale factory)
+- `Calendar#day` raises `RangeError` if the day is earlier than
+  1st January 1970 (day of introduction of the implemented calendar
+  system)
+- `Temporale::Dates.easter_sunday` doesn't return Julian calendar
+  Easter date for years <= 1752 (this library isn't intended to be used
+  for years earlier than 1970)
+- `Day#==` and `Calendar#==` test object contents, not identity
+- `Temporale::Dates.body_blood` renamed to `.corpus_christi`
+- `Sanctorale#freeze` freezes also the internal data structures
+- `Calendar#freeze` freezes contained `Temporale` and `Sanctorale`
+- seasons and colours indexed by their symbols, not by index number -
+  e.g. `Seasons[:lent]`, `Colours[:violet]`
+- `Calendar#celebrations_for` made private
+
 ## [0.3.0] 2017-08-07
 
 ### Fixed
