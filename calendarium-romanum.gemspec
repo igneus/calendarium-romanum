@@ -4,7 +4,7 @@ require_relative 'lib/calendarium-romanum/version'
 Gem::Specification.new do |s|
   s.name        = 'calendarium-romanum'
   s.version     = CalendariumRomanum::VERSION
-  s.date        = '2017-02-26'
+  s.date        = CalendariumRomanum::RELEASE_DATE.to_s
   s.summary     = 'Roman Catholic liturgical calendar computations'
 
   s.description = "calendar computations according to the Roman Catholic liturgical calendar as instituted by MP Mysterii Paschalis of Paul VI (1969)."
