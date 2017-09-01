@@ -222,7 +222,7 @@ country: cz
 
 = 11
 1 s : Všech svatých
-2 : Vzpomínka na všechny věrné zemřelé
+2 s : Vzpomínka na všechny věrné zemřelé
 3 : Sv. Martina de Porres, řeholníka
 4 m : Sv. Karla Boromejského, biskupa
 9 f : Posvěcení lateránské baziliky

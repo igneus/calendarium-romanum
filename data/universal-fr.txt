@@ -199,7 +199,7 @@ locale: fr
 
 = 11
 1 s : Toussaint
-2 : Commémoration des fidèles défunts
+2 s : Commémoration des fidèles défunts
 3 R : Saint Martin de Porrès, religieux
 4 m : Saint Charles Borromée, évêque
 9 f : Dédicace de la Basilique Saint-Jean-de-Latran

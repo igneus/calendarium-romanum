@@ -199,7 +199,7 @@ locale: it
 
 = 11
 1 s : Tutti i Santi
-2 : Commemorazione di tutti i fedeli defunti
+2 s : Commemorazione di tutti i fedeli defunti
 3 R : San Martino de Porres, religioso
 4 m : San Carlo Borromeo, vescovo
 9 f : Dedicazione della basilica Lateranense
