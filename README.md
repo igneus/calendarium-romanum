@@ -22,8 +22,8 @@ and the Calendar
 - [x] octave days
 - [x] commemorations in the privileged seasons where memorials are suppressed
 - [x] transfer of suppressed solemnities
-- [x] additional temporale feasts (Christ the Eternal Priest and similar)
 - [x] optional transfer of important solemnities to a Sunday
+- [x] additional temporale feasts (Christ the Eternal Priest and similar)
 
 ## Credits
 
@@ -48,13 +48,13 @@ the dependency to a particular minor version.
 In your app's Gemfile
 
 ```
-gem 'calendarium-romanum', '~>0.2.0'
+gem 'calendarium-romanum', '~>0.3.0'
 ```
 
 or in gemspec of your gem
 
 ```
-spec.add_dependency 'calendarium-romanum', '~>0.2.0'
+spec.add_dependency 'calendarium-romanum', '~>0.3.0'
 ```
 
 ## Basic Usage
@@ -191,7 +191,7 @@ data.
 
 `I18n.locale = :la # or :it, :cs`
 
-The gem ships with English, Latin, Italian and Czech translation.
+The gem ships with English, Latin, Italian, French and Czech translation.
 Contributed translations to other languages are most welcome.
 
 ## Transfer of solemnities to a Sunday
