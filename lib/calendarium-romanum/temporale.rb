@@ -183,8 +183,10 @@ module CalendariumRomanum
         ash_wednesday
       when Seasons::EASTER
         easter_sunday
-      else # ordinary time
-        Dates.monday_after(baptism_of_lord)
+      when Seasons::ORDINARY # ordinary time
+        baptism_of_lord + 1
+      else
+        raise ArgumentError.new('unsupported season')
       end
     end
 

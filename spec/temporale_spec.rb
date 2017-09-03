@@ -84,6 +84,39 @@ describe CR::Temporale do
     end
   end
 
+  describe '#season_beginning' do
+    let(:year) { 2016 }
+    let(:options) { {} }
+    let(:t) { described_class.new(year, **options) }
+
+    describe 'unsupported season' do
+      it 'fails' do
+        season = CR::Season.new(:strawberry_season, CR::Colours::RED)
+        expect do
+          t.season_beginning season
+        end.to raise_exception(ArgumentError, /unsupported season/)
+      end
+    end
+
+    describe 'Ordinary Time' do
+      describe 'Epiphany not transferred' do
+        it do
+          expect(t.season_beginning(CR::Seasons::ORDINARY))
+            .to eq Date.new(2017, 1, 9)
+        end
+      end
+
+      describe 'Epiphany transferred' do
+        let(:t) { described_class.new(year, transfer_to_sunday: [:epiphany]) }
+
+        it do
+          expect(t.season_beginning(CR::Seasons::ORDINARY))
+            .to eq Date.new(2017, 1, 10)
+        end
+      end
+    end
+  end
+
   describe '#get' do
     it 'returns a Celebration' do
       expect(@t13.get(8, 12)).to be_a CR::Celebration
@@ -466,8 +499,10 @@ describe CR::Temporale do
   end
 
   describe 'Solemnities transferred to a Sunday' do
+    let(:year) { 2016 }
     let(:transferred) { [:epiphany, :ascension, :corpus_christi] }
-    let(:t) { described_class.new(2016, transfer_to_sunday: transferred) }
+    let(:t) { described_class.new(year, transfer_to_sunday: transferred) }
+    let(:t_notransfer) { described_class.new(year) }
 
     it 'Epiphany' do
       date = Date.new(2017, 1, 8)
@@ -489,6 +524,18 @@ describe CR::Temporale do
       c = t.get(date)
       expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
       expect(c.title).to have_translation 'The Baptism of the Lord'
+    end
+
+    describe 'Ordinary Time numbering after transferred Epiphany' do
+      it 'ferials correct' do
+        first_ot_tuesday = Date.new(2017, 1, 10)
+        expect(t.get(first_ot_tuesday)).to eq t_notransfer.get(first_ot_tuesday)
+      end
+
+      it 'Sundays correct' do
+        second_ot_sunday = Date.new(2017, 1, 15)
+        expect(t.get(second_ot_sunday)).to eq t_notransfer.get(second_ot_sunday)
+      end
     end
 
     it 'Ascension' do
