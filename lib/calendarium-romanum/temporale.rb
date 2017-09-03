@@ -83,7 +83,7 @@ module CalendariumRomanum
 
         C.new(
           date_method,
-          Celebration.new(title, rank, colour)
+          Celebration.new(title, rank, colour, date_method)
         )
       end
     end

@@ -172,6 +172,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'The Nativity of the Lord'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.symbol).to eq :nativity
         end
 
         it 'day in the octave of Nativity' do
@@ -242,6 +243,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Easter Sunday of the Resurrection of the Lord'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.symbol).to eq :easter_sunday
         end
 
         it 'Ascension' do
@@ -256,6 +258,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Pentecost Sunday'
           expect(c.colour).to eq CR::Colours::RED
+          expect(c.symbol).to eq :pentecost
         end
 
         it 'Trinity' do
