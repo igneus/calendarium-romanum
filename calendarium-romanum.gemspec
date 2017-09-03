@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'date'
 require_relative 'lib/calendarium-romanum/version'
 
 Gem::Specification.new do |s|
