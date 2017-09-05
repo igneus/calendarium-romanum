@@ -4,16 +4,12 @@ module CalendariumRomanum
 
   # information on one particular day of the liturgical year
   class Day
-    def initialize(args={})
-      %i(date season season_week celebrations vespers).each do |a|
-        if args.include? a
-          instance_variable_set "@#{a}", args.delete(a)
-        end
-      end
-
-      unless args.empty?
-        raise ArgumentError.new "Unexpected arguments #{args.keys.join(', ')}"
-      end
+    def initialize(date: nil, season: nil, season_week: nil, celebrations: nil, vespers: nil)
+      @date = date
+      @season = season
+      @season_week = season_week
+      @celebrations = celebrations.dup
+      @vespers = vespers
     end
 
     attr_reader :date
