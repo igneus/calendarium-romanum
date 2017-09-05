@@ -5,7 +5,7 @@ module CalendariumRomanum
   # information on one particular day of the liturgical year
   class Day
     def initialize(args={})
-      %i(date season season_week celebrations).each do |a|
+      %i(date season season_week celebrations vespers).each do |a|
         if args.include? a
           instance_variable_set "@#{a}", args.delete(a)
         end
@@ -31,12 +31,24 @@ module CalendariumRomanum
     # an Array of Celebrations, possibly empty
     attr_reader :celebrations
 
+    # nil or Celebration from which first Vespers are celebrated
+    # instead of Vespers of the day's other Celebrations.
+    # Please note that Calendar by default *doesn't* populate
+    # Vespers, - it's an opt-in feature.
+    attr_reader :vespers
+
     def ==(other)
       self.class == other.class &&
         date == other.date &&
         season == other.season &&
         season_week == other.season_week &&
         celebrations == other.celebrations
+    end
+
+    # Are the day's Vespers suppressed in favour of first Vespers
+    # of a Sunday or solemnity?
+    def vespers_from_following?
+      !vespers.nil?
     end
   end
 

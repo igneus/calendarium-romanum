@@ -14,7 +14,7 @@ module CalendariumRomanum
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
-    def initialize(year, sanctorale=nil, temporale=nil)
+    def initialize(year, sanctorale=nil, temporale=nil, vespers: false)
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
       end
@@ -26,6 +26,8 @@ module CalendariumRomanum
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
       @temporale = temporale || Temporale.new(year)
+      @populate_vespers = vespers
+
       @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
@@ -77,7 +79,7 @@ module CalendariumRomanum
     # Date, DateTime, or two to three integers
     # (month - day or year - month - day);
     # returns filled Day for the specified day
-    def day(*args)
+    def day(*args, vespers: false)
       if args.size == 2
         date = Date.new(@year, *args)
         unless @temporale.date_range.include? date
@@ -92,12 +94,19 @@ module CalendariumRomanum
         raise system_not_effective
       end
 
+      celebrations = celebrations_for(date)
+      vespers_celebration = nil
+      if @populate_vespers || vespers
+        vespers_celebration = first_vespers_on(date, celebrations)
+      end
+
       s = @temporale.season(date)
       return Day.new(
                      date: date,
                      season: s,
                      season_week: @temporale.season_week(s, date),
-                     celebrations: celebrations_for(date)
+                     celebrations: celebrations,
+                     vespers: vespers_celebration
                     )
     end
 
@@ -143,6 +152,26 @@ module CalendariumRomanum
       end
 
       return [t]
+    end
+
+    def first_vespers_on(date, celebrations)
+      tomorrow = date + 1
+      tomorrow_celebrations = celebrations_for(tomorrow)
+
+      c = tomorrow_celebrations.first
+      if c.rank >= Ranks::SOLEMNITY_PROPER ||
+         c.rank == Ranks::SUNDAY_UNPRIVILEGED ||
+         (c.rank == Ranks::FEAST_LORD_GENERAL && tomorrow.sunday?)
+        if c.symbol == :ash_wednesday || c.symbol == :good_friday
+          return nil
+        end
+
+        if c.rank > celebrations.first.rank || c.symbol == :easter_sunday
+          return c
+        end
+      end
+
+      nil
     end
 
     def system_not_effective

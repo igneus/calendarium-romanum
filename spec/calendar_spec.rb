@@ -326,5 +326,189 @@ describe CR::Calendar do
         expect(celebs[0].title).to eq 'Annunciation of the Lord'
       end
     end
+
+    describe 'Vespers' do
+      let(:saturday) { Date.new(2014, 1, 4) }
+      let(:year) { 2013 }
+      let(:calendar) { described_class.new(year) }
+
+      describe 'not opted in' do
+        it 'does not fill Vespers' do
+          day = calendar.day saturday
+          expect(day.vespers).to be nil
+        end
+      end
+
+      describe 'opted in by constructor argument' do
+        let(:calendar) { described_class.new(year, nil, nil, vespers: true) }
+
+        it 'fills Vespers' do
+          day = calendar.day saturday
+          expect(day.vespers).to be_a CR::Celebration
+        end
+
+        describe 'but the day has not Vespers from following' do
+          it 'does not fill Vespers' do
+            friday = saturday - 1
+            day = calendar.day friday
+            expect(day.vespers).to be nil
+          end
+        end
+      end
+
+      describe 'opted in by argument' do
+        it 'fills Vespers' do
+          day = calendar.day saturday, vespers: true
+          expect(day.vespers).to be_a CR::Celebration
+        end
+      end
+
+      describe 'first Vespers of' do
+        let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+        let(:calendar) { described_class.new(year, sanctorale, nil, vespers: true) }
+
+        describe 'a Sunday' do
+          it 'has first Vespers' do
+            day = calendar.day saturday
+            expect(day.vespers.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
+          end
+        end
+
+        describe 'a solemnity' do
+          let(:testing_solemnity) do
+            CR::Celebration.new(
+              'Testing solemnity',
+              CR::Ranks::SOLEMNITY_GENERAL,
+              CR::Colours::WHITE,
+              :test
+            )
+          end
+
+          it 'has first Vespers' do
+            day = calendar.day(Date.new(2014, 11, 1) - 1)
+            expect(day.vespers.rank).to be CR::Ranks::SOLEMNITY_GENERAL
+          end
+
+          describe 'clash with Sunday Vespers' do
+            it 'wins over Sunday' do
+              sunday = Date.new(2014, 8, 17)
+              expect(sunday).to be_sunday # make sure
+              sanctorale.replace(8, 17, [testing_solemnity])
+
+              day = calendar.day(sunday - 1)
+              expect(day.vespers.symbol).to eq :test
+            end
+          end
+
+          describe 'clash with second Vespers of another solemnity' do
+            it "the day's Vespers win" do
+              assumption = Date.new(2014, 8, 15)
+              sanctorale.replace(8, 16, [testing_solemnity])
+
+              day = calendar.day(assumption)
+              expect(day.celebrations.first.rank).to be CR::Ranks::SOLEMNITY_GENERAL
+              expect(day.vespers).to be nil
+
+              # make sure
+              next_day = calendar.day(assumption + 1)
+              expect(next_day.celebrations.first).to be testing_solemnity
+            end
+          end
+        end
+
+        describe 'feast of the Lord' do
+          describe 'not falling on a Sunday' do
+            it 'does not have first Vespers' do
+              calendar = described_class.new(2015, sanctorale, nil, vespers: true)
+              presentation = Date.new(2016, 2, 2)
+              expect(presentation).not_to be_sunday # make sure
+
+              day = calendar.day(presentation - 1)
+              expect(day.vespers).to be nil
+            end
+          end
+
+          describe 'falling on a Sunday' do
+            it 'has first Vespers' do
+              presentation = Date.new(2014, 2, 2)
+              expect(presentation).to be_sunday # make sure
+
+              day = calendar.day(presentation - 1)
+              expect(day.vespers.rank).to be CR::Ranks::FEAST_LORD_GENERAL
+            end
+          end
+        end
+
+        # this group contains both days having and days not having
+        # first Vespers: special care must be taken
+        describe 'primary liturgical days' do
+          describe 'Ash Wednesday' do
+            it 'does not have first Vespers' do
+              aw = CR::Temporale::Dates.ash_wednesday year
+              day = calendar.day(aw - 1)
+              expect(day.vespers).to be nil
+            end
+          end
+
+          describe 'Nativity' do
+            it 'has first Vespers' do
+              day = calendar.day Date.new(2013, 12, 24)
+              expect(day.vespers.rank).to be CR::Ranks::PRIMARY
+              expect(day.vespers.symbol).to be :nativity
+            end
+          end
+
+          describe 'Epiphany' do
+            it 'has first Vespers' do
+              day = calendar.day Date.new(2014, 1, 5)
+              expect(day.vespers.rank).to be CR::Ranks::PRIMARY
+              expect(day.vespers.symbol).to be :epiphany
+            end
+          end
+
+          describe 'Palm Sunday' do
+            it 'has first Vespers' do
+              ps = CR::Temporale::Dates.palm_sunday year
+              day = calendar.day(ps - 1)
+              expect(day.vespers.rank).to be CR::Ranks::PRIMARY
+              expect(day.vespers.symbol).to be :palm_sunday
+            end
+          end
+
+          describe 'day in the Holy week' do
+            it 'does not have first Vespers' do
+              tuesday = CR::Temporale::Dates.palm_sunday(year) + 2
+              day = calendar.day(tuesday - 1)
+              expect(day.vespers).to be nil
+            end
+          end
+
+          describe 'Good Friday' do
+            it 'does not have first Vespers' do
+              gf = CR::Temporale::Dates.good_friday(year)
+              day = calendar.day(gf - 1)
+              expect(day.vespers).to be nil
+            end
+          end
+
+          describe 'Easter' do
+            it 'has first Vespers' do
+              es = CR::Temporale::Dates.easter_sunday year
+              day = calendar.day(es - 1)
+              expect(day.vespers.rank).to be CR::Ranks::TRIDUUM
+              expect(day.vespers.symbol).to be :easter_sunday
+            end
+          end
+
+          describe 'day in Easter octave' do
+            it 'does not have first Vespers' do
+              tuesday = CR::Temporale::Dates.easter_sunday(year) + 2
+              day = calendar.day(tuesday - 1)
+              expect(day.vespers).to be nil
+            end
+          end
+        end
+      end
+    end
   end
 end
