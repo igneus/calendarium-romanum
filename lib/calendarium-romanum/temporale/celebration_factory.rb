@@ -1,5 +1,6 @@
 module CalendariumRomanum
   class Temporale
+    # builds temporale Celebrations
     class CelebrationFactory
       class << self
         def first_advent_sunday
@@ -24,6 +25,7 @@ module CalendariumRomanum
         end
       end
 
+      # define factory methods
       celebration(:nativity, Ranks::PRIMARY)
       celebration(:holy_family, Ranks::FEAST_LORD_GENERAL)
       celebration(:mother_of_god, Ranks::SOLEMNITY_GENERAL)
