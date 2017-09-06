@@ -5,6 +5,8 @@ describe CR::Calendar do
     @c = described_class.new(2013).freeze
   end
 
+  let(:celfactory) { CR::Temporale::CelebrationFactory }
+
   describe '.new' do
     it 'throws RangeError on invalid year' do
       expect do
@@ -505,6 +507,16 @@ describe CR::Calendar do
               tuesday = CR::Temporale::Dates.easter_sunday(year) + 2
               day = calendar.day(tuesday - 1)
               expect(day.vespers).to be nil
+            end
+          end
+        end
+
+        describe 'edge cases' do
+          describe 'First Sunday of Advent' do
+            it 'has first Vespers (and does not cause an exception)' do
+              sunday = CR::Temporale::Dates.first_advent_sunday(year + 1)
+              day = calendar.day(sunday - 1)
+              expect(day.vespers).to eq celfactory.first_advent_sunday
             end
           end
         end

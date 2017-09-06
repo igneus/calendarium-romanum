@@ -9,6 +9,7 @@ calendar
 perpetual_calendar
 temporale
 temporale/dates
+temporale/celebration_factory
 temporale/extensions/christ_eternal_priest
 sanctorale
 sanctoraleloader

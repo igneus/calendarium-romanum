@@ -97,7 +97,13 @@ module CalendariumRomanum
       celebrations = celebrations_for(date)
       vespers_celebration = nil
       if @populate_vespers || vespers
-        vespers_celebration = first_vespers_on(date, celebrations)
+        begin
+          vespers_celebration = first_vespers_on(date, celebrations)
+        rescue RangeError
+          # there is exactly one possible case when
+          # range_check(date) passes and range_check(date + 1) fails:
+          vespers_celebration = Temporale::CelebrationFactory.first_advent_sunday
+        end
       end
 
       s = @temporale.season(date)
