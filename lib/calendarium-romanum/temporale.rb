@@ -49,42 +49,36 @@ module CalendariumRomanum
       def celebrations
         @celebrations ||=
           begin
-            [
-              c(:nativity, Ranks::PRIMARY),
-              c(:holy_family, Ranks::FEAST_LORD_GENERAL),
-              c(:mother_of_god, Ranks::SOLEMNITY_GENERAL),
-              c(:epiphany, Ranks::PRIMARY),
-              c(:baptism_of_lord, Ranks::FEAST_LORD_GENERAL),
-              c(:ash_wednesday, Ranks::PRIMARY, Colours::VIOLET),
-              c(:good_friday, Ranks::TRIDUUM, Colours::RED),
-              c(:holy_saturday, Ranks::TRIDUUM, Colours::VIOLET),
-              c(:palm_sunday, Ranks::PRIMARY, Colours::RED),
-              c(:easter_sunday, Ranks::TRIDUUM),
-              c(:ascension, Ranks::PRIMARY),
-              c(:pentecost, Ranks::PRIMARY, Colours::RED),
-              c(:holy_trinity, Ranks::SOLEMNITY_GENERAL),
-              c(:corpus_christi, Ranks::SOLEMNITY_GENERAL),
-              c(:sacred_heart, Ranks::SOLEMNITY_GENERAL),
-              c(:christ_king, Ranks::SOLEMNITY_GENERAL),
-
-              # Immaculate Heart of Mary is actually (currently the only one)
-              # movable *sanctorale* feast, but as it would make little sense
-              # to add support for movable sanctorale feasts because of
-              # a single one, we cheat a bit and handle it in temporale.
-              c(:immaculate_heart, Ranks::MEMORIAL_GENERAL),
-            ]
+            %i(
+              nativity
+              holy_family
+              mother_of_god
+              epiphany
+              baptism_of_lord
+              ash_wednesday
+              good_friday
+              holy_saturday
+              palm_sunday
+              easter_sunday
+              ascension
+              pentecost
+              holy_trinity
+              corpus_christi
+              sacred_heart
+              christ_king
+              immaculate_heart
+            ).collect do |symbol|
+              date_method = symbol
+              C.new(
+                date_method,
+                CelebrationFactory.public_send(symbol)
+              )
+            end
+            # Immaculate Heart of Mary is actually (currently the only one)
+            # movable *sanctorale* feast, but as it would make little sense
+            # to add support for movable sanctorale feasts because of
+            # a single one, we cheat a bit and handle it in temporale.
           end
-      end
-
-      private
-
-      def c(date_method, rank, colour=Colours::WHITE)
-        title = proc { I18n.t("temporale.solemnity.#{date_method}") }
-
-        C.new(
-          date_method,
-          Celebration.new(title, rank, colour, date_method)
-        )
       end
     end
 
