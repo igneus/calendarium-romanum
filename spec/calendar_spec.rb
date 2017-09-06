@@ -318,8 +318,7 @@ describe CR::Calendar do
         # Good Friday suppresses the solemnity
         celebs = c.day(d).celebrations
         expect(celebs.size).to eq 1
-        expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
-        expect(celebs[0].title).to have_translation 'Friday of the Passion of the Lord'
+        expect(celebs[0]).to eq celfactory.good_friday
 
         # it is transferred on a day after the Easter octave
         d = c.temporale.easter_sunday + 8
@@ -455,8 +454,7 @@ describe CR::Calendar do
           describe 'Nativity' do
             it 'has first Vespers' do
               day = calendar.day Date.new(2013, 12, 24)
-              expect(day.vespers.rank).to be CR::Ranks::PRIMARY
-              expect(day.vespers.symbol).to be :nativity
+              expect(day.vespers).to eq celfactory.nativity
             end
           end
 
@@ -472,8 +470,7 @@ describe CR::Calendar do
             it 'has first Vespers' do
               ps = CR::Temporale::Dates.palm_sunday year
               day = calendar.day(ps - 1)
-              expect(day.vespers.rank).to be CR::Ranks::PRIMARY
-              expect(day.vespers.symbol).to be :palm_sunday
+              expect(day.vespers).to eq celfactory.palm_sunday
             end
           end
 
@@ -497,8 +494,7 @@ describe CR::Calendar do
             it 'has first Vespers' do
               es = CR::Temporale::Dates.easter_sunday year
               day = calendar.day(es - 1)
-              expect(day.vespers.rank).to be CR::Ranks::TRIDUUM
-              expect(day.vespers.symbol).to be :easter_sunday
+              expect(day.vespers).to eq celfactory.easter_sunday
             end
           end
 
