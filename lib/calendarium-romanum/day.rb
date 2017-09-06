@@ -38,7 +38,8 @@ module CalendariumRomanum
         date == other.date &&
         season == other.season &&
         season_week == other.season_week &&
-        celebrations == other.celebrations
+        celebrations == other.celebrations &&
+        vespers == other.vespers
     end
 
     # Are the day's Vespers suppressed in favour of first Vespers

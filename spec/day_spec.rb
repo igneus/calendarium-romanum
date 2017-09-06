@@ -58,6 +58,22 @@ describe CR::Day do
         expect(d).not_to eq d2
       end
     end
+
+    describe 'different Vespers' do
+      let(:d2) do
+        described_class.new(
+          date: Date.today,
+          season: CR::Seasons::ORDINARY,
+          season_week: 1,
+          celebrations: [CR::Celebration.new],
+          vespers: CR::Temporale::CelebrationFactory.palm_sunday
+        )
+      end
+
+      it 'is different' do
+        expect(d).not_to eq d2
+      end
+    end
   end
 
   describe '#vespers_from_following?' do
