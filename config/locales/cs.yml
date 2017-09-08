@@ -32,6 +32,7 @@ cs:
     advent:
       sunday: '%{week} neděle adventní'
       ferial: '%{weekday} po %{week} neděli adventní'
+      before_christmas: '%{day} prosince'
     christmas:
       nativity_octave:
         ferial: '%{day} den v oktávu Narození Páně'

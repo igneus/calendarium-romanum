@@ -30,6 +30,7 @@ en:
     advent:
       sunday: '%{week} Sunday of Advent'
       ferial: '%{weekday}, %{week} week of Advent'
+      before_christmas: '%{day} December'
     christmas:
       nativity_octave:
         ferial: '%{day} day of Christmas Octave'

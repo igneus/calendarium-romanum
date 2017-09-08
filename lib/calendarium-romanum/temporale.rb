@@ -254,6 +254,8 @@ module CalendariumRomanum
       when Seasons::ADVENT
         if date >= Date.new(@year, 12, 17)
           rank = Ranks::FERIAL_PRIVILEGED
+          nth = Ordinalizer.ordinal(date.day)
+          title = I18n.t 'temporale.advent.before_christmas', day: nth
         end
       when Seasons::CHRISTMAS
         if date < mother_of_god

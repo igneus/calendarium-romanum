@@ -379,6 +379,10 @@ describe CR::Temporale do
         it 'ferial' do
           expect(title_for(12, 2)).to have_translation 'Monday, 1st week of Advent'
         end
+
+        it 'ferial before Christmas' do
+          expect(title_for(12, 17)).to have_translation '17th December'
+        end
       end
 
       describe 'Christmas time' do

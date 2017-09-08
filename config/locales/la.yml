@@ -30,6 +30,7 @@ la:
     advent:
       sunday: 'Dominica %{week} Adventus'
       ferial: '%{weekday}, hebdomada %{week} Adventus'
+      before_christmas: 'Die %{day} decembris'
     christmas:
       nativity_octave:
         ferial: 'De die %{day} infra octavam Nativitatis'
