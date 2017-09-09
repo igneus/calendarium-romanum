@@ -107,26 +107,8 @@ module CalendariumRomanum
       end
     end
 
-    %i(
-    first_advent_sunday
-    nativity
-    holy_family
-    mother_of_god
-    epiphany
-    baptism_of_lord
-    ash_wednesday
-    palm_sunday
-    good_friday
-    holy_saturday
-    easter_sunday
-    ascension
-    pentecost
-    holy_trinity
-    corpus_christi
-    sacred_heart
-    immaculate_heart
-    christ_king
-    ).each do |feast|
+    (celebrations.collect(&:date_method) + [:first_advent_sunday])
+      .each do |feast|
       if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
         define_method feast do
           Dates.public_send feast, year, sunday: transferred_to_sunday?(feast)
