@@ -9,8 +9,8 @@ Ruby gem for
 calendar computations according to the Roman Catholic liturgical
 calendar as instituted by
 [MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html) of Paul VI. (AAS 61 (1969), pp. 222-226).
-The rules are defined in General Norms for the Liturgical Year
-and the Calendar
+The rules are defined in
+*General Norms for the Liturgical Year and the Calendar*
 ([English translation][gnlyc]).
 
 ## Features
@@ -150,8 +150,9 @@ rescue RangeError
 end
 ```
 
-The example demonstrates the well known fact, that the civil
-and liturgical year don't match: 1st January 2000
+The example demonstrates the well known fact,
+that the **civil and liturgical year don't match:**
+1st January 2000
 does not belong to the liturgical year 2000-2001
 (which will begin on the first Sunday of Advent,
 i.e. on 3rd December 2000), but to the year 1999-2000.
@@ -208,10 +209,10 @@ pcal = CR::PerpetualCalendar.new(
 **Memory management note:**
 By default, `PerpetualCalendar` caches each created `Calendar`
 instance *perpetually.* This is OK in most cases,
-but can lead to memory exhaustion if you traverse an excessive
+but it can lead to memory exhaustion if you traverse an excessive
 amount of liturgical years. In such cases you can supply
 your own cache (a `Hash` or anything with hash-like interface)
-and implement some kind of cache size limit.
+and implement some kind of cache size limiting.
 
 ```ruby
 CR = CalendariumRomanum
