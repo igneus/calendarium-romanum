@@ -154,6 +154,13 @@ module CalendariumRomanum
           end
           st.unshift t
           return st
+        elsif t.symbol == :immaculate_heart &&
+              [Ranks::MEMORIAL_GENERAL, Ranks::MEMORIAL_PROPER].include?(st.first.rank)
+          optional_memorials = ([t] + st).collect do |celebration|
+            celebration.change rank: Ranks::MEMORIAL_OPTIONAL
+          end
+          ferial = temporale.send :ferial, date # ugly and evil
+          return [ferial] + optional_memorials
         end
       end
 

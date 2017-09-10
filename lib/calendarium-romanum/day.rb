@@ -85,5 +85,14 @@ module CalendariumRomanum
         rank == other.rank &&
         colour == other.colour
     end
+
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil)
+      self.class.new(
+        title || self.title,
+        rank || self.rank,
+        colour || color || self.colour,
+        symbol || self.symbol
+      )
+    end
   end
 end

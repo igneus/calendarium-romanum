@@ -326,6 +326,25 @@ describe CR::Calendar do
         expect(celebs.size).to eq 1
         expect(celebs[0].title).to eq 'Annunciation of the Lord'
       end
+
+      describe 'collision of Immaculate Heart with another obligatory memorial' do
+        let(:year) { 2002 }
+        let(:c) { described_class.new year, @s }
+        let(:date) { Date.new(2003, 6, 28) }
+
+        it 'makes both optional memorials' do
+          # make sure
+          expect(c.sanctorale.get(date).first.rank).to eq CR::Ranks::MEMORIAL_GENERAL
+          expect(c.temporale.get(date).rank).to eq CR::Ranks::MEMORIAL_GENERAL
+
+          celebrations = c.day(date).celebrations
+          expect(celebrations.size).to eq 3
+
+          expect(celebrations[0].rank).to eq CR::Ranks::FERIAL
+          expect(celebrations[1..-1].collect(&:rank).uniq)
+            .to eq([CR::Ranks::MEMORIAL_OPTIONAL])
+        end
+      end
     end
 
     describe 'Vespers' do

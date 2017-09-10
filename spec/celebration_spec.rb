@@ -20,4 +20,24 @@ describe CR::Celebration do
       end
     end
   end
+
+  describe '#change' do
+    let(:c) { described_class.new('title') }
+
+    it 'produces a new instance' do
+      c2 = c.change rank: CR::Ranks::SOLEMNITY_GENERAL
+      expect(c2).not_to be c
+    end
+
+    it 'sets specified properties' do
+      c2 = c.change rank: CR::Ranks::SOLEMNITY_GENERAL
+      expect(c2.rank).not_to eq c.rank
+      expect(c2.rank).to be CR::Ranks::SOLEMNITY_GENERAL
+    end
+
+    it 'copies the rest' do
+      c2 = c.change rank: CR::Ranks::SOLEMNITY_GENERAL
+      expect(c2.title).to be c.title # reference copying is no problem, Celebrations are immutable
+    end
+  end
 end
