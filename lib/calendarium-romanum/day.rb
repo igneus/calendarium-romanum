@@ -8,7 +8,7 @@ module CalendariumRomanum
       @date = date
       @season = season
       @season_week = season_week
-      @celebrations = celebrations.dup
+      @celebrations = celebrations ? celebrations.dup : []
       @vespers = vespers
     end
 

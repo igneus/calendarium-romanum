@@ -13,6 +13,14 @@ describe CR::Day do
 
   let(:vespers) { nil }
 
+  describe '.new' do
+    it 'works without arguments' do
+      expect do
+        described_class.new
+      end.not_to raise_exception
+    end
+  end
+
   describe '#==' do
     describe 'same content' do
       let(:d2) do
