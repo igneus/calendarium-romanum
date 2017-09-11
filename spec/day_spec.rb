@@ -19,6 +19,16 @@ describe CR::Day do
         described_class.new
       end.not_to raise_exception
     end
+
+    it 'makes a shallow copy of celebrations' do
+      celebrations = [CR::Celebration.new]
+      day = described_class.new celebrations: celebrations
+
+      expect(day.celebrations).to eq celebrations
+      expect(day.celebrations).not_to be celebrations
+
+      expect(day.celebrations[0]).to be celebrations[0]
+    end
   end
 
   describe '#==' do
