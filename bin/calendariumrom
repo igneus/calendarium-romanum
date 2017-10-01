@@ -1,4 +1,4 @@
-#!/bin/env ruby
+#!/usr/bin/env ruby
 
 require 'calendarium-romanum'
 require 'calendarium-romanum/cli'
