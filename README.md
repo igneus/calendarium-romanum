@@ -196,14 +196,16 @@ pcal = CR::PerpetualCalendar.new(
     extensions: [CR::Temporale::Extensions::ChristEternalPriest]
   }
 )
+d = pcal.day(Date.new(2000, 1, 1))
 
 # It is also possible to supply Temporale factory instead of options:
 pcal = CR::PerpetualCalendar.new(
   # Proc returning a Temporale instance for the specified year
   temporale_factory: lambda do |year|
-    Temporale.new(year, transfer_to_sunday: [:ascension])
+    CR::Temporale.new(year, transfer_to_sunday: [:ascension])
   end
 )
+pcal.day(Date.new(2000, 1, 1))
 ```
 
 **Memory management note:**
