@@ -13,8 +13,7 @@ module CalendariumRomanum
 
       data_file = Data[options[:calendar]]
       if data_file.nil?
-        STDERR.puts 'Invalid calendar. See subcommand `calendars` for valid options.'
-        exit 1
+        die! 'Invalid calendar. See subcommand `calendars` for valid options.'
       end
       sanctorale = data_file.load
 
@@ -23,8 +22,7 @@ module CalendariumRomanum
           begin
             Date.parse(date_str)
           rescue ArgumentError
-            STDERR.puts 'Invalid date.'
-            exit 1
+            die! 'Invalid date.'
           end
         else
           Date.today
@@ -99,6 +97,13 @@ module CalendariumRomanum
 
     def print_celebration(c)
       puts "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
+    end
+
+    private
+
+    def die!(message, code=1)
+      STDERR.puts message
+      exit code
     end
   end
 end
