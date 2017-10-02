@@ -474,7 +474,7 @@ describe CR::Temporale do
 
         it 'French' do
           I18n.with_locale(:fr) do
-            expect(title_for(5, 5)).to eq 'Lundi, 3 semaine de Pâques'
+            expect(title_for(5, 5)).to eq 'Lundi, 3ème semaine de Pâques'
           end
         end
 
