@@ -52,7 +52,11 @@ module CalendariumRomanum
       loader = SanctoraleLoader.new
       files.each do |path|
         s = Sanctorale.new
-        loader.load_from_file path, s
+        begin
+          loader.load_from_file path, s
+        rescue Errno::ENOENT => err
+          die! err.message
+        end
       end
     end
 
