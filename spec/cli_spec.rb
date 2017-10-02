@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'calendarium-romanum/cli'
 
-describe CalendariumRomanum::CLI do
+describe CalendariumRomanum::CLI, type: :aruba do
   let(:path_universal_la) { File.expand_path('../../data/universal-la.txt', __FILE__) }
   let(:path_universal_en) { File.expand_path('../../data/universal-en.txt', __FILE__) }
 
