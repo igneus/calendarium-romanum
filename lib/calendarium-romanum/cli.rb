@@ -54,7 +54,7 @@ module CalendariumRomanum
         s = Sanctorale.new
         begin
           loader.load_from_file path, s
-        rescue Errno::ENOENT => err
+        rescue Errno::ENOENT, InvalidDataError => err
           die! err.message
         end
       end
