@@ -90,11 +90,19 @@ module CalendariumRomanum
           rank = rank_by_num
         end
 
-        dest.add month, day, Celebration.new(
-                                             title.strip,
-                                             rank,
-                                             COLOUR_CODES[colour && colour.downcase]
-                                            )
+        begin
+          dest.add(
+            month,
+            day,
+            Celebration.new(
+              title.strip,
+              rank,
+              COLOUR_CODES[colour && colour.downcase]
+            )
+          )
+        rescue RangeError => err
+          raise error(err.message, line_num)
+        end
       end
 
       dest
@@ -109,7 +117,7 @@ module CalendariumRomanum
     private
 
     def error(message, line_number)
-      RuntimeError.new("L#{line_number}: #{message}")
+      InvalidDataError.new("L#{line_number}: #{message}")
     end
   end
 end

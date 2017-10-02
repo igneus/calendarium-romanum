@@ -4,6 +4,7 @@ i18n_setup
 rank
 enum
 enums
+errors
 data
 day
 calendar

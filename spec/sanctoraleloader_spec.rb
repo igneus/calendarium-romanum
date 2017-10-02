@@ -113,58 +113,65 @@ describe CR::SanctoraleLoader do
         str = 'line without standard beginning'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Syntax error/
+        end.to raise_exception(CR::InvalidDataError, /Syntax error/)
       end
     end
 
     describe 'syntactically correct data making no sense' do
+      it 'invalid month heading' do
+        str = '= 13'
+        expect do
+          @l.load_from_string str, @s
+        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
+      end
+
       it 'invalid month' do
         str = '100/25 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Invalid month/
+        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
       end
 
       it 'line with day only, without preceding month heading' do
         str = '25 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Invalid month/
+        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
       end
 
       it 'invalid day' do
         str = '1/250 f : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Invalid day/
+        end.to raise_exception(CR::InvalidDataError, /Invalid day/)
       end
 
       it 'invalid month heading' do
         str = '= 0'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Invalid month/
+        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
       end
 
       it 'invalid rank' do
         str = '1/25 X : In conversione S. Pauli, apostoli'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /Syntax error/
+        end.to raise_exception(CR::InvalidDataError, /Syntax error/)
       end
 
       it 'invalid numeric rank' do
         str = '4/23 s8.4 R : S. Georgii, martyris'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /rank/
+        end.to raise_exception(CR::InvalidDataError, /rank/)
       end
 
       it 'invalid combination of rank latter and number' do
         str = '4/23 m2.5 R : S. Georgii, martyris'
         expect do
           @l.load_from_string str, @s
-        end.to raise_exception /rank/
+        end.to raise_exception(CR::InvalidDataError, /rank/)
       end
     end
   end
