@@ -12,13 +12,16 @@ module CalendariumRomanum
           "#{number}."
         when :en
           english_ordinal(number)
-        # when :it # TODO
+        when :fr
+          french_ordinal(number)
         when :la, :it
           RomanNumerals.to_roman number
         else
           number
         end
       end
+
+      private
 
       def english_ordinal(number)
         modulo = number % 10
@@ -33,6 +36,15 @@ module CalendariumRomanum
           "#{number}rd"
         else
           "#{number}th"
+        end
+      end
+
+      def french_ordinal(number)
+        case number
+        when 1
+          '1er'
+        else
+          "#{number}ème"
         end
       end
     end
