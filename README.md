@@ -406,6 +406,21 @@ temporale = CR::Temporale.new(2016, extensions: [MyExtension])
 temporale.get(Date.new(2017, 11, 25)) # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
 ```
 
+## Executable
+This gem provides an executable, `calendariumrom`, which can be used for querying the sanctorale data files from command line. It currently has 5 subcommands:
+ - `calendariumrom calendars`: This command will list all available data files known to calendarium-romanum. 
+ - `calendariumrom cmp FILE1 FILE2`: This command will load 2 data files from the file system and compare them. If there are any differences in rank or colour of corresponding celebrations, it will output them. 
+ - `calendariumrom errors FILE1, ...`: This command finds errors in a data file. It tries to load it from file system, and if the parser will fail, for whatever reason, it will print out the reason. 
+ - `calendariumrom help [COMMAND]`: This command outputs a short help for all available subcommands
+ - `calendariumrom query 2007-06-25`: This command queries the available calendars for a given date, e.g. June 6th, 2007, and outputs whatever specific event is known for this day.
+
+The `query` subcommand will accept two additional command line flags:
+- `--calendar universal-en` will specify which calendar file it should query. Available calendar files are listed in the output of `calendariumrom calendars`. `universal-en` is the default setting.
+- `--locale en` will specify which locale should be used for the query. `en` is the default setting. 
+If no date is given, `calendariumrom` assumes that you want to query today's date. 
+If executed, `query` will try to load the specified calendar file, and, if given, parse the provided date. The date format has to be in a format Ruby's `Date::parse` can understand. 
+If the parsing of the date and the calendar loading succeeds, `calendariumrom` will query the calendar file for the season and any celebrations which occur on this day. It will then display the season (unfortunately as a ruby object), and after this, this day's celebration's rank and description.
+
 ## How to run tests
 
 Get the sources, install development dependencies
