@@ -53,5 +53,14 @@ describe CalendariumRomanum::CLI, type: :aruba do
         it { expect(last_command).to be_successfully_executed }
       end
     end
+
+    describe 'query' do
+      describe 'correct season naming' do
+        before(:each) { run "calendariumrom query 2017-10-03" }
+
+        it { expect(all_output).to include "season: Ordinary Time" }
+        it { expect(last_command).to be_successfully_executed }
+      end
+    end
   end
 end
