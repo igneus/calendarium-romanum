@@ -31,7 +31,7 @@ module CalendariumRomanum
       day = calendar.day date
 
       puts date
-      puts "season: #{day.season}"
+      puts "season: #{day.season.name}"
       puts
 
       rank_length = day.celebrations.collect {|c| c.rank.short_desc.size }.max
