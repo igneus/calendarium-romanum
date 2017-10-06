@@ -13,6 +13,10 @@ The rules are defined in
 *General Norms for the Liturgical Year and the Calendar*
 ([English translation][gnlyc]).
 
+calendarium-romanum aspires to become the most complete
+FOSS implementation of this calendar system
+(see [list of implementations available][awesomecc]).
+
 ## Features
 
 - [x] liturgical season
@@ -425,6 +429,7 @@ then execute tests with
 
 See also `.travis.yml` for comprehensive tests run on the CI.
 
+[awesomecc]: https://github.com/calendarium-romanum/awesome-church-calendar
 [gnlyc]: https://www.ewtn.com/library/CURIA/CDWLITYR.HTM
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
