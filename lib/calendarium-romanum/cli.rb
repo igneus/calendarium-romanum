@@ -63,30 +63,38 @@ module CalendariumRomanum
     desc 'cmp FILE1, FILE2', 'detect differences in rank and colour of corresponding celebrations'
     def cmp(a, b)
       loader = SanctoraleLoader.new
-      sanctorales = [a, b].collect do |source|
-        loader.load_from_file source
-      end
+      paths = [a, b]
+      sanctoralia = paths.collect {|source| loader.load_from_file source }
+      names = paths.collect {|source| File.basename source }
 
       # a leap year must be chosen in order to iterate over
       # all possible days of a Sanctorale
       Year.new(1990).each_day do |d|
-        celebs = sanctorales.collect {|s| s.get d }
-        if celebs.find {|cc| cc.nil? }
-          next
-        end
+        a, b = sanctoralia.collect {|s| s.get(d) }
 
-        celebs[0].each_index do |i|
-          if i >= celebs[1].size
-            break
+        0.upto([a.size, b.size].max - 1) do |i|
+          ca, cb = a[i], b[i]
+          compared = [ca, cb]
+          differences = []
+
+          if compared.index(&:nil?)
+            notnili = compared.index {|c| !c.nil? }
+
+            print date(d)
+            puts " only in #{names[notnili]}:"
+            puts celebration(compared[notnili])
+            puts
+            next
           end
 
-          ca = celebs[0][i]
-          cb = celebs[1][i]
+          differences << 'rank' if ca.rank != cb.rank
+          differences << 'colour' if ca.colour != cb.colour
 
-          if ca.rank != cb.rank || ca.colour != cb.colour
-            puts "#{d.month}/#{d.day}"
-            print_celebration ca
-            print_celebration cb
+          unless differences.empty?
+            print date(d)
+            puts " differs in #{differences.join(', ')}"
+            puts celebration(ca)
+            puts celebration(cb)
             puts
           end
         end
@@ -95,11 +103,13 @@ module CalendariumRomanum
 
     private
 
-    def print_celebration(c)
-      puts "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
+    def date(d)
+      "#{d.month}/#{d.day}"
     end
 
-    private
+    def celebration(c)
+      "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
+    end
 
     def die!(message, code=1)
       STDERR.puts message

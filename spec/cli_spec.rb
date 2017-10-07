@@ -2,8 +2,8 @@ require 'spec_helper'
 require 'calendarium-romanum/cli'
 
 describe CalendariumRomanum::CLI, type: :aruba do
-  let(:path_universal_la) { File.expand_path('../../data/universal-la.txt', __FILE__) }
-  let(:path_universal_en) { File.expand_path('../../data/universal-en.txt', __FILE__) }
+  let(:path_universal_la) { CR::Data::GENERAL_ROMAN_LATIN.path }
+  let(:path_universal_en) { CR::Data::GENERAL_ROMAN_ENGLISH.path }
 
   before :each do
     prepend_environment_variable('RUBYLIB', File.expand_path('../../lib', __FILE__) + ':')
@@ -52,6 +52,54 @@ describe CalendariumRomanum::CLI, type: :aruba do
         it { expect(all_output).to be_empty }
         it { expect(last_command).to be_successfully_executed }
       end
+
+      describe 'contents do not match' do
+        before(:each) do
+          write_file 'cal1.txt', content1
+          write_file 'cal2.txt', content2
+          run "calendariumrom cmp cal1.txt cal2.txt"
+        end
+
+        describe 'in rank' do
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { '1/11 m : St. None, abbot' }
+
+          it { expect(all_output).to include '1/11' }
+          it { expect(all_output).to include 'St. None, abbot' }
+          it { expect(all_output).to include 'differs in rank' }
+          it { expect(last_command).to be_successfully_executed }
+        end
+
+        describe 'in colour' do
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { '1/11 R : St. None, abbot and martyr' }
+
+          it { expect(all_output).to include '1/11' }
+          it { expect(all_output).to include 'St. None, abbot' }
+          it { expect(all_output).to include 'differs in colour' }
+          it { expect(last_command).to be_successfully_executed }
+        end
+
+        describe 'in optional memorial count' do
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { "1/11 : St. None, abbot\n1/11 : St. Nulla, abbess" }
+
+          it { expect(all_output).to include '1/11' }
+          it { expect(all_output).to include 'St. Nulla, abbess' }
+          it { expect(all_output).to include 'only in cal2.txt' }
+          it { expect(last_command).to be_successfully_executed }
+        end
+
+        describe 'only in one source' do
+          let(:content1) { '' }
+          let(:content2) { "1/11 : St. None, abbot" }
+
+          it { expect(all_output).to include '1/11' }
+          it { expect(all_output).to include 'St. None, abbot' }
+          it { expect(all_output).to include 'only in cal2.txt' }
+          it { expect(last_command).to be_successfully_executed }
+        end
+      end
     end
 
     describe 'query' do
@@ -61,6 +109,14 @@ describe CalendariumRomanum::CLI, type: :aruba do
         it { expect(all_output).to include "season: Ordinary Time" }
         it { expect(last_command).to be_successfully_executed }
       end
+    end
+
+    describe 'calendars' do
+      before(:each) { run "calendariumrom calendars" }
+
+      it { expect(all_output).to include "universal-en" }
+      it { expect(all_output).to include "czech-praha-cs" }
+      it { expect(last_command).to be_successfully_executed }
     end
   end
 end
