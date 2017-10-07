@@ -185,6 +185,7 @@ locale: la
 7 m :  B. Mariae Virginis a Rosario
 9 R : Ss. Dionysii, episcopi, et sociorum, martyrum
 9 : S. Ioannis Leonardi, presbyteri
+11 : S. Ioannis XXIII, papae
 14 R : S. Callisti I, papae et martyris
 15 m :  S. Teresiae a Iesu, virginis et Ecclesiae doctoris
 16 : S. Hedvigis, religiosae
@@ -193,6 +194,7 @@ locale: la
 18 f R :  S. Lucae, evangelistae
 19 R : Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum
 19 : S. Pauli a Cruce, presbyteri
+22 : S. Ioannis Pauli II, papae
 23 : S. Ioannis de Capestrano, presbyteri
 24 : S. Antonii Mariae Claret, episcopi
 28 f R :  Ss. Simonis et Iudae, apostolorum

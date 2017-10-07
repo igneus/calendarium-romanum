@@ -204,6 +204,7 @@ country: cz
 7 m : Panny Marie Růžencové
 9 R : Sv. Dionýsia, biskupa, a druhů, mučedníků
 9 : Sv. Jana Leonardiho, kněze
+11 : Sv. Jana XXIII., papeže
 12 : Sv. Radima, biskupa
 14 R : Sv. Kalista I., papeže a mučedníka
 15 m : Sv. Terezie od Ježíše, panny a učitelky církve
@@ -214,7 +215,7 @@ country: cz
 19 R : Sv. Jana de Brébeuf a Izáka Joguese, kněží, a druhů, mučedníků
 19 : Sv. Pavla od Kříže, kněze
 21 : Bl. Karla Rakouského
-22 : Bl. Jana Pavla II., papeže
+22 : Sv. Jana Pavla II., papeže
 23 : Sv. Jana Kapistránského, kněze
 24 : Sv. Antonína Marie Klareta, biskupa
 28 f R : Sv. Šimona a Judy, apoštolů
