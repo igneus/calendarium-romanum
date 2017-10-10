@@ -17,29 +17,21 @@ module CalendariumRomanum
       end
       sanctorale = data_file.load
 
-      date =
-        if date_str
-          begin
-            Date.parse(date_str)
-          rescue ArgumentError
-            die! 'Invalid date.'
+      pcal = PerpetualCalendar.new sanctorale: sanctorale
+
+      if date_str
+        begin
+          parsed_date = DateParser.new(date_str)
+          parsed_date.date_range.each do |day|
+            print_single_date(pcal, day)
           end
-        else
-          Date.today
+        rescue ArgumentError
+          die! 'Invalid date.'
         end
-      calendar = Calendar.for_day(date, sanctorale)
-      day = calendar.day date
-
-      puts date
-      puts "season: #{day.season.name}"
-      puts
-
-      rank_length = day.celebrations.collect {|c| c.rank.short_desc.size }.max
-      day.celebrations.each do |c|
-        print c.rank.short_desc.rjust(rank_length)
-        print ' : '
-        puts c.title
+      else
+        print_single_date(pcal, Date.today)
       end
+
     end
 
     desc 'calendars', 'lists calendars available for querying'
@@ -115,5 +107,23 @@ module CalendariumRomanum
       STDERR.puts message
       exit code
     end
+
+    def print_single_date(calendar, date)
+      day = calendar.day date
+
+      puts date
+      puts "season: #{day.season.name}"
+      puts
+
+      rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size}.max
+      day.celebrations.each do |c|
+        unless c.rank.short_desc.nil?
+          print c.rank.short_desc.rjust(rank_length)
+          print ' : '
+          puts c.title
+        end
+      end
+    end
+
   end
 end

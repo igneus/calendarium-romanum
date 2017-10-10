@@ -36,5 +36,27 @@ module CalendariumRomanum
         @prop = :month
       end
     end
+
+    class DateParser
+      attr_reader :date_range
+      def initialize(date_str)
+        if (date_str =~ /((\d{4})(\/|-)?(\d{0,2})(\/|-)?(\d{0,2}))\z/) # Accepts YYYY-MM-DD, YYYY/MM/DD where both day and month are optional
+          year = $2.to_i
+          month = $4.to_i 
+          day = $6.to_i
+          if ((day == 0) && (month == 0)) # Only year is given
+            @date_range = Year.new(year)
+          elsif (day == 0) # Year and month are given
+            @date_range = Month.new(year, month)
+          else
+            @date_range = Date.new(year, month, day)..Date.new(year, month, day)
+          end
+        else
+          raise ArgumentError, "Unparseable date"
+        end
+      end
+    end
+
+
   end
 end

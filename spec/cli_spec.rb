@@ -109,6 +109,22 @@ describe CalendariumRomanum::CLI, type: :aruba do
         it { expect(all_output).to include "season: Ordinary Time" }
         it { expect(last_command).to be_successfully_executed }
       end
+
+      describe 'correct month querying' do
+        before(:each) { run "calendariumrom query 2015-06" }
+
+        it { expect(all_output).to include "Saint Cyril of Alexandria"}
+        it { expect(all_output).to include "Saint Anthony of Padua, priest and doctor"}
+        it { expect(last_command).to be_successfully_executed }
+      end
+
+      describe 'correct year querying' do
+        before(:each) { run "calendariumrom query 2013" }
+        
+        it { expect(all_output).to include "Saint John the Apostle and evangelist"}
+        it { expect(all_output).to include "Saint Paul of the Cross, priest"}
+        it { expect(last_command).to be_successfully_executed }
+      end
     end
 
     describe 'calendars' do
