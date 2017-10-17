@@ -11,11 +11,23 @@ module CalendariumRomanum
     def query(date_str=nil)
       I18n.locale = options[:locale]
 
-      data_file = Data[options[:calendar]]
-      if data_file.nil?
-        die! 'Invalid calendar. See subcommand `calendars` for valid options.'
+      # This block is for specifying a full filesystem path
+      if File.exist?(options[:calendar])
+        begin
+          sanctorale = SanctoraleLoader.new.load_from_file(options[:calendar])
+        rescue CalendariumRomanum::InvalidDataError
+          die! 'Invalid file format.'
+        end
+      else
+        # This block is for predefined calendars
+        data_file = Data[options[:calendar]]
+
+        if data_file.nil?
+          die! 'Invalid calendar. See subcommand `calendars` for valid options.'
+        end
+        sanctorale = data_file.load
+      # End block for predefined calendars
       end
-      sanctorale = data_file.load
 
       pcal = PerpetualCalendar.new sanctorale: sanctorale
 
