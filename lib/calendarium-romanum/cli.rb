@@ -10,12 +10,21 @@ module CalendariumRomanum
     option :locale, default: 'en', aliases: :l
     def query(date_str=nil)
       I18n.locale = options[:locale]
+      calendar = options[:calendar]
+      if File.exist?(calendar)
+        begin
+          sanctorale = SanctoraleLoader.new.load_from_file(calendar)
+        rescue CalendariumRomanum::InvalidDataError
+          die! 'Invalid file format.'
+        end
+      else
+        data_file = Data[calendar]
 
-      data_file = Data[options[:calendar]]
-      if data_file.nil?
-        die! 'Invalid calendar. See subcommand `calendars` for valid options.'
+        if data_file.nil?
+          die! "Invalid calendar. Either loading a calendar from filesystem did not succeed, \n or a preinstalled calendar was specified which doesn't exist. See subcommand `calendars` for valid options."
+        end
+        sanctorale = data_file.load
       end
-      sanctorale = data_file.load
 
       pcal = PerpetualCalendar.new sanctorale: sanctorale
 

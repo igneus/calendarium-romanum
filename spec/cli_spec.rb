@@ -103,6 +103,24 @@ describe CalendariumRomanum::CLI, type: :aruba do
     end
 
     describe 'query' do
+
+      describe 'invalid data file from file system' do
+        before(:each) do
+          write_file 'invalid.txt', "Foo bar baz"
+          run "calendariumrom query --calendar invalid.txt 2017-10-03"
+        end
+
+        it { expect(all_output).to include 'Invalid file format.' }
+        it { expect(last_command).to have_exit_status 1 }
+      end
+      
+      describe 'correct data file from file system' do
+        before(:each) { run "calendariumrom query --calendar #{path_universal_la} 2017-10-03"}
+
+        it { expect(all_output).to include "season: Ordinary Time" }
+        it { expect(last_command).to be_successfully_executed }
+      end
+      
       describe 'correct season naming' do
         before(:each) { run "calendariumrom query 2017-10-03" }
 
