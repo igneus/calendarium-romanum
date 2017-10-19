@@ -110,7 +110,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
           run "calendariumrom query --calendar invalid.txt 2017-10-03"
         end
 
-        it { expect(all_output).to start_with 'Invalid file format.' }
+        it { expect(all_output).to include 'Invalid file format.' }
         it { expect(last_command).to have_exit_status 1 }
       end
       
