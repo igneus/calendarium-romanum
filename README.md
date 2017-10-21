@@ -150,7 +150,7 @@ calendar = CR::Calendar.new(2000)
 begin
   day = calendar.day(Date.new(2000, 1, 1))
 rescue RangeError
-  # ouch
+  STDERR.puts 'ouch' # will happen
 end
 ```
 
@@ -162,10 +162,10 @@ does not belong to the liturgical year 2000-2001
 i.e. on 3rd December 2000), but to the year 1999-2000.
 For the sake of simplicity, `calendarium-romanum` denotes
 liturgical years by the starting year only, so you create
-a `Calendar` for liturgical year 2000-2001 by calling
-`Calendar.new(2000)`.
+a `Calendar` for liturgical year 1999-2000 by calling
+`Calendar.new(1999)`.
 
-When you want to query a calendar without caring about liturgical
+If you want to query a calendar without caring about liturgical
 years, possibly picking days across multiple years,
 the tool you are looking for is `PerpetualCalendar`.
 
