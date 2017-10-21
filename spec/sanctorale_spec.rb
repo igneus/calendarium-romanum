@@ -12,7 +12,7 @@ describe CR::Sanctorale do
   describe '#get' do
     describe 'for an empty day' do
       it 'returns an Array' do
-        expect(s.get(1,3)).to be_an Array
+        expect(s.get(1, 3)).to be_an Array
       end
     end
 
@@ -31,8 +31,8 @@ describe CR::Sanctorale do
 
       it 'may have more CR::Celebrations for a day' do
         [
-         'S. Fabiani, papae et martyris',
-         'S. Sebastiani, martyris'
+          'S. Fabiani, papae et martyris',
+          'S. Sebastiani, martyris'
         ].each {|t| s.add 1, 20, CR::Celebration.new(t, CR::Ranks::MEMORIAL_OPTIONAL) }
         expect(s.get(1, 20).size).to eq 2
       end

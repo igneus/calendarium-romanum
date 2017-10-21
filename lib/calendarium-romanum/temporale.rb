@@ -33,13 +33,13 @@ module CalendariumRomanum
           return year - 1
         end
 
-        return year
+        year
       end
 
       # creates a Calendar for the liturgical year including given
       # date
       def for_day(date)
-        return new(liturgical_year(date))
+        new(liturgical_year(date))
       end
 
       C = Struct.new(:date_method, :celebration)
@@ -91,7 +91,7 @@ module CalendariumRomanum
     end
 
     def end_date
-      Dates.first_advent_sunday(year+1) - 1
+      Dates.first_advent_sunday(year + 1) - 1
     end
 
     def date_range
@@ -128,20 +128,20 @@ module CalendariumRomanum
     def season(date)
       range_check date
 
-      if first_advent_sunday <= date and
-          nativity > date then
+      if (first_advent_sunday <= date) &&
+         nativity > date
         Seasons::ADVENT
 
-      elsif nativity <= date and
-          baptism_of_lord >= date then
+      elsif (nativity <= date) &&
+            (baptism_of_lord >= date)
         Seasons::CHRISTMAS
 
-      elsif ash_wednesday <= date and
-          easter_sunday > date then
+      elsif (ash_wednesday <= date) &&
+            easter_sunday > date
         Seasons::LENT
 
-      elsif easter_sunday <= date and
-          pentecost >= date then
+      elsif (easter_sunday <= date) &&
+            (pentecost >= date)
         Seasons::EASTER
 
       else
@@ -186,7 +186,7 @@ module CalendariumRomanum
         end
       end
 
-      return week
+      week
     end
 
     # returns a Celebration
@@ -204,7 +204,7 @@ module CalendariumRomanum
         end
       end
 
-      return @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
+      @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
     end
 
     private
@@ -224,7 +224,7 @@ module CalendariumRomanum
       week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
 
-      return Celebration.new title, rank, seas.colour
+      Celebration.new title, rank, seas.colour
     end
 
     def ferial(date)
@@ -246,32 +246,32 @@ module CalendariumRomanum
           nth = Ordinalizer.ordinal(date.day - nativity.day + 1) # 1-based counting
           title = I18n.t 'temporale.christmas.nativity_octave.ferial', day: nth
         elsif date > epiphany
-          title = I18n.t "temporale.christmas.after_epiphany.ferial", weekday: I18n.t("weekday.#{date.wday}")
+          title = I18n.t 'temporale.christmas.after_epiphany.ferial', weekday: I18n.t("weekday.#{date.wday}")
         end
       when Seasons::LENT
         if week == 0
-          title = I18n.t "temporale.lent.after_ashes.ferial", weekday: I18n.t("weekday.#{date.wday}")
+          title = I18n.t 'temporale.lent.after_ashes.ferial', weekday: I18n.t("weekday.#{date.wday}")
         elsif date > palm_sunday
           rank = Ranks::PRIMARY
-          title = I18n.t "temporale.lent.holy_week.ferial", weekday: I18n.t("weekday.#{date.wday}")
+          title = I18n.t 'temporale.lent.holy_week.ferial', weekday: I18n.t("weekday.#{date.wday}")
         end
         rank = Ranks::FERIAL_PRIVILEGED unless rank > Ranks::FERIAL_PRIVILEGED
       when Seasons::EASTER
         if week == 1
           rank = Ranks::PRIMARY
-          title = I18n.t "temporale.easter.octave.ferial", weekday: I18n.t("weekday.#{date.wday}")
+          title = I18n.t 'temporale.easter.octave.ferial', weekday: I18n.t("weekday.#{date.wday}")
         end
       end
 
       week_ord = Ordinalizer.ordinal week
       title ||= I18n.t "temporale.#{seas.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
 
-      return Celebration.new title, rank, seas.colour
+      Celebration.new title, rank, seas.colour
     end
 
     # helper: difference between two Dates in days
     def date_difference(d1, d2)
-      return (d1 - d2).numerator
+      (d1 - d2).numerator
     end
 
     # prepare dates of temporale solemnities
@@ -297,11 +297,12 @@ module CalendariumRomanum
     end
 
     def prepare_celebration_date(date_method, celebration)
-      if date_method.respond_to? :call
-        date = date_method.call(year)
-      else
-        date = public_send(date_method)
-      end
+      date =
+        if date_method.respond_to? :call
+          date_method.call(year)
+        else
+          public_send(date_method)
+        end
 
       add_to =
         if celebration.feast?

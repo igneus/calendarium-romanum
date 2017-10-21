@@ -56,7 +56,7 @@ module CalendariumRomanum
   class Celebration
     extend Forwardable
 
-    def initialize(title='', rank=Ranks::FERIAL, colour=Colours::GREEN, symbol=nil)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil)
       @title = title
       @rank = rank
       @colour = colour
@@ -75,7 +75,7 @@ module CalendariumRomanum
     end
 
     attr_reader :colour
-    alias_method :color, :colour
+    alias color colour
 
     attr_reader :symbol
 

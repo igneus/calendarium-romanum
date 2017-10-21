@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe CR::SanctoraleLoader do
-
   before :each do
     @s = CR::Sanctorale.new
     @l = CR::SanctoraleLoader.new
@@ -43,7 +42,7 @@ describe CR::SanctoraleLoader do
 
     describe '#load_from_file' do
       it 'loads something from file' do
-        @l.load_from_file(File.join(%w{data universal-la.txt}), @s)
+        @l.load_from_file(File.join(%w(data universal-la.txt)), @s)
         expect(@s.size).to be > 190
       end
     end
@@ -77,7 +76,6 @@ describe CR::SanctoraleLoader do
       # say we specify a proper calendar of a church dedicated to St. George
 
       it 'sets rank if specified' do
-
         str = '4/23 s R : S. Georgii, martyris'
         @l.load_from_string str, @s
         celeb = @s.get(4, 23).first

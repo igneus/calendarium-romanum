@@ -208,7 +208,7 @@ describe CR::Calendar do
                 end
               end
 
-              describe 'second last'  do
+              describe 'second last' do
                 Date.new(2014, 11, 16).upto(Date.new(2014, 11, 22)) do |date|
                   it date do
                     expect(@c.day(date).season_week).to eq 33

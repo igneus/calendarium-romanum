@@ -54,7 +54,7 @@ module CalendariumRomanum
     end
   end
 
-  LECTIONARY_CYCLES = [:A, :B, :C]
+  LECTIONARY_CYCLES = [:A, :B, :C].freeze
 
   # ranks of celebrations
   class Ranks < Enum

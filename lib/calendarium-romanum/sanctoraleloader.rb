@@ -12,22 +12,22 @@ module CalendariumRomanum
   class SanctoraleLoader
 
     RANK_CODES = {
-                  nil => Ranks::MEMORIAL_OPTIONAL,
-                  'm' => Ranks::MEMORIAL_GENERAL,
-                  'f' => Ranks::FEAST_GENERAL,
-                  's' => Ranks::SOLEMNITY_GENERAL
-                 }
+      nil => Ranks::MEMORIAL_OPTIONAL,
+      'm' => Ranks::MEMORIAL_GENERAL,
+      'f' => Ranks::FEAST_GENERAL,
+      's' => Ranks::SOLEMNITY_GENERAL
+    }.freeze
     COLOUR_CODES = {
-                    nil => Colours::WHITE,
-                    'w' => Colours::WHITE,
-                    'v' => Colours::VIOLET,
-                    'g' => Colours::GREEN,
-                    'r' => Colours::RED
-                   }
+      nil => Colours::WHITE,
+      'w' => Colours::WHITE,
+      'v' => Colours::VIOLET,
+      'g' => Colours::GREEN,
+      'r' => Colours::RED
+    }.freeze
 
     # dest should be a Sanctorale,
     # src anything with #each_line
-    def load(src, dest=nil)
+    def load(src, dest = nil)
       dest ||= Sanctorale.new
 
       in_front_matter = false
@@ -108,10 +108,10 @@ module CalendariumRomanum
       dest
     end
 
-    alias_method :load_from_string, :load
+    alias load_from_string load
 
-    def load_from_file(filename, dest=nil, encoding='utf-8')
-      self.load File.open(filename, 'r', encoding: encoding), dest
+    def load_from_file(filename, dest = nil, encoding = 'utf-8')
+      load File.open(filename, 'r', encoding: encoding), dest
     end
 
     private

@@ -14,13 +14,13 @@ module CalendariumRomanum
     # year: Integer
     # returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
-    def initialize(year, sanctorale=nil, temporale=nil, vespers: false)
+    def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
       end
 
       if temporale && temporale.year != year
-        raise ArgumentError.new("Temporale year must be the same as year.")
+        raise ArgumentError.new('Temporale year must be the same as year.')
       end
 
       @year = year
@@ -35,7 +35,7 @@ module CalendariumRomanum
       def mk_date(*args)
         ex = TypeError.new('Date, DateTime or three Integers expected')
 
-        if args.size == 3 then
+        if args.size == 3
           args.each do |a|
             unless a.is_a? Integer
               raise ex
@@ -43,7 +43,7 @@ module CalendariumRomanum
           end
           return Date.new(*args)
 
-        elsif args.size == 1 then
+        elsif args.size == 1
           a = args.first
           unless a.is_a? Date
             raise ex
@@ -58,7 +58,7 @@ module CalendariumRomanum
       # creates a Calendar for the liturgical year including given
       # date
       def for_day(date, *constructor_args)
-        return new(Temporale.liturgical_year(date), *constructor_args)
+        new(Temporale.liturgical_year(date), *constructor_args)
       end
     end # class << self
 
@@ -72,7 +72,7 @@ module CalendariumRomanum
         return false
       end
 
-      return year == obj.year
+      year == obj.year
     end
 
     # accepts date information represented as
@@ -107,13 +107,13 @@ module CalendariumRomanum
       end
 
       s = @temporale.season(date)
-      return Day.new(
-                     date: date,
-                     season: s,
-                     season_week: @temporale.season_week(s, date),
-                     celebrations: celebrations,
-                     vespers: vespers_celebration
-                    )
+      Day.new(
+        date: date,
+        season: s,
+        season_week: @temporale.season_week(s, date),
+        celebrations: celebrations,
+        vespers: vespers_celebration
+      )
     end
 
     # Sunday lectionary cycle
@@ -164,7 +164,7 @@ module CalendariumRomanum
         end
       end
 
-      return [t]
+      [t]
     end
 
     def first_vespers_on(date, celebrations)

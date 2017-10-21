@@ -8,7 +8,7 @@ module CalendariumRomanum
     desc 'query 2007-06-05', 'show calendar information for a specified date'
     option :calendar, default: 'universal-en', aliases: :c
     option :locale, default: 'en', aliases: :l
-    def query(date_str=nil)
+    def query(date_str = nil)
       I18n.locale = options[:locale]
       calendar = options[:calendar]
       if File.exist?(calendar)
@@ -40,7 +40,6 @@ module CalendariumRomanum
       else
         print_single_date(pcal, Date.today)
       end
-
     end
 
     desc 'calendars', 'lists calendars available for querying'
@@ -74,7 +73,8 @@ module CalendariumRomanum
         a, b = sanctoralia.collect {|s| s.get(d) }
 
         0.upto([a.size, b.size].max - 1) do |i|
-          ca, cb = a[i], b[i]
+          ca = a[i]
+          cb = b[i]
           compared = [ca, cb]
           differences = []
 
@@ -91,13 +91,12 @@ module CalendariumRomanum
           differences << 'rank' if ca.rank != cb.rank
           differences << 'colour' if ca.colour != cb.colour
 
-          unless differences.empty?
-            print date(d)
-            puts " differs in #{differences.join(', ')}"
-            puts celebration(ca)
-            puts celebration(cb)
-            puts
-          end
+          next if differences.empty?
+          print date(d)
+          puts " differs in #{differences.join(', ')}"
+          puts celebration(ca)
+          puts celebration(cb)
+          puts
         end
       end
     end
@@ -112,7 +111,7 @@ module CalendariumRomanum
       "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
     end
 
-    def die!(message, code=1)
+    def die!(message, code = 1)
       STDERR.puts message
       exit code
     end
@@ -124,13 +123,12 @@ module CalendariumRomanum
       puts "season: #{day.season.name}"
       puts
 
-      rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size}.max
+      rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size }.max
       day.celebrations.each do |c|
-        unless c.rank.short_desc.nil?
-          print c.rank.short_desc.rjust(rank_length)
-          print ' : '
-          puts c.title
-        end
+        next if c.rank.short_desc.nil?
+        print c.rank.short_desc.rjust(rank_length)
+        print ' : '
+        puts c.title
       end
     end
 

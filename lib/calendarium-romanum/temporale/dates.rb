@@ -29,7 +29,7 @@ module CalendariumRomanum
           return sunday_after(Date.new(year + 1, 1, 1))
         end
 
-        Date.new(year+1, 1, 6)
+        Date.new(year + 1, 1, 6)
       end
 
       def self.baptism_of_lord(year, epiphany_on_sunday: false)
@@ -58,16 +58,16 @@ module CalendariumRomanum
         paschal_full_moon = (3 - 11 * golden_number + solar_correction - lunar_correction) % 30
         dominical_number += 7 until dominical_number > 0
         paschal_full_moon += 30 until paschal_full_moon > 0
-        paschal_full_moon -= 1 if paschal_full_moon == 29 or (paschal_full_moon == 28 and golden_number > 11)
+        paschal_full_moon -= 1 if (paschal_full_moon == 29) || ((paschal_full_moon == 28) && golden_number > 11)
         difference = (4 - paschal_full_moon - dominical_number) % 7
         difference += 7 if difference < 0
         day_easter = paschal_full_moon + difference + 1
-        if day_easter < 11 then
+        if day_easter < 11
           # Easter occurs in March.
-          return Date.new(y=year, m=3, d=day_easter + 21)
+          return Date.new(y = year, m = 3, d = day_easter + 21)
         else
           # Easter occurs in April.
-          return Date.new(y=year, m=4, d=day_easter - 10)
+          return Date.new(y = year, m = 4, d = day_easter - 10)
         end
       end
 
@@ -124,22 +124,22 @@ module CalendariumRomanum
       # utility methods
 
       def self.weekday_before(weekday, date)
-        if date.wday == weekday then
-          return date - WEEK
+        if date.wday == weekday
+          date - WEEK
         elsif weekday < date.wday
-          return date - (date.wday - weekday)
+          date - (date.wday - weekday)
         else
-          return date - (date.wday + WEEK - weekday)
+          date - (date.wday + WEEK - weekday)
         end
       end
 
       def self.weekday_after(weekday, date)
-        if date.wday == weekday then
-          return date + WEEK
+        if date.wday == weekday
+          date + WEEK
         elsif weekday > date.wday
-          return date + (weekday - date.wday)
+          date + (weekday - date.wday)
         else
-          return date + (WEEK - date.wday + weekday)
+          date + (WEEK - date.wday + weekday)
         end
       end
 
@@ -148,7 +148,7 @@ module CalendariumRomanum
       end
 
       class << self
-        WEEKDAYS = %w{sunday monday tuesday wednesday thursday friday saturday}
+        WEEKDAYS = %w(sunday monday tuesday wednesday thursday friday saturday).freeze
         WEEKDAYS.each_with_index do |weekday, weekday_i|
           define_method "#{weekday}_before" do |date|
             send('weekday_before', weekday_i, date)

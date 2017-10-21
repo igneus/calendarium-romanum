@@ -57,7 +57,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
         before(:each) do
           write_file 'cal1.txt', content1
           write_file 'cal2.txt', content2
-          run "calendariumrom cmp cal1.txt cal2.txt"
+          run 'calendariumrom cmp cal1.txt cal2.txt'
         end
 
         describe 'in rank' do
@@ -92,7 +92,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
 
         describe 'only in one source' do
           let(:content1) { '' }
-          let(:content2) { "1/11 : St. None, abbot" }
+          let(:content2) { '1/11 : St. None, abbot' }
 
           it { expect(all_output).to include '1/11' }
           it { expect(all_output).to include 'St. None, abbot' }
@@ -103,53 +103,52 @@ describe CalendariumRomanum::CLI, type: :aruba do
     end
 
     describe 'query' do
-
       describe 'invalid data file from file system' do
         before(:each) do
-          write_file 'invalid.txt', "Foo bar baz"
-          run "calendariumrom query --calendar invalid.txt 2017-10-03"
+          write_file 'invalid.txt', 'Foo bar baz'
+          run 'calendariumrom query --calendar invalid.txt 2017-10-03'
         end
 
         it { expect(all_output).to include 'Invalid file format.' }
         it { expect(last_command).to have_exit_status 1 }
       end
-      
-      describe 'correct data file from file system' do
-        before(:each) { run "calendariumrom query --calendar #{path_universal_la} 2017-10-03"}
 
-        it { expect(all_output).to include "season: Ordinary Time" }
+      describe 'correct data file from file system' do
+        before(:each) { run "calendariumrom query --calendar #{path_universal_la} 2017-10-03" }
+
+        it { expect(all_output).to include 'season: Ordinary Time' }
         it { expect(last_command).to be_successfully_executed }
       end
-      
-      describe 'correct season naming' do
-        before(:each) { run "calendariumrom query 2017-10-03" }
 
-        it { expect(all_output).to include "season: Ordinary Time" }
+      describe 'correct season naming' do
+        before(:each) { run 'calendariumrom query 2017-10-03' }
+
+        it { expect(all_output).to include 'season: Ordinary Time' }
         it { expect(last_command).to be_successfully_executed }
       end
 
       describe 'correct month querying' do
-        before(:each) { run "calendariumrom query 2015-06" }
+        before(:each) { run 'calendariumrom query 2015-06' }
 
-        it { expect(all_output).to include "Saint Cyril of Alexandria"}
-        it { expect(all_output).to include "Saint Anthony of Padua, priest and doctor"}
+        it { expect(all_output).to include 'Saint Cyril of Alexandria' }
+        it { expect(all_output).to include 'Saint Anthony of Padua, priest and doctor' }
         it { expect(last_command).to be_successfully_executed }
       end
 
       describe 'correct year querying' do
-        before(:each) { run "calendariumrom query 2013" }
-        
-        it { expect(all_output).to include "Saint John the Apostle and evangelist"}
-        it { expect(all_output).to include "Saint Paul of the Cross, priest"}
+        before(:each) { run 'calendariumrom query 2013' }
+
+        it { expect(all_output).to include 'Saint John the Apostle and evangelist' }
+        it { expect(all_output).to include 'Saint Paul of the Cross, priest' }
         it { expect(last_command).to be_successfully_executed }
       end
     end
 
     describe 'calendars' do
-      before(:each) { run "calendariumrom calendars" }
+      before(:each) { run 'calendariumrom calendars' }
 
-      it { expect(all_output).to include "universal-en" }
-      it { expect(all_output).to include "czech-praha-cs" }
+      it { expect(all_output).to include 'universal-en' }
+      it { expect(all_output).to include 'czech-praha-cs' }
       it { expect(last_command).to be_successfully_executed }
     end
   end

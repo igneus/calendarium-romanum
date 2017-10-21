@@ -53,7 +53,6 @@ describe 'internationalization' do
     let(:locale) { 'de' }
 
     it 'attemt to switch to it fails by default' do
-
     end
   end
 end

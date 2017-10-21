@@ -6,7 +6,7 @@ module CalendariumRomanum
     class << self
       extend Forwardable
 
-      def values(index_by: nil, &blk)
+      def values(index_by: nil)
         defined?(@indexed) && raise(RuntimeError.new('initialized repeatedly'))
 
         @indexed = {}
@@ -22,9 +22,7 @@ module CalendariumRomanum
         @indexed.freeze
       end
 
-      def all
-        @all
-      end
+      attr_reader :all
 
       def_delegators :@all, :each
       def_delegators :@indexed, :[]

@@ -2,7 +2,6 @@
 require_relative 'spec_helper'
 
 describe CR::Temporale do
-
   before :all do
     @t = @t12 = described_class.new 2012
     @t13 = described_class.new 2013

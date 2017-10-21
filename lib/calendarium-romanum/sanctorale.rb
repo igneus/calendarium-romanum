@@ -66,7 +66,7 @@ module CalendariumRomanum
       end
 
       date = AbstractDate.new(month, day)
-      return @days[date] || []
+      @days[date] || []
     end
 
     # for each day for which an entry is available

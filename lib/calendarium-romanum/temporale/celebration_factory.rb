@@ -5,7 +5,7 @@ module CalendariumRomanum
       class << self
         def first_advent_sunday
           Celebration.new(
-            I18n.t("temporale.advent.sunday", week: Ordinalizer.ordinal(1)),
+            I18n.t('temporale.advent.sunday', week: Ordinalizer.ordinal(1)),
             Ranks::PRIMARY,
             Colours::VIOLET
           )
@@ -13,7 +13,7 @@ module CalendariumRomanum
 
         private
 
-        def celebration(symbol, rank, colour=Colours::WHITE)
+        def celebration(symbol, rank, colour = Colours::WHITE)
           define_singleton_method(symbol) do
             Celebration.new(
               proc { I18n.t("temporale.solemnity.#{symbol}") },
