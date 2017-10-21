@@ -88,7 +88,7 @@ module CalendariumRomanum
 
     def freeze
       @days.freeze
-      @days.values.each &:freeze
+      @days.values.each(&:freeze)
       @solemnities.freeze
       super
     end

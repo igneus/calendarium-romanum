@@ -41,7 +41,7 @@ module CalendariumRomanum
               raise ex
             end
           end
-          return Date.new *args
+          return Date.new(*args)
 
         elsif args.size == 1 then
           a = args.first
@@ -86,7 +86,7 @@ module CalendariumRomanum
           date = Date.new(@year + 1, *args)
         end
       else
-        date = self.class.mk_date *args
+        date = self.class.mk_date(*args)
         range_check date
       end
 

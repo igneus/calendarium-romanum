@@ -51,7 +51,7 @@ module CalendariumRomanum
         next if l.empty?
 
         # month section heading
-        n = l.match /^=\s*(\d+)\s*$/
+        n = l.match(/^=\s*(\d+)\s*$/)
         unless n.nil?
           month_section = n[1].to_i
           unless month_section >= 1 && month_section <= 12
@@ -61,7 +61,7 @@ module CalendariumRomanum
         end
 
         # celebration record
-        m = l.match /^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i
+        m = l.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i)
         if m.nil?
           raise error("Syntax error, line skipped '#{l}'", line_num)
           next
