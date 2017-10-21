@@ -21,8 +21,8 @@ module CalendariumRomanum
       @short_desc && I18n.t(@short_desc)
     end
 
-    def <=>(b)
-      b.priority <=> priority
+    def <=>(other)
+      other.priority <=> priority
     end
 
     def solemnity?

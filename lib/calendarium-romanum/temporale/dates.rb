@@ -64,10 +64,10 @@ module CalendariumRomanum
         day_easter = paschal_full_moon + difference + 1
         if day_easter < 11
           # Easter occurs in March.
-          return Date.new(y = year, m = 3, d = day_easter + 21)
+          return Date.new(year, 3, day_easter + 21)
         else
           # Easter occurs in April.
-          return Date.new(y = year, m = 4, d = day_easter - 10)
+          return Date.new(year, 4, day_easter - 10)
         end
       end
 

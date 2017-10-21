@@ -64,7 +64,6 @@ module CalendariumRomanum
         m = l.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i)
         if m.nil?
           raise error("Syntax error, line skipped '#{l}'", line_num)
-          next
         end
 
         month, day, rank_char, rank_num, colour, title = m.values_at(2, 3, 5, 6, 7, 8)
