@@ -8,6 +8,10 @@ group :development, :test do
   gem 'rake'
 end
 
+group :development do
+  gem 'rubocop'
+end
+
 group :test do
   gem 'rspec'
   gem 'aruba'
