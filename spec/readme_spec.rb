@@ -36,6 +36,10 @@ end
 
 %w(README.md data/README.md).each do |path|
   describe path do
+    before :each do
+      STDERR.stub(:puts)
+    end
+
     readme_path = File.expand_path('../../' + path, __FILE__)
     readme = File.read readme_path
     doc = MarkdownDocument.new readme
