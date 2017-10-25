@@ -18,7 +18,7 @@ module CalendariumRomanum
       date.wday
     end
 
-    # one of the Seasons (Symbol)
+    # one of the Seasons
     attr_reader :season
 
     # week of the season (Integer)
