@@ -1,194 +1,43 @@
-require 'date'
-require 'forwardable'
+class Calendar < Struct.new(:view, :date, :callback)
+    HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+    START_DAY = :sunday
 
-module CalendariumRomanum
+    delegate :content_tag, to: :view
 
-  # Provides complete information concerning a liturgical year,
-  # it's days and celebrations occurring on them.
-  class Calendar
-    extend Forwardable
-
-    # Day when the implemented calendar system became effective
-    EFFECTIVE_FROM = Date.new(1970, 1, 1).freeze
-
-    # year: Integer
-    # returns a calendar for the liturgical year beginning with
-    # Advent of the specified civil year.
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
-      if year < (EFFECTIVE_FROM.year - 1)
-        raise system_not_effective
+    def table
+      content_tag :table, class: "calendar table table-bordered table-striped" do
+        header + week_rows
       end
-
-      if temporale && temporale.year != year
-        raise ArgumentError.new('Temporale year must be the same as year.')
-      end
-
-      @year = year
-      @sanctorale = sanctorale || Sanctorale.new
-      @temporale = temporale || Temporale.new(year)
-      @populate_vespers = vespers
-
-      @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
-    class << self
-      def mk_date(*args)
-        ex = TypeError.new('Date, DateTime or three Integers expected')
+    def header
+      content_tag :tr do
+        HEADER.map { |day| content_tag :th, day }.join.html_safe
+      end
+    end
 
-        if args.size == 3
-          args.each do |a|
-            unless a.is_a? Integer
-              raise ex
-            end
-          end
-          return Date.new(*args)
-
-        elsif args.size == 1
-          a = args.first
-          unless a.is_a? Date
-            raise ex
-          end
-          return a
-
-        else
-          raise ex
+    def week_rows
+      weeks.map do |week|
+        content_tag :tr do
+          week.map { |day| day_cell(day) }.join.html_safe
         end
-      end
-
-      # creates a Calendar for the liturgical year including given
-      # date
-      def for_day(date, *constructor_args)
-        new(Temporale.liturgical_year(date), *constructor_args)
-      end
-    end # class << self
-
-    def_delegators :@temporale, :range_check, :season
-    attr_reader :year
-    attr_reader :temporale
-    attr_reader :sanctorale
-
-    def ==(obj)
-      unless obj.is_a? Calendar
-        return false
-      end
-
-      year == obj.year
+      end.join.html_safe
     end
 
-    # accepts date information represented as
-    # Date, DateTime, or two to three integers
-    # (month - day or year - month - day);
-    # returns filled Day for the specified day
-    def day(*args, vespers: false)
-      if args.size == 2
-        date = Date.new(@year, *args)
-        unless @temporale.date_range.include? date
-          date = Date.new(@year + 1, *args)
-        end
-      else
-        date = self.class.mk_date(*args)
-        range_check date
-      end
-
-      if date < EFFECTIVE_FROM
-        raise system_not_effective
-      end
-
-      celebrations = celebrations_for(date)
-      vespers_celebration = nil
-      if @populate_vespers || vespers
-        begin
-          vespers_celebration = first_vespers_on(date, celebrations)
-        rescue RangeError
-          # there is exactly one possible case when
-          # range_check(date) passes and range_check(date + 1) fails:
-          vespers_celebration = Temporale::CelebrationFactory.first_advent_sunday
-        end
-      end
-
-      s = @temporale.season(date)
-      Day.new(
-        date: date,
-        season: s,
-        season_week: @temporale.season_week(s, date),
-        celebrations: celebrations,
-        vespers: vespers_celebration
-      )
+    def day_cell(day)
+      content_tag :td, view.capture(day, &callback), class: day_classes(day)
     end
 
-    # Sunday lectionary cycle
-    def lectionary
-      LECTIONARY_CYCLES[@year % 3]
+    def day_classes(day)
+      classes = []
+      classes << "today" if day == Date.today
+      classes << "not-month" if day.month != date.month
+      classes.empty? ? nil : classes.join(" ")
     end
 
-    # Ferial lectionary cycle
-    def ferial_lectionary
-      @year % 2 + 1
+    def weeks
+      first = date.beginning_of_month.beginning_of_week(START_DAY)
+      last = date.end_of_month.end_of_week(START_DAY)
+      (first..last).to_a.in_groups_of(7)
     end
-
-    def freeze
-      @temporale.freeze
-      @sanctorale.freeze
-      super
-    end
-
-    private
-
-    def celebrations_for(date)
-      tr = @transferred.get(date)
-      return [tr] if tr
-
-      t = @temporale.get date
-      st = @sanctorale.get date
-
-      unless st.empty?
-        if st.first.rank > t.rank
-          if st.first.rank == Ranks::MEMORIAL_OPTIONAL
-            return st.dup.unshift t
-          else
-            return st
-          end
-        elsif t.rank == Ranks::FERIAL_PRIVILEGED && st.first.rank.memorial?
-          st = st.collect do |c|
-            Celebration.new(c.title, Ranks::COMMEMORATION, t.colour)
-          end
-          st.unshift t
-          return st
-        elsif t.symbol == :immaculate_heart &&
-              [Ranks::MEMORIAL_GENERAL, Ranks::MEMORIAL_PROPER].include?(st.first.rank)
-          optional_memorials = ([t] + st).collect do |celebration|
-            celebration.change rank: Ranks::MEMORIAL_OPTIONAL
-          end
-          ferial = temporale.send :ferial, date # ugly and evil
-          return [ferial] + optional_memorials
-        end
-      end
-
-      [t]
-    end
-
-    def first_vespers_on(date, celebrations)
-      tomorrow = date + 1
-      tomorrow_celebrations = celebrations_for(tomorrow)
-
-      c = tomorrow_celebrations.first
-      if c.rank >= Ranks::SOLEMNITY_PROPER ||
-         c.rank == Ranks::SUNDAY_UNPRIVILEGED ||
-         (c.rank == Ranks::FEAST_LORD_GENERAL && tomorrow.sunday?)
-        if c.symbol == :ash_wednesday || c.symbol == :good_friday
-          return nil
-        end
-
-        if c.rank > celebrations.first.rank || c.symbol == :easter_sunday
-          return c
-        end
-      end
-
-      nil
-    end
-
-    def system_not_effective
-      RangeError.new('Year out of range. Implemented calendar system has been in use only since 1st January 1970.')
-    end
-  end # class Calendar
 end
