@@ -61,7 +61,7 @@ or in gemspec of your gem
 spec.add_dependency 'calendarium-romanum', '~>0.4.0'
 ```
 
-## Basic Usage
+## Usage
 
 For more self-explaining, commented and copy-pastable
 examples see the [examples directory](./examples/).
@@ -72,35 +72,62 @@ All the examples below expect that you first required the gem:
 require 'calendarium-romanum'
 ```
 
-### 1. What liturgical season is it today?
+### 1. Typical usage
+
+The easiest way to obtain calendar entry of a liturgical day:
 
 ```ruby
-calendar = CalendariumRomanum::Calendar.for_day(Date.today)
-day = calendar.day(Date.today)
-day.season # => #<CalendariumRomanum::Season:0x000000029e1a40 @symbol=:ordinary, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>
+I18n.locale = :en # set locale
+
+# build calendar
+pcal = CR::PerpetualCalendar.new(
+  sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load
+)
+
+# query
+day = pcal.day(Date.new(2000, 1, 1))
 ```
 
-`Day#season` returns a `Season` instance representing
-the current liturgical season.
+For explanation see the detailed steps below.
 
 ### 2. What liturgical day is it today?
 
-`Day` has several other properties.
-`Day#celebrations` returns an `Array` of `Celebration`s
-that occur on the given day. Usually the `Array` has a single
-element, but in case of optional celebrations (several optional
-memorials occurring on a ferial) it may have two or more.
+`PerpetualCalendar` used in the example above is very a high-level API.
+In order to understand what's happening under the hood, we will
+now take a lower-level approach and work on the level of a simple
+`Calendar`.
+Each `Calendar` instance describes a particular *liturgical year*.
+We may not know which liturgical year our day of interest
+belongs to, but fortunately there is "alternative constructor"
+`Calendar.for_day()` to rescue:
 
 ```ruby
 date = Date.new(2016, 8, 19)
 calendar = CalendariumRomanum::Calendar.for_day(date)
 day = calendar.day(date)
-day.celebrations # => [#<CalendariumRomanum::Celebration:0x0000000250fdf0 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x000000029e1108 @priority=3.13, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>]
+
+day.season # => #<CalendariumRomanum::Season:0x00000001d4cfa0 @symbol=:ordinary, @colour=#<CalendariumRomanum::Colour:0x00000001d4d928 @symbol=:green, @i18n_key="colour.green">, @i18n_key="temporale.season.ordinary">
+day.season.equal? CalendariumRomanum::Seasons::ORDINARY # => true
+
+day.celebrations
+# => [#<CalendariumRomanum::Celebration:0x00000001c69cc8 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x00000001d4c708 @priority=3.13, @desc="rank.3_13", @short_desc="rank.short.ferial">, @colour=#<CalendariumRomanum::Colour:0x00000001d4d928 @symbol=:green, @i18n_key="colour.green">, @symbol=nil>]
+c = day.celebrations.first
+c.title # => "Friday, 20th week in Ordinary Time"
+c.rank # => #<CalendariumRomanum::Rank:0x00000001d4c708 @priority=3.13, @desc="rank.3_13", @short_desc="rank.short.ferial">
+c.rank.equal? CalendariumRomanum::Ranks::FERIAL # => true
+c.rank < CalendariumRomanum::Ranks::MEMORIAL_PROPER # => true
+c.colour
+# => #<CalendariumRomanum::Colour:0x00000001d4d928 @symbol=:green, @i18n_key="colour.green">
 ```
 
-In this case the single `Celebration` available is a ferial,
-described by it's title, rank and liturgical
-colour.
+`Calendar#day` returns a single `Day`, describing a liturgical day.
+Each day belongs to some `#season`; every day, we can choose from
+one or more `#celebrations` to celebrate.
+(The only case with multiple choices is combination of a ferial
+with one or more optional memorials; higher-ranking celebrations
+are always exclusive.)
+
+Each `Celebration` is described by a `#title`, `#rank` and `#colour`.
 
 ### 3. But does it take feasts of saints in account?
 
@@ -165,9 +192,12 @@ liturgical years by the starting year only, so you create
 a `Calendar` for liturgical year 1999-2000 by calling
 `Calendar.new(1999)`.
 
-If you want to query a calendar without caring about liturgical
-years, possibly picking days across multiple years,
-the tool you are looking for is `PerpetualCalendar`.
+We have already seen `Calendar.for_day()`, which takes care
+for finding the liturgical year a particular date belongs to
+and creating a `Calendar` for this year.
+But maybe you want to query a calendar without caring about liturgical
+years altogether, possibly picking days across multiple years.
+The best tool for such use cases is `PerpetualCalendar`.
 
 ```ruby
 CR = CalendariumRomanum
@@ -283,7 +313,7 @@ feasts with names in English.
 This can be fixed by changing locale to match your *sanctorale*
 data.
 
-`I18n.locale = :la # or :it, :cs`
+`I18n.locale = :la # or :en, :fr, :it, :cs`
 
 The gem ships with English, Latin, Italian, French and Czech translation.
 Contributed translations to other languages are most welcome.
