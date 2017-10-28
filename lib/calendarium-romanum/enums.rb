@@ -12,6 +12,10 @@ module CalendariumRomanum
     def name
       I18n.t @i18n_key
     end
+
+    def to_s
+      name
+    end
   end
 
   class Colours < Enum
@@ -39,6 +43,10 @@ module CalendariumRomanum
 
     def name
       I18n.t @i18n_key
+    end
+
+    def to_s
+      name
     end
   end
 
