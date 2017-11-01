@@ -37,7 +37,9 @@ end
 %w(README.md data/README.md).each do |path|
   describe path do
     before :each do
-      STDERR.stub(:puts)
+      # README examples sometimes print, but we don't want them
+      # to distort test output
+      allow(STDERR).to receive :puts
     end
 
     readme_path = File.expand_path('../../' + path, __FILE__)
