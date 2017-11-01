@@ -3,7 +3,12 @@
 [![Build Status](https://travis-ci.org/igneus/calendarium-romanum.svg?branch=master)](https://travis-ci.org/igneus/calendarium-romanum)
 [![Gem Version](https://badge.fury.io/rb/calendarium-romanum.svg)](https://badge.fury.io/rb/calendarium-romanum)
 
-[API documentation](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
+API documentation:
+[master](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
+[0.5.0](http://www.rubydoc.info/gems/calendarium-romanum/0.5.0)
+[0.4.0](http://www.rubydoc.info/gems/calendarium-romanum/0.4.0)
+[0.3.0](http://www.rubydoc.info/gems/calendarium-romanum/0.3.0)
+[0.2.0](http://www.rubydoc.info/gems/calendarium-romanum/0.2.0)
 
 Ruby gem for
 calendar computations according to the Roman Catholic liturgical
