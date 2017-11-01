@@ -180,7 +180,7 @@ module CalendariumRomanum
         week += 1
 
         if date > pentecost
-          weeks_after_date = date_difference(Dates.first_advent_sunday(@year + 1), date) / 7
+          weeks_after_date = date_difference(Dates.first_advent_sunday(@year + 1), date) / WEEK
           week = 34 - weeks_after_date
           week += 1 if date.sunday?
         end
