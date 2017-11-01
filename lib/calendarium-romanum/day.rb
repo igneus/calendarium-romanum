@@ -51,8 +51,8 @@ module CalendariumRomanum
 
   # information on one particular celebration of the liturgical year
   # (like a Sunday, feast or memorial);
-  # some days have no (ferial office is used), some have one,
-  # some have more among which one may and may not be chosen
+  # some days have one,
+  # some have more among which one is to be chosen
   class Celebration
     extend Forwardable
 
