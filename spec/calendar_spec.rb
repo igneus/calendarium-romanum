@@ -58,6 +58,24 @@ describe CR::Calendar do
     end
   end
 
+  describe '#[]' do 
+    describe 'received arguments' do
+      describe 'Date' do 
+        it 'returns a Day' do
+          expect(@c[Date.new(2013, 12, 10)]).to be_a CR::Day
+        end
+      end
+
+      describe 'Date range' do 
+        it 'returns an array of Days' do
+          array = (@c[Date.new(2013, 12, 10)..Date.new(2014, 4, 10)])
+          expect(array).to be_a Array
+          array.each{|day| expect(day).to be_a CR::Day}
+        end
+      end
+    end
+  end
+
   describe '#day' do
     describe 'received arguments' do
       describe 'Date' do
