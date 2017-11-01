@@ -75,6 +75,14 @@ module CalendariumRomanum
       year == obj.year
     end
 
+    def [](args)
+      if(args.is_a?(Range))
+        args.map{|date| day(date)}
+      else
+        day(*args)
+      end
+    end
+
     # accepts date information represented as
     # Date, DateTime, or two to three integers
     # (month - day or year - month - day);
