@@ -12,9 +12,6 @@ module CalendariumRomanum
       @vespers = vespers
     end
 
-    def succ
-      Day.new(@date + 1, @season, @season_week, @celebrations, @vespers)
-    end
     attr_reader :date
 
     def weekday

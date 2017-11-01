@@ -68,7 +68,7 @@ describe CR::Calendar do
 
       describe 'Date range' do 
         it 'returns an array of Days' do
-          array = (@c[Date.new(2013, 12, 10)..Date.new(2014, 4, 10)])
+          array = @c[Date.new(2013, 12, 10)..Date.new(2014, 4, 10)]
           expect(array).to be_a Array
           array.each{|day| expect(day).to be_a CR::Day}
         end

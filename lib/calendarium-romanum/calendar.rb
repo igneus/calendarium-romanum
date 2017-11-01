@@ -82,6 +82,7 @@ module CalendariumRomanum
         day(*args)
       end
     end
+
     # accepts date information represented as
     # Date, DateTime, or two to three integers
     # (month - day or year - month - day);
