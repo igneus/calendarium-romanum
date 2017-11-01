@@ -1,5 +1,63 @@
 # Changelog
 
+## [0.5.0] 2017-11-01
+
+### Fixed
+
+- transfer of Epiphany to a Sunday was breaking numbering of weeks
+  of the Ordinary Time
+- `Day.new()` (call without any arguments) was crashing
+- shebang of `calendariumrom`
+- CLI: `calendariumrom query` was printing internal representation
+  of a `Season` object instead of human-readable season name
+  (spotted and fixed by Simon Szutkowski @simonszu)
+- MRI 2.x interpreter warnings
+
+### Added
+
+- first Vespers of Sundays and solemnities: optional feature
+  of the `Calendar` (constructor has new keyword argument
+  `vespers: true` to activate it), populates `Day#vespers`
+  with a `Celebration` if Vespers should be taken from the following
+  day
+- proper handling of collision between *Immaculate heart of Mary*
+  and another obligatory memorial ([CDW Prot. n. 2671/98/L](http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20000630_memoria-immaculati-cordis-mariae-virginis_lt.html))
+- `Calendar#[]` - alias of `Calendar#day`, but with additional
+  support for a `Range` of `Date`s (returns an `Array` of `Dates`
+  when called this way;
+  by Brian Gates @bgates)
+- `Celebration#change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil)` -
+  returns a copy of the celebration with values of selected
+  properties replaced by those passed as arguments
+- `Celebration#symbol` - machine-readable unique identifier
+  of a celebration, for now only for solemnities of the temporale
+- CLI: `calendariumrom query` supports printing a day, month or year
+  (by Simon Szutkowski @simonszu)
+- CLI: `calendariumrom query` supports apart of bundled calendars
+  also custom ones, specified on the command line
+  (by Simon Szutkowski @simonszu)
+- CLI: `calendariumrom cmp` correctly handles celebrations
+  present in only one of the compared sources
+- data: memorials of saint popes John XXIII and John Paul II added
+  to Universal Roman calendar in Latin and to the calendar
+  of Czech and Moravian dioceses where they were missing
+
+### Changed
+
+- ferials of the final week of Advent have proper titles
+- ordinals in French names of Sundays and ferials have proper
+  suffixes
+- `Day.new` signature changed from argument Hash
+  to Ruby 2 keyword arguments (no change in argument names
+  or count, but previously it wouldn't even notice unexpected
+  arguments, now it will crash when encountering them)
+- `SanctoraleLoader` raises always `InvalidDataError`
+  (it used to raise `RangeError` on invalid date and
+  `RuntimeError` on other kinds of invalid data)
+- `CelebrationFactory` creates also temporale solemnities
+  (useful mostly in specs)
+- CLI: `calendariumrom errors` fails gracefully, without backtrace
+
 ## [0.4.0] 2017-09-02
 
 ### Fixed

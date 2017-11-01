@@ -52,13 +52,13 @@ the dependency to a particular minor version.
 In your app's Gemfile
 
 ```
-gem 'calendarium-romanum', '~>0.4.0'
+gem 'calendarium-romanum', '~>0.5.0'
 ```
 
 or in gemspec of your gem
 
 ```
-spec.add_dependency 'calendarium-romanum', '~>0.4.0'
+spec.add_dependency 'calendarium-romanum', '~>0.5.0'
 ```
 
 ## Usage
