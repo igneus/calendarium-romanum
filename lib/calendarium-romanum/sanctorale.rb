@@ -92,5 +92,14 @@ module CalendariumRomanum
       @solemnities.freeze
       super
     end
+
+    def ==(b)
+      self.class == b.class &&
+        days == b.days
+    end
+
+    protected
+
+    attr_reader :days
   end
 end

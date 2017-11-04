@@ -34,12 +34,57 @@ describe CR::Calendar do
   end
 
   describe '#==' do
-    it 'considers calendars with the same year same' do
-      expect(described_class.new(2014) == described_class.new(2014)).to be true
+    let(:year) { 2014 }
+    let(:b) { described_class.new(year) }
+
+    describe 'year' do
+      let(:a) { described_class.new(year) }
+
+      it 'same' do
+        expect(a == described_class.new(year)).to be true
+      end
+
+      it 'different' do
+        expect(a == described_class.new(year + 1)).to be false
+      end
     end
 
-    it 'considers calendars with different year different' do
-      expect(described_class.new(2014) == described_class.new(2010)).to be false
+    describe 'sanctorale' do
+      let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+      let(:a) { described_class.new(year, sanctorale) }
+
+      it 'same' do
+        expect(a == described_class.new(year, sanctorale)).to be true
+      end
+
+      it 'different' do
+        expect(a == b).to be false
+      end
+    end
+
+    describe 'temporale' do
+      let(:temporale) { CR::Temporale.new year, transfer_to_sunday: [:epiphany] }
+      let(:a) { described_class.new(year, nil, temporale) }
+
+      it 'same' do
+        expect(a == described_class.new(year, nil, temporale)).to be true
+      end
+
+      it 'different' do
+        expect(a == b).to be false
+      end
+    end
+
+    describe 'vespers' do
+      let(:a) { described_class.new(year, vespers: true) }
+
+      it 'same' do
+        expect(a == described_class.new(year, vespers: true)).to be true
+      end
+
+      it 'different' do
+        expect(a == b).to be false
+      end
     end
   end
 

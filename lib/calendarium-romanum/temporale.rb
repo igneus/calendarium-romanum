@@ -15,7 +15,7 @@ module CalendariumRomanum
       @year = year
 
       @extensions = extensions
-      @transfer_to_sunday = transfer_to_sunday
+      @transfer_to_sunday = transfer_to_sunday.sort
       validate_sunday_transfer!
 
       prepare_solemnities
@@ -206,6 +206,17 @@ module CalendariumRomanum
 
       @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
     end
+
+    def ==(b)
+      self.class == b.class &&
+        year == b.year &&
+        transfer_to_sunday == b.transfer_to_sunday &&
+        Set.new(extensions) == Set.new(b.extensions)
+    end
+
+    protected
+
+    attr_reader :transfer_to_sunday, :extensions
 
     private
 

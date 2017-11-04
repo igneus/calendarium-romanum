@@ -18,6 +18,63 @@ describe CR::Temporale do
     end
   end
 
+  describe '#==' do
+    let(:year) { 2012 }
+    let(:b) { described_class.new year }
+
+    describe 'year' do
+      let(:a) { described_class.new year }
+
+      it 'same' do
+        expect(a == described_class.new(year)).to be true
+      end
+
+      it 'different' do
+        expect(a == described_class.new(year + 1)).to be false
+      end
+    end
+
+    describe 'transfers' do
+      let(:transfers) { [:epiphany, :ascension] }
+      let(:a) { described_class.new year, transfer_to_sunday: transfers }
+
+      it 'same' do
+        reversed_transfers = transfers.reverse # order doesn't matter
+        expect(a == described_class.new(year, transfer_to_sunday: reversed_transfers)).to be true
+      end
+
+      it 'different' do
+        expect(a == b).to be false
+      end
+    end
+
+    describe 'extensions' do
+      let(:empty_enumerator) do
+        o = Object.new
+        def o.each_celebration; end
+        o
+      end
+
+      let(:extensions) do
+        [
+          CR::Temporale::Extensions::ChristEternalPriest,
+          empty_enumerator
+        ]
+      end
+
+      let(:a) { described_class.new year, extensions: extensions }
+
+      it 'same' do
+        reversed_extensions = extensions.reverse # order doesn't matter
+        expect(a == described_class.new(year, extensions: reversed_extensions)).to be true
+      end
+
+      it 'different' do
+        expect(a == b).to be false
+      end
+    end
+  end
+
   describe '#first_advent_sunday determines first Sunday of Advent' do
     [
       [2004, [11, 28]],

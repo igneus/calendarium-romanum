@@ -188,4 +188,31 @@ describe CR::Sanctorale do
       end.to raise_exception(RuntimeError, /can't modify frozen/)
     end
   end
+
+  describe '#==' do
+    describe 'empty' do
+      it 'is equal' do
+        expect(described_class.new == described_class.new).to be true
+      end
+    end
+
+    describe 'with content' do
+      let(:a) do
+        s = described_class.new
+        s.add 1, 17, antonius
+        s
+      end
+
+      it 'different' do
+        expect(a == described_class.new).to be false
+      end
+
+      it 'same' do
+        b = described_class.new
+        b.add 1, 17, antonius
+
+        expect(a == b).to be true
+      end
+    end
+  end
 end

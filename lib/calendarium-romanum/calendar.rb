@@ -67,12 +67,18 @@ module CalendariumRomanum
     attr_reader :temporale
     attr_reader :sanctorale
 
-    def ==(obj)
-      unless obj.is_a? Calendar
-        return false
-      end
+    def populates_vespers?
+      @populate_vespers
+    end
 
-      year == obj.year
+    # Calendars are equal if they have equal settings
+    # (which means that to equal input they return equal data)
+    def ==(b)
+      b.class == self.class &&
+        year == b.year &&
+        populates_vespers? == b.populates_vespers? &&
+        temporale == b.temporale &&
+        sanctorale == b.sanctorale
     end
 
     def [](args)
