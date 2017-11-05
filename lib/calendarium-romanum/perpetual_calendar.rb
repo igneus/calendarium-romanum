@@ -18,6 +18,22 @@ module CalendariumRomanum
       calendar_for(*args).day(*args)
     end
 
+    def [](arg)
+      if arg.is_a? Range
+        calendar = calendar_for(arg.first)
+        return arg.collect do |date|
+          begin
+            calendar_for(date).day(date)
+          rescue RangeError
+            calendar = calendar_for_year(calendar.year + 1)
+            retry
+          end
+        end
+      end
+
+      day(arg)
+    end
+
     # returns a Calendar instance for the liturgical year containing
     # the specified day
     def calendar_for(*args)

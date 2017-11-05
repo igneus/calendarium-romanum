@@ -69,6 +69,39 @@ describe CR::PerpetualCalendar do
     end
   end
 
+  describe '#[]' do
+    describe 'arguments' do
+      describe 'single Date' do
+        it 'returns a Day' do
+          expect(pcal[Date.today]).to be_a CR::Day
+        end
+      end
+
+      describe 'Range of Dates' do
+        shared_examples 'range' do
+          it 'returns an Array of Days' do
+            result = pcal[range]
+            expect(result).to be_an Array
+            expect(result[0]).to be_a CR::Day
+          end
+        end
+
+        describe 'of the same liturgical year' do
+          let(:range) { Date.new(2010, 1, 1) .. Date.new(2010, 1, 5) }
+
+          include_examples 'range'
+        end
+
+        describe 'across boundaries of the liturgical year' do
+          let(:first_advent) { CR::Temporale::Dates.first_advent_sunday(2010) }
+          let(:range) { (first_advent - 1) .. (first_advent + 1) }
+
+          include_examples 'range'
+        end
+      end
+    end
+  end
+
   describe '#calendar_for' do
     it 'returns a Calendar' do
       expect(pcal.calendar_for(date)).to be_a CR::Calendar
