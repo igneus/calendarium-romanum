@@ -37,17 +37,13 @@ module CalendariumRomanum
 
         if args.size == 3
           args.each do |a|
-            unless a.is_a? Integer
-              raise ex
-            end
+            raise ex unless a.is_a? Integer
           end
           return Date.new(*args)
 
         elsif args.size == 1
           a = args.first
-          unless a.is_a? Date
-            raise ex
-          end
+          raise ex unless a.is_a? Date
           return a
 
         else
