@@ -90,7 +90,7 @@ pcal = CR::PerpetualCalendar.new(
 )
 
 # query
-day = pcal.day(Date.new(2000, 1, 1))
+day = pcal[Date.new(2000, 1, 1)]
 ```
 
 For explanation see the detailed steps below.
@@ -109,7 +109,7 @@ belongs to, but fortunately there is "alternative constructor"
 ```ruby
 date = Date.new(2016, 8, 19)
 calendar = CalendariumRomanum::Calendar.for_day(date)
-day = calendar.day(date)
+day = calendar[date]
 
 day.season # => #<CalendariumRomanum::Season:0x00000001d4cfa0 @symbol=:ordinary, @colour=#<CalendariumRomanum::Colour:0x00000001d4d928 @symbol=:green, @i18n_key="colour.green">, @i18n_key="temporale.season.ordinary">
 day.season.equal? CalendariumRomanum::Seasons::ORDINARY # => true
@@ -125,7 +125,7 @@ c.colour
 # => #<CalendariumRomanum::Colour:0x00000001d4d928 @symbol=:green, @i18n_key="colour.green">
 ```
 
-`Calendar#day` returns a single `Day`, describing a liturgical day.
+`Calendar#[]` returns a single `Day`, describing a liturgical day.
 Each day belongs to some `#season`; every day, we can choose from
 one or more `#celebrations` to celebrate.
 (The only case with multiple choices is combination of a ferial
@@ -144,7 +144,7 @@ loader = CR::SanctoraleLoader.new
 sanctorale = loader.load_from_file 'data/universal-en.txt' # insert path to your data file
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
-day = calendar.day(date)
+day = calendar[date]
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000027d9590 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x000000029e1108 @priority=3.13, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>, #<CalendariumRomanum::Celebration:0x000000029c96c0 @title="Saint John Eudes, priest", @rank=#<CalendariumRomanum::Rank:0x000000029e1180 @priority=3.12, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f18 @symbol=:white>>]
 ```
 
@@ -167,20 +167,20 @@ CR = CalendariumRomanum
 sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load # easy loading
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
-day = calendar.day(date)
+day = calendar[date]
 ```
 
 ### 5. I don't want to care about (liturgical) years
 
 Each Calendar instance is bound to a particular *liturgical* year.
-Calling `Calendar#day` with a date out of the year's range
+Calling `Calendar#[]` with a date out of the year's range
 results in a `RangeError`:
 
 ```ruby
 CR = CalendariumRomanum
 calendar = CR::Calendar.new(2000)
 begin
-  day = calendar.day(Date.new(2000, 1, 1))
+  day = calendar[Date.new(2000, 1, 1)]
 rescue RangeError
   STDERR.puts 'ouch' # will happen
 end
@@ -209,9 +209,9 @@ CR = CalendariumRomanum
 pcal = CR::PerpetualCalendar.new
 
 # get days
-d1 = pcal.day(Date.new(2000, 1, 1))
-d2 = pcal.day(Date.new(2100, 1, 1))
-d3 = pcal.day(Date.new(1970, 1, 1))
+d1 = pcal[Date.new(2000, 1, 1)]
+d2 = pcal[Date.new(2100, 1, 1)]
+d3 = pcal[Date.new(1970, 1, 1)]
 
 # get Calendar instances if you need them
 calendar = pcal.calendar_for_year(1987)
@@ -235,7 +235,7 @@ pcal = CR::PerpetualCalendar.new(
     extensions: [CR::Temporale::Extensions::ChristEternalPriest]
   }
 )
-d = pcal.day(Date.new(2000, 1, 1))
+d = pcal[Date.new(2000, 1, 1)]
 
 # It is also possible to supply Temporale factory instead of options:
 pcal = CR::PerpetualCalendar.new(
@@ -244,7 +244,7 @@ pcal = CR::PerpetualCalendar.new(
     CR::Temporale.new(year, transfer_to_sunday: [:ascension])
   end
 )
-pcal.day(Date.new(2000, 1, 1))
+pcal[Date.new(2000, 1, 1)]
 ```
 
 **Memory management note:**
@@ -298,7 +298,7 @@ sanctorale.add 8, 19, celebration
 date = Date.new(2016, 8, 19)
 calendar = Calendar.for_day(date, sanctorale)
 
-day = calendar.day(date)
+day = calendar[date]
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000010deea8 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x000000010fec08 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
 
@@ -442,7 +442,7 @@ end
 temporale = CR::Temporale.new(2016, extensions: [MyExtension])
 
 # the feast is there!
-temporale.get(Date.new(2017, 11, 25)) # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
+temporale[Date.new(2017, 11, 25)] # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
 ```
 
 ## Executable
