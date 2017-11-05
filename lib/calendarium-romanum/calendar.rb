@@ -81,7 +81,7 @@ module CalendariumRomanum
       if(args.is_a?(Range))
         args.map{|date| day(date)}
       else
-        day(*args)
+        day(args)
       end
     end
 
@@ -148,8 +148,8 @@ module CalendariumRomanum
       tr = @transferred.get(date)
       return [tr] if tr
 
-      t = @temporale.get date
-      st = @sanctorale.get date
+      t = @temporale[date]
+      st = @sanctorale[date]
 
       unless st.empty?
         if st.first.rank > t.rank

@@ -189,6 +189,10 @@ module CalendariumRomanum
       week
     end
 
+    def [](date)
+      @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
+    end
+
     # returns a Celebration
     # scheduled for the given day
     #
@@ -204,7 +208,7 @@ module CalendariumRomanum
         end
       end
 
-      @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
+      self[date]
     end
 
     def ==(b)

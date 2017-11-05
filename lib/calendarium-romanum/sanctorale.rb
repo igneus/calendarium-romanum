@@ -53,6 +53,11 @@ module CalendariumRomanum
       end
     end
 
+    def [](date)
+      adate = date.is_a?(AbstractDate) ? date : AbstractDate.from_date(date)
+      @days[adate] || []
+    end
+
     # returns an Array with one or more Celebrations
     # scheduled for the given day
     #
@@ -66,7 +71,7 @@ module CalendariumRomanum
       end
 
       date = AbstractDate.new(month, day)
-      @days[date] || []
+      self[date]
     end
 
     # for each day for which an entry is available
