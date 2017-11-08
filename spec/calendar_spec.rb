@@ -33,6 +33,14 @@ describe CR::Calendar do
     end
   end
 
+  describe '.each' do
+    it 'yields calendar day instances' do
+      @c.each do |day|
+        expect(day).to be_a(CR::Day)
+      end
+    end
+  end
+
   describe '#==' do
     let(:year) { 2014 }
     let(:b) { described_class.new(year) }
