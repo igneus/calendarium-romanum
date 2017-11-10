@@ -101,6 +101,12 @@ module CalendariumRomanum
       end
     end
 
+    desc 'version', 'print version information'
+    def version
+      puts 'calendarium-romanum CLI'
+      puts "calendarium-romanum: version #{CalendariumRomanum::VERSION}, released #{CalendariumRomanum::RELEASE_DATE}"
+    end
+
     private
 
     def date(d)

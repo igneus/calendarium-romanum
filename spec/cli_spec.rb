@@ -151,5 +151,12 @@ describe CalendariumRomanum::CLI, type: :aruba do
       it { expect(all_output).to include 'czech-praha-cs' }
       it { expect(last_command).to be_successfully_executed }
     end
+
+    describe 'version' do
+      before(:each) { run 'calendariumrom version' }
+
+      it { expect(all_output).to include CR::VERSION }
+      it { expect(all_output).to include CR::RELEASE_DATE.strftime('%Y-%m-%d') }
+    end
   end
 end
