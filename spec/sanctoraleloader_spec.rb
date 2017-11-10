@@ -33,6 +33,10 @@ describe CR::SanctoraleLoader do
         expect(@s.get(1, 3)[0].colour).to eq CR::Colours::WHITE
       end
 
+      it 'loads date' do
+        expect(@s.get(1, 3)[0].date).to eq CR::AbstractDate.new(1, 3)
+      end
+
       it 'loads explicit rank if given' do
         str = '1/25 f : In conversione S. Pauli, apostoli'
         @l.load_from_string str, @s

@@ -56,14 +56,17 @@ module CalendariumRomanum
   class Celebration
     extend Forwardable
 
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil)
       @title = title
       @rank = rank
       @colour = colour
       @symbol = symbol
+      @date = date
     end
 
+    # Rank instance
     attr_reader :rank
+
     def_delegators :@rank, :solemnity?, :feast?, :memorial?
 
     def title
@@ -74,10 +77,16 @@ module CalendariumRomanum
       end
     end
 
+    # Colour instance (always set) - liturgical colour
     attr_reader :colour
     alias color colour
 
+    # Symbol uniquely identifying the celebration (may be nil)
     attr_reader :symbol
+
+    # AbstractDate instance - usual date of the celebration.
+    # Only set for celebrations with fixed date.
+    attr_reader :date
 
     def ==(other)
       self.class == other.class &&
@@ -86,12 +95,13 @@ module CalendariumRomanum
         colour == other.colour
     end
 
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil)
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil)
       self.class.new(
         title || self.title,
         rank || self.rank,
         colour || color || self.colour,
-        symbol || self.symbol
+        symbol || self.symbol,
+        date || self.date,
       )
     end
   end

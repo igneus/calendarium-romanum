@@ -262,6 +262,7 @@ describe CR::Temporale do
           expect(c.title).to have_translation 'The Nativity of the Lord'
           expect(c.colour).to eq CR::Colours::WHITE
           expect(c.symbol).to eq :nativity
+          expect(c.date).to eq CR::AbstractDate.new(12, 25)
         end
 
         it 'day in the octave of Nativity' do

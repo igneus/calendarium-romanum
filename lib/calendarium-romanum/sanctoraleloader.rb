@@ -96,7 +96,9 @@ module CalendariumRomanum
             Celebration.new(
               title.strip,
               rank,
-              COLOUR_CODES[colour && colour.downcase]
+              COLOUR_CODES[colour && colour.downcase],
+              nil,
+              AbstractDate.new(month, day)
             )
           )
         rescue RangeError => err

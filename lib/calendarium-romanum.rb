@@ -1,6 +1,7 @@
 %w(
   version
   i18n_setup
+  abstract_date
   rank
   enum
   enums
@@ -17,7 +18,6 @@
   sanctoraleloader
   sanctorale_factory
   transfers
-  abstract_date
   util
   ordinalizer
 ).each do |f|
