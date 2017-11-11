@@ -16,32 +16,6 @@ describe CR::SanctoraleLoader do
       it 'loads one entry' do
         expect(@s.size).to eq 1
       end
-
-      it 'loads date correctly' do
-        expect(@s.get(1, 3).size).to eq 1
-      end
-
-      it 'loads title correctly' do
-        expect(@s.get(1, 3)[0].title).to eq 'Ss.mi Nominis Iesu'
-      end
-
-      it 'sets default rank' do
-        expect(@s.get(1, 3)[0].rank).to eq CR::Ranks::MEMORIAL_OPTIONAL
-      end
-
-      it 'sets default colour - white' do
-        expect(@s.get(1, 3)[0].colour).to eq CR::Colours::WHITE
-      end
-
-      it 'loads date' do
-        expect(@s.get(1, 3)[0].date).to eq CR::AbstractDate.new(1, 3)
-      end
-
-      it 'loads explicit rank if given' do
-        str = '1/25 f : In conversione S. Pauli, apostoli'
-        @l.load_from_string str, @s
-        expect(@s.get(1, 25)[0].rank).to eq CR::Ranks::FEAST_GENERAL
-      end
     end
 
     describe '#load_from_file' do
@@ -53,16 +27,52 @@ describe CR::SanctoraleLoader do
   end
 
   describe 'record/file format' do
-    describe 'month as heading' do
-      it 'loads a month heading and uses the month for subsequent records' do
-        str = ['= 1', '25 f : In conversione S. Pauli, apostoli'].join "\n"
+    describe 'title' do
+      it 'loads it' do
+        str = '4/25 f R :  S. Marci, evangelistae'
         @l.load_from_string str, @s
-        expect(@s).not_to be_empty
-        expect(@s.get(1, 25)).not_to be_empty
+        expect(@s.get(4, 25).first.title).to eq 'S. Marci, evangelistae'
+      end
+    end
+
+    describe 'date' do
+      describe 'full date as part of the record' do
+        it 'loads date' do
+          str = '4/25 f R :  S. Marci, evangelistae'
+          @l.load_from_string str, @s
+          expect(@s.get(4, 25)[0].date).to eq CR::AbstractDate.new(4, 25)
+        end
+      end
+
+      describe 'month as heading' do
+        before :each do
+          @str = [
+            # month heading + day-only record
+            '= 1',
+            '25 f : In conversione S. Pauli, apostoli',
+            # record with full date specified
+            '4/25 f r :  S. Marci, evangelistae',
+          ].join "\n"
+          @l.load_from_string @str, @s
+        end
+
+        it 'loads a month heading and uses the month for subsequent records' do
+          expect(@s.get(1, 25)).not_to be_empty
+        end
+
+        it 'still allows full date specified in the record' do
+          expect(@s.get(4, 25)).not_to be_empty
+        end
       end
     end
 
     describe 'colour' do
+      it 'not specified - sets default' do
+        str = '4/25 :  S. Marci, evangelistae'
+        @l.load_from_string str, @s
+        expect(@s.get(4, 25).first.colour).to eq CR::Colours::WHITE
+      end
+
       it 'sets colour if specified' do
         str = '4/25 f R :  S. Marci, evangelistae'
         @l.load_from_string str, @s
@@ -78,6 +88,12 @@ describe CR::SanctoraleLoader do
 
     describe 'rank' do
       # say we specify a proper calendar of a church dedicated to St. George
+      it 'not specified - sets default' do
+        str = '4/23 : S. Georgii, martyris'
+        @l.load_from_string str, @s
+        celeb = @s.get(4, 23).first
+        expect(celeb.rank).to eq CR::Ranks::MEMORIAL_OPTIONAL
+      end
 
       it 'sets rank if specified' do
         str = '4/23 s R : S. Georgii, martyris'
