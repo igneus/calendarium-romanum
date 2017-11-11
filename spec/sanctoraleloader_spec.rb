@@ -127,10 +127,12 @@ describe CR::SanctoraleLoader do
 
   describe 'Celebration properties set regardless of the loaded data' do
     describe 'cycle' do
-      str = '4/23 1.4 R : S. Georgii, martyris'
-      @l.load_from_string str, @s
-      celeb = @s.get(4, 23).first
-      expect(celeb.cycle).to be :sanctorale
+      it 'always sets it to :sanctorale' do
+        str = '4/23 1.4 R : S. Georgii, martyris'
+        @l.load_from_string str, @s
+        celeb = @s.get(4, 23).first
+        expect(celeb.cycle).to be :sanctorale
+      end
     end
   end
 
