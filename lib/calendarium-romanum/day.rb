@@ -104,6 +104,14 @@ module CalendariumRomanum
         cycle == b.cycle
     end
 
+    def temporale?
+      cycle == :temporale
+    end
+
+    def sanctorale?
+      cycle == :sanctorale
+    end
+
     def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
       self.class.new(
         title || self.title,

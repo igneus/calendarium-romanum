@@ -40,4 +40,19 @@ describe CR::Celebration do
       expect(c2.title).to be c.title # reference copying is no problem, Celebrations are immutable
     end
   end
+
+  describe '#temporale?, #sanctorale?' do
+    let(:tc) { described_class.new.change(cycle: :temporale) }
+    let(:sc) { described_class.new.change(cycle: :sanctorale) }
+    let(:nc) { described_class.new.change(cycle: anything) }
+
+    it { expect(tc.temporale?).to be true }
+    it { expect(tc.sanctorale?).to be false }
+
+    it { expect(sc.sanctorale?).to be true }
+    it { expect(sc.temporale?).to be false }
+
+    it { expect(nc.sanctorale?).to be false }
+    it { expect(nc.temporale?).to be false }
+  end
 end
