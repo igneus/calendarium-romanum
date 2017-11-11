@@ -56,12 +56,13 @@ module CalendariumRomanum
   class Celebration
     extend Forwardable
 
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale)
       @title = title
       @rank = rank
       @colour = colour
       @symbol = symbol
       @date = date
+      @cycle = cycle
     end
 
     # Rank instance
@@ -88,20 +89,29 @@ module CalendariumRomanum
     # Only set for celebrations with fixed date.
     attr_reader :date
 
-    def ==(other)
-      self.class == other.class &&
-        title == other.title &&
-        rank == other.rank &&
-        colour == other.colour
+    # Symbol :temporale|:sanctorale
+    # Describes the celebration as belonging either to the
+    # temporale or sanctorale cycle
+    attr_reader :cycle
+
+    def ==(b)
+      self.class == b.class &&
+        title == b.title &&
+        rank == b.rank &&
+        colour == b.colour &&
+        symbol == b.symbol &&
+        date == b.date &&
+        cycle == b.cycle
     end
 
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil)
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
       self.class.new(
         title || self.title,
         rank || self.rank,
         colour || color || self.colour,
         symbol || self.symbol,
         date || self.date,
+        cycle || self.cycle,
       )
     end
   end

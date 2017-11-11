@@ -15,12 +15,12 @@ module CalendariumRomanum
 
         def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false)
           define_singleton_method(symbol) do
-            Celebration.new(
+            Temporale.create_celebration(
               proc { I18n.t("temporale.solemnity.#{symbol}") },
               rank,
               colour,
-              symbol,
-              fixed_date
+              symbol: symbol,
+              date: fixed_date
             )
           end
         end

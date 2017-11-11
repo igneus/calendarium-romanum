@@ -42,6 +42,12 @@ module CalendariumRomanum
         new(liturgical_year(date))
       end
 
+      # factory method creating temporale celebrations
+      # with sensible defaults
+      def create_celebration(title, rank, colour, symbol: nil, date: nil)
+        Celebration.new(title, rank, colour, symbol, date, :temporale)
+      end
+
       C = Struct.new(:date_method, :celebration)
       private_constant :C
 
@@ -239,7 +245,7 @@ module CalendariumRomanum
       week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
 
-      Celebration.new title, rank, seas.colour
+      self.class.create_celebration title, rank, seas.colour
     end
 
     def ferial(date)
@@ -281,7 +287,7 @@ module CalendariumRomanum
       week_ord = Ordinalizer.ordinal week
       title ||= I18n.t "temporale.#{seas.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
 
-      Celebration.new title, rank, seas.colour
+      self.class.create_celebration title, rank, seas.colour
     end
 
     # helper: difference between two Dates in days

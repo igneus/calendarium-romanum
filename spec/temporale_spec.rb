@@ -627,4 +627,14 @@ describe CR::Temporale do
       end.to raise_exception(RuntimeError, /not supported/)
     end
   end
+
+  describe 'properly setting cycle' do
+    t = CR::Temporale.new(2013)
+    t.date_range.each do |date|
+      it date do
+        c = t.get date
+        expect(c.cycle).to be :temporale
+      end
+    end
+  end
 end
