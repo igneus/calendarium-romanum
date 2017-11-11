@@ -14,4 +14,10 @@ describe CR::Season do
       expect(CR::Seasons[:lent]).to be CR::Seasons::LENT
     end
   end
+
+  describe 'to_s' do
+    it 'returns the name of the Season' do
+      expect(CR::Seasons[:lent].to_s).to eq("Lent")
+    end
+  end
 end

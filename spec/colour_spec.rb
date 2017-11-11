@@ -14,4 +14,10 @@ describe CR::Colour do
       expect(CR::Colours[:red]).to be CR::Colours::RED
     end
   end
+
+  describe 'to_s' do
+    it 'returns the Colours name' do
+      expect(CR::Colours[:red].to_s).to eq("red")
+    end
+  end
 end
