@@ -68,9 +68,6 @@ spec.add_dependency 'calendarium-romanum', '~>0.5.0'
 
 ## Usage
 
-For more self-explaining, commented and copy-pastable
-examples see the [examples directory](./examples/).
-
 All the examples below expect that you first required the gem:
 
 ```ruby
