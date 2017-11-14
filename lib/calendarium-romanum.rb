@@ -15,7 +15,7 @@
   temporale/extensions/christ_eternal_priest
   temporale
   sanctorale
-  sanctoraleloader
+  sanctorale_loader
   sanctorale_factory
   transfers
   util
