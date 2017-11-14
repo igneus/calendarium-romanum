@@ -126,6 +126,11 @@ module CalendariumRomanum
       )
     end
 
+    def each
+      (temporale.start_date..temporale.end_date)
+        .each { |date| yield(day(date)) }
+    end
+
     # Sunday lectionary cycle
     def lectionary
       LECTIONARY_CYCLES[@year % 3]
