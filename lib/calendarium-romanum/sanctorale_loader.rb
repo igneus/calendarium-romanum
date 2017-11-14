@@ -60,50 +60,17 @@ module CalendariumRomanum
           next
         end
 
-        # celebration record
-        m = l.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i)
-        if m.nil?
-          raise error("Syntax error, line skipped '#{l}'", line_num)
-        end
-
-        month, day, rank_char, rank_num, colour, title = m.values_at(2, 3, 5, 6, 7, 8)
-        month ||= month_section
-        day = day.to_i
-        month = month.to_i
-
-        rank = RANK_CODES[rank_char && rank_char.downcase]
-        if rank.nil?
-          raise error("Invalid celebration rank code #{rank_char}", line_num)
-        end
-
-        if rank_num
-          rank_num = rank_num.to_f
-          rank_by_num = Ranks[rank_num]
-
-          if rank_by_num.nil?
-            raise error("Invalid celebration rank code #{rank_num}", line_num)
-          elsif rank_char && (rank.priority.to_i != rank_by_num.priority.to_i)
-            raise error("Invalid combination of rank letter #{rank_char.inspect} and number #{rank_num}.", line_num)
-          end
-
-          rank = rank_by_num
-        end
-
         begin
-          dest.add(
-            month,
-            day,
-            Celebration.new(
-              title.strip,
-              rank,
-              COLOUR_CODES[colour && colour.downcase],
-              nil,
-              AbstractDate.new(month, day)
-            )
-          )
-        rescue RangeError => err
+          celebration = load_line l, month_section
+        rescue RangeError, RuntimeError => err
           raise error(err.message, line_num)
         end
+
+        dest.add(
+          celebration.date.month,
+          celebration.date.day,
+          celebration
+        )
       end
 
       dest
@@ -116,6 +83,47 @@ module CalendariumRomanum
     end
 
     private
+
+    # parses a line containing celebration record,
+    # returns a single Celebration
+    def load_line(line, month_section = nil)
+      # celebration record
+      m = line.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i)
+      if m.nil?
+        raise RuntimeError.new("Syntax error, line skipped '#{line}'")
+      end
+
+      month, day, rank_char, rank_num, colour, title = m.values_at(2, 3, 5, 6, 7, 8)
+      month ||= month_section
+      day = day.to_i
+      month = month.to_i
+
+      rank = RANK_CODES[rank_char && rank_char.downcase]
+      if rank.nil?
+        raise RuntimeError.new("Invalid celebration rank code #{rank_char}")
+      end
+
+      if rank_num
+        rank_num = rank_num.to_f
+        rank_by_num = Ranks[rank_num]
+
+        if rank_by_num.nil?
+          raise RuntimeError.new("Invalid celebration rank code #{rank_num}")
+        elsif rank_char && (rank.priority.to_i != rank_by_num.priority.to_i)
+          raise RuntimeError.new("Invalid combination of rank letter #{rank_char.inspect} and number #{rank_num}.")
+        end
+
+        rank = rank_by_num
+      end
+
+      Celebration.new(
+        title.strip,
+        rank,
+        COLOUR_CODES[colour && colour.downcase],
+        nil,
+        AbstractDate.new(month, day)
+      )
+    end
 
     def error(message, line_number)
       InvalidDataError.new("L#{line_number}: #{message}")

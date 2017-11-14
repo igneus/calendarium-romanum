@@ -27,20 +27,19 @@ describe CR::SanctoraleLoader do
   end
 
   describe 'record/file format' do
+    let(:record) { '4/25 f R :  S. Marci, evangelistae' }
+    let(:result) { @l.send :load_line, record }
+
     describe 'title' do
       it 'loads it' do
-        str = '4/25 f R :  S. Marci, evangelistae'
-        @l.load_from_string str, @s
-        expect(@s.get(4, 25).first.title).to eq 'S. Marci, evangelistae'
+        expect(result.title).to eq 'S. Marci, evangelistae'
       end
     end
 
     describe 'date' do
       describe 'full date as part of the record' do
         it 'loads date' do
-          str = '4/25 f R :  S. Marci, evangelistae'
-          @l.load_from_string str, @s
-          expect(@s.get(4, 25)[0].date).to eq CR::AbstractDate.new(4, 25)
+          expect(result.date).to eq CR::AbstractDate.new(4, 25)
         end
       end
 
@@ -67,60 +66,47 @@ describe CR::SanctoraleLoader do
     end
 
     describe 'colour' do
-      it 'not specified - sets default' do
-        str = '4/25 :  S. Marci, evangelistae'
-        @l.load_from_string str, @s
-        expect(@s.get(4, 25).first.colour).to eq CR::Colours::WHITE
+      describe 'not specified - sets default' do
+        let(:record) { '4/25 :  S. Marci, evangelistae' }
+        it { expect(result.colour).to eq CR::Colours::WHITE }
       end
 
-      it 'sets colour if specified' do
-        str = '4/25 f R :  S. Marci, evangelistae'
-        @l.load_from_string str, @s
-        expect(@s.get(4, 25).first.colour).to eq CR::Colours::RED
+      describe 'sets colour if specified' do
+        let(:record) { '4/25 f R :  S. Marci, evangelistae' }
+        it { expect(result.colour).to eq CR::Colours::RED }
       end
 
-      it 'sets colour if specified (lowercase)' do
-        str = '4/25 f r :  S. Marci, evangelistae'
-        @l.load_from_string str, @s
-        expect(@s.get(4, 25).first.colour).to eq CR::Colours::RED
+      describe 'sets colour if specified (lowercase)' do
+        let(:record) { '4/25 f r :  S. Marci, evangelistae' }
+        it { expect(result.colour).to eq CR::Colours::RED }
       end
     end
 
     describe 'rank' do
       # say we specify a proper calendar of a church dedicated to St. George
-      it 'not specified - sets default' do
-        str = '4/23 : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq CR::Ranks::MEMORIAL_OPTIONAL
+      describe 'not specified - sets default' do
+        let(:record) { '4/23 : S. Georgii, martyris' }
+        it { expect(result.rank).to eq CR::Ranks::MEMORIAL_OPTIONAL }
       end
 
-      it 'sets rank if specified' do
-        str = '4/23 s R : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
+      describe 'sets rank if specified' do
+        let(:record) { '4/23 s R : S. Georgii, martyris' }
+        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_GENERAL }
       end
 
-      it 'sets rank if specified (uppercase)' do
-        str = '4/23 S R : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
+      describe 'sets rank if specified (uppercase)' do
+        let(:record) { '4/23 S R : S. Georgii, martyris' }
+        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_GENERAL }
       end
 
-      it 'sets exact rank if specified' do
-        str = '4/23 s1.4 R : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_PROPER
+      describe 'sets exact rank if specified' do
+        let(:record) { '4/23 s1.4 R : S. Georgii, martyris' }
+        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_PROPER }
       end
 
-      it 'sets exact rank if specified only by number' do
-        str = '4/23 1.4 R : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.rank).to eq CR::Ranks::SOLEMNITY_PROPER
+      describe 'sets exact rank if specified only by number' do
+        let(:record) { '4/23 1.4 R : S. Georgii, martyris' }
+        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_PROPER }
       end
     end
   end
@@ -129,9 +115,8 @@ describe CR::SanctoraleLoader do
     describe 'cycle' do
       it 'always sets it to :sanctorale' do
         str = '4/23 1.4 R : S. Georgii, martyris'
-        @l.load_from_string str, @s
-        celeb = @s.get(4, 23).first
-        expect(celeb.cycle).to be :sanctorale
+        record = @l.send :load_line, str
+        expect(record.cycle).to be :sanctorale
       end
     end
   end
@@ -149,6 +134,13 @@ describe CR::SanctoraleLoader do
     describe 'syntactically correct data making no sense' do
       it 'invalid month heading' do
         str = '= 13'
+        expect do
+          @l.load_from_string str, @s
+        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
+      end
+
+      it 'one more invalid month heading' do
+        str = '= 0'
         expect do
           @l.load_from_string str, @s
         end.to raise_exception(CR::InvalidDataError, /Invalid month/)
@@ -173,13 +165,6 @@ describe CR::SanctoraleLoader do
         expect do
           @l.load_from_string str, @s
         end.to raise_exception(CR::InvalidDataError, /Invalid day/)
-      end
-
-      it 'invalid month heading' do
-        str = '= 0'
-        expect do
-          @l.load_from_string str, @s
-        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
       end
 
       it 'invalid rank' do
