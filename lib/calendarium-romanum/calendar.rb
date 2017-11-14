@@ -128,8 +128,7 @@ module CalendariumRomanum
 
     def each
       (temporale.start_date..temporale.end_date)
-        .map { |date| day(date) }
-        .each { |e| yield(e) }
+        .each { |date| yield(day(date)) }
     end
 
     # Sunday lectionary cycle
