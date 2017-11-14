@@ -34,10 +34,19 @@ describe CR::Calendar do
   end
 
   describe '.each' do
+    let (:day_count) {(@c.temporale.start_date..@c.temporale.end_date).count}
+
+    it 'yields for each iteration' do
+      expect { |b| @c.each(&b) }.to yield_control
+    end
+
+    it 'yields the expected number of times' do
+      expect {|b| @c.each(&b) }.to yield_control.exactly(day_count).times
+    end
+
     it 'yields calendar day instances' do
-      @c.each do |day|
-        expect(day).to be_a(CR::Day)
-      end
+      expected_class = Array.new(day_count, CR::Day)
+      expect {|b| @c.each(&b) }.to yield_successive_args(*expected_class)
     end
   end
 
