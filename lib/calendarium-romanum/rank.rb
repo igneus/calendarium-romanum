@@ -29,12 +29,21 @@ module CalendariumRomanum
       priority.to_i == 1
     end
 
+    def sunday?
+      self == Ranks::SUNDAY_UNPRIVILEGED
+    end
+
     def feast?
       priority.to_i == 2
     end
 
     def memorial?
       priority.to_i == 3 && priority <= 3.12
+    end
+
+    def ferial?
+      self == Ranks::FERIAL ||
+        self == Ranks::FERIAL_PRIVILEGED
     end
   end
 end

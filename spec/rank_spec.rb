@@ -54,4 +54,15 @@ describe CR::Rank do
     it { expect(CR::Ranks::MEMORIAL_OPTIONAL.memorial?).to be true }
     it { expect(CR::Ranks::FERIAL.memorial?).to be false }
   end
+
+  describe '#sunday?' do
+    it { expect(CR::Ranks::SUNDAY_UNPRIVILEGED.sunday?).to be true }
+    it { expect(CR::Ranks::FERIAL.sunday?).to be false }
+  end
+
+  describe '#ferial?' do
+    it { expect(CR::Ranks::FERIAL.ferial?).to be true }
+    it { expect(CR::Ranks::FERIAL_PRIVILEGED.ferial?).to be true }
+    it { expect(CR::Ranks::MEMORIAL_OPTIONAL.ferial?).to be false }
+  end
 end

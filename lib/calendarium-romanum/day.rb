@@ -68,7 +68,7 @@ module CalendariumRomanum
     # Rank instance
     attr_reader :rank
 
-    def_delegators :@rank, :solemnity?, :feast?, :memorial?
+    def_delegators :@rank, :solemnity?, :feast?, :memorial?, :sunday?, :ferial?
 
     def title
       if @title.respond_to? :call
