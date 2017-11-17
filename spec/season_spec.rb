@@ -14,4 +14,9 @@ describe CR::Season do
       expect(CR::Seasons[:lent]).to be CR::Seasons::LENT
     end
   end
+
+  describe '#to_s' do
+    it { expect(CR::Seasons::LENT.to_s)
+         .to eq '#<CalendariumRomanum::Season lent>' }
+  end
 end

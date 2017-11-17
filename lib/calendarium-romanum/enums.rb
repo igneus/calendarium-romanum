@@ -1,16 +1,23 @@
 module CalendariumRomanum
-
-  class Colour
-    def initialize(symbol)
-      @symbol = symbol
-      @i18n_key = "colour.#{@symbol}"
-    end
-
+  module ValueObjectInterface
     attr_reader :symbol
     alias to_sym symbol
 
     def name
       I18n.t @i18n_key
+    end
+
+    def to_s
+      "#<#{self.class.name} #{symbol}>"
+    end
+  end
+
+  class Colour
+    include ValueObjectInterface
+
+    def initialize(symbol)
+      @symbol = symbol
+      @i18n_key = "colour.#{@symbol}"
     end
   end
 
@@ -28,18 +35,15 @@ module CalendariumRomanum
   Colors = Colours
 
   class Season
+    include ValueObjectInterface
+
     def initialize(symbol, colour)
       @symbol = symbol
       @colour = colour
       @i18n_key = "temporale.season.#{@symbol}"
     end
 
-    attr_reader :symbol, :colour
-    alias to_sym symbol
-
-    def name
-      I18n.t @i18n_key
-    end
+    attr_reader :colour
   end
 
   class Seasons < Enum

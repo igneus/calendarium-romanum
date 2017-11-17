@@ -14,4 +14,9 @@ describe CR::Colour do
       expect(CR::Colours[:red]).to be CR::Colours::RED
     end
   end
+
+  describe '#to_s' do
+    it { expect(CR::Colours::RED.to_s)
+         .to eq '#<CalendariumRomanum::Colour red>' }
+  end
 end
