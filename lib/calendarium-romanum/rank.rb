@@ -15,7 +15,12 @@ module CalendariumRomanum
       @desc && I18n.t(@desc)
     end
 
-    alias to_s desc
+    def to_s
+      # 'desc' instead of '@desc' is intentional -
+      # for a good reason we don't present contents of an instance
+      # variable but result of an instance method
+      "#<#{self.class.name} @priority=#{priority} desc=#{desc.inspect}>"
+    end
 
     def short_desc
       @short_desc && I18n.t(@short_desc)

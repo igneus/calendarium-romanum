@@ -65,4 +65,13 @@ describe CR::Rank do
     it { expect(CR::Ranks::FERIAL_PRIVILEGED.ferial?).to be true }
     it { expect(CR::Ranks::MEMORIAL_OPTIONAL.ferial?).to be false }
   end
+
+  describe '#to_s' do
+    it do
+      I18n.with_locale(:en) do
+        expect(CR::Ranks::FERIAL.to_s)
+          .to eq '#<CalendariumRomanum::Rank @priority=3.13 desc="Ferials">'
+      end
+    end
+  end
 end
