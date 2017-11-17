@@ -164,11 +164,10 @@ module CalendariumRomanum
             return st
           end
         elsif t.rank == Ranks::FERIAL_PRIVILEGED && st.first.rank.memorial?
-          st = st.collect do |c|
+          commemorations = st.collect do |c|
             c.change(rank: Ranks::COMMEMORATION, colour: t.colour)
           end
-          st.unshift t
-          return st
+          return commemorations.unshift t
         elsif t.symbol == :immaculate_heart &&
               [Ranks::MEMORIAL_GENERAL, Ranks::MEMORIAL_PROPER].include?(st.first.rank)
           optional_memorials = ([t] + st).collect do |celebration|
