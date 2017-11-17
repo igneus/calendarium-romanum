@@ -165,7 +165,7 @@ module CalendariumRomanum
           end
         elsif t.rank == Ranks::FERIAL_PRIVILEGED && st.first.rank.memorial?
           st = st.collect do |c|
-            Celebration.new(c.title, Ranks::COMMEMORATION, t.colour)
+            c.change(rank: Ranks::COMMEMORATION, colour: t.colour)
           end
           st.unshift t
           return st
