@@ -24,6 +24,7 @@ en:
       sacred_heart: The Most Sacred Heart of Jesus
       immaculate_heart: Immaculate Heart of Mary
       christ_king: Our Lord Jesus Christ, King of the Universe
+      saturday_memorial_bvm: Saturday Memorial of the Blessed Virgin Mary
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
       ferial: '%{weekday}, %{week} week in Ordinary Time'

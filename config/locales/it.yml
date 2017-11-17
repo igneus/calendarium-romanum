@@ -24,6 +24,7 @@ it:
       sacred_heart: Sacro Cuore di Gesù
       immaculate_heart: Cuore Immacolato di Maria
       christ_king: "Nostro Signore Gesù Cristo Re dell'universo"
+      saturday_memorial_bvm: Memoria di santa Maria in sabato
     ordinary:
       sunday: '%{week} Domenica del Tempo Ordinario'
       ferial: '%{weekday} della %{week} settimana del Tempo Ordinario'

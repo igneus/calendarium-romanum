@@ -427,6 +427,67 @@ describe CR::Calendar do
       end
     end
 
+    describe 'Saturday memorial' do
+      let(:sanctorale) { double(CR::Sanctorale, solemnities: {}) }
+      let(:calendar) { described_class.new(2013, sanctorale) }
+      let(:celebrations) { calendar.day(date).celebrations }
+
+      describe 'free Saturday in Ordinary Time' do
+        let(:date) { Date.new(2014, 8, 16) }
+
+        before :each do
+          allow(sanctorale).to receive(:[]).and_return([])
+        end
+
+        it 'offers Saturday memorial' do
+          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).not_to be nil
+        end
+
+        it 'properly translates the title' do
+          saturday_memorial = celebrations.find {|c| c.symbol == :saturday_memorial_bvm}
+          expect(saturday_memorial.title).to have_translation 'Saturday Memorial of the Blessed Virgin Mary'
+        end
+      end
+
+      describe 'Saturday in Ordinary Time with optional memorial(s)' do
+        let(:date) { Date.new(2014, 8, 23) }
+
+        before :each do
+          memorial = CR::Celebration.new('', CR::Ranks::MEMORIAL_OPTIONAL)
+          allow(sanctorale).to receive(:[]).and_return([memorial])
+        end
+
+        it 'offers Saturday memorial' do
+          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).not_to be nil
+        end
+      end
+
+      describe 'non-free Saturday in Ordinary Time' do
+        let(:date) { Date.new(2014, 9, 13) }
+
+        before :each do
+          memorial = CR::Celebration.new('', CR::Ranks::MEMORIAL_GENERAL)
+          allow(sanctorale).to receive(:[]).and_return([memorial])
+        end
+
+        it 'does not offer Saturday memorial' do
+          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).to be nil
+        end
+      end
+
+      describe 'free Saturday in another season' do
+        let(:date) { Date.new(2013, 12, 14) }
+
+        before :each do
+          allow(sanctorale).to receive(:[]).and_return([])
+        end
+
+        it 'does not offer Saturday memorial' do
+          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).to be nil
+        end
+      end
+    end
+
     describe 'Vespers' do
       let(:saturday) { Date.new(2014, 1, 4) }
       let(:year) { 2013 }
