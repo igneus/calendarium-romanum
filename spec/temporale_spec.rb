@@ -117,28 +117,63 @@ describe CR::Temporale do
   end
 
   describe '#season' do
-    it 'determines Advent' do
-      expect(@t13.season(Date.new(2013, 12, 1))).to eq CR::Seasons::ADVENT
-      expect(@t13.season(Date.new(2013, 12, 24))).to eq CR::Seasons::ADVENT
+    shared_examples 'season determination' do |year_beginning, year_end|
+      if year_beginning
+        it { expect { @t13.season(date_beginning - 1) }.to raise_exception RangeError }
+      else
+        it { expect(@t13.season(date_beginning - 1)).not_to be season }
+      end
+
+      it { expect(@t13.season(date_beginning)).to be season }
+      it { expect(@t13.season(date_end)).to be season }
+
+      if year_end
+        it { expect { @t13.season(date_end + 1) }.to raise_exception RangeError }
+      else
+        it { expect(@t13.season(date_end + 1)).not_to be season }
+      end
     end
 
-    it 'determines Christmas' do
-      expect(@t13.season(Date.new(2013, 12, 25))).to eq CR::Seasons::CHRISTMAS
-      expect(@t13.season(Date.new(2014, 1, 12))).to eq CR::Seasons::CHRISTMAS
-      expect(@t13.season(Date.new(2014, 1, 13))).to eq CR::Seasons::ORDINARY
+    describe 'Advent' do
+      let(:season) { CR::Seasons::ADVENT }
+      let(:date_beginning) { Date.new(2013, 12, 1) }
+      let(:date_end) { Date.new(2013, 12, 24) }
+      include_examples 'season determination', true
     end
 
-    it 'determines Lent' do
-      expect(@t13.season(Date.new(2014, 3, 4))).to eq CR::Seasons::ORDINARY
-      expect(@t13.season(Date.new(2014, 3, 5))).to eq CR::Seasons::LENT
-      expect(@t13.season(Date.new(2014, 4, 19))).to eq CR::Seasons::LENT
-      expect(@t13.season(Date.new(2014, 4, 20))).to eq CR::Seasons::EASTER
+    describe 'Christmas' do
+      let(:season) { CR::Seasons::CHRISTMAS }
+      let(:date_beginning) { Date.new(2013, 12, 25) }
+      let(:date_end) { Date.new(2014, 1, 12) }
+      include_examples 'season determination'
     end
 
-    it 'determines Easter time' do
-      expect(@t13.season(Date.new(2014, 4, 20))).to eq CR::Seasons::EASTER
-      expect(@t13.season(Date.new(2014, 6, 8))).to eq CR::Seasons::EASTER
-      expect(@t13.season(Date.new(2014, 6, 9))).to eq CR::Seasons::ORDINARY
+    describe 'Ordinary Time #1' do
+      let(:season) { CR::Seasons::ORDINARY }
+      let(:date_beginning) { Date.new(2014, 1, 13) }
+      let(:date_end) { Date.new(2014, 3, 4) }
+      include_examples 'season determination'
+    end
+
+    describe 'Lent' do
+      let(:season) { CR::Seasons::LENT }
+      let(:date_beginning) { Date.new(2014, 3, 5) }
+      let(:date_end) { Date.new(2014, 4, 19) }
+      include_examples 'season determination'
+    end
+
+    describe 'Easter time' do
+      let(:season) { CR::Seasons::EASTER }
+      let(:date_beginning) { Date.new(2014, 4, 20) }
+      let(:date_end) { Date.new(2014, 6, 8) }
+      include_examples 'season determination'
+    end
+
+    describe 'Ordinary Time #2' do
+      let(:season) { CR::Seasons::ORDINARY }
+      let(:date_beginning) { Date.new(2014, 6, 9) }
+      let(:date_end) { Date.new(2014, 11, 29) }
+      include_examples 'season determination', nil, true
     end
   end
 
