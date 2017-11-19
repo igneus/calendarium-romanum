@@ -58,11 +58,11 @@ describe CR::Calendar do
       let(:a) { described_class.new(year) }
 
       it 'same' do
-        expect(a == described_class.new(year)).to be true
+        expect(a).to be == described_class.new(year)
       end
 
       it 'different' do
-        expect(a == described_class.new(year + 1)).to be false
+        expect(a).not_to be == described_class.new(year + 1)
       end
     end
 
@@ -71,7 +71,7 @@ describe CR::Calendar do
       let(:a) { described_class.new(year, sanctorale) }
 
       it 'same' do
-        expect(a == described_class.new(year, sanctorale)).to be true
+        expect(a).to be == described_class.new(year, sanctorale)
       end
 
       it 'different' do
@@ -84,11 +84,11 @@ describe CR::Calendar do
       let(:a) { described_class.new(year, nil, temporale) }
 
       it 'same' do
-        expect(a == described_class.new(year, nil, temporale)).to be true
+        expect(a).to be == described_class.new(year, nil, temporale)
       end
 
       it 'different' do
-        expect(a == b).to be false
+        expect(a).not_to be == b
       end
     end
 
@@ -96,7 +96,7 @@ describe CR::Calendar do
       let(:a) { described_class.new(year, vespers: true) }
 
       it 'same' do
-        expect(a == described_class.new(year, vespers: true)).to be true
+        expect(a).to be == described_class.new(year, vespers: true)
       end
 
       it 'different' do

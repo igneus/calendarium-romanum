@@ -192,7 +192,7 @@ describe CR::Sanctorale do
   describe '#==' do
     describe 'empty' do
       it 'is equal' do
-        expect(described_class.new == described_class.new).to be true
+        expect(described_class.new).to be == described_class.new
       end
     end
 
@@ -204,14 +204,14 @@ describe CR::Sanctorale do
       end
 
       it 'different' do
-        expect(a == described_class.new).to be false
+        expect(a).not_to be == described_class.new
       end
 
       it 'same' do
         b = described_class.new
         b.add 1, 17, antonius
 
-        expect(a == b).to be true
+        expect(a).to be == b
       end
     end
   end

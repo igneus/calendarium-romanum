@@ -26,11 +26,11 @@ describe CR::Temporale do
       let(:a) { described_class.new year }
 
       it 'same' do
-        expect(a == described_class.new(year)).to be true
+        expect(a).to be == described_class.new(year)
       end
 
       it 'different' do
-        expect(a == described_class.new(year + 1)).to be false
+        expect(a).not_to be == described_class.new(year + 1)
       end
     end
 
@@ -40,11 +40,12 @@ describe CR::Temporale do
 
       it 'same' do
         reversed_transfers = transfers.reverse # order doesn't matter
-        expect(a == described_class.new(year, transfer_to_sunday: reversed_transfers)).to be true
+        expect(a)
+          .to be == described_class.new(year, transfer_to_sunday: reversed_transfers)
       end
 
       it 'different' do
-        expect(a == b).to be false
+        expect(a).not_to be == b
       end
     end
 
@@ -66,11 +67,12 @@ describe CR::Temporale do
 
       it 'same' do
         reversed_extensions = extensions.reverse # order doesn't matter
-        expect(a == described_class.new(year, extensions: reversed_extensions)).to be true
+        expect(a)
+          .to be == described_class.new(year, extensions: reversed_extensions)
       end
 
       it 'different' do
-        expect(a == b).to be false
+        expect(a).not_to be == b
       end
     end
   end
