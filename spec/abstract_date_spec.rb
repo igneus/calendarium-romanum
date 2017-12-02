@@ -43,9 +43,17 @@ describe CR::AbstractDate do
   end
 
   describe '#<' do
-    it { expect(AD.new(1, 1)).to be < AD.new(1, 2) }
-    it { expect(AD.new(1, 1)).to be < AD.new(2, 1) }
-    it { expect(AD.new(1, 1)).not_to be < AD.new(1, 1) }
+    it 'days of the same month' do
+      expect(AD.new(1, 1)).to be < AD.new(1, 2)
+    end
+
+    it 'the same day, different months' do
+      expect(AD.new(1, 1)).to be < AD.new(2, 1)
+    end
+
+    it 'same' do
+      expect(AD.new(1, 1)).not_to be < AD.new(1, 1)
+    end
   end
 
   describe '#==' do

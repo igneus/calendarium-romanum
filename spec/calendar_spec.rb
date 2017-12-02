@@ -106,17 +106,25 @@ describe CR::Calendar do
   end
 
   describe '#lectionary' do
-    it 'detects correctly' do
-      expect(described_class.new(2014).lectionary).to eq :B
-      expect(described_class.new(2013).lectionary).to eq :A
-      expect(described_class.new(2012).lectionary).to eq :C
+    {
+      2014 => :B,
+      2013 => :A,
+      2012 => :C
+    }.each_pair do |year, cycle|
+      it year.to_s do
+        expect(described_class.new(year).lectionary).to eq cycle
+      end
     end
   end
 
   describe '#ferial_lectionary' do
-    it 'detects correctly' do
-      expect(described_class.new(2014).ferial_lectionary).to eq 1
-      expect(described_class.new(2013).ferial_lectionary).to eq 2
+    {
+      2014 => 1,
+      2013 => 2
+    }.each do |year, cycle|
+      it year.to_s do
+        expect(described_class.new(year).ferial_lectionary).to eq cycle
+      end
     end
   end
 
