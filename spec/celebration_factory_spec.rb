@@ -13,4 +13,24 @@ describe CR::Temporale::CelebrationFactory do
       expect(c2).to eq c
     end
   end
+
+  describe '.each' do
+    it 'yields' do
+      expect {|b| described_class.each(&b) }.to yield_control
+    end
+
+    it 'yields Celebrations' do
+      described_class.each do |c|
+        expect(c).to be_a CR::Celebration
+      end
+    end
+  end
+
+  describe 'celebration titles are properly translated' do
+    described_class.each do |celebration|
+      it celebration.symbol.to_s do
+        expect(celebration.title).to have_translation
+      end
+    end
+  end
 end

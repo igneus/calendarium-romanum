@@ -160,7 +160,7 @@ module CalendariumRomanum
          @temporale.season(date) == Seasons::ORDINARY &&
          (st.empty? || st.first.rank == Ranks::MEMORIAL_OPTIONAL) &&
          t.rank <= Ranks::MEMORIAL_OPTIONAL
-        st = st.dup << saturday_memorial
+        st = st.dup << Temporale::CelebrationFactory.saturday_memorial_bvm
       end
 
       unless st.empty?
@@ -206,12 +206,6 @@ module CalendariumRomanum
       end
 
       nil
-    end
-
-    def saturday_memorial
-      symbol = :saturday_memorial_bvm
-      title = proc { I18n.t("temporale.solemnity.#{symbol}") }
-      Celebration.new(title, Ranks::MEMORIAL_OPTIONAL, Colours::WHITE, symbol)
     end
 
     def system_not_effective

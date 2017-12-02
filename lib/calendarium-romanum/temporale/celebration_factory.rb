@@ -3,6 +3,12 @@ module CalendariumRomanum
     # builds temporale Celebrations
     class CelebrationFactory
       class << self
+        def each
+          celebrations.each do |symbol|
+            yield public_send(symbol)
+          end
+        end
+
         def first_advent_sunday
           Temporale.create_celebration(
             I18n.t('temporale.advent.sunday', week: Ordinalizer.ordinal(1)),
@@ -12,6 +18,10 @@ module CalendariumRomanum
         end
 
         private
+
+        def celebrations
+          @celebrations ||= [:first_advent_sunday]
+        end
 
         def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false)
           define_singleton_method(symbol) do
@@ -23,6 +33,8 @@ module CalendariumRomanum
               date: fixed_date
             )
           end
+
+          celebrations << symbol
         end
       end
 
@@ -44,6 +56,7 @@ module CalendariumRomanum
       celebration(:sacred_heart, Ranks::SOLEMNITY_GENERAL)
       celebration(:christ_king, Ranks::SOLEMNITY_GENERAL)
       celebration(:immaculate_heart, Ranks::MEMORIAL_GENERAL)
+      celebration(:saturday_memorial_bvm, Ranks::MEMORIAL_OPTIONAL)
     end
   end
 end
