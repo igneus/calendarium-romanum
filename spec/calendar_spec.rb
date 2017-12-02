@@ -448,7 +448,8 @@ describe CR::Calendar do
         end
 
         it 'offers Saturday memorial' do
-          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).not_to be nil
+          expect(celebrations)
+            .to include(an_object_having_attributes(symbol: :saturday_memorial_bvm))
         end
 
         it 'properly translates the title' do
@@ -466,7 +467,8 @@ describe CR::Calendar do
         end
 
         it 'offers Saturday memorial' do
-          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).not_to be nil
+          expect(celebrations)
+            .to include(an_object_having_attributes(symbol: :saturday_memorial_bvm))
         end
       end
 
@@ -479,7 +481,8 @@ describe CR::Calendar do
         end
 
         it 'does not offer Saturday memorial' do
-          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).to be nil
+          expect(celebrations)
+            .not_to include(an_object_having_attributes(symbol: :saturday_memorial_bvm))
         end
       end
 
@@ -491,7 +494,8 @@ describe CR::Calendar do
         end
 
         it 'does not offer Saturday memorial' do
-          expect(celebrations.find {|c| c.symbol == :saturday_memorial_bvm}).to be nil
+          expect(celebrations)
+            .not_to include(an_object_having_attributes(symbol: :saturday_memorial_bvm))
         end
       end
     end

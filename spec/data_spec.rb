@@ -7,8 +7,8 @@ describe CalendariumRomanum::Data do
 
     Dir[glob].each do |file|
       it "#{file} has it's Data entry" do
-        in_data = described_class.all.find {|f| f.path == file }
-        expect(in_data).not_to be nil
+        expect(described_class.all)
+          .to include(an_object_having_attributes(path: file))
       end
     end
   end
