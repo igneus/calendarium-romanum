@@ -109,6 +109,18 @@ describe CR::SanctoraleLoader do
         it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_PROPER }
       end
     end
+
+    describe 'symbol' do
+      describe 'not specified - sets default' do
+        let(:record) { '4/23 : S. Georgii, martyris' }
+        it { expect(result.symbol).to be nil }
+      end
+
+      describe 'specified - uses it' do
+        let(:record) { '4/23 :george : S. Georgii, martyris' }
+        it { expect(result.symbol).to be :george }
+      end
+    end
   end
 
   describe 'Celebration properties set regardless of the loaded data' do

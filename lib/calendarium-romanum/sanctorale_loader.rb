@@ -88,12 +88,12 @@ module CalendariumRomanum
     # returns a single Celebration
     def load_line(line, month_section = nil)
       # celebration record
-      m = line.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*:(.*)$/i)
+      m = line.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*(:[\w\d_]+)?\s*:(.*)$/i)
       if m.nil?
         raise RuntimeError.new("Syntax error, line skipped '#{line}'")
       end
 
-      month, day, rank_char, rank_num, colour, title = m.values_at(2, 3, 5, 6, 7, 8)
+      month, day, rank_char, rank_num, colour, symbol_str, title = m.values_at(2, 3, 5, 6, 7, 8, 9)
       month ||= month_section
       day = day.to_i
       month = month.to_i
@@ -116,11 +116,16 @@ module CalendariumRomanum
         rank = rank_by_num
       end
 
+      symbol = nil
+      if symbol_str
+        symbol = symbol_str[1 .. -1].to_sym
+      end
+
       Celebration.new(
         title.strip,
         rank,
         COLOUR_CODES[colour && colour.downcase],
-        nil,
+        symbol,
         AbstractDate.new(month, day)
       )
     end

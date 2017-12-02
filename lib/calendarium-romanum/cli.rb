@@ -76,7 +76,6 @@ module CalendariumRomanum
           ca = a[i]
           cb = b[i]
           compared = [ca, cb]
-          differences = []
 
           if compared.index(&:nil?)
             notnili = compared.index {|c| !c.nil? }
@@ -88,8 +87,9 @@ module CalendariumRomanum
             next
           end
 
-          differences << 'rank' if ca.rank != cb.rank
-          differences << 'colour' if ca.colour != cb.colour
+          differences = %i(rank colour symbol).select do |property|
+            ca.public_send(property) != cb.public_send(property)
+          end
 
           next if differences.empty?
           print date(d)
