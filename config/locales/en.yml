@@ -7,24 +7,24 @@ en:
       easter: Easter Season
       ordinary: Ordinary Time
     solemnity:
-      nativity: The Nativity of the Lord
-      holy_family: The Holy Family of Jesus, Mary and Joseph
-      mother_of_god: Octave Day of Christmas, of Mary, Mother of God
-      epiphany: The Epiphany of the Lord
+      nativity: Christmas
+      holy_family: The Holy Family
+      mother_of_god: Mary, Mother of God (Octave of Christmas)
+      epiphany: The Epiphany
       baptism_of_lord: The Baptism of the Lord
       ash_wednesday: Ash Wednesday
-      palm_sunday: Palm Sunday of the Passion of the Lord
-      good_friday: Friday of the Passion of the Lord
+      palm_sunday: Passion Sunday (Palm Sunday)
+      good_friday: Good Friday
       holy_saturday: Holy Saturday
-      easter_sunday: Easter Sunday of the Resurrection of the Lord
-      ascension: Ascension of the Lord
-      pentecost: Pentecost Sunday
-      holy_trinity: The Most Holy Trinity
-      corpus_christi: The Most Holy Body and Blood of Christ
-      sacred_heart: The Most Sacred Heart of Jesus
-      immaculate_heart: Immaculate Heart of Mary
-      christ_king: Our Lord Jesus Christ, King of the Universe
-      saturday_memorial_bvm: Saturday Memorial of the Blessed Virgin Mary
+      easter_sunday: Easter Sunday
+      ascension: The Ascension
+      pentecost: Pentecost
+      holy_trinity: Trinity Sunday
+      corpus_christi: Corpus Christi (The Body and Blood of Christ)
+      sacred_heart: The Sacred Heart of Jesus
+      immaculate_heart: The Immaculate Heart of Mary
+      christ_king: Christ The King
+      saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
       ferial: '%{weekday}, %{week} week in Ordinary Time'
