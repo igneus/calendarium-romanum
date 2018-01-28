@@ -42,4 +42,32 @@ describe CR::Temporale::Dates do
       end
     end
   end
+
+  describe 'transferable solemnities' do
+    # for sake of simplicity a year has been chosen when
+    # none of the transferable solemnities falls on a Sunday
+    let(:year) { 2013 }
+
+    %i(epiphany ascension corpus_christi).each do |solemnity|
+      it solemnity.to_s do
+        transferred =
+          described_class.public_send(solemnity, year, sunday: true)
+        not_transferred =
+          described_class.public_send(solemnity, year)
+
+        expect(transferred).not_to eq not_transferred
+        expect(transferred).to be_sunday
+      end
+    end
+
+    it 'Baptism of the Lord' do
+      transferred =
+          described_class.baptism_of_lord(year, epiphany_on_sunday: true)
+      not_transferred =
+        described_class.baptism_of_lord(year)
+
+      expect(transferred).to be_monday
+      expect(not_transferred).to be_sunday
+    end
+  end
 end
