@@ -2,7 +2,7 @@ require 'date'
 
 module CalendariumRomanum
 
-  # determine seasons and dates of the Temporale feasts of the given year
+  # determine seasons and dates of Temporale feasts of the given year
   class Temporale
 
     WEEK = 7
