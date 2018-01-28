@@ -8,6 +8,8 @@ describe CR::PerpetualCalendar do
 
   let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
 
+  let(:factory) { CR::Temporale::CelebrationFactory }
+
   describe '.new' do
     describe 'with sanctorale' do
       it 'uses the sanctorale' do
@@ -25,9 +27,8 @@ describe CR::PerpetualCalendar do
         y = 2016
         calendar = pc.calendar_for_year(y)
         epiphany_date = CR::Temporale::Dates.epiphany(y, sunday: true)
-        expect(epiphany_date).not_to eq CR::Temporale::Dates.epiphany(y) # make sure
 
-        expect(calendar.day(epiphany_date).celebrations[0].title).to have_translation 'The Epiphany of the Lord'
+        expect(calendar.day(epiphany_date).celebrations[0]).to eq factory.epiphany
       end
     end
 

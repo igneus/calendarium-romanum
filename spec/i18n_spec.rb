@@ -23,7 +23,7 @@ describe 'internationalization' do
       let(:locale) { 'en' }
 
       it 'translates Temporale feast names' do
-        expect(easter_celebration.title).to eq 'Easter Sunday of the Resurrection of the Lord'
+        expect(easter_celebration.title).to eq 'Easter Sunday'
       end
 
       it 'translates rank names' do

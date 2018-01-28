@@ -7,6 +7,8 @@ describe CR::Temporale do
     @t13 = described_class.new 2013
   end
 
+  let(:factory) { CR::Temporale::CelebrationFactory }
+
   describe '.liturgical_year' do
     it 'returns liturgical year for the given date' do
       [
@@ -296,7 +298,7 @@ describe CR::Temporale do
         it 'Nativity' do
           c = @t13.get(12, 25)
           expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.title).to have_translation 'The Nativity of the Lord'
+          expect(c.title).to have_translation 'Christmas'
           expect(c.colour).to eq CR::Colours::WHITE
           expect(c.symbol).to eq :nativity
           expect(c.date).to eq CR::AbstractDate.new(12, 25)
@@ -311,7 +313,7 @@ describe CR::Temporale do
         it 'Holy Family' do
           c = @t13.get(12, 29)
           expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
-          expect(c.title).to have_translation 'The Holy Family of Jesus, Mary and Joseph'
+          expect(c.title).to have_translation 'The Holy Family'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
@@ -319,14 +321,14 @@ describe CR::Temporale do
           it 'is Holy Family on Friday Dec 30' do
             @t16 = described_class.new 2016
             c = @t16.get(12, 30)
-            expect(c.title).to have_translation 'The Holy Family of Jesus, Mary and Joseph'
+            expect(c.title).to have_translation 'The Holy Family'
           end
         end
 
         it 'Epiphany' do
           c = @t13.get(1, 6)
           expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.title).to have_translation 'The Epiphany of the Lord'
+          expect(c.title).to have_translation 'The Epiphany'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
@@ -347,14 +349,14 @@ describe CR::Temporale do
         it 'Palm Sunday' do
           c = @t13.get(4, 13)
           expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.title).to have_translation 'Palm Sunday of the Passion of the Lord'
+          expect(c.title).to have_translation 'Passion Sunday (Palm Sunday)'
           expect(c.colour).to eq CR::Colours::RED
         end
 
         it 'Good Friday' do
           c = @t13.get(4, 18)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
-          expect(c.title).to have_translation 'Friday of the Passion of the Lord'
+          expect(c.title).to have_translation 'Good Friday'
           expect(c.colour).to eq CR::Colours::RED
         end
 
@@ -368,7 +370,7 @@ describe CR::Temporale do
         it 'Resurrection' do
           c = @t13.get(4, 20)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
-          expect(c.title).to have_translation 'Easter Sunday of the Resurrection of the Lord'
+          expect(c.title).to have_translation 'Easter Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
           expect(c.symbol).to eq :easter_sunday
         end
@@ -376,14 +378,14 @@ describe CR::Temporale do
         it 'Ascension' do
           c = @t13.get(5, 29)
           expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.title).to have_translation 'Ascension of the Lord'
+          expect(c.title).to have_translation 'The Ascension'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Pentecost' do
           c = @t13.get(6, 8)
           expect(c.rank).to eq CR::Ranks::PRIMARY
-          expect(c.title).to have_translation 'Pentecost Sunday'
+          expect(c.title).to have_translation 'Pentecost'
           expect(c.colour).to eq CR::Colours::RED
           expect(c.symbol).to eq :pentecost
         end
@@ -391,28 +393,28 @@ describe CR::Temporale do
         it 'Trinity' do
           c = @t13.get(6, 15)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
-          expect(c.title).to have_translation 'The Most Holy Trinity'
+          expect(c.title).to have_translation 'Trinity Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Body of Christ' do
           c = @t13.get(6, 19)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
-          expect(c.title).to have_translation 'The Most Holy Body and Blood of Christ'
+          expect(c.title).to have_translation 'Corpus Christi (The Body and Blood of Christ)'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Sacred Heart' do
           c = @t13.get(6, 27)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
-          expect(c.title).to have_translation 'The Most Sacred Heart of Jesus'
+          expect(c.title).to have_translation 'The Sacred Heart of Jesus'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Christ the King' do
           c = @t13.get(11, 23)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
-          expect(c.title).to have_translation 'Our Lord Jesus Christ, King of the Universe'
+          expect(c.title).to have_translation 'Christ The King'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
@@ -444,7 +446,7 @@ describe CR::Temporale do
       describe 'movable sanctorale feasts' do
         it 'Immaculate Heart' do
           c = @t13.get(6, 28)
-          expect(c.title).to have_translation 'Immaculate Heart of Mary'
+          expect(c.title).to have_translation 'The Immaculate Heart of Mary'
           expect(c.rank).to eq CR::Ranks::MEMORIAL_GENERAL
         end
       end
@@ -609,8 +611,7 @@ describe CR::Temporale do
       expect(t.epiphany).to eq date
 
       c = t.get(date)
-      expect(c.rank).to eq CR::Ranks::PRIMARY
-      expect(c.title).to have_translation 'The Epiphany of the Lord'
+      expect(c).to eq factory.epiphany
     end
 
     it 'Baptism of the Lord after transferred Epiphany' do
@@ -620,8 +621,7 @@ describe CR::Temporale do
       expect(t.baptism_of_lord).to eq date
 
       c = t.get(date)
-      expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
-      expect(c.title).to have_translation 'The Baptism of the Lord'
+      expect(c).to eq factory.baptism_of_lord
     end
 
     describe 'Ordinary Time numbering after transferred Epiphany' do
@@ -643,8 +643,7 @@ describe CR::Temporale do
       expect(t.ascension).to eq date
 
       c = t.get(date)
-      expect(c.rank).to eq CR::Ranks::PRIMARY
-      expect(c.title).to have_translation 'Ascension of the Lord'
+      expect(c).to eq factory.ascension
     end
 
     it 'Corpus Christi' do
@@ -654,8 +653,7 @@ describe CR::Temporale do
       expect(t.corpus_christi).to eq date
 
       c = t.get(date)
-      expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
-      expect(c.title).to have_translation 'The Most Holy Body and Blood of Christ'
+      expect(c).to eq factory.corpus_christi
     end
 
     it 'fails on an unsupported solemnity' do

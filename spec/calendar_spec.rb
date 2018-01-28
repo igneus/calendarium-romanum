@@ -388,8 +388,7 @@ describe CR::Calendar do
         # Good Friday suppresses the solemnity
         celebs = c.day(d).celebrations
         expect(celebs.size).to eq 1
-        expect(celebs[0].rank).to eq CR::Ranks::TRIDUUM
-        expect(celebs[0].title).to have_translation 'Friday of the Passion of the Lord'
+        expect(celebs[0]).to eq celfactory.good_friday
 
         # it is transferred on a day after the Easter octave
         d = c.temporale.easter_sunday + 8
