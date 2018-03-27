@@ -20,14 +20,8 @@ module CalendariumRomanum
 
     def [](arg)
       if arg.is_a? Range
-        calendar = calendar_for(arg.first)
         return arg.collect do |date|
-          begin
-            calendar_for(date).day(date)
-          rescue RangeError
-            calendar = calendar_for_year(calendar.year + 1)
-            retry
-          end
+          calendar_for(date).day(date)
         end
       end
 
