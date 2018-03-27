@@ -5,125 +5,125 @@ locale: en
 ---
 
 = 1
-2 m : Saints Basil the Great and Gregory Nazianzen, bishops and doctors
-3 : The Most Holy Name of Jesus
-7 : Saint Raymond of Penyafort, priest
-13 : Saint Hilary of Poitiers, bishop and doctor
-17 m : Saint Anthony of Egypt, abbot
-20 R : Saint Fabian, pope and martyr
-20 R : Saint Sebastian, martyr
-21 m R : Saint Agnes, virgin and martyr
-22 R : Saint Vincent, deacon and martyr
-24 m : Saint Francis de Sales, bishop and doctor
-25 f : The Conversion of Saint Paul, apostle
-26 m : Saints Timothy and Titus, bishops
-27 : Saint Angela Merici, virgin
-28 m : Saint Thomas Aquinas, priest and doctor
-31 m : Saint John Bosco, priest
+2 m :basil_gregory : Saints Basil the Great and Gregory Nazianzen, bishops and doctors
+3 :name_jesus : The Most Holy Name of Jesus
+7 :raymond : Saint Raymond of Penyafort, priest
+13 :hilary : Saint Hilary of Poitiers, bishop and doctor
+17 m :anthony_of_egypt : Saint Anthony of Egypt, abbot
+20 R :fabian : Saint Fabian, pope and martyr
+20 R :sebastian : Saint Sebastian, martyr
+21 m R :agnes : Saint Agnes, virgin and martyr
+22 R :vincent_deacon : Saint Vincent, deacon and martyr
+24 m :francis_de_sales : Saint Francis de Sales, bishop and doctor
+25 f :conversion_of_st_paul : The Conversion of Saint Paul, apostle
+26 m :timothy_titus : Saints Timothy and Titus, bishops
+27 :angela_merici : Saint Angela Merici, virgin
+28 m :thomas_aquinas : Saint Thomas Aquinas, priest and doctor
+31 m :john_bosco : Saint John Bosco, priest
 
 = 2
-2 f2.5 : Presentation of the Lord
-3 R : Saint Blase, bishop and martyr
-3 : Saint Ansgar, bishop
-5 m R : Saint Agatha, virgin and martyr
-6 m R : Saints Paul Miki and companions, martyrs
-8 : Saint Jerome Emiliani, priest
-8 : Saint Josephine Bakhita, virgin
-10 m : Saint Scholastica, virgin
-11 : Our Lady of Lourdes
-14 m : Saints Cyril, monk, and Methodius, bishop
-17 : Seven Holy Founders of the Servite Order
-21 : Saint Peter Damian, bishop and doctor of the Church
-22 f : Chair of Saint Peter, apostle
-23 m R : Saint Polycarp, bishop and martyr
+2 f2.5 :presentation_of_lord : Presentation of the Lord
+3 R :blase : Saint Blase, bishop and martyr
+3 :ansgar : Saint Ansgar, bishop
+5 m R :agatha : Saint Agatha, virgin and martyr
+6 m R :paul_miki : Saints Paul Miki and companions, martyrs
+8 :jerome_emiliani : Saint Jerome Emiliani, priest
+8 :josephine_bakhita : Saint Josephine Bakhita, virgin
+10 m :scholastica : Saint Scholastica, virgin
+11 :bvm_lourdes : Our Lady of Lourdes
+14 m :cyril_methodius : Saints Cyril, monk, and Methodius, bishop
+17 :osm_founders : Seven Holy Founders of the Servite Order
+21 :peter_damian : Saint Peter Damian, bishop and doctor of the Church
+22 f :chair_of_peter : Chair of Saint Peter, apostle
+23 m R :polycarp : Saint Polycarp, bishop and martyr
 
 = 3
-4 : Saint Casimir
-7 m R : Saints Perpetua and Felicity, martyrs
-8 : Saint John of God, religious
-9 : Saint Frances of Rome, religious
-17 : Saint Patrick, bishop
-18 : Saint Cyril of Jerusalem, bishop and doctor
-19 s : Saint Joseph Husband of the Blessed Virgin Mary
-23 : Saint Turibius of Mogrovejo, bishop
-25 s : Annunciation of the Lord
+4 :casimir : Saint Casimir
+7 m R :perpetua_felicity : Saints Perpetua and Felicity, martyrs
+8 :john_of_god : Saint John of God, religious
+9 :frances_of_rome : Saint Frances of Rome, religious
+17 :patrick : Saint Patrick, bishop
+18 :cyril_of_jerusalem : Saint Cyril of Jerusalem, bishop and doctor
+19 s :joseph : Saint Joseph Husband of the Blessed Virgin Mary
+23 :turibius : Saint Turibius of Mogrovejo, bishop
+25 s :annunciation : Annunciation of the Lord
 
 = 4
-2 : Saint Francis of Paola, hermit
-4 : Saint Isidore, bishop and doctor of the Church
-5 : Saint Vincent Ferrer, priest
-7 m : Saint John Baptist de la Salle, priest
-11 m R : Saint Stanislaus, bishop and martyr
-13 R : Saint Martin I, pope and martyr
-21 : Saint Anselm of Canterbury, bishop and doctor of the Church
-23 R : Saint George, martyr
-23 R : Saint Adalbert, bishop and martyr
-24 R : Saint Fidelis of Sigmaringen, priest and martyr
-25 f R : Saint Mark the Evangelist
-28 R : Saint Peter Chanel, priest and martyr
-28 : Saint Louis Grignon de Montfort, priest
-29 m : Saint Catherine of Siena, virgin and doctor of the Church
-30 : Saint Pius V, pope
+2 :francis_of_paola : Saint Francis of Paola, hermit
+4 :isidore : Saint Isidore, bishop and doctor of the Church
+5 :vincent_ferrer : Saint Vincent Ferrer, priest
+7 m :jb_de_la_salle : Saint John Baptist de la Salle, priest
+11 m R :stanislaus : Saint Stanislaus, bishop and martyr
+13 R :martin_i_pope : Saint Martin I, pope and martyr
+21 :anselm : Saint Anselm of Canterbury, bishop and doctor of the Church
+23 R :george : Saint George, martyr
+23 R :adalbert : Saint Adalbert, bishop and martyr
+24 R :fidelis : Saint Fidelis of Sigmaringen, priest and martyr
+25 f R :mark : Saint Mark the Evangelist
+28 R :peter_chanel : Saint Peter Chanel, priest and martyr
+28 :louis_grignon_de_montfort : Saint Louis Grignon de Montfort, priest
+29 m :catherine_of_siena : Saint Catherine of Siena, virgin and doctor of the Church
+30 :pius_v : Saint Pius V, pope
 
 = 5
-1 : Saint Joseph the Worker
-2 m : Saint Athanasius, bishop and doctor
-3 f R : Saints Philip and James, Apostles
-12 R : Saints Nereus and Achilleus, martyrs
-12 R : Saint Pancras, martyr
-13 : Our Lady of Fatima
-14 f R : Saint Matthias the Apostle
-18 R : Saint John I, pope and martyr
-20 : Saint Bernardine of Siena, priest
-21 R : Saint Christopher Magallanes and companions, martyrs
-22 : Saint Rita of Cascia
-25 : Saint Bede the Venerable, priest and doctor
-25 : Saint Gregory VII, pope
-25 : Saint Mary Magdalene de Pazzi, virgin
-26 m : Saint Philip Neri, priest
-27 : Saint Augustine (Austin) of Canterbury, bishop
-31 f : Visitation of the Blessed Virgin Mary
+1 :joseph_worker : Saint Joseph the Worker
+2 m :athanasius : Saint Athanasius, bishop and doctor
+3 f R :philip_james : Saints Philip and James, Apostles
+12 R :nereus_achilleus : Saints Nereus and Achilleus, martyrs
+12 R :pancras : Saint Pancras, martyr
+13 :bvm_fatima : Our Lady of Fatima
+14 f R :matthias : Saint Matthias the Apostle
+18 R :john_i_pope : Saint John I, pope and martyr
+20 :bernardine_of_siena : Saint Bernardine of Siena, priest
+21 R :christopher_magallanes : Saint Christopher Magallanes and companions, martyrs
+22 :rita : Saint Rita of Cascia
+25 :bede_venerable : Saint Bede the Venerable, priest and doctor
+25 :gregory_vii : Saint Gregory VII, pope
+25 :mary_magdalene_de_pazzi : Saint Mary Magdalene de Pazzi, virgin
+26 m :philip_neri : Saint Philip Neri, priest
+27 :augustine_of_canterbury : Saint Augustine (Austin) of Canterbury, bishop
+31 f :visitation : Visitation of the Blessed Virgin Mary
 
 = 6
-1 m R : Saint Justin Martyr
-2 R : Saints Marcellinus and Peter, martyrs
-3 m R : Saints Charles Lwanga and companions, martyrs
-5 m R : Saint Boniface, bishop and martyr
-6 : Saint Norbert, bishop
-9 : Saint Ephrem, deacon and doctor
-11 m R : Saint Barnabas the Apostle
-13 m : Saint Anthony of Padua, priest and doctor
-19 : Saint Romuald, abbot
-21 m : Saint Aloysius Gonzaga, religious
-22 : Saint Paulinus of Nola, bishop
-22 R : Saints John Fisher, bishop and martyr and Thomas More, martyr
-24 s : Birth of Saint John the Baptist
-27 : Saint Cyril of Alexandria, bishop and doctor
-28 m R : Saint Irenaeus, bishop and martyr
-29 s R : Saints Peter and Paul, Apostles
-30 R : First Martyrs of the Church of Rome
+1 m R :justin : Saint Justin Martyr
+2 R :marcellinus_peter : Saints Marcellinus and Peter, martyrs
+3 m R :charles_lwanga : Saints Charles Lwanga and companions, martyrs
+5 m R :boniface : Saint Boniface, bishop and martyr
+6 :norbert : Saint Norbert, bishop
+9 :ephrem : Saint Ephrem, deacon and doctor
+11 m R :barnabas : Saint Barnabas the Apostle
+13 m :anthony_of_padua : Saint Anthony of Padua, priest and doctor
+19 :romuald : Saint Romuald, abbot
+21 m :aloysius_gonzaga : Saint Aloysius Gonzaga, religious
+22 :paulinus_of_nola : Saint Paulinus of Nola, bishop
+22 R :fisher_more : Saints John Fisher, bishop and martyr and Thomas More, martyr
+24 s :birth_of_jbaptist : Birth of Saint John the Baptist
+27 :cyril_of_alexandria : Saint Cyril of Alexandria, bishop and doctor
+28 m R :irenaeus : Saint Irenaeus, bishop and martyr
+29 s R :peter_paul : Saints Peter and Paul, Apostles
+30 R :first_martyrs_of_rome : First Martyrs of the Church of Rome
 
 = 7
-3 f R : Saint Thomas the Apostle
-4 : Saint Elizabeth of Portugal
-5 : Saint Anthony Zaccaria, priest
-6 R : Saint Maria Goretti, virgin and martyr
-9 R : Saint Augustine Zhao Rong and companions, martyrs
-11 m : Saint Benedict, abbot
-13 : Saint Henry
-14 : Saint Camillus de Lellis, priest
-15 m : Saint Bonaventure, bishop and doctor
-16 : Our Lady of Mount Carmel
-20 R : Saint Apollinaris, bishop and martyr
-21 : Saint Lawrence of Brindisi, priest and doctor
-22 f : Saint Mary Magdalene
-23 : Saint Birgitta, religious
-24 : Saint Sharbel Makhluf, hermit
-25 f R : Saint James, apostle
-26 m : Saints Joachim and Anne
-29 m R : Saint Martha
-30 : Saint Peter Chrysologus, bishop and doctor
-31 m : Saint Ignatius of Loyola, priest
+3 f R :thomas_apostle : Saint Thomas the Apostle
+4 :elizabeth_of_portugal : Saint Elizabeth of Portugal
+5 :anthony_zaccaria : Saint Anthony Zaccaria, priest
+6 R :maria_goretti : Saint Maria Goretti, virgin and martyr
+9 R :augustine_zhao_rong : Saint Augustine Zhao Rong and companions, martyrs
+11 m :benedict : Saint Benedict, abbot
+13 :henry : Saint Henry
+14 :camillus_de_lellis : Saint Camillus de Lellis, priest
+15 m :bonaventure : Saint Bonaventure, bishop and doctor
+16 :bvm_mount_carmel : Our Lady of Mount Carmel
+20 R :apollinaris : Saint Apollinaris, bishop and martyr
+21 :lawrence_of_brindisi : Saint Lawrence of Brindisi, priest and doctor
+22 f :mary_magdalene : Saint Mary Magdalene
+23 :birgitta : Saint Birgitta, religious
+24 :sharbel : Saint Sharbel Makhluf, hermit
+25 f R :james : Saint James, apostle
+26 m :joachim_anne : Saints Joachim and Anne
+29 m R :martha : Saint Martha
+30 :peter_chrysologus : Saint Peter Chrysologus, bishop and doctor
+31 m :ignatius_of_loyola : Saint Ignatius of Loyola, priest
 
 = 8
 1 m : Saint Alphonsus Maria de Liguori, bishop and doctor of the Church
