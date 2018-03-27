@@ -48,7 +48,7 @@ describe CR::PerpetualCalendar do
         expect do
           described_class.new(
             temporale_options: {transfer_to_sunday: [:epiphany]},
-            temporale_factory: lambda {|year| temporale_subcls.new year }
+            temporale_factory: lambda {|year| }
           )
         end.to raise_exception ArgumentError
       end

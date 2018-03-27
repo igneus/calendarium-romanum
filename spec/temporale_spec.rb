@@ -20,6 +20,16 @@ describe CR::Temporale do
     end
   end
 
+  describe '.for_day' do
+    it 'continues the previous year\'s calendar in summer' do
+      expect(described_class.for_day(Date.new(2014, 6, 9))).to eq described_class.new(2013)
+    end
+
+    it 'provides the current year\'s calendar in December' do
+      expect(described_class.for_day(Date.new(2014, 12, 20))).to eq described_class.new(2014)
+    end
+  end
+
   describe '#==' do
     let(:year) { 2012 }
     let(:b) { described_class.new year }

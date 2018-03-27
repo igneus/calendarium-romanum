@@ -33,7 +33,31 @@ describe CR::Calendar do
     end
   end
 
-  describe '.each' do
+  describe '.mk_date' do
+    describe 'with a Date' do
+      it 'returns the Date' do
+        date = Date.today
+        expect(described_class.mk_date(date))
+          .to be date
+      end
+    end
+
+    describe 'with three integers' do
+      it 'builds a Date' do
+        expect(described_class.mk_date(1, 2, 3))
+          .to eq Date.new(1, 2, 3)
+      end
+    end
+
+    describe 'invalid arguments' do
+      it 'only two arguments' do
+        expect { described_class.mk_date(1, 2) }
+          .to raise_exception TypeError
+      end
+    end
+  end
+
+  describe '#each' do
     let (:day_count) {(@c.temporale.start_date..@c.temporale.end_date).count}
 
     it 'yields for each iteration' do

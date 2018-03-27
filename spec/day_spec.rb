@@ -105,4 +105,21 @@ describe CR::Day do
       it { expect(d.vespers_from_following?).to be true }
     end
   end
+
+  describe '#weekday' do
+    let(:sunday) { Date.new 2018, 5, 20 }
+    let(:saturday) { sunday - 1 }
+
+    it 'Sunday' do
+      expect(sunday).to be_sunday # make sure
+
+      d = described_class.new(date: sunday)
+      expect(d.weekday).to be 0
+    end
+
+    it 'Saturday' do
+      d = described_class.new(date: saturday)
+      expect(d.weekday).to be 6
+    end
+  end
 end

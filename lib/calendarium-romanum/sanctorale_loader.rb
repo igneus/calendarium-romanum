@@ -88,7 +88,8 @@ module CalendariumRomanum
     # returns a single Celebration
     def load_line(line, month_section = nil)
       # celebration record
-      m = line.match(/^((\d+)\/)?(\d+)\s*(([mfs])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*(:[\w\d_]+)?\s*:(.*)$/i)
+      rank_letters = RANK_CODES.keys.compact.join('')
+      m = line.match(/^((\d+)\/)?(\d+)\s*(([#{rank_letters}])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*(:[\w\d_]+)?\s*:(.*)$/i)
       if m.nil?
         raise RuntimeError.new("Syntax error, line skipped '#{line}'")
       end
@@ -99,9 +100,6 @@ module CalendariumRomanum
       month = month.to_i
 
       rank = RANK_CODES[rank_char && rank_char.downcase]
-      if rank.nil?
-        raise RuntimeError.new("Invalid celebration rank code #{rank_char}")
-      end
 
       if rank_num
         rank_num = rank_num.to_f

@@ -32,5 +32,13 @@ describe CalendariumRomanum::Ordinalizer do
         end
       end
     end
+
+    describe 'unsupported locale' do
+      [1, 2, 3].each do |number|
+        it number do
+          expect(described_class.ordinal(number, locale: :unsupported)).to eq number
+        end
+      end
+    end
   end
 end
