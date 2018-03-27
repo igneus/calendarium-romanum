@@ -113,6 +113,10 @@ module CalendariumRomanum
         corpus_christi(year) + 8
       end
 
+      def self.mother_of_church(year)
+        pentecost(year) + 1
+      end
+
       def self.immaculate_heart(year)
         pentecost(year) + 20
       end

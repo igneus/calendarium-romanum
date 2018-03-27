@@ -70,6 +70,7 @@ module CalendariumRomanum
               pentecost
               holy_trinity
               corpus_christi
+              mother_of_church
               sacred_heart
               christ_king
               immaculate_heart
@@ -80,10 +81,11 @@ module CalendariumRomanum
                 CelebrationFactory.public_send(symbol)
               )
             end
-            # Immaculate Heart of Mary is actually (currently the only one)
-            # movable *sanctorale* feast, but as it would make little sense
+            # Immaculate Heart of Mary and Mary, Mother of the Church
+            # are actually movable *sanctorale* feasts,
+            # but as it would make little sense
             # to add support for movable sanctorale feasts because of
-            # a single one, we cheat a bit and handle it in temporale.
+            # two, we cheat a bit and handle them in temporale.
           end
       end
     end

@@ -55,6 +55,7 @@ module CalendariumRomanum
       celebration(:corpus_christi, Ranks::SOLEMNITY_GENERAL)
       celebration(:sacred_heart, Ranks::SOLEMNITY_GENERAL)
       celebration(:christ_king, Ranks::SOLEMNITY_GENERAL)
+      celebration(:mother_of_church, Ranks::MEMORIAL_GENERAL)
       celebration(:immaculate_heart, Ranks::MEMORIAL_GENERAL)
       celebration(:saturday_memorial_bvm, Ranks::MEMORIAL_OPTIONAL)
     end

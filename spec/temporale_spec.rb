@@ -449,6 +449,15 @@ describe CR::Temporale do
           expect(c.title).to have_translation 'The Immaculate Heart of Mary'
           expect(c.rank).to eq CR::Ranks::MEMORIAL_GENERAL
         end
+
+        it 'Mary, Mother of the Church' do
+          # it would be an anachronism to retrieve this celebration
+          # from @t13
+          t17 = described_class.new 2017
+          c = t17.get(5, 21)
+          expect(c.title).to have_translation 'Mary, Mother of the Church'
+          expect(c.rank).to eq CR::Ranks::MEMORIAL_GENERAL
+        end
       end
     end
 
