@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.6.0] 2018-03-27
+
+### Fixed
+
+*Feature release - bugs were only introduced, not fixed :)*
+
+### Added
+
+- now handled: *Saturday Memorial of the Blessed Virgin Mary*
+- new memorial of *Mary, Mother of the Church*
+  (both handled by `Temporale`)
+- `Temporale#==`, `Sanctorale#==`
+- `Calendar#populates_vespers?` (access value of an option)
+- `Temporale#[]`, `Sanctorale#[]`, `PerpetualCalendar#[]`
+- `Celebration#date` - only set for fixed-date celebrations,
+  contains the celebration's *usual* date (as `AbstractDate` instance),
+  thus making it possible
+  to check if a solemnity was transferred and what would be
+  it's normal date if the transfer didn't occur
+- `Celebration#cycle` - returns either `:temporale` or `:sanctorale`
+- cycle predicates:
+  `Celebration#temporale?` and `#sanctorale?`
+- `Calendar#each` - yields each day of the liturgical year
+- missing rank predicates:
+  `Rank#ferial?`, `Rank#sunday?`,
+  `Celebration#ferial?`, `Celebration#sunday?`
+- `Celebration#symbol` can be specified also in sanctorale data files
+  (but data files with symbols are not yet available)
+- CLI: `calendariumrom version` prints gem version
+
+### Changed
+
+- `Calendar#==` used to compare only class and year, now it compares
+  complete internal data
+- `Colour#to_s` and `Season#to_s` now return meaningful values
+  like `"#<CalendariumRomanum::Colour red>"`
+  and `"#<CalendariumRomanum::Season lent>"`;
+  return value of `Rank#to_s` changed to match the common format
+- English temporale feast names edited to match the standard US
+  liturgical books (by Mike Kasberg @mkasberg)
+- `examples/` directory removed (README is now the main source
+  of copy-pastable examples)
+- file naming unified: `calendarium-romanum/sanctoraleloader.rb`
+  renamed to `.../sanctorale_loader.rb`
+
 ## [0.5.0] 2017-11-01
 
 ### Fixed
