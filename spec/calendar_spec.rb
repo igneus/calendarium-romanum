@@ -443,7 +443,7 @@ describe CR::Calendar do
         let(:c) { described_class.new year, @s }
         let(:date) { Date.new(2003, 6, 28) }
 
-        it 'makes both optional memorials' do
+        it 'makes both memorials optional' do
           # make sure
           expect(c.sanctorale.get(date).first.rank).to eq CR::Ranks::MEMORIAL_GENERAL
           expect(c.temporale.get(date).rank).to eq CR::Ranks::MEMORIAL_GENERAL
@@ -454,6 +454,22 @@ describe CR::Calendar do
           expect(celebrations[0].rank).to eq CR::Ranks::FERIAL
           expect(celebrations[1..-1].collect(&:rank).uniq)
             .to eq([CR::Ranks::MEMORIAL_OPTIONAL])
+        end
+      end
+
+      describe 'collision of Mary, Mother of the Church with another obligatory memorial' do
+        let(:year) { 2019 }
+        let(:c) { described_class.new year, @s }
+        let(:date) { Date.new(2020, 6, 1) }
+
+        it 'the Marian memorial takes precedence' do
+          expect(c.sanctorale.get(date).first.rank).to eq CR::Ranks::MEMORIAL_GENERAL
+          expect(c.temporale.get(date).rank).to eq CR::Ranks::MEMORIAL_GENERAL
+
+          celebrations = c.day(date).celebrations
+          expect(celebrations.size).to eq 1
+
+          expect(celebrations[0].symbol).to eq :mother_of_church
         end
       end
     end
