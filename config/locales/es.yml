@@ -1,0 +1,90 @@
+es:
+  temporale:
+    season:
+      advent: Adviento
+      christmas: Navidad
+      lent: Cuaresma
+      easter: Pascua
+      ordinary: Tiempo Ordinario
+    solemnity:
+      nativity: Natividad
+      holy_family: La Sagrada Familia
+      mother_of_god: María, Madre de Dios (Octava de Navidad)
+      epiphany: La Epifanía
+      baptism_of_lord: El Bautismo del Señor
+      ash_wednesday: Miércoles de Ceniza
+      palm_sunday: Domingo de Ramos
+      good_friday: Viernes Santo
+      holy_saturday: Sábado Santo
+      easter_sunday: Domingo de Resurrección
+      ascension: La Ascensión
+      pentecost: Pentecostés
+      holy_trinity: Domingo de Trinidad
+      corpus_christi: Corpus Christi (Cuerpo y Sangre de Cristo)
+      sacred_heart: El Sagrado Corazón de Jesús
+      mother_of_church: María, Madre de la Iglesia
+      immaculate_heart: El Inmaculado Corazón de María
+      christ_king: Cristo Rey
+      saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
+    ordinary:
+      sunday: '%{week} Domingo del Tiempo Ordinario'
+      ferial: '%{weekday}, %{week} semana del Tiempo Ordinario'
+    advent:
+      sunday: '%{week} Domingo de Adviento'
+      ferial: '%{weekday}, %{week} semana de Adviento'
+      before_christmas: '%{day} de Diciembre'
+    christmas:
+      nativity_octave:
+        ferial: '%{day} día de la Octava de Navidad'
+      sunday: '%{week} Sunday después de la Natividad del Señor'
+      ferial: '%{weekday} después de la Octava de Navidad'
+      after_epiphany:
+        ferial: '%{weekday} después de la Epifanía'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} después del Miércoles de Ceniza'
+      sunday: '%{week} Domingo de Cuaresma'
+      ferial: '%{weekday}, %{week} semana de Cuaresma'
+      holy_week:
+        ferial: '%{weekday} de la Semana Santa'
+    easter:
+      octave:
+        ferial: '%{weekday} de Pascua'
+      sunday: '%{week} Domingo de Pascua'
+      ferial: '%{weekday}, %{week} semana de Pascua'
+  rank:
+    '1_1': Triduo Pascual
+    '1_2': Días litúrgicos primarios
+    '1_3': Solemnidades en el Calendario General
+    '1_4': Solemnidades
+    '2_5': Fiestas del Señor en el Calendario General
+    '2_6': Unprivileged Sundays
+    '2_7': Fiestas de Santos en el Calendario General
+    '2_8': Fiestas
+    '2_9': Días Privilegiados
+    '3_10': Memorias Obligatorias en el Calendario General
+    '3_11': Memorias Obligatorias
+    '3_12': Memorias Opcionales
+    '3_13': Días
+    '4_0': Conmemoraciones
+    short:
+      solemnity: solemnidad
+      feast: fiesta
+      sunday: Domingo
+      memorial: memoria
+      memorial_opt: memoria opcional
+      ferial: ferial
+      commemoration: conmemoración
+  weekday:
+    '0': Domingo
+    '1': Lunes
+    '2': Martes
+    '3': Miércoles
+    '4': Jueves
+    '5': Viernes
+    '6': Sábado
+  colour:
+    violet: violeta
+    white: blanco
+    green: verde
+    red: rojo
