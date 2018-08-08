@@ -1,0 +1,241 @@
+---
+title: Calendario Romano General
+locale: es
+# source: https://es.wikipedia.org/wiki/Calendario_romano_general
+---
+
+= 1
+2 m : Santos Basilio el Grande y Gregorio de Nacianzo, Obispos y Doctores de la Iglesia
+3 : Santísimo Nombre de Jesús
+7 : San Raimundo de Peñafort. Presbítero
+13 : San Hilario, Obispo y Doctor de la Iglesia
+17 m : San Antonio, abad
+20 R : San Fabián, Papa y Mártir
+20 R : San Sebastián, Mártir
+21 m R : Santa Inés, Virgen y Mártir – Memoria
+22 R : San Vicente, Diácono y Mártir
+24 m : San Francisco de Sales, Obispo y Doctor de la Iglesia
+25 f : Conversión de San Pablo, Apóstol
+26 m : Santos Timoteo, Tito, Obispos
+27 : Santa Angela Merici, Virgen
+28 m : Santo Tomás de Aquino, Presbítero y Doctor de la Iglesia
+31 m : San Juan Bosco, Presbítero
+
+= 2
+2 f2.5 : Presentación del Señor
+3 R : San Blas, Obispo y Mártir
+3 : San Óscar/Anscario, Obispo
+5 m R : Santa Ágata, Virgen y Mártir 
+6 m R : Santos Pablo Miki y compañeros, Mártires
+8 : San Jerónimo Emiliani, Presbítero
+8 : Santa Josefina Bakhita, Virgen
+10 m : Santa Escolástica, Virgen
+11 : Nuestra Señora de Lourdes
+14 m :  Santos Cirilo, Monje, y Metodio, Obispo
+17 : Santos Siete Fundadores de la Orden de los Servitas
+21 : San Pedro Damián, Obispo y Doctor de la Iglesia
+22 f : Cátedra de San Pedro, Apóstol
+23 m R : San Policarpo, Obispo y Mártir
+
+= 3
+4 : San Casimiro
+7 m R : Santas Perpetua y Felicidad, Mártires
+8 : San Juan de Dios, Religioso
+9 : Santa Francisca Romana, Religiosa
+17 : San Patricio, Obispo
+18 : San Cirilo de Jerusalén, Obispo y Doctor de la Iglesia
+19 s : San José, esposo de la Santísima Virgen María
+23 : San Toribio de Mogrovejo, Obispo
+25 s : Anunciación del Señor
+
+= 4
+2 : San Francisco de Paula, Ermitaño
+4 : San Isidoro, Obispo y Doctor de la Iglesia
+5 :  San Vicente Ferrer, Presbítero
+7 m : San Juan Bautista de La Salle, presbítero
+11 m R : San Estanislao, Obispo y Mártir
+13 R : San Martín I, Papa y Mártir
+21 : San Anselmo, Obispo y Doctor de la Iglesia
+23 R : San Jorge, Mártir
+23 R : San Adalberto de Praga, Obispo y Mártir
+24 R : San Fidel de Sigmaringa, Presbítero y Mártir
+25 f R : San Marcos el Evangelista
+28 R : San Pedro Chanel, Presbítero y Mártir
+28 : S San Luis María Grignion de Montfort, Presbítero
+29 m : Santa Catalina de Siena, Virgen y Doctora de la Iglesia
+30 : San Pío V, Papa
+
+= 5
+1 : San José Obrero
+2 m : San Atanasio, Obispo y Doctor de la Iglesia
+3 f R : Santos Felipe y Santiago, Apóstoles
+12 R : Santos Nereo y Aquileo, Mártires
+12 R : San Pancracio, Mártir
+13 : Nuestra Señora de Fátima
+14 f R : San Matías, Apóstol
+18 R : San Juan I, Papa y Mártir
+20 : San Bernardino de Siena, Presbítero
+21 R : Santos Cristóbal Magallanes y compañeros, Mártires
+22 : Santa Rita de Casia, Religiosa
+25 : San Beda el Venerable, Presbítero y Doctor de la Iglesia
+25 : San Gregorio VII, Papa
+25 : Santa María Magdalena de Pazzi, Virgen
+26 m : San Felipe Neri, Presbítero
+27 : San Agustín de Canterbury, Obispo
+31 f : Visitación de la Santísima Virgen María a Santa Isabel
+
+= 6
+1 m R : San Justino, Mártir
+2 R : Santos Marcelino y Pedro, Mártires
+3 m R : Santos Carlos Luanga y compañeros, Mártires
+5 m R : San Bonifacio, Obispo y Mártir
+6 : San Norberto, Obispo
+9 : San Efrén, Diácono y Doctor de la Iglesia
+11 m R : San Bernabé, Apóstol
+13 m : San Antonio de Padua, Presbítero y Doctor de la Iglesia
+19 : San Romualdo, abad
+21 m : San Luis Gonzaga, Religioso
+22 : San Paulino de Nola, Obispo
+22 R : Santos Juan Fisher, Obispo y Mártir, y Tomás Moro, Mártir
+24 s : Natividad de San Juan Bautista
+27 : San Cirilo de Alejandría, Obispo y Doctor de la Iglesia
+28 m R : San Ireneo, Obispo y Mártir
+29 s R : Santos Pedro y Pablo, Apóstoles
+30 R : Santos Primeros Mártires de la Iglesia de Roma
+
+= 7
+3 f R : Santo Tomás el Apóstol
+4 : Santa Isabel de Portugal
+5 : San Antonio María Zaccaria, Presbítero
+6 R : Santa María Goretti, Virgen y Mártir
+9 R : Santos Agustín Zhao Rong y compañeros, Mártires
+11 m : San Benito, abad
+13 : San Enrique
+14 : San Camilo de Lellis, Presbítero
+15 m : San Buenaventura, Obispo y Doctor de la Iglesia
+16 : Nuestra Señora del Carmen
+20 R : San Apolinar, Obispo y Mártir
+21 : San Lorenzo de Brindisi, Presbítero y Doctor de la Iglesia
+22 f : Santa María Magdalena
+23 : Santa Brígida de Suecia, Religiosa
+24 : San Chárbel Makhlouf, Ermitaño
+25 f R : Santiago, apóstol
+26 m : Santos Joaquín y Ana, padres de la Santísima Virgen María
+29 m R : Santa Marta
+30 : San Pedro Crisólogo, Obispo y Doctor de la Iglesia
+31 m : San Ignacio de Loyola, Presbítero
+
+= 8
+1 m : San Alfonso María de Ligorio, Obispo y Doctor de la Iglesia
+2 : San Eusebio de Vercelli, Obispo
+2 : San Pierre-Julien Eymard, Presbítero
+2 : Nuestra Señora de los Ángeles
+4 m : San Juan María Vianney, Presbítero
+5 : Dedicación de la Basílica de Santa María
+6 f2.5 : Transfiguración del Señor
+7 R : Santos Sixto II, Papa, y compañeros, Mártires
+7 : San Cayetano, Presbítero
+8 m : Santo Domingo de Guzmán, Presbítero
+9 R : Santa Teresa Benedicta de la Cruz, Virgen y Mártir
+10 f R : San Lorenzo, Diácono y Mártir
+11 m : Santa Clara, Virgen
+12 : Santa Juana Francisca de Chantal, Religiosa
+13 R : Santos Ponciano, papa, y Hipólito, Presbítero, Mártires
+14 m R : San Maximiliano María Kolbe, Presbítero y Mártir
+15 s : Asunción de la Santísima Virgen María
+16 : San Esteban de Hungría
+19 : San Juan Eudes, Presbítero
+20 m : San Bernardo, abad y doctor de la Iglesia
+21 m : San Pío X
+22 m : Bienaventurada María Virgen Reina
+23 : Santa Rosa de Lima, Virgen
+24 f R : San Bartolomé, apóstol
+25 : San Luis
+25 : San José de Calasanz, Presbítero
+27 m : Santa Mónica
+28 m : San Agustín, Obispo y Doctor de la Iglesia
+29 m R : Martirio de San Juan Bautista
+
+= 9
+3 m : San Gregorio Magno, Papa y Doctor de la Iglesia
+8 f : Natividad de la Bienaventurada Virgen María
+9 : San Pedro Claver, Presbítero
+12 : Santísimo Nombre de la Bienaventurada Virgen María
+13 m : San Juan Crisóstomo, Obispo y Doctor de la Iglesia
+14 f2.5 R : Exaltación de la Santa Cruz
+15 m : Nuestra Señora de los Dolores
+16 m R : Santos Cornelio, Papa, y Cipriano, Obispo, Mártires
+17 : San Roberto Belarmino, Obispo y Doctor de la Iglesia
+19 R : San Jenaro, Obispo y Mártir
+20 m R : Santos Andrés Kim Taegon, Presbítero, Pablo Chong Hasang y compañeros, Mártires
+21 f R : San Mateo, Apóstol y Evangelista
+23 m : San Pío de Pietrelcina, presbítero
+26 R : Santos Cosme y Damián, Mártires
+27 m : San Vicente de Paúl, presbítero
+28 R : San Venceslao, Mártir
+28 R : Santos Lorenzo Ruiz y compañeros, Mártires
+29 f : Santos Miguel, Gabriel y Rafael, Arcángeles
+30 m : San Jerónimo, Presbítero y Doctor de la Iglesia
+
+= 10
+1 m : Santa Teresa del Niño Jesús, Virgen y Doctora de la Iglesia
+2 m : Santos Ángeles Custodios
+4 m : San Francisco de Asís
+6 : San Bruno, Presbítero
+7 m : Nuestra Señora del Rosario
+9 R : Santos Dionisio y compañeros, Mártires
+9 : San Juan Leonardi, Presbítero
+11 : San Juan XXIII, Papa
+14 R : San Calixto I, Papa y Mártir
+15 m : Santa Teresa de Jesús, Virgen y Doctora de la Iglesia
+16 : Santa Eduviges, Religiosa
+16 : Santa Margarita María Alacoque, Virgen
+17 m R : San Ignacio de Antioquía, Obispo y Mártir
+18 f R : San Lucas, Evangelista
+19 R : Santos Juan de Brébeuf, Isaac Jogues, Presbíteros y Mártires, y compañeros, Mártires
+19 : San Pablo de la Cruz, Presbítero
+22 : San Juan Pablo II, Papa
+23 : San Juan Capistrano, Presbítero
+24 : San Antonio María Claret, Obispo
+28 f R : Santos Simón y Judas, Apóstoles
+
+= 11
+1 s : Todos los Santos
+2 s : Conmemoración de Todos los Difuntos
+3 R : San Martín de Porres, Religioso
+4 m : San Carlos Borromeo, Obispo
+9 f : Dedicación de la Basílica de Letrán
+10 m : San León el Magno, Papa y Doctor de la Iglesia
+11 m R : San Martín de Tours, Obispo
+12 m R : San Josafat, Obispo y Mártir
+15 : San Alberto Magno, Obispo y Doctor de la Iglesia
+16 : Santa Margarita de Escocia
+16 : Santa Gertrudis, Virgen
+17 m : Santa Isabel de Hungría, Religiosa
+18 : Dedicación de las Basílicas de los Santos Pedro y Pablo, Apóstoles
+21 m : Presentación de la Santísima Virgen María
+22 m R : Santa Cecilia, Virgen y Mártir
+23 R : San Clemente I, Papa y Mártir
+23 : San Columbano, abad, Religioso
+24 m R : Santos Andrés Dung-Lac y compañeros, Mártires
+25 R : Santa Catalina de Alejandría, Virgen y Mártir
+30 f R : San Andrés, Apóstol
+
+= 12
+3 m : San Francisco Javier, Presbítero
+4 : San Juan Damasceno, Presbítero y Doctor de la Iglesia
+6 : San Nicolás, Obispo
+7 m : San Ambrosio, Obispo y Doctor de la Iglesia
+8 s : Inmaculada Concepción de la Santísima Virgen María
+9 : San Juan Diego
+11 : San Dámaso I, Papa
+12 : Nuestra Señora de Guadalupe
+13 m R : Santa Lucía, Virgen y Mártir
+14 m : San Juan de la Cruz, Presbítero y Doctor de la Iglesia
+21 : San Pedro Canisio, Presbítero y Doctor de la Iglesia
+23 : San Juan Cancio, Presbítero
+26 f R : San Esteban, el primer Mártir
+27 f : San Juan, Apóstol y Evangelista
+28 f R : Santos Inocentes, Mártires
+29 R : San Tomás Becket, Obispo y Mártir
+31 : San Silvestre I, Papa
