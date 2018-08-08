@@ -22,6 +22,7 @@ module CalendariumRomanum
         GENERAL_ROMAN_ENGLISH = SanctoraleFile.new('universal-en.txt'),
         GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt'),
         GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt'),
+        GENERAL_ROMAN_SPANISH = SanctoraleFile.new('universal-es.txt'),
         CZECH = SanctoraleFile.new('czech-cs.txt')
       ] \
       +
