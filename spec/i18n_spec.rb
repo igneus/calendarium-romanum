@@ -31,6 +31,11 @@ describe 'internationalization' do
         expect(rank.desc).to eq 'Unprivileged Sundays'
         expect(rank.short_desc).to eq 'Sunday'
       end
+
+      it 'translates weekday_name' do
+        sunday = CR::Day.new(date: Date.new(2018, 5, 20))
+        expect(sunday.weekday_name).to eq 'Sunday'
+      end
     end
 
     describe 'Czech' do
@@ -44,6 +49,11 @@ describe 'internationalization' do
         rank = CR::Ranks::SUNDAY_UNPRIVILEGED
         expect(rank.desc).to eq 'Neprivilegované neděle'
         expect(rank.short_desc).to eq 'neděle'
+      end
+
+      it 'translates weekday_name' do
+        sunday = CR::Day.new(date: Date.new(2018, 5, 20))
+        expect(sunday.weekday_name).to eq 'Neděle'
       end
     end
   end

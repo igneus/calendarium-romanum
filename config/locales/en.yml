@@ -83,6 +83,14 @@ en:
     '4': Thursday
     '5': Friday
     '6': Saturday
+  weekday_name:
+    Sunday: Sunday
+    Monday: Monday
+    Tuesday: Tuesday
+    Wednesday: Wednesday
+    Thursday: Thursday
+    Friday: Friday
+    Saturday: Saturday
   colour:
     violet: violet
     white: white

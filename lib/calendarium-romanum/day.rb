@@ -22,7 +22,7 @@ module CalendariumRomanum
     end
 
     def weekday_name
-      WEEKDAYS[date.wday]
+      I18n.t(WEEKDAYS[date.wday], scope: 'weekday_name')
     end
 
     # one of the Seasons
