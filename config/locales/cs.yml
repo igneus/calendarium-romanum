@@ -85,14 +85,6 @@ cs:
     '4': Čtvrtek
     '5': Pátek
     '6': Sobota
-  weekday_name:
-    Sunday: Neděle
-    Monday: Pondělí
-    Tuesday: Úterý
-    Wednesday: Středa
-    Thursday: Čtvrtek
-    Friday: Pátek
-    Saturday: Sobota
   colour:
     violet: fialová
     white: bílá

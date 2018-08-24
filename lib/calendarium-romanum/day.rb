@@ -4,9 +4,6 @@ module CalendariumRomanum
 
   # information on one particular day of the liturgical year
   class Day
-    WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
-                'Thursday', 'Friday', 'Saturday']
-
     def initialize(date: nil, season: nil, season_week: nil, celebrations: nil, vespers: nil)
       @date = date
       @season = season
@@ -22,7 +19,7 @@ module CalendariumRomanum
     end
 
     def weekday_name
-      I18n.t(WEEKDAYS[date.wday], scope: 'weekday_name')
+      I18n.t(date.wday, scope: 'weekday')
     end
 
     # one of the Seasons

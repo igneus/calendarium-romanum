@@ -83,14 +83,6 @@ it:
     '4': Giovedì
     '5': Venerdì
     '6': Sabato
-  weekday_name:
-    Sunday: Domenica
-    Monday: Lunedì
-    Tuesday: Martedì
-    Wednesday: Mercoledì
-    Thursday: Giovedì
-    Friday: Venerdì
-    Saturday: Sabato
   colour:
     violet: viola
     white: bianco

@@ -83,14 +83,6 @@ es:
     '4': Jueves
     '5': Viernes
     '6': Sábado
-  weekday_name:
-    Sunday: Domingo
-    Monday: Lunes
-    Tuesday: Martes
-    Wednesday: Miércoles
-    Thursday: Jueves
-    Friday: Viernes
-    Saturday: Sábado
   colour:
     violet: violeta
     white: blanco

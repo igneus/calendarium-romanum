@@ -131,12 +131,12 @@ describe CR::Day do
       expect(sunday).to be_sunday # make sure
 
       d = described_class.new(date: sunday)
-      expect(d.weekday_name).to eq( I18n.t('Sunday', scope: 'weekday_name'))
+      expect(d.weekday_name).to eq(I18n.t('0', scope: 'weekday'))
     end
 
     it 'Saturday' do
       d = described_class.new(date: saturday)
-      expect(d.weekday_name).to eq( I18n.t('Saturday', scope: 'weekday_name'))
+      expect(d.weekday_name).to eq(I18n.t('6', scope: 'weekday'))
     end
   end
 end

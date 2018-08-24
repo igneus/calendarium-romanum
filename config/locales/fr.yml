@@ -83,14 +83,6 @@ fr:
     '4': Jeudi
     '5': Vendredi
     '6': Samedi
-  weekday_name:
-    Sunday: Dimanche
-    Monday: Lundi
-    Tuesday: Mardi
-    Wednesday: Mercredi
-    Thursday: Jeudi
-    Friday: Vendredi
-    Saturday: Samedi
   colour:
     violet: violet
     white: blanc
