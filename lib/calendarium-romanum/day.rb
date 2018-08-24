@@ -18,6 +18,10 @@ module CalendariumRomanum
       date.wday
     end
 
+    def weekday_name
+      I18n.t(date.wday, scope: 'weekday')
+    end
+
     # one of the Seasons
     attr_reader :season
 

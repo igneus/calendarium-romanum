@@ -122,4 +122,21 @@ describe CR::Day do
       expect(d.weekday).to be 6
     end
   end
+
+  describe '#weekday_name' do
+    let(:sunday) { Date.new 2018, 5, 20 }
+    let(:saturday) { sunday - 1 }
+
+    it 'Sunday' do
+      expect(sunday).to be_sunday # make sure
+
+      d = described_class.new(date: sunday)
+      expect(d.weekday_name).to eq(I18n.t('0', scope: 'weekday'))
+    end
+
+    it 'Saturday' do
+      d = described_class.new(date: saturday)
+      expect(d.weekday_name).to eq(I18n.t('6', scope: 'weekday'))
+    end
+  end
 end
