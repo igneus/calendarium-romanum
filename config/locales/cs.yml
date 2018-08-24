@@ -87,11 +87,11 @@ cs:
     '6': Sobota
   weekday_name:
     Sunday: Neděle
-    monday: Pondělí
-    tuesday: Úterý
-    wednesday: Středa
-    thursday: Čtvrtek
-    friday: Pátek
+    Monday: Pondělí
+    Tuesday: Úterý
+    Wednesday: Středa
+    Thursday: Čtvrtek
+    Friday: Pátek
     Saturday: Sobota
   colour:
     violet: fialová
