@@ -1,24 +1,29 @@
 module CalendariumRomanum
 
-  # understands a plaintext calendar format
+  # Understands a plaintext calendar format
   # and knows how to transform it to Celebrations
-  # and fill them in a Sanctorale
+  # and fill them in a Sanctorale.
   #
   # Format of the file:
-  # 1/31 m : S. Ioannis Bosco, presbyteri
+  # <month>/<day> <rank> <colour> <symbol> : <title>
   #
-  # <month>/<day> <rank shortcut> : <title>
-  # rank shortcut is optional, default value is optional memorial
+  # e.g.:
+  # 1/31 m W bosco : S. Ioannis Bosco, presbyteri
+  #
+  # rank, colour and symbol are optional.
+  # Default rank is optional memorial,
+  # default colour white,
+  # symbol will be nil if not specified.
   class SanctoraleLoader
 
     RANK_CODES = {
-      nil => Ranks::MEMORIAL_OPTIONAL,
+      nil => Ranks::MEMORIAL_OPTIONAL, # default
       'm' => Ranks::MEMORIAL_GENERAL,
       'f' => Ranks::FEAST_GENERAL,
       's' => Ranks::SOLEMNITY_GENERAL
     }.freeze
     COLOUR_CODES = {
-      nil => Colours::WHITE,
+      nil => Colours::WHITE, # default
       'w' => Colours::WHITE,
       'v' => Colours::VIOLET,
       'g' => Colours::GREEN,
