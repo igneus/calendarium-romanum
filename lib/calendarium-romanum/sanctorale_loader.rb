@@ -89,7 +89,7 @@ module CalendariumRomanum
     def load_line(line, month_section = nil)
       # celebration record
       rank_letters = RANK_CODES.keys.compact.join('')
-      m = line.match(/^((\d+)\/)?(\d+)\s*(([#{rank_letters}])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*(:[\w\d_]+)?\s*:(.*)$/i)
+      m = line.match(/^((\d+)\/)?(\d+)\s*(([#{rank_letters}])?(\d\.\d{1,2})?)?\s*([WVRG])?\s*(:[\w]+)?\s*:(.*)$/i)
       if m.nil?
         raise RuntimeError.new("Syntax error, line skipped '#{line}'")
       end
