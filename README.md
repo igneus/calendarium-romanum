@@ -5,6 +5,7 @@
 
 API documentation:
 [master](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
+[0.6.0](http://www.rubydoc.info/gems/calendarium-romanum/0.6.0)
 [0.5.0](http://www.rubydoc.info/gems/calendarium-romanum/0.5.0)
 [0.4.0](http://www.rubydoc.info/gems/calendarium-romanum/0.4.0)
 [0.3.0](http://www.rubydoc.info/gems/calendarium-romanum/0.3.0)
@@ -36,9 +37,11 @@ FOSS implementation of this calendar system
 
 ## Credits
 
-includes an important bit of code from the
+includes computation of the Easter date from the
 [easter](https://github.com/jrobertson/easter) gem
-by James Robertson
+by James Robertson.
+
+See also changelog for list of contributions and their authors.
 
 ## License
 
@@ -94,7 +97,7 @@ For explanation see the detailed steps below.
 
 ### 2. What liturgical day is it today?
 
-`PerpetualCalendar` used in the example above is very a high-level API.
+`PerpetualCalendar` used in the example above is a high-level API.
 In order to understand what's happening under the hood, we will
 now take a lower-level approach and work on the level of a simple
 `Calendar`.
@@ -245,8 +248,8 @@ pcal[Date.new(2000, 1, 1)]
 ```
 
 **Memory management note:**
-By default, `PerpetualCalendar` caches each created `Calendar`
-instance *perpetually.* This is OK in most cases,
+Internally, `PerpetualCalendar` builds `Calendar` instances as needed
+and by default caches them *perpetually.* This is OK in most cases,
 but it can lead to memory exhaustion if you traverse an excessive
 amount of liturgical years. In such cases you can supply
 your own cache (a `Hash` or anything with hash-like interface)
