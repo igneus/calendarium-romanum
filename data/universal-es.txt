@@ -129,7 +129,6 @@ locale: es
 1 m : San Alfonso María de Ligorio, Obispo y Doctor de la Iglesia
 2 : San Eusebio de Vercelli, Obispo
 2 : San Pierre-Julien Eymard, Presbítero
-2 : Nuestra Señora de los Ángeles
 4 m : San Juan María Vianney, Presbítero
 5 : Dedicación de la Basílica de Santa María
 6 f2.5 : Transfiguración del Señor
