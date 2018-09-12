@@ -11,6 +11,7 @@ locale: fr
 13 : Saint Hilaire de Poitiers, évêque et docteur de l'Église
 17 m : Saint Antoine le Grand, abbé
 20 R : Saint Fabien, pape et martyr
+20 R : Saint Sébastien, martyr
 21 m R : Sainte Agnès, vierge et martyre
 22 R : Saint Vincent de Saragosse, diacre et martyr
 24 m : Saint François de Sales, évêque et docteur de l'Église
