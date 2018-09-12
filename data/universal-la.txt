@@ -168,8 +168,7 @@ locale: la
 19 R : S. Ianuarii, episcopi et martyris
 20 m R :  Ss. Andreae Kim Tae-gŏn et Pauli Chŏng Ha-sang et sociorum, martyrum
 21 f R :  S. Matthaei, apostoli et evangelistae
-# what does the asterisk here mean?
-23 m :  S. Pii de Pietrelcina, presbyteri [*]
+23 m :  S. Pii de Pietrelcina, presbyteri
 26 R : Ss. Cosmae et Damiani, martyrum
 27 m :  S. Vincentii de Paul, presbyteri
 28 R : S. Venceslai, martyris
@@ -227,9 +226,9 @@ locale: la
 6 : S. Nicolai, episcopi
 7 m :  S. Ambrosii, episcopi et Ecclesiae doctoris
 8 s :  IN CONCEPTIONE IMMACULATA BEATAE MARIAE VIRGINIS
-9 : S. Ioannis Didaci Cuahtlatoatzin [*]
+9 : S. Ioannis Didaci Cuahtlatoatzin
 11 : S. Damasi I, papae
-12 : Beatae Mariae Virginis de Guadalupe [*]
+12 : Beatae Mariae Virginis de Guadalupe
 13 m R :  S. Luciae, virginis et martyris
 14 m :  S. Ioannis a Cruce, presbyteri et Ecclesiae doctoris
 21 : S. Petri Canisii, presbyteri et Ecclesiae doctoris
