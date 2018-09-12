@@ -117,12 +117,12 @@ describe CR::SanctoraleLoader do
       end
 
       describe 'specified - uses it' do
-        let(:record) { '4/23 :george : S. Georgii, martyris' }
+        let(:record) { '4/23 george : S. Georgii, martyris' }
         it { expect(result.symbol).to be :george }
       end
 
       describe 'supported characters' do
-        let(:record) { '4/29 :none_123 : S. Nullius, abbatis' }
+        let(:record) { '4/29 none_123 : S. Nullius, abbatis' }
         it { expect(result.symbol).to be :none_123 }
       end
     end

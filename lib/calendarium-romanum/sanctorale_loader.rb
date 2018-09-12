@@ -91,11 +91,11 @@ module CalendariumRomanum
           colour_letters = COLOUR_CODES.keys.compact.join('')
 
           Regexp.new(
-            '^((?<month>\d+)\/)?(?<day>\d+)\s*' + # date
-            '((?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?\s*' + # rank (optional)
-            '(?<colour>[' + colour_letters + '])?\s*' + # colour (optional)
-            '(?<symbol>:[\w]+)?\s*' + # symbol (optional)
-            ':(?<title>.*)$', # title
+            '^((?<month>\d+)\/)?(?<day>\d+)' + # date
+            '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
+            '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
+            '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
+            '\s*:(?<title>.*)$', # title
             Regexp::IGNORECASE
           )
         end
@@ -135,7 +135,7 @@ module CalendariumRomanum
 
       symbol = nil
       if symbol_str
-        symbol = symbol_str[1 .. -1].to_sym
+        symbol = symbol_str.to_sym
       end
 
       Celebration.new(
