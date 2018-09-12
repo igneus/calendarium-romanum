@@ -725,4 +725,28 @@ describe CR::Calendar do
       end
     end
   end
+
+  # only s small subset of the Sanctorale public interface
+  # is used by Calendar. These specs show how small it is.
+  describe 'required sanctorale interface' do
+    class HardcodedEmptySanctorale
+      def solemnities
+        {} # no solemnities
+      end
+
+      def [](date)
+        [] # no celebrations
+      end
+    end
+
+    let(:year) { 2000 }
+    let(:sanctorale) { HardcodedEmptySanctorale.new }
+    let(:calendar) { described_class.new(year, sanctorale) }
+
+    it 'comprises only two methods' do
+      expect do
+        calendar[Date.new(year, 12, 20)]
+      end.not_to raise_exception
+    end
+  end
 end
