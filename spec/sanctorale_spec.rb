@@ -166,10 +166,16 @@ describe CR::Sanctorale do
   end
 
   describe '#each_day' do
-    it 'yields each date and corresponding CR::Celebrations' do
+    before :each do
       s.add 1, 17, antonius
+    end
 
+    it 'yields each date and corresponding CR::Celebrations' do
       expect {|block| s.each_day(&block) }.to yield_with_args(CR::AbstractDate.new(1, 17), [antonius])
+    end
+
+    it 'can be called without a block' do
+      expect(s.each_day).to be_an Enumerator
     end
   end
 

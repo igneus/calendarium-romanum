@@ -77,6 +77,8 @@ module CalendariumRomanum
     # for each day for which an entry is available
     # yields an AbstractDate and an Array of Celebrations
     def each_day
+      return to_enum(__method__) unless block_given?
+
       @days.each_pair do |date, celebrations|
         yield date, celebrations
       end
