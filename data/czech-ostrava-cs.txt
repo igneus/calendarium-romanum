@@ -9,6 +9,6 @@ extends:
   - czech-morava-cs.txt
 ---
 
-7/16 f2.8 : Výročí posvěcení katedrály Božského Spasitele
+7/16 f2.8 ostrava_cathedral : Výročí posvěcení katedrály Božského Spasitele
 
-10/16 f2.8 : Sv. Hedviky, řeholnice, hlavní patronky Slezska
+10/16 f2.8 hedwig : Sv. Hedviky, řeholnice, hlavní patronky Slezska

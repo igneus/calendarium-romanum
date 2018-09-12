@@ -8,8 +8,8 @@ extends:
   - czech-cs.txt
 ---
 
-5/30 m3.11 : Sv. Zdislavy
+5/30 m3.11 zdislava : Sv. Zdislavy
 
-7/4 m3.11 : Sv. Prokopa, opata
+7/4 m3.11 procopius : Sv. Prokopa, opata
 
-9/16 m3.11 R : Sv. Ludmily, mučednice
+9/16 m3.11 R ludmila : Sv. Ludmily, mučednice

@@ -7,259 +7,259 @@ country: cz
 ---
 
 = 1
-2 m : Sv. Basila Velikého a Řehoře Naziánského, biskupů a učitelů církve
-3 : Nejsvětějšího Jména Ježíš
-7 : sv. Rajmunda z Peñafortu, kněze
-13 : sv. Hilaria, biskupa a učitele církve
-17 m : Sv. Antonína, opata
-18 m3.11 : Panny Marie, Matky jednoty křesťanů
-20 R : Sv. Fabiána, papeže a mučedníka
-20 R : Sv. Šebestiána, mučedníka
-21 m R : Sv. Anežky Římské, panny a mučednice
-22 R : Sv. Vincence, jáhna a mučedníka
-24 m : Sv. Františka Saleského, biskupa a učitele církve
-25 f : Obrácení svatého Pavla, apoštola
-26 m : Sv. Timoteje a Tita, biskupů
-27 : Sv. Anděly Mericiové, panny
-28 m : Sv. Tomáše Akvinského, kněze a učitele církve
-31 m : Sv. Jana Boska, kněze
+2 m basil_gregory : Sv. Basila Velikého a Řehoře Naziánského, biskupů a učitelů církve
+3 name_jesus : Nejsvětějšího Jména Ježíš
+7 raymond : sv. Rajmunda z Peñafortu, kněze
+13 hilary : sv. Hilaria, biskupa a učitele církve
+17 m anthony_of_egypt : Sv. Antonína, opata
+18 m3.11 bvm_unity : Panny Marie, Matky jednoty křesťanů
+20 R fabian : Sv. Fabiána, papeže a mučedníka
+20 R sebastian : Sv. Šebestiána, mučedníka
+21 m R agnes : Sv. Anežky Římské, panny a mučednice
+22 R vincent_deacon : Sv. Vincence, jáhna a mučedníka
+24 m francis_de_sales : Sv. Františka Saleského, biskupa a učitele církve
+25 f paul_conversion : Obrácení svatého Pavla, apoštola
+26 m timothy_titus : Sv. Timoteje a Tita, biskupů
+27 merici : Sv. Anděly Mericiové, panny
+28 m aquinas : Sv. Tomáše Akvinského, kněze a učitele církve
+31 m bosco : Sv. Jana Boska, kněze
 
 = 2
-2 f2.5 : Uvedení Páně do chrámu
-3 R : Sv. Blažeje, biskupa a mučedníka
-3 : Sv. Ansgara, biskupa
-5 m R : Sv. Agáty, panny a mučednice
-6 m R : Sv. Pavla Mikiho a druhů, mučedníků
-8 : Sv. Jeronýma Emilianiho
-8 : Sv. Josefíny Bakhity, panny
-10 m : Sv. Scholastiky, panny
-11 : Panny Marie Lurdské
-17 : Sv. Alexia a druhů, řeholníků
-21 : Sv. Petra Damianiho, biskupa a učitele církve
-22 f : Stolce svatého Petra, apoštola
-23 m R : Sv. Polykarpa, biskupa a mučedníka
+2 f2.5 presentation_of_lord : Uvedení Páně do chrámu
+3 R blase : Sv. Blažeje, biskupa a mučedníka
+3 ansgar : Sv. Ansgara, biskupa
+5 m R agatha : Sv. Agáty, panny a mučednice
+6 m R paul_miki : Sv. Pavla Mikiho a druhů, mučedníků
+8 jerome_emiliani : Sv. Jeronýma Emilianiho
+8 josephine_bakhita : Sv. Josefíny Bakhity, panny
+10 m scholastica : Sv. Scholastiky, panny
+11 bvm_lourdes : Panny Marie Lurdské
+17 servite_founders : Sv. Alexia a druhů, řeholníků
+21 peter_damian : Sv. Petra Damianiho, biskupa a učitele církve
+22 f chair_of_peter : Stolce svatého Petra, apoštola
+23 m R polycarp : Sv. Polykarpa, biskupa a mučedníka
 
 = 3
-4 : Sv. Kazimíra
-7 m R : Sv. Perpetuy a Felicity, mučednic
-8 : Sv. Jana z Boha, řeholníka
-9 : Sv. Františky Římské, řeholnice
-10 R : Sv. Jana Ogilvie, kněze a mučedníka
-17 : Sv. Patrika, biskupa
-18 : Sv. Cyrila Jeruzalémského, biskupa a učitele církve
-19 s : Sv. Josefa, Snoubence Panny Marie
-23 : Sv. Turibia z Mongroveja, biskupa
-25 s : Zvěstování Páně
+4 casimir : Sv. Kazimíra
+7 m R perpetua_felicity : Sv. Perpetuy a Felicity, mučednic
+8 john_of_god : Sv. Jana z Boha, řeholníka
+9 frances_of_rome : Sv. Františky Římské, řeholnice
+10 R ogilvie : Sv. Jana Ogilvie, kněze a mučedníka
+17 patrick : Sv. Patrika, biskupa
+18 cyril_of_jerusalem : Sv. Cyrila Jeruzalémského, biskupa a učitele církve
+19 s joseph : Sv. Josefa, Snoubence Panny Marie
+23 turibius : Sv. Turibia z Mongroveja, biskupa
+25 s annunciation : Zvěstování Páně
 
 = 4
-2 : Sv. Františka z Pauly, poustevníka
-4 : Sv. Izidora, biskupa a učitele církve
-5 : Sv. Vincence Ferrerského, kněze
-7 m : Sv. Jana Křtitele de la Salle, kněze
-11 m R : Sv. Stanislava, biskupa a mučedníka
-13 R : Sv. Martina I., papeže a mučedníka
-21 : Sv. Anselma, biskupa a učitele církve
-23 f2.8 R : Sv. Vojtěcha, biskupa a mučedníka, hlavního patrona pražské arcidiecéze
-24 R : Sv. Jiří, mučedníka
-24 R : Sv. Fidela ze Sigmaringy, kněze a mučedníka
-25 f R : Sv. Marka, evangelisty
-28 R : Sv. Petra Chanela, kněze a mučedníka
-28 : Sv. Ludvíka Marie Grigniona z Montfortu, kněze
-29 f : Sv. Kateřiny Sienské, panny a učitelky církve, patronky Evropy
-30 R : Sv. Zikmunda, mučedníka
-30 : Sv. Pia V., papeže
+2 francis_of_paola : Sv. Františka z Pauly, poustevníka
+4 isidore : Sv. Izidora, biskupa a učitele církve
+5 vincent_ferrer : Sv. Vincence Ferrerského, kněze
+7 m de_la_salle : Sv. Jana Křtitele de la Salle, kněze
+11 m R stanislaus : Sv. Stanislava, biskupa a mučedníka
+13 R martin_i : Sv. Martina I., papeže a mučedníka
+21 anselm : Sv. Anselma, biskupa a učitele církve
+23 f2.8 R adalbert : Sv. Vojtěcha, biskupa a mučedníka, hlavního patrona pražské arcidiecéze
+24 R george : Sv. Jiří, mučedníka
+24 R fidelis : Sv. Fidela ze Sigmaringy, kněze a mučedníka
+25 f R mark : Sv. Marka, evangelisty
+28 R peter_chanel : Sv. Petra Chanela, kněze a mučedníka
+28 de_montfort : Sv. Ludvíka Marie Grigniona z Montfortu, kněze
+29 f catherine_of_siena : Sv. Kateřiny Sienské, panny a učitelky církve, patronky Evropy
+30 R sigismund : Sv. Zikmunda, mučedníka
+30 pius_v : Sv. Pia V., papeže
 
 = 5
-1 : Sv. Josefa, dělníka
-2 m : Sv. Atanáše, biskupa a učitele církve
-3 f R : Sv. Filipa a Jakuba, apoštolů
-6 R : Sv. Jana Sarkandra, kněze a mučedníka
-8 : Panny Marie, Prostřednice všech milostí
-12 R : Sv. Nerea a Achillea, mučedníků
-12 R : Sv. Pankráce, mučedníka
-13 : Panny Marie Fatimské
-14 f R : Sv. Matěje, apoštola
-16 f2.8 R : Sv. Jana Nepomuckého, kněze a mučedníka, hlavního patrona Čech
-18 R : Sv. Jana I., papeže a mučedníka
-20 : Sv. Klementa Marie Hofbauera, kněze
-20 : Sv. Bernardina Sienského, kněze
-21 R : Sv. Kryštofa Magallanese, kněze a druhů, mučedníků
-22 : Sv. Rity z Cascie, řeholnice
-25 : Sv. Bedy Ctihodného, kněze a učitele církve
-25 : Sv. Řehoře VII., papeže
-25 : Sv. Marie Magdalény de 'Pazzi, panny
-26 m : Sv. Filipa Neriho, kněze
-27 : Sv. Augustina z Canterbury, biskupa
-30 : Sv. Zdislavy
-31 f : Navštívení Panny Marie
+1 joseph_worker : Sv. Josefa, dělníka
+2 m athanasius : Sv. Atanáše, biskupa a učitele církve
+3 f R philip_james : Sv. Filipa a Jakuba, apoštolů
+6 R sarkander : Sv. Jana Sarkandra, kněze a mučedníka
+8 bvm_mediatrix : Panny Marie, Prostřednice všech milostí
+12 R nereus_achilleus : Sv. Nerea a Achillea, mučedníků
+12 R pancras : Sv. Pankráce, mučedníka
+13 bvm_fatima : Panny Marie Fatimské
+14 f R matthias : Sv. Matěje, apoštola
+16 f2.8 R john_nepomuk : Sv. Jana Nepomuckého, kněze a mučedníka, hlavního patrona Čech
+18 R john_i : Sv. Jana I., papeže a mučedníka
+20 hofbauer : Sv. Klementa Marie Hofbauera, kněze
+20 bernardine : Sv. Bernardina Sienského, kněze
+21 R magallanes : Sv. Kryštofa Magallanese, kněze a druhů, mučedníků
+22 rita : Sv. Rity z Cascie, řeholnice
+25 bede_venerable : Sv. Bedy Ctihodného, kněze a učitele církve
+25 gregory_vii : Sv. Řehoře VII., papeže
+25 de_pazzi : Sv. Marie Magdalény de 'Pazzi, panny
+26 m neri : Sv. Filipa Neriho, kněze
+27 augustine_of_canterbury : Sv. Augustina z Canterbury, biskupa
+30 zdislava : Sv. Zdislavy
+31 f visitation : Navštívení Panny Marie
 
 = 6
-1 m R : Sv. Justina, mučedníka
-2 R : Sv. Marcelina a Petra, mučedníků
-3 m R : Sv. Karla Lwangy a druhů, mučedníků
-5 m R : Sv. Bonifáce, biskupa a mučedníka
-6 : Sv. Norberta, biskupa
-9 : Sv. Efréma Syrského, jáhna a učitele církve
-11 m R : Sv. Barnabáše, apoštola
-13 m : Sv. Antonína z Padovy, kněze a učitele církve
-15 R : Sv. Víta, mučedníka
-19 : Sv. Jana Nepomuckého Neumanna, biskupa
-19 : Sv. Romualda, opata
-21 m : Sv. Aloise Gonzagy, řeholníka
-22 : Sv. Paulína Nolánského, biskupa
-22 R : Sv. Jana Fishera, biskupa a Tomáše Mora, mučedníků
-24 s : Narození svatého Jana Křtitele
-27 : Sv. Cyrila Alexandrijského, biskupa a učitele církve
-28 m R : Sv. Ireneje, biskupa a mučedníka
-29 s R : Sv. Petra a Pavla, apoštolů
-30 R : Svatých prvomučedníků římských
+1 m R justin : Sv. Justina, mučedníka
+2 R marcellinus_peter : Sv. Marcelina a Petra, mučedníků
+3 m R ugandan_martyrs : Sv. Karla Lwangy a druhů, mučedníků
+5 m R boniface : Sv. Bonifáce, biskupa a mučedníka
+6 norbert : Sv. Norberta, biskupa
+9 ephrem : Sv. Efréma Syrského, jáhna a učitele církve
+11 m R barnabas : Sv. Barnabáše, apoštola
+13 m anthony_of_padua : Sv. Antonína z Padovy, kněze a učitele církve
+15 R vitus : Sv. Víta, mučedníka
+19 neumann : Sv. Jana Nepomuckého Neumanna, biskupa
+19 romuald : Sv. Romualda, opata
+21 m aloysius : Sv. Aloise Gonzagy, řeholníka
+22 paulinus : Sv. Paulína Nolánského, biskupa
+22 R fisher_more : Sv. Jana Fishera, biskupa a Tomáše Mora, mučedníků
+24 s baptist_birth : Narození svatého Jana Křtitele
+27 cyril_of_alexandria : Sv. Cyrila Alexandrijského, biskupa a učitele církve
+28 m R irenaeus : Sv. Ireneje, biskupa a mučedníka
+29 s R peter_paul : Sv. Petra a Pavla, apoštolů
+30 R first_martyrs_of_rome : Svatých prvomučedníků římských
 
 = 7
-3 f R : Sv. Tomáše, apoštola
-4 : Sv. Prokopa, opata
-4 : Sv. Alžběty Portugalské
-5 s1.4 : Sv. Cyrila, mnicha, a Metoděje, biskupa, patronů Evropy, hlavních patronů Moravy
-6 R : Sv. Marie Gorettiové, panny a mučednice
-9 R : Sv. Augustina Čao Žung, kněze, a druhů, mučedníků.
-11 f : Sv. Benedikta, opata, patrona Evropy
-13 : Sv. Jindřicha
-14 R : Bl. Hroznaty, mučedníka
-14 : Sv. Kamila de Lellis, kněze
-15 m : Sv. Bonaventury, biskupa a učitele církve
-16 : Panny Marie Karmelské
-17 : Bl. Česlava a sv. Hyacinta, kněží
-20 R : Sv. Apolináře, biskupa a mučedníka
-21 : Sv. Vavřince z Brindisi, kněze a učitele církve
-22 f : Sv. Marie Magdalény
-23 f : Sv. Brigity, řeholnice, patronky Evropy
-24 : Sv. Šarbela Makhlūfa, kněze
-25 f R : Sv. Jakuba, apoštola
-26 m : Sv. Jáchyma a Anny, rodičů Panny Marie
-27 : Sv. Gorazda a druhů
-29 m : Sv. Marty
-30 : Sv. Petra Chryzologa, biskupa a učitele církve
-31 m : Sv. Ignáce z Loyoly, kněze
+3 f R thomas_apostle : Sv. Tomáše, apoštola
+4 procopius : Sv. Prokopa, opata
+4 elizabeth_of_portugal : Sv. Alžběty Portugalské
+5 s1.4 cyril_methodius : Sv. Cyrila, mnicha, a Metoděje, biskupa, patronů Evropy, hlavních patronů Moravy
+6 R goretti : Sv. Marie Gorettiové, panny a mučednice
+9 R chinese_martyrs : Sv. Augustina Čao Žung, kněze, a druhů, mučedníků.
+11 f benedict : Sv. Benedikta, opata, patrona Evropy
+13 henry : Sv. Jindřicha
+14 R hroznata : Bl. Hroznaty, mučedníka
+14 camillus_de_lellis : Sv. Kamila de Lellis, kněze
+15 m bonaventure : Sv. Bonaventury, biskupa a učitele církve
+16 bvm_mount_carmel : Panny Marie Karmelské
+17 ceslaus_hyacinth : Bl. Česlava a sv. Hyacinta, kněží
+20 R apollinaris : Sv. Apolináře, biskupa a mučedníka
+21 lawrence_of_brindisi : Sv. Vavřince z Brindisi, kněze a učitele církve
+22 f mary_magdalene : Sv. Marie Magdalény
+23 f birgitta : Sv. Brigity, řeholnice, patronky Evropy
+24 sharbel : Sv. Šarbela Makhlūfa, kněze
+25 f R james : Sv. Jakuba, apoštola
+26 m joachim_anne : Sv. Jáchyma a Anny, rodičů Panny Marie
+27 gorazd : Sv. Gorazda a druhů
+29 m martha : Sv. Marty
+30 peter_chrysologus : Sv. Petra Chryzologa, biskupa a učitele církve
+31 m ignatius_of_loyola : Sv. Ignáce z Loyoly, kněze
 
 = 8
-1 m : Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
-2 : Panny Marie Královny andělů
-2 : sv. Eusebia z Vercelli, biskupa
-2 : Sv. Petra Juliána Eymarda, kněze
-4 m : Sv. Jana Marie Vianneye, kněze
-5 : Posvěcení římské baziliky Panny Marie
-6 f2.5 : Proměnění Páně
-7 R : Sv. Sixta II., papeže, a druhů, mučedníků
-7 : Sv. Kajetána, kněze
-8 m : Sv. Dominika, kněze
-9 f R : Sv. Terezie Benedikty od Kříže, panny a mučednice, patronky Evropy
-10 f R : Sv. Vavřince, mučedníka
-11 m : Sv. Kláry, panny
-12 : Sv. Jany Františky de Chantal, řeholnice
-13 R : Sv. Ponciána, papeže, a Hippolyta, kněze, mučedníků
-14 m R : Sv. Maxmiliána Marie Kolbeho, kněze a mučedníka
-15 s : Nanebevzetí Panny Marie
-16 : Sv. Štěpána Uherského
-19 : Sv. Jana Eudese, kněze
-20 m : Sv. Bernarda, opata a učitele církve
-21 m : Sv. Pia X., papeže
-22 m : Panny Marie Královny
-23 : Sv. Růženy z Limy, panny
-24 f R : Sv. Bartoloměje, apoštola
-25 R : Sv. Benedikta, Jana, Matouše, Izáka a Kristina, mučedníků
-25 : Sv. Ludvíka
-25 : Sv. Josefa Kalasanského, kněze
-27 m : Sv. Moniky
-28 m : Sv. Augustina, biskupa a učitele církve
-29 m R : Umučení sv. Jana Křtitele
+1 m alphonsus : Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
+2 bvm_queen_of_angels : Panny Marie Královny andělů
+2 eusebius : sv. Eusebia z Vercelli, biskupa
+2 eymard : Sv. Petra Juliána Eymarda, kněze
+4 m vianney : Sv. Jana Marie Vianneye, kněze
+5 mary_major : Posvěcení římské baziliky Panny Marie
+6 f2.5 transfiguration : Proměnění Páně
+7 R sixtus_ii : Sv. Sixta II., papeže, a druhů, mučedníků
+7 cajetan : Sv. Kajetána, kněze
+8 m dominic : Sv. Dominika, kněze
+9 f R stein : Sv. Terezie Benedikty od Kříže, panny a mučednice, patronky Evropy
+10 f R lawrence : Sv. Vavřince, mučedníka
+11 m clare : Sv. Kláry, panny
+12 de_chantal : Sv. Jany Františky de Chantal, řeholnice
+13 R pontian_hippolytus : Sv. Ponciána, papeže, a Hippolyta, kněze, mučedníků
+14 m R kolbe : Sv. Maxmiliána Marie Kolbeho, kněze a mučedníka
+15 s assumption : Nanebevzetí Panny Marie
+16 stephen_hungary : Sv. Štěpána Uherského
+19 eudes : Sv. Jana Eudese, kněze
+20 m bernard : Sv. Bernarda, opata a učitele církve
+21 m pius_x : Sv. Pia X., papeže
+22 m bvm_queenship : Panny Marie Královny
+23 rose_lima : Sv. Růženy z Limy, panny
+24 f R bartolomew : Sv. Bartoloměje, apoštola
+25 R five_camaldolese : Sv. Benedikta, Jana, Matouše, Izáka a Kristina, mučedníků
+25 louis : Sv. Ludvíka
+25 joseph_calasanz : Sv. Josefa Kalasanského, kněze
+27 m monica : Sv. Moniky
+28 m augustine : Sv. Augustina, biskupa a učitele církve
+29 m R baptist_beheading : Umučení sv. Jana Křtitele
 
 = 9
-3 m : Sv. Řehoře Velikého, papeže a učitele církve
-5 : Bl. Terezie z Kalkaty
-7 R : Sv. Melichara Grodeckého, kněze a mučedníka
-8 f : Narození Panny Marie
-9 : Sv. Petra Klavera, kněze
-10 R : Bl. Karla Spinoly, kněze a mučedníka
-12 : Jména Panny Marie
-13 m : Sv. Jana Zlatoústého, biskupa a učitele církve
-14 f2.5 R : Povýšení svatého kříže
-15 m : Panny Marie Bolestné
-16 R : Sv. Ludmily, mučednice
-17 R : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
-17 : Sv. Roberta Bellarmina, biskupa a učitele církve
-19 R : Sv. Januária, biskupa a mučedníka
-20 m R : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
-21 f R : Sv. Matouše, apoštola a evangelisty
-23 : Sv. Pia z Pietrelciny, kněze
-26 R : Sv. Kosmy a Damiána, mučedníků
-27 m : Sv. Vincence z Paula, kněze
-28 s1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
-29 f : Sv. Michaela, Gabriela a Rafaela, archandělů
-30 m : Sv. Jeronýma, kněze a učitele církve
+3 m gregory_great : Sv. Řehoře Velikého, papeže a učitele církve
+5 mother_teresa : Bl. Terezie z Kalkaty
+7 R grodecky : Sv. Melichara Grodeckého, kněze a mučedníka
+8 f bvm_birth : Narození Panny Marie
+9 claver : Sv. Petra Klavera, kněze
+10 R spinola : Bl. Karla Spinoly, kněze a mučedníka
+12 bvm_name : Jména Panny Marie
+13 m john_chrysostom : Sv. Jana Zlatoústého, biskupa a učitele církve
+14 f2.5 R cross : Povýšení svatého kříže
+15 m bvm_sorrows : Panny Marie Bolestné
+16 R ludmila : Sv. Ludmily, mučednice
+17 R cornelius_cyprian : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
+17 bellarmine : Sv. Roberta Bellarmina, biskupa a učitele církve
+19 R januarius : Sv. Januária, biskupa a mučedníka
+20 m R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
+21 f R matthew : Sv. Matouše, apoštola a evangelisty
+23 padre_pio : Sv. Pia z Pietrelciny, kněze
+26 R cosmas_damian : Sv. Kosmy a Damiána, mučedníků
+27 m vincent_de_paul : Sv. Vincence z Paula, kněze
+28 s1.4 R wenceslaus : Sv. Václava, mučedníka, hlavního patrona českého národa
+29 f archangels : Sv. Michaela, Gabriela a Rafaela, archandělů
+30 m jerome : Sv. Jeronýma, kněze a učitele církve
 
 = 10
-1 m : Sv. Terezie od Dítěte Ježíše, panny a učitelky církve
-2 m : Svatých andělů strážných
-4 m : Sv. Františka z Assisi
-6 : Sv. Bruna, kněze
-7 m : Panny Marie Růžencové
-9 R : Sv. Dionýsia, biskupa, a druhů, mučedníků
-9 : Sv. Jana Leonardiho, kněze
-11 : Sv. Jana XXIII., papeže
-12 : Sv. Radima, biskupa
-14 R : Sv. Kalista I., papeže a mučedníka
-15 m : Sv. Terezie od Ježíše, panny a učitelky církve
-16 : Sv. Hedviky, řeholnice
-16 : Sv. Markéty Marie Alacoque, panny
-17 m R : Sv. Ignáce Antiochijského, biskupa a mučedníka
-18 f R : Sv. Lukáše, evangelisty
-19 R : Sv. Jana de Brébeuf a Izáka Joguese, kněží, a druhů, mučedníků
-19 : Sv. Pavla od Kříže, kněze
-21 : Bl. Karla Rakouského
-22 : Sv. Jana Pavla II., papeže
-23 : Sv. Jana Kapistránského, kněze
-24 : Sv. Antonína Marie Klareta, biskupa
-28 f R : Sv. Šimona a Judy, apoštolů
-31 : Sv. Wolfganga, biskupa
+1 m therese_lisieux : Sv. Terezie od Dítěte Ježíše, panny a učitelky církve
+2 m guardian_angels : Svatých andělů strážných
+4 m francis_assisi : Sv. Františka z Assisi
+6 bruno : Sv. Bruna, kněze
+7 m bvm_rosary : Panny Marie Růžencové
+9 R denis : Sv. Dionýsia, biskupa, a druhů, mučedníků
+9 leonardi : Sv. Jana Leonardiho, kněze
+11 john_xxiii : Sv. Jana XXIII., papeže
+12 radim : Sv. Radima, biskupa
+14 R callistus_i : Sv. Kalista I., papeže a mučedníka
+15 m teresa_avila : Sv. Terezie od Ježíše, panny a učitelky církve
+16 hedwig : Sv. Hedviky, řeholnice
+16 alacoque : Sv. Markéty Marie Alacoque, panny
+17 m R ignatius_of_antioch : Sv. Ignáce Antiochijského, biskupa a mučedníka
+18 f R luke : Sv. Lukáše, evangelisty
+19 R brebeuf_jogues : Sv. Jana de Brébeuf a Izáka Joguese, kněží, a druhů, mučedníků
+19 paul_of_cross : Sv. Pavla od Kříže, kněze
+21 karl_of_austria : Bl. Karla Rakouského
+22 john_paul_ii : Sv. Jana Pavla II., papeže
+23 john_capistrano : Sv. Jana Kapistránského, kněze
+24 claret : Sv. Antonína Marie Klareta, biskupa
+28 f R simon_jude : Sv. Šimona a Judy, apoštolů
+31 wolfgang : Sv. Wolfganga, biskupa
 
 = 11
-1 s : Všech svatých
-2 s : Vzpomínka na všechny věrné zemřelé
-3 : Sv. Martina de Porres, řeholníka
-4 m : Sv. Karla Boromejského, biskupa
-9 f : Posvěcení lateránské baziliky
-10 m : Sv. Lva Velikého, papeže a učitele církve
-11 m : Sv. Martina, biskupa
-12 m R : Sv. Josafata, biskupa a mučedníka
-13 m : Sv. Anežky České, panny
-15 : Sv. Alberta Velikého, biskupa a učitele církve
-16 : Sv. Markéty Skotské
-16 : sv. Gertrudy Veliké, panny
-17 m : Sv. Alžběty Uherské, řeholnice
-18 : Posvěcení římských bazilik svatých apoštolů Petra a Pavla
-21 m : Zasvěcení Panny Marie v Jeruzalémě
-22 m R : Sv. Cecílie, panny a mučednice
-23 R : Sv. Klementa I., papeže a mučedníka
-23 : Sv. Kolumbána, opata
-24 m R : Sv. Ondřeje Dung-Laca, kněze, a druhů, mučedníků
-25 R : Sv. Kateřiny Alexandrijské, panny a mučednice
-30 f R : Sv. Ondřeje, apoštola
+1 s all_saints : Všech svatých
+2 s all_souls : Vzpomínka na všechny věrné zemřelé
+3 de_porres : Sv. Martina de Porres, řeholníka
+4 m borromeo : Sv. Karla Boromejského, biskupa
+9 f lateran_basilica : Posvěcení lateránské baziliky
+10 m leo_great : Sv. Lva Velikého, papeže a učitele církve
+11 m martin : Sv. Martina, biskupa
+12 m R josaphat : Sv. Josafata, biskupa a mučedníka
+13 m agnes_of_bohemia : Sv. Anežky České, panny
+15 albert : Sv. Alberta Velikého, biskupa a učitele církve
+16 margaret_of_scotland : Sv. Markéty Skotské
+16 gertrude : sv. Gertrudy Veliké, panny
+17 m elizabeth_of_hungary : Sv. Alžběty Uherské, řeholnice
+18 peter_paul_basilicas : Posvěcení římských bazilik svatých apoštolů Petra a Pavla
+21 m bvm_presentation : Zasvěcení Panny Marie v Jeruzalémě
+22 m R cecilia : Sv. Cecílie, panny a mučednice
+23 R clement_i : Sv. Klementa I., papeže a mučedníka
+23 columban : Sv. Kolumbána, opata
+24 m R vietnamese_martyrs : Sv. Ondřeje Dung-Laca, kněze, a druhů, mučedníků
+25 R catherine_of_alexandria : Sv. Kateřiny Alexandrijské, panny a mučednice
+30 f R andrew : Sv. Ondřeje, apoštola
 
 = 12
-1 R : Sv. Edmunda Kampiána, kněze a mučedníka
-3 m : Sv. Františka Xaverského, kněze
-4 : Sv. Jana Damašského, kněze a učitele církve
-6 : Sv. Mikuláše, biskupa
-7 m : Sv. Ambrože, biskupa a učitele církve
-8 s : Panny Marie, počaté bez poskvrny prvotního hříchu
-9 : Sv. Jana Didaka Cuauhtlatoatzina
-11 : Sv. Damasa I. papeže
-12 : Panny Marie Guadalupské
-13 m R : Sv. Lucie, panny a mučednice
-14 m : Sv. Jana od Kříže, kněze a učitele církve
-21 : Sv. Petra Kanisia, kněze a učitele církve
-23 : Sv. Jana Kentského, kněze
-26 f R : Sv. Štěpána, prvomučedníka
-27 f : Sv. Jana, apoštola a evangelisty
-28 f R : Svatých Mláďátek, mučedníků
-29 R : Sv. Tomáše Becketa, biskupa a mučedníka
-31 : Sv. Silvestra I. papeže
+1 R campion : Sv. Edmunda Kampiána, kněze a mučedníka
+3 m francis_xaver : Sv. Františka Xaverského, kněze
+4 john_damascene : Sv. Jana Damašského, kněze a učitele církve
+6 nicholas : Sv. Mikuláše, biskupa
+7 m ambrose : Sv. Ambrože, biskupa a učitele církve
+8 s bvm_immaculate : Panny Marie, počaté bez poskvrny prvotního hříchu
+9 juan_diego : Sv. Jana Didaka Cuauhtlatoatzina
+11 damasus_i : Sv. Damasa I. papeže
+12 bvm_guadalupe : Panny Marie Guadalupské
+13 m R lucy : Sv. Lucie, panny a mučednice
+14 m john_of_cross : Sv. Jana od Kříže, kněze a učitele církve
+21 canisius : Sv. Petra Kanisia, kněze a učitele církve
+23 john_of_kanty : Sv. Jana Kentského, kněze
+26 f R stephen : Sv. Štěpána, prvomučedníka
+27 f john_evangelist : Sv. Jana, apoštola a evangelisty
+28 f R innocents : Svatých Mláďátek, mučedníků
+29 R becket : Sv. Tomáše Becketa, biskupa a mučedníka
+31 sylvester_i : Sv. Silvestra I. papeže

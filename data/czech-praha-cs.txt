@@ -9,5 +9,5 @@ extends:
   - czech-cechy-cs.txt
 ---
 
-2/15 R : Bl. Bedřicha Bachsteina a druhů, mučedníků
-5/12 f2.8 : Výročí posvěcení katedrály sv. Víta, Václava a Vojtěcha
+2/15 R bachstein : Bl. Bedřicha Bachsteina a druhů, mučedníků
+5/12 f2.8 prague_cathedral : Výročí posvěcení katedrály sv. Víta, Václava a Vojtěcha

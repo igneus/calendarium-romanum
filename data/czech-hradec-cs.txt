@@ -9,6 +9,6 @@ extends:
   - czech-cechy-cs.txt
 ---
 
-10/30 f2.8 : Výročí posvěcení katedrály Sv. Ducha
+10/30 f2.8 hradec_kralove_cathedral : Výročí posvěcení katedrály Sv. Ducha
 
-11/23 s1.4 R : Sv. Klementa I., papeže a mučedníka, hlavního patrona diecéze
+11/23 s1.4 R clement_i : Sv. Klementa I., papeže a mučedníka, hlavního patrona diecéze

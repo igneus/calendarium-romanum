@@ -9,7 +9,7 @@ extends:
   - czech-morava-cs.txt
 ---
 
-5/21 f2.8 : Výročí posvěcení katedrály sv. Petra a Pavla
-5/30 m3.11 : Sv. Zdislavy
+5/21 f2.8 brno_cathedral : Výročí posvěcení katedrály sv. Petra a Pavla
+5/30 m3.11 zdislava : Sv. Zdislavy
 
-10/29 m3.11 R : Bl. Restituty Kafkové, panny a mučednice
+10/29 m3.11 R kafkova : Bl. Restituty Kafkové, panny a mučednice

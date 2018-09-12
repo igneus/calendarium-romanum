@@ -9,6 +9,6 @@ extends:
   - czech-cechy-cs.txt
 ---
 
-7/14 f2.8 R : Bl. Hroznaty, mučedníka, hlavního patrona diecéze
+7/14 f2.8 R hroznata : Bl. Hroznaty, mučedníka, hlavního patrona diecéze
 
-12/2 f2.8 : Výročí posvěcení katedrály sv. Bartoloměje
+12/2 f2.8 plzen_cathedral : Výročí posvěcení katedrály sv. Bartoloměje

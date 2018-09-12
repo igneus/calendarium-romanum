@@ -9,4 +9,4 @@ extends:
   - czech-morava-cs.txt
 ---
 
-6/30 f2.8 : Výročí posvěcení katedrály sv. Václava
+6/30 f2.8 olomouc_cathedral : Výročí posvěcení katedrály sv. Václava
