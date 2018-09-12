@@ -103,7 +103,7 @@ describe CR::Sanctorale do
       s.add 1, 13, solemnity
       expect do
         s.replace 1, 13, [opt_memorial_2]
-      end.to change { s.solemnities.size }.by -1
+      end.to change { s.solemnities.size }.by(-1)
     end
 
     it 'does not simply save the passed Array' do

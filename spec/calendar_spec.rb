@@ -211,7 +211,7 @@ describe CR::Calendar do
           describe 'absolutely' do
             it 'fails' do
               expect do
-                day = @c.day(0, 34)
+                @c.day(0, 34)
               end.to raise_exception(ArgumentError, 'invalid date')
             end
           end
@@ -219,7 +219,7 @@ describe CR::Calendar do
           describe 'for the given year' do
             it 'fails' do
               expect do
-                day = @c.day(2, 29)
+                @c.day(2, 29)
               end.to raise_exception(ArgumentError, 'invalid date')
             end
           end
