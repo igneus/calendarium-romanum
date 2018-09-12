@@ -84,21 +84,39 @@ module CalendariumRomanum
 
     private
 
+    def line_regexp
+      @line_regexp ||=
+        begin
+          rank_letters = RANK_CODES.keys.compact.join('')
+          colour_letters = COLOUR_CODES.keys.compact.join('')
+
+          Regexp.new(
+            '^((?<month>\d+)\/)?(?<day>\d+)\s*' + # date
+            '((?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?\s*' + # rank (optional)
+            '(?<colour>[' + colour_letters + '])?\s*' + # colour (optional)
+            '(?<symbol>:[\w]+)?\s*' + # symbol (optional)
+            ':(?<title>.*)$', # title
+            Regexp::IGNORECASE
+          )
+        end
+    end
+
     # parses a line containing celebration record,
     # returns a single Celebration
     def load_line(line, month_section = nil)
       # celebration record
-      rank_letters = RANK_CODES.keys.compact.join('')
-      colour_letters = COLOUR_CODES.keys.compact.join('')
-      m = line.match(/^((\d+)\/)?(\d+)\s*(([#{rank_letters}])?(\d\.\d{1,2})?)?\s*([#{colour_letters}])?\s*(:[\w]+)?\s*:(.*)$/i)
+      m = line.match(line_regexp)
       if m.nil?
         raise RuntimeError.new("Syntax error, line skipped '#{line}'")
       end
 
-      month, day, rank_char, rank_num, colour, symbol_str, title = m.values_at(2, 3, 5, 6, 7, 8, 9)
-      month ||= month_section
-      day = day.to_i
-      month = month.to_i
+      month = (m[:month] || month_section).to_i
+      day = m[:day].to_i
+      rank_char = m[:rank_char]
+      rank_num = m[:rank_num]
+      colour = m[:colour]
+      symbol_str = m[:symbol]
+      title = m[:title]
 
       rank = RANK_CODES[rank_char && rank_char.downcase]
 
