@@ -51,6 +51,11 @@ module CalendariumRomanum
     def vespers_from_following?
       !vespers.nil?
     end
+    
+    def to_s
+      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} @celebrations=#{celebrations} @vespers=#{vespers}>"
+    end
+
   end
 
   # information on one particular celebration of the liturgical year
@@ -125,6 +130,10 @@ module CalendariumRomanum
         date || self.date,
         cycle || self.cycle,
       )
+    end
+    
+    def to_s
+      "#<#{self.class.name} @title=#{title} @rank=#{rank} @colour=#{colour} @symbol=#{symbol} @date=#{date} @cycle=#{cycle}>"
     end
   end
 end
