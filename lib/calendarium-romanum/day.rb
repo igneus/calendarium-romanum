@@ -53,9 +53,8 @@ module CalendariumRomanum
     end
     
     def to_s
-      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} @celebrations=#{celebrations} @vespers=#{vespers}>"
+      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} @celebrations=#{celebrations.collect {|c| c.to_s}} @vespers=#{vespers}>"
     end
-
   end
 
   # information on one particular celebration of the liturgical year
