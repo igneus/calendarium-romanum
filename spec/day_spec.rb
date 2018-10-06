@@ -107,9 +107,12 @@ describe CR::Day do
   end
 
   describe '#to_s' do
-    day = CR::PerpetualCalendar.new[Date.new(2000, 1, 8)]
-    it { expect(day.to_s)
-         .to eq "#<CalendariumRomanum::Day @date=2000-01-08 @season=#<CalendariumRomanum::Season christmas> @season_week=2 @celebrations=[\"#<CalendariumRomanum::Celebration @title=Saturday after Epiphany @rank=#<CalendariumRomanum::Rank @priority=3.13 desc=\\\"Ferials\\\"> @colour=#<CalendariumRomanum::Colour white> @symbol= @date= @cycle=temporale>\"] @vespers=>"}
+    I18n.with_locale(:en) do
+      day = CR::PerpetualCalendar.new[Date.new(2000, 1, 8)]
+      it { expect(day.to_s)
+          .to eq "#<CalendariumRomanum::Day @date=2000-01-08 @season=#<CalendariumRomanum::Season christmas> @season_week=2 celebrations=[#<CalendariumRomanum::Celebration @title=Saturday after Epiphany @rank=#<CalendariumRomanum::Rank @priority=3.13 desc=#{day.celebrations[0].rank.desc.inspect}> @colour=#<CalendariumRomanum::Colour white> symbol=nil date=nil cycle=:temporale>] vespers=nil>"
+          }
+    end
   end
 
   describe '#weekday' do
