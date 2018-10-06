@@ -93,19 +93,19 @@ describe CR::Day do
       end
     end
   end
-  
+
   describe '#vespers_from_following?' do
-  describe 'vespers not set' do
-    it { expect(d.vespers_from_following?).to be false }
-  end
-  
-  describe 'vespers set' do
+    describe 'vespers not set' do
+      it { expect(d.vespers_from_following?).to be false }
+    end
+
+    describe 'vespers set' do
       let(:vespers) { CR::Celebration.new }
-      
+
       it { expect(d.vespers_from_following?).to be true }
     end
   end
-  
+
   describe '#to_s' do
     day = CR::PerpetualCalendar.new[Date.new(2000, 1, 8)]
     it { expect(day.to_s)
