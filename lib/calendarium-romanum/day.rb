@@ -53,7 +53,12 @@ module CalendariumRomanum
     end
     
     def to_s
-      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} @celebrations=#{celebrations.collect {|c| c.to_s}} @vespers=#{vespers}>"
+      celebrations_string = '['
+      celebrations.each do |c|
+        celebrations_string << c.to_s + ', '
+      end
+      celebrations_string = celebrations_string.chomp(', ') << ']'
+      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} celebrations=#{celebrations_string} vespers=#{vespers.inspect}>"
     end
   end
 
@@ -132,7 +137,7 @@ module CalendariumRomanum
     end
     
     def to_s
-      "#<#{self.class.name} @title=#{title} @rank=#{rank} @colour=#{colour} @symbol=#{symbol} @date=#{date} @cycle=#{cycle}>"
+      "#<#{self.class.name} @title=#{title} @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
     end
   end
 end
