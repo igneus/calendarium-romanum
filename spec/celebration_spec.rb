@@ -60,7 +60,7 @@ describe CR::Celebration do
     I18n.with_locale(:en) do
       celebration = CR::PerpetualCalendar.new[Date.new(2000, 1, 8)].celebrations[0]
       it { expect(celebration.to_s)
-          .to eq "#<CalendariumRomanum::Celebration @title=Saturday after Epiphany @rank=#<CalendariumRomanum::Rank @priority=3.13 desc=#{celebration.rank.desc.inspect}> @colour=#<CalendariumRomanum::Colour white> symbol=nil date=nil cycle=:temporale>"
+          .to eq "#<CalendariumRomanum::Celebration @title=\"Saturday after Epiphany\" @rank=#<CalendariumRomanum::Rank @priority=3.13 desc=#{celebration.rank.desc.inspect}> @colour=#<CalendariumRomanum::Colour white> symbol=nil date=nil cycle=:temporale>"
           }
     end
   end

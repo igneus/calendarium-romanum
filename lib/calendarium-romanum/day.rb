@@ -137,7 +137,7 @@ module CalendariumRomanum
     end
     
     def to_s
-      "#<#{self.class.name} @title=#{title} @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
+      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
     end
   end
 end
