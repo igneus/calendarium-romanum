@@ -51,6 +51,15 @@ module CalendariumRomanum
     def vespers_from_following?
       !vespers.nil?
     end
+    
+    def to_s
+      celebrations_string = '['
+      celebrations.each do |c|
+        celebrations_string << c.to_s + ', '
+      end
+      celebrations_string = celebrations_string.chomp(', ') << ']'
+      "#<#{self.class.name} @date=#{date} @season=#{season} @season_week=#{season_week} celebrations=#{celebrations_string} vespers=#{vespers.inspect}>"
+    end
   end
 
   # information on one particular celebration of the liturgical year
@@ -125,6 +134,10 @@ module CalendariumRomanum
         date || self.date,
         cycle || self.cycle,
       )
+    end
+    
+    def to_s
+      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
     end
   end
 end
