@@ -4,8 +4,10 @@ dist: trusty
 
 rvm:
   - 2.0.0
-  - 2.5.0
-  - jruby-9.1.12.0
+  #- 2.5.0
+  - jruby-9.0.0.0
+  - jruby-9.1.9.0
+  - jruby-head
 
 install: bundle install --jobs=3 --deployment --without development
 
@@ -14,6 +16,6 @@ script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
 git:
   depth: 3
 
-matrix:
-  allow_failures:
-    - rvm: jruby-9.1.12.0
+# matrix:
+#   allow_failures:
+#     - rvm: jruby-9.1.9.0
