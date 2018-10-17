@@ -1,7 +1,5 @@
 language: ruby
 
-dist: trusty
-
 rvm:
   - 2.0.0
   #- 2.5.0
@@ -9,8 +7,8 @@ rvm:
   - jruby-head
 
 before_install:
+  - gem update --system
   - gem install bundler
-  - gem update bundler
 install: bundle install --jobs=3 --deployment --without development
 
 script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
