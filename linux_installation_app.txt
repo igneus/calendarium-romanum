@@ -1,5 +1,7 @@
 ### **calendarium-romanum as a Linux terminal application**
 
+Dependencies (uncommon): ruby, rubygem
+
 To install and run calendarium-romanum as a Linux terminal application, perform the following steps:
 
 1) Download the repository to your local system, and unzip the folder.
