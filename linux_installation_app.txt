@@ -1,4 +1,4 @@
-**calendarium-romanum as a Linux terminal application**
+### **calendarium-romanum as a Linux terminal application**
 
 To install and run calendarium-romanum as a Linux terminal application, perform the following steps:
 
@@ -10,4 +10,13 @@ To install and run calendarium-romanum as a Linux terminal application, perform 
 
 4) If you do not how to work with Ruby or otherwise do not plan to contribute to the development of the repository, but, instead, would prefer to use calendarium-romanum strictly as a tool, you may delete the other files and folders that you downloaded from the repository.
 
-5) Open the terminal and type "calendariumrom." A list of usable commands will appear. To query a particular liturgical date, type "calendariumrom query [yyyy-dd-mm]."
+5) Open the terminal and type "calendariumrom." A list of usable commands will appear. 
+
+To query a particular liturgical date using the default calendar (universal-en), type "calendariumrom query [yyyy-dd-mm]." 
+
+To query the Latin universal calendar entry for January 28, 2000, you would type:
+"calendariumrom query --calendar universal-la 2000-01-01" 
+
+(Result: season: Ordinary Time, memorial : S. Thomae de Aquino, presbyteri et Ecclesiae doctoris)
+
+NB: By installing and using calendarium-romanum in this method, you will not receive any updates (to the software or calendars) unless you manually reinstall by using the same steps above.
