@@ -8,6 +8,6 @@ To install and run calendarium-romanum as a Linux terminal application, perform 
 
 3) Copy the file "calendariumrom" (bin/calendariumrom) directly into "usr/bin" on your system.
 
-4) Open the terminal and type "calendariumrom." A list of possible commands will appear.
+4) If you do not how to work with Ruby or otherwise do not plan to contribute to the development of the repository, but, instead, would prefer to use calendarium-romanum strictly as a tool, you may delete the other files and folders that you downloaded from the repository.
 
-5) To query a particular liturgical date, type "calendariumrom query [yyyy-dd-mm]."
+5) Open the terminal and type "calendariumrom." A list of usable commands will appear. To query a particular liturgical date, type "calendariumrom query [yyyy-dd-mm]."
