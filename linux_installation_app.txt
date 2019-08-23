@@ -1,0 +1,13 @@
+**calendarium-romanum as a Linux terminal application**
+
+To install and run calendarium-romanum as a Linux terminal application, perform the following steps:
+
+1) Download the repository to your local system, and unzip the folder.
+
+2) Copy the whole folder "calendarium-romanum" (lib/calendarium-romanum) directly into the root "lib" folder on your system (/lib).
+
+3) Copy the file "calendariumrom" (bin/calendariumrom) directly into "usr/bin" on your system.
+
+4) Open the terminal and type "calendariumrom." A list of possible commands will appear.
+
+5) To query a particular liturgical date, type "calendariumrom query [yyyy-dd-mm]."
