@@ -34,6 +34,7 @@ FOSS implementation of this calendar system
 - [x] transfer of suppressed solemnities
 - [x] optional transfer of important solemnities to a Sunday
 - [x] additional temporale feasts (Christ the Eternal Priest and similar)
+- [x] able to be used directly in the Linux termnial as a standalone tool for liturgical calendar tracking (see "[calendarium-romanum as a Linux terminal application"](/linux_installation_app.txt).
 
 ## Credits
 
