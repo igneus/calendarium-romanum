@@ -85,6 +85,19 @@ describe CR::Sanctorale do
           s.add 1, 13, opt_memorial_2
         end.to raise_exception ArgumentError
       end
+
+      # there used to be a bug, registering a solemnity *before*
+      # checking if it can be added at all
+      it 'does not modify internal state when it fails' do
+        s.add 1, 13, opt_memorial
+
+        expect do
+          begin
+            s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::SOLEMNITY_GENERAL)
+          rescue ArgumentError
+          end
+        end.not_to change { s.solemnities.size }
+      end
     end
   end
 
