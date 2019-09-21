@@ -5,15 +5,16 @@ describe CR::SanctoraleFactory do
   describe '.create_layered'
 
   describe '.load_layered_from_files' do
-    before :each do
+    let(:s) do
       files = %w(czech-cs.txt czech-cechy-cs.txt czech-budejovice-cs.txt).collect do |f|
         File.join(File.expand_path('../data', File.dirname(__FILE__)), f)
       end
-      @s = described_class.load_layered_from_files(*files)
+
+      described_class.load_layered_from_files(*files)
     end
 
     it 'has celebrations from the first file' do
-      dd = @s.get 9, 28
+      dd = s.get 9, 28
       expect(dd.size).to eq 1
 
       d = dd.first
@@ -22,7 +23,7 @@ describe CR::SanctoraleFactory do
     end
 
     it 'has celebrations from the second file' do
-      dd = @s.get 7, 4
+      dd = s.get 7, 4
       expect(dd.size).to eq 1
 
       d = dd.first
@@ -31,7 +32,7 @@ describe CR::SanctoraleFactory do
     end
 
     it 'celebrations from the last file win' do
-      dd = @s.get 12, 22
+      dd = s.get 12, 22
       expect(dd.size).to eq 1
 
       d = dd.first

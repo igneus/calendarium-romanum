@@ -2,10 +2,9 @@
 require_relative 'spec_helper'
 
 describe CR::Temporale do
-  before :all do
-    @t = @t12 = described_class.new 2012
-    @t13 = described_class.new 2013
-  end
+  let(:t12) { described_class.new 2012 }
+  let(:t13) { described_class.new 2013 }
+  let(:t) { t12 }
 
   let(:factory) { CR::Temporale::CelebrationFactory }
 
@@ -123,26 +122,26 @@ describe CR::Temporale do
 
   describe '#date_range' do
     it 'includes days of the year' do
-      expect(@t.date_range).to include Date.new(2012, 12, 3)
-      expect(@t.date_range).to include Date.new(2013, 11, 5)
+      expect(t.date_range).to include Date.new(2012, 12, 3)
+      expect(t.date_range).to include Date.new(2013, 11, 5)
     end
   end
 
   describe '#season' do
     shared_examples 'season determination' do |year_beginning, year_end|
       if year_beginning
-        it { expect { @t13.season(date_beginning - 1) }.to raise_exception RangeError }
+        it { expect { t13.season(date_beginning - 1) }.to raise_exception RangeError }
       else
-        it { expect(@t13.season(date_beginning - 1)).not_to be season }
+        it { expect(t13.season(date_beginning - 1)).not_to be season }
       end
 
-      it { expect(@t13.season(date_beginning)).to be season }
-      it { expect(@t13.season(date_end)).to be season }
+      it { expect(t13.season(date_beginning)).to be season }
+      it { expect(t13.season(date_end)).to be season }
 
       if year_end
-        it { expect { @t13.season(date_end + 1) }.to raise_exception RangeError }
+        it { expect { t13.season(date_end + 1) }.to raise_exception RangeError }
       else
-        it { expect(@t13.season(date_end + 1)).not_to be season }
+        it { expect(t13.season(date_end + 1)).not_to be season }
       end
     end
 
@@ -224,43 +223,43 @@ describe CR::Temporale do
 
   describe '#get' do
     it 'returns a Celebration' do
-      expect(@t13.get(8, 12)).to be_a CR::Celebration
+      expect(t13.get(8, 12)).to be_a CR::Celebration
     end
 
     describe 'for' do
       describe 'ferial' do
         it 'in Ordinary Time' do
-          c = @t13.get(8, 12)
+          c = t13.get(8, 12)
           expect(c.rank).to eq CR::Ranks::FERIAL
           expect(c.color).to eq CR::Colours::GREEN
         end
 
         it 'in Advent' do
-          c = @t13.get(12, 12)
+          c = t13.get(12, 12)
           expect(c.rank).to eq CR::Ranks::FERIAL
           expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in the last week of Advent' do
-          c = @t13.get(12, 23)
+          c = t13.get(12, 23)
           expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
           expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Christmas time' do
-          c = @t13.get(1, 3)
+          c = t13.get(1, 3)
           expect(c.rank).to eq CR::Ranks::FERIAL
           expect(c.color).to eq CR::Colours::WHITE
         end
 
         it 'in Lent' do
-          c = @t13.get(3, 18)
+          c = t13.get(3, 18)
           expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
           expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Easter Time' do
-          c = @t13.get(5, 5)
+          c = t13.get(5, 5)
           expect(c.rank).to eq CR::Ranks::FERIAL
           expect(c.color).to eq CR::Colours::WHITE
         end
@@ -268,31 +267,31 @@ describe CR::Temporale do
 
       describe 'Sunday' do
         it 'in Ordinary Time' do
-          c = @t13.get(8, 10)
+          c = t13.get(8, 10)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::GREEN
         end
 
         it 'in Advent' do
-          c = @t13.get(12, 15)
+          c = t13.get(12, 15)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Christmas time' do
-          c = @t13.get(1, 5)
+          c = t13.get(1, 5)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::WHITE
         end
 
         it 'in Lent' do
-          c = @t13.get(3, 23)
+          c = t13.get(3, 23)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
         end
 
         it 'in Easter Time' do
-          c = @t13.get(5, 11)
+          c = t13.get(5, 11)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::WHITE
         end
@@ -300,13 +299,13 @@ describe CR::Temporale do
 
       describe 'solemnities and their cycles - ' do
         it 'end of Advent time' do
-          c = @t13.get(12, 17)
+          c = t13.get(12, 17)
           expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
           expect(c.colour).to eq CR::Colours::VIOLET
         end
 
         it 'Nativity' do
-          c = @t13.get(12, 25)
+          c = t13.get(12, 25)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Christmas'
           expect(c.colour).to eq CR::Colours::WHITE
@@ -315,13 +314,13 @@ describe CR::Temporale do
         end
 
         it 'day in the octave of Nativity' do
-          c = @t13.get(12, 27)
+          c = t13.get(12, 27)
           expect(c.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Holy Family' do
-          c = @t13.get(12, 29)
+          c = t13.get(12, 29)
           expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
           expect(c.title).to have_translation 'The Holy Family'
           expect(c.colour).to eq CR::Colours::WHITE
@@ -329,56 +328,56 @@ describe CR::Temporale do
 
         context 'when a Sunday does not occur between Dec 25 and Jan 1' do
           it 'is Holy Family on Friday Dec 30' do
-            @t16 = described_class.new 2016
-            c = @t16.get(12, 30)
+            t16 = described_class.new 2016
+            c = t16.get(12, 30)
             expect(c.title).to have_translation 'The Holy Family'
           end
         end
 
         it 'Epiphany' do
-          c = @t13.get(1, 6)
+          c = t13.get(1, 6)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'The Epiphany'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Baptism of the Lord' do
-          c = @t13.get(1, 12)
+          c = t13.get(1, 12)
           expect(c.rank).to eq CR::Ranks::FEAST_LORD_GENERAL
           expect(c.title).to have_translation 'The Baptism of the Lord'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Ash Wednesday' do
-          c = @t13.get(3, 5)
+          c = t13.get(3, 5)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Ash Wednesday'
           expect(c.colour).to eq CR::Colours::VIOLET
         end
 
         it 'Palm Sunday' do
-          c = @t13.get(4, 13)
+          c = t13.get(4, 13)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Passion Sunday (Palm Sunday)'
           expect(c.colour).to eq CR::Colours::RED
         end
 
         it 'Good Friday' do
-          c = @t13.get(4, 18)
+          c = t13.get(4, 18)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Good Friday'
           expect(c.colour).to eq CR::Colours::RED
         end
 
         it 'Holy Saturday' do
-          c = @t13.get(4, 19)
+          c = t13.get(4, 19)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Holy Saturday'
           expect(c.colour).to eq CR::Colours::VIOLET
         end
 
         it 'Resurrection' do
-          c = @t13.get(4, 20)
+          c = t13.get(4, 20)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Easter Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
@@ -386,14 +385,14 @@ describe CR::Temporale do
         end
 
         it 'Ascension' do
-          c = @t13.get(5, 29)
+          c = t13.get(5, 29)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'The Ascension'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Pentecost' do
-          c = @t13.get(6, 8)
+          c = t13.get(6, 8)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Pentecost'
           expect(c.colour).to eq CR::Colours::RED
@@ -401,28 +400,28 @@ describe CR::Temporale do
         end
 
         it 'Trinity' do
-          c = @t13.get(6, 15)
+          c = t13.get(6, 15)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Trinity Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Body of Christ' do
-          c = @t13.get(6, 19)
+          c = t13.get(6, 19)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Corpus Christi (The Body and Blood of Christ)'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Sacred Heart' do
-          c = @t13.get(6, 27)
+          c = t13.get(6, 27)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'The Sacred Heart of Jesus'
           expect(c.colour).to eq CR::Colours::WHITE
         end
 
         it 'Christ the King' do
-          c = @t13.get(11, 23)
+          c = t13.get(11, 23)
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Christ The King'
           expect(c.colour).to eq CR::Colours::WHITE
@@ -431,21 +430,21 @@ describe CR::Temporale do
         describe 'other locales' do
           it 'Latin' do
             I18n.with_locale(:la) do
-              c = @t13.get(11, 23)
+              c = t13.get(11, 23)
               expect(c.title).to eq 'Domini nostri Iesu Christi universorum regis'
             end
           end
 
           it 'Czech' do
             I18n.with_locale(:cs) do
-              c = @t13.get(11, 23)
+              c = t13.get(11, 23)
               expect(c.title).to eq 'Ježíše Krista krále'
             end
           end
 
           it 'Italian' do
             I18n.with_locale(:it) do
-              c = @t13.get(11, 23)
+              c = t13.get(11, 23)
               expect(c.title).to eq "Nostro Signore Gesù Cristo Re dell'universo"
             end
           end
@@ -455,14 +454,14 @@ describe CR::Temporale do
       # movable sanctorale feasts don't really belong in Temporale, but ...
       describe 'movable sanctorale feasts' do
         it 'Immaculate Heart' do
-          c = @t13.get(6, 28)
+          c = t13.get(6, 28)
           expect(c.title).to have_translation 'The Immaculate Heart of Mary'
           expect(c.rank).to eq CR::Ranks::MEMORIAL_GENERAL
         end
 
         it 'Mary, Mother of the Church' do
           # it would be an anachronism to retrieve this celebration
-          # from @t13
+          # from t13
           t17 = described_class.new 2017
           c = t17.get(5, 21)
           expect(c.title).to have_translation 'Mary, Mother of the Church'
@@ -473,7 +472,7 @@ describe CR::Temporale do
 
     describe 'titles of Sundays and ferials' do
       def title_for(month, day)
-        @t13.get(month, day).title
+        t13.get(month, day).title
       end
 
       describe 'Ordinary time' do
@@ -503,7 +502,7 @@ describe CR::Temporale do
       describe 'Christmas time' do
         describe 'Octave of Christmas' do
           it 'ferial' do
-            day = @t13.get(12, 30)
+            day = t13.get(12, 30)
             expect(day.rank).to eq CR::Ranks::FERIAL_PRIVILEGED
             expect(day.title).to have_translation '6th day of Christmas Octave'
           end
@@ -543,7 +542,7 @@ describe CR::Temporale do
 
         describe 'Holy Week' do
           it 'ferial' do
-            day = @t13.get(4, 14)
+            day = t13.get(4, 14)
             expect(day.rank).to eq CR::Ranks::PRIMARY
             expect(day.title).to have_translation 'Monday of Holy Week'
           end
@@ -553,13 +552,13 @@ describe CR::Temporale do
       describe 'Easter' do
         describe 'Easter Octave' do
           it 'ferial' do
-            c = @t13.get(4, 22)
+            c = t13.get(4, 22)
             expect(c.rank).to eq CR::Ranks::PRIMARY
             expect(c.title).to have_translation 'Easter Tuesday'
           end
 
           it 'Sunday (the octave day)' do
-            c = @t13.get(4, 27)
+            c = t13.get(4, 27)
             expect(c.rank).to eq CR::Ranks::PRIMARY
             expect(c.title).to have_translation '2nd Sunday of Easter'
           end
