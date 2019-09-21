@@ -23,7 +23,7 @@ a number from range 1-12.
 A calendar entry is a line of this format:
 
 ```
-[MONTH/]DAY [RANK] [COLOUR] : TITLE
+[MONTH/]DAY [RANK] [COLOUR] [IDENTIFIER] : TITLE
 ```
 
 If the calendar entry is preceded by a month heading, MONTH is
@@ -91,6 +91,11 @@ for exceptional cases).
 If not specified, white is default.
 
 TITLE is a simple text - title of the celebration - without formatting.
+
+IDENTIFIER is a single "word" consisting of lowercase letters and
+underscores, at least 2 characters long.
+It is optional and serves as a unique machine-readable identifier
+of the given celebration.
 
 There may be several entries for a day (optional memorials).
 
