@@ -7,6 +7,8 @@ module CalendariumRomanum
       include Enumerable
 
       def each
+        return to_enum(__method__) unless block_given?
+
         d = @start
         begin
           yield d

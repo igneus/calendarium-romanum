@@ -4,6 +4,8 @@ module CalendariumRomanum
     class CelebrationFactory
       class << self
         def each
+          return to_enum(__method__) unless block_given?
+
           celebrations.each do |symbol|
             yield public_send(symbol)
           end

@@ -61,7 +61,7 @@ describe CR::Calendar do
     let (:day_count) {(@c.temporale.start_date..@c.temporale.end_date).count}
 
     it 'yields for each iteration' do
-      expect { |b| @c.each(&b) }.to yield_control
+      expect {|b| @c.each(&b) }.to yield_control
     end
 
     it 'yields the expected number of times' do
@@ -71,6 +71,10 @@ describe CR::Calendar do
     it 'yields calendar day instances' do
       expected_class = Array.new(day_count, CR::Day)
       expect {|b| @c.each(&b) }.to yield_successive_args(*expected_class)
+    end
+
+    it 'returns Enumerator if called without a block' do
+      expect(@c.each).to be_a Enumerator
     end
   end
 

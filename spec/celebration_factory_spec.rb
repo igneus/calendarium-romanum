@@ -24,6 +24,10 @@ describe CR::Temporale::CelebrationFactory do
         expect(c).to be_a CR::Celebration
       end
     end
+
+    it 'returns Enumerator if called without a block' do
+      expect(described_class.each).to be_a Enumerator
+    end
   end
 
   describe 'celebration titles are properly translated' do

@@ -127,6 +127,8 @@ module CalendariumRomanum
     end
 
     def each
+      return to_enum(__method__) unless block_given?
+
       (temporale.start_date..temporale.end_date)
         .each { |date| yield(day(date)) }
     end
