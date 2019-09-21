@@ -4,7 +4,7 @@ dist: trusty
 
 rvm:
   - 2.0.0
-  - 2.5.0
+  - 2.6.4
   - jruby-9.1.12.0
 
 install: bundle install --jobs=3 --deployment --without development
