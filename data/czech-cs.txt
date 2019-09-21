@@ -190,7 +190,7 @@ country: cz
 19 R januarius : Sv. Januária, biskupa a mučedníka
 20 m R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
 21 f R matthew : Sv. Matouše, apoštola a evangelisty
-23 padre_pio : Sv. Pia z Pietrelciny, kněze
+23 m padre_pio : Sv. Pia z Pietrelciny, kněze
 26 R cosmas_damian : Sv. Kosmy a Damiána, mučedníků
 27 m vincent_de_paul : Sv. Vincence z Paula, kněze
 28 s1.4 R wenceslaus : Sv. Václava, mučedníka, hlavního patrona českého národa
