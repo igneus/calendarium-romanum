@@ -4,10 +4,12 @@ describe CR::Sanctorale do
   let(:s) { described_class.new }
 
   # example celebrations
-  let(:antonius) { CR::Celebration.new('S. Antonii, abbatis', CR::Ranks::MEMORIAL_GENERAL) }
-  let(:opt_memorial) { CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_OPTIONAL) }
-  let(:opt_memorial_2) { CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_OPTIONAL) }
-  let(:solemnity) { CR::Celebration.new('S. Nullius', CR::Ranks::SOLEMNITY_PROPER) }
+  let(:antonius) { CR::Celebration.new('S. Antonii, abbatis', CR::Ranks::MEMORIAL_GENERAL, CR::Colours::WHITE, :antonius) }
+  let(:nullus) { CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_OPTIONAL, CR::Colours::WHITE, :nullus) }
+  let(:ignotus) { CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_OPTIONAL, CR::Colours::WHITE, :ignotus) }
+  let(:opt_memorial) { nullus }
+  let(:opt_memorial_2) { ignotus }
+  let(:solemnity) { CR::Celebration.new('S. Nullius', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE, :nullus_solemnity) }
 
   describe '#get' do
     describe 'for an empty day' do
@@ -59,6 +61,14 @@ describe CR::Sanctorale do
 
     it 'does not add non-solemnity to solemnities' do
       expect { s.add 1, 13, opt_memorial }.not_to change { s.solemnities.size }
+    end
+
+    it 'fails when adding second celebration with the same symbol' do
+      s.add 1, 13, antonius
+
+      expect do
+        s.add 1, 14, antonius
+      end.to raise_exception ArgumentError, /duplicate symbol :antonius/
     end
 
     describe 'multiple celebrations on a single day' do
@@ -129,6 +139,37 @@ describe CR::Sanctorale do
       array << nil
 
       expect(s.get(1, 13)).not_to include nil
+    end
+
+    describe 'duplicate symbol handling' do
+      it 'fails when adding second celebration with the same symbol' do
+        s.replace 1, 13, [nullus]
+
+        expect do
+          s.replace 1, 14, [nullus]
+        end.to raise_exception ArgumentError, /duplicate symbols \[:nullus\]/
+      end
+
+      it 'failed attempts do not modify state of the internal symbol set' do
+        s.replace 1, 14, [nullus]
+        s.replace 1, 15, [ignotus]
+
+        expect do
+          s.replace 1, 14, [ignotus]
+        end.to raise_exception ArgumentError, /duplicate symbols \[:ignotus\]/
+
+        expect do
+          s.replace 1, 15, [nullus]
+        end.to raise_exception ArgumentError, /duplicate symbols \[:nullus\]/
+      end
+
+      it 'succeeds when celebration with the same symbol is being replaced' do
+        s.replace 1, 13, [nullus]
+
+        expect do
+          s.replace 1, 13, [nullus]
+        end.not_to raise_exception
+      end
     end
   end
 

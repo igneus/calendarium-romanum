@@ -1,3 +1,5 @@
+require 'set'
+
 module CalendariumRomanum
 
   # knows the fixed-date celebrations
@@ -5,8 +7,8 @@ module CalendariumRomanum
 
     def initialize
       @days = {}
-
       @solemnities = {}
+      @symbols = Set.new
     end
 
     attr_reader :solemnities
@@ -23,6 +25,14 @@ module CalendariumRomanum
         end
       end
 
+      unless celebration.symbol.nil?
+        if @symbols.include? celebration.symbol
+          raise ArgumentError.new("Attempted to add Celebration with duplicate symbol #{celebration.symbol.inspect}")
+        end
+
+        @symbols << celebration.symbol
+      end
+
       unless @days.has_key? date
         @days[date] = []
       end
@@ -37,6 +47,21 @@ module CalendariumRomanum
     # replaces content of the given day by given celebrations
     def replace(month, day, celebrations)
       date = AbstractDate.new(month, day)
+
+      symbols_without_day = @symbols
+      unless @days[date].nil?
+        old_symbols = @days[date].collect(&:symbol).compact
+        symbols_without_day = @symbols - old_symbols
+      end
+
+      new_symbols = celebrations.collect(&:symbol).compact
+      duplicate = symbols_without_day.intersection new_symbols
+      unless duplicate.empty?
+        raise ArgumentError.new("Attempted to add Celebrations with duplicate symbols #{duplicate.to_a.inspect}")
+      end
+
+      @symbols = symbols_without_day
+      @symbols.merge new_symbols
 
       if celebrations.first.solemnity?
         @solemnities[date] = celebrations.first
