@@ -63,22 +63,25 @@ describe CR::Sanctorale do
 
     describe 'multiple celebrations on a single day' do
       it 'succeeds for any number of optional memorials' do
+        s.add 1, 13, opt_memorial
+
         expect do
-          s.add 1, 13, opt_memorial
           s.add 1, 13, opt_memorial_2
         end.not_to raise_exception
       end
 
       it 'fails when adding a non-optional memorial' do
+        s.add 1, 13, opt_memorial
+
         expect do
-          s.add 1, 13, opt_memorial
           s.add 1, 13, CR::Celebration.new('S. Ignoti', CR::Ranks::MEMORIAL_GENERAL)
         end.to raise_exception ArgumentError
       end
 
       it 'fails when adding to a non-optional memorial' do
+        s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_GENERAL)
+
         expect do
-          s.add 1, 13, CR::Celebration.new('S. Nullius', CR::Ranks::MEMORIAL_GENERAL)
           s.add 1, 13, opt_memorial_2
         end.to raise_exception ArgumentError
       end
