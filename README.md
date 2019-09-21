@@ -85,7 +85,7 @@ The easiest way to obtain calendar entry of a liturgical day:
 I18n.locale = :en # set locale
 
 # build calendar
-pcal = CR::PerpetualCalendar.new(
+pcal = CalendariumRomanum::PerpetualCalendar.new(
   sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load
 )
 
@@ -148,11 +148,18 @@ day = calendar[date]
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000027d9590 @title="Friday, 20th week in Ordinary Time", @rank=#<CalendariumRomanum::Rank:0x000000029e1108 @priority=3.13, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f68 @symbol=:green>>, #<CalendariumRomanum::Celebration:0x000000029c96c0 @title="Saint John Eudes, priest", @rank=#<CalendariumRomanum::Rank:0x000000029e1180 @priority=3.12, ... >, @colour=#<CalendariumRomanum::Colour:0x000000029e1f18 @symbol=:white>>]
 ```
 
-(Note how we saved some typing by defining new constant `CR`
-referencing the `CalendariumRomanum` module.)
-
 Unless a sanctorale is loaded, `Calendar` only counts with
 temporale feasts, Sundays and ferials.
+
+Note how we saved some typing by defining new constant `CR`
+referencing the `CalendariumRomanum` module.
+In fact you can save even more typing by replacing
+`require 'calendarium-romanum'`
+by
+`require 'calendarium-romanum/cr'`
+which loads the gem *and* defines the `CR` shortcut for you.
+Following examples expect the `CR` constant to be defined
+and reference the `CalendariumRomanum` module.
 
 ### 4. Isn't there an easier way to get sanctorale data?
 
@@ -163,7 +170,6 @@ constants, e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
 Bundled data files can be loaded by a handy shortcut method `#load`:
 
 ```ruby
-CR = CalendariumRomanum
 sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load # easy loading
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
@@ -177,7 +183,6 @@ Calling `Calendar#[]` with a date out of the year's range
 results in a `RangeError`:
 
 ```ruby
-CR = CalendariumRomanum
 calendar = CR::Calendar.new(2000)
 begin
   day = calendar[Date.new(2000, 1, 1)]
@@ -205,7 +210,6 @@ years altogether, possibly picking days across multiple years.
 The best tool for such use cases is `PerpetualCalendar`.
 
 ```ruby
-CR = CalendariumRomanum
 pcal = CR::PerpetualCalendar.new
 
 # get days
@@ -224,8 +228,6 @@ configuration which is then applied on the `Calendar`s
 being created:
 
 ```ruby
-CR = CalendariumRomanum
-
 pcal = CR::PerpetualCalendar.new(
   # Sanctorale instance
   sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load,
@@ -256,7 +258,6 @@ your own cache (a `Hash` or anything with hash-like interface)
 and implement some kind of cache size limiting.
 
 ```ruby
-CR = CalendariumRomanum
 my_cache = {}
 pcal = CR::PerpetualCalendar.new(cache: my_cache)
 ```
@@ -333,8 +334,6 @@ can be transferred to a Sunday.
 solemnities, but it has an option to enable the transfer:
 
 ```ruby
-CR = CalendariumRomanum
-
 # transfer all three to Sunday
 temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, :corpus_christi])
 ```
@@ -345,8 +344,6 @@ a `Calendar`. In order to create a `Calendar` with non-default
 as third argument to the constructor.
 
 ```ruby
-CR = CalendariumRomanum
-
 year = 2000
 sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
 temporale = CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
@@ -369,8 +366,6 @@ it is necessary, apart of loading the sanctorale data,
 to provide a `Temporale` instance with the extension applied:
 
 ```ruby
-CR = CalendariumRomanum
-
 year = 2016
 sanctorale = CR::Data::CZECH.load
 temporale =
@@ -401,8 +396,6 @@ a class or module defining `each_celebration` as class/module method
 is a convenient choice.
 
 ```ruby
-CR = CalendariumRomanum
-
 module MyExtension
   # yields celebrations defined by the extension
   def self.each_celebration
