@@ -82,6 +82,7 @@ locale: en
 25 de_pazzi : Saint Mary Magdalene de Pazzi, virgin
 26 m neri : Saint Philip Neri, priest
 27 augustine_of_canterbury : Saint Augustine (Austin) of Canterbury, bishop
+29 paul_vi : Saint Paul VI, pope
 31 f visitation : Visitation of the Blessed Virgin Mary
 
 = 6

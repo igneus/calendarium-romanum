@@ -82,6 +82,7 @@ locale: es
 25 de_pazzi : Santa María Magdalena de Pazzi, Virgen
 26 m neri : San Felipe Neri, Presbítero
 27 augustine_of_canterbury : San Agustín de Canterbury, Obispo
+29 paul_vi : San Pablo VI, Papa
 31 f visitation : Visitación de la Santísima Virgen María a Santa Isabel
 
 = 6

@@ -82,6 +82,7 @@ locale: la
 25 de_pazzi : S. Mariae Magdalenae de' Pazzi, virginis
 26 m neri :  S. Philippi Neri, presbyteri
 27 augustine_of_canterbury : S. Augustini Cantuarensis, episcopi
+29 paul_vi : S. Pauli VI, papae
 31 f visitation :  In Visitatione B. Mariae Virginis
 
 = 6

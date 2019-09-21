@@ -90,6 +90,7 @@ country: cz
 25 de_pazzi : Sv. Marie Magdalény de 'Pazzi, panny
 26 m neri : Sv. Filipa Neriho, kněze
 27 augustine_of_canterbury : Sv. Augustina z Canterbury, biskupa
+29 paul_vi : Sv. Pavla VI., papeže
 30 zdislava : Sv. Zdislavy
 31 f visitation : Navštívení Panny Marie
 

@@ -82,6 +82,7 @@ locale: fr
 25 de_pazzi : Sainte Marie-Madeleine de Pazzi, vierge
 26 m neri : Saint Philippe Néri, prêtre
 27 augustine_of_canterbury : Saint Augustin de Cantorbéry, évêque
+29 paul_vi : Saint Paul VI, pape
 31 f visitation : Visitation de la Bienheureuse Vierge Marie
 
 = 6

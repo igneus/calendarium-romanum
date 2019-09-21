@@ -81,6 +81,7 @@ locale: it
 25 de_pazzi : Santa Maria Maddalena de' Pazzi, vergine
 26 m neri : San Filippo Neri, sacerdote
 27 augustine_of_canterbury : Sant'Agostino di Canterbury, vescovo
+29 paul_vi : San Paolo VI, papa
 31 f visitation : Visitazione della Beata Vergine Maria
 
 = 6
