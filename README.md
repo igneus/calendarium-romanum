@@ -472,7 +472,7 @@ then execute tests with
 See also `.travis.yml` for comprehensive tests run on the CI.
 
 [awesomecc]: https://github.com/calendarium-romanum/awesome-church-calendar
-[gnlyc]: https://www.ewtn.com/library/CURIA/CDWLITYR.HTM
+[gnlyc]: https://www.ewtn.com/catholicism/library/liturgical-year-2193
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
 [module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
