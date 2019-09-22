@@ -3,4 +3,7 @@
 require 'calendarium-romanum'
 require 'calendarium-romanum/cli'
 
+# Don't warn about enforcing locales in the CLI.
+I18n.config.enforce_available_locales = true
+
 CalendariumRomanum::CLI.start ARGV
