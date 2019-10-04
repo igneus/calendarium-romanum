@@ -24,4 +24,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'roman-numerals', '~> 0.3'
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'rspec', '~> 3.5'
+  s.add_development_dependency 'aruba', '~> 0.8'
+  # We don't use cucumber, but it is required by aruba
+  # and cucumber >= 3.0.0 requires ruby >= 2.1,
+  # but we want the tests to pass on ruby 2.0 as earliest target
+  s.add_development_dependency 'cucumber', '~>2.99'
+  s.add_development_dependency 'simplecov', '~> 0.12'
+  s.add_development_dependency 'rubocop', '~> 0.46'
 end
