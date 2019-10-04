@@ -131,10 +131,13 @@ module CalendariumRomanum
 
       rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size }.max
       day.celebrations.each do |c|
-        next if c.rank.short_desc.nil?
-        print c.rank.short_desc.rjust(rank_length)
-        print ' : '
-        puts c.title
+        if [Ranks::PRIMARY, Ranks::TRIDUUM].include? c.rank
+          puts c.title
+        elsif !c.rank.short_desc.nil?
+          print c.rank.short_desc.rjust(rank_length)
+          print ' : '
+          puts c.title
+        end
       end
     end
 

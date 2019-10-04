@@ -142,6 +142,13 @@ describe CalendariumRomanum::CLI, type: :aruba do
         it { expect(all_output).to include 'Saint Paul of the Cross, priest' }
         it { expect(last_command).to be_successfully_executed }
       end
+
+      describe 'prints primary celebrations' do
+        before(:each) { run 'calendariumrom query 2018-12-25' }
+
+        it { expect(all_output).to include "2018-12-25\nseason: Christmas Season\n\nChristmas" }
+        it { expect(last_command).to be_successfully_executed }
+      end
     end
 
     describe 'calendars' do
