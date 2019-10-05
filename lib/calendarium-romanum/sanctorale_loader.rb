@@ -1,27 +1,21 @@
 module CalendariumRomanum
 
-  # Understands a plaintext calendar format
-  # and knows how to transform it to Celebrations
-  # and fill them in a Sanctorale.
+  # Understands a custom plaintext calendar format
+  # and knows how to transform it to {Celebration}s
+  # and fill them in a {Sanctorale}.
   #
-  # Format of the file:
-  # <month>/<day> <rank> <colour> <symbol> : <title>
-  #
-  # e.g.:
-  # 1/31 m W bosco : S. Ioannis Bosco, presbyteri
-  #
-  # rank, colour and symbol are optional.
-  # Default rank is optional memorial,
-  # default colour white,
-  # symbol will be nil if not specified.
+  # For specification of the data format see {file:data/README.md}
   class SanctoraleLoader
 
+    # @api private
     RANK_CODES = {
       nil => Ranks::MEMORIAL_OPTIONAL, # default
       'm' => Ranks::MEMORIAL_GENERAL,
       'f' => Ranks::FEAST_GENERAL,
       's' => Ranks::SOLEMNITY_GENERAL
     }.freeze
+
+    # @api private
     COLOUR_CODES = {
       nil => Colours::WHITE, # default
       'w' => Colours::WHITE,
@@ -30,8 +24,15 @@ module CalendariumRomanum
       'r' => Colours::RED
     }.freeze
 
-    # dest should be a Sanctorale,
-    # src anything with #each_line
+    # Load from an object which understands +#each_line+
+    #
+    # @param src [String, File, #each_line]
+    #   source of the loaded data
+    # @param dest [Sanctorale, nil]
+    #   objects to populate. If not provided, a new {Sanctorale}
+    #   instance will be created
+    # @return [Sanctorale]
+    # @raise [InvalidDataError]
     def load(src, dest = nil)
       dest ||= Sanctorale.new
 
@@ -83,6 +84,13 @@ module CalendariumRomanum
 
     alias load_from_string load
 
+    # Load from a filesystem path
+    #
+    # @param filename [String]
+    # @param dest [Sanctorale, nil]
+    # @param encoding [String]
+    # @return (see #load)
+    # @raise (see #load)
     def load_from_file(filename, dest = nil, encoding = 'utf-8')
       load File.open(filename, 'r', encoding: encoding), dest
     end

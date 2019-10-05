@@ -1,7 +1,20 @@
 module CalendariumRomanum
 
-  # Resolves transfers of solemnities.
+  # {Calendar} component.
+  # Resolves transfers of conflicting solemnities.
+  #
+  # For any day {Temporale} has a {Celebration}.
+  # Often {Sanctorale} has one (or more), too.
+  # {Calendar} handles these conflicts, in most cases
+  # by throwing away all the proposed {Celebration}s except
+  # of the one of highest rank.
+  # But when there are two conflicting _solemnities_,
+  # one is celebrated on the given day and the less lucky one
+  # must be transferred to another day.
+  # However, not all days are valid as targets of solemnity transfer.
   class Transfers
+    # @param temporale [Temporale]
+    # @param sanctorale [Sanctorale]
     def initialize(temporale, sanctorale)
       @transferred = {}
       @temporale = temporale
@@ -28,6 +41,10 @@ module CalendariumRomanum
       end
     end
 
+    # Retrieve solemnity for the specified day
+    #
+    # @param date [Date]
+    # @return [Celebration, null]
     def get(date)
       @transferred[date]
     end

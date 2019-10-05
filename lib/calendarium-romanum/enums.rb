@@ -32,7 +32,7 @@ module CalendariumRomanum
     end
   end
 
-  # Standard set of (Roman) liturgical colours
+  # Standard set of liturgical colours
   class Colours < Enum
     GREEN = Colour.new(:green)
     VIOLET = Colour.new(:violet)
@@ -52,30 +52,46 @@ module CalendariumRomanum
   # Convenience alias (American English spelling)
   Colors = Colours
 
+  # Liturgical season
   class Season
     include ValueObjectInterface
 
+    # @param symbol [Symbol] internal identifier
+    # @param colour [Colour]
+    #   liturgical colour of the season's Sundays and ferials
     def initialize(symbol, colour)
       @symbol = symbol
       @colour = colour
       @i18n_key = "temporale.season.#{@symbol}"
     end
 
+    # Liturgical colour of the season's Sundays and ferials
+    #
+    # @return [Colour]
     attr_reader :colour
   end
 
+  # Standard set of liturgical seasons
   class Seasons < Enum
+    ADVENT = Season.new(:advent, Colours::VIOLET)
+    CHRISTMAS = Season.new(:christmas, Colours::WHITE)
+    LENT = Season.new(:lent, Colours::VIOLET)
+    EASTER = Season.new(:easter, Colours::WHITE)
+    ORDINARY = Season.new(:ordinary, Colours::GREEN)
+
     values(index_by: :symbol) do
       [
-        ADVENT = Season.new(:advent, Colours::VIOLET),
-        CHRISTMAS = Season.new(:christmas, Colours::WHITE),
-        LENT = Season.new(:lent, Colours::VIOLET),
-        EASTER = Season.new(:easter, Colours::WHITE),
-        ORDINARY = Season.new(:ordinary, Colours::GREEN)
+        ADVENT,
+        CHRISTMAS,
+        LENT,
+        EASTER,
+        ORDINARY,
       ]
     end
   end
 
+  # Sunday lectionary cycles.
+  # Values returned by {Calendar#lectionary}
   LECTIONARY_CYCLES = [:A, :B, :C].freeze
 
   # Celebration ranks as specified in the Table of Liturgical Days

@@ -167,7 +167,11 @@ module CalendariumRomanum
     attr_reader :symbol
 
     # Usual date of the celebration.
+    #
     # Only set for celebrations with fixed date.
+    # (Only) In case of solemnities it may happen that
+    # {Celebration#date} differs from {Day#date} due to
+    # transfer of an impeded solemnity.
     #
     # @return [AbstractDate, nil]
     attr_reader :date

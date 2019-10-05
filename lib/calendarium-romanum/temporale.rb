@@ -2,15 +2,26 @@ require 'date'
 
 module CalendariumRomanum
 
-  # determine seasons and dates of Temporale feasts of the given year
+  # One of the two main {Calendar} components.
+  # Handles seasons and celebrations of the temporale cycle
+  # for a given liturgical year.
   class Temporale
 
+    # How many days in a week
     WEEK = 7
 
+    # Which solemnities can be transferred to Sunday
     SUNDAY_TRANSFERABLE_SOLEMNITIES =
       %i(epiphany ascension corpus_christi).freeze
 
-    # year is Integer - the civil year when the liturgical year begins
+    # @param year [Fixnum]
+    #   the civil year when the liturgical year _begins_
+    # @param extensions [Array<#each_celebration>]
+    #   extensions implementing custom temporale celebrations
+    # @param transfer_to_sunday [Array<Symbol>]
+    #   which solemnities should be transferred to a nearby
+    #   Sunday - see {SUNDAY_TRANSFERABLE_SOLEMNITIES}
+    #   for possible values
     def initialize(year, extensions: [], transfer_to_sunday: [])
       @year = year
 
@@ -21,10 +32,14 @@ module CalendariumRomanum
       prepare_solemnities
     end
 
+    # @return [Fixnum]
     attr_reader :year
 
     class << self
       # Determines liturgical year for the given date
+      #
+      # @param date [Date]
+      # @return [Fixnum]
       def liturgical_year(date)
         year = date.year
         temporale = Temporale.new year
@@ -36,14 +51,19 @@ module CalendariumRomanum
         year
       end
 
-      # creates a Calendar for the liturgical year including given
+      # Creates an instance for the liturgical year including given
       # date
+      #
+      # @param date [Date]
+      # @return [Temporale]
       def for_day(date)
         new(liturgical_year(date))
       end
 
-      # factory method creating temporale celebrations
+      # Factory method creating temporale {Celebration}s
       # with sensible defaults
+      #
+      # See {Celebration#initialize} for argument description.
       def create_celebration(title, rank, colour, symbol: nil, date: nil)
         Celebration.new(title, rank, colour, symbol, date, :temporale)
       end
@@ -51,7 +71,7 @@ module CalendariumRomanum
       C = Struct.new(:date_method, :celebration)
       private_constant :C
 
-      # implementation detail, not to be touched by client code
+      # @api private
       def celebrations
         @celebrations ||=
           begin
@@ -90,22 +110,41 @@ module CalendariumRomanum
       end
     end
 
+    # Does this instance transfer the specified solemnity to Sunday?
+    #
+    # @param solemnity [Symbol]
+    # @return [Boolean]
     def transferred_to_sunday?(solemnity)
       @transfer_to_sunday.include?(solemnity)
     end
 
+    # First day of the liturgical year
+    #
+    # @return [Date]
     def start_date
       first_advent_sunday
     end
 
+    # Last day of the liturgical year
+    #
+    # @return [Date]
     def end_date
       Dates.first_advent_sunday(year + 1) - 1
     end
 
+    # Date range of the liturgical year
+    #
+    # @return [Range<Date>]
     def date_range
       start_date .. end_date
     end
 
+    # Check that the date belongs to the liturgical year.
+    # If it does not, throw exception.
+    #
+    # @param date [Date]
+    # @return [void]
+    # @raise [RangeError]
     def range_check(date)
       # necessary in order to handle Date correctly
       date = date.to_date if date.class != Date
@@ -115,6 +154,44 @@ module CalendariumRomanum
       end
     end
 
+    # @!method nativity
+    #   @return [Date]
+    # @!method holy_family
+    #   @return [Date]
+    # @!method mother_of_god
+    #   @return [Date]
+    # @!method epiphany
+    #   @return [Date]
+    # @!method baptism_of_lord
+    #   @return [Date]
+    # @!method ash_wednesday
+    #   @return [Date]
+    # @!method good_friday
+    #   @return [Date]
+    # @!method holy_saturday
+    #   @return [Date]
+    # @!method palm_sunday
+    #   @return [Date]
+    # @!method easter_sunday
+    #   @return [Date]
+    # @!method ascension
+    #   @return [Date]
+    # @!method pentecost
+    #   @return [Date]
+    # @!method holy_trinity
+    #   @return [Date]
+    # @!method corpus_christi
+    #   @return [Date]
+    # @!method mother_of_church
+    #   @return [Date]
+    # @!method sacred_heart
+    #   @return [Date]
+    # @!method christ_king
+    #   @return [Date]
+    # @!method immaculate_heart
+    #   @return [Date]
+    # @!method first_advent_sunday
+    #   @return [Date]
     (celebrations.collect(&:date_method) + [:first_advent_sunday])
       .each do |feast|
       if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
@@ -132,7 +209,12 @@ module CalendariumRomanum
       end
     end
 
-    # which liturgical season is it?
+    # Determine liturgical season for a given date
+    #
+    # @param date [Date]
+    # @return [Season]
+    # @raise [RangeError]
+    #   if the given date doesn't belong to the liturgical year
     def season(date)
       range_check date
 
@@ -157,6 +239,10 @@ module CalendariumRomanum
       end
     end
 
+    # When the specified liturgical season begins
+    #
+    # @param s [Season]
+    # @return [Date]
     def season_beginning(s)
       case s
       when Seasons::ADVENT
@@ -174,6 +260,10 @@ module CalendariumRomanum
       end
     end
 
+    # Determine week of a season for a given date
+    #
+    # @param seasonn [Season]
+    # @param date [Date]
     def season_week(seasonn, date)
       week1_beginning = season_beginning = season_beginning(seasonn)
       unless season_beginning.sunday?
@@ -197,14 +287,22 @@ module CalendariumRomanum
       week
     end
 
+    # Retrieve temporale celebration for the given day
+    #
+    # @param date [Date]
+    # @return [Celebration]
     def [](date)
       @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
     end
 
-    # returns a Celebration
-    # scheduled for the given day
+    # Retrieve temporale celebration for the given day
     #
-    # expected arguments: Date or two Integers (month, day)
+    # @overload get(date)
+    #   @param date [Date]
+    # @overload get(month, day)
+    #   @param month [Fixnum]
+    #   @param day [Fixnum]
+    # @return (see #[])
     def get(*args)
       if args.size == 1 && args[0].is_a?(Date)
         date = args[0]
@@ -219,6 +317,7 @@ module CalendariumRomanum
       self[date]
     end
 
+    # @return [Boolean]
     def ==(b)
       self.class == b.class &&
         year == b.year &&

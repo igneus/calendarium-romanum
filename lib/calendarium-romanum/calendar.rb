@@ -5,6 +5,9 @@ module CalendariumRomanum
 
   # Provides complete information concerning a liturgical year,
   # it's days and celebrations occurring on them.
+  #
+  # {Calendar}'s business logic is mostly about correctly combining
+  # information from {Temporale} and {Sanctorale}.
   class Calendar
     extend Forwardable
 
@@ -92,7 +95,7 @@ module CalendariumRomanum
     # @return [Temporale]
     attr_reader :temporale
 
-    # @return [Sanctorale, nil]
+    # @return [Sanctorale]
     attr_reader :sanctorale
 
     # Do {Day} instances returned by this +Calendar+

@@ -1,4 +1,4 @@
 module CalendariumRomanum
-  # Thrown on attempt to load invalid sanctorale data
+  # Thrown by {SanctoraleLoader} on attempt to load invalid data
   class InvalidDataError < RuntimeError; end
 end

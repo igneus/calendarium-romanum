@@ -2,7 +2,17 @@ require 'set'
 
 module CalendariumRomanum
 
-  # knows the fixed-date celebrations
+  # One of the two main {Calendar} components.
+  # Contains celebrations with fixed date, mostly feasts of saints.
+  #
+  # Basically a mapping {AbstractDate} => Array<{Celebration}>
+  # additionally enforcing some constraints:
+  #
+  # - for a given {AbstractDate} there may be multiple {Celebration}s,
+  #   but only if all of them are in the rank of an optional
+  #   memorial
+  # - {Celebration#symbol} must be unique in the whole set of
+  #   contained celebrations
   class Sanctorale
 
     def initialize
@@ -11,8 +21,19 @@ module CalendariumRomanum
       @symbols = Set.new
     end
 
+    # Content subset - only {Celebration}s in the rank(s) of solemnity.
+    #
+    # @return [Hash<AbstractDate=>Celebration>]
     attr_reader :solemnities
 
+    # Adds a new {Celebration}
+    #
+    # @param month [Fixnum]
+    # @param day [Fixnum]
+    # @param celebration [Celebration]
+    # @return [void]
+    # @raise [ArgumentError]
+    #   when performing the operation would break the object's invariant
     def add(month, day, celebration)
       date = AbstractDate.new(month, day)
 
@@ -44,7 +65,14 @@ module CalendariumRomanum
       @days[date] << celebration
     end
 
-    # replaces content of the given day by given celebrations
+    # Replaces content of the given day by given {Celebration}s
+    #
+    # @param month [Fixnum]
+    # @param day [Fixnum]
+    # @param celebrations [Array<Celebration>]
+    # @return [void]
+    # @raise [ArgumentError]
+    #   when performing the operation would break the object's invariant
     def replace(month, day, celebrations)
       date = AbstractDate.new(month, day)
 
@@ -72,22 +100,37 @@ module CalendariumRomanum
       @days[date] = celebrations.dup
     end
 
-    # adds all Celebrations from another instance
-    def update(sanctorale)
-      sanctorale.each_day do |date, celebrations|
+    # Updates the receiver with {Celebration}s from another instance.
+    #
+    # For each date contained in +other+ the content of +self+
+    # is _replaced_ by that of +other+.
+    #
+    # @param other [Sanctorale]
+    # @return [void]
+    # @raise (see #replace)
+    def update(other)
+      other.each_day do |date, celebrations|
         replace date.month, date.day, celebrations
       end
     end
 
+    # Retrieves {Celebration}s for the given date
+    #
+    # @param date [AbstractDate, Date]
+    # @return [Array<Celebration>] (may be empty)
     def [](date)
       adate = date.is_a?(AbstractDate) ? date : AbstractDate.from_date(date)
       @days[adate] || []
     end
 
-    # returns an Array with one or more Celebrations
-    # scheduled for the given day
+    # Retrieves {Celebration}s for the given date
     #
-    # expected arguments: Date or two Integers (month, day)
+    # @overload get(date)
+    #   @param date[AbstractDate, Date]
+    # @overload get(month, day)
+    #   @param month [Fixnum]
+    #   @param day [Fixnum]
+    # @return (see #[])
     def get(*args)
       if args.size == 1 && args[0].is_a?(Date)
         month = args[0].month
@@ -100,8 +143,10 @@ module CalendariumRomanum
       self[date]
     end
 
-    # for each day for which an entry is available
-    # yields an AbstractDate and an Array of Celebrations
+    # Enumerates dates for which any {Celebration}s are available
+    #
+    # @yield [AbstractDate, Array<Celebration>] the array is never empty
+    # @return [void, Enumerator] if called without a block, returns +Enumerator+
     def each_day
       return to_enum(__method__) unless block_given?
 
@@ -110,15 +155,21 @@ module CalendariumRomanum
       end
     end
 
-    # returns count of the _days_ with celebrations filled
+    # Returns count of _days_ with {Celebration}s filled
+    #
+    # @return [Fixnum]
     def size
       @days.size
     end
 
+    # It is empty if it doesn't contain any {Celebration}
+    #
+    # @return [Boolean]
     def empty?
       @days.empty?
     end
 
+    # Freezes the instance
     def freeze
       @days.freeze
       @days.values.each(&:freeze)
@@ -126,6 +177,7 @@ module CalendariumRomanum
       super
     end
 
+    # @return [Boolean]
     def ==(b)
       self.class == b.class &&
         days == b.days
