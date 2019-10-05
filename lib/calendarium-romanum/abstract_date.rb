@@ -4,12 +4,20 @@ module CalendariumRomanum
   class AbstractDate
     include Comparable
 
+    # @param month [Fixnum]
+    # @param day [Fixnum]
+    # @raise [RangeError] on invalid +month+/+day+ value
     def initialize(month, day)
       validate! month, day
       @month = month
       @day = day
     end
 
+    # Build a new instance from a +Date+ (or an object with
+    # similar public interface).
+    #
+    # @param date [Date]
+    # @return [AbstractDate]
     def self.from_date(date)
       new(date.month, date.day)
     end
@@ -32,6 +40,10 @@ module CalendariumRomanum
       month == other.month && day == other.day
     end
 
+    # Produce a +Date+ by providing a year to an +AbstractDate+
+    #
+    # @param year [Fixnum]
+    # @return [Date]
     def concretize(year)
       Date.new(year, month, day)
     end

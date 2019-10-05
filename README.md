@@ -438,6 +438,31 @@ temporale = CR::Temporale.new(2016, extensions: [MyExtension])
 temporale[Date.new(2017, 11, 25)] # => #<CalendariumRomanum::Celebration:0x0000000246fd78 @title="My Feast", @rank=#<CalendariumRomanum::Rank:0x000000019c27e0 @priority=2.8, ... >, @colour=#<CalendariumRomanum::Colour:0x000000019c31e0 @symbol=:white>>
 ```
 
+## Internationalization internals
+
+It was already mentioned earlier in this document that
+for internationalization of temporale feast names and
+other "built-in strings"
+`calendarium-romanum` relies upon the `i18n` gem.
+Some internal details may be worth a mention:
+
+On `require 'calendarium-romanum'`, paths of a few translation
+files bundled in the gem are added to `I18n.config.load_path`.
+While otherwise we avoid poluting or modifying the environment
+outside the gem's own scope, in this case we exceptionally
+modify global configuration in order to make the internationalization
+easily and conveniently work.
+If your application requires `calendarium-romanum` to handle
+languages not bundled in the gem, or if you don't like the default
+translations, just prepare a [translation file](/config/locales),
+put it anywhere in your project's tree
+and add it's path to `I18n.config.load_path`.
+If, on the other hand, even the officially supported languages
+don't work for you, check if paths to the gem's translation files
+are present in `I18n.config.load_path` and possibly search your
+application (and it's other dependencies) for code which kicked
+them out.
+
 ## Executable
 
 This gem provides an executable, `calendariumrom`.
@@ -447,7 +472,11 @@ from the command line and to check validity of sanctorale data files.
 ### 1. Query liturgical calendar from the command line
 
  - `calendariumrom query --calendar universal-fr 2007-06-25` queries a non-default (French) calendar for any given date. `--calendar` can be omitted, the default calendar (`universal-en`) is used then. The date can be omitted as well, `calendariumrom` will query the current date, then. Please note that the date has to be in format `YYYY-MM-DD` or `YYYY/MM/DD`. If the day, or even the month is omitted, `query` will query a whole month, or even a whole year. The specified calendar has to be one in the resulting list of the `calendarium calendars` command, or a valid filesystem path.
- - `calendariumrom calendars` will list all available data files known to calendarium-romanum. 
+ - `calendariumrom calendars` will list all available data files known to calendarium-romanum.
+
+Tip: `calendariumrom query` is a rather bare-bones calendar querying
+tool. Check out the [`calrom`][calrom] gem for a more feature-rich
+liturgical calendar for your command line.
 
 ### 2. Check sanctorale data files
 
@@ -476,3 +505,4 @@ See also `.travis.yml` for comprehensive tests run on the CI.
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
 [module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
+[calrom]: https://github.com/calendarium-romanum/calrom

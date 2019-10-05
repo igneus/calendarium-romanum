@@ -2,6 +2,10 @@ require 'thor'
 
 module CalendariumRomanum
 
+  # Implementation of the +calendariumrom+ executable.
+  # Not loaded by default.
+  #
+  # @api private
   class CLI < Thor
     include CalendariumRomanum::Util
 

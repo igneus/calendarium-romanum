@@ -11,9 +11,21 @@ module CalendariumRomanum
     # Day when the implemented calendar system became effective
     EFFECTIVE_FROM = Date.new(1970, 1, 1).freeze
 
-    # year: Integer
-    # returns a calendar for the liturgical year beginning with
+    # Returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
+    #
+    # @param year [Fixnum]
+    #   Civil year when the liturgical year begins.
+    # @param sanctorale [Sanctorale, nil]
+    #   If not provided, the +Calendar+ will only know celebrations
+    #   of the temporale cycle, no feasts of the saints!
+    # @param temporale [Temporale, nil]
+    #   If not provided, +Temporale+ for the given year with default
+    #   configuration will built.
+    # @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
+    # @raise [RangeError]
+    #   if +year+ is specified for which the implemented calendar
+    #   system wasn't in force
     def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
@@ -32,6 +44,7 @@ module CalendariumRomanum
     end
 
     class << self
+      # @api private
       def mk_date(*args)
         ex = TypeError.new('Date, DateTime or three Integers expected')
 
@@ -51,23 +64,44 @@ module CalendariumRomanum
         end
       end
 
-      # creates a Calendar for the liturgical year including given
-      # date
+      # Creates a +Calendar+ for the liturgical year which includes
+      # given date
+      #
+      # @param date [Date]
+      # @param *constructor_args
+      #   arguments that will be passed to {initialize}
+      # @return [Calendar]
       def for_day(date, *constructor_args)
         new(Temporale.liturgical_year(date), *constructor_args)
       end
     end # class << self
 
+    # @!method range_check
+    #   see {Temporale#range_check}
+    #   @param date
+    #   @return [void]
+    # @!method season
+    #   see {Temporale#season}
+    #   @param date
+    #   @return [Season]
     def_delegators :@temporale, :range_check, :season
+
+    # @return [Fixnum]
     attr_reader :year
+
+    # @return [Temporale]
     attr_reader :temporale
+
+    # @return [Sanctorale, nil]
     attr_reader :sanctorale
 
+    # Do {Day} instances returned by this +Calendar+
+    # have {Day#vespers} populated?
     def populates_vespers?
       @populate_vespers
     end
 
-    # Calendars are equal if they have equal settings
+    # Two +Calendar+s are equal if they have equal settings
     # (which means that to equal input they return equal data)
     def ==(b)
       b.class == self.class &&
@@ -77,18 +111,39 @@ module CalendariumRomanum
         sanctorale == b.sanctorale
     end
 
+    # Retrieve liturgical calendar information for the specified day
+    # or range of days.
+    #
+    # @overload [](date)
+    #   @param date [Date]
+    #   @return [Day]
+    # @overload [](range)
+    #   @param range [Range<Date>]
+    #   @return [Array<Day>]
     def [](args)
-      if(args.is_a?(Range))
-        args.map{|date| day(date)}
+      if args.is_a?(Range)
+        args.map {|date| day(date) }
       else
         day(args)
       end
     end
 
-    # accepts date information represented as
-    # Date, DateTime, or two to three integers
-    # (month - day or year - month - day);
-    # returns filled Day for the specified day
+    # Retrieve liturgical calendar information for the specified day
+    #
+    # @overload day(date, vespers: false)
+    #   @param date [Date]
+    # @overload day(year, month, day, vespers: false)
+    #   @param year [Fixnum]
+    #   @param month [Fixnum]
+    #   @param day [Fixnum]
+    # @param vespers [Boolean]
+    #   Set to +true+ in order to get {Day} with {Day#vespers}
+    #   populated (overrides instance-wide setting {#populates_vespers?}).
+    # @return [Day]
+    # @raise [RangeError]
+    #   If a date is specified on which the implemented calendar
+    #   system was not yet in force (it became effective during
+    #   the liturgical year 1969/1970)
     def day(*args, vespers: false)
       if args.size == 2
         date = Date.new(@year, *args)
@@ -126,6 +181,11 @@ module CalendariumRomanum
       )
     end
 
+    # Iterate over the whole liturgical year, day by day.
+    # If called without a block, returns +Enumerator+.
+    #
+    # @yield [Day]
+    # @return [void, Enumerator]
     def each
       return to_enum(__method__) unless block_given?
 
@@ -134,15 +194,26 @@ module CalendariumRomanum
     end
 
     # Sunday lectionary cycle
+    #
+    # @return [Symbol]
+    #   For possible values see {LECTIONARY_CYCLES}
     def lectionary
       LECTIONARY_CYCLES[@year % 3]
     end
 
     # Ferial lectionary cycle
+    #
+    # @return [1, 2]
     def ferial_lectionary
       @year % 2 + 1
     end
 
+    # Freezes the instance.
+    #
+    # *WARNING*: {Temporale} and {Sanctorale} instances passed
+    # to the +Calendar+ on initialization will be frozen, too!
+    # This is necessary, because a +Calendar+ would not really be
+    # frozen were it possible to mutate it's key components.
     def freeze
       @temporale.freeze
       @sanctorale.freeze

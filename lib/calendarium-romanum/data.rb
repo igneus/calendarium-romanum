@@ -1,8 +1,16 @@
 module CalendariumRomanum
-  # allows easy access to bundled data files
+  # Allows easy access to bundled data files
+  #
+  # @example
+  #   sanctorale = CalendariumRomanum::Data::GENERAL_ROMAN_LATIN.load
   class Data < Enum
 
     class SanctoraleFile
+      # This class is not intended to be initialized by client code -
+      # it's sole purpose is to provide functionality for easy
+      # loading of the bundled sanctorale data files.
+      #
+      # @api private
       def initialize(base_name)
         @siglum = base_name.sub(/\.txt$/, '')
         @path = File.expand_path('../../data/' + base_name, File.dirname(__FILE__))
@@ -10,20 +18,30 @@ module CalendariumRomanum
 
       attr_reader :siglum, :path
 
+      # Load the data file
+      #
+      # @return [Sanctorale]
       def load
         SanctoraleLoader.new.load_from_file(@path)
       end
     end
 
+    GENERAL_ROMAN_LATIN = SanctoraleFile.new('universal-la.txt')
+    GENERAL_ROMAN_ENGLISH = SanctoraleFile.new('universal-en.txt')
+    GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt')
+    GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt')
+    GENERAL_ROMAN_SPANISH = SanctoraleFile.new('universal-es.txt')
+    CZECH = SanctoraleFile.new('czech-cs.txt')
+
     values(index_by: :siglum) do
       # only calendars of broader interest have constants defined
       [
-        GENERAL_ROMAN_LATIN = SanctoraleFile.new('universal-la.txt'),
-        GENERAL_ROMAN_ENGLISH = SanctoraleFile.new('universal-en.txt'),
-        GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt'),
-        GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt'),
-        GENERAL_ROMAN_SPANISH = SanctoraleFile.new('universal-es.txt'),
-        CZECH = SanctoraleFile.new('czech-cs.txt')
+        GENERAL_ROMAN_LATIN,
+        GENERAL_ROMAN_ENGLISH,
+        GENERAL_ROMAN_FRENCH,
+        GENERAL_ROMAN_ITALIAN,
+        GENERAL_ROMAN_SPANISH,
+        CZECH,
       ] \
       +
         %w(

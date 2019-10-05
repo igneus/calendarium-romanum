@@ -1,9 +1,16 @@
 require 'roman-numerals'
 
 module CalendariumRomanum
-  # Knows how to produce localized ordinals
+  # Knows how to produce localized ordinals.
   class Ordinalizer
     class << self
+      # @param number [Fixnum] number to build ordinal for
+      # @param locale [Symbol,nil]
+      #   locale; +I18n.locale+ (i.e. the `i18n` gem's current locale)
+      #   is used if not provided
+      # @return [String, Fixnum]
+      #   ordinal, or unchanged +number+ if +Ordinalizer+ cannot
+      #   build ordinals for the given locale
       def ordinal(number, locale: nil)
         locale ||= I18n.locale
 

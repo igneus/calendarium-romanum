@@ -63,6 +63,7 @@ GEM
     simplecov-html (0.10.0)
     thor (0.18.1)
     unicode-display_width (1.1.2)
+    yard (0.9.16)
 
 PLATFORMS
   ruby
@@ -77,6 +78,7 @@ DEPENDENCIES
   rubocop
   simplecov
   thor
+  yard
 
 BUNDLED WITH
    1.13.6

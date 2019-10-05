@@ -1,11 +1,17 @@
 require 'forwardable'
 
 module CalendariumRomanum
-  # Utility class for definition of enumerated "types"
+  # Each subclass encapsulates a finite set of value objects.
+  #
+  # @abstract
   class Enum
     class << self
       extend Forwardable
 
+      # @api private
+      # @param index_by
+      #   specifies which value objects' property contains
+      #   unique internal identifier for use with {.[]}
       def values(index_by: nil)
         defined?(@indexed) && raise(RuntimeError.new('initialized repeatedly'))
 
@@ -22,9 +28,22 @@ module CalendariumRomanum
         @indexed.freeze
       end
 
+      # Returns all contained value objects
+      #
+      # @return Array
       attr_reader :all
 
+      # Enumerates contained value objects
+      #
+      # @!method each
       def_delegators :@all, :each
+
+      # Allows accessing contained value objects by their
+      # internal unique identifiers
+      #
+      # @!method []
+      #   @param identifier
+      #   @return value object
       def_delegators :@indexed, :[]
     end
   end

@@ -1,7 +1,30 @@
 module CalendariumRomanum
-  # When you want to query a calendar without caring about
-  # civil and liturgical years and Calendar instances
+  # Has mostly the same public interface as {Calendar},
+  # but represents a "perpetual" calendar, not a calendar
+  # for a single year, thus allowing the client code
+  # to query for liturgical data of any day, without bothering
+  # about boundaries of liturgical years.
+  #
+  # Internally builds {Calendar} instances as needed
+  # and delegates method calls to them.
   class PerpetualCalendar
+    # @param sanctorale [Sanctorale, nil]
+    # @param temporale_factory [Proc, nil]
+    #   +Proc+ receiving a single parameter - year - and returning
+    #   a {Temporale} instance.
+    # @param temporale_options [Hash, nil]
+    #   +Hash+ of arguments for {Temporale#initialize}.
+    #   +temporale_factory+ and +temporale_options+ are mutually
+    #   exclusive - pass either (or none) of them, never both.
+    # @param cache [Hash]
+    #   object to be used as internal cache of +Calendar+ instances -
+    #   anything exposing +#[]=+ and +#[]+ and "behaving mostly like
+    #   a +Hash+" will work.
+    #   Usually you only want to pass it if you want to have a control
+    #   over the cache, in order to prevent a long-lived
+    #   +PerpetualCalendar+ instance flooding the memory
+    #   by huge amount of {Calendar} instances.
+    #   (By default instances are cached forever.)
     def initialize(sanctorale: nil, temporale_factory: nil, temporale_options: nil, cache: {})
       if temporale_factory && temporale_options
         raise ArgumentError.new('Specify either temporale_factory or temporale_options, not both')
@@ -13,11 +36,14 @@ module CalendariumRomanum
       @cache = cache
     end
 
-    # returns a resolved Day
+    # @return [Day]
+    # @see Calendar#day
     def day(*args)
       calendar_for(*args).day(*args)
     end
 
+    # @return [Day, Array<Day>]
+    # @see Calendar#[]
     def [](arg)
       if arg.is_a? Range
         return arg.collect do |date|
@@ -28,15 +54,22 @@ module CalendariumRomanum
       day(arg)
     end
 
-    # returns a Calendar instance for the liturgical year containing
+    # Returns a {Calendar} instance for the liturgical year containing
     # the specified day
+    #
+    # Parameters like {Calendar#day}
+    #
+    # @return [Calendar]
     def calendar_for(*args)
       date = Calendar.mk_date(*args)
       year = Temporale.liturgical_year date
       calendar_instance year
     end
 
-    # returns a Calendar instance for the specified liturgical year
+    # Returns a Calendar instance for the specified liturgical year
+    #
+    # @param year [Fixnum]
+    # @return [Calendar]
     def calendar_for_year(year)
       calendar_instance year
     end
