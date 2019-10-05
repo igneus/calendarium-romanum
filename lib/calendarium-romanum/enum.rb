@@ -30,12 +30,14 @@ module CalendariumRomanum
 
       # Returns all contained value objects
       #
-      # @return Array
+      # @return [Array]
       attr_reader :all
 
       # Enumerates contained value objects
       #
       # @!method each
+      #   @yield value object
+      #   @return [void]
       def_delegators :@all, :each
 
       # Allows accessing contained value objects by their
@@ -43,7 +45,7 @@ module CalendariumRomanum
       #
       # @!method []
       #   @param identifier
-      #   @return value object
+      #   @return value object or nil
       def_delegators :@indexed, :[]
     end
   end

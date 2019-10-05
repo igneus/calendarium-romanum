@@ -1,6 +1,6 @@
 module CalendariumRomanum
 
-  # {Calendar} component.
+  # Internal {Calendar} component.
   # Resolves transfers of conflicting solemnities.
   #
   # For any day {Temporale} has a {Celebration}.
@@ -12,6 +12,8 @@ module CalendariumRomanum
   # one is celebrated on the given day and the less lucky one
   # must be transferred to another day.
   # However, not all days are valid as targets of solemnity transfer.
+  #
+  # @api private
   class Transfers
     # @param temporale [Temporale]
     # @param sanctorale [Sanctorale]
