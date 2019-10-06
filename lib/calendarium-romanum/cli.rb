@@ -3,7 +3,7 @@ require 'thor'
 module CalendariumRomanum
 
   # Implementation of the +calendariumrom+ executable.
-  # Not loaded by default.
+  # _Not_ loaded by default when you +require+ the gem.
   #
   # @api private
   class CLI < Thor

@@ -1,3 +1,9 @@
+# Module wrapping the gem's classes
+#
+# If you hate typing the long module name, see {CR}
+module CalendariumRomanum
+end
+
 %w(
   version
   i18n_setup
