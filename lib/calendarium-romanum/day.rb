@@ -63,6 +63,7 @@ module CalendariumRomanum
     # {Calendar#day}).
     #
     # @return [Celebration, nil]
+    # @since 0.5.0
     attr_reader :vespers
 
     def ==(other)
@@ -140,8 +141,10 @@ module CalendariumRomanum
     #   @return [Boolean]
     # @!method sunday?
     #   @return [Boolean]
+    #   @since 0.6.0
     # @!method ferial?
     #   @return [Boolean]
+    #   @since 0.6.0
     def_delegators :@rank, :solemnity?, :feast?, :memorial?, :sunday?, :ferial?
 
     # Feast title/name
@@ -164,6 +167,7 @@ module CalendariumRomanum
     # Symbol uniquely identifying the celebration
     #
     # @return [Symbol, nil]
+    # @since 0.5.0
     attr_reader :symbol
 
     # Usual date of the celebration.
@@ -174,12 +178,14 @@ module CalendariumRomanum
     # transfer of an impeded solemnity.
     #
     # @return [AbstractDate, nil]
+    # @since 0.6.0
     attr_reader :date
 
     # Describes the celebration as belonging either to the
     # temporale or sanctorale cycle
     #
     # @return [:sanctorale, :temporale]
+    # @since 0.6.0
     attr_reader :cycle
 
     def ==(b)
@@ -195,6 +201,7 @@ module CalendariumRomanum
     # Does the celebration belong to the temporale cycle?
     #
     # @return [Boolean]
+    # @since 0.6.0
     def temporale?
       cycle == :temporale
     end
@@ -202,6 +209,7 @@ module CalendariumRomanum
     # Does the celebration belong to the sanctorale cycle?
     #
     # @return [Boolean]
+    # @since 0.6.0
     def sanctorale?
       cycle == :sanctorale
     end
@@ -210,6 +218,7 @@ module CalendariumRomanum
     # for all properties for which (a non-nil) value was not passed.
     #
     # @return [Celebration]
+    # @since 0.5.0
     def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
       self.class.new(
         title || self.title,

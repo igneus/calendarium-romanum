@@ -100,6 +100,8 @@ module CalendariumRomanum
 
     # Do {Day} instances returned by this +Calendar+
     # have {Day#vespers} populated?
+    # @return [Boolean]
+    # @since 0.6.0
     def populates_vespers?
       @populate_vespers
     end
@@ -190,6 +192,7 @@ module CalendariumRomanum
     #
     # @yield [Day]
     # @return [void, Enumerator]
+    # @since 0.6.0
     def each
       return to_enum(__method__) unless block_given?
 

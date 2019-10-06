@@ -46,22 +46,29 @@ module CalendariumRomanum
       other.priority <=> priority
     end
 
+    # @return [Boolean]
     def solemnity?
       priority.to_i == 1
     end
 
+    # @return [Boolean]
+    # @since 0.6.0
     def sunday?
       self == Ranks::SUNDAY_UNPRIVILEGED
     end
 
+    # @return [Boolean]
     def feast?
       priority.to_i == 2
     end
 
+    # @return [Boolean]
     def memorial?
       priority.to_i == 3 && priority <= 3.12
     end
 
+    # @return [Boolean]
+    # @since 0.6.0
     def ferial?
       self == Ranks::FERIAL ||
         self == Ranks::FERIAL_PRIVILEGED

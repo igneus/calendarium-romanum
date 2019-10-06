@@ -7,6 +7,8 @@ module CalendariumRomanum
   #
   # Internally builds {Calendar} instances as needed
   # and delegates method calls to them.
+  #
+  # @since 0.4.0
   class PerpetualCalendar
     # @param sanctorale [Sanctorale, nil]
     # @param temporale_factory [Proc, nil]
@@ -46,6 +48,7 @@ module CalendariumRomanum
 
     # @return [Day, Array<Day>]
     # @see Calendar#[]
+    # @since 0.6.0
     def [](arg)
       if arg.is_a? Range
         return arg.collect do |date|

@@ -118,6 +118,7 @@ module CalendariumRomanum
     #
     # @param date [AbstractDate, Date]
     # @return [Array<Celebration>] (may be empty)
+    # @since 0.6.0
     def [](date)
       adate = date.is_a?(AbstractDate) ? date : AbstractDate.from_date(date)
       @days[adate] || []
@@ -178,6 +179,7 @@ module CalendariumRomanum
     end
 
     # @return [Boolean]
+    # @since 0.6.0
     def ==(b)
       self.class == b.class &&
         days == b.days

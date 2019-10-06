@@ -291,6 +291,7 @@ module CalendariumRomanum
     #
     # @param date [Date]
     # @return [Celebration]
+    # @since 0.6.0
     def [](date)
       @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
     end
@@ -318,6 +319,7 @@ module CalendariumRomanum
     end
 
     # @return [Boolean]
+    # @since 0.6.0
     def ==(b)
       self.class == b.class &&
         year == b.year &&
