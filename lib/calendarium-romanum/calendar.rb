@@ -196,8 +196,8 @@ module CalendariumRomanum
     def each
       return to_enum(__method__) unless block_given?
 
-      (temporale.start_date..temporale.end_date)
-        .each { |date| yield(day(date)) }
+      temporale.date_range
+        .each {|date| yield(day(date)) }
     end
 
     # Sunday lectionary cycle
