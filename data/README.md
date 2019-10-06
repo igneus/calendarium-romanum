@@ -99,6 +99,16 @@ of the given celebration.
 
 There may be several entries for a day (optional memorials).
 
+### YAML metadata
+
+At the beginning of the file there may be a "YAML front matter"
+(cf. [use of YFM in Jekyll][yfm]) -
+a YAML document with arbitrary metadata.
+
+Currently the front matter is ignored  when loading sanctorale
+data files, but there are plans to make it available
+to application code.
+
 ## Check your data
 
 Included is a script controlling correctness of data files
@@ -148,3 +158,5 @@ end
 
 layered_sanctorale = CR::SanctoraleFactory.create_layered(*layers)
 ```
+
+[yfm]: https://jekyllrb.com/docs/front-matter/

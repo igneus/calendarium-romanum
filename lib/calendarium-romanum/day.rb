@@ -4,7 +4,7 @@ module CalendariumRomanum
 
   # Information on one particular day of the liturgical year
   class Day
-    # Note: while all of the constructor arguments are nullable,
+    # Note: despite of all constructor arguments being nullable,
     # instances returned by {Calendar} always have all of them set,
     # the only exception being +vespers+.
     #
@@ -224,7 +224,7 @@ module CalendariumRomanum
     # String representation of the object's contents
     # (not very pretty, intended mostly for development inspections).
     #
-    # @return String
+    # @return [String]
     def to_s
       "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
     end

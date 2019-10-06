@@ -41,7 +41,9 @@ module CalendariumRomanum
         Date.new(year + 1, 1, 6)
       end
 
-      # (see .epiphany)
+      # @param year [Fixnum] liturgical year
+      # @param epiphany_on_sunday [Boolean] was Epiphany transferred to Sunday?
+      # @return [Date]
       def self.baptism_of_lord(year, epiphany_on_sunday: false)
         e = epiphany(year, sunday: epiphany_on_sunday)
         if epiphany_on_sunday

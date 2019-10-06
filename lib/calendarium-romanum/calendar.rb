@@ -67,11 +67,11 @@ module CalendariumRomanum
         end
       end
 
-      # Creates a +Calendar+ for the liturgical year which includes
+      # Creates a new instance for the liturgical year which includes
       # given date
       #
       # @param date [Date]
-      # @param *constructor_args
+      # @param constructor_args
       #   arguments that will be passed to {initialize}
       # @return [Calendar]
       def for_day(date, *constructor_args)
@@ -79,12 +79,12 @@ module CalendariumRomanum
       end
     end # class << self
 
-    # @!method range_check
-    #   see {Temporale#range_check}
+    # @!method range_check(date)
+    #   @see Temporale#range_check
     #   @param date
     #   @return [void]
-    # @!method season
-    #   see {Temporale#season}
+    # @!method season(date)
+    #   @see Temporale#season
     #   @param date
     #   @return [Season]
     def_delegators :@temporale, :range_check, :season
@@ -184,7 +184,8 @@ module CalendariumRomanum
       )
     end
 
-    # Iterate over the whole liturgical year, day by day.
+    # Iterate over the whole liturgical year, day by day,
+    # for each day yield calendar data.
     # If called without a block, returns +Enumerator+.
     #
     # @yield [Day]

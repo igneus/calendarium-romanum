@@ -4,7 +4,9 @@ module CalendariumRomanum
   # and knows how to transform it to {Celebration}s
   # and fill them in a {Sanctorale}.
   #
-  # For specification of the data format see {file:data/README.md}
+  # For specification of the data format see {file:data/README.md},
+  # for a complete example see the file describing General Roman Calendar:
+  # {file:data/universal-en.txt}
   class SanctoraleLoader
 
     # @api private

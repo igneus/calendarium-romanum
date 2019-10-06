@@ -43,7 +43,7 @@ module CalendariumRomanum
       # Allows accessing contained value objects by their
       # internal unique identifiers
       #
-      # @!method []
+      # @!method [](identifier)
       #   @param identifier
       #   @return value object or nil
       def_delegators :@indexed, :[]

@@ -2,6 +2,8 @@ require 'roman-numerals'
 
 module CalendariumRomanum
   # Knows how to produce localized ordinals.
+  #
+  # Used by {Temporale} for building names of Sundays and ferials.
   class Ordinalizer
     class << self
       # @param number [Fixnum] number to build ordinal for

@@ -17,14 +17,16 @@ module CalendariumRomanum
     #   +temporale_factory+ and +temporale_options+ are mutually
     #   exclusive - pass either (or none) of them, never both.
     # @param cache [Hash]
-    #   object to be used as internal cache of +Calendar+ instances -
+    #   object to be used as internal cache of {Calendar} instances -
     #   anything exposing +#[]=+ and +#[]+ and "behaving mostly like
     #   a +Hash+" will work.
-    #   Usually you only want to pass it if you want to have a control
-    #   over the cache, in order to prevent a long-lived
+    #   There's no need to pass it unless you want to have control
+    #   over the cache. That may be sometimes useful
+    #   in order to prevent a long-lived
     #   +PerpetualCalendar+ instance flooding the memory
-    #   by huge amount of {Calendar} instances.
-    #   (By default instances are cached forever.)
+    #   by huge amount of cached {Calendar} instances.
+    #   (By default, once a {Calendar} for a certain year is built,
+    #   it is cached for the +PerpetualCalendar+ instances' lifetime.)
     def initialize(sanctorale: nil, temporale_factory: nil, temporale_options: nil, cache: {})
       if temporale_factory && temporale_options
         raise ArgumentError.new('Specify either temporale_factory or temporale_options, not both')
