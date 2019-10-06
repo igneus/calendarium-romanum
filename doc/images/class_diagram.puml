@@ -1,0 +1,44 @@
+@startuml
+object Calendar {
+    year
+}
+object PerpetualCalendar
+
+object Temporale
+object Sanctorale
+
+object Day {
+    date
+    season
+    season_week
+    celebrations
+    vespers
+}
+object Celebration {
+    title
+    colour
+    rank
+    date
+    cycle
+    symbol
+}
+object AbstractDate
+object Season
+object Rank
+object Colour
+
+Calendar o-- Temporale
+Calendar o-- Sanctorale
+
+PerpetualCalendar *-- Calendar
+
+Calendar ..> Day : produces
+Temporale ..> Celebration : produces
+Sanctorale "1" --> "0..*" Celebration
+
+Day "1" --> "1..*" Celebration
+Celebration --> Season
+Celebration --> Rank
+Celebration --> Colour
+Celebration --> AbstractDate
+@enduml

@@ -1,0 +1,76 @@
+= calendarium-romanum
+
+Ruby gem for
+calendar computations according to the Roman Catholic liturgical
+calendar as instituted by
+MP <em>{Mysterii Paschalis}[http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html]</em> of Paul VI. (AAS 61 (1969), pp. 222-226).
+The rules are defined in
+<em>{General Norms for the Liturgical Year and the Calendar}[https://www.ewtn.com/catholicism/library/liturgical-year-2193]</em>.
+
+== Usage
+
+For usage instructions with copy-pastable code examples see {file:README.md}
+
+== Object model overview
+
+rdoc-image:images/class_diagram.png
+
+<b>{CalendariumRomanum::Calendar Calendar}</b> is the library's main functional unit.
+It represents calendar for a single liturgical year and allows retrieving calendar data
+for any of the year's days.
+Calendar basically consists of
+a {CalendariumRomanum::Temporale Temporale} and a {CalendariumRomanum::Sanctorale Sanctorale}
+and it's main task is to combine information from both and produce a fully and correctly
+populated {CalendariumRomanum::Day Day} instance,
+containing one or more {CalendariumRomanum::Celebration Celebrations}
+(see {CalendariumRomanum::Calendar#[] Calendar#[]}).
+
+(+Calendar+ does not own either +Temporale+ or +Sanctorale+ - it is possible to pass them
+on initialization and they are treated as read-only. The only exception is method
+{CalendariumRomanum::Calendar#freeze #freeze}, which freezes all the +Calendar+'s contents,
+including +Temporale+ and +Sanctorale+.)
+
+<b>{CalendariumRomanum::PerpetualCalendar PerpetualCalendar}</b> is a higher-level API
+for retrieving calendar data
+without bothering about liturgical years. It builds {CalendariumRomanum::Calendar Calendar}
+instances internally and passes method calls to them.
+
+<b>{CalendariumRomanum::Day Day}</b> contains complete calendar data of a liturgical day.
+It owns one or more {CalendariumRomanum::Celebration Celebrations}.
+When there are multiple it means that any one of them can be chosen and celebrated
+that day.
+
+<b>{CalendariumRomanum::Celebration Celebration}</b> represents a celebration
+(particular solemnity / feast / memorial / Sunday / ferial)
+and holds it's liturgical properties, encoded mostly by value objects.
+
+(Unlike +Day+, +Celebration+ instances are not bound to a particular date,
+they represent "celebration C in general", not "celebration C in year Y".
+The latter is represented only by a combination of +Celebration+ and +Day+.
++Celebration+ instances are immutable and some may be used repeatedly in context of various
+days and calendars.)
+
+<b>{CalendariumRomanum::Season Season}</b>,
+<b>{CalendariumRomanum::Rank Rank}</b>,
+<b>{CalendariumRomanum::Colour Colour}</b>
+are value objects representing values
+of {CalendariumRomanum::Celebration Celebration} properties.
+Immutable instances representing the standard values are referenced by constants and
+normally there should be no need to create any more.
+
+<b>{CalendariumRomanum::Temporale Temporale}</b> represents the temporale cycle of a single liturgical
+year, computes movable feasts, determines liturgical seasons.
+For any day of the year it provides a temporale {CalendariumRomanum::Celebration Celebration}.
+
+<b>{CalendariumRomanum::Sanctorale Sanctorale}</b> represents the sanctorale cycle, i.e. the fixed-date
+celebrations, mostly feasts of saints. It is not bound to a particular year, hence a single
+instance can be used by many {CalendariumRomanum::Calendar Calendar} instances representing
+various liturgical years. For any day it provides zero or more
+{CalendariumRomanum::Celebration Celebrations}.
+
+Most particular calendars (calendars of countries, provinces, dioceses, churches, religious
+institutes) share the same temporale definition and differ in sanctorale contents.
+Therefore the task of implementing a particular calendar usually consists of populating
+a {CalendariumRomanum::Sanctorale Sanctorale} instance with the desired data.
+A convenient way to do so is preparing a {file:data/README.md sanctorale data file}
+and loading it using {CalendariumRomanum::SanctoraleLoader SanctoraleLoader}.
