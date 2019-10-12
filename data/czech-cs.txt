@@ -188,7 +188,7 @@ country: cz
 17 R cornelius_cyprian : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
 17 bellarmine : Sv. Roberta Bellarmina, biskupa a učitele církve
 19 R januarius : Sv. Januária, biskupa a mučedníka
-20 m R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
+20 m R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze, Pavla Chõng Ha-sanga a druhů, mučedníků
 21 f R matthew : Sv. Matouše, apoštola a evangelisty
 23 m padre_pio : Sv. Pia z Pietrelciny, kněze
 26 R cosmas_damian : Sv. Kosmy a Damiána, mučedníků

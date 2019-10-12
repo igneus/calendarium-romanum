@@ -12,5 +12,5 @@ extends:
 5/30 f2.8 zdislava : Sv. Zdislavy, hlavní patronky diecéze
 
 9/19 R januarius : Sv. Januária, biskupa a mučedníka
-9/19 R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze,Pavla Chõng Ha-sanga a druhů, mučedníků
+9/19 R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze, Pavla Chõng Ha-sanga a druhů, mučedníků
 9/20 f2.8 litomerice_cathedral : Výročí posvěcení katedrály sv. Štěpána
