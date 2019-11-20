@@ -488,15 +488,21 @@ liturgical calendar for your command line.
  - `calendariumrom` lists available subcommands
  - `calendariumrom help [COMMAND]` outputs a short help for all available subcommands
 
-## How to run tests
+## For Developers
 
-Get the sources, install development dependencies
+Get the sources and install development depencencies:
 
-`bundle install`
+1. `git clone git@github.com:igneus/calendarium-romanum.git`
+2. `cd calendarium-romanum`
+3. `bundle install` or `bundle install --path vendor/bundle`
 
-then execute tests with
+### Run from CLI
 
-`rake spec`
+`bundle exec ruby -Ilib bin/calendariumrom`
+
+### Run Tests
+
+`bundle exec rake spec`
 
 See also `.travis.yml` for comprehensive tests run on the CI.
 
