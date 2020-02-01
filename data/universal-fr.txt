@@ -228,6 +228,7 @@ locale: fr
 7 m ambrose : Saint Ambroise, évêque et docteur de l'Église
 8 s bvm_immaculate : Immaculée Conception de la Bienheureuse Vierge Marie
 9 juan_diego : Saint Juan Diego
+10 bvm_loreto : Bienheureuse Vierge Marie de Lorette
 11 damasus_i : Saint Damase, pape
 12 bvm_guadalupe : Notre-Dame de Guadalupe
 13 m R lucy : Sainte Lucie, vierge et martyre

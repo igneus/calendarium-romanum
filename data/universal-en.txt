@@ -228,6 +228,7 @@ locale: en
 7 m ambrose : Saint Ambrose, bishop and doctor
 8 s bvm_immaculate : Immaculate Conception of the Blessed Virgin Mary
 9 juan_diego : Saint Juan Diego
+10 bvm_loreto : Our Lady of Loreto
 11 damasus_i : Saint Damasus I, pope
 12 bvm_guadalupe : Our Lady of Guadalupe
 13 m R lucy : Saint Lucy of Syracuse, virgin and martyr

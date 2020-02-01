@@ -228,6 +228,7 @@ locale: la
 7 m ambrose :  S. Ambrosii, episcopi et Ecclesiae doctoris
 8 s bvm_immaculate :  IN CONCEPTIONE IMMACULATA BEATAE MARIAE VIRGINIS
 9 juan_diego : S. Ioannis Didaci Cuahtlatoatzin
+10 bvm_loreto : Beatae Mariae Virginis de Loreto
 11 damasus_i : S. Damasi I, papae
 12 bvm_guadalupe : Beatae Mariae Virginis de Guadalupe
 13 m R lucy :  S. Luciae, virginis et martyris

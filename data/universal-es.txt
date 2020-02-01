@@ -228,6 +228,7 @@ locale: es
 7 m ambrose : San Ambrosio, Obispo y Doctor de la Iglesia
 8 s bvm_immaculate : Inmaculada Concepción de la Santísima Virgen María
 9 juan_diego : San Juan Diego
+10 bvm_loreto : Bienaventurada Virgen María de Loreto
 11 damasus_i : San Dámaso I, Papa
 12 bvm_guadalupe : Nuestra Señora de Guadalupe
 13 m R lucy : Santa Lucía, Virgen y Mártir

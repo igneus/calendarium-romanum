@@ -227,6 +227,7 @@ locale: it
 7 m ambrose : Sant'Ambrogio, vescovo e dottore della Chiesa
 8 s bvm_immaculate : Immacolata Concezione della Beata Vergine Maria
 9 juan_diego : San Juan Diego Cuauhtlatoatzin
+10 bvm_loreto : Beata Maria Vergine di Loreto
 11 damasus_i : San Damaso I, papa
 12 bvm_guadalupe : Nostra Signora di Guadalupe
 13 m R lucy : Santa Lucia, vergine e martire

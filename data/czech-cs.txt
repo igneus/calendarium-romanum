@@ -253,6 +253,7 @@ country: cz
 7 m ambrose : Sv. Ambrože, biskupa a učitele církve
 8 s bvm_immaculate : Panny Marie, počaté bez poskvrny prvotního hříchu
 9 juan_diego : Sv. Jana Didaka Cuauhtlatoatzina
+10 bvm_loreto : Panny Marie Loretánské
 11 damasus_i : Sv. Damasa I. papeže
 12 bvm_guadalupe : Panny Marie Guadalupské
 13 m R lucy : Sv. Lucie, panny a mučednice
