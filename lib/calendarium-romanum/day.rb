@@ -19,6 +19,15 @@ module CalendariumRomanum
       @season_week = season_week
       @celebrations = celebrations ? celebrations.dup : []
       @vespers = vespers
+      cycles = Calendar.lectionary_cycles_for_date date
+      @cycle_sunday = cycles[:cycle_sunday]
+      @cycle_ferial = cycles[:cycle_ferial]
+
+      if date.cwday == 7
+        @cycle = @cycle_sunday
+      else
+        @cycle = @cycle_ferial
+      end
     end
 
     # @return [Date]
@@ -65,6 +74,10 @@ module CalendariumRomanum
     # @return [Celebration, nil]
     # @since 0.5.0
     attr_reader :vespers
+
+    attr_reader :cycle_sunday
+    attr_reader :cycle_ferial
+    attr_reader :cycle
 
     def ==(other)
       self.class == other.class &&

@@ -200,19 +200,40 @@ module CalendariumRomanum
         .each {|date| yield(day(date)) }
     end
 
+    def self.lectionary_cycle_sunday(year)
+      LECTIONARY_CYCLES[year % 3]
+    end
+
+    def self.lectionary_cycle_ferial(year)
+      (year % 2) + 1
+    end
+
     # Sunday lectionary cycle
     #
     # @return [Symbol]
     #   For possible values see {LECTIONARY_CYCLES}
-    def lectionary
-      LECTIONARY_CYCLES[@year % 3]
+    def lectionary(year)
+      Calendar.lectionary_cycle_sunday(@year)
     end
 
     # Ferial lectionary cycle
     #
     # @return [1, 2]
-    def ferial_lectionary
-      @year % 2 + 1
+    def ferial_lectionary(year)
+      Calendar.lectionary_cycle_ferial(@year)
+    end
+
+    # calculate the lectionary cycles for a specific date
+    def self.lectionary_cycles_for_date date
+      year = date.year
+      if date >= Temporale::Dates.first_advent_sunday(year)
+        year += 1
+      end
+
+      return {
+        cycle_sunday: Calendar.lectionary_cycle_sunday(year),
+        cycle_ferial: Calendar.lectionary_cycle_ferial(year),
+      }
     end
 
     # Freezes the instance.
