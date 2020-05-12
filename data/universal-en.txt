@@ -5,238 +5,238 @@ locale: en
 ---
 
 = 1
-2 m basil_gregory : Saints Basil the Great and Gregory Nazianzen, bishops and doctors
+2 m basil_gregory : Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church
 3 name_jesus : The Most Holy Name of Jesus
-7 raymond : Saint Raymond of Penyafort, priest
-13 hilary : Saint Hilary of Poitiers, bishop and doctor
-17 m anthony_of_egypt : Saint Anthony of Egypt, abbot
-20 R fabian : Saint Fabian, pope and martyr
-20 R sebastian : Saint Sebastian, martyr
-21 m R agnes : Saint Agnes, virgin and martyr
-22 R vincent_deacon : Saint Vincent, deacon and martyr
-24 m francis_de_sales : Saint Francis de Sales, bishop and doctor
-25 f paul_conversion : The Conversion of Saint Paul, apostle
-26 m timothy_titus : Saints Timothy and Titus, bishops
-27 merici : Saint Angela Merici, virgin
-28 m aquinas : Saint Thomas Aquinas, priest and doctor
-31 m bosco : Saint John Bosco, priest
+7 raymond : Saint Raymond of Penyafort, Priest
+13 hilary : Saint Hilary, Bishop and Doctor of the Church
+17 m anthony_of_egypt : Saint Anthony, Abbot
+20 R fabian : Saint Fabian, Pope and Martyr
+20 R sebastian : Saint Sebastian, Martyr
+21 m R agnes : Saint Agnes, Virgin and Martyr
+22 R vincent_deacon : Saint Vincent, Deacon and Martyr
+24 m francis_de_sales : Saint Francis de Sales, Bishop and Doctor of the Church
+25 f paul_conversion : The Conversion of Saint Paul the Apostle
+26 m timothy_titus : Saints Timothy and Titus, Bishops
+27 merici : Saint Angela Merici, Virgin
+28 m aquinas : Saint Thomas Aquinas, Priest and Doctor of the Church
+31 m bosco : Saint John Bosco, Priest
 
 = 2
-2 f2.5 presentation_of_lord : Presentation of the Lord
-3 R blase : Saint Blase, bishop and martyr
-3 ansgar : Saint Ansgar, bishop
-5 m R agatha : Saint Agatha, virgin and martyr
-6 m R paul_miki : Saints Paul Miki and companions, martyrs
-8 jerome_emiliani : Saint Jerome Emiliani, priest
-8 josephine_bakhita : Saint Josephine Bakhita, virgin
-10 m scholastica : Saint Scholastica, virgin
+2 f2.5 presentation_of_lord : The Presentation of the Lord
+3 R blase : Saint Blaise, Bishop and Martyr
+3 ansgar : Saint Ansgar, Bishop
+5 m R agatha : Saint Agatha, Virgin and Martyr
+6 m R paul_miki : Saint Paul Miki and Companions, Martyrs
+8 jerome_emiliani : Saint Jerome Emiliani
+8 josephine_bakhita : Saint Josephine Bakhita, Virgin
+10 m scholastica : Saint Scholastica, Virgin
 11 bvm_lourdes : Our Lady of Lourdes
-14 m cyril_methodius : Saints Cyril, monk, and Methodius, bishop
-17 servite_founders : Seven Holy Founders of the Servite Order
-21 peter_damian : Saint Peter Damian, bishop and doctor of the Church
-22 f chair_of_peter : Chair of Saint Peter, apostle
-23 m R polycarp : Saint Polycarp, bishop and martyr
+14 m cyril_methodius : Saints Cyril, Monk, and Methodius, Bishop
+17 servite_founders : The Seven Holy Founders of the Servite Order
+21 peter_damian : Saint Peter Damian, Bishop and Doctor of the Church
+22 f chair_of_peter : The Chair of Saint Peter the Apostle
+23 m R polycarp : Saint Polycarp, Bishop and Martyr
 
 = 3
 4 casimir : Saint Casimir
-7 m R perpetua_felicity : Saints Perpetua and Felicity, martyrs
-8 john_of_god : Saint John of God, religious
-9 frances_of_rome : Saint Frances of Rome, religious
-17 patrick : Saint Patrick, bishop
-18 cyril_of_jerusalem : Saint Cyril of Jerusalem, bishop and doctor
-19 s joseph : Saint Joseph Husband of the Blessed Virgin Mary
-23 turibius : Saint Turibius of Mogrovejo, bishop
-25 s annunciation : Annunciation of the Lord
+7 m R perpetua_felicity : Saints Perpetua and Felicity, Martyrs
+8 john_of_god : Saint John of God, Religious
+9 frances_of_rome : Saint Frances of Rome, Religious
+17 patrick : Saint Patrick, Bishop
+18 cyril_of_jerusalem : Saint Cyril of Jerusalem, Bishop and Doctor of the Church
+19 s joseph : Saint Joseph, Spouse of the Blessed Virgin Mary
+23 turibius : Saint Turibius of Mogrovejo, Bishop
+25 s annunciation : The Annunciation of the Lord
 
 = 4
-2 francis_of_paola : Saint Francis of Paola, hermit
-4 isidore : Saint Isidore, bishop and doctor of the Church
-5 vincent_ferrer : Saint Vincent Ferrer, priest
-7 m de_la_salle : Saint John Baptist de la Salle, priest
-11 m R stanislaus : Saint Stanislaus, bishop and martyr
-13 R martin_i : Saint Martin I, pope and martyr
-21 anselm : Saint Anselm of Canterbury, bishop and doctor of the Church
-23 R george : Saint George, martyr
-23 R adalbert : Saint Adalbert, bishop and martyr
-24 R fidelis : Saint Fidelis of Sigmaringen, priest and martyr
-25 f R mark : Saint Mark the Evangelist
-28 R peter_chanel : Saint Peter Chanel, priest and martyr
-28 de_montfort : Saint Louis Grignon de Montfort, priest
-29 m catherine_of_siena : Saint Catherine of Siena, virgin and doctor of the Church
-30 pius_v : Saint Pius V, pope
+2 francis_of_paola : Saint Francis of Paola, Hermit
+4 isidore : Saint Isidore, Bishop and Doctor of the Church
+5 vincent_ferrer : Saint Vincent Ferrer, Priest
+7 m de_la_salle : Saint John Baptist de la Salle, Priest
+11 m R stanislaus : Saint Stanislaus, Bishop and Martyr
+13 R martin_i : Saint Martin I, Pope and Martyr
+21 anselm : Saint Anselm, Bishop and Doctor of the Church
+23 R george : Saint George, Martyr
+23 R adalbert : Saint Adalbert, Bishop and Martyr
+24 R fidelis : Saint Fidelis of Sigmaringen, Priest and Martyr
+25 f R mark : Saint Mark, Evangelist
+28 R peter_chanel : Saint Peter Chanel, Priest and Martyr
+28 de_montfort : Saint Louis Grignion de Montfort, Priest
+29 m catherine_of_siena : Saint Catherine of Siena, Virgin and Doctor of the Church
+30 pius_v : Saint Pius V, Pope
 
 = 5
 1 joseph_worker : Saint Joseph the Worker
-2 m athanasius : Saint Athanasius, bishop and doctor
+2 m athanasius : Saint Athanasius, Bishop and Doctor of the Church
 3 f R philip_james : Saints Philip and James, Apostles
-12 R nereus_achilleus : Saints Nereus and Achilleus, martyrs
-12 R pancras : Saint Pancras, martyr
+12 R nereus_achilleus : Saints Nereus and Achilleus, Martyrs
+12 R pancras : Saint Pancras, Martyr
 13 bvm_fatima : Our Lady of Fatima
-14 f R matthias : Saint Matthias the Apostle
-18 R john_i : Saint John I, pope and martyr
-20 bernardine : Saint Bernardine of Siena, priest
-21 R magallanes : Saint Christopher Magallanes and companions, martyrs
-22 rita : Saint Rita of Cascia
-25 bede_venerable : Saint Bede the Venerable, priest and doctor
-25 gregory_vii : Saint Gregory VII, pope
-25 de_pazzi : Saint Mary Magdalene de Pazzi, virgin
-26 m neri : Saint Philip Neri, priest
-27 augustine_of_canterbury : Saint Augustine (Austin) of Canterbury, bishop
-29 paul_vi : Saint Paul VI, pope
-31 f visitation : Visitation of the Blessed Virgin Mary
+14 f R matthias : Saint Matthias, Apostle
+18 R john_i : Saint John I, Pope and Martyr
+20 bernardine : Saint Bernardine of Siena, Priest
+21 R magallanes : Saint Christopher Magallanes, Priest, and Companions, Martyrs
+22 rita : Saint Rita of Cascia, Religious
+25 bede_venerable : Saint Bede the Venerable, Priest and Doctor of the Church
+25 gregory_vii : Saint Gregory VII, Pope
+25 de_pazzi : Saint Mary Magdalene de’ Pazzi, Virgin
+26 m neri : Saint Philip Neri, Priest
+27 augustine_of_canterbury : Saint Augustine of Canterbury, Bishop
+29 paul_vi : Saint Paul VI, Pope
+31 f visitation : The Visitation of the Blessed Virgin Mary
 
 = 6
-1 m R justin : Saint Justin Martyr
-2 R marcellinus_peter : Saints Marcellinus and Peter, martyrs
-3 m R ugandan_martyrs : Saints Charles Lwanga and companions, martyrs
-5 m R boniface : Saint Boniface, bishop and martyr
-6 norbert : Saint Norbert, bishop
-9 ephrem : Saint Ephrem, deacon and doctor
-11 m R barnabas : Saint Barnabas the Apostle
-13 m anthony_of_padua : Saint Anthony of Padua, priest and doctor
-19 romuald : Saint Romuald, abbot
-21 m aloysius : Saint Aloysius Gonzaga, religious
-22 paulinus : Saint Paulinus of Nola, bishop
-22 R fisher_more : Saints John Fisher, bishop and martyr and Thomas More, martyr
-24 s baptist_birth : Birth of Saint John the Baptist
-27 cyril_of_alexandria : Saint Cyril of Alexandria, bishop and doctor
-28 m R irenaeus : Saint Irenaeus, bishop and martyr
+1 m R justin : Saint Justin, Martyr
+2 R marcellinus_peter : Saints Marcellinus and Peter, Martyrs
+3 m R ugandan_martyrs : Saint Charles Lwanga and Companions, Martyrs
+5 m R boniface : Saint Boniface, Bishop and Martyr
+6 norbert : Saint Norbert, Bishop
+9 ephrem : Saint Ephrem, Deacon and Doctor of the Church
+11 m R barnabas : Saint Barnabas, Apostle
+13 m anthony_of_padua : Saint Anthony of Padua, Priest and Doctor of the Church
+19 romuald : Saint Romuald, Abbot
+21 m aloysius : Saint Aloysius Gonzaga, Religious
+22 paulinus : Saint Paulinus of Nola, Bishop
+22 R fisher_more : Saints John Fisher, Bishop, and Thomas More, Martyrs
+24 s baptist_birth : The Nativity of Saint John the Baptist
+27 cyril_of_alexandria : Saint Cyril of Alexandria, Bishop and Doctor of the Church
+28 m R irenaeus : Saint Irenaeus, Bishop and Martyr
 29 s R peter_paul : Saints Peter and Paul, Apostles
-30 R first_martyrs_of_rome : First Martyrs of the Church of Rome
+30 R first_martyrs_of_rome : The First Martyrs of the Holy Roman Church
 
 = 7
-3 f R thomas_apostle : Saint Thomas the Apostle
+3 f R thomas_apostle : Saint Thomas, Apostle
 4 elizabeth_of_portugal : Saint Elizabeth of Portugal
-5 anthony_zaccaria : Saint Anthony Zaccaria, priest
-6 R goretti : Saint Maria Goretti, virgin and martyr
-9 R chinese_martyrs : Saint Augustine Zhao Rong and companions, martyrs
-11 m benedict : Saint Benedict, abbot
+5 anthony_zaccaria : Saint Anthony Zaccaria, Priest
+6 R goretti : Saint Maria Goretti, Virgin and Martyr
+9 R chinese_martyrs : Saint Augustine Zhao Rong, Priest, and Companions, Martyrs
+11 m benedict : Saint Benedict, Abbot
 13 henry : Saint Henry
-14 camillus_de_lellis : Saint Camillus de Lellis, priest
-15 m bonaventure : Saint Bonaventure, bishop and doctor
+14 camillus_de_lellis : Saint Camillus de Lellis, Priest
+15 m bonaventure : Saint Bonaventure, Bishop and Doctor of the Church
 16 bvm_mount_carmel : Our Lady of Mount Carmel
-20 R apollinaris : Saint Apollinaris, bishop and martyr
-21 lawrence_of_brindisi : Saint Lawrence of Brindisi, priest and doctor
+20 R apollinaris : Saint Apollinaris, Bishop and Martyr
+21 lawrence_of_brindisi : Saint Lawrence of Brindisi, Priest and Doctor of the Church
 22 f mary_magdalene : Saint Mary Magdalene
-23 birgitta : Saint Birgitta, religious
-24 sharbel : Saint Sharbel Makhluf, hermit
-25 f R james : Saint James, apostle
-26 m joachim_anne : Saints Joachim and Anne
+23 birgitta : Saint Bridget, Religious
+24 sharbel : Saint Sharbel Makhlūf, Priest
+25 f R james : Saint James, Apostle
+26 m joachim_anne : Saints Joachim and Anne, Parents of the Blessed Virgin Mary
 29 m R martha : Saint Martha
-30 peter_chrysologus : Saint Peter Chrysologus, bishop and doctor
-31 m ignatius_of_loyola : Saint Ignatius of Loyola, priest
+30 peter_chrysologus : Saint Peter Chrysologus, Bishop and Doctor of the Church
+31 m ignatius_of_loyola : Saint Ignatius of Loyola, Priest
 
 = 8
-1 m alphonsus : Saint Alphonsus Maria de Liguori, bishop and doctor of the Church
-2 eusebius : Saint Eusebius of Vercelli, bishop
-2 eymard : Saint Peter Julian Eymard, priest
-4 m vianney : Saint Jean Vianney (the Curé of Ars), priest
-5 mary_major : Dedication of the Basilica of Saint Mary Major
-6 f2.5 transfiguration : Transfiguration of the Lord
-7 R sixtus_ii : Saint Sixtus II, pope, and companions, martyrs
-7 cajetan : Saint Cajetan, priest
-8 m dominic : Saint Dominic, priest
-9 R stein : Saint Teresa Benedicta of the Cross (Edith Stein), virgin and martyr
-10 f R lawrence : Saint Lawrence, deacon and martyr
-11 m clare : Saint Clare, virgin
-12 de_chantal : Saint Jane Frances de Chantal, religious
-13 R pontian_hippolytus : Saints Pontian, pope, and Hippolytus, priest, martyrs
-14 m R kolbe : Saint Maximilian Mary Kolbe, priest and martyr
-15 s assumption : Assumption of the Blessed Virgin Mary
+1 m alphonsus : Saint Alphonsus Liguori, Bishop and Doctor of the Church
+2 eusebius : Saint Eusebius of Vercelli, Bishop
+2 eymard : Saint Peter Julian Eymard, Priest
+4 m vianney : Saint John Vianney, Priest
+5 mary_major : The Dedication of the Basilica of Saint Mary Major
+6 f2.5 transfiguration : The Transfiguration of the Lord
+7 R sixtus_ii : Saint Sixtus II, Pope, and Companions, Martyrs
+7 cajetan : Saint Cajetan, Priest
+8 m dominic : Saint Dominic, Priest
+9 R stein : Saint Teresa Benedicta of the Cross, Virgin and Martyr
+10 f R lawrence : Saint Lawrence, Deacon and Martyr
+11 m clare : Saint Clare, Virgin
+12 de_chantal : Saint Jane Frances de Chantal, Religious
+13 R pontian_hippolytus : Saints Pontian, Pope, and Hippolytus, Priest, Martyrs
+14 m R kolbe : Saint Maximilian Kolbe, Priest and Martyr
+15 s assumption : The Assumption of the Blessed Virgin Mary
 16 stephen_hungary : Saint Stephen of Hungary
-19 eudes : Saint John Eudes, priest
-20 m bernard : Saint Bernard of Clairvaux, abbot and doctor of the Church
-21 m pius_x : Saint Pius X, pope
-22 m bvm_queenship : Queenship of Blessed Virgin Mary
-23 rose_lima : Saint Rose of Lima, virgin
-24 f R bartholomew : Saint Bartholomew the Apostle
+19 eudes : Saint John Eudes, Priest
+20 m bernard : Saint Bernard, Abbot and Doctor of the Church
+21 m pius_x : Saint Pius X, Pope
+22 m bvm_queenship : The Queenship of the Blessed Virgin Mary
+23 rose_lima : Saint Rose of Lima, Virgin
+24 f R bartholomew : Saint Bartholomew, Apostle
 25 louis : Saint Louis
-25 joseph_calasanz : Saint Joseph of Calasanz, priest
+25 joseph_calasanz : Saint Joseph Calasanz, Priest
 27 m monica : Saint Monica
-28 m augustine : Saint Augustine of Hippo, bishop and doctor of the Church
-29 m R baptist_beheading : The Beheading of Saint John the Baptist, martyr
+28 m augustine : Saint Augustine, Bishop and Doctor of the Church
+29 m R baptist_beheading : The Passion of Saint John the Baptist
 
 = 9
-3 m gregory_great : Saint Gregory the Great, pope and doctor
-8 f bvm_birth : Birth of the Blessed Virgin Mary
-9 claver : Saint Peter Claver, priest
-12 bvm_name : Holy Name of the Blessed Virgin Mary
-13 m john_chrysostom : Saint John Chrysostom, bishop and doctor
-14 f2.5 R cross : Triumph of the Holy Cross
+3 m gregory_great : Saint Gregory the Great, Pope and Doctor of the Church
+8 f bvm_birth : The Nativity of the Blessed Virgin Mary
+9 claver : Saint Peter Claver, Priest
+12 bvm_name : The Most Holy Name of Mary
+13 m john_chrysostom : Saint John Chrysostom, Bishop and Doctor of the Church
+14 f2.5 R cross : The Exaltation of the Holy Cross
 15 m bvm_sorrows : Our Lady of Sorrows
-16 m R cornelius_cyprian : Saints Cornelius, pope, and Cyprian, bishop, martyrs
-17 bellarmine : Saint Robert Bellarmine, bishop and doctor
-19 R januarius : Saint Januarius, bishop and martyr
-20 m R korean_martyrs : Saint Andrew Kim Taegon, priest, and Paul Chong Hasang and companions, martyrs
-21 f R matthew : Saint Matthew the Evangelist, Apostle, Evangelist
-23 m padre_pio : Saint Pio of Pietrelcina (Padre Pio), priest
-26 R cosmas_damian : Saints Cosmas and Damian, martyrs
-27 m vincent_de_paul : Saint Vincent de Paul, priest
-28 R wenceslaus : Saint Wenceslaus, martyr
-28 R ruiz : Saints Lawrence Ruiz and companions, martyrs
+16 m R cornelius_cyprian : Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs
+17 bellarmine : Saint Robert Bellarmine, Bishop and Doctor of the Church
+19 R januarius : Saint Januarius, Bishop and Martyr
+20 m R korean_martyrs : Saint Andrew Kim Tae-gǒn, Priest, and Paul Chǒng Ha-sang, and Companions, Martyrs
+21 f R matthew : Saint Matthew, Apostle and Evangelist
+23 m padre_pio : Saint Pius of Pietrelcina, Priest
+26 R cosmas_damian : Saints Cosmas and Damian, Martyrs
+27 m vincent_de_paul : Saint Vincent de Paul, Priest
+28 R wenceslaus : Saint Wenceslaus, Martyr
+28 R ruiz : Saint Lawrence Ruiz and Companions, Martyrs
 29 f archangels : Saints Michael, Gabriel and Raphael, Archangels
-30 m jerome : Saint Jerome, priest and doctor
+30 m jerome : Saint Jerome, Priest and Doctor of the Church
 
 = 10
-1 m therese_lisieux : Saint Thérèse of the Child Jesus, virgin and doctor
-2 m guardian_angels : Guardian Angels
+1 m therese_lisieux : Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church
+2 m guardian_angels : The Holy Guardian Angels
 4 m francis_assisi : Saint Francis of Assisi
-6 bruno : Saint Bruno, priest
+6 bruno : Saint Bruno, Priest
 7 m bvm_rosary : Our Lady of the Rosary
-9 R denis : Saint Denis and companions, martyrs
-9 leonardi : Saint John Leonardi, priest
-11 john_xxiii : Saint John XXIII, pope
-14 R callistus_i : Saint Callistus I, pope and martyr
-15 m teresa_avila : Saint Teresa of Jesus, virgin and doctor
-16 hedwig : Saint Hedwig, religious
-16 alacoque : Saint Margaret Mary Alacoque, virgin
-17 m R ignatius_of_antioch : Saint Ignatius of Antioch, bishop and martyr
-18 f R luke : Saint Luke the Evangelist
-19 R brebeuf_jogues : Saints Jean de Brébeuf, Isaac Jogues, priests and martyrs; and their companions, martyrs
-19 paul_of_cross : Saint Paul of the Cross, priest
-22 john_paul_ii : Saint John Paul II, pope
-23 john_capistrano : Saint John of Capistrano, priest
-24 claret : Saint Anthony Mary Claret, bishop
-28 f R simon_jude : Saint Simon and Saint Jude, apostles
+9 R denis : Saint Denis, Bishop, and Companions, Martyrs
+9 leonardi : Saint John Leonardi, Priest
+11 john_xxiii : Saint John XXIII, Pope
+14 R callistus_i : Saint Callistus I, Pope and Martyr
+15 m teresa_avila : Saint Teresa of Jesus, Virgin and Doctor of the Church
+16 hedwig : Saint Hedwig, Religious
+16 alacoque : Saint Margaret Mary Alacoque, Virgin
+17 m R ignatius_of_antioch : Saint Ignatius of Antioch, Bishop and Martyr
+18 f R luke : Saint Luke, Evangelist
+19 R brebeuf_jogues : Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
+19 paul_of_cross : Saint Paul of the Cross, Priest
+22 john_paul_ii : Saint John Paul II, Pope
+23 john_capistrano : Saint John of Capistrano, Priest
+24 claret : Saint Anthony Mary Claret, Bishop
+28 f R simon_jude : Saints Simon and Jude, Apostles
 
 = 11
 1 s all_saints : All Saints
-2 s all_souls : All Souls
-3 R de_porres : Saint Martin de Porres, religious
-4 m borromeo : Saint Charles Borromeo, bishop
-9 f lateran_basilica : Dedication of the Lateran basilica
-10 m leo_great : Saint Leo the Great, pope and doctor
-11 m R martin : Saint Martin of Tours, bishop
-12 m R josaphat : Saint Josaphat, bishop and martyr
-15 albert : Saint Albert the Great, bishop and doctor
+2 s all_souls : The Commemoration of All the Faithful Departed (All Souls’ Day)
+3 R de_porres : Saint Martin de Porres, Religious
+4 m borromeo : Saint Charles Borromeo, Bishop
+9 f lateran_basilica : The Dedication of the Lateran Basilica
+10 m leo_great : Saint Leo the Great, Pope and Doctor of the Church
+11 m R martin : Saint Martin of Tours, Bishop
+12 m R josaphat : Saint Josaphat, Bishop and Martyr
+15 albert : Saint Albert the Great, Bishop and Doctor of the Church
 16 margaret_of_scotland : Saint Margaret of Scotland
-16 gertrude : Saint Gertrude the Great, virgin
-17 m elizabeth_of_hungary : Saint Elizabeth of Hungary, religious
-18 peter_paul_basilicas : Dedication of the basilicas of Saints Peter and Paul, Apostles
-21 m bvm_presentation : Presentation of the Blessed Virgin Mary
-22 m R cecilia : Saint Cecilia, virgin and martyr
-23 R clement_i : Saint Clement I, pope and martyr
-23 columban : Saint Columban, religious
-24 m R vietnamese_martyrs : Saint Andrew Dung Lac and his companions, martyrs
-25 R catherine_of_alexandria : Saint Catherine of Alexandria
-30 f R andrew : Saint Andrew the Apostle
+16 gertrude : Saint Gertrude, Virgin
+17 m elizabeth_of_hungary : Saint Elizabeth of Hungary, Religious
+18 peter_paul_basilicas : The Dedication of the Basilicas of Saints Peter and Paul, Apostles
+21 m bvm_presentation : The Presentation of the Blessed Virgin Mary
+22 m R cecilia : Saint Cecilia, Virgin and Martyr
+23 R clement_i : Saint Clement I, Pope and Martyr
+23 columban : Saint Columban, Abbot
+24 m R vietnamese_martyrs : Saint Andrew Dũng-Lạc, Priest, and Companions, Martyrs
+25 R catherine_of_alexandria : Saint Catherine of Alexandria, Virgin and Martyr
+30 f R andrew : Saint Andrew, Apostle
 
 = 12
-3 m francis_xavier : Saint Francis Xavier, priest
-4 john_damascene : Saint John Damascene, priest and doctor
-6 nicholas : Saint Nicholas, bishop
-7 m ambrose : Saint Ambrose, bishop and doctor
-8 s bvm_immaculate : Immaculate Conception of the Blessed Virgin Mary
-9 juan_diego : Saint Juan Diego
+3 m francis_xavier : Saint Francis Xavier, Priest
+4 john_damascene : Saint John Damascene, Priest and Doctor of the Church
+6 nicholas : Saint Nicholas, Bishop
+7 m ambrose : Saint Ambrose, Bishop and Doctor of the Church
+8 s bvm_immaculate : The Immaculate Conception of the Blessed Virgin Mary
+9 juan_diego : Saint Juan Diego Cuauhtlatoatzin
 10 bvm_loreto : Our Lady of Loreto
-11 damasus_i : Saint Damasus I, pope
+11 damasus_i : Saint Damasus I, Pope
 12 bvm_guadalupe : Our Lady of Guadalupe
-13 m R lucy : Saint Lucy of Syracuse, virgin and martyr
-14 m john_of_cross : Saint John of the Cross, priest and doctor
-21 canisius : Saint Peter Canisius, priest and doctor
-23 john_of_kanty : Saint John of Kanty, priest
-26 f R stephen : Saint Stephen, the first martyr
-27 f john_evangelist : Saint John the Apostle and evangelist
-28 f R innocents : Holy Innocents, martyrs
-29 R becket : Saint Thomas Becket, bishop and martyr
-31 sylvester_i : Saint Sylvester I, pope
+13 m R lucy : Saint Lucy, Virgin and Martyr
+14 m john_of_cross : Saint John of the Cross, Priest and Doctor of the Church
+21 canisius : Saint Peter Canisius, Priest and Doctor of the Church
+23 john_of_kanty : Saint John of Kanty, Priest
+26 f R stephen : Saint Stephen, the First Martyr
+27 f john_evangelist : Saint John, Apostle and Evangelist
+28 f R innocents : The Holy Innocents, Martyrs
+29 R becket : Saint Thomas Becket, Bishop and Martyr
+31 sylvester_i : Saint Sylvester I, Pope

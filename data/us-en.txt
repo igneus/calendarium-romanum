@@ -1,0 +1,41 @@
+---
+title: Calendar for the dioceses of the USA
+description: Calendar for the dioceses of the United States of America
+locale: en
+country: us
+extends:
+  - universal-en.txt
+---
+
+1/4 m seton : Saint Elizabeth Ann Seton, Religious
+1/5 m neumann : Saint John Neumann, Bishop
+1/6 bessette : Saint André Bessette, Religious
+1/22 unborn_children : Day of Prayer for the Legal Protection of Unborn Children
+# (1/23, when 1/22 falls on a Sunday)
+1/23 vincent_deacon : Saint Vincent, Deacon and Martyr
+1/23 marianne_cope : Saint Marianne Cope, Virgin
+
+3/3 drexel : Saint Katharine Drexel, Virgin
+
+5/10 de_veuster : Saint Damien de Veuster, Priest
+5/15 isidore_the_farmer : Saint Isidore
+
+7/1 junipero_serra : Saint Junípero Serra, Priest
+7/4 independence_day : Independence Day
+7/5 elizabeth_of_portugal : Saint Elizabeth of Portugal
+7/14 m kateri : Blessed Kateri Tekakwitha, Virgin
+7/18 camillus_de_lellis : Saint Camillus de Lellis, Priest
+
+9/9 m claver : Saint Peter Claver, Priest
+
+10/5 francis_xavier_seelos : Blessed Francis Xavier Seelos, Priest
+10/6 durocher : Blessed Marie Rose Durocher, Virgin
+10/19 m brebeuf_jogues : Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
+10/20 paul_of_cross : Saint Paul of the Cross, Priest
+
+11/13 m cabrini : Saint Frances Xavier Cabrini, Virgin
+11/18 rose_duchesne : Saint Rose Philippine Duchesne, Virgin
+11/23 miguel_pro : Blessed Miguel Agustín Pro, Priest and Martyr
+# 11/4thThursday thanksgiving : Thanksgiving Day
+
+12/12 f bvm_guadalupe : Our Lady of Guadalupe

@@ -31,6 +31,7 @@ module CalendariumRomanum
     GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt')
     GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt')
     GENERAL_ROMAN_SPANISH = SanctoraleFile.new('universal-es.txt')
+    US_ENGLISH = SanctoraleFile.new('us-en.txt')
     CZECH = SanctoraleFile.new('czech-cs.txt')
 
     values(index_by: :siglum) do
@@ -41,6 +42,7 @@ module CalendariumRomanum
         GENERAL_ROMAN_FRENCH,
         GENERAL_ROMAN_ITALIAN,
         GENERAL_ROMAN_SPANISH,
+        US_ENGLISH,
         CZECH,
       ] \
       +
