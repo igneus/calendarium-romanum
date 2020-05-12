@@ -212,22 +212,22 @@ module CalendariumRomanum
     #
     # @return [Symbol]
     #   For possible values see {LECTIONARY_CYCLES}
-    def lectionary(year)
+    def lectionary
       Calendar.lectionary_cycle_sunday(@year)
     end
 
     # Ferial lectionary cycle
     #
     # @return [1, 2]
-    def ferial_lectionary(year)
+    def ferial_lectionary
       Calendar.lectionary_cycle_ferial(@year)
     end
 
     # calculate the lectionary cycles for a specific date
     def self.lectionary_cycles_for_date date
       year = date.year
-      if date >= Temporale::Dates.first_advent_sunday(year)
-        year += 1
+      if date < Temporale::Dates.first_advent_sunday(year)
+        year -= 1
       end
 
       return {
