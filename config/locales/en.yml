@@ -7,36 +7,36 @@ en:
       easter: Easter Season
       ordinary: Ordinary Time
     solemnity:
-      nativity: Christmas
-      holy_family: The Holy Family
-      mother_of_god: Mary, Mother of God (Octave of Christmas)
-      epiphany: The Epiphany
+      nativity: The Nativity of the Lord [CHRISTMAS]
+      holy_family: The Holy Family of Jesus, Mary and Joseph
+      mother_of_god: Solemnity of Mary, the Holy Mother of God
+      epiphany: The Epiphany of the Lord
       baptism_of_lord: The Baptism of the Lord
       ash_wednesday: Ash Wednesday
-      palm_sunday: Passion Sunday (Palm Sunday)
-      good_friday: Good Friday
+      palm_sunday: Palm Sunday of the Passion of the Lord
+      good_friday: Friday of the Passion of the Lord [Good Friday]
       holy_saturday: Holy Saturday
-      easter_sunday: Easter Sunday
-      ascension: The Ascension
-      pentecost: Pentecost
-      holy_trinity: Trinity Sunday
-      corpus_christi: Corpus Christi (The Body and Blood of Christ)
-      sacred_heart: The Sacred Heart of Jesus
-      mother_of_church: Mary, Mother of the Church
-      immaculate_heart: The Immaculate Heart of Mary
-      christ_king: Christ The King
-      saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
+      easter_sunday: Easter Sunday of the Resurrection of the Lord
+      ascension: The Ascension of the Lord
+      pentecost: Pentecost Sunday
+      holy_trinity: The Most Holy Trinity
+      corpus_christi: The Most Holy Body and Blood of Christ (CORPUS CHRISTI)
+      sacred_heart: The Most Sacred Heart of Jesus
+      mother_of_church: The Blessed Virgin Mary, Mother of the Church
+      immaculate_heart: The Immaculate Heart of the Blessed Virgin Mary
+      christ_king: Our Lord Jesus Christ, King of the Universe
+      saturday_memorial_bvm: Mass for the Blessed Virgin Mary on Saturday
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
-      ferial: '%{weekday}, %{week} week in Ordinary Time'
+      ferial: '%{weekday} of the %{week} Week in Ordinary Time'
     advent:
       sunday: '%{week} Sunday of Advent'
-      ferial: '%{weekday}, %{week} week of Advent'
-      before_christmas: '%{day} December'
+      ferial: '%{weekday} of the %{week} Week of Advent'
+      before_christmas: 'December %{day}'
     christmas:
       nativity_octave:
-        ferial: '%{day} day of Christmas Octave'
-      sunday: '%{week} Sunday after the Nativity of the Lord'
+        ferial: '%{day} Day within the Octave of the Nativity of the Lord [Christmas]'
+      sunday: '%{week} Sunday after the Nativity [CHRISTMAS]'
       ferial: '%{weekday} after Christmas Octave'
       after_epiphany:
         ferial: '%{weekday} after Epiphany'
@@ -44,14 +44,14 @@ en:
       after_ashes:
         ferial: '%{weekday} after Ash Wednesday'
       sunday: '%{week} Sunday of Lent'
-      ferial: '%{weekday}, %{week} week of Lent'
+      ferial: '%{weekday} of the %{week} Week of Lent'
       holy_week:
         ferial: '%{weekday} of Holy Week'
     easter:
       octave:
-        ferial: 'Easter %{weekday}'
+        ferial: '%{weekday} Within the Octave of Easter'
       sunday: '%{week} Sunday of Easter'
-      ferial: '%{weekday}, %{week} week of Easter'
+      ferial: '%{weekday} of the %{week} week of Easter'
   rank:
     '1_1': Easter triduum
     '1_2': Primary liturgical days
