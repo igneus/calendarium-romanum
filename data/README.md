@@ -104,10 +104,33 @@ There may be several entries for a day (optional memorials).
 At the beginning of the file there may be a "YAML front matter"
 (cf. [use of YFM in Jekyll][yfm]) -
 a YAML document with arbitrary metadata.
+The front matter is parsed when loading the data file
+and it's contents are available to the application code
+in `Sanctorale#metadata`.
 
-Currently the front matter is ignored  when loading sanctorale
-data files, but there are plans to make it available
-to application code.
+Top-level structure of the document should be a Hash
+(or "mapping" in the [YAML specification][yamlspec]'s vocabulary).
+It may contain whatever the author finds useful.
+A few fields are suggested:
+
+* `title` - name of the calendar in the language of it's contents
+  (suitable for the end user)
+* `description` - description of the contents in English (suitable for
+  people who may not understand the language of the contents,
+  e.g. maintainers of multi-language calendar applications)
+* `locale` - 2-character code of the content's language
+  (may be used by applications to automatically select a matching
+  locale for temporale feast names)
+* `country` - ISO 3166 alpha2 country code (only for country-specific
+  data)
+* `province` - name of ecclesiastical province (only for
+  province-specific data)
+* `diocese` - name of diocese (only for diocese-specific data)
+* `extends` - Array (or "sequence"
+  in the [YAML specification][yamlspec]'s vocabulary)
+  of more general data files the given file extends
+  (usually as relative filesystem paths; can be used by applications
+  to automatically load hierarchies of sanctorale data)
 
 ## Check your data
 
@@ -160,3 +183,4 @@ layered_sanctorale = CR::SanctoraleFactory.create_layered(*layers)
 ```
 
 [yfm]: https://jekyllrb.com/docs/front-matter/
+[yamlspec]: https://yaml.org/spec/1.2/spec.html
