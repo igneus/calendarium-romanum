@@ -46,7 +46,7 @@ module CalendariumRomanum
     # Retrieve solemnity for the specified day
     #
     # @param date [Date]
-    # @return [Celebration, null]
+    # @return [Celebration, nil]
     def get(date)
       @transferred[date]
     end
