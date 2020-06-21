@@ -182,6 +182,7 @@ locale: fr
 2 m guardian_angels : Les Saints Anges gardiens
 5 faustina_kowalska : Sainte Faustine Kowalska, vierge
 4 m francis_assisi : Saint François d'Assise
+5 faustina_kowalska : Sainte Faustine Kowalska, vierge
 6 bruno : Saint Bruno, prêtre
 7 m bvm_rosary : Notre Dame du Rosaire
 9 R denis : Saint Denis et ses compagnons, martyrs
