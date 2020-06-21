@@ -12,4 +12,5 @@ require 'calendarium-romanum'
 #   require 'calendarium-romanum/cr'
 #
 #   calendar = CR::Calendar.new 2000
+# @since 0.7.0
 CR = CalendariumRomanum

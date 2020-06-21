@@ -40,6 +40,7 @@ module CalendariumRomanum
     # front matters.
     #
     # @return [Hash, nil]
+    # @since 0.7.0
     attr_accessor :metadata
 
     # Adds a new {Celebration}
