@@ -4,9 +4,7 @@ description: Calendar for archdiocese of Prague, Czech Republic
 locale: cs
 country: cz
 diocese: Praha
-extends:
-  - czech-cs.txt
-  - czech-cechy-cs.txt
+extends: czech-cechy-cs.txt
 ---
 
 2/15 R bachstein : Bl. Bedřicha Bachsteina a druhů, mučedníků
