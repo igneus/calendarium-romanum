@@ -19,12 +19,28 @@ module CalendariumRomanum
       @days = {}
       @solemnities = {}
       @symbols = Set.new
+      @metadata = nil
     end
 
     # Content subset - only {Celebration}s in the rank(s) of solemnity.
     #
     # @return [Hash<AbstractDate=>Celebration>]
     attr_reader :solemnities
+
+    # Sanctorale metadata.
+    #
+    # Data files may contain YAML front matter.
+    # If provided, it's loaded by {SanctoraleLoader} and
+    # stored in this property.
+    # All data files bundled in the gem (see {Data}) have YAML
+    # front matter which is a Hash with a few standardized keys.
+    # While YAML also supports top-level content of other types,
+    # sanctorale data authors should stick to the convention
+    # of using Hash as the top-level data structure of their
+    # front matters.
+    #
+    # @return [Hash, nil]
+    attr_accessor :metadata
 
     # Adds a new {Celebration}
     #
