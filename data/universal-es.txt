@@ -180,6 +180,7 @@ locale: es
 = 10
 1 m therese_lisieux : Santa Teresa del Niño Jesús, Virgen y Doctora de la Iglesia
 2 m guardian_angels : Santos Ángeles Custodios
+5 faustina_kowalska : Santa Faustina Kowalska, Virgen
 4 m francis_assisi : San Francisco de Asís
 6 bruno : San Bruno, Presbítero
 7 m bvm_rosary : Nuestra Señora del Rosario

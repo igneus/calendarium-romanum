@@ -181,6 +181,7 @@ locale: fr
 1 m therese_lisieux : Sainte Thérèse de l'Enfant-Jésus et de la Sainte Face, vierge et docteur de l'Église
 2 m guardian_angels : Les Saints Anges gardiens
 4 m francis_assisi : Saint François d'Assise
+5 faustina_kowalska : Sainte Faustine Kowalska, vierge
 6 bruno : Saint Bruno, prêtre
 7 m bvm_rosary : Notre Dame du Rosaire
 9 R denis : Saint Denis et ses compagnons, martyrs

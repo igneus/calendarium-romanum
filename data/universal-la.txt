@@ -181,6 +181,7 @@ locale: la
 1 m therese_lisieux :  S. Teresiae a Iesu Infante, virginis et Ecclesiae doctoris
 2 m guardian_angels :  Ss. Angelorum Custodum
 4 m francis_assisi :  S. Francisci Assisiensis
+5 faustina_kowalska :  S. Faustinæ Kowalska, virginis
 6 bruno : S. Brunonis, presbyteri
 7 m bvm_rosary :  B. Mariae Virginis a Rosario
 9 R denis : Ss. Dionysii, episcopi, et sociorum, martyrum

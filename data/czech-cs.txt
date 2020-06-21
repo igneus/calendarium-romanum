@@ -201,6 +201,7 @@ country: cz
 1 m therese_lisieux : Sv. Terezie od Dítěte Ježíše, panny a učitelky církve
 2 m guardian_angels : Svatých andělů strážných
 4 m francis_assisi : Sv. Františka z Assisi
+5 faustina_kowalska : Sv. Faustiny Kowalské, panny
 6 bruno : Sv. Bruna, kněze
 7 m bvm_rosary : Panny Marie Růžencové
 9 R denis : Sv. Dionýsia, biskupa, a druhů, mučedníků

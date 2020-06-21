@@ -181,6 +181,7 @@ locale: en
 1 m therese_lisieux : Saint Thérèse of the Child Jesus, virgin and doctor
 2 m guardian_angels : Guardian Angels
 4 m francis_assisi : Saint Francis of Assisi
+5 faustina_kowalska : Saint Faustina Kowalska, virgin
 6 bruno : Saint Bruno, priest
 7 m bvm_rosary : Our Lady of the Rosary
 9 R denis : Saint Denis and companions, martyrs

@@ -180,6 +180,7 @@ locale: it
 1 m therese_lisieux :  Santa Teresa del Bambino Gesù, vergine e dottore della Chiesa
 2 m guardian_angels : Santi Angeli custodi
 4 m francis_assisi : San Francesco d'Assisi
+5 faustina_kowalska : Santa Faustina Kowalska, vergine
 6 bruno : San Bruno, sacerdote
 7 m bvm_rosary : Beata Vergine Maria del Rosario
 9 R denis : San Dionigi, vescovo, e compagni, martiri
