@@ -25,7 +25,7 @@ module CalendariumRomanum
         metadata = instances
                      .collect(&:metadata)
                      .select {|i| i.is_a? Hash }
-        r.metadata = metadata.inject(metadata.first.dup || {}) {|merged,i| merged.update i }
+        r.metadata = metadata.inject((metadata.first || {}).dup) {|merged,i| merged.update i }
         r.metadata.delete 'extends'
         r.metadata['components'] = instances.collect(&:metadata)
 
