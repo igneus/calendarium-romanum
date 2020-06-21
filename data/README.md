@@ -126,11 +126,12 @@ A few fields are suggested:
 * `province` - name of ecclesiastical province (only for
   province-specific data)
 * `diocese` - name of diocese (only for diocese-specific data)
-* `extends` - Array (or "sequence"
-  in the [YAML specification][yamlspec]'s vocabulary)
-  of more general data files the given file extends
+* `extends` - either String or (if multiple parents are needed)
+  Array ("sequence" in the [YAML specification][yamlspec]'s vocabulary)
+  of more general data file(s) the given file extends
   (usually as relative filesystem paths; can be used by applications
-  to automatically load hierarchies of sanctorale data)
+  to automatically load hierarchies of sanctorale data -
+  see `SanctoraleFactory.load_with_parents`)
 
 ## Check your data
 

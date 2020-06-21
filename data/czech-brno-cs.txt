@@ -4,9 +4,7 @@ description: Calendar for diocese of Brno, Czech Republic
 locale: cs
 country: cz
 diocese: Brno
-extends:
-  - czech-cs.txt
-  - czech-morava-cs.txt
+extends: czech-morava-cs.txt
 ---
 
 5/21 f2.8 brno_cathedral : Výročí posvěcení katedrály sv. Petra a Pavla

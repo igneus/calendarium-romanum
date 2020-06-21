@@ -58,23 +58,34 @@ module CalendariumRomanum
       # 'extends' key, it loads all the parents and assembles
       # the resulting {Sanctorale}.
       # If the data file doesn't reference any parents,
-      # returns the same as {SanctoraleLoader#load_from_file}.
+      # result is the same as {SanctoraleLoader#load_from_file}.
       #
       # @return [Sanctorale]
       def load_with_parents(path)
         loader = SanctoraleLoader.new
 
+        hierarchy = load_parent_hierarchy(path, loader)
+        return hierarchy.first if hierarchy.size == 1
+
+        create_layered *hierarchy
+      end
+
+      private
+
+      def load_parent_hierarchy(path, loader)
         main = loader.load_from_file path
-        return main unless main.metadata.has_key? 'extends'
+        return [main] unless main.metadata.has_key? 'extends'
 
         to_merge = [main]
-        main.metadata['extends'].reverse.each do |parent_path|
+        parents = main.metadata['extends']
+        parents = [parents] unless parents.is_a? Array
+        parents.reverse.each do |parent_path|
           expanded_path = File.expand_path parent_path, File.dirname(path)
-          parent = loader.load_from_file expanded_path
-          to_merge.unshift parent
+          subtree = load_parent_hierarchy(expanded_path, loader)
+          to_merge = subtree + to_merge
         end
 
-        create_layered *to_merge
+        to_merge
       end
     end
   end
