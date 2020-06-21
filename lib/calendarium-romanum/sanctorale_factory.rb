@@ -52,6 +52,30 @@ module CalendariumRomanum
         end
         create_layered(*instances)
       end
+
+      # Takes a single filesystem path. If the file's YAML front
+      # matter references any parent data files using the
+      # 'extends' key, it loads all the parents and assembles
+      # the resulting {Sanctorale}.
+      # If the data file doesn't reference any parents,
+      # returns the same as {SanctoraleLoader#load_from_file}.
+      #
+      # @return [Sanctorale]
+      def load_with_parents(path)
+        loader = SanctoraleLoader.new
+
+        main = loader.load_from_file path
+        return main unless main.metadata.has_key? 'extends'
+
+        to_merge = [main]
+        main.metadata['extends'].reverse.each do |parent_path|
+          expanded_path = File.expand_path parent_path, File.dirname(path)
+          parent = loader.load_from_file expanded_path
+          to_merge.unshift parent
+        end
+
+        create_layered *to_merge
+      end
     end
   end
 end
