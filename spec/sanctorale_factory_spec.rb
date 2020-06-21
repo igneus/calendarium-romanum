@@ -93,17 +93,9 @@ describe CR::SanctoraleFactory do
     end
   end
 
-  describe '.load_layered_from_files' do
-    let(:s) do
-      files = %w(czech-cs.txt czech-cechy-cs.txt czech-budejovice-cs.txt).collect do |f|
-        File.join(File.expand_path('../data', File.dirname(__FILE__)), f)
-      end
-
-      described_class.load_layered_from_files(*files)
-    end
-
+  shared_examples 'calendar layering České Budějovice' do
     it 'has celebrations from the first file' do
-      dd = s.get 9, 28
+      dd = layered_sanctorale.get 9, 28
       expect(dd.size).to eq 1
 
       d = dd.first
@@ -112,7 +104,7 @@ describe CR::SanctoraleFactory do
     end
 
     it 'has celebrations from the second file' do
-      dd = s.get 7, 4
+      dd = layered_sanctorale.get 7, 4
       expect(dd.size).to eq 1
 
       d = dd.first
@@ -121,12 +113,34 @@ describe CR::SanctoraleFactory do
     end
 
     it 'celebrations from the last file win' do
-      dd = s.get 12, 22
+      dd = layered_sanctorale.get 12, 22
       expect(dd.size).to eq 1
 
       d = dd.first
       expect(d.rank).to eq CR::Ranks::FEAST_PROPER
       expect(d.title).to eq 'Výročí posvěcení katedrály sv. Mikuláše'
     end
+  end
+
+  describe '.load_layered_from_files' do
+    let(:layered_sanctorale) do
+      files = %w(czech-cs.txt czech-cechy-cs.txt czech-budejovice-cs.txt).collect do |f|
+        File.join(File.expand_path('../data', File.dirname(__FILE__)), f)
+      end
+
+      described_class.load_layered_from_files(*files)
+    end
+
+    include_examples 'calendar layering České Budějovice'
+  end
+
+  describe '.load_with_parents' do
+    let(:layered_sanctorale) do
+      path = File.join(File.expand_path('../data', File.dirname(__FILE__)), 'czech-budejovice-cs.txt')
+
+      described_class.load_with_parents path
+    end
+
+    include_examples 'calendar layering České Budějovice'
   end
 end
