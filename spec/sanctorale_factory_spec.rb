@@ -39,5 +39,46 @@ describe CR::SanctoraleFactory do
       expect(d.rank).to eq CR::Ranks::FEAST_PROPER
       expect(d.title).to eq 'Výročí posvěcení katedrály sv. Mikuláše'
     end
+
+    it 'creates merged metadata' do
+      merged = {
+        'title' => 'kalendář českobudějovické diecéze',
+        'description' => 'Calendar for diocese of České Budějovice, Czech Republic',
+        'locale' => 'cs',
+        'country' => 'cz',
+        'diocese' => 'České Budějovice',
+      }
+      expect(merged).to be < s.metadata
+      expect(s.metadata).not_to have_key 'extends'
+    end
+
+    it 'stores original metadata' do
+      components = [
+        {
+          'title' => 'Český národní kalendář',
+          'description' => 'Calendar for the dioceses of Czech Republic',
+          'locale' => 'cs',
+          'country' => 'cz',
+        },
+        {
+          'title' => 'kalendář české církevní provincie',
+          'description' => 'Calendar for province of Bohemia',
+          'locale' => 'cs',
+          'country' => 'cz',
+          'province' => 'Bohemia',
+          'extends' => ['czech-cs.txt'],
+        },
+        {
+          'title' => 'kalendář českobudějovické diecéze',
+          'description' => 'Calendar for diocese of České Budějovice, Czech Republic',
+          'locale' => 'cs',
+          'country' => 'cz',
+          'diocese' => 'České Budějovice',
+          'extends' => ['czech-cs.txt', 'czech-cechy-cs.txt'],
+        },
+      ]
+      expect(s.metadata['components'])
+        .to eq(components)
+    end
   end
 end

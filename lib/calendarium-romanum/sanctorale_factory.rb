@@ -21,6 +21,11 @@ module CalendariumRomanum
       def create_layered(*instances)
         r = Sanctorale.new
         instances.each {|i| r.update i }
+
+        r.metadata = instances.last.metadata.dup
+        r.metadata.delete 'extends'
+        r.metadata['components'] = instances.collect(&:metadata)
+
         r
       end
 
