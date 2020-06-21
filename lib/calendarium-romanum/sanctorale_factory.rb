@@ -61,6 +61,7 @@ module CalendariumRomanum
       # result is the same as {SanctoraleLoader#load_from_file}.
       #
       # @return [Sanctorale]
+      # @since 0.7.0
       def load_with_parents(path)
         loader = SanctoraleLoader.new
 

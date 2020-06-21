@@ -28,6 +28,7 @@ module CalendariumRomanum
       # Load the data file and all it's parents
       #
       # @return [Sanctorale]
+      # @since 0.7.0
       def load_with_parents
         SanctoraleFactory.load_with_parents(path)
       end

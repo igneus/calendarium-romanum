@@ -43,6 +43,7 @@ module CalendariumRomanum
     # Weekday as internationalized string
     #
     # @return [String]
+    # @since 0.7.0
     def weekday_name
       I18n.t(date.wday, scope: 'weekday')
     end
@@ -100,6 +101,7 @@ module CalendariumRomanum
     # Intended mostly for debugging purposes.
     #
     # @return [String]
+    # @since 0.7.0
     def to_s
       celebrations_string = '['
       celebrations.each do |c|
@@ -265,6 +267,7 @@ module CalendariumRomanum
     # (not very pretty, intended mostly for development inspections).
     #
     # @return [String]
+    # @since 0.7.0
     def to_s
       "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect} has_vigil=#{has_vigil}>"
     end
