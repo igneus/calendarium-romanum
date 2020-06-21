@@ -2,7 +2,96 @@
 require 'spec_helper'
 
 describe CR::SanctoraleFactory do
-  describe '.create_layered'
+  describe '.create_layered' do
+    describe 'metadata handling' do
+      let(:metadata_a) { {'title' => 'Calendar', 'foo' => 'bar'} }
+      let(:metadata_b) { {'title' => 'Second calendar', 'some' => 'handsome', 'extends' => ['with_a']} }
+      let(:metadata_nonhash) { [:something] }
+      let(:with_a) { CR::Sanctorale.new.tap {|s| s.metadata = metadata_a }}
+      let(:with_b) { CR::Sanctorale.new.tap {|s| s.metadata = metadata_b } }
+      let(:without) { CR::Sanctorale.new }
+      let(:with_nonhash) { CR::Sanctorale.new.tap {|s| s.metadata = metadata_nonhash } }
+
+      it 'creates merged metadata' do
+        merged = {
+          # conflicting key - later wins
+          'title' => 'Second calendar',
+          # non-conflicting key from the first
+          'foo' => 'bar',
+          # non-conflicting key from the second
+          'some' => 'handsome',
+        }
+
+        result = described_class.create_layered(with_a, with_b)
+
+        expect(merged).to be < result.metadata
+
+        # key 'extends' has special meaning and is therefore
+        # always deleted from merged metadata
+        expect(result.metadata).not_to have_key 'extends'
+      end
+
+      it 'stores original metadata' do
+        result = described_class.create_layered(with_a, with_b)
+        expect(result.metadata['components'])
+          .to eq [metadata_a, metadata_b]
+      end
+
+      it 'overwrites key "components" if it exists' do
+        result = described_class.create_layered(
+          with_a,
+          # this calendar's metadata have key 'components',
+          # but that key is special and we always set it's contents
+          # when merging
+          CR::Sanctorale.new.tap {|s| s.metadata = {'components' => :c} }
+        )
+        expect(result.metadata['components'])
+          .to eq [metadata_a, {'components' => :c}]
+      end
+
+      it 'copes with nil metadata on the first place' do
+        result = described_class.create_layered(without, with_a)
+
+        expect(metadata_a).to be < result.metadata
+        expect(result.metadata['components'])
+          .to eq [nil, metadata_a] # nils are preserved in 'components'
+      end
+
+      it 'copes with nil metadata on the last place' do
+        result = described_class.create_layered(with_a, without)
+
+        expect(metadata_a).to be < result.metadata
+        expect(result.metadata['components'])
+          .to eq [metadata_a, nil]
+      end
+
+      it 'copes with all nil' do
+        result = described_class.create_layered(without, without)
+
+        expect(result.metadata['components'])
+          .to eq [nil, nil]
+      end
+
+      it 'copes with non-Hash metadata' do
+        result = described_class.create_layered(
+          with_a,
+          with_nonhash
+        )
+        # non-Hash metadata are not merged, but they do appear
+        # in 'components'
+        expect(metadata_a).to be < result.metadata
+        expect(result.metadata['components'])
+          .to eq [metadata_a, metadata_nonhash]
+      end
+
+      it 'copes with all non-Hash' do
+        result = described_class.create_layered(with_nonhash)
+
+        expect(result.metadata['components'])
+          .to eq [metadata_nonhash]
+      end
+    end
+  end
 
   describe '.load_layered_from_files' do
     let(:s) do
@@ -38,47 +127,6 @@ describe CR::SanctoraleFactory do
       d = dd.first
       expect(d.rank).to eq CR::Ranks::FEAST_PROPER
       expect(d.title).to eq 'Výročí posvěcení katedrály sv. Mikuláše'
-    end
-
-    it 'creates merged metadata' do
-      merged = {
-        'title' => 'kalendář českobudějovické diecéze',
-        'description' => 'Calendar for diocese of České Budějovice, Czech Republic',
-        'locale' => 'cs',
-        'country' => 'cz',
-        'diocese' => 'České Budějovice',
-      }
-      expect(merged).to be < s.metadata
-      expect(s.metadata).not_to have_key 'extends'
-    end
-
-    it 'stores original metadata' do
-      components = [
-        {
-          'title' => 'Český národní kalendář',
-          'description' => 'Calendar for the dioceses of Czech Republic',
-          'locale' => 'cs',
-          'country' => 'cz',
-        },
-        {
-          'title' => 'kalendář české církevní provincie',
-          'description' => 'Calendar for province of Bohemia',
-          'locale' => 'cs',
-          'country' => 'cz',
-          'province' => 'Bohemia',
-          'extends' => ['czech-cs.txt'],
-        },
-        {
-          'title' => 'kalendář českobudějovické diecéze',
-          'description' => 'Calendar for diocese of České Budějovice, Czech Republic',
-          'locale' => 'cs',
-          'country' => 'cz',
-          'diocese' => 'České Budějovice',
-          'extends' => ['czech-cs.txt', 'czech-cechy-cs.txt'],
-        },
-      ]
-      expect(s.metadata['components'])
-        .to eq(components)
     end
   end
 end
