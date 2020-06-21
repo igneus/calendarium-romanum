@@ -22,7 +22,10 @@ module CalendariumRomanum
         r = Sanctorale.new
         instances.each {|i| r.update i }
 
-        r.metadata = instances.last.metadata.dup
+        metadata = instances
+                     .collect(&:metadata)
+                     .select {|i| i.is_a? Hash }
+        r.metadata = metadata.inject(metadata.first.dup || {}) {|merged,i| merged.update i }
         r.metadata.delete 'extends'
         r.metadata['components'] = instances.collect(&:metadata)
 
