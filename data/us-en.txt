@@ -29,6 +29,7 @@ extends:
 
 9/9 m claver : Saint Peter Claver, Priest
 
+10/5 faustina_kowalska : Saint Faustina Kowalska, Virgin
 10/5 francis_xavier_seelos : Blessed Francis Xavier Seelos, Priest
 10/6 bruno : Saint Bruno, Priest
 10/6 durocher : Blessed Marie Rose Durocher, Virgin
