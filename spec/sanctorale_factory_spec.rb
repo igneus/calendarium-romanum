@@ -1,6 +1,10 @@
 # coding: utf-8
 require 'spec_helper'
 
+# checking for Hash subset using the `<` operator is really handy here, but not available
+# on Ruby < 2.3.0 and we still want to support Ruby 2.0. => 'backports' gem to the rescue
+require 'backports/2.3.0/hash/lt'
+
 describe CR::SanctoraleFactory do
   describe '.create_layered' do
     describe 'metadata handling' do
