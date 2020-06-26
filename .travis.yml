@@ -3,11 +3,9 @@ language: ruby
 dist: trusty
 
 rvm:
-  # oldest officially unsupported MRI we support,
-  # oldest officially supported and latest MRI
-  - 2.0.0
-  - 2.5.0
-  - 2.6.5
+  - 2.0.0 # oldest MRI we support
+  - 2.5.0 # oldest officially maintained MRI
+  - 2.6.5 # ~ latest MRI
   #- jruby-9.1.12.0
 
 install: bundle install --jobs=3 --deployment --without development
