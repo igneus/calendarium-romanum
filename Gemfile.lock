@@ -35,7 +35,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
-    rake (12.0.0)
+    rake (12.3.3)
     roman-numerals (0.3.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
