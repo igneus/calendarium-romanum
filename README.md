@@ -87,7 +87,7 @@ I18n.locale = :en # set locale
 
 # build calendar
 pcal = CalendariumRomanum::PerpetualCalendar.new(
-  sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load
+  sanctorale: CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH.load
 )
 
 # query
