@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.7.1] 2020-06-28
+
+### Fixed
+
+- `SanctoraleFactory.load_with_parents` crashing on files without
+  metadata
+- `Sanctorale#update` prohibiting application of a particular
+  calendar which moves s celebration contained in the calendar being
+  updated to an earlier date
+  (as exemplified by the bundled calendar of diocese of Litoměřice,
+  Czech Republic: on calendarium-romanum 0.7.0
+  `CalendariumRomanum::Data['czech-litomerice-cs'].load_with_parents`
+  raises `ArgumentError` complaining about non-unique celebration symbols)
+- broken links in YARD documentation (due to files missing in the
+  gem archive and basename clashes)
+
+### Changed
+
+- if `Sanctorale#update` raises `ArgumentError` complaining about
+  non-unique celebration symbols, the updated `Sanctorale` instance
+  is left in an inconsistent internal state (more than one occurrence
+  of at least one celebration symbol)
+- some additional non-code files (mostly for YARD documentation)
+  included in the gem archive
+
 ## [0.7.0] 2020-06-21
 
 ### Fixed
