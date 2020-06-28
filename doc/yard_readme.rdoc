@@ -7,7 +7,7 @@ MP <em>{Mysterii Paschalis}[http://w2.vatican.va/content/paul-vi/en/motu_proprio
 The rules are defined in
 <em>{General Norms for the Liturgical Year and the Calendar}[https://www.ewtn.com/catholicism/library/liturgical-year-2193]</em>.
 
-== Usage
+== Quickstart
 
 For usage instructions with copy-pastable code examples see {file:README.md}
 
@@ -20,8 +20,8 @@ It represents calendar for a single liturgical year and allows retrieving calend
 for any of the year's days.
 Calendar basically consists of
 a {CalendariumRomanum::Temporale Temporale} and a {CalendariumRomanum::Sanctorale Sanctorale}
-and it's main task is to combine information from both and produce a fully and correctly
-populated {CalendariumRomanum::Day Day} instance,
+and it's main task is to combine information from both and for any day of the year produce
+a fully and correctly populated {CalendariumRomanum::Day Day} instance,
 containing one or more {CalendariumRomanum::Celebration Celebrations}
 (see {CalendariumRomanum::Calendar#[] Calendar#[]}).
 
@@ -37,7 +37,7 @@ instances internally and passes method calls to them.
 
 <b>{CalendariumRomanum::Day Day}</b> contains complete calendar data of a liturgical day.
 It owns one or more {CalendariumRomanum::Celebration Celebrations}.
-When there are multiple it means that any one of them can be chosen and celebrated
+If there are multiple it means that any one of them can be chosen and celebrated
 that day.
 
 <b>{CalendariumRomanum::Celebration Celebration}</b> represents a celebration
