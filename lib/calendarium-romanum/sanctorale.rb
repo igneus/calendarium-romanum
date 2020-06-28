@@ -87,10 +87,13 @@ module CalendariumRomanum
     # @param month [Fixnum]
     # @param day [Fixnum]
     # @param celebrations [Array<Celebration>]
+    # @param symbol_uniqueness [true|false]
+    #   allows disabling symbol uniqueness check.
+    #   Internal feature, not intended for use by client code.
     # @return [void]
     # @raise [ArgumentError]
     #   when performing the operation would break the object's invariant
-    def replace(month, day, celebrations)
+    def replace(month, day, celebrations, symbol_uniqueness: true)
       date = AbstractDate.new(month, day)
 
       symbols_without_day = @symbols
@@ -101,7 +104,7 @@ module CalendariumRomanum
 
       new_symbols = celebrations.collect(&:symbol).compact
       duplicate = symbols_without_day.intersection new_symbols
-      unless duplicate.empty?
+      if symbol_uniqueness && !duplicate.empty?
         raise ArgumentError.new("Attempted to add Celebrations with duplicate symbols #{duplicate.to_a.inspect}")
       end
 
@@ -127,8 +130,9 @@ module CalendariumRomanum
     # @raise (see #replace)
     def update(other)
       other.each_day do |date, celebrations|
-        replace date.month, date.day, celebrations
+        replace date.month, date.day, celebrations, symbol_uniqueness: false
       end
+      rebuild_symbols
     end
 
     # Retrieves {Celebration}s for the given date
@@ -205,5 +209,27 @@ module CalendariumRomanum
     protected
 
     attr_reader :days
+
+    # Builds the registry of celebration symbols anew,
+    # raises error if any duplicates are found.
+    def rebuild_symbols
+      @symbols = Set.new
+      duplicates = []
+
+      @days.each_pair do |date,celebrations|
+        celebrations.each do |celebration|
+          if @symbols.include?(celebration.symbol) &&
+             !duplicates.include?(celebration.symbol)
+            duplicates << celebration.symbol
+          end
+
+          @symbols << celebration.symbol
+        end
+      end
+
+      unless duplicates.empty?
+        raise ArgumentError.new("Duplicate celebration symbols: #{duplicates.inspect}")
+      end
+    end
   end
 end

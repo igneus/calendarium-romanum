@@ -15,8 +15,14 @@ describe CalendariumRomanum::Data do
 
   describe 'all can be loaded' do
     described_class.each do |data|
-      it data.siglum do
-        expect { data.load }.not_to raise_exception
+      describe data.siglum do
+        it 'can be loaded on it\'s own' do
+          expect { data.load }.not_to raise_exception
+        end
+
+        it 'can be loaded with parents' do
+          expect { data.load_with_parents }.not_to raise_exception
+        end
       end
     end
   end
