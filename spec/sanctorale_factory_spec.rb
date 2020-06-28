@@ -162,5 +162,25 @@ describe CR::SanctoraleFactory do
         described_class.load_with_parents path
       end.not_to raise_exception
     end
+
+    it 'loads calendars referencing calendars in different directories' do
+      path = File.expand_path('fixtures/extending_calendar_in_subfolder.txt', File.dirname(__FILE__))
+
+      sanctorale = nil
+      expect do
+        sanctorale = described_class.load_with_parents path
+      end.not_to raise_exception
+
+      # check that celebrations from all referenced calendars are loaded
+      expect(
+        Set.new(
+          sanctorale
+            .each_day
+            .collect {|date,c| c }
+            .flatten
+            .collect(&:symbol)
+        )
+      ).to eq Set.new([:nullus, :ignotus, :cetera])
+    end
   end
 end
