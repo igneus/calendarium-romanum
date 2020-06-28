@@ -5,7 +5,7 @@ module CalendariumRomanum
   class SanctoraleFactory
     class << self
       # Takes several {Sanctorale} instances, returns a new one,
-      # resulting by merging them all together
+      # created by merging them all together
       # (using {Sanctorale#update})
       #
       # @return [Sanctorale]
