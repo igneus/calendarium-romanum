@@ -5,7 +5,7 @@
 
 API documentation:
 [master](http://www.rubydoc.info/github/igneus/calendarium-romanum/master)
-[0.7.0](http://www.rubydoc.info/gems/calendarium-romanum/0.7.0)
+[0.7.1](http://www.rubydoc.info/gems/calendarium-romanum/0.7.1)
 [0.6.0](http://www.rubydoc.info/gems/calendarium-romanum/0.6.0)
 [0.5.0](http://www.rubydoc.info/gems/calendarium-romanum/0.5.0)
 [0.4.0](http://www.rubydoc.info/gems/calendarium-romanum/0.4.0)
