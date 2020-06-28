@@ -1,3 +1,3 @@
 --main doc/yard_readme.rdoc
 --asset doc/images:images
---file README.md,doc/data_readme.md,data/universal-en.txt
+--file README.md,doc/yard_readme.rdoc,doc/data_readme.md,data/universal-en.txt
