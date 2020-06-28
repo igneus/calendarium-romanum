@@ -75,7 +75,7 @@ module CalendariumRomanum
 
       def load_parent_hierarchy(path, loader)
         main = loader.load_from_file path
-        return [main] unless main.metadata.has_key? 'extends'
+        return [main] unless main.metadata.is_a?(Hash) && main.metadata.has_key?('extends')
 
         to_merge = [main]
         parents = main.metadata['extends']
