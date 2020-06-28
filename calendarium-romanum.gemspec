@@ -11,10 +11,9 @@ Gem::Specification.new do |s|
 
   s.authors     = ['Jakub Pavlík']
   s.email       = 'jkb.pavlik@gmail.com'
-  s.files       = %w(lib/**/*.rb data/* spec/*.rb config/**/*)
-                  .collect {|glob| Dir[glob] }
-                  .flatten
-                  .reject {|path| path.end_with? '~' } # Emacs backups
+  s.files       = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
   s.executables = %w(calendariumrom)
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
