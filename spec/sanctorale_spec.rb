@@ -202,12 +202,24 @@ describe CR::Sanctorale do
 
   describe '#size' do
     it 'knows when the Sanctorale is empty' do
-      expect(s.size).to eq 0
+      expect(s.size).to be 0
     end
 
     it 'knows when there is something' do
       s.add 1, 17, antonius
-      expect(s.size).to eq 1
+      expect(s.size).to be 1
+    end
+
+    it 'celebrations on the same day' do
+      s.add 1, 14, nullus
+      s.add 1, 14, ignotus
+      expect(s.size).to be 1
+    end
+
+    it 'celebrations on different days' do
+      s.add 1, 14, nullus
+      s.add 1, 15, ignotus
+      expect(s.size).to be 2
     end
   end
 
