@@ -198,6 +198,54 @@ describe CR::Sanctorale do
       s.update s2
       expect(s.get(1, 17)).to eq [antonius]
     end
+
+    describe 'copes with celebrations changing dates' do
+      it 'to a later one' do
+        # general calendar having St. Nullus on January 14th
+        s.add 1, 14, nullus
+
+        # proper calendar with a local saint St. Ignotus on January 14th
+        # and St. Nullus moved to January 15th
+        s2 = described_class.new
+        s2.add 1, 14, ignotus
+        s2.add 1, 15, nullus
+
+        expect do
+          s.update s2
+        end.not_to raise_exception
+      end
+
+      it 'to an earlier one' do
+        # general calendar having St. Nullus on January 14th
+        s.add 1, 14, nullus
+
+        # proper calendar with a local saint St. Ignotus on January 14th
+        # and St. Nullus moved to January 13th
+        s2 = described_class.new
+        s2.add 1, 13, nullus
+        s2.add 1, 14, ignotus
+
+        expect do
+          s.update s2
+        end.not_to raise_exception
+      end
+    end
+
+    it 'does not allow introducing duplicate symbols' do
+      s.add 1, 14, nullus
+
+      s2 = described_class.new
+      s2.add 9, 19, nullus
+
+      expect do
+        s.update s2
+      end.to raise_exception(ArgumentError, /Duplicate celebration symbols: \[:nullus\]/)
+
+      # the uniqueness check is made at the end of the operation,
+      # the instance is in an inconsistent state
+      expect(s.get(1, 14)).to eq [nullus]
+      expect(s.get(9, 19)).to eq [nullus]
+    end
   end
 
   describe '#size' do
