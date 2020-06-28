@@ -129,7 +129,7 @@ describe CR::SanctoraleFactory do
   describe '.load_layered_from_files' do
     let(:layered_sanctorale) do
       files = %w(czech-cs.txt czech-cechy-cs.txt czech-budejovice-cs.txt).collect do |f|
-        File.join(File.expand_path('../data', File.dirname(__FILE__)), f)
+        File.expand_path("../data/#{f}", File.dirname(__FILE__))
       end
 
       described_class.load_layered_from_files(*files)
@@ -140,11 +140,27 @@ describe CR::SanctoraleFactory do
 
   describe '.load_with_parents' do
     let(:layered_sanctorale) do
-      path = File.join(File.expand_path('../data', File.dirname(__FILE__)), 'czech-budejovice-cs.txt')
+      path = File.expand_path('../data/czech-budejovice-cs.txt', File.dirname(__FILE__))
 
       described_class.load_with_parents path
     end
 
     include_examples 'calendar layering České Budějovice'
+
+    it 'does not crash on a file without metadata' do
+      path = File.expand_path('fixtures/calendar_without_metadata.txt', File.dirname(__FILE__))
+
+      expect do
+        described_class.load_with_parents path
+      end.not_to raise_exception
+    end
+
+    it 'does not crash on a file extending a file without metadata' do
+      path = File.expand_path('fixtures/extending_calendar_without_metadata.txt', File.dirname(__FILE__))
+
+      expect do
+        described_class.load_with_parents path
+      end.not_to raise_exception
+    end
   end
 end
