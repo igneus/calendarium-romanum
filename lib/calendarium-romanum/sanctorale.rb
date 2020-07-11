@@ -45,8 +45,8 @@ module CalendariumRomanum
 
     # Adds a new {Celebration}
     #
-    # @param month [Fixnum]
-    # @param day [Fixnum]
+    # @param month [Integer]
+    # @param day [Integer]
     # @param celebration [Celebration]
     # @return [void]
     # @raise [ArgumentError]
@@ -84,8 +84,8 @@ module CalendariumRomanum
 
     # Replaces content of the given day by given {Celebration}s
     #
-    # @param month [Fixnum]
-    # @param day [Fixnum]
+    # @param month [Integer]
+    # @param day [Integer]
     # @param celebrations [Array<Celebration>]
     # @param symbol_uniqueness [true|false]
     #   allows disabling symbol uniqueness check.
@@ -150,8 +150,8 @@ module CalendariumRomanum
     # @overload get(date)
     #   @param date[AbstractDate, Date]
     # @overload get(month, day)
-    #   @param month [Fixnum]
-    #   @param day [Fixnum]
+    #   @param month [Integer]
+    #   @param day [Integer]
     # @return (see #[])
     def get(*args)
       if args.size == 1 && args[0].is_a?(Date)
@@ -179,7 +179,7 @@ module CalendariumRomanum
 
     # Returns count of _days_ with {Celebration}s filled
     #
-    # @return [Fixnum]
+    # @return [Integer]
     def size
       @days.size
     end

@@ -6,11 +6,11 @@ module CalendariumRomanum
   # Used by {Temporale} for building names of Sundays and ferials.
   class Ordinalizer
     class << self
-      # @param number [Fixnum] number to build ordinal for
+      # @param number [Integer] number to build ordinal for
       # @param locale [Symbol,nil]
       #   locale; +I18n.locale+ (i.e. the `i18n` gem's current locale)
       #   is used if not provided
-      # @return [String, Fixnum]
+      # @return [String, Integer]
       #   ordinal, or unchanged +number+ if +Ordinalizer+ cannot
       #   build ordinals for the given locale
       def ordinal(number, locale: nil)

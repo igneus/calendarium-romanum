@@ -10,7 +10,7 @@ module CalendariumRomanum
     #
     # @param date [Date, nil]
     # @param season [Season, nil]
-    # @param season_week [Fixnum, nil]
+    # @param season_week [Integer, nil]
     # @param celebrations [Array<Celebration>, nil]
     # @param vespers [Celebration, nil]
     def initialize(date: nil, season: nil, season_week: nil, celebrations: nil, vespers: nil)
@@ -35,7 +35,7 @@ module CalendariumRomanum
 
     # Weekday as integer (Sunday is 0)
     #
-    # @return [Fixnum]
+    # @return [Integer]
     def weekday
       date.wday
     end
@@ -53,7 +53,7 @@ module CalendariumRomanum
 
     # Week of the season
     #
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :season_week
 
     # List of celebrations for the given day.

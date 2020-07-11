@@ -26,7 +26,7 @@ module CalendariumRomanum
 
         # Computes the feast's date
         #
-        # @param year [Fixnum] liturgical year
+        # @param year [Integer] liturgical year
         # @return [Date]
         def self.christ_eternal_priest(year)
           Dates.pentecost(year) + 4

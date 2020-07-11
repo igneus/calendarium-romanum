@@ -14,7 +14,7 @@ module CalendariumRomanum
     SUNDAY_TRANSFERABLE_SOLEMNITIES =
       %i(epiphany ascension corpus_christi).freeze
 
-    # @param year [Fixnum]
+    # @param year [Integer]
     #   the civil year when the liturgical year _begins_
     # @param extensions [Array<#each_celebration>]
     #   extensions implementing custom temporale celebrations
@@ -32,14 +32,14 @@ module CalendariumRomanum
       prepare_solemnities
     end
 
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :year
 
     class << self
       # Determines liturgical year for the given date
       #
       # @param date [Date]
-      # @return [Fixnum]
+      # @return [Integer]
       def liturgical_year(date)
         year = date.year
         temporale = Temporale.new year
@@ -301,8 +301,8 @@ module CalendariumRomanum
     # @overload get(date)
     #   @param date [Date]
     # @overload get(month, day)
-    #   @param month [Fixnum]
-    #   @param day [Fixnum]
+    #   @param month [Integer]
+    #   @param day [Integer]
     # @return (see #[])
     def get(*args)
       if args.size == 1 && args[0].is_a?(Date)
