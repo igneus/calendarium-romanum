@@ -376,7 +376,7 @@ describe CR::Calendar do
         d = @c.day(7, 3)
         expect(d.celebrations.size).to eq 1
         expect(d.celebrations[0].rank).to eq CR::Ranks::FEAST_GENERAL
-        expect(d.celebrations[0].title).to include 'Thomas'
+        expect(d.celebrations[0].title).to have_translation 'Saint Thomas the Apostle'
       end
 
       it 'optional memorial does not suppress ferial' do
@@ -402,7 +402,7 @@ describe CR::Calendar do
 
         comm = d.celebrations[1]
         expect(comm.rank).to eq CR::Ranks::COMMEMORATION
-        expect(comm.title).to eq 'Saint Francis of Paola, hermit'
+        expect(comm.title).to have_translation 'Saint Francis of Paola, hermit'
       end
 
       it 'Sunday suppresses feast' do
@@ -454,7 +454,7 @@ describe CR::Calendar do
         d = c.temporale.easter_sunday + 8
         celebs = c.day(d).celebrations
         expect(celebs.size).to eq 1
-        expect(celebs[0].title).to eq 'Annunciation of the Lord'
+        expect(celebs[0].title).to have_translation 'Annunciation of the Lord'
       end
 
       describe 'collision of Immaculate Heart with another obligatory memorial' do
