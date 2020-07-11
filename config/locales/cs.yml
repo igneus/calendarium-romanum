@@ -115,6 +115,7 @@ cs:
     josephine_bakhita: Sv. Josefíny Bakhity, panny
     scholastica: Sv. Scholastiky, panny
     bvm_lourdes: Panny Marie Lurdské
+    cyril_methodius: Sv. Cyrila, mnicha, a Metoděje, biskupa
     servite_founders: Sv. Alexia a druhů, řeholníků
     peter_damian: Sv. Petra Damianiho, biskupa a učitele církve
     chair_of_peter: Stolce svatého Petra, apoštola
@@ -123,7 +124,6 @@ cs:
     perpetua_felicity: Sv. Perpetuy a Felicity, mučednic
     john_of_god: Sv. Jana z Boha, řeholníka
     frances_of_rome: Sv. Františky Římské, řeholnice
-    ogilvie: Sv. Jana Ogilvie, kněze a mučedníka
     patrick: Sv. Patrika, biskupa
     cyril_of_jerusalem: Sv. Cyrila Jeruzalémského, biskupa a učitele církve
     joseph: Sv. Josefa, Snoubence Panny Marie
@@ -137,6 +137,7 @@ cs:
     martin_i: Sv. Martina I., papeže a mučedníka
     anselm: Sv. Anselma, biskupa a učitele církve
     george: Sv. Jiří, mučedníka
+    adalbert: Sv. Vojtěcha, biskupa a mučedníka
     fidelis: Sv. Fidela ze Sigmaringy, kněze a mučedníka
     mark: Sv. Marka, evangelisty
     peter_chanel: Sv. Petra Chanela, kněze a mučedníka
@@ -165,6 +166,7 @@ cs:
     marcellinus_peter: Sv. Marcelina a Petra, mučedníků
     ugandan_martyrs: Sv. Karla Lwangy a druhů, mučedníků
     boniface: Sv. Bonifáce, biskupa a mučedníka
+    norbert: Sv. Norberta, biskupa
     ephrem: Sv. Efréma Syrského, jáhna a učitele církve
     barnabas: Sv. Barnabáše, apoštola
     anthony_of_padua: Sv. Antonína z Padovy, kněze a učitele církve
@@ -179,6 +181,7 @@ cs:
     first_martyrs_of_rome: Svatých prvomučedníků římských
     thomas_apostle: Sv. Tomáše, apoštola
     elizabeth_of_portugal: Sv. Alžběty Portugalské
+    anthony_zaccaria: Sv. Antonína Maria Zaccaria, kněze
     cyril_methodius: Sv. Cyrila, mnicha, a Metoděje, biskupa
     goretti: Sv. Marie Gorettiové, panny a mučednice
     chinese_martyrs: Sv. Augustina Čao Žung, kněze, a druhů, mučedníků.
@@ -198,7 +201,6 @@ cs:
     peter_chrysologus: Sv. Petra Chryzologa, biskupa a učitele církve
     ignatius_of_loyola: Sv. Ignáce z Loyoly, kněze
     alphonsus: Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
-    bvm_queen_of_angels: Panny Marie Královny andělů
     eusebius: sv. Eusebia z Vercelli, biskupa
     eymard: Sv. Petra Juliána Eymarda, kněze
     vianney: Sv. Jana Marie Vianneye, kněze
@@ -220,19 +222,15 @@ cs:
     pius_x: Sv. Pia X., papeže
     bvm_queenship: Panny Marie Královny
     rose_lima: Sv. Růženy z Limy, panny
-    bartolomew: Sv. Bartoloměje, apoštola
-    five_camaldolese: Sv. Benedikta, Jana, Matouše, Izáka a Kristina, mučedníků
+    bartholomew: Sv. Bartoloměje, apoštola
     louis: Sv. Ludvíka
     joseph_calasanz: Sv. Josefa Kalasanského, kněze
     monica: Sv. Moniky
     augustine: Sv. Augustina, biskupa a učitele církve
     baptist_beheading: Umučení sv. Jana Křtitele
     gregory_great: Sv. Řehoře Velikého, papeže a učitele církve
-    mother_teresa: Bl. Terezie z Kalkaty
-    grodecky: Sv. Melichara Grodeckého, kněze a mučedníka
     bvm_birth: Narození Panny Marie
     claver: Sv. Petra Klavera, kněze
-    spinola: Bl. Karla Spinoly, kněze a mučedníka
     bvm_name: Jména Panny Marie
     john_chrysostom: Sv. Jana Zlatoústého, biskupa a učitele církve
     cross: Povýšení svatého kříže
@@ -243,7 +241,10 @@ cs:
     korean_martyrs: Sv. Ondřeje Kim Tae-gỏna, kněze, Pavla Chõng Ha-sanga a druhů, mučedníků
     matthew: Sv. Matouše, apoštola a evangelisty
     padre_pio: Sv. Pia z Pietrelciny, kněze
+    cosmas_damian: Sv. Kosmy a Damiána, mučedníků
     vincent_de_paul: Sv. Vincence z Paula, kněze
+    wenceslaus: Sv. Václava, mučedníka
+    ruiz: Sv. Vavřince Ruize a druhů, mučedníků
     archangels: Sv. Michaela, Gabriela a Rafaela, archandělů
     jerome: Sv. Jeronýma, kněze a učitele církve
     therese_lisieux: Sv. Terezie od Dítěte Ježíše, panny a učitelky církve
@@ -257,6 +258,7 @@ cs:
     john_xxiii: Sv. Jana XXIII., papeže
     callistus_i: Sv. Kalista I., papeže a mučedníka
     teresa_avila: Sv. Terezie od Ježíše, panny a učitelky církve
+    hedwig: Sv. Hedviky, řeholnice
     alacoque: Sv. Markéty Marie Alacoque, panny
     ignatius_of_antioch: Sv. Ignáce Antiochijského, biskupa a mučedníka
     luke: Sv. Lukáše, evangelisty
@@ -286,7 +288,7 @@ cs:
     vietnamese_martyrs: Sv. Ondřeje Dung-Laca, kněze, a druhů, mučedníků
     catherine_of_alexandria: Sv. Kateřiny Alexandrijské, panny a mučednice
     andrew: Sv. Ondřeje, apoštola
-    francis_xaver: Sv. Františka Xaverského, kněze
+    francis_xavier: Sv. Františka Xaverského, kněze
     john_damascene: Sv. Jana Damašského, kněze a učitele církve
     nicholas: Sv. Mikuláše, biskupa
     ambrose: Sv. Ambrože, biskupa a učitele církve
