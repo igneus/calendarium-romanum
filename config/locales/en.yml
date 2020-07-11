@@ -26,6 +26,8 @@ en:
       immaculate_heart: The Immaculate Heart of Mary
       christ_king: Christ The King
       saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
+    extension:
+      christ_eternal_priest: Our Lord Jesus Christ, The Eternal High Priest
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
       ferial: '%{weekday}, %{week} week in Ordinary Time'
