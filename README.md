@@ -426,7 +426,7 @@ module MyExtension
 
   # computes date of the feast;
   # the year passed as argument is year when the liturgical
-  # year in question _begun_
+  # year in question _began_
   def self.my_feast_date(year)
     # the day before Christ the King
     CR::Temporale::Dates.christ_king(year) - 1
