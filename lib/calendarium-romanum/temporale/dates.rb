@@ -8,7 +8,7 @@ module CalendariumRomanum
         sunday_before(nativity(year)) - 3 * WEEK
       end
 
-      # @param year [Fixnum] liturgical year
+      # @param year [Integer] liturgical year
       # @return [Date]
       def self.nativity(year)
         Date.new(year, 12, 25)
@@ -29,7 +29,7 @@ module CalendariumRomanum
         octave_of(nativity(year))
       end
 
-      # @param year [Fixnum] liturgical year
+      # @param year [Integer] liturgical year
       # @param sunday [Boolean] transfer to Sunday?
       # @return [Date]
       def self.epiphany(year, sunday: false)
@@ -41,7 +41,7 @@ module CalendariumRomanum
         Date.new(year + 1, 1, 6)
       end
 
-      # @param year [Fixnum] liturgical year
+      # @param year [Integer] liturgical year
       # @param epiphany_on_sunday [Boolean] was Epiphany transferred to Sunday?
       # @return [Date]
       def self.baptism_of_lord(year, epiphany_on_sunday: false)
@@ -152,7 +152,7 @@ module CalendariumRomanum
 
       # utility methods
 
-      # @param weekday [Fixnum]
+      # @param weekday [Integer]
       # @param date [Date]
       # @return [Date]
       def self.weekday_before(weekday, date)

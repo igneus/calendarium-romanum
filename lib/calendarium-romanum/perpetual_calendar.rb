@@ -73,7 +73,7 @@ module CalendariumRomanum
 
     # Returns a Calendar instance for the specified liturgical year
     #
-    # @param year [Fixnum]
+    # @param year [Integer]
     # @return [Calendar]
     def calendar_for_year(year)
       calendar_instance year

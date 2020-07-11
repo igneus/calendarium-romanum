@@ -17,7 +17,7 @@ module CalendariumRomanum
     # Returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
     #
-    # @param year [Fixnum]
+    # @param year [Integer]
     #   Civil year when the liturgical year begins.
     # @param sanctorale [Sanctorale, nil]
     #   If not provided, the +Calendar+ will only know celebrations
@@ -89,7 +89,7 @@ module CalendariumRomanum
     #   @return [Season]
     def_delegators :@temporale, :range_check, :season
 
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :year
 
     # @return [Temporale]
@@ -138,9 +138,9 @@ module CalendariumRomanum
     # @overload day(date, vespers: false)
     #   @param date [Date]
     # @overload day(year, month, day, vespers: false)
-    #   @param year [Fixnum]
-    #   @param month [Fixnum]
-    #   @param day [Fixnum]
+    #   @param year [Integer]
+    #   @param month [Integer]
+    #   @param day [Integer]
     # @param vespers [Boolean]
     #   Set to +true+ in order to get {Day} with {Day#vespers}
     #   populated (overrides instance-wide setting {#populates_vespers?}).
