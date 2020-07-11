@@ -165,7 +165,7 @@ country: cz
 21 m pius_x : Sv. Pia X., papeže
 22 m bvm_queenship : Panny Marie Královny
 23 rose_lima : Sv. Růženy z Limy, panny
-24 f R bartolomew : Sv. Bartoloměje, apoštola
+24 f R bartholomew : Sv. Bartoloměje, apoštola
 25 R five_camaldolese : Sv. Benedikta, Jana, Matouše, Izáka a Kristina, mučedníků
 25 louis : Sv. Ludvíka
 25 joseph_calasanz : Sv. Josefa Kalasanského, kněze
