@@ -26,6 +26,8 @@ la:
       immaculate_heart: Immaculati Cordis B. Mariae Virginis
       christ_king: Domini nostri Iesu Christi universorum regis
       saturday_memorial_bvm: Memoria Sanctae Mariae in Sabbato
+    extension:
+      christ_eternal_priest: Domini nostri Iesu Christi Summi et Aeterni Sacerdotis
     ordinary:
       sunday: 'Dominica %{week} per annum'
       ferial: '%{weekday}, hebdomada %{week} per annum'
