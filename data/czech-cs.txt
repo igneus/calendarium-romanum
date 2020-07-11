@@ -143,7 +143,6 @@ country: cz
 
 = 8
 1 m alphonsus : Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
-2 bvm_queen_of_angels : Panny Marie Královny andělů
 2 eusebius : sv. Eusebia z Vercelli, biskupa
 2 eymard : Sv. Petra Juliána Eymarda, kněze
 4 m vianney : Sv. Jana Marie Vianneye, kněze
@@ -175,7 +174,6 @@ country: cz
 
 = 9
 3 m gregory_great : Sv. Řehoře Velikého, papeže a učitele církve
-5 mother_teresa : Bl. Terezie z Kalkaty
 7 R grodecky : Sv. Melichara Grodeckého, kněze a mučedníka
 8 f bvm_birth : Narození Panny Marie
 9 claver : Sv. Petra Klavera, kněze
