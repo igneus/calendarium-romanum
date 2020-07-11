@@ -63,6 +63,10 @@ describe 'internationalization' do
     let(:locale) { 'de' }
 
     it 'attemt to switch to it fails by default' do
+      # because in spec_helper.rb we set `I18n.enforce_available_locales = true`
+      expect do
+        I18n.locale = locale
+      end.to raise_exception I18n::InvalidLocale
     end
   end
 end
