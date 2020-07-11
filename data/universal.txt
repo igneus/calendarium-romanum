@@ -1,6 +1,5 @@
 ---
-title
-locale
+title: General Roman Calendar
 ---
 
 = 1
