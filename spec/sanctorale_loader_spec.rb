@@ -18,7 +18,7 @@ describe CR::SanctoraleLoader do
 
     describe '#load_from_file' do
       it 'loads something from file' do
-        l.load_from_file(File.join(%w(data universal-la.txt)), s)
+        l.load_from_file(File.join(%w(data universal.txt)), s)
         expect(s.size).to be > 190
       end
     end
@@ -122,6 +122,28 @@ describe CR::SanctoraleLoader do
       describe 'supported characters' do
         let(:record) { '4/29 none_123 : S. Nullius, abbatis' }
         it { expect(result.symbol).to be :none_123 }
+      end
+    end
+
+    describe 'title' do
+      describe 'specified - uses it' do
+        let(:record) { '4/23 george : S. Georgii, martyris' }
+        it { expect(result.title).to eq 'S. Georgii, martyris' }
+      end
+
+      describe 'not specified - creates i18n Proc' do
+        let(:record) { '4/23 george' }
+        it { expect(result.title).to have_translation 'Saint George, martyr' }
+        it { expect(result.instance_eval { @title }).to be_a Proc }
+      end
+
+      describe 'neither title or symbol specified' do
+        let(:record) { '4/23' }
+        it 'raises exception' do
+          expect do
+            l.send :load_line, record
+          end.to raise_exception RuntimeError, /neither celebration title or symbol specified/i
+        end
       end
     end
   end

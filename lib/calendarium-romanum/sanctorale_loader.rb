@@ -117,7 +117,8 @@ module CalendariumRomanum
             '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
             '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
             '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
-            '\s*:(?<title>.*)$', # title
+            '(\s*:(?<title>.*))?' + # title
+            '$',
             Regexp::IGNORECASE
           )
         end
@@ -160,8 +161,16 @@ module CalendariumRomanum
         symbol = symbol_str.to_sym
       end
 
+      title =
+        if title
+          title.strip
+        else
+          raise RuntimeError.new("Neither celebration title or symbol specified") if symbol.nil?
+          proc { I18n.t("sanctorale.#{symbol}") }
+        end
+
       Celebration.new(
-        title.strip,
+        title,
         rank,
         COLOUR_CODES[colour && colour.downcase],
         symbol,

@@ -23,7 +23,7 @@ a number from range 1-12.
 A calendar entry is a line of this format:
 
 ```
-[MONTH/]DAY [RANK] [COLOUR] [IDENTIFIER] : TITLE
+[MONTH/]DAY [RANK] [COLOUR] [IDENTIFIER] : [TITLE]
 ```
 
 If the calendar entry is preceded by a month heading, MONTH is
@@ -75,7 +75,7 @@ principal patron of Bohemia, martyr duke St. Wenceslas:
 9/28 1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
 ```
 
-When you have dificulties remembering meanings of the numbers,
+If you have dificulties remembering meanings of the numbers,
 but are comfortable with rank letters, it might be helpful for you
 to use rank numbers *alongside* the letters.
 This is supported too, you will find this format used throughout
@@ -90,12 +90,18 @@ shouldn't be necessary in a sanctorale calendar, but both are available
 for exceptional cases).
 If not specified, white is default.
 
-TITLE is a simple text - title of the celebration - without formatting.
-
 IDENTIFIER is a single "word" consisting of lowercase letters and
 underscores, at least 2 characters long.
 It is optional and serves as a unique machine-readable identifier
 of the given celebration.
+
+TITLE is a simple text - title of the celebration - without formatting.
+It can be omitted, but only if IDENTIFIER is provided.
+Then an internationalization string `"sanctorale.IDENTIFIER"`
+is used as celebration title and the title follows `I18n.locale`
+the same way as temporale celebration titles do.
+(`universal.txt` is an example of data file with no celebration titles
+at all, just identifiers.)
 
 There may be several entries for a day (optional memorials).
 
