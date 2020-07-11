@@ -171,29 +171,6 @@ describe CR::Calendar do
     end
   end
 
-  describe '#lectionary' do
-    {
-      2014 => :B,
-      2013 => :A,
-      2012 => :C
-    }.each_pair do |year, cycle|
-      it year.to_s do
-        expect(described_class.new(year).lectionary).to eq cycle
-      end
-    end
-  end
-
-  describe '#ferial_lectionary' do
-    {
-      2014 => 1,
-      2013 => 2
-    }.each do |year, cycle|
-      it year.to_s do
-        expect(described_class.new(year).ferial_lectionary).to eq cycle
-      end
-    end
-  end
-
   describe '#[]' do
     describe 'received arguments' do
       describe 'Date' do

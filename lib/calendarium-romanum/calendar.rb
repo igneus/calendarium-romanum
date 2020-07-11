@@ -214,21 +214,6 @@ module CalendariumRomanum
         .each {|date| yield(day(date)) }
     end
 
-    # Sunday lectionary cycle
-    #
-    # @return [Symbol]
-    #   For possible values see {LECTIONARY_CYCLES}
-    def lectionary
-      LECTIONARY_CYCLES[@year % 3]
-    end
-
-    # Ferial lectionary cycle
-    #
-    # @return [1, 2]
-    def ferial_lectionary
-      @year % 2 + 1
-    end
-
     # Freezes the instance.
     #
     # *WARNING*: {Temporale} and {Sanctorale} instances passed
