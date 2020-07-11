@@ -22,6 +22,9 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
+# Uncomment if a really long diff is necessary:
+# RSpec::Support::ObjectFormatter.default_instance.max_formatted_output_length = 10000
+
 RSpec::Matchers.define :have_translation do |expected, locale|
   match do |actual|
     locale ||= :en
