@@ -21,6 +21,44 @@ describe CR::Calendar do
         CR::Calendar.new(year + 1, nil, temporale)
       end.to raise_exception ArgumentError
     end
+
+    describe 'argument combinations' do
+      describe 'valid' do
+        it 'year only' do
+          CR::Calendar.new 2000
+        end
+
+        it 'year and Sanctorale' do
+          CR::Calendar.new 2000, CR::Sanctorale.new
+        end
+
+        it 'year, Sanctorale and Temporale' do
+          # year is redundant information in this case, since it is provided both
+          # separately and in Temporale
+          CR::Calendar.new 2000, CR::Sanctorale.new, CR::Temporale.new(2000)
+        end
+
+        it 'Temporale only' do
+          year = 2000
+          temporale = CR::Temporale.new(year)
+
+          c = CR::Calendar.new temporale
+          expect(c.year).to be year
+          expect(c.temporale).to be temporale
+        end
+
+        it 'Temporale and Sanctorale' do
+          year = 2000
+          sanctorale = CR::Sanctorale.new
+          temporale = CR::Temporale.new(year)
+
+          c = CR::Calendar.new temporale, sanctorale
+          expect(c.year).to be year
+          expect(c.temporale).to be temporale
+          expect(c.sanctorale).to be sanctorale
+        end
+      end
+    end
   end
 
   describe '.for_day' do
