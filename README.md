@@ -87,7 +87,7 @@ I18n.locale = :en # set locale
 
 # build calendar
 pcal = CalendariumRomanum::PerpetualCalendar.new(
-  sanctorale: CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH.load
+  sanctorale: CalendariumRomanum::Data::GENERAL_ROMAN.load
 )
 
 # query
@@ -142,7 +142,7 @@ Actually, no. Not yet. We need to load some calendar data first:
 ```ruby
 CR = CalendariumRomanum
 loader = CR::SanctoraleLoader.new
-sanctorale = loader.load_from_file 'data/universal-en.txt' # insert path to your data file
+sanctorale = loader.load_from_file 'data/universal.txt' # insert path to your data file
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
 day = calendar[date]
@@ -167,11 +167,11 @@ and reference the `CalendariumRomanum` module.
 Yes! There are a few data files bundled in the gem.
 You can explore them by iterating over `CalendariumRomanum::Data.all`.
 The more interesting ones are additionally identified by their proper
-constants, e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
+constants, e.g. `CalendariumRomanum::Data::GENERAL_ROMAN`.
 Bundled data files can be loaded by a handy shortcut method `#load`:
 
 ```ruby
-sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load # easy loading
+sanctorale = CR::Data::GENERAL_ROMAN.load # easy loading
 date = Date.new(2016, 8, 19)
 calendar = CR::Calendar.for_day(date, sanctorale)
 day = calendar[date]
@@ -231,7 +231,7 @@ being created:
 ```ruby
 pcal = CR::PerpetualCalendar.new(
   # Sanctorale instance
-  sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load,
+  sanctorale: CR::Data::GENERAL_ROMAN.load,
   # options that will be passed to Temporale.new
   temporale_options: {
     transfer_to_sunday: [:epiphany],
@@ -273,8 +273,7 @@ The same directory contains a bunch of example data files.
 (All of them are also bundled in the gem and accessible via
 `CalendariumRomanum::Data`, as described above.)
 
-`universal-en.txt` and `universal-la.txt` are data of the General
-Roman Calendar in English and Latin.
+`universal.txt` contains the General Roman Calendar.
 
 The `czech-*.txt` files, when layered properly, can be used to assemble
 proper calendar of any diocese in the Czech Republic.
@@ -346,7 +345,7 @@ as third argument to the constructor.
 
 ```ruby
 year = 2000
-sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
+sanctorale = CR::Data::GENERAL_ROMAN.load
 temporale = CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
 
 calendar = CR::Calendar.new(year, sanctorale, temporale)
@@ -472,7 +471,7 @@ from the command line and to check validity of sanctorale data files.
 
 ### 1. Query liturgical calendar from the command line
 
- - `calendariumrom query --calendar universal-fr 2007-06-25` queries a non-default (French) calendar for any given date. `--calendar` can be omitted, the default calendar (`universal-en`) is used then. The date can be omitted as well, `calendariumrom` will query the current date, then. Please note that the date has to be in format `YYYY-MM-DD` or `YYYY/MM/DD`. If the day, or even the month is omitted, `query` will query a whole month, or even a whole year. The specified calendar has to be one in the resulting list of the `calendarium calendars` command, or a valid filesystem path.
+ - `calendariumrom query --calendar universal 2007-06-25` queries a non-default (French) calendar for any given date. `--calendar` can be omitted, the default calendar is used then. The date can be omitted as well, `calendariumrom` will query the current date, then. Please note that the date has to be in format `YYYY-MM-DD` or `YYYY/MM/DD`. If the day, or even the month is omitted, `query` will query a whole month, or even a whole year. The specified calendar has to be one in the resulting list of the `calendarium calendars` command, or a valid filesystem path.
  - `calendariumrom calendars` will list all available data files known to calendarium-romanum.
 
 Tip: `calendariumrom query` is a rather bare-bones calendar querying

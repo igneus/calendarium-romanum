@@ -1,0 +1,242 @@
+---
+title
+locale
+---
+
+= 1
+2 m basil_gregory
+3 name_jesus
+7 raymond
+13 hilary
+17 m anthony_of_egypt
+20 R fabian
+20 R sebastian
+21 m R agnes
+22 R vincent_deacon
+24 m francis_de_sales
+25 f paul_conversion
+26 m timothy_titus
+27 merici
+28 m aquinas
+31 m bosco
+
+= 2
+2 f2.5 presentation_of_lord
+3 R blase
+3 ansgar
+5 m R agatha
+6 m R paul_miki
+8 jerome_emiliani
+8 josephine_bakhita
+10 m scholastica
+11 bvm_lourdes
+14 m cyril_methodius
+17 servite_founders
+21 peter_damian
+22 f chair_of_peter
+23 m R polycarp
+
+= 3
+4 casimir
+7 m R perpetua_felicity
+8 john_of_god
+9 frances_of_rome
+17 patrick
+18 cyril_of_jerusalem
+19 s joseph
+23 turibius
+25 s annunciation
+
+= 4
+2 francis_of_paola
+4 isidore
+5 vincent_ferrer
+7 m de_la_salle
+11 m R stanislaus
+13 R martin_i
+21 anselm
+23 R george
+23 R adalbert
+24 R fidelis
+25 f R mark
+28 R peter_chanel
+28 de_montfort
+29 m catherine_of_siena
+30 pius_v
+
+= 5
+1 joseph_worker
+2 m athanasius
+3 f R philip_james
+12 R nereus_achilleus
+12 R pancras
+13 bvm_fatima
+14 f R matthias
+18 R john_i
+20 bernardine
+21 R magallanes
+22 rita
+25 bede_venerable
+25 gregory_vii
+25 de_pazzi
+26 m neri
+27 augustine_of_canterbury
+29 paul_vi
+31 f visitation
+
+= 6
+1 m R justin
+2 R marcellinus_peter
+3 m R ugandan_martyrs
+5 m R boniface
+6 norbert
+9 ephrem
+11 m R barnabas
+13 m anthony_of_padua
+19 romuald
+21 m aloysius
+22 paulinus
+22 R fisher_more
+24 s baptist_birth
+27 cyril_of_alexandria
+28 m R irenaeus
+29 s R peter_paul
+30 R first_martyrs_of_rome
+
+= 7
+3 f R thomas_apostle
+4 elizabeth_of_portugal
+5 anthony_zaccaria
+6 R goretti
+9 R chinese_martyrs
+11 m benedict
+13 henry
+14 camillus_de_lellis
+15 m bonaventure
+16 bvm_mount_carmel
+20 R apollinaris
+21 lawrence_of_brindisi
+22 f mary_magdalene
+23 birgitta
+24 sharbel
+25 f R james
+26 m joachim_anne
+29 m R martha
+30 peter_chrysologus
+31 m ignatius_of_loyola
+
+= 8
+1 m alphonsus
+2 eusebius
+2 eymard
+4 m vianney
+5 mary_major
+6 f2.5 transfiguration
+7 R sixtus_ii
+7 cajetan
+8 m dominic
+9 R stein
+10 f R lawrence
+11 m clare
+12 de_chantal
+13 R pontian_hippolytus
+14 m R kolbe
+15 s assumption
+16 stephen_hungary
+19 eudes
+20 m bernard
+21 m pius_x
+22 m bvm_queenship
+23 rose_lima
+24 f R bartholomew
+25 louis
+25 joseph_calasanz
+27 m monica
+28 m augustine
+29 m R baptist_beheading
+
+= 9
+3 m gregory_great
+8 f bvm_birth
+9 claver
+12 bvm_name
+13 m john_chrysostom
+14 f2.5 R cross
+15 m bvm_sorrows
+16 m R cornelius_cyprian
+17 bellarmine
+19 R januarius
+20 m R korean_martyrs
+21 f R matthew
+23 m padre_pio
+26 R cosmas_damian
+27 m vincent_de_paul
+28 R wenceslaus
+28 R ruiz
+29 f archangels
+30 m jerome
+
+= 10
+1 m therese_lisieux
+2 m guardian_angels
+4 m francis_assisi
+5 faustina_kowalska
+6 bruno
+7 m bvm_rosary
+9 R denis
+9 leonardi
+11 john_xxiii
+14 R callistus_i
+15 m teresa_avila
+16 hedwig
+16 alacoque
+17 m R ignatius_of_antioch
+18 f R luke
+19 R brebeuf_jogues
+19 paul_of_cross
+22 john_paul_ii
+23 john_capistrano
+24 claret
+28 f R simon_jude
+
+= 11
+1 s all_saints
+2 s all_souls
+3 R de_porres
+4 m borromeo
+9 f lateran_basilica
+10 m leo_great
+11 m R martin
+12 m R josaphat
+15 albert
+16 margaret_of_scotland
+16 gertrude
+17 m elizabeth_of_hungary
+18 peter_paul_basilicas
+21 m bvm_presentation
+22 m R cecilia
+23 R clement_i
+23 columban
+24 m R vietnamese_martyrs
+25 R catherine_of_alexandria
+30 f R andrew
+
+= 12
+3 m francis_xavier
+4 john_damascene
+6 nicholas
+7 m ambrose
+8 s bvm_immaculate
+9 juan_diego
+10 bvm_loreto
+11 damasus_i
+12 bvm_guadalupe
+13 m R lucy
+14 m john_of_cross
+21 canisius
+23 john_of_kanty
+26 f R stephen
+27 f john_evangelist
+28 f R innocents
+29 R becket
+31 sylvester_i

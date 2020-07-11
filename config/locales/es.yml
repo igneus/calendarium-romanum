@@ -88,3 +88,218 @@ es:
     white: blanco
     green: verde
     red: rojo
+  sanctorale:
+    basil_gregory: Santos Basilio el Grande y Gregorio de Nacianzo, Obispos y Doctores de la Iglesia
+    name_jesus: Santísimo Nombre de Jesús
+    raymond: San Raimundo de Peñafort. Presbítero
+    hilary: San Hilario, Obispo y Doctor de la Iglesia
+    anthony_of_egypt: San Antonio, abad
+    fabian: San Fabián, Papa y Mártir
+    sebastian: San Sebastián, Mártir
+    agnes: Santa Inés, Virgen y Mártir – Memoria
+    vincent_deacon: San Vicente, Diácono y Mártir
+    francis_de_sales: San Francisco de Sales, Obispo y Doctor de la Iglesia
+    paul_conversion: Conversión de San Pablo, Apóstol
+    timothy_titus: Santos Timoteo, Tito, Obispos
+    merici: Santa Angela Merici, Virgen
+    aquinas: Santo Tomás de Aquino, Presbítero y Doctor de la Iglesia
+    bosco: San Juan Bosco, Presbítero
+    presentation_of_lord: Presentación del Señor
+    blase: San Blas, Obispo y Mártir
+    ansgar: San Óscar/Anscario, Obispo
+    agatha: Santa Ágata, Virgen y Mártir
+    paul_miki: Santos Pablo Miki y compañeros, Mártires
+    jerome_emiliani: San Jerónimo Emiliani, Presbítero
+    josephine_bakhita: Santa Josefina Bakhita, Virgen
+    scholastica: Santa Escolástica, Virgen
+    bvm_lourdes: Nuestra Señora de Lourdes
+    cyril_methodius: Santos Cirilo, Monje, y Metodio, Obispo
+    servite_founders: Santos Siete Fundadores de la Orden de los Servitas
+    peter_damian: San Pedro Damián, Obispo y Doctor de la Iglesia
+    chair_of_peter: Cátedra de San Pedro, Apóstol
+    polycarp: San Policarpo, Obispo y Mártir
+    casimir: San Casimiro
+    perpetua_felicity: Santas Perpetua y Felicidad, Mártires
+    john_of_god: San Juan de Dios, Religioso
+    frances_of_rome: Santa Francisca Romana, Religiosa
+    patrick: San Patricio, Obispo
+    cyril_of_jerusalem: San Cirilo de Jerusalén, Obispo y Doctor de la Iglesia
+    joseph: San José, esposo de la Santísima Virgen María
+    turibius: San Toribio de Mogrovejo, Obispo
+    annunciation: Anunciación del Señor
+    francis_of_paola: San Francisco de Paula, Ermitaño
+    isidore: San Isidoro, Obispo y Doctor de la Iglesia
+    vincent_ferrer: San Vicente Ferrer, Presbítero
+    de_la_salle: San Juan Bautista de La Salle, presbítero
+    stanislaus: San Estanislao, Obispo y Mártir
+    martin_i: San Martín I, Papa y Mártir
+    anselm: San Anselmo, Obispo y Doctor de la Iglesia
+    george: San Jorge, Mártir
+    adalbert: San Adalberto de Praga, Obispo y Mártir
+    fidelis: San Fidel de Sigmaringa, Presbítero y Mártir
+    mark: San Marcos el Evangelista
+    peter_chanel: San Pedro Chanel, Presbítero y Mártir
+    de_montfort: S San Luis María Grignion de Montfort, Presbítero
+    catherine_of_siena: Santa Catalina de Siena, Virgen y Doctora de la Iglesia
+    pius_v: San Pío V, Papa
+    joseph_worker: San José Obrero
+    athanasius: San Atanasio, Obispo y Doctor de la Iglesia
+    philip_james: Santos Felipe y Santiago, Apóstoles
+    nereus_achilleus: Santos Nereo y Aquileo, Mártires
+    pancras: San Pancracio, Mártir
+    bvm_fatima: Nuestra Señora de Fátima
+    matthias: San Matías, Apóstol
+    john_i: San Juan I, Papa y Mártir
+    bernardine: San Bernardino de Siena, Presbítero
+    magallanes: Santos Cristóbal Magallanes y compañeros, Mártires
+    rita: Santa Rita de Casia, Religiosa
+    bede_venerable: San Beda el Venerable, Presbítero y Doctor de la Iglesia
+    gregory_vii: San Gregorio VII, Papa
+    de_pazzi: Santa María Magdalena de Pazzi, Virgen
+    neri: San Felipe Neri, Presbítero
+    augustine_of_canterbury: San Agustín de Canterbury, Obispo
+    paul_vi: San Pablo VI, Papa
+    visitation: Visitación de la Santísima Virgen María a Santa Isabel
+    justin: San Justino, Mártir
+    marcellinus_peter: Santos Marcelino y Pedro, Mártires
+    ugandan_martyrs: Santos Carlos Luanga y compañeros, Mártires
+    boniface: San Bonifacio, Obispo y Mártir
+    norbert: San Norberto, Obispo
+    ephrem: San Efrén, Diácono y Doctor de la Iglesia
+    barnabas: San Bernabé, Apóstol
+    anthony_of_padua: San Antonio de Padua, Presbítero y Doctor de la Iglesia
+    romuald: San Romualdo, abad
+    aloysius: San Luis Gonzaga, Religioso
+    paulinus: San Paulino de Nola, Obispo
+    fisher_more: Santos Juan Fisher, Obispo y Mártir, y Tomás Moro, Mártir
+    baptist_birth: Natividad de San Juan Bautista
+    cyril_of_alexandria: San Cirilo de Alejandría, Obispo y Doctor de la Iglesia
+    irenaeus: San Ireneo, Obispo y Mártir
+    peter_paul: Santos Pedro y Pablo, Apóstoles
+    first_martyrs_of_rome: Santos Primeros Mártires de la Iglesia de Roma
+    thomas_apostle: Santo Tomás el Apóstol
+    elizabeth_of_portugal: Santa Isabel de Portugal
+    anthony_zaccaria: San Antonio María Zaccaria, Presbítero
+    goretti: Santa María Goretti, Virgen y Mártir
+    chinese_martyrs: Santos Agustín Zhao Rong y compañeros, Mártires
+    benedict: San Benito, abad
+    henry: San Enrique
+    camillus_de_lellis: San Camilo de Lellis, Presbítero
+    bonaventure: San Buenaventura, Obispo y Doctor de la Iglesia
+    bvm_mount_carmel: Nuestra Señora del Carmen
+    apollinaris: San Apolinar, Obispo y Mártir
+    lawrence_of_brindisi: San Lorenzo de Brindisi, Presbítero y Doctor de la Iglesia
+    mary_magdalene: Santa María Magdalena
+    birgitta: Santa Brígida de Suecia, Religiosa
+    sharbel: San Chárbel Makhlouf, Ermitaño
+    james: Santiago, apóstol
+    joachim_anne: Santos Joaquín y Ana, padres de la Santísima Virgen María
+    martha: Santa Marta
+    peter_chrysologus: San Pedro Crisólogo, Obispo y Doctor de la Iglesia
+    ignatius_of_loyola: San Ignacio de Loyola, Presbítero
+    alphonsus: San Alfonso María de Ligorio, Obispo y Doctor de la Iglesia
+    eusebius: San Eusebio de Vercelli, Obispo
+    eymard: San Pierre-Julien Eymard, Presbítero
+    vianney: San Juan María Vianney, Presbítero
+    mary_major: Dedicación de la Basílica de Santa María
+    transfiguration: Transfiguración del Señor
+    sixtus_ii: Santos Sixto II, Papa, y compañeros, Mártires
+    cajetan: San Cayetano, Presbítero
+    dominic: Santo Domingo de Guzmán, Presbítero
+    stein: Santa Teresa Benedicta de la Cruz, Virgen y Mártir
+    lawrence: San Lorenzo, Diácono y Mártir
+    clare: Santa Clara, Virgen
+    de_chantal: Santa Juana Francisca de Chantal, Religiosa
+    pontian_hippolytus: Santos Ponciano, papa, y Hipólito, Presbítero, Mártires
+    kolbe: San Maximiliano María Kolbe, Presbítero y Mártir
+    assumption: Asunción de la Santísima Virgen María
+    stephen_hungary: San Esteban de Hungría
+    eudes: San Juan Eudes, Presbítero
+    bernard: San Bernardo, abad y doctor de la Iglesia
+    pius_x: San Pío X
+    bvm_queenship: Bienaventurada María Virgen Reina
+    rose_lima: Santa Rosa de Lima, Virgen
+    bartholomew: San Bartolomé, apóstol
+    louis: San Luis
+    joseph_calasanz: San José de Calasanz, Presbítero
+    monica: Santa Mónica
+    augustine: San Agustín, Obispo y Doctor de la Iglesia
+    baptist_beheading: Martirio de San Juan Bautista
+    gregory_great: San Gregorio Magno, Papa y Doctor de la Iglesia
+    bvm_birth: Natividad de la Bienaventurada Virgen María
+    claver: San Pedro Claver, Presbítero
+    bvm_name: Santísimo Nombre de la Bienaventurada Virgen María
+    john_chrysostom: San Juan Crisóstomo, Obispo y Doctor de la Iglesia
+    cross: Exaltación de la Santa Cruz
+    bvm_sorrows: Nuestra Señora de los Dolores
+    cornelius_cyprian: Santos Cornelio, Papa, y Cipriano, Obispo, Mártires
+    bellarmine: San Roberto Belarmino, Obispo y Doctor de la Iglesia
+    januarius: San Jenaro, Obispo y Mártir
+    korean_martyrs: Santos Andrés Kim Taegon, Presbítero, Pablo Chong Hasang y compañeros, Mártires
+    matthew: San Mateo, Apóstol y Evangelista
+    padre_pio: San Pío de Pietrelcina, presbítero
+    cosmas_damian: Santos Cosme y Damián, Mártires
+    vincent_de_paul: San Vicente de Paúl, presbítero
+    wenceslaus: San Venceslao, Mártir
+    ruiz: Santos Lorenzo Ruiz y compañeros, Mártires
+    archangels: Santos Miguel, Gabriel y Rafael, Arcángeles
+    jerome: San Jerónimo, Presbítero y Doctor de la Iglesia
+    therese_lisieux: Santa Teresa del Niño Jesús, Virgen y Doctora de la Iglesia
+    guardian_angels: Santos Ángeles Custodios
+    faustina_kowalska: Santa Faustina Kowalska, Virgen
+    francis_assisi: San Francisco de Asís
+    bruno: San Bruno, Presbítero
+    bvm_rosary: Nuestra Señora del Rosario
+    denis: Santos Dionisio y compañeros, Mártires
+    leonardi: San Juan Leonardi, Presbítero
+    john_xxiii: San Juan XXIII, Papa
+    callistus_i: San Calixto I, Papa y Mártir
+    teresa_avila: Santa Teresa de Jesús, Virgen y Doctora de la Iglesia
+    hedwig: Santa Eduviges, Religiosa
+    alacoque: Santa Margarita María Alacoque, Virgen
+    ignatius_of_antioch: San Ignacio de Antioquía, Obispo y Mártir
+    luke: San Lucas, Evangelista
+    brebeuf_jogues: Santos Juan de Brébeuf, Isaac Jogues, Presbíteros y Mártires, y compañeros, Mártires
+    paul_of_cross: San Pablo de la Cruz, Presbítero
+    john_paul_ii: San Juan Pablo II, Papa
+    john_capistrano: San Juan Capistrano, Presbítero
+    claret: San Antonio María Claret, Obispo
+    simon_jude: Santos Simón y Judas, Apóstoles
+    all_saints: Todos los Santos
+    all_souls: Conmemoración de Todos los Difuntos
+    de_porres: San Martín de Porres, Religioso
+    borromeo: San Carlos Borromeo, Obispo
+    lateran_basilica: Dedicación de la Basílica de Letrán
+    leo_great: San León el Magno, Papa y Doctor de la Iglesia
+    martin: San Martín de Tours, Obispo
+    josaphat: San Josafat, Obispo y Mártir
+    albert: San Alberto Magno, Obispo y Doctor de la Iglesia
+    margaret_of_scotland: Santa Margarita de Escocia
+    gertrude: Santa Gertrudis, Virgen
+    elizabeth_of_hungary: Santa Isabel de Hungría, Religiosa
+    peter_paul_basilicas: Dedicación de las Basílicas de los Santos Pedro y Pablo, Apóstoles
+    bvm_presentation: Presentación de la Santísima Virgen María
+    cecilia: Santa Cecilia, Virgen y Mártir
+    clement_i: San Clemente I, Papa y Mártir
+    columban: San Columbano, abad, Religioso
+    vietnamese_martyrs: Santos Andrés Dung-Lac y compañeros, Mártires
+    catherine_of_alexandria: Santa Catalina de Alejandría, Virgen y Mártir
+    andrew: San Andrés, Apóstol
+    francis_xavier: San Francisco Javier, Presbítero
+    john_damascene: San Juan Damasceno, Presbítero y Doctor de la Iglesia
+    nicholas: San Nicolás, Obispo
+    ambrose: San Ambrosio, Obispo y Doctor de la Iglesia
+    bvm_immaculate: Inmaculada Concepción de la Santísima Virgen María
+    juan_diego: San Juan Diego
+    bvm_loreto: Bienaventurada Virgen María de Loreto
+    damasus_i: San Dámaso I, Papa
+    bvm_guadalupe: Nuestra Señora de Guadalupe
+    lucy: Santa Lucía, Virgen y Mártir
+    john_of_cross: San Juan de la Cruz, Presbítero y Doctor de la Iglesia
+    canisius: San Pedro Canisio, Presbítero y Doctor de la Iglesia
+    john_of_kanty: San Juan Cancio, Presbítero
+    stephen: San Esteban, el primer Mártir
+    john_evangelist: San Juan, Apóstol y Evangelista
+    innocents: Santos Inocentes, Mártires
+    becket: San Tomás Becket, Obispo y Mártir
+    sylvester_i: San Silvestre I, Papa

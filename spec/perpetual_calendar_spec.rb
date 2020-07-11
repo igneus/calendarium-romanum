@@ -6,7 +6,7 @@ describe CR::PerpetualCalendar do
   let(:date) { Date.new(2000, 1, 1) }
   let(:year) { 2000 }
 
-  let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+  let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
 
   let(:factory) { CR::Temporale::CelebrationFactory }
 

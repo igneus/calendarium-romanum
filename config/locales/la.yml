@@ -88,3 +88,218 @@ la:
     white: albus
     green: viridis
     red: rubeus
+  sanctorale:
+    basil_gregory: Ss. Basilii et Gregorii Nazianzeni, episcoporum et Ecclesiae doctorum
+    name_jesus: Ss.mi Nominis Iesu
+    raymond: S. Raimundi de Penyafort, presbyteri
+    hilary: S. Hilarii, episcopi et Ecclesiae doctoris
+    anthony_of_egypt: S. Antonii, abbatis
+    fabian: S. Fabiani, papae et martyris
+    sebastian: S. Sebastiani, martyris
+    agnes: S. Agnetis, virginis et martyris
+    vincent_deacon: S. Vincentii, diaconi et martyris
+    francis_de_sales: S. Francisci de Sales, episcopi et Ecclesiae doctoris
+    paul_conversion: In conversione S. Pauli, apostoli
+    timothy_titus: Ss. Timothei et Titi, episcoporum
+    merici: S. Angelae Merici, virginis
+    aquinas: S. Thomae de Aquino, presbyteri et Ecclesiae doctoris
+    bosco: S. Ioannis Bosco, presbyteri
+    presentation_of_lord: IN PRAESENTATIONE DOMINI
+    blase: S. Blasii, episcopi et martyris
+    ansgar: S. Ansgarii, episcopi
+    agatha: S. Agathae, virginis et martyris
+    paul_miki: Ss. Pauli Miki et sociorum, martyrum
+    jerome_emiliani: S. Hieronymi Emiliani
+    josephine_bakhita: S. Iosephinae Bakhita, virginis
+    scholastica: S. Scholasticae, virginis
+    bvm_lourdes: B. Mariae Virginis de Lourdes
+    cyril_methodius: Ss. Cyrilli, monachi, et Methodii, episcopi
+    servite_founders: Ss. septem Fundatorum Ordinis Servorum B. M. V.
+    peter_damian: S. Petri Damiani, episcopi et Ecclesiae doctoris
+    chair_of_peter: Cathedrae S. Petri, apostoli
+    polycarp: S. Polycarpi, episcopi et martyris
+    casimir: S. Casimiri
+    perpetua_felicity: Ss. Perpetuae et Felicitatis, martyrum
+    john_of_god: S. Ioannis a Deo, religiosi
+    frances_of_rome: S. Franciscae Romanae, religiosae
+    patrick: S. Patricii, episcopi
+    cyril_of_jerusalem: S. Cyrilli Hierosolymitani, episcopi et Ecclesiae doctoris
+    joseph: S. IOSEPH, SPONSI B. M. V.
+    turibius: S. Turibii de Mongrovejo, episcopi
+    annunciation: IN ANNUNTIATIONE DOMINI
+    francis_of_paola: S. Francisci de Paola, eremitae
+    isidore: S. Isidori, episcopi et Ecclesiae doctoris
+    vincent_ferrer: S. Vincentii Ferrer, presbyteri
+    de_la_salle: S. Ioannis Baptistae de la Salle, presbyteri
+    stanislaus: S. Stanislai, episcopi et martyris
+    martin_i: S. Martini I, papae et martyris
+    anselm: S. Anselmi, episcopi et Ecclesiae doctoris
+    george: S. Georgii, martyris
+    adalbert: S. Adalberti, episcopi et martyris
+    fidelis: S. Fidelis a Sigmaringen, presbyteri et martyris
+    mark: S. Marci, evangelistae
+    peter_chanel: S. Petri Chanel, presbyteri et martyris
+    de_montfort: S. Ludovici Mariae Grignion de Montfort, presbyteri
+    catherine_of_siena: S. Catharinae Senensis, virginis et Ecclesiae doctoris
+    pius_v: S. Pii V, papae
+    joseph_worker: S. Ioseph Opificis
+    athanasius: S. Athanasii, episcopi et Ecclesiae doctoris
+    philip_james: Ss. Philippi et Iacobi, apostolorum
+    nereus_achilleus: Ss. Nerei et Achillei, martyrum
+    pancras: S. Pancratii, martyris
+    bvm_fatima: B. Mariae Virginis de Fatima
+    matthias: S. Matthiae, apostoli
+    john_i: S. Ioannis I, papae et martyris
+    bernardine: S. Bernardini Senensis, presbyteri
+    magallanes: S. Christophori Magallanes, presbyteri, et sociorum, martyrum
+    rita: S. Ritae de Cascia, religiosae
+    bede_venerable: S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris
+    gregory_vii: S. Gregorii VII, papae
+    de_pazzi: S. Mariae Magdalenae de' Pazzi, virginis
+    neri: S. Philippi Neri, presbyteri
+    augustine_of_canterbury: S. Augustini Cantuarensis, episcopi
+    paul_vi: S. Pauli VI, papae
+    visitation: In Visitatione B. Mariae Virginis
+    justin: S. Iustini, martyris
+    marcellinus_peter: Ss. Marcellini et Petri, martyrum
+    ugandan_martyrs: Ss. Caroli Lwanga et sociorum, martyrum
+    boniface: S. Bonifatii, episcopi et martyris
+    norbert: S. Norberti, episcopi
+    ephrem: S. Ephraem, diaconi et Ecclesiae doctoris
+    barnabas: S. Barnabae, apostoli
+    anthony_of_padua: S. Antonii de Padova, presbyteri et Ecclesiae doctoris
+    romuald: S. Romualdi, abbatis
+    aloysius: S Aloisii Gonzaga, religiosi
+    paulinus: S. Paulini Nolani
+    fisher_more: Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum
+    baptist_birth: IN NATIVITATE S. IOANNIS BAPTISTAE
+    cyril_of_alexandria: S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris
+    irenaeus: S. Irenaei, episcopi et martyris
+    peter_paul: Ss. PETRI ET PAULI, APOSTOLORUM
+    first_martyrs_of_rome: Ss. Protomartyrum S. Romanae Ecclesiae
+    thomas_apostle: S. Thomae, apostoli
+    elizabeth_of_portugal: S. Elisabeth Lusitaniae
+    anthony_zaccaria: S. Antonii Mariae Zaccaria, presbyteri
+    goretti: S. Mariae Goretti, virginis et martyris
+    chinese_martyrs: Ss. Augustini Zhao Rong, presbyteri
+    benedict: S. Benedicti, abbatis
+    henry: S. Henrici
+    camillus_de_lellis: S. Camilli de Lellis, presbyteri
+    bonaventure: S. Bonaventurae, episcopi et Ecclesiae doctoris
+    bvm_mount_carmel: B. Mariae Virginis de Monte Carmelo
+    apollinaris: S. Apollinaris, episcopi et martyris
+    lawrence_of_brindisi: S. Laurentii de Brindisi, presbyteri et Ecclesiae doctoris
+    mary_magdalene: S. Mariae Magdalenae
+    birgitta: S. Birgittae, religiosae
+    sharbel: S. Sarbelii Makhlūf, presbyteri
+    james: S. Iacobi, apostoli
+    joachim_anne: Ss. Ioachim et Annae, parentum B. Mariae Virginis
+    martha: S. Marthae
+    peter_chrysologus: S. Petri Chrysologi, episcopi et Ecclesiae doctoris
+    ignatius_of_loyola: S. Ignatii de Loyola, presbyteri
+    alphonsus: S. Alfonsi Mariae de' Liguori, episcopi et Ecclesiae doctoris
+    eusebius: S. Eusebii Vercellensis, episcopi
+    eymard: S. Petri Iuliani Eymard, presbyteri
+    vianney: S. Ioannis Mariae Vianney, presbyteri
+    mary_major: In Dedicatione basilicae S. Mariae
+    transfiguration: IN TRANSFIGURATIONE DOMINI
+    sixtus_ii: Ss. Xysti, papae, et sociorum, martyrum
+    cajetan: S. Caietani, presbyteri
+    dominic: S. Dominici, presbyteri
+    stein: S. Teresiae Benedictae a Cruce, virginis et martyris
+    lawrence: S. Laurentii, diaconi et martyris
+    clare: S. Clarae, virginis
+    de_chantal: S. Ioannae Franciscae de Chantal, religiosae
+    pontian_hippolytus: Ss. Pontiani, papae, et Hippolyti, presbyteri, martyrum
+    kolbe: S. Maximiliani Mariae Kolbe, presbyteri et martyris
+    assumption: IN ASSUMPTIONE B. MARIAE VIRGINIS
+    stephen_hungary: S. Stephani Hungariae
+    eudes: S. Ioannis Eudes, presbyteri
+    bernard: S. Bernardi, abbatis et Ecclesiae doctoris
+    pius_x: S. Pii X, papae
+    bvm_queenship: B. Mariae Virginis Reginae
+    rose_lima: S. Rosae de Lima, virginis
+    bartholomew: S. Bartholomaei, apostoli
+    louis: S. Ludovici
+    joseph_calasanz: S. Ioseph de Calasanz, presbyteri
+    monica: S. Monicae
+    augustine: S. Augustini, episcopi et Ecclesiae doctoris
+    baptist_beheading: In Passione S. Ioannis Baptistae, martyris
+    gregory_great: S. Gregorii Magni, papae et Ecclesiae doctoris
+    bvm_birth: In Nativitate B. Mariae Virginis
+    claver: S. Petri Claver, presbyteri
+    bvm_name: Ss.mi Nominis Mariae
+    john_chrysostom: S. Ioannis Chrysostomi, episcopi et Ecclesiae doctoris
+    cross: IN EXALTATIONE SANCTAE CRUCIS
+    bvm_sorrows: B. Mariae Virginis Perdolentis
+    cornelius_cyprian: Ss. Cornelii, papae, et Cypriani, episcopi, martyrum
+    bellarmine: S. Roberti Bellarmino, episcopi et Ecclesiae doctoris
+    januarius: S. Ianuarii, episcopi et martyris
+    korean_martyrs: Ss. Andreae Kim Tae-gŏn et Pauli Chŏng Ha-sang et sociorum, martyrum
+    matthew: S. Matthaei, apostoli et evangelistae
+    padre_pio: S. Pii de Pietrelcina, presbyteri
+    cosmas_damian: Ss. Cosmae et Damiani, martyrum
+    vincent_de_paul: S. Vincentii de Paul, presbyteri
+    wenceslaus: S. Venceslai, martyris
+    ruiz: S. Laurentii Ruiz et sociorum, martyrum
+    archangels: Ss. Michaelis, Gabrielis et Raphaelis, archangelorum
+    jerome: S. Hieronymi, presbyteri et Ecclesiae doctoris
+    therese_lisieux: S. Teresiae a Iesu Infante, virginis et Ecclesiae doctoris
+    guardian_angels: Ss. Angelorum Custodum
+    francis_assisi: S. Francisci Assisiensis
+    faustina_kowalska: S. Faustinæ Kowalska, virginis
+    bruno: S. Brunonis, presbyteri
+    bvm_rosary: B. Mariae Virginis a Rosario
+    denis: Ss. Dionysii, episcopi, et sociorum, martyrum
+    leonardi: S. Ioannis Leonardi, presbyteri
+    john_xxiii: S. Ioannis XXIII, papae
+    callistus_i: S. Callisti I, papae et martyris
+    teresa_avila: S. Teresiae a Iesu, virginis et Ecclesiae doctoris
+    hedwig: S. Hedvigis, religiosae
+    alacoque: S. Margaritae Mariae Alacoque, virginis
+    ignatius_of_antioch: S. Ignatii Antiocheni, episcopi et martyris
+    luke: S. Lucae, evangelistae
+    brebeuf_jogues: Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum
+    paul_of_cross: S. Pauli a Cruce, presbyteri
+    john_paul_ii: S. Ioannis Pauli II, papae
+    john_capistrano: S. Ioannis de Capestrano, presbyteri
+    claret: S. Antonii Mariae Claret, episcopi
+    simon_jude: Ss. Simonis et Iudae, apostolorum
+    all_saints: OMNIUM SANCTORUM
+    all_souls: IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
+    de_porres: S. Martini de Porres, religiosi
+    borromeo: S. Caroli Borromeo, episcopi
+    lateran_basilica: IN DEDICATIONE BASILICAE LATERANENSIS
+    leo_great: S. Leonis Magni, papae et Ecclesiae doctoris
+    martin: S. Martini Turonensis, episcopi
+    josaphat: S. Iosaphat, episcopi et martyris
+    albert: S. Alberti Magni, episcopi et Ecclesiae doctoris
+    margaret_of_scotland: S. Margaritae Scotiae
+    gertrude: S. Gertrudis, virginis
+    elizabeth_of_hungary: S. Elisabeth Hungariae, religiosae
+    peter_paul_basilicas: In Dedicatione basilicarum Ss. Petri et Pauli, apostolorum
+    bvm_presentation: In Praesentatione B. Mariae Virginis
+    cecilia: S. Caeciliae, virginis et martyris
+    clement_i: S. Clementis I, papae et martyris
+    columban: S. Columbani, abbatis
+    vietnamese_martyrs: Ss. Andreae Dũng Lac, presbyteri, et sociorum, martyrum
+    catherine_of_alexandria: S. Catharinae Alexandrinae, virginis et martyris
+    andrew: S. Andreae, apostoli
+    francis_xavier: S. Francisci Xavier, presbyteri
+    john_damascene: S. Ioannis Damasceni, presbyteri et Ecclesiae doctoris
+    nicholas: S. Nicolai, episcopi
+    ambrose: S. Ambrosii, episcopi et Ecclesiae doctoris
+    bvm_immaculate: IN CONCEPTIONE IMMACULATA BEATAE MARIAE VIRGINIS
+    juan_diego: S. Ioannis Didaci Cuahtlatoatzin
+    bvm_loreto: Beatae Mariae Virginis de Loreto
+    damasus_i: S. Damasi I, papae
+    bvm_guadalupe: Beatae Mariae Virginis de Guadalupe
+    lucy: S. Luciae, virginis et martyris
+    john_of_cross: S. Ioannis a Cruce, presbyteri et Ecclesiae doctoris
+    canisius: S. Petri Canisii, presbyteri et Ecclesiae doctoris
+    john_of_kanty: S. Ioannis de Kęty, presbyteri
+    stephen: S. Stephani, protomartyris
+    john_evangelist: S. Ioannis, apostoli et evangelistae
+    innocents: Ss. Innocentium, martyrum
+    becket: S. Thomae Becket, episcopi et martyris
+    sylvester_i: S. Silvestri I, papae

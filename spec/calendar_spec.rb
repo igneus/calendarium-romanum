@@ -133,7 +133,7 @@ describe CR::Calendar do
     end
 
     describe 'sanctorale' do
-      let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+      let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
       let(:a) { described_class.new(year, sanctorale) }
 
       it 'same' do
@@ -362,7 +362,7 @@ describe CR::Calendar do
 
     describe 'Temporale x Sanctorale resolution' do
       before :all do
-        @s = CR::Data::GENERAL_ROMAN_ENGLISH.load
+        @s = CR::Data::GENERAL_ROMAN.load
         @c = described_class.new(2013, @s).freeze
       end
 
@@ -590,7 +590,7 @@ describe CR::Calendar do
       end
 
       describe 'first Vespers of' do
-        let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+        let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
         let(:calendar) { described_class.new(year, sanctorale, nil, vespers: true) }
 
         describe 'a Sunday' do

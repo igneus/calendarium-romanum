@@ -88,3 +88,218 @@ fr:
     white: blanc
     green: vert
     red: rouge
+  sanctorale:
+    basil_gregory: Saints Basile le Grand et Grégoire de Naziance, évêques et docteurs de l'Église
+    name_jesus: Saint Nom de Jésus
+    raymond: Saint Raymond de Peñafort
+    hilary: Saint Hilaire de Poitiers, évêque et docteur de l'Église
+    anthony_of_egypt: Saint Antoine le Grand, abbé
+    fabian: Saint Fabien, pape et martyr
+    sebastian: Saint Sébastien, martyr
+    agnes: Sainte Agnès, vierge et martyre
+    vincent_deacon: Saint Vincent de Saragosse, diacre et martyr
+    francis_de_sales: Saint François de Sales, évêque et docteur de l'Église
+    paul_conversion: La Conversion de Paul, apôtre
+    timothy_titus: Saints Timothée et Tite, évêques
+    merici: Sainte Angèle Mérici, vierge
+    aquinas: Saint Thomas d'Aquin, prêtre et docteur de l'Église
+    bosco: Saint Jean Bosco, prêtre
+    presentation_of_lord: Présentation du Seigneur
+    blase: Saint Blaise, évêque et martyr
+    ansgar: Saint Ansgar, évêque
+    agatha: Sainte Agathe, vierge et martyre
+    paul_miki: Saints Paul Miki et ses compagnons, martyrs
+    jerome_emiliani: Saint Jérôme Emilien
+    josephine_bakhita: Sainte Josephine Bakhita, vierge
+    scholastica: Sainte Scolastique, vierge
+    bvm_lourdes: Notre-Dame de Lourdes
+    cyril_methodius: Saints Cyrille, moine, et Méthode, évêque
+    servite_founders: Les Sept Saints fondateurs de l'Ordre des Servites
+    peter_damian: Saint Pierre Damien, évêque et docteur de l'Église
+    chair_of_peter: Chaire de saint Pierre, apôtre
+    polycarp: Saint Polycarpe, évêque et martyr
+    casimir: Saint Casimir
+    perpetua_felicity: Saintes Perpétue et Félicité, martyres
+    john_of_god: Saint Jean de Dieu, religieux
+    frances_of_rome: Sainte Françoise Romaine, religieuse
+    patrick: Saint Patrick, évêque
+    cyril_of_jerusalem: Saint Cyrille de Jérusalem, évêque et docteur de l'Église
+    joseph: Saint Joseph, chaste Époux de la Bienheureuse Vierge Marie
+    turibius: Saint Toribio de Mogrovejo, évêque
+    annunciation: Annonciation du Seigneur
+    francis_of_paola: Saint François de Paule, ermite
+    isidore: Saint Isidore, évêque et docteur de l'Église
+    vincent_ferrer: Saint Vincent Ferrier, prêtre
+    de_la_salle: Saint Jean-Baptiste de la Salle, prêtre
+    stanislaus: Saint Stanislas, évêque et martyr
+    martin_i: Saint Martin Ier, pape et martyr
+    anselm: Saint Anselme de Canterbury, évêque et docteur de l'Église
+    george: Saint George, martyr
+    adalbert: Saint Adalbert, évêque et martyr
+    fidelis: Saint Fidèle de Sigmaringen, prêtre et martyr
+    mark: Saint Marc, évangéliste
+    peter_chanel: Saint Pierre Chanel, prêtre et martyr
+    de_montfort: Saint Louis Grignon de Montfort, prêtre
+    catherine_of_siena: Sainte Catherine de Sienne, vierge et docteur de l'Église
+    pius_v: Saint Pie V, pape
+    joseph_worker: Saint Joseph artisan
+    athanasius: Saint Athanase, évêque et docteur de l'Église
+    philip_james: Saints Philippe et Jacques, apôtres
+    nereus_achilleus: Saints Nérée et Achillée, martyrs
+    pancras: Saint Pancrace, martyr
+    bvm_fatima: Notre-Dame de Fátima
+    matthias: Saint Matthias, apôtre
+    john_i: Saint Jean Ier, pape et martyr
+    bernardine: Saint Bernardin de Sienne, prêtre
+    magallanes: Saint Cristóbal Magallanes Jara et ses compagnons, martyrs
+    rita: Sainte Rita de Cascia, religieuse
+    bede_venerable: Saint Bède le Vénérable, prêtre et docteur de l'Église
+    gregory_vii: Saint Grégoire VII, pape
+    de_pazzi: Sainte Marie-Madeleine de Pazzi, vierge
+    neri: Saint Philippe Néri, prêtre
+    augustine_of_canterbury: Saint Augustin de Cantorbéry, évêque
+    paul_vi: Saint Paul VI, pape
+    visitation: Visitation de la Bienheureuse Vierge Marie
+    justin: Saint Justin Martyr
+    marcellinus_peter: Saints Marcellin et Pierre, martyrs
+    ugandan_martyrs: Saints Charles Lwanga et ses compagnons, martyrs
+    boniface: Saint Boniface, évêque et martyr
+    norbert: Saint Norbert, évêque
+    ephrem: Saint Éphrem, diacre et docteur de l'Église
+    barnabas: Saint Barnabé, apôtre
+    anthony_of_padua: Saint Antoine de Padoue, prêtre et docteur de l'Église
+    romuald: Saint Romuald, abbé
+    aloysius: Saint Louis de Gonzague, religieux
+    paulinus: Saint Paulin de Nole, évêque
+    fisher_more: Saints John Fisher, évêque et martyr et Thomas More, martyr
+    baptist_birth: Nativité de Saint Jean-Baptiste
+    cyril_of_alexandria: Saint Cyrille d'Alexandrie, évêque et docteur de l'Église
+    irenaeus: Saint Irénée, évêque et martyr
+    peter_paul: Saints Pierre et Paul, apôtres
+    first_martyrs_of_rome: Premiers martyrs de l'Église de Rome
+    thomas_apostle: Saint Thomas, apôtre
+    elizabeth_of_portugal: Sainte Élisabeth de Portugal, reine
+    anthony_zaccaria: Saint Antoine-Marie Zaccaria, prêtre
+    goretti: Sainte Maria Goretti, vierge et martyr
+    chinese_martyrs: Saint Augustin Zhao Rong et ses compagnons, martyrs
+    benedict: Saint Benoît, abbé
+    henry: Saint Henri
+    camillus_de_lellis: Saint Camille de Lellis, prêtre
+    bonaventure: Saint Bonaventure, évêque et docteur de l'Église
+    bvm_mount_carmel: Notre Dame du Mont-Carmel
+    apollinaris: Saint Apollinaire
+    lawrence_of_brindisi: Saint Laurent de Brindisi, prêtre et docteur de l'Église
+    mary_magdalene: Sainte Marie-Madeleine
+    birgitta: Sainte Brigitte de Suède, religieuse
+    sharbel: Saint Charbel Makhlouf, ermite
+    james: Saint Jacques, apôtre
+    joachim_anne: Saints Joachim et Anne
+    martha: Sainte Marthe
+    peter_chrysologus: Saint Pierre Chrysologue, évêque et docteur de l'Église
+    ignatius_of_loyola: Saint Ignace de Loyola, prêtre
+    alphonsus: Saint Alphonse de Liguori, évêque et docteur de l'Église
+    eusebius: Saint Eusèbe de Verceil, évêque
+    eymard: Saint Pierre-Julien Eymard, prêtre
+    vianney: Saint Jean-Marie Vianney (le Curé d'Ars), prêtre
+    mary_major: Dédicace de la Basilique Sainte-Marie-Majeure
+    transfiguration: Transfiguration du Seigneur
+    sixtus_ii: Saint Sixte II, pape, et ses compagnons, martyrs, ou Saint Cajetan, prêtre
+    cajetan: Saint Cajetan, priest
+    dominic: Saint Dominique, prêtre
+    stein: Sainte Thérèse-Bénédicte de la Croix (Edith Stein), vierge et martyre
+    lawrence: Saint Laurent, diacre et martyr
+    clare: Sainte Claire, vierge
+    de_chantal: Sainte Jeanne de Chantal, religieuse
+    pontian_hippolytus: Saints Pontien, pape, et Hippolyte, prêtre, martyrs
+    kolbe: Saint Maximilien-Marie Kolbe, prêtre et martyr
+    assumption: Assomption de la Bienheureuse Vierge Marie
+    stephen_hungary: Saint Étienne de Hongrie
+    eudes: Saint Jean Eudes, prêtre
+    bernard: Saint Bernard, abbé et docteur de l'Église
+    pius_x: Saint Pie X, pape
+    bvm_queenship: Bienheureuse Vierge Marie Reine
+    rose_lima: Sainte Rose de Lima, vierge
+    bartholomew: Saint Barthélemy, apôtre
+    louis: Saint Louis
+    joseph_calasanz: Saint Joseph Calasanz, prêtre
+    monica: Sainte Monique
+    augustine: Saint Augustin, évêque et docteur de l'Église
+    baptist_beheading: La Décollation de Saint Jean le Baptiste, martyr
+    gregory_great: Saint Grégoire le Grand, pape et docteur de l'Église
+    bvm_birth: Nativité de la Vierge Marie
+    claver: Saint Pierre Claver, prêtre
+    bvm_name: Saint Nom de la Bienheureuse Vierge Marie
+    john_chrysostom: Saint Jean Chrysostome, évêque et docteur de l'Église
+    cross: Exaltation de la Sainte-Croix
+    bvm_sorrows: Notre-Dame des Douleurs
+    cornelius_cyprian: Saints Corneille, pape, et Cyprien, évêque, martyrs
+    bellarmine: Saint Robert Bellarmin, évêque et docteur de l'Église
+    januarius: Saint Janvier, évêque et martyr
+    korean_martyrs: Saint André Kim Taegon, prêtre, et Paul Chong Hasang et ses compagnons, martyrs
+    matthew: Saint Matthieu, Apôtre et évangéliste
+    padre_pio: Saint Padre Pio, prêtre
+    cosmas_damian: Saints Côme et Damien, martyrs
+    vincent_de_paul: Saint Vincent de Paul, prêtre
+    wenceslaus: Saint Venceslas, martyr
+    ruiz: Saints Lorenzo Ruiz et ses compagnons, martyrs
+    archangels: Saints Michel, Gabriel et Raphaël, Archanges
+    jerome: Saint Jérôme, prêtre et docteur de l'Église
+    therese_lisieux: Sainte Thérèse de l'Enfant-Jésus et de la Sainte Face, vierge et docteur de l'Église
+    guardian_angels: Les Saints Anges gardiens
+    francis_assisi: Saint François d'Assise
+    faustina_kowalska: Sainte Faustine Kowalska, vierge
+    bruno: Saint Bruno, prêtre
+    bvm_rosary: Notre Dame du Rosaire
+    denis: Saint Denis et ses compagnons, martyrs
+    leonardi: Saint Jean Leonardi, prêtre
+    john_xxiii: Saint Jean XXIII, pape
+    callistus_i: Saint Calixte, pape et martyr
+    teresa_avila: Sainte Thérèse de Jésus, vierge et docteur de l'Église
+    hedwig: Sainte Hedwige, religieuse
+    alacoque: Sainte Marguerite-Marie Alacoque, vierge
+    ignatius_of_antioch: Saint Ignace d'Antioche, évêque et martyr
+    luke: Saint Luc, évangéliste
+    brebeuf_jogues: Saints Jean de Brébeuf et Isaac Jogues, prêtres et martyrs, et leurs compagnons, martyrs
+    paul_of_cross: Saint Paul de la Croix, prêtre
+    john_paul_ii: Saint Jean-Paul II, pape
+    john_capistrano: Saint Jean de Capistran, prêtre
+    claret: Saint Antoine-Marie Claret, évêque
+    simon_jude: Saint Simon et Saint Jude, apôtres
+    all_saints: Toussaint
+    all_souls: Commémoration des fidèles défunts
+    de_porres: Saint Martin de Porrès, religieux
+    borromeo: Saint Charles Borromée, évêque
+    lateran_basilica: Dédicace de la Basilique Saint-Jean-de-Latran
+    leo_great: Saint Léon le Grand, pape et docteur de l'Église
+    martin: Saint Martin de Tours, évêque
+    josaphat: Saint Josaphat, évêque et martyr
+    albert: Saint Albert le Grand, évêque et docteur de l'Église
+    margaret_of_scotland: Sainte Marguerite
+    gertrude: Sainte Gertrude, vierge
+    elizabeth_of_hungary: Sainte Élisabeth de Hongrie, religieuse
+    peter_paul_basilicas: Dédicace des Basiliques de Saint-Pierre et Saint Paul, apôtres
+    bvm_presentation: Présentation de la Bienheureuse Vierge Marie
+    cecilia: Sainte Cécile, vierge
+    clement_i: Saint Clément, pape et martyr
+    columban: Saint Colomban, religieux
+    vietnamese_martyrs: Saint André Dũng-Lạc et ses compagnons, martyrs
+    catherine_of_alexandria: Sainte Catherine d'Alexandrie
+    andrew: Saint André, apôtre
+    francis_xavier: Saint François Xavier, prêtre
+    john_damascene: Saint Jean Damascène, prêtre et docteur de l'Église
+    nicholas: Saint Nicolas, évêque
+    ambrose: Saint Ambroise, évêque et docteur de l'Église
+    bvm_immaculate: Immaculée Conception de la Bienheureuse Vierge Marie
+    juan_diego: Saint Juan Diego
+    bvm_loreto: Bienheureuse Vierge Marie de Lorette
+    damasus_i: Saint Damase, pape
+    bvm_guadalupe: Notre-Dame de Guadalupe
+    lucy: Sainte Lucie, vierge et martyre
+    john_of_cross: Saint Jean de la Croix, prêtre et docteur de l'Église
+    canisius: Saint Pierre Canisius, prêtre et docteur de l'Église
+    john_of_kanty: Saint Jean de Kenty, prêtre
+    stephen: Saint Étienne, 1er martyr
+    john_evangelist: Saint Jean, apôtre et évangéliste
+    innocents: Saints Innocents, martyrs
+    becket: Saint Thomas Becket, évêque et martyr
+    sylvester_i: Saint Sylvestre, pape

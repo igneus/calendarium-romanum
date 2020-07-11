@@ -88,3 +88,218 @@ en:
     white: white
     green: green
     red: red
+  sanctorale:
+    basil_gregory: Saints Basil the Great and Gregory Nazianzen, bishops and doctors
+    name_jesus: The Most Holy Name of Jesus
+    raymond: Saint Raymond of Penyafort, priest
+    hilary: Saint Hilary of Poitiers, bishop and doctor
+    anthony_of_egypt: Saint Anthony of Egypt, abbot
+    fabian: Saint Fabian, pope and martyr
+    sebastian: Saint Sebastian, martyr
+    agnes: Saint Agnes, virgin and martyr
+    vincent_deacon: Saint Vincent, deacon and martyr
+    francis_de_sales: Saint Francis de Sales, bishop and doctor
+    paul_conversion: The Conversion of Saint Paul, apostle
+    timothy_titus: Saints Timothy and Titus, bishops
+    merici: Saint Angela Merici, virgin
+    aquinas: Saint Thomas Aquinas, priest and doctor
+    bosco: Saint John Bosco, priest
+    presentation_of_lord: Presentation of the Lord
+    blase: Saint Blase, bishop and martyr
+    ansgar: Saint Ansgar, bishop
+    agatha: Saint Agatha, virgin and martyr
+    paul_miki: Saints Paul Miki and companions, martyrs
+    jerome_emiliani: Saint Jerome Emiliani, priest
+    josephine_bakhita: Saint Josephine Bakhita, virgin
+    scholastica: Saint Scholastica, virgin
+    bvm_lourdes: Our Lady of Lourdes
+    cyril_methodius: Saints Cyril, monk, and Methodius, bishop
+    servite_founders: Seven Holy Founders of the Servite Order
+    peter_damian: Saint Peter Damian, bishop and doctor of the Church
+    chair_of_peter: Chair of Saint Peter, apostle
+    polycarp: Saint Polycarp, bishop and martyr
+    casimir: Saint Casimir
+    perpetua_felicity: Saints Perpetua and Felicity, martyrs
+    john_of_god: Saint John of God, religious
+    frances_of_rome: Saint Frances of Rome, religious
+    patrick: Saint Patrick, bishop
+    cyril_of_jerusalem: Saint Cyril of Jerusalem, bishop and doctor
+    joseph: Saint Joseph Husband of the Blessed Virgin Mary
+    turibius: Saint Turibius of Mogrovejo, bishop
+    annunciation: Annunciation of the Lord
+    francis_of_paola: Saint Francis of Paola, hermit
+    isidore: Saint Isidore, bishop and doctor of the Church
+    vincent_ferrer: Saint Vincent Ferrer, priest
+    de_la_salle: Saint John Baptist de la Salle, priest
+    stanislaus: Saint Stanislaus, bishop and martyr
+    martin_i: Saint Martin I, pope and martyr
+    anselm: Saint Anselm of Canterbury, bishop and doctor of the Church
+    george: Saint George, martyr
+    adalbert: Saint Adalbert, bishop and martyr
+    fidelis: Saint Fidelis of Sigmaringen, priest and martyr
+    mark: Saint Mark the Evangelist
+    peter_chanel: Saint Peter Chanel, priest and martyr
+    de_montfort: Saint Louis Grignon de Montfort, priest
+    catherine_of_siena: Saint Catherine of Siena, virgin and doctor of the Church
+    pius_v: Saint Pius V, pope
+    joseph_worker: Saint Joseph the Worker
+    athanasius: Saint Athanasius, bishop and doctor
+    philip_james: Saints Philip and James, Apostles
+    nereus_achilleus: Saints Nereus and Achilleus, martyrs
+    pancras: Saint Pancras, martyr
+    bvm_fatima: Our Lady of Fatima
+    matthias: Saint Matthias the Apostle
+    john_i: Saint John I, pope and martyr
+    bernardine: Saint Bernardine of Siena, priest
+    magallanes: Saint Christopher Magallanes and companions, martyrs
+    rita: Saint Rita of Cascia
+    bede_venerable: Saint Bede the Venerable, priest and doctor
+    gregory_vii: Saint Gregory VII, pope
+    de_pazzi: Saint Mary Magdalene de Pazzi, virgin
+    neri: Saint Philip Neri, priest
+    augustine_of_canterbury: Saint Augustine (Austin) of Canterbury, bishop
+    paul_vi: Saint Paul VI, pope
+    visitation: Visitation of the Blessed Virgin Mary
+    justin: Saint Justin Martyr
+    marcellinus_peter: Saints Marcellinus and Peter, martyrs
+    ugandan_martyrs: Saints Charles Lwanga and companions, martyrs
+    boniface: Saint Boniface, bishop and martyr
+    norbert: Saint Norbert, bishop
+    ephrem: Saint Ephrem, deacon and doctor
+    barnabas: Saint Barnabas the Apostle
+    anthony_of_padua: Saint Anthony of Padua, priest and doctor
+    romuald: Saint Romuald, abbot
+    aloysius: Saint Aloysius Gonzaga, religious
+    paulinus: Saint Paulinus of Nola, bishop
+    fisher_more: Saints John Fisher, bishop and martyr and Thomas More, martyr
+    baptist_birth: Birth of Saint John the Baptist
+    cyril_of_alexandria: Saint Cyril of Alexandria, bishop and doctor
+    irenaeus: Saint Irenaeus, bishop and martyr
+    peter_paul: Saints Peter and Paul, Apostles
+    first_martyrs_of_rome: First Martyrs of the Church of Rome
+    thomas_apostle: Saint Thomas the Apostle
+    elizabeth_of_portugal: Saint Elizabeth of Portugal
+    anthony_zaccaria: Saint Anthony Zaccaria, priest
+    goretti: Saint Maria Goretti, virgin and martyr
+    chinese_martyrs: Saint Augustine Zhao Rong and companions, martyrs
+    benedict: Saint Benedict, abbot
+    henry: Saint Henry
+    camillus_de_lellis: Saint Camillus de Lellis, priest
+    bonaventure: Saint Bonaventure, bishop and doctor
+    bvm_mount_carmel: Our Lady of Mount Carmel
+    apollinaris: Saint Apollinaris, bishop and martyr
+    lawrence_of_brindisi: Saint Lawrence of Brindisi, priest and doctor
+    mary_magdalene: Saint Mary Magdalene
+    birgitta: Saint Birgitta, religious
+    sharbel: Saint Sharbel Makhluf, hermit
+    james: Saint James, apostle
+    joachim_anne: Saints Joachim and Anne
+    martha: Saint Martha
+    peter_chrysologus: Saint Peter Chrysologus, bishop and doctor
+    ignatius_of_loyola: Saint Ignatius of Loyola, priest
+    alphonsus: Saint Alphonsus Maria de Liguori, bishop and doctor of the Church
+    eusebius: Saint Eusebius of Vercelli, bishop
+    eymard: Saint Peter Julian Eymard, priest
+    vianney: Saint Jean Vianney (the Curé of Ars), priest
+    mary_major: Dedication of the Basilica of Saint Mary Major
+    transfiguration: Transfiguration of the Lord
+    sixtus_ii: Saint Sixtus II, pope, and companions, martyrs
+    cajetan: Saint Cajetan, priest
+    dominic: Saint Dominic, priest
+    stein: Saint Teresa Benedicta of the Cross (Edith Stein), virgin and martyr
+    lawrence: Saint Lawrence, deacon and martyr
+    clare: Saint Clare, virgin
+    de_chantal: Saint Jane Frances de Chantal, religious
+    pontian_hippolytus: Saints Pontian, pope, and Hippolytus, priest, martyrs
+    kolbe: Saint Maximilian Mary Kolbe, priest and martyr
+    assumption: Assumption of the Blessed Virgin Mary
+    stephen_hungary: Saint Stephen of Hungary
+    eudes: Saint John Eudes, priest
+    bernard: Saint Bernard of Clairvaux, abbot and doctor of the Church
+    pius_x: Saint Pius X, pope
+    bvm_queenship: Queenship of Blessed Virgin Mary
+    rose_lima: Saint Rose of Lima, virgin
+    bartholomew: Saint Bartholomew the Apostle
+    louis: Saint Louis
+    joseph_calasanz: Saint Joseph of Calasanz, priest
+    monica: Saint Monica
+    augustine: Saint Augustine of Hippo, bishop and doctor of the Church
+    baptist_beheading: The Beheading of Saint John the Baptist, martyr
+    gregory_great: Saint Gregory the Great, pope and doctor
+    bvm_birth: Birth of the Blessed Virgin Mary
+    claver: Saint Peter Claver, priest
+    bvm_name: Holy Name of the Blessed Virgin Mary
+    john_chrysostom: Saint John Chrysostom, bishop and doctor
+    cross: Triumph of the Holy Cross
+    bvm_sorrows: Our Lady of Sorrows
+    cornelius_cyprian: Saints Cornelius, pope, and Cyprian, bishop, martyrs
+    bellarmine: Saint Robert Bellarmine, bishop and doctor
+    januarius: Saint Januarius, bishop and martyr
+    korean_martyrs: Saint Andrew Kim Taegon, priest, and Paul Chong Hasang and companions, martyrs
+    matthew: Saint Matthew the Evangelist, Apostle, Evangelist
+    padre_pio: Saint Pio of Pietrelcina (Padre Pio), priest
+    cosmas_damian: Saints Cosmas and Damian, martyrs
+    vincent_de_paul: Saint Vincent de Paul, priest
+    wenceslaus: Saint Wenceslaus, martyr
+    ruiz: Saints Lawrence Ruiz and companions, martyrs
+    archangels: Saints Michael, Gabriel and Raphael, Archangels
+    jerome: Saint Jerome, priest and doctor
+    therese_lisieux: Saint Thérèse of the Child Jesus, virgin and doctor
+    guardian_angels: Guardian Angels
+    francis_assisi: Saint Francis of Assisi
+    faustina_kowalska: Saint Faustina Kowalska, virgin
+    bruno: Saint Bruno, priest
+    bvm_rosary: Our Lady of the Rosary
+    denis: Saint Denis and companions, martyrs
+    leonardi: Saint John Leonardi, priest
+    john_xxiii: Saint John XXIII, pope
+    callistus_i: Saint Callistus I, pope and martyr
+    teresa_avila: Saint Teresa of Jesus, virgin and doctor
+    hedwig: Saint Hedwig, religious
+    alacoque: Saint Margaret Mary Alacoque, virgin
+    ignatius_of_antioch: Saint Ignatius of Antioch, bishop and martyr
+    luke: Saint Luke the Evangelist
+    brebeuf_jogues: Saints Jean de Brébeuf, Isaac Jogues, priests and martyrs; and their companions, martyrs
+    paul_of_cross: Saint Paul of the Cross, priest
+    john_paul_ii: Saint John Paul II, pope
+    john_capistrano: Saint John of Capistrano, priest
+    claret: Saint Anthony Mary Claret, bishop
+    simon_jude: Saint Simon and Saint Jude, apostles
+    all_saints: All Saints
+    all_souls: All Souls
+    de_porres: Saint Martin de Porres, religious
+    borromeo: Saint Charles Borromeo, bishop
+    lateran_basilica: Dedication of the Lateran basilica
+    leo_great: Saint Leo the Great, pope and doctor
+    martin: Saint Martin of Tours, bishop
+    josaphat: Saint Josaphat, bishop and martyr
+    albert: Saint Albert the Great, bishop and doctor
+    margaret_of_scotland: Saint Margaret of Scotland
+    gertrude: Saint Gertrude the Great, virgin
+    elizabeth_of_hungary: Saint Elizabeth of Hungary, religious
+    peter_paul_basilicas: Dedication of the basilicas of Saints Peter and Paul, Apostles
+    bvm_presentation: Presentation of the Blessed Virgin Mary
+    cecilia: Saint Cecilia, virgin and martyr
+    clement_i: Saint Clement I, pope and martyr
+    columban: Saint Columban, religious
+    vietnamese_martyrs: Saint Andrew Dung Lac and his companions, martyrs
+    catherine_of_alexandria: Saint Catherine of Alexandria
+    andrew: Saint Andrew the Apostle
+    francis_xavier: Saint Francis Xavier, priest
+    john_damascene: Saint John Damascene, priest and doctor
+    nicholas: Saint Nicholas, bishop
+    ambrose: Saint Ambrose, bishop and doctor
+    bvm_immaculate: Immaculate Conception of the Blessed Virgin Mary
+    juan_diego: Saint Juan Diego
+    bvm_loreto: Our Lady of Loreto
+    damasus_i: Saint Damasus I, pope
+    bvm_guadalupe: Our Lady of Guadalupe
+    lucy: Saint Lucy of Syracuse, virgin and martyr
+    john_of_cross: Saint John of the Cross, priest and doctor
+    canisius: Saint Peter Canisius, priest and doctor
+    john_of_kanty: Saint John of Kanty, priest
+    stephen: Saint Stephen, the first martyr
+    john_evangelist: Saint John the Apostle and evangelist
+    innocents: Holy Innocents, martyrs
+    becket: Saint Thomas Becket, bishop and martyr
+    sylvester_i: Saint Sylvester I, pope

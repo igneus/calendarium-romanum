@@ -34,21 +34,13 @@ module CalendariumRomanum
       end
     end
 
-    GENERAL_ROMAN_LATIN = SanctoraleFile.new('universal-la.txt')
-    GENERAL_ROMAN_ENGLISH = SanctoraleFile.new('universal-en.txt')
-    GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt')
-    GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt')
-    GENERAL_ROMAN_SPANISH = SanctoraleFile.new('universal-es.txt')
+    GENERAL_ROMAN = SanctoraleFile.new('universal.txt')
     CZECH = SanctoraleFile.new('czech-cs.txt')
 
     values(index_by: :siglum) do
       # only calendars of broader interest have constants defined
       [
-        GENERAL_ROMAN_LATIN,
-        GENERAL_ROMAN_ENGLISH,
-        GENERAL_ROMAN_FRENCH,
-        GENERAL_ROMAN_ITALIAN,
-        GENERAL_ROMAN_SPANISH,
+        GENERAL_ROMAN,
         CZECH,
       ] \
       +

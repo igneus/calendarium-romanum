@@ -10,7 +10,7 @@ module CalendariumRomanum
     include CalendariumRomanum::Util
 
     desc 'query 2007-06-05', 'show calendar information for a specified date'
-    option :calendar, default: 'universal-en', aliases: :c
+    option :calendar, default: Data::GENERAL_ROMAN.siglum, aliases: :c
     option :locale, default: 'en', aliases: :l
     def query(date_str = nil)
       I18n.locale = options[:locale]
