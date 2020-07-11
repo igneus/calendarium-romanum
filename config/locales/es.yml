@@ -26,6 +26,8 @@ es:
       immaculate_heart: El Inmaculado Corazón de María
       christ_king: Cristo Rey
       saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
+    extension:
+      christ_eternal_priest: Jesucristo, Sumo y Eterno Sacerdote
     ordinary:
       sunday: '%{week} Domingo del Tiempo Ordinario'
       ferial: '%{weekday}, %{week} semana del Tiempo Ordinario'

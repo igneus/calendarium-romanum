@@ -69,4 +69,26 @@ describe 'internationalization' do
       end.to raise_exception I18n::InvalidLocale
     end
   end
+
+  describe 'all locales have the same set of strings' do
+    def keys(hash, parent_keys = [])
+      hash
+        .each_pair
+        .collect {|key,val| val.is_a?(Hash) ? keys(val, parent_keys + [key]) : (parent_keys + [key]).join('.') }
+        .flatten
+    end
+
+    default = :la
+    tested = I18n.available_locales - [default]
+
+    tested.each do |locale|
+      it "'#{locale}' has the same keys as '#{default}'" do
+        # this is somewhat dirty, we use i18n's private API
+        default_translations = I18n.backend.send(:translations)[default]
+        locale_translations = I18n.backend.send(:translations)[locale]
+
+        expect(keys(locale_translations)).to eq keys(default_translations)
+      end
+    end
+  end
 end
