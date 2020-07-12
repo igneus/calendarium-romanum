@@ -120,7 +120,7 @@ title: General Roman Calendar
 24 sharbel
 25 f R james
 26 m joachim_anne
-29 m R martha
+29 m martha
 30 peter_chrysologus
 31 m ignatius_of_loyola
 
@@ -201,11 +201,11 @@ title: General Roman Calendar
 = 11
 1 s all_saints
 2 s all_souls
-3 R de_porres
+3 de_porres
 4 m borromeo
 9 f lateran_basilica
 10 m leo_great
-11 m R martin
+11 m martin
 12 m R josaphat
 15 albert
 16 margaret_of_scotland
