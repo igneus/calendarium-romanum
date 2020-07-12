@@ -122,7 +122,7 @@ locale: fr
 24 sharbel : Saint Charbel Makhlouf, ermite
 25 f R james : Saint Jacques, apôtre
 26 m joachim_anne : Saints Joachim et Anne
-29 m R martha : Sainte Marthe
+29 m martha : Sainte Marthe
 30 peter_chrysologus : Saint Pierre Chrysologue, évêque et docteur de l'Église
 31 m ignatius_of_loyola : Saint Ignace de Loyola, prêtre
 
@@ -204,11 +204,11 @@ locale: fr
 = 11
 1 s all_saints : Toussaint
 2 s all_souls : Commémoration des fidèles défunts
-3 R de_porres : Saint Martin de Porrès, religieux
+3 de_porres : Saint Martin de Porrès, religieux
 4 m borromeo : Saint Charles Borromée, évêque
 9 f lateran_basilica : Dédicace de la Basilique Saint-Jean-de-Latran
 10 m leo_great : Saint Léon le Grand, pape et docteur de l'Église
-11 m R martin : Saint Martin de Tours, évêque
+11 m martin : Saint Martin de Tours, évêque
 12 m R josaphat : Saint Josaphat, évêque et martyr
 15 albert : Saint Albert le Grand, évêque et docteur de l'Église
 16 margaret_of_scotland : Sainte Marguerite

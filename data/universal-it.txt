@@ -121,7 +121,7 @@ locale: it
 24 sharbel : San Charbel Makhlouf, eremita
 25 f R james : San Giacomo, apostolo
 26 m joachim_anne : Santi Gioacchino ed Anna, genitori della Beata Vergine Maria
-29 m R martha : Santa Marta
+29 m martha : Santa Marta
 30 peter_chrysologus : San Pietro Crisologo, vescovo e dottore della Chiesa
 31 m ignatius_of_loyola : Sant'Ignazio di Loyola, sacerdote
 
@@ -202,11 +202,11 @@ locale: it
 = 11
 1 s all_saints : Tutti i Santi
 2 s all_souls : Commemorazione di tutti i fedeli defunti
-3 R de_porres : San Martino de Porres, religioso
+3 de_porres : San Martino de Porres, religioso
 4 m borromeo : San Carlo Borromeo, vescovo
 9 f lateran_basilica : Dedicazione della basilica Lateranense
 10 m leo_great : San Leone Magno, papa e dottore della Chiesa
-11 m R martin : San Martino di Tours, vescovo
+11 m martin : San Martino di Tours, vescovo
 12 m R josaphat : San Giosafat, vescovo e martire
 15 albert : Sant'Alberto Magno, vescovo e dottore della Chiesa
 16 margaret_of_scotland : Santa Margherita di Scozia
