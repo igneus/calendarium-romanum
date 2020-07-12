@@ -17,32 +17,26 @@ module CalendariumRomanum
     # Returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
     #
-    # @overload initialize(year, sanctorale = nil, temporale = nil, vespers: false)
-    #   @param year [Integer]
-    #     Civil year when the liturgical year begins.
-    #   @param sanctorale [Sanctorale, nil]
-    #     If not provided, the +Calendar+ will only know celebrations
-    #     of the temporale cycle, no feasts of the saints!
-    #   @param temporale [Temporale, nil]
-    #     If not provided, +Temporale+ for the given year with default
-    #     configuration will built.
-    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
-    #
-    # @overload initialize(temporale, sanctorale=nil, vespers: false)
-    #   @param temporale [Temporale]
-    #   @param sanctorale [Sanctorale, nil]
-    #     If not provided, the +Calendar+ will only know celebrations
-    #     of the temporale cycle, no feasts of the saints!
-    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
+    # @param temporale [Temporale, Integer]
+    #   Instead of a +Temporale+ instance, simple +Integer+ denoting a liturgical year
+    #   (civil year when the liturgical year begins) can be passed in cases where
+    #   +Temporale+ with default settings is sufficient.
+    #   The following examples are equivalent:
+    #     Calendar.new(Temporale.new(2000))
+    #     Calendar.new(2000)
+    # @param sanctorale [Sanctorale, nil]
+    #   If not provided, the +Calendar+ will only know celebrations
+    #   of the temporale cycle, no feasts of the saints!
+    # @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
     #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
-      unless year.is_a? Integer
-        temporale = year
-        year = temporale.year
+    def initialize(temporale, sanctorale = nil, vespers: false)
+      if temporale.is_a? Integer
+        temporale = Temporale.new temporale
       end
+      year = temporale.year
 
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
@@ -54,7 +48,7 @@ module CalendariumRomanum
 
       @year = year
       @sanctorale = sanctorale || Sanctorale.new
-      @temporale = temporale || Temporale.new(year)
+      @temporale = temporale
       @populate_vespers = vespers
 
       @transferred = Transfers.new(@temporale, @sanctorale)

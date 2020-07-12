@@ -90,7 +90,7 @@ module CalendariumRomanum
       if @cache.has_key? year
         @cache[year]
       else
-        @cache[year] = Calendar.new(year, @sanctorale, @temporale_factory.call(year))
+        @cache[year] = Calendar.new(@temporale_factory.call(year), @sanctorale)
       end
     end
   end

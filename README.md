@@ -340,15 +340,16 @@ temporale = CR::Temporale.new(2016, transfer_to_sunday: [:epiphany, :ascension, 
 
 Usually you don't want to work with `Temporale` alone, but with
 a `Calendar`. In order to create a `Calendar` with non-default
-`Temporale` settings, it is necessary to provide a `Temporale`
-as third argument to the constructor.
+`Temporale` settings, build `Temporale` and pass it
+as first argument to `Calendar` constructor.
+(Before we passed just an `Integer` denoting a year.)
 
 ```ruby
 year = 2000
 sanctorale = CR::Data::GENERAL_ROMAN.load
 temporale = CR::Temporale.new(year, transfer_to_sunday: [:epiphany])
 
-calendar = CR::Calendar.new(year, sanctorale, temporale)
+calendar = CR::Calendar.new(temporale, sanctorale)
 ```
 
 ## Custom movable feasts
@@ -375,7 +376,7 @@ temporale =
     extensions: [CR::Temporale::Extensions::ChristEternalPriest]
   )
 
-calendar = CR::Calendar.new(year, sanctorale, temporale)
+calendar = CR::Calendar.new(temporale, sanctorale)
 ```
 
 The feast of *Christ the Priest*, by it's nature, extends the cycle of

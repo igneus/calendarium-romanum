@@ -32,12 +32,6 @@ describe CR::Calendar do
           CR::Calendar.new 2000, CR::Sanctorale.new
         end
 
-        it 'year, Sanctorale and Temporale' do
-          # year is redundant information in this case, since it is provided both
-          # separately and in Temporale
-          CR::Calendar.new 2000, CR::Sanctorale.new, CR::Temporale.new(2000)
-        end
-
         it 'Temporale only' do
           year = 2000
           temporale = CR::Temporale.new(year)
@@ -147,10 +141,10 @@ describe CR::Calendar do
 
     describe 'temporale' do
       let(:temporale) { CR::Temporale.new year, transfer_to_sunday: [:epiphany] }
-      let(:a) { described_class.new(year, nil, temporale) }
+      let(:a) { described_class.new(temporale) }
 
       it 'same' do
-        expect(a).to be == described_class.new(year, nil, temporale)
+        expect(a).to be == described_class.new(temporale)
       end
 
       it 'different' do
@@ -566,7 +560,7 @@ describe CR::Calendar do
       end
 
       describe 'opted in by constructor argument' do
-        let(:calendar) { described_class.new(year, nil, nil, vespers: true) }
+        let(:calendar) { described_class.new(year, vespers: true) }
 
         it 'fills Vespers' do
           day = calendar.day saturday
@@ -591,7 +585,7 @@ describe CR::Calendar do
 
       describe 'first Vespers of' do
         let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
-        let(:calendar) { described_class.new(year, sanctorale, nil, vespers: true) }
+        let(:calendar) { described_class.new(year, sanctorale, vespers: true) }
 
         describe 'a Sunday' do
           it 'has first Vespers' do
@@ -645,7 +639,7 @@ describe CR::Calendar do
         describe 'feast of the Lord' do
           describe 'not falling on a Sunday' do
             it 'does not have first Vespers' do
-              calendar = described_class.new(2015, sanctorale, nil, vespers: true)
+              calendar = described_class.new(2015, sanctorale, vespers: true)
               presentation = Date.new(2016, 2, 2)
               expect(presentation).not_to be_sunday # make sure
 
