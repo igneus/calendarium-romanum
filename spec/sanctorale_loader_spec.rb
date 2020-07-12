@@ -26,7 +26,7 @@ describe CR::SanctoraleLoader do
 
   describe 'record/file format' do
     let(:record) { '4/25 f R :  S. Marci, evangelistae' }
-    let(:result) { l.send :load_line, record }
+    let(:result) { l.send(:load_line, record)[1] }
 
     describe 'title' do
       it 'loads it' do
@@ -138,7 +138,7 @@ describe CR::SanctoraleLoader do
       end
 
       describe 'neither title or symbol specified' do
-        let(:record) { '4/23' }
+        let(:record) { '4/23 f' }
         it 'raises exception' do
           expect do
             l.send :load_line, record
@@ -146,15 +146,41 @@ describe CR::SanctoraleLoader do
         end
       end
     end
+
+    describe 'record with just a date' do
+      let(:record) { '2/14' }
+      it { expect(result).to be nil }
+    end
   end
 
   describe 'Celebration properties set regardless of the loaded data' do
     describe 'cycle' do
       it 'always sets it to :sanctorale' do
         str = '4/23 1.4 R : S. Georgii, martyris'
-        record = l.send :load_line, str
+        date, record = l.send :load_line, str
         expect(record.cycle).to be :sanctorale
       end
+    end
+  end
+
+  describe 'empty record handling' do
+    it 'creates empty entry' do
+      str = '2/14'
+      sanctorale = l.load_from_string str
+      expect(sanctorale.instance_eval { @days[CR::AbstractDate.new(2, 14)] })
+        .to eq []
+    end
+
+    it 'deletes previous entries for the same day' do
+      str = "4/29 : S. Nullius, abbatis\n4/29"
+      sanctorale = l.load_from_string str
+      expect(sanctorale.get(4, 29)).to eq []
+    end
+
+    it 'does not affect later entries for the same day' do
+      str = "4/29\n4/29 : S. Nullius, abbatis"
+      sanctorale = l.load_from_string str
+      expect(sanctorale.get(4, 29)).not_to be_empty
     end
   end
 

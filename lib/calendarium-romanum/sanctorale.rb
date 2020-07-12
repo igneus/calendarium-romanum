@@ -111,7 +111,7 @@ module CalendariumRomanum
       @symbols = symbols_without_day
       @symbols.merge new_symbols
 
-      if celebrations.first.solemnity?
+      if celebrations.first && celebrations.first.solemnity?
         @solemnities[date] = celebrations.first
       elsif @solemnities.has_key? date
         @solemnities.delete date
@@ -129,7 +129,7 @@ module CalendariumRomanum
     # @return [void]
     # @raise (see #replace)
     def update(other)
-      other.each_day do |date, celebrations|
+      other.each_day(true) do |date, celebrations|
         replace date.month, date.day, celebrations, symbol_uniqueness: false
       end
       rebuild_symbols
@@ -169,10 +169,11 @@ module CalendariumRomanum
     #
     # @yield [AbstractDate, Array<Celebration>] the array is never empty
     # @return [void, Enumerator] if called without a block, returns +Enumerator+
-    def each_day
-      return to_enum(__method__) unless block_given?
+    def each_day(include_empty=false)
+      return to_enum(__method__, include_empty) unless block_given?
 
       @days.each_pair do |date, celebrations|
+        next if celebrations.empty? && !include_empty
         yield date, celebrations
       end
     end

@@ -105,6 +105,18 @@ at all, just identifiers.)
 
 There may be several entries for a day (optional memorials).
 
+Entry containing just a date (or just a day if a month heading preceded)
+can be used, explicitly declaring that there is no celebration on the
+given day. This is occasionally useful to cancel a celebration
+inherited from a parent calendar.
+For example St. Cyril and Methodius are celebrated on February 14th
+by the universal church, but in Czech Republic their feast day is July 5th
+and on February 14th there is no other sanctorale celebration.
+
+```
+2/14
+```
+
 ### YAML metadata
 
 At the beginning of the file there may be a "YAML front matter"

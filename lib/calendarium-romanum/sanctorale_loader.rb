@@ -76,16 +76,20 @@ module CalendariumRomanum
         end
 
         begin
-          celebration = load_line l, month_section
+          date, celebration = load_line l, month_section
         rescue RangeError, RuntimeError => err
           raise error(err.message, line_num)
         end
 
-        dest.add(
-          celebration.date.month,
-          celebration.date.day,
-          celebration
-        )
+        if celebration
+          dest.add(
+            date.month,
+            date.day,
+            celebration
+          )
+        else
+          dest.replace(date.month, date.day, [])
+        end
       end
 
       dest
@@ -114,10 +118,12 @@ module CalendariumRomanum
 
           Regexp.new(
             '^((?<month>\d+)\/)?(?<day>\d+)' + # date
+            '(' +
             '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
             '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
             '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
             '(\s*:(?<title>.*))?' + # title
+            ')?' +
             '$',
             Regexp::IGNORECASE
           )
@@ -161,6 +167,12 @@ module CalendariumRomanum
         symbol = symbol_str.to_sym
       end
 
+      date = AbstractDate.new(month, day)
+
+      if [rank_char, rank_num, colour, symbol_str, title].uniq == [nil]
+        return [date, nil]
+      end
+
       title =
         if title
           title.strip
@@ -169,13 +181,15 @@ module CalendariumRomanum
           proc { I18n.t("sanctorale.#{symbol}") }
         end
 
-      Celebration.new(
+      celebration = Celebration.new(
         title,
         rank,
         COLOUR_CODES[colour && colour.downcase],
         symbol,
-        AbstractDate.new(month, day)
+        date
       )
+
+      [date, celebration]
     end
 
     def error(message, line_number)

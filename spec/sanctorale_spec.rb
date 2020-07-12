@@ -141,6 +141,12 @@ describe CR::Sanctorale do
       expect(s.get(1, 13)).not_to include nil
     end
 
+    it 'accepts also an empty Array' do
+      s.replace 1, 13, []
+
+      expect(s.get(1, 13)).to eq []
+    end
+
     describe 'duplicate symbol handling' do
       it 'fails when adding second celebration with the same symbol' do
         s.replace 1, 13, [nullus]
@@ -246,6 +252,22 @@ describe CR::Sanctorale do
       expect(s.get(1, 14)).to eq [nullus]
       expect(s.get(9, 19)).to eq [nullus]
     end
+
+    it '(explicitly) empty day overwrites non-empty' do
+      s.add 1, 14, nullus
+      s2.replace 1, 14, []
+
+      s.update s2
+
+      expect(s.get(1, 14)).to eq []
+    end
+
+    it '(implicitly) empty day does not overwrite' do
+      s.add 1, 14, nullus
+      s.update s2
+
+      expect(s.get(1, 14)).to eq [nullus]
+    end
   end
 
   describe '#size' do
@@ -283,16 +305,28 @@ describe CR::Sanctorale do
   end
 
   describe '#each_day' do
-    before :each do
-      s.add 1, 17, antonius
-    end
-
     it 'yields each date and corresponding CR::Celebrations' do
+      s.add 1, 17, antonius
+
       expect {|block| s.each_day(&block) }.to yield_with_args(CR::AbstractDate.new(1, 17), [antonius])
     end
 
     it 'can be called without a block' do
       expect(s.each_day).to be_an Enumerator
+    end
+
+    it 'by default does not yield empty days' do
+      s.replace 1, 20, []
+
+      expect {|block| s.each_day(&block) }
+        .not_to yield_with_args(CR::AbstractDate.new(1, 20), [])
+    end
+
+    it 'yields empty days if asked for' do
+      s.replace 1, 20, []
+
+      expect {|block| s.each_day(true, &block) }
+        .to yield_with_args(CR::AbstractDate.new(1, 20), [])
     end
   end
 
