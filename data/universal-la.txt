@@ -122,7 +122,7 @@ locale: la
 24 sharbel : S. Sarbelii Makhlūf, presbyteri
 25 f R james :  S. Iacobi, apostoli
 26 m joachim_anne :  Ss. Ioachim et Annae, parentum B. Mariae Virginis
-29 m R martha :  S. Marthae
+29 m martha :  S. Marthae
 30 peter_chrysologus : S. Petri Chrysologi, episcopi et Ecclesiae doctoris
 31 m ignatius_of_loyola :  S. Ignatii de Loyola, presbyteri
 
@@ -203,11 +203,11 @@ locale: la
 = 11
 1 s all_saints :  OMNIUM SANCTORUM
 2 s all_souls : IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
-3 R de_porres : S. Martini de Porres, religiosi
+3 de_porres : S. Martini de Porres, religiosi
 4 m borromeo :  S. Caroli Borromeo, episcopi
 9 f lateran_basilica :  IN DEDICATIONE BASILICAE LATERANENSIS
 10 m leo_great :  S. Leonis Magni, papae et Ecclesiae doctoris
-11 m R martin :  S. Martini Turonensis, episcopi
+11 m martin :  S. Martini Turonensis, episcopi
 12 m R josaphat :  S. Iosaphat, episcopi et martyris
 15 albert : S. Alberti Magni, episcopi et Ecclesiae doctoris
 16 margaret_of_scotland : S. Margaritae Scotiae

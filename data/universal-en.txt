@@ -122,7 +122,7 @@ locale: en
 24 sharbel : Saint Sharbel Makhluf, hermit
 25 f R james : Saint James, apostle
 26 m joachim_anne : Saints Joachim and Anne
-29 m R martha : Saint Martha
+29 m martha : Saint Martha
 30 peter_chrysologus : Saint Peter Chrysologus, bishop and doctor
 31 m ignatius_of_loyola : Saint Ignatius of Loyola, priest
 
@@ -203,11 +203,11 @@ locale: en
 = 11
 1 s all_saints : All Saints
 2 s all_souls : All Souls
-3 R de_porres : Saint Martin de Porres, religious
+3 de_porres : Saint Martin de Porres, religious
 4 m borromeo : Saint Charles Borromeo, bishop
 9 f lateran_basilica : Dedication of the Lateran basilica
 10 m leo_great : Saint Leo the Great, pope and doctor
-11 m R martin : Saint Martin of Tours, bishop
+11 m martin : Saint Martin of Tours, bishop
 12 m R josaphat : Saint Josaphat, bishop and martyr
 15 albert : Saint Albert the Great, bishop and doctor
 16 margaret_of_scotland : Saint Margaret of Scotland
