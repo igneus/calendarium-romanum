@@ -46,7 +46,6 @@ module CalendariumRomanum
         raise ArgumentError.new('Temporale year must be the same as year.')
       end
 
-      @year = year
       @sanctorale = sanctorale || Sanctorale.new
       @temporale = temporale
       @populate_vespers = vespers
@@ -95,10 +94,9 @@ module CalendariumRomanum
     #   @see Temporale#season
     #   @param date
     #   @return [Season]
-    def_delegators :@temporale, :range_check, :season
-
-    # @return [Integer]
-    attr_reader :year
+    # @!attribute [r] year
+    #   @return [Integer] Civil year when the liturgical year begins
+    def_delegators :@temporale, :range_check, :season, :year
 
     # @return [Temporale]
     attr_reader :temporale
@@ -159,9 +157,9 @@ module CalendariumRomanum
     #   the liturgical year 1969/1970)
     def day(*args, vespers: false)
       if args.size == 2
-        date = Date.new(@year, *args)
+        date = Date.new(year, *args)
         unless @temporale.date_range.include? date
-          date = Date.new(@year + 1, *args)
+          date = Date.new(year + 1, *args)
         end
       else
         date = self.class.mk_date(*args)
