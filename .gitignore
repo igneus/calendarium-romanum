@@ -2,3 +2,4 @@
 .rvmrc
 *.gem
 coverage/
+node_modules/

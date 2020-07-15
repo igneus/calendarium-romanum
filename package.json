@@ -1,0 +1,29 @@
+{
+  "name": "calendarium-romanum",
+  "version": "0.6.0",
+  "description": "utility which generates a liturgical calendar",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib"
+  },
+  "scripts": {
+    "version": "npm run changelog && git add CHANGELOG.md && npm run version:gem",
+    "version:gem": "node bin/version && git add lib/calendarium-romanum/version.rb",
+    "postversion": "git push && git push --tags",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lumen-de-Lumine/calendarium-romanum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lumen-de-Lumine/calendarium-romanum/issues"
+  },
+  "homepage": "https://github.com/Lumen-de-Lumine/calendarium-romanum#readme",
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.34"
+  }
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+'use strict'
+
+const fs = require('fs')
+const pkg = require('../package.json');
+const version = pkg.version;
+const filePath = `./lib/calendarium-romanum/version.rb`;
+
+console.log(`updating version to v${version}`);
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
+
+const data = `require 'date'
+
+module CalendariumRomanum
+  VERSION = '${version}'.freeze
+
+  RELEASE_DATE = Date.new(${year}, ${month}, ${day}).freeze
+end
+`
+
+fs.writeFile(filePath, data, 'utf8', (err) => {
+   if (err) return console.log(err);
+});

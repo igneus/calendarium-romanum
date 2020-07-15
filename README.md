@@ -36,6 +36,27 @@ FOSS implementation of this calendar system
 - [x] optional transfer of important solemnities to a Sunday
 - [x] additional temporale feasts (Christ the Eternal Priest and similar)
 
+## Release
+
+The standard release command for this project is:
+```
+npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+```
+
+This command will:
+
+1. Generate/update the Changelog
+1. Bump the package version
+1. Tag & pushing the commit
+
+
+e.g.
+
+```
+npm version 1.2.17
+npm version patch // 1.2.17 -> 1.2.18
+```
+
 ## Credits
 
 includes computation of the Easter date from the
@@ -481,8 +502,8 @@ liturgical calendar for your command line.
 
 ### 2. Check sanctorale data files
 
- - `calendariumrom cmp FILE1 FILE2` will load 2 data files from the file system and compare them. If there are any differences in rank or colour of corresponding celebrations, it will output them. 
- - `calendariumrom errors FILE1, ...` finds errors in a data file. It tries to load it from file system, and if the parser will fail, for whatever reason, it will print out the reason. 
+ - `calendariumrom cmp FILE1 FILE2` will load 2 data files from the file system and compare them. If there are any differences in rank or colour of corresponding celebrations, it will output them.
+ - `calendariumrom errors FILE1, ...` finds errors in a data file. It tries to load it from file system, and if the parser will fail, for whatever reason, it will print out the reason.
 
 ### 3. Help
 
