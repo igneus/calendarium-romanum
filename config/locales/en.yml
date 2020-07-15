@@ -1,4 +1,9 @@
 en:
+  sanctorale:
+    solemnity:
+      baptist_birth_vigil: "The Nativity of Saint John the Baptist: At the Vigil Mass"
+      peter_paul_vigil: "Saints Peter and Paul, Apostles: At the Vigil Mass"
+      assumption_vigil: "The Assumption of the Blessed Virgin Mary: At the Vigil Mass"
   temporale:
     season:
       advent: Advent
@@ -8,17 +13,22 @@ en:
       ordinary: Ordinary Time
     solemnity:
       nativity: The Nativity of the Lord [CHRISTMAS]
+      nativity_vigil: "The Nativity of the Lord [CHRISTMAS]: At the Vigil Mass"
       holy_family: The Holy Family of Jesus, Mary and Joseph
       mother_of_god: Solemnity of Mary, the Holy Mother of God
       epiphany: The Epiphany of the Lord
+      epiphany_vigil: "The Epiphany of the Lord: At the Vigil Mass"
       baptism_of_lord: The Baptism of the Lord
       ash_wednesday: Ash Wednesday
       palm_sunday: Palm Sunday of the Passion of the Lord
       good_friday: Friday of the Passion of the Lord [Good Friday]
       holy_saturday: Holy Saturday
       easter_sunday: Easter Sunday of the Resurrection of the Lord
+      easter_sunday_vigil: "Easter Sunday of the Resurrection of the Lord: The Easter Vigil in the Holy Night"
       ascension: The Ascension of the Lord
+      ascension_vigil: "The Ascension of the Lord: At the Vigil Mass"
       pentecost: Pentecost Sunday
+      pentecost_vigil: "Pentecost Sunday: At the Vigil Mass"
       holy_trinity: The Most Holy Trinity
       corpus_christi: The Most Holy Body and Blood of Christ (CORPUS CHRISTI)
       sacred_heart: The Most Sacred Heart of Jesus

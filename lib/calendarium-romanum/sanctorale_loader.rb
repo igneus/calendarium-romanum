@@ -110,6 +110,7 @@ module CalendariumRomanum
             '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
             '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
             '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
+            '(\s+(?<has_vigil>vigil))?' + # has_vigil (optional)
             '\s*:(?<title>.*)$', # title
             Regexp::IGNORECASE
           )
@@ -132,6 +133,7 @@ module CalendariumRomanum
       colour = m[:colour]
       symbol_str = m[:symbol]
       title = m[:title]
+      has_vigil = m[:has_vigil] == 'vigil'
 
       rank = RANK_CODES[rank_char && rank_char.downcase]
 
@@ -158,7 +160,9 @@ module CalendariumRomanum
         rank,
         COLOUR_CODES[colour && colour.downcase],
         symbol,
-        AbstractDate.new(month, day)
+        AbstractDate.new(month, day),
+        :sanctorale,
+        has_vigil
       )
     end
 

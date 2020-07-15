@@ -98,10 +98,10 @@ locale: es
 21 m aloysius : San Luis Gonzaga, Religioso
 22 paulinus : San Paulino de Nola, Obispo
 22 R fisher_more : Santos Juan Fisher, Obispo y Mártir, y Tomás Moro, Mártir
-24 s baptist_birth : Natividad de San Juan Bautista
+24 s baptist_birth vigil : Natividad de San Juan Bautista
 27 cyril_of_alexandria : San Cirilo de Alejandría, Obispo y Doctor de la Iglesia
 28 m R irenaeus : San Ireneo, Obispo y Mártir
-29 s R peter_paul : Santos Pedro y Pablo, Apóstoles
+29 s R peter_paul vigil : Santos Pedro y Pablo, Apóstoles
 30 R first_martyrs_of_rome : Santos Primeros Mártires de la Iglesia de Roma
 
 = 7
@@ -142,7 +142,7 @@ locale: es
 12 de_chantal : Santa Juana Francisca de Chantal, Religiosa
 13 R pontian_hippolytus : Santos Ponciano, papa, y Hipólito, Presbítero, Mártires
 14 m R kolbe : San Maximiliano María Kolbe, Presbítero y Mártir
-15 s assumption : Asunción de la Santísima Virgen María
+15 s assumption vigil : Asunción de la Santísima Virgen María
 16 stephen_hungary : San Esteban de Hungría
 19 eudes : San Juan Eudes, Presbítero
 20 m bernard : San Bernardo, abad y doctor de la Iglesia

@@ -29,7 +29,7 @@ module CalendariumRomanum
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
+    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, vigils: false)
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
       end
@@ -42,7 +42,7 @@ module CalendariumRomanum
       @sanctorale = sanctorale || Sanctorale.new
       @temporale = temporale || Temporale.new(year)
       @populate_vespers = vespers
-
+      @populate_vigils = vigils
       @transferred = Transfers.new(@temporale, @sanctorale)
     end
 
@@ -106,12 +106,21 @@ module CalendariumRomanum
       @populate_vespers
     end
 
+    # Do {Day} instances returned by this +Calendar+
+    # have {Day#vigils} populated?
+    # @return [Boolean]
+    # @since 1.0.0
+    def populates_vigils?
+      @populate_vigils
+    end
+
     # Two +Calendar+s are equal if they have equal settings
     # (which means that to equal input they return equal data)
     def ==(b)
       b.class == self.class &&
         year == b.year &&
         populates_vespers? == b.populates_vespers? &&
+        populates_vigils? == b.populates_vigils? &&
         temporale == b.temporale &&
         sanctorale == b.sanctorale
     end
@@ -144,12 +153,15 @@ module CalendariumRomanum
     # @param vespers [Boolean]
     #   Set to +true+ in order to get {Day} with {Day#vespers}
     #   populated (overrides instance-wide setting {#populates_vespers?}).
+    # @param vigils [Boolean]
+    #   Set to +true+ in order to get {Day} with {Day#vigils}
+    #   populated (overrides instance-wide setting {#populates_vigils?}).
     # @return [Day]
     # @raise [RangeError]
     #   If a date is specified on which the implemented calendar
     #   system was not yet in force (it became effective during
     #   the liturgical year 1969/1970)
-    def day(*args, vespers: false)
+    def day(*args, vespers: false, vigils: false)
       if args.size == 2
         date = Date.new(@year, *args)
         unless @temporale.date_range.include? date
@@ -173,6 +185,16 @@ module CalendariumRomanum
           # there is exactly one possible case when
           # range_check(date) passes and range_check(date + 1) fails:
           vespers_celebration = Temporale::CelebrationFactory.first_advent_sunday
+        end
+      end
+
+      if @populate_vigils || vigils
+        begin
+          vigil = vigil_on(date, celebrations)
+          celebrations.push(vigil) unless vigil.nil?
+        rescue RangeError
+          # ignore range errors for the time being
+          puts "ERROR: range error when generating vigils for date: #{date}"
         end
       end
 
@@ -307,6 +329,25 @@ module CalendariumRomanum
       end
 
       nil
+    end
+
+    def vigil_on(date, celebrations)
+      tomorrow = date + 1
+      tomorrow_celebrations = celebrations_for(tomorrow)
+
+      c = tomorrow_celebrations.select do |e|
+        true if not e.nil? and e.has_vigil
+      end.first
+
+      if not c.nil? and c.respond_to?(:symbol)
+        symbol = "#{c.symbol}_vigil".to_sym
+        c = c.change(
+          title: proc { I18n.t("#{c.cycle.to_s}.solemnity.#{symbol}") },
+          symbol: symbol
+        )
+      end
+
+      c
     end
 
     def system_not_effective

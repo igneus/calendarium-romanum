@@ -64,8 +64,8 @@ module CalendariumRomanum
       # with sensible defaults
       #
       # See {Celebration#initialize} for argument description.
-      def create_celebration(title, rank, colour, symbol: nil, date: nil)
-        Celebration.new(title, rank, colour, symbol, date, :temporale)
+      def create_celebration(title, rank, colour, symbol: nil, date: nil, has_vigil: false)
+        Celebration.new(title, rank, colour, symbol, date, :temporale, has_vigil)
       end
 
       C = Struct.new(:date_method, :celebration)

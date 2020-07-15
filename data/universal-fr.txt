@@ -98,10 +98,10 @@ locale: fr
 21 m aloysius : Saint Louis de Gonzague, religieux
 22 paulinus : Saint Paulin de Nole, évêque
 22 R fisher_more : Saints John Fisher, évêque et martyr et Thomas More, martyr
-24 s baptist_birth : Nativité de Saint Jean-Baptiste
+24 s baptist_birth vigil : Nativité de Saint Jean-Baptiste
 27 cyril_of_alexandria : Saint Cyrille d'Alexandrie, évêque et docteur de l'Église
 28 m R irenaeus : Saint Irénée, évêque et martyr
-29 s R peter_paul : Saints Pierre et Paul, apôtres
+29 s R peter_paul vigil : Saints Pierre et Paul, apôtres
 30 R first_martyrs_of_rome : Premiers martyrs de l'Église de Rome
 
 = 7
@@ -142,7 +142,7 @@ locale: fr
 12 de_chantal : Sainte Jeanne de Chantal, religieuse
 13 R pontian_hippolytus : Saints Pontien, pape, et Hippolyte, prêtre, martyrs
 14 m R kolbe : Saint Maximilien-Marie Kolbe, prêtre et martyr
-15 s assumption : Assomption de la Bienheureuse Vierge Marie
+15 s assumption vigil : Assomption de la Bienheureuse Vierge Marie
 16 stephen_hungary : Saint Étienne de Hongrie
 19 eudes : Saint Jean Eudes, prêtre
 20 m bernard : Saint Bernard, abbé et docteur de l'Église
