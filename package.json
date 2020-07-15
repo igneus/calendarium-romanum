@@ -1,6 +1,6 @@
 {
   "name": "calendarium-romanum",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "utility which generates a liturgical calendar",
   "main": "index.js",
   "directories": {
