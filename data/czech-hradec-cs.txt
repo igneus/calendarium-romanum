@@ -4,9 +4,7 @@ description: Calendar for diocese of Hradec Králové, Czech Republic
 locale: cs
 country: cz
 diocese: Hradec Králové
-extends:
-  - czech-cs.txt
-  - czech-cechy-cs.txt
+extends: czech-cechy-cs.txt
 ---
 
 10/30 f2.8 hradec_kralove_cathedral : Výročí posvěcení katedrály Sv. Ducha

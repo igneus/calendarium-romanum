@@ -122,7 +122,7 @@ locale: es
 24 sharbel : San Chárbel Makhlouf, Ermitaño
 25 f R james : Santiago, apóstol
 26 m joachim_anne : Santos Joaquín y Ana, padres de la Santísima Virgen María
-29 m R martha : Santa Marta
+29 m martha : Santa Marta
 30 peter_chrysologus : San Pedro Crisólogo, Obispo y Doctor de la Iglesia
 31 m ignatius_of_loyola : San Ignacio de Loyola, Presbítero
 
@@ -180,6 +180,7 @@ locale: es
 = 10
 1 m therese_lisieux : Santa Teresa del Niño Jesús, Virgen y Doctora de la Iglesia
 2 m guardian_angels : Santos Ángeles Custodios
+5 faustina_kowalska : Santa Faustina Kowalska, Virgen
 4 m francis_assisi : San Francisco de Asís
 5 faustina_kowalska : Santa Faustina Kowalska, Virgen
 6 bruno : San Bruno, Presbítero
@@ -203,11 +204,11 @@ locale: es
 = 11
 1 s all_saints : Todos los Santos
 2 s all_souls : Conmemoración de Todos los Difuntos
-3 R de_porres : San Martín de Porres, Religioso
+3 de_porres : San Martín de Porres, Religioso
 4 m borromeo : San Carlos Borromeo, Obispo
 9 f lateran_basilica : Dedicación de la Basílica de Letrán
 10 m leo_great : San León el Magno, Papa y Doctor de la Iglesia
-11 m R martin : San Martín de Tours, Obispo
+11 m martin : San Martín de Tours, Obispo
 12 m R josaphat : San Josafat, Obispo y Mártir
 15 albert : San Alberto Magno, Obispo y Doctor de la Iglesia
 16 margaret_of_scotland : Santa Margarita de Escocia

@@ -4,9 +4,7 @@ description: Calendar for diocese of Ostrava and Opava, Czech Republic
 locale: cs
 country: cz
 diocese: Ostrava, Opava
-extends:
-  - czech-cs.txt
-  - czech-morava-cs.txt
+extends: czech-morava-cs.txt
 ---
 
 7/16 f2.8 ostrava_cathedral : Výročí posvěcení katedrály Božského Spasitele

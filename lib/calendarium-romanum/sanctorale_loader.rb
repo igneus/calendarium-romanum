@@ -1,12 +1,14 @@
+require 'yaml'
+
 module CalendariumRomanum
 
   # Understands a custom plaintext calendar format
   # and knows how to transform it to {Celebration}s
   # and fill them in a {Sanctorale}.
   #
-  # For specification of the data format see {file:data/README.md},
-  # for a complete example see the file describing General Roman Calendar:
-  # {file:data/universal-en.txt}
+  # For specification of the data format see {file:data/README.md}
+  # of the data directory, For a complete example see e.g.
+  # {file:universal-en.txt the file describing General Roman Calendar}.
   class SanctoraleLoader
 
     # @api private
@@ -39,16 +41,21 @@ module CalendariumRomanum
       dest ||= Sanctorale.new
 
       in_front_matter = false
+      front_matter = ''
       month_section = nil
       src.each_line.with_index(1) do |l, line_num|
         # skip YAML front matter
         if line_num == 1 && l.start_with?('---')
           in_front_matter = true
+          front_matter += l
           next
         elsif in_front_matter
           if l.start_with?('---')
             in_front_matter = false
+            dest.metadata = YAML.load(front_matter).freeze
           end
+
+          front_matter += l
 
           next
         end

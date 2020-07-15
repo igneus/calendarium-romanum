@@ -3,7 +3,7 @@ title: Český národní kalendář
 description: Calendar for the dioceses of Czech Republic
 locale: cs
 country: cz
-# source: http://cs.wikipedia.org/wiki/%C4%8Cesk%C3%BD_liturgick%C3%BD_kalend%C3%A1%C5%99
+# source: http://www.liturgie.cz/temata/liturgicky-cas/ceskynarodnikalendar
 ---
 
 = 1
@@ -31,7 +31,7 @@ country: cz
 5 m R agatha : Sv. Agáty, panny a mučednice
 6 m R paul_miki : Sv. Pavla Mikiho a druhů, mučedníků
 8 jerome_emiliani : Sv. Jeronýma Emilianiho
-8 josephine_bakhita : Sv. Josefíny Bakhity, panny
+8 josephine_bakhita : Sv. Josefiny Bakhity, panny
 10 m scholastica : Sv. Scholastiky, panny
 11 bvm_lourdes : Panny Marie Lurdské
 17 servite_founders : Sv. Alexia a druhů, řeholníků
@@ -87,7 +87,7 @@ country: cz
 22 rita : Sv. Rity z Cascie, řeholnice
 25 bede_venerable : Sv. Bedy Ctihodného, kněze a učitele církve
 25 gregory_vii : Sv. Řehoře VII., papeže
-25 de_pazzi : Sv. Marie Magdalény de 'Pazzi, panny
+25 de_pazzi : Sv. Marie Magdalény de' Pazzi, panny
 26 m neri : Sv. Filipa Neriho, kněze
 27 augustine_of_canterbury : Sv. Augustina z Canterbury, biskupa
 29 paul_vi : Sv. Pavla VI., papeže
@@ -112,7 +112,7 @@ country: cz
 24 s baptist_birth vigil : Narození svatého Jana Křtitele
 27 cyril_of_alexandria : Sv. Cyrila Alexandrijského, biskupa a učitele církve
 28 m R irenaeus : Sv. Ireneje, biskupa a mučedníka
-29 s R peter_paul vigil : Sv. Petra a Pavla, apoštolů
+29 s R peter_paul vigil : Sv. Petra a Pavla, apoštolů, hlavních patronů brněnské diecéze
 30 R first_martyrs_of_rome : Svatých prvomučedníků římských
 
 = 7
@@ -121,7 +121,7 @@ country: cz
 4 elizabeth_of_portugal : Sv. Alžběty Portugalské
 5 s1.4 cyril_methodius : Sv. Cyrila, mnicha, a Metoděje, biskupa, patronů Evropy, hlavních patronů Moravy
 6 R goretti : Sv. Marie Gorettiové, panny a mučednice
-9 R chinese_martyrs : Sv. Augustina Čao Žung, kněze, a druhů, mučedníků.
+9 R chinese_martyrs : Sv. Augustina Žao Ronga, kněze, a druhů, mučedníků
 11 f benedict : Sv. Benedikta, opata, patrona Evropy
 13 henry : Sv. Jindřicha
 14 R hroznata : Bl. Hroznaty, mučedníka
@@ -133,7 +133,7 @@ country: cz
 21 lawrence_of_brindisi : Sv. Vavřince z Brindisi, kněze a učitele církve
 22 f mary_magdalene : Sv. Marie Magdalény
 23 f birgitta : Sv. Brigity, řeholnice, patronky Evropy
-24 sharbel : Sv. Šarbela Makhlūfa, kněze
+24 sharbel : Sv. Šarbela Makhlufa, kněze
 25 f R james : Sv. Jakuba, apoštola
 26 m joachim_anne : Sv. Jáchyma a Anny, rodičů Panny Marie
 27 gorazd : Sv. Gorazda a druhů
@@ -143,7 +143,6 @@ country: cz
 
 = 8
 1 m alphonsus : Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
-2 bvm_queen_of_angels : Panny Marie Královny andělů
 2 eusebius : sv. Eusebia z Vercelli, biskupa
 2 eymard : Sv. Petra Juliána Eymarda, kněze
 4 m vianney : Sv. Jana Marie Vianneye, kněze
@@ -165,7 +164,7 @@ country: cz
 21 m pius_x : Sv. Pia X., papeže
 22 m bvm_queenship : Panny Marie Královny
 23 rose_lima : Sv. Růženy z Limy, panny
-24 f R bartolomew : Sv. Bartoloměje, apoštola
+24 f R bartholomew : Sv. Bartoloměje, apoštola
 25 R five_camaldolese : Sv. Benedikta, Jana, Matouše, Izáka a Kristina, mučedníků
 25 louis : Sv. Ludvíka
 25 joseph_calasanz : Sv. Josefa Kalasanského, kněze
@@ -175,7 +174,6 @@ country: cz
 
 = 9
 3 m gregory_great : Sv. Řehoře Velikého, papeže a učitele církve
-5 mother_teresa : Bl. Terezie z Kalkaty
 7 R grodecky : Sv. Melichara Grodeckého, kněze a mučedníka
 8 f bvm_birth : Narození Panny Marie
 9 claver : Sv. Petra Klavera, kněze
@@ -201,6 +199,7 @@ country: cz
 1 m therese_lisieux : Sv. Terezie od Dítěte Ježíše, panny a učitelky církve
 2 m guardian_angels : Svatých andělů strážných
 4 m francis_assisi : Sv. Františka z Assisi
+5 faustina_kowalska : Sv. Faustiny Kowalské, panny
 6 bruno : Sv. Bruna, kněze
 7 m bvm_rosary : Panny Marie Růžencové
 9 R denis : Sv. Dionýsia, biskupa, a druhů, mučedníků
@@ -234,14 +233,14 @@ country: cz
 13 m agnes_of_bohemia : Sv. Anežky České, panny
 15 albert : Sv. Alberta Velikého, biskupa a učitele církve
 16 margaret_of_scotland : Sv. Markéty Skotské
-16 gertrude : sv. Gertrudy Veliké, panny
+16 gertrude : sv. Gertrudy, panny
 17 m elizabeth_of_hungary : Sv. Alžběty Uherské, řeholnice
 18 peter_paul_basilicas : Posvěcení římských bazilik svatých apoštolů Petra a Pavla
 21 m bvm_presentation : Zasvěcení Panny Marie v Jeruzalémě
 22 m R cecilia : Sv. Cecílie, panny a mučednice
 23 R clement_i : Sv. Klementa I., papeže a mučedníka
 23 columban : Sv. Kolumbána, opata
-24 m R vietnamese_martyrs : Sv. Ondřeje Dung-Laca, kněze, a druhů, mučedníků
+24 m R vietnamese_martyrs : Sv. Ondřeje Dũng Lạca, kněze, a druhů, mučedníků
 25 R catherine_of_alexandria : Sv. Kateřiny Alexandrijské, panny a mučednice
 30 f R andrew : Sv. Ondřeje, apoštola
 

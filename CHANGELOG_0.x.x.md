@@ -1,5 +1,71 @@
 # Changelog
 
+## [0.7.1] 2020-06-28
+
+### Fixed
+
+- `SanctoraleFactory.load_with_parents` crashing on files without
+  metadata
+- `Sanctorale#update` prohibiting application of a particular
+  calendar which moves s celebration contained in the calendar being
+  updated to an earlier date
+  (as exemplified by the bundled calendar of diocese of Litoměřice,
+  Czech Republic: on calendarium-romanum 0.7.0
+  `CalendariumRomanum::Data['czech-litomerice-cs'].load_with_parents`
+  raises `ArgumentError` complaining about non-unique celebration symbols)
+- broken links in YARD documentation (due to files missing in the
+  gem archive and basename clashes)
+
+### Changed
+
+- if `Sanctorale#update` raises `ArgumentError` complaining about
+  non-unique celebration symbols, the updated `Sanctorale` instance
+  is left in an inconsistent internal state (more than one occurrence
+  of at least one celebration symbol)
+- some additional non-code files (mostly for YARD documentation)
+  included in the gem archive
+
+## [0.7.0] 2020-06-21
+
+### Fixed
+
+- St. Sebastian was missing in the French version of General Roman Calendar
+- St. of Pietrelcina had incorrect rank in the Czech calendar
+- `Sanctorale#add`: invalid attempt (i.e. an attempt raising an exception)
+  to add a second (or n-th) celebration for a given date was causing
+  inconsistency in the instance's internal state
+- CLI: `calendariumrom query` wasn't printing celebrations of the highest
+  ranks (spotted and fixed by Mike Kasberg @mkasberg)
+- CLI: got rid of a deprecation warning of the `i18n` gem
+  concerning `I18n.enforce_available_locales` (by Mike Kasberg @mkasberg)
+
+### Added
+
+- data: General Roman Calendar in Spanish + Spanish locale (by Alejandro Ulate @CodingAleCR)
+- data: optional memorials of St. Paul VI, Our Lady of Loreto, St. Faustina Kowalska
+- data: diocese of Prague: optional memorial of Bl. Friedrich Bachstein and companions
+- `Day#weekday_name` (by Ronald Walker @RonWalker22)
+- `Day#to_s`, `Celebration#to_s` (by PJ Pollina @pjpollina)
+- all sanctorale data files are provided with celebration symbols (available as
+  `Celebration#symbol` when loaded)
+- `SanctoraleLoader` loads the YAML front matter (if provided),
+  to `Sanctorale#metadata` (new property added for this purpose)
+- `SanctoraleFactory` methods merge not only sanctorale contents,
+  but also metadata
+- `SanctoraleFactory.load_with_parents`, `Data#load_with_parents`
+  to conveniently load sanctorale file hierarchies based on their
+  metadata (using key `"extends"`)
+- `calendarium-romanum/cr` defining `::CR` shortcut constant
+- huge improvement of the API documentation
+
+### Changed
+
+- data files format: celebration symbols never more start with a colon
+- `Sanctorale#add` throws `ArgumentError` on attempt to add a `Celebration`
+  with `#symbol` which is already present in the given sanctorale
+- all `#each` and `#each_*` methods defined in the gem return `Enumerator`
+  if called without a block
+
 ## [0.6.0] 2018-03-27
 
 ### Fixed

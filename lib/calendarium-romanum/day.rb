@@ -10,7 +10,7 @@ module CalendariumRomanum
     #
     # @param date [Date, nil]
     # @param season [Season, nil]
-    # @param season_week [Fixnum, nil]
+    # @param season_week [Integer, nil]
     # @param celebrations [Array<Celebration>, nil]
     # @param vespers [Celebration, nil]
     def initialize(date: nil, season: nil, season_week: nil, celebrations: nil, vespers: nil)
@@ -35,7 +35,7 @@ module CalendariumRomanum
 
     # Weekday as integer (Sunday is 0)
     #
-    # @return [Fixnum]
+    # @return [Integer]
     def weekday
       date.wday
     end
@@ -43,6 +43,7 @@ module CalendariumRomanum
     # Weekday as internationalized string
     #
     # @return [String]
+    # @since 0.7.0
     def weekday_name
       I18n.t(date.wday, scope: 'weekday')
     end
@@ -52,7 +53,7 @@ module CalendariumRomanum
 
     # Week of the season
     #
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :season_week
 
     # List of celebrations for the given day.
@@ -100,6 +101,7 @@ module CalendariumRomanum
     # Intended mostly for debugging purposes.
     #
     # @return [String]
+    # @since 0.7.0
     def to_s
       celebrations_string = '['
       celebrations.each do |c|
@@ -265,6 +267,7 @@ module CalendariumRomanum
     # (not very pretty, intended mostly for development inspections).
     #
     # @return [String]
+    # @since 0.7.0
     def to_s
       "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect} has_vigil=#{has_vigil}>"
     end

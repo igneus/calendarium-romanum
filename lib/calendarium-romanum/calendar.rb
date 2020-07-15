@@ -17,19 +17,33 @@ module CalendariumRomanum
     # Returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
     #
-    # @param year [Fixnum]
-    #   Civil year when the liturgical year begins.
-    # @param sanctorale [Sanctorale, nil]
-    #   If not provided, the +Calendar+ will only know celebrations
-    #   of the temporale cycle, no feasts of the saints!
-    # @param temporale [Temporale, nil]
-    #   If not provided, +Temporale+ for the given year with default
-    #   configuration will built.
-    # @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
+    # @overload initialize(year, sanctorale = nil, temporale = nil, vespers: false)
+    #   @param year [Integer]
+    #     Civil year when the liturgical year begins.
+    #   @param sanctorale [Sanctorale, nil]
+    #     If not provided, the +Calendar+ will only know celebrations
+    #     of the temporale cycle, no feasts of the saints!
+    #   @param temporale [Temporale, nil]
+    #     If not provided, +Temporale+ for the given year with default
+    #     configuration will built.
+    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
+    #
+    # @overload initialize(temporale, sanctorale=nil, vespers: false)
+    #   @param temporale [Temporale]
+    #   @param sanctorale [Sanctorale, nil]
+    #     If not provided, the +Calendar+ will only know celebrations
+    #     of the temporale cycle, no feasts of the saints!
+    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
+    #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
     def initialize(year, sanctorale = nil, temporale = nil, vespers: false, vigils: false)
+      unless year.is_a? Integer
+        temporale = year
+        year = temporale.year
+      end
+
       if year < (EFFECTIVE_FROM.year - 1)
         raise system_not_effective
       end
@@ -89,7 +103,7 @@ module CalendariumRomanum
     #   @return [Season]
     def_delegators :@temporale, :range_check, :season
 
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :year
 
     # @return [Temporale]
@@ -147,9 +161,9 @@ module CalendariumRomanum
     # @overload day(date, vespers: false)
     #   @param date [Date]
     # @overload day(year, month, day, vespers: false)
-    #   @param year [Fixnum]
-    #   @param month [Fixnum]
-    #   @param day [Fixnum]
+    #   @param year [Integer]
+    #   @param month [Integer]
+    #   @param day [Integer]
     # @param vespers [Boolean]
     #   Set to +true+ in order to get {Day} with {Day#vespers}
     #   populated (overrides instance-wide setting {#populates_vespers?}).

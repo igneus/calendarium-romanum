@@ -204,4 +204,26 @@ describe CR::SanctoraleLoader do
       end
     end
   end
+
+  describe 'YAML front matter (YFM)' do
+    it 'sets metadata nil if YFM is not provided' do
+      expect(l.load_from_string('').metadata)
+        .to be nil
+    end
+
+    it 'loads metadata if provided' do
+      expect(l.load_from_string("---\nkey: value\n---").metadata)
+        .to eq({'key' => 'value'})
+    end
+
+    it 'does not load metadata with no end' do
+      # Since YFM is being processed on encountering the closing
+      # triple-dash, YFM spanning the whole file and not properly
+      # closed will not be loaded.
+      # (Implementation detail and crazy edge case, may change
+      # in future without warning.)
+      expect(l.load_from_string("---\nkey: value").metadata)
+        .to be nil
+    end
+  end
 end
