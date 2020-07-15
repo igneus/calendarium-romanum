@@ -29,14 +29,15 @@ module CalendariumRomanum
           @celebrations ||= [:first_advent_sunday]
         end
 
-        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false)
+        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false, has_vigil: false)
           define_singleton_method(symbol) do
             Temporale.create_celebration(
               proc { I18n.t("temporale.solemnity.#{symbol}") },
               rank,
               colour,
               symbol: symbol,
-              date: fixed_date
+              date: fixed_date,
+              has_vigil: has_vigil,
             )
           end
 
@@ -46,7 +47,7 @@ module CalendariumRomanum
 
       # @return [Celebration]
       # @!scope class
-      celebration(:nativity, Ranks::PRIMARY, fixed_date: AbstractDate.new(12, 25))
+      celebration(:nativity, Ranks::PRIMARY, fixed_date: AbstractDate.new(12, 25), has_vigil: true)
       # @return [Celebration]
       # @!scope class
       celebration(:holy_family, Ranks::FEAST_LORD_GENERAL)
@@ -55,7 +56,7 @@ module CalendariumRomanum
       celebration(:mother_of_god, Ranks::SOLEMNITY_GENERAL, fixed_date: AbstractDate.new(1, 1))
       # @return [Celebration]
       # @!scope class
-      celebration(:epiphany, Ranks::PRIMARY)
+      celebration(:epiphany, Ranks::PRIMARY, has_vigil: true)
       # @return [Celebration]
       # @!scope class
       celebration(:baptism_of_lord, Ranks::FEAST_LORD_GENERAL)
@@ -73,13 +74,13 @@ module CalendariumRomanum
       celebration(:palm_sunday, Ranks::PRIMARY, Colours::RED)
       # @return [Celebration]
       # @!scope class
-      celebration(:easter_sunday, Ranks::TRIDUUM)
+      celebration(:easter_sunday, Ranks::TRIDUUM, has_vigil: true)
       # @return [Celebration]
       # @!scope class
-      celebration(:ascension, Ranks::PRIMARY)
+      celebration(:ascension, Ranks::PRIMARY, has_vigil: true)
       # @return [Celebration]
       # @!scope class
-      celebration(:pentecost, Ranks::PRIMARY, Colours::RED)
+      celebration(:pentecost, Ranks::PRIMARY, Colours::RED, has_vigil: true)
       # @return [Celebration]
       # @!scope class
       celebration(:holy_trinity, Ranks::SOLEMNITY_GENERAL)

@@ -98,10 +98,10 @@ locale: la
 21 m aloysius :  S Aloisii Gonzaga, religiosi
 22 paulinus : S. Paulini Nolani
 22 R fisher_more : Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum
-24 s baptist_birth :  IN NATIVITATE S. IOANNIS BAPTISTAE
+24 s baptist_birth vigil :  IN NATIVITATE S. IOANNIS BAPTISTAE
 27 cyril_of_alexandria : S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris
 28 m R irenaeus :  S. Irenaei, episcopi et martyris
-29 s R peter_paul :  Ss. PETRI ET PAULI, APOSTOLORUM
+29 s R peter_paul vigil :  Ss. PETRI ET PAULI, APOSTOLORUM
 30 R first_martyrs_of_rome : Ss. Protomartyrum S. Romanae Ecclesiae
 
 = 7
@@ -142,7 +142,7 @@ locale: la
 12 de_chantal : S. Ioannae Franciscae de Chantal, religiosae
 13 R pontian_hippolytus : Ss. Pontiani, papae, et Hippolyti, presbyteri, martyrum
 14 m R kolbe :  S. Maximiliani Mariae Kolbe, presbyteri et martyris
-15 s assumption :  IN ASSUMPTIONE B. MARIAE VIRGINIS
+15 s assumption vigil :  IN ASSUMPTIONE B. MARIAE VIRGINIS
 16 stephen_hungary : S. Stephani Hungariae
 19 eudes : S. Ioannis Eudes, presbyteri
 20 m bernard :  S. Bernardi, abbatis et Ecclesiae doctoris

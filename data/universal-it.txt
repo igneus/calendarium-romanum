@@ -97,10 +97,10 @@ locale: it
 21 m aloysius : San Luigi Gonzaga, religioso
 22 paulinus : San Paolino di Nola, vescovo
 22 R fisher_more : Santi Giovanni Fisher, vescovo, e Tommaso Moro, martiri
-24 s baptist_birth : Natività di San Giovanni Battista
+24 s baptist_birth vigil : Natività di San Giovanni Battista
 27 cyril_of_alexandria : San Cirillo di Alessandria, vescovo e dottore della Chiesa
 28 m R irenaeus : Sant'Ireneo di Lione, vescovo e martire
-29 s R peter_paul : Santi Pietro e Paolo, apostoli
+29 s R peter_paul vigil : Santi Pietro e Paolo, apostoli
 30 R first_martyrs_of_rome : Santi Primi martiri della Chiesa romana
 
 = 7
@@ -141,7 +141,7 @@ locale: it
 12 de_chantal : Santa Giovanna Francesca Frémiot de Chantal, religiosa
 13 R pontian_hippolytus : Santi Ponziano, papa, e Ippolito, sacerdote, martiri
 14 m R kolbe : San Massimiliano Maria Kolbe, sacerdote e martire
-15 s assumption : Assunzione di Maria
+15 s assumption vigil : Assunzione di Maria
 16 stephen_hungary : Santo Stefano d'Ungheria
 19 eudes : San Giovanni Eudes, sacerdote
 20 m bernard : San Bernardo, abate e dottore della Chiesa

@@ -109,10 +109,10 @@ country: cz
 21 m aloysius : Sv. Aloise Gonzagy, řeholníka
 22 paulinus : Sv. Paulína Nolánského, biskupa
 22 R fisher_more : Sv. Jana Fishera, biskupa a Tomáše Mora, mučedníků
-24 s baptist_birth : Narození svatého Jana Křtitele
+24 s baptist_birth vigil : Narození svatého Jana Křtitele
 27 cyril_of_alexandria : Sv. Cyrila Alexandrijského, biskupa a učitele církve
 28 m R irenaeus : Sv. Ireneje, biskupa a mučedníka
-29 s R peter_paul : Sv. Petra a Pavla, apoštolů
+29 s R peter_paul vigil : Sv. Petra a Pavla, apoštolů
 30 R first_martyrs_of_rome : Svatých prvomučedníků římských
 
 = 7
@@ -158,7 +158,7 @@ country: cz
 12 de_chantal : Sv. Jany Františky de Chantal, řeholnice
 13 R pontian_hippolytus : Sv. Ponciána, papeže, a Hippolyta, kněze, mučedníků
 14 m R kolbe : Sv. Maxmiliána Marie Kolbeho, kněze a mučedníka
-15 s assumption : Nanebevzetí Panny Marie
+15 s assumption vigil : Nanebevzetí Panny Marie
 16 stephen_hungary : Sv. Štěpána Uherského
 19 eudes : Sv. Jana Eudese, kněze
 20 m bernard : Sv. Bernarda, opata a učitele církve

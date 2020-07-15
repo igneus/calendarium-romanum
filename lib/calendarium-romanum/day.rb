@@ -134,13 +134,14 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, has_vigil = false)
       @title = title
       @rank = rank
       @colour = colour
       @symbol = symbol
       @date = date
       @cycle = cycle
+      @has_vigil = has_vigil
     end
 
     # @return [Rank]
@@ -201,6 +202,13 @@ module CalendariumRomanum
     # @since 0.6.0
     attr_reader :cycle
 
+    # Determines if the given celebration
+    # should generate a corresponding vigil
+    #
+    # @return [Boolean]
+    # @since 1.0.0
+    attr_reader :has_vigil
+
     def ==(b)
       self.class == b.class &&
         title == b.title &&
@@ -208,7 +216,8 @@ module CalendariumRomanum
         colour == b.colour &&
         symbol == b.symbol &&
         date == b.date &&
-        cycle == b.cycle
+        cycle == b.cycle &&
+        has_vigil == b.has_vigil
     end
 
     # Does the celebration belong to the temporale cycle?
@@ -227,12 +236,20 @@ module CalendariumRomanum
       cycle == :sanctorale
     end
 
+    # Add conventional method
+    #
+    # @return [Boolean]
+    # @since 1.0.0
+    def has_vigil?
+      has_vigil
+    end
+
     # Build a new instance using the receiver's attributes
     # for all properties for which (a non-nil) value was not passed.
     #
     # @return [Celebration]
     # @since 0.5.0
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil, has_vigil: nil)
       self.class.new(
         title || self.title,
         rank || self.rank,
@@ -240,6 +257,7 @@ module CalendariumRomanum
         symbol || self.symbol,
         date || self.date,
         cycle || self.cycle,
+        has_vigil || self.has_vigil,
       )
     end
 
@@ -248,7 +266,7 @@ module CalendariumRomanum
     #
     # @return [String]
     def to_s
-      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect}>"
+      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect} has_vigil=#{has_vigil}>"
     end
   end
 end

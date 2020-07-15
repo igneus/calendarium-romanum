@@ -42,8 +42,8 @@ module CalendariumRomanum
 
     # @return [Day]
     # @see Calendar#day
-    def day(*args)
-      calendar_for(*args).day(*args)
+    def day(*args, vespers: false, vigils: false)
+      calendar_for(*args).day(*args, vespers: vespers, vigils: vigils)
     end
 
     # @return [Day, Array<Day>]

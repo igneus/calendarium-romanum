@@ -98,10 +98,10 @@ locale: en
 21 m aloysius : Saint Aloysius Gonzaga, Religious
 22 paulinus : Saint Paulinus of Nola, Bishop
 22 R fisher_more : Saints John Fisher, Bishop, and Thomas More, Martyrs
-24 s baptist_birth : The Nativity of Saint John the Baptist
+24 s baptist_birth vigil : The Nativity of Saint John the Baptist
 27 cyril_of_alexandria : Saint Cyril of Alexandria, Bishop and Doctor of the Church
 28 m R irenaeus : Saint Irenaeus, Bishop and Martyr
-29 s R peter_paul : Saints Peter and Paul, Apostles
+29 s R peter_paul vigil : Saints Peter and Paul, Apostles
 30 R first_martyrs_of_rome : The First Martyrs of the Holy Roman Church
 
 = 7
@@ -142,7 +142,7 @@ locale: en
 12 de_chantal : Saint Jane Frances de Chantal, Religious
 13 R pontian_hippolytus : Saints Pontian, Pope, and Hippolytus, Priest, Martyrs
 14 m R kolbe : Saint Maximilian Kolbe, Priest and Martyr
-15 s assumption : The Assumption of the Blessed Virgin Mary
+15 s assumption vigil : The Assumption of the Blessed Virgin Mary
 16 stephen_hungary : Saint Stephen of Hungary
 19 eudes : Saint John Eudes, Priest
 20 m bernard : Saint Bernard, Abbot and Doctor of the Church
