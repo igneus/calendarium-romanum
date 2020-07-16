@@ -86,11 +86,11 @@ his dominicis occurrentes, sabbato anticipantur.
 6. Dominica excludit per se assignationem perpetuam alius celebra-
 tionis. Attamen:
 
-a ) Dominica infra octavam Nativitatis Domini, fit festum S. Familiae;
+a) Dominica infra octavam Nativitatis Domini, fit festum S. Familiae;
 
 b) Dominica post diem 6 ianuarii, fit festum Baptismatis Domini;
 
-c ) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
+c) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
 
 d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. univer-
 sorum Regis.
@@ -101,7 +101,7 @@ diei proprio, hac ratione:
 
 a) Epiphania, dominicae a die 2 ad diem 8 ianuarii occurrenti;
 
-b ) Ascensio, dominicae VII Paschae;
+b) Ascensio, dominicae VII Paschae;
 
 c) Sollemnitas SSjnae Eucharistiae, dominicae post SS.mam Trinitatem.
 
@@ -297,7 +297,7 @@ antiquam traditionem romanam, scilicet in nocte, in aurora et in die.
 
 a) Dominica infra octavam, fit festum S. Familiae Iesu, Mariae et Ioseph.
 
-b ) Die 26 decembris, fit festum S. Stephani, Protomartyris.
+b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
 c) Die 27 decembris, fit festum S. Ioannis, Apostoli et Evangelistae.
 
@@ -414,7 +414,7 @@ storum, quo mysterium Redemptionis in anno liturgico explicatur et
 colitur, integer semper servetur, et debita praeeminentia gaudeat super
 celebrationes particulares.
 
-b ) Celebrationes propriae organice cum celebrationibus universalibus
+b) Celebrationes propriae organice cum celebrationibus universalibus
 componantur, attentis ordine et praecedentia in tabula dierum liturgico-
 rum pro singulis indicatis. Ne tamen calendaria particularia plus aequo
 onerentur, singuli Sancti unica celebratione in anno liturgico gaudeant,
@@ -422,7 +422,7 @@ servata, ubi rationes pastorales id suadeant, altera celebratione in forma
 memoriae ad libitum pro translatione aut inventione sanctorum Patro-
 norum aut Fundatorum Ecclesiarum vel familiarum religiosarum.
 
-c ) Celebrationes indultae ne sint duplicatio aliarum celebrationum in
+c) Celebrationes indultae ne sint duplicatio aliarum celebrationum in
 cyclo mysterii salutis iam occurrentium, neque numero plus aequo
 augeantur.
 
@@ -443,11 +443,11 @@ dicationis ecclesiae cathedralis, Sancti et Beati, qui cum dioecesi pecu-
 liarem habent necessitudinem, ex. gr. originis, commorationis longioris,
 obitus.
 
-b ) In calendario religioso, praeter celebrationes Tituli, Fundatoris et
+b) In calendario religioso, praeter celebrationes Tituli, Fundatoris et
 Patroni, Sancti et Beati, qui illius familiae religiosae sodales fuerunt vel
 cum ea peculiarem relationem habuerunt.
 
-c ) In calendario singularum ecclesiarum, praeter celebrationes pro-
+c) In calendario singularum ecclesiarum, praeter celebrationes pro-
 prias dioecesis aut familiae religiosae, celebrationes ipsius ecclesiae pro-
 priae, quae in tabula dierum liturgicorum recensentur, necnon Sancti
 quorum corpus in eadem ecclesia asservatur. Sodales autem familiarum
@@ -569,14 +569,14 @@ cedit dominicae occurrenti.
 
 4. Sollemnitates propriae, nempe:
 
-a ) Sollemnitas Patroni principalis loci seu oppidi aut civitatis.
+a) Sollemnitas Patroni principalis loci seu oppidi aut civitatis.
 
-b ) Sollemnitas Dedicationis et anniversarii Dedicationis ecclesiae
+b) Sollemnitas Dedicationis et anniversarii Dedicationis ecclesiae
 propriae.
 
-c ) Sollemnitas Tituli ecclesiae propriae.
+c) Sollemnitas Tituli ecclesiae propriae.
 
-cL) Sollemnitas aut Tituli,
+d) Sollemnitas aut Tituli,
 
 aut Fundatoris,
 
@@ -595,9 +595,9 @@ II
 
 a) Festum Patroni principalis dioecesis.
 
-b ) Festum anniversarii Dedicationis ecclesiae cathedralis.
+b) Festum anniversarii Dedicationis ecclesiae cathedralis.
 
-c ) Festum Patroni principalis regionis aut provinciae, nationis, am-
+c) Festum Patroni principalis regionis aut provinciae, nationis, am-
 plioris territorii.
 
 d) Festum Tituli, Fundatoris, Patroni principalis Ordinis seu Con-
@@ -652,7 +652,7 @@ bula dierum liturgicorum superiorem obtinet locum.
 
 Attamen:
 
-a ) in occurrentia perpetua, sollemnitates et festa, necnon memoriae
+a) in occurrentia perpetua, sollemnitates et festa, necnon memoriae
 calendarii particularis quae in tota dioecesi vel in tota familia religiosa
 vel eiusdem provincia impediuntur, assignentur proximiori diei non im-
 pedito sollemnitatibus vel festis; memoriae vero calendarii generalis in
