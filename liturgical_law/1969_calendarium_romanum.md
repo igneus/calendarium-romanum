@@ -137,6 +137,30 @@ b) Ascensio, dominicae VII Paschae;
 
 c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
 
+```ruby
+calendar = CR::PerpetualCalendar.new(temporale_options: {transfer_to_sunday: [:epiphany, :ascension, :corpus_christi]})
+
+2000.upto(2100) do |year|
+  # a) Epiphania, dominicae a die 2 ad diem 8 ianuarii occurrenti;
+  d = CR::Temporale::Dates.epiphany year, sunday: true
+  expect(d).to be_sunday
+  expect(d).to be_between(Date.new(year+1, 1, 2), Date.new(year+1, 1, 8))
+  expect(calendar[d].celebrations[0].symbol).to be :epiphany
+
+  # b) Ascensio, dominicae VII Paschae;
+  d = CR::Temporale::Dates.ascension year, sunday: true
+  expect(d).to be_sunday
+  expect(d).to eq(CR::Temporale::Dates.pentecost(year) - 7)
+  expect(calendar[d].celebrations[0].symbol).to be :ascension
+
+  # c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
+  d = CR::Temporale::Dates.corpus_christi year, sunday: true
+  expect(d).to be_sunday
+  expect(d).to eq(CR::Temporale::Dates.holy_trinity(year) + 7)
+  expect(calendar[d].celebrations[0].symbol).to be :corpus_christi
+end
+```
+
 #### III. De sollemnitatibus, festis et memoriis
 
 **8.** Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
