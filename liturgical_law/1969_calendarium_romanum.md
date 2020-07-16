@@ -26,12 +26,11 @@ MCMLXIX
 
 
 
-NORMAE UNIVERSALES DE ANNO LITURGICO
-ET DE CALENDARIO
+# NORMAE UNIVERSALES DE ANNO LITURGICO ET DE CALENDARIO
 
 
-Caput primum
-DE ANNO LITURGICO
+## Caput primum
+## DE ANNO LITURGICO
 
 1. Christi opus salutiferum sancta Ecclesia, statis diebus per anni
 decursum, sacra recordatione celebrat. In unaquaque hebdomada, die
@@ -50,8 +49,9 @@ ritum romanum spectare intellegendae sunt, nisi agatur de iis quae ex
 ipsa rei natura alios quoque ritus afficiant. 2
 
 
-Tit. I - De diebus liturgicis
-I. De die liturgico in genere
+### Tit. I - De diebus liturgicis
+
+#### I. De die liturgico in genere
 
 3. Unusquisque dies sanctificatur liturgicis populi Dei celebrationibus,
 praesertim vero Sacrificio eucharistico et Officio divino.
@@ -60,7 +60,7 @@ Dies liturgicus decurrit a media nocte ad mediam noctem. Celebratio
 vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 
 
-II. De dominica
+#### II. De dominica
 
 4. Primo uniuscuiusque hebdomadae die, quae dies Domini seu dies
 dominica nuncupatur. Ecclesia, ex traditione apostolica, quae originem
@@ -75,12 +75,6 @@ Itaque dominica uti primordialis dies festus haberi debet. 3
 
 3 Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
 
-
-
-12
-
-
-CALENDARIUM ROMANUM GENERALE
 
 
 5 . Propter suum peculiare momentum, dominica suam cedit celebra-
@@ -113,7 +107,7 @@ c) Sollemnitas SSjnae Eucharistiae, dominicae post SS.mam Trinitatem.
 
 S S Co x, (p io CfirljTi
 
-III. De sollemnitatibus, festis et memoriis
+#### III. De sollemnitatibus, festis et memoriis
 
 8 . Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
 Dei Genetricem Mariam cum peculiari amore veneratur, memoriasque
@@ -143,12 +137,6 @@ s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
 
 
-NORMAE DE ANNO LITURGICO ET DE CALENDARIO
-
-
-13
-
-
 13 . Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
@@ -168,7 +156,7 @@ una tantum celebrari potest, omissis ceteris.
 toria, fieri potest memoria ad libitum de beata Maria Virgine.
 
 
-IV. De feriis
+#### IV. De feriis
 
 16 . Hebdomadae dies, qui post dominicam decurrunt, feriae nuncu-
 pantur; diversa tamen ratione celebrantur, iuxta momentum ipsis pro-
@@ -184,13 +172,13 @@ c) Ceterae feriae omnibus sollemnitatibus et festis cedunt et cum
 memoriis componuntur.
 
 
-Tit. II - De anni circulo
+### Tit. II - De anni circulo
 
 17 . Totum Christi mysterium per anni circulum ab Ecclesia recolitur,
 ab Incarnatione usque ad diem Pentecostes et ad exspectationem adventus
 Domini. 6
 
-I. De Triduo paschali
+#### I. De Triduo paschali
 
 18 . Cum vero humanae redemptionis et perfectae Dei glorificationis
 opus adimpleverit Christus praecipue per suum paschale mysterium, quo
@@ -200,12 +188,6 @@ sacrum paschale Triduum Passionis et Resurrectionis Domini uti totius
 6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
 A.A.S. 56 (1964) p. 125.
 
-
-
-14
-
-
-CALENDARIUM ROMANUM GENERALE
 
 
 anni liturgici culmen effulget. 7 Fastigium igitur, quod dies dominica habet
@@ -229,7 +211,7 @@ tota huius sacrae Vigiliae celebratio nocte peragi debet, ita ut incipiatur
 post initium noctis et finiatur ante diei dominicae diluculum.
 
 
-II. De tempore paschali
+#### II. De tempore paschali
 
 22. Quinquaginta dies a dominica Resurrectionis ad dominicam Pen-
 tecostes in laetitia et exsultatione celebrantur sicut unus dies festus,
@@ -269,13 +251,7 @@ A.A.S. 56 (1964) p. 127.
 
 
 
-NORMAE DE ANNO LITURGICO ET DE CALENDARIO
-
-
-15
-
-
-III. De tempore Quadragesimae
+#### III. De tempore Quadragesimae
 
 27. Tempus Quadragesimae ordinatur ad praeparationem celebratio-
 nis Paschae: liturgia enim quadragesimalis tam catechumenos, per diver-
@@ -302,7 +278,7 @@ ab eius ingressu messianico in Ierusalem.
 Feria V Hebdomadae sanctae, mane, Episcopus, Missam cum suo pre-
 sbyterio concelebrans, olea sancta benedicit et chrisma conficit.
 
-IV. De tempore Nativitatis
+#### IV. De tempore Nativitatis
 
 32. Post annuam mysterii paschalis celebrationem, nihil antiquius
 habet Ecclesia quam memoriam Nativitatis Domini et primarum eius
@@ -332,11 +308,6 @@ A.A.S. 56 (1964) p. 127.
 p. 184.
 
 
-16
-
-
-CALENDARIUM ROMANUM GENERALE
-
 
 d) Die 28 decembris, fit festum Ss. Innocentium.
 
@@ -357,7 +328,7 @@ occurrenti (cf. n. 7).
 Domini.
 
 
-V. De tempore Adventus
+#### V. De tempore Adventus
 
 39. Tempus Adventus duplicem habet indolem: est enim tempus prae-
 parationis ad sollemnia Nativitatis, in quibus primus Dei Filii adventus
@@ -377,7 +348,7 @@ Adventus.
 recto ad praeparationem Nativitatis Domini ordinantur.
 
 
-VI. De tempore « per annum »
+#### VI. De tempore « per annum »
 
 43 . Praeter tempora propriam indolem habentia, triginta tres vel tri-
 ginta quattuor supersunt hebdomadae per anni circulum, in quibus non
@@ -387,15 +358,6 @@ nicis. Huiusmodi periodus tempus « per annum » nuncupatur.
 
 44 . Tempus « per annum » incipit feria II quae sequitur dominicam post
 diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante
-
-
-
-NORMAE DE ANNO LITURGICO ET DE CALENDARIO
-
-
-17
-
-
 Quadragesimam inclusive; iterum incipit feria II post dominicam Pen-
 tecostes et explicit ante I Vesperas dominicae I Adventus.
 
@@ -403,7 +365,7 @@ Eadem ratione adhibetur series formulariorum, quae pro dominicis
 et feriis huius temporis invenitur tum in Breviario tum in Missali.
 
 
-VII. De Rogationibus et Quattuor anni Temporibus
+#### VII. De Rogationibus et Quattuor anni Temporibus
 
 45. In Rogationibus et Quattuor anni Temporibus, Ecclesia solet pro
 variis hominum necessitatibus, imprimis vero pro fructibus terrae et
@@ -421,11 +383,11 @@ a competenti auctoritate, attentis necessitatibus localibus.
 gatur, quae sit magis accommodata supplicationum proposito.
 
 
-Caput secundum
-DE CALENDARIO
+## Caput secundum
+## DE CALENDARIO
 
 
-Tit. I - De calendario et celebrationibus in eo inscribendis
+### Tit. I - De calendario et celebrationibus in eo inscribendis
 
 48. Ordinatio celebrationis anni liturgici calendario regitur, quod est
 generale vel particulare, prouti statutum est in usum totius ritus romani,
@@ -444,16 +406,6 @@ proprii, peculiari honore prosequantur oportet.
 
 Calendaria tamen particularia, a competenti auctoritate componenda,
 ab Apostolica Sede sunt probanda.
-
-
-2 ( 790 )
-
-
-18
-
-
-CALENDARIUM ROMANUM GENERALE
-
 
 50. In componendis calendariis particularibus, ad haec attendatur:
 
@@ -507,15 +459,6 @@ plioris dicionis ubi degunt.
 et Beatis decoratur, cavendum est ne calendarium universae dioecesis
 vel universi Instituti plus aequo gravetur. Proinde:
 
-
-
-
-NORMAE DE ANNO LITURGICO ET DE CALENDARIO
-
-
-19
-
-
 a) Haberi potest imprimis celebratio communis omnium Sanctorum
 et Beatorum dioecesis vel familiae religiosae, vel alicuius ordinis eorum;
 
@@ -537,7 +480,7 @@ illud calendarium tenentur servari debent; et nonnisi approbante Apo-
 stolica Sede e calendario expungi vel gradu mutari possunt.
 
 
-Tit. II - De celebrationum die proprio
+### Tit. II - De celebrationum die proprio
 
 56. Sanctos consuevit Ecclesia celebrare ipsorum die natalicio: quod
 opportune servetur etiam in propriis celebrationibus calendario parti-
@@ -568,16 +511,6 @@ lationis; secus diei qui in calendario particulari liber sit ab aliis cele-
 brationibus.
 
 d) Si vero dies natalicius impeditur alia celebratione superioris vel
-
-
-
-
-20
-
-
-CALENDARIUM ROMANUM GENERALE
-
-
 eiusdem gradus in calendario generali vel particulari, assignetur proxi-
 miori diei similiter non impedito.
 
@@ -627,15 +560,6 @@ Feria IV Cinerum.
 
 Feriae Hebdomadae sanctae, a feria II ad feriam V inclusive.
 Dies infra octavam Paschae.
-
-
-
-
-NORMAE DE ANNO LITURGICO ET DE CALENDARIO
-
-
-21
-
 
 3. Sollemnitates Domini, beatae Mariae Virginis, Sanctorum in calen-
 dario generali inscriptae.
@@ -705,14 +629,6 @@ b) Aliae memoriae obligatoriae alicui ecclesiae propriae.
 
 c) Aliae memoriae obligatoriae inscriptae in calendario cuiusque
 dioecesis, vel Ordinis seu Congregationis.
-
-
-
-22
-
-
-CALENDARIUM ROMANUM GENERALE
-
 
 12. Memoriae ad libitum, quae tamen, modo quidem peculiari in Insti-
 tutionibus de Missa et de Officio descripto, fieri possunt etiam diebus de
