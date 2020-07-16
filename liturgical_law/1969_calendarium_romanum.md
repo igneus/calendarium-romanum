@@ -552,100 +552,49 @@ secundum ordinem praecedentiae disposita
 I
 
 1. Triduum paschale Passionis et Resurrectionis Domini.
-
 2. Nativitas Domini, Epiphania, Ascensio et Pentecostes.
-Dominicae Adventus, Quadragesimae et Paschae.
-
-Feria IV Cinerum.
-
-Feriae Hebdomadae sanctae, a feria II ad feriam V inclusive.
-Dies infra octavam Paschae.
-
-3. Sollemnitates Domini, beatae Mariae Virginis, Sanctorum in calen-
-dario generali inscriptae.
-
-Commemoratio omnium fidelium defunctorum, quae tamen locum
-cedit dominicae occurrenti.
-
+   Dominicae Adventus, Quadragesimae et Paschae.
+   Feria IV Cinerum.
+   Feriae Hebdomadae sanctae, a feria II ad feriam V inclusive.
+   Dies infra octavam Paschae.
+3. Sollemnitates Domini, beatae Mariae Virginis, Sanctorum in calendario generali inscriptae.
+   Commemoratio omnium fidelium defunctorum, quae tamen locum cedit dominicae occurrenti.
 4. Sollemnitates propriae, nempe:
-
-a) Sollemnitas Patroni principalis loci seu oppidi aut civitatis.
-
-b) Sollemnitas Dedicationis et anniversarii Dedicationis ecclesiae
-propriae.
-
-c) Sollemnitas Tituli ecclesiae propriae.
-
-d) Sollemnitas aut Tituli,
-
-aut Fundatoris,
-
-aut Patroni principalis Ordinis seu Congregationis.
-
+   a) Sollemnitas Patroni principalis loci seu oppidi aut civitatis.
+   b) Sollemnitas Dedicationis et anniversarii Dedicationis ecclesiae propriae.
+   c) Sollemnitas Tituli ecclesiae propriae.
+   d) Sollemnitas aut Tituli, aut Fundatoris, aut Patroni principalis Ordinis seu Congregationis.
 
 II
 
 5. Festa Domini.
-
 6. Dominicae temporis Nativitatis et dominicae « per annum ».
-
 7. Festa beatae Mariae Virginis et Sanctorum calendarii generalis.
-
 8. Festa propria, nempe:
-
-a) Festum Patroni principalis dioecesis.
-
-b) Festum anniversarii Dedicationis ecclesiae cathedralis.
-
-c) Festum Patroni principalis regionis aut provinciae, nationis, am-
-plioris territorii.
-
-d) Festum Tituli, Fundatoris, Patroni principalis Ordinis seu Con-
-gregationis et provinciae religiosae , salvis praescriptis sub n. 4.
-
-e) Alia festa alicui ecclesiae propria.
-
-/) Alia festa inscripta in Calendario cuiusque dioecesis vel Ordinis
-seu Congregationis.
-
+   a) Festum Patroni principalis dioecesis.
+   b) Festum anniversarii Dedicationis ecclesiae cathedralis.
+   c) Festum Patroni principalis regionis aut provinciae, nationis, amplioris territorii.
+   d) Festum Tituli, Fundatoris, Patroni principalis Ordinis seu Congregationis et provinciae religiosae, salvis praescriptis sub n. 4.
+   e) Alia festa alicui ecclesiae propria.
+   f) Alia festa inscripta in Calendario cuiusque dioecesis vel Ordinis seu Congregationis.
 9. Feriae Adventus a die 17 ad 24 decembris inclusive.
-
-Dies infra octavam Nativitatis.
-
-Feriae Quadragesimae.
-
+   Dies infra octavam Nativitatis.
+   Feriae Quadragesimae.
 
 III
 
 10. Memoriae obligatoriae calendarii generalis.
-
 11. Memoriae obligatoriae propriae, nempe:
-
-a) Memoriae Patroni secundarii loci, dioecesis, regionis aut provin-
-ciae, nationis, amplioris territorii, Ordinis seu Congregationis et provin-
-ciae religiosae.
-
-b) Aliae memoriae obligatoriae alicui ecclesiae propriae.
-
-c) Aliae memoriae obligatoriae inscriptae in calendario cuiusque
-dioecesis, vel Ordinis seu Congregationis.
-
-12. Memoriae ad libitum, quae tamen, modo quidem peculiari in Insti-
-tutionibus de Missa et de Officio descripto, fieri possunt etiam diebus de
-quibus sub n. 9.
-
-Hac eadem ratione, ut memoriae ad libitum celebrari possunt memo-
-riae obligatoriae, quae accidentaliter occurrunt in feriis Quadragesimae.
-
+    a) Memoriae Patroni secundarii loci, dioecesis, regionis aut provinciae, nationis, amplioris territorii, Ordinis seu Congregationis et provinciae religiosae.
+    b) Aliae memoriae obligatoriae alicui ecclesiae propriae.
+    c) Aliae memoriae obligatoriae inscriptae in calendario cuiusque dioecesis, vel Ordinis seu Congregationis.
+12. Memoriae ad libitum, quae tamen, modo quidem peculiari in Institutionibus de Missa et de Officio descripto, fieri possunt etiam diebus de quibus sub n. 9.
+    Hac eadem ratione, ut memoriae ad libitum celebrari possunt memoriae obligatoriae, quae accidentaliter occurrunt in feriis Quadragesimae.
 13. Feriae Adventus usque ad diem 16 decembris inclusive.
+    Feriae temporis Nativitatis a die 2 ianuarii ad sabbatum post Epiphaniam.
+    Feriae temporis paschalis a feria II post octavam Paschae ad sabbatum ante Pentecosten inclusive.
+    Feriae per annum.
 
-Feriae temporis Nativitatis a die 2 ianuarii ad sabbatum post Epi-
-phaniam.
-
-Feriae temporis paschalis a feria II post octavam Paschae ad sabba-
-tum ante Pentecosten inclusive.
-
-Feriae per annum.
 
 60. Si eodem die plures celebrationes occurrunt, fit de ea quae in ta-
 bula dierum liturgicorum superiorem obtinet locum.
