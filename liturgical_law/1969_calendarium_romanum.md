@@ -39,9 +39,9 @@ semel etiam in anno, maxima Paschae sollemnitate, una cum beata eius
 Passione frequentat. Per anni vero circulum Christi totum mysterium
 explicat nataliciaque Sanctorum commemorat.
 
-Variis autem anni liturgici temporibus, iuxta traditas disciplinas, Ec-
-clesia fidelium eruditionem perficit, per pias animi et corporis exercita-
-tiones, instructionem, precationem, paenitentiae et misericordiae opera. 1
+Variis autem anni liturgici temporibus, iuxta traditas disciplinas, Ecclesia
+fidelium eruditionem perficit, per pias animi et corporis exercitationes,
+instructionem, precationem, paenitentiae et misericordiae opera. 1
 
 **2.** Principia quae sequuntur tum ad ritum romanum tum ad omnes
 alios ritus applicari possunt ac debent, normae tamen practicae solum
@@ -68,8 +68,8 @@ ducit ab ipsa die Resurrectionis Christi, mysterium paschale celebrat.
 Itaque dominica uti primordialis dies festus haberi debet. 3
 
 
-1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-
-105: A.A.S. 56 (1964) pp. 125-126.
+1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
+A.A.S. 56 (1964) pp. 125-126.
 
 5 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
 
@@ -77,14 +77,13 @@ Itaque dominica uti primordialis dies festus haberi debet. 3
 
 
 
-**5.** Propter suum peculiare momentum, dominica suam cedit celebra-
-tionem solummodo sollemnitatibus, necnon festis Domini; Dominicae
+**5.** Propter suum peculiare momentum, dominica suam cedit celebrationem
+solummodo sollemnitatibus, necnon festis Domini; Dominicae
 vero Adventus, Quadragesimae et Paschae super omnia festa Domini et
 super omnes sollemnitates praecedentiam habent. Sollemnitates autem in
 his dominicis occurrentes, sabbato anticipantur.
 
-**6.** Dominica excludit per se assignationem perpetuam alius celebra-
-tionis. Attamen:
+**6.** Dominica excludit per se assignationem perpetuam alius celebrationis. Attamen:
 
 a) Dominica infra octavam Nativitatis Domini, fit festum S. Familiae;
 
@@ -92,11 +91,10 @@ b) Dominica post diem 6 ianuarii, fit festum Baptismatis Domini;
 
 c) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
 
-d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. univer-
-sorum Regis.
+d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. universorum Regis.
 
-**7.** Ubi autem sollemnitates Epiphaniae, Ascensionis et SS.mae Eucha-
-ristiae non sunt de praecepto servandae, assignentur dominicae tamquam
+**7.** Ubi autem sollemnitates Epiphaniae, Ascensionis et SS.mae Eucharistiae
+non sunt de praecepto servandae, assignentur dominicae tamquam
 diei proprio, hac ratione:
 
 a) Epiphania, dominicae a die 2 ad diem 8 ianuarii occurrenti;
@@ -114,23 +112,23 @@ Dei Genetricem Mariam cum peculiari amore veneratur, memoriasque
 Martyrum aliorumque Sanctorum pietati fidelium proponit. 4
 
 **9.** Sancti qui momentum universale prae se ferunt in Ecclesia universa
-obligatorie celebrantur; ceteri, aut in calendario inscribuntur, ad libi-
-tum tamen celebrandi, aut particulari cuique Ecclesiae, vel nationi, vel
+obligatorie celebrantur; ceteri, aut in calendario inscribuntur, ad libitum
+tamen celebrandi, aut particulari cuique Ecclesiae, vel nationi, vel
 religiosae familiae, relinquuntur colendi. 5
 
 **10.** Celebrationes, iuxta momentum quod ipsis tribuitur, ita inter se
 distinguuntur et nominantur: sollemnitas, festum, memoria.
 
-**11.** Sollemnitates inter dies praecipuos adnumerantur, quorum cele-
-bratio incipit a I Vesperis, die praecedenti. Nonnullae sollemnitates etiam
+**11.** Sollemnitates inter dies praecipuos adnumerantur, quorum celebratio
+incipit a I Vesperis, die praecedenti. Nonnullae sollemnitates etiam
 Missa propria vigiliae ditantur, vespere diei praecedentis adhibenda, si
 Missa horis vespertinis celebratur.
 
 **12.** Summarum sollemnitatum Paschae et Nativitatis celebratio per
 octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 
-4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-
-104: A.A.S. 56 (1964) pp. 125-126.
+4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
+A.A.S. 56 (1964) pp. 125-126.
 
 s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
@@ -141,10 +139,9 @@ s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
 
-**14.** Memoriae sunt obligatoriae vel ad libitum; earum autem cele-
-bratio cum celebratione feriae occurrentis componitur secundum normas,
-quae in Institutionibus generalibus 'de Missa et de Officio divino expo-
-nuntur.
+**14.** Memoriae sunt obligatoriae vel ad libitum; earum autem celebratio cum
+celebratione feriae occurrentis componitur secundum normas,
+quae in Institutionibus generalibus 'de Missa et de Officio divino exponuntur.
 
 Memoriae vero obligatoriae, quae occurrunt in feriis Quadragesimae,
 solummodo tamquam memoriae ad libitum celebrari possunt.
@@ -152,21 +149,18 @@ solummodo tamquam memoriae ad libitum celebrari possunt.
 Si eodem die plures inscribuntur in calendario memoriae ad libitum,
 una tantum celebrari potest, omissis ceteris.
 
-**15.** In sabbatis per annum, in quibus non occurrat memoria obliga-
-toria, fieri potest memoria ad libitum de beata Maria Virgine.
+**15.** In sabbatis per annum, in quibus non occurrat memoria obligatoria,
+fieri potest memoria ad libitum de beata Maria Virgine.
 
 
 #### IV. De feriis
 
-**16.** Hebdomadae dies, qui post dominicam decurrunt, feriae nuncu-
-pantur; diversa tamen ratione celebrantur, iuxta momentum ipsis pro-
-prium:
+**16.** Hebdomadae dies, qui post dominicam decurrunt, feriae nuncupantur;
+diversa tamen ratione celebrantur, iuxta momentum ipsis proprium:
 
-a) Feria IV Cinerum et feriae Hebdomadae sanctae, a feria II ad fe-
-riam V inclusive, omnibus aliis celebrationibus praeferuntur.
+a) Feria IV Cinerum et feriae Hebdomadae sanctae, a feria II ad feriam V inclusive, omnibus aliis celebrationibus praeferuntur.
 
-b) Feriae Adventus, a die 17 ad diem 24 decembris inclusive, et om-
-nes feriae Quadragesimae memoriis obligatoriis praeferuntur.
+b) Feriae Adventus, a die 17 ad diem 24 decembris inclusive, et omnes feriae Quadragesimae memoriis obligatoriis praeferuntur.
 
 c) Ceterae feriae omnibus sollemnitatibus et festis cedunt et cum
 memoriis componuntur.
@@ -197,8 +191,8 @@ in hebdomada, sollemnitas Paschae habet in anno liturgico. 8
 vespertina in Cena Domini, habet suum centrum in Vigilia paschali, et
 clauditur Vesperis dominicae Resurrectionis.
 
-**20.** Feria VI in Passione Domini, 9 et, iuxta opportunitatem, etiam Sab-
-bato sancto usque ad Vigiliam paschalem, 10 ubique celebratur sacrum
+**20.** Feria VI in Passione Domini, 9 et, iuxta opportunitatem, etiam
+Sabbato sancto usque ad Vigiliam paschalem, 10 ubique celebratur sacrum
 ieiunium paschale.
 
 Feria VI Hebdomadae sanctae, horis postmeridianis, fit celebratio
@@ -213,26 +207,23 @@ post initium noctis et finiatur ante diei dominicae diluculum.
 
 #### II. De tempore paschali
 
-**22.** Quinquaginta dies a dominica Resurrectionis ad dominicam Pen-
-tecostes in laetitia et exsultatione celebrantur sicut unus dies festus,
+**22.** Quinquaginta dies a dominica Resurrectionis ad dominicam Pentecostes
+in laetitia et exsultatione celebrantur sicut unus dies festus,
 immo « magna dominica ». 12
 
 Hi sunt dies in quibus praecipue cantatur Alleluia.
 
 **23.** Dominicae huius temporis veluti dominicae Paschae habentur et,
 post dominicam Resurrectionis, dominicae II, III, IV, V, VI, VII Paschae
-nuncupantur; concluditur autem hoc sacrum quinquaginta dierum tem-
-pus dominica Pentecostes.
+nuncupantur; concluditur autem hoc sacrum quinquaginta dierum tempus dominica Pentecostes.
 
 **24.** Octo primi dies temporis paschalis constituunt octavam Paschae
 et uti sollemnitates Domini celebrantur.
 
 **25.** Quadragesima die post Pascha celebratur Ascensio Domini, nisi,
-ubi non est de praecepto servanda, VII dominicae Paschae fuerit assi-
-gnata (cf. n. 7).
+ubi non est de praecepto servanda, VII dominicae Paschae fuerit assignata (cf. n. 7).
 
-**26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten in-
-clusive ad adventum praeparant Spiritus Sancti Paracliti.
+**26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten inclusive ad adventum praeparant Spiritus Sancti Paracliti.
 
 7 Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
 A.A.S. 56 (1964) p. 99.
@@ -253,9 +244,9 @@ A.A.S. 56 (1964) p. 127.
 
 #### III. De tempore Quadragesimae
 
-**27.** Tempus Quadragesimae ordinatur ad praeparationem celebratio-
-nis Paschae: liturgia enim quadragesimalis tam catechumenos, per diver-
-sos initiationis Christianae gradus, quam fideles, memoriam Baptismi
+**27.** Tempus Quadragesimae ordinatur ad praeparationem celebrationis Paschae:
+liturgia enim quadragesimalis tam catechumenos, per diversos initiationis Christianae
+gradus, quam fideles, memoriam Baptismi
 recolentes et paenitentiam agentes, componit ad celebrandum paschale
 mysterium. 13
 
@@ -269,14 +260,14 @@ Alleluia.
 ieiunii, 14 imponuntur cineres.
 
 **30.** Dominicae huius temporis appellantur dominicae I, II, III, IV, V
-in Quadragesima. Dominica sexta, in qua initium sumit Hebdomada sanc-
-ta, dicitur « Dominica in palmis de Passione Domini ».
+in Quadragesima. Dominica sexta, in qua initium sumit Hebdomada sancta,
+dicitur « Dominica in palmis de Passione Domini ».
 
 **31.** Hebdomada sancta ordinatur ad recolendam Passionem Christi
 ab eius ingressu messianico in Ierusalem.
 
-Feria V Hebdomadae sanctae, mane, Episcopus, Missam cum suo pre-
-sbyterio concelebrans, olea sancta benedicit et chrisma conficit.
+Feria V Hebdomadae sanctae, mane, Episcopus, Missam cum suo presbyterio concelebrans,
+olea sancta benedicit et chrisma conficit.
 
 #### IV. De tempore Nativitatis
 
@@ -313,9 +304,8 @@ d) Die 28 decembris, fit festum Ss. Innocentium.
 
 e) Dies 29, 30, 31 sunt dies infra octavam.
 
-/) Die 1 ianuarii, in octava Nativitatis, fit Sollemnitas Sanctae Dei
-Genetricis Mariae, in qua commemoratur etiam impositio SS.mi Nomi-
-nis Iesu.
+f) Die 1 ianuarii, in octava Nativitatis, fit Sollemnitas Sanctae Dei
+Genetricis Mariae, in qua commemoratur etiam impositio SS.mi Nominis Iesu.
 
 **36.** Dominica a die 2 ad diem 5 ianuarii occurrens est Dominica II
 post Nativitatem.
@@ -330,36 +320,33 @@ Domini.
 
 #### V. De tempore Adventus
 
-**39.** Tempus Adventus duplicem habet indolem: est enim tempus prae-
-parationis ad sollemnia Nativitatis, in quibus primus Dei Filii adventus
-ad homines recolitur, ac simul tempus quo per hanc recordationem men-
-tes diriguntur ad exspectationem secundi Christi adventus in fine tem-
-porum. His duabus rationibus, tempus Adventus se praebet ut tempus
+**39.** Tempus Adventus duplicem habet indolem: est enim tempus praeparationis
+ad sollemnia Nativitatis, in quibus primus Dei Filii adventus
+ad homines recolitur, ac simul tempus quo per hanc recordationem mentes diriguntur
+ad exspectationem secundi Christi adventus in fine temporum. His duabus rationibus, tempus Adventus se praebet ut tempus
 devotae ac iucundae exspectationis.
 
 **40.** Tempus Adventus incipit a I Vesperis dominicae quae incidit in
-diem 30 novembris vel est huic vicinior, et explicit ante I Vesperas Na-
-tivitatis Domini.
+diem 30 novembris vel est huic vicinior, et explicit ante I Vesperas Nativitatis Domini.
 
 **41.** Dominicae huius temporis nuncupantur dominicae I, II, III, IV
 Adventus.
 
-**42.** Feriae a die 17 ad diem 24 decembris inclusive modo magis di-
-recto ad praeparationem Nativitatis Domini ordinantur.
+**42.** Feriae a die 17 ad diem 24 decembris inclusive modo magis directo ad praeparationem Nativitatis Domini ordinantur.
 
 
 #### VI. De tempore « per annum »
 
-**43.** Praeter tempora propriam indolem habentia, triginta tres vel tri-
-ginta quattuor supersunt hebdomadae per anni circulum, in quibus non
-celebratur peculiaris mysterii Christi aspectus; sed potius ipsum myste-
-rium Christi in sua plenitudine recolitur, praesertim vero diebus domi-
-nicis. Huiusmodi periodus tempus « per annum » nuncupatur.
+**43.** Praeter tempora propriam indolem habentia, triginta tres vel
+triginta quattuor supersunt hebdomadae per anni circulum, in quibus non
+celebratur peculiaris mysterii Christi aspectus; sed potius ipsum mysterium
+Christi in sua plenitudine recolitur, praesertim vero diebus dominicis.
+Huiusmodi periodus tempus « per annum » nuncupatur.
 
 **44.** Tempus « per annum » incipit feria II quae sequitur dominicam post
 diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante
-Quadragesimam inclusive; iterum incipit feria II post dominicam Pen-
-tecostes et explicit ante I Vesperas dominicae I Adventus.
+Quadragesimam inclusive; iterum incipit feria II post dominicam Pentecostes
+et explicit ante I Vesperas dominicae I Adventus.
 
 Eadem ratione adhibetur series formulariorum, quae pro dominicis
 et feriis huius temporis invenitur tum in Breviario tum in Missali.
@@ -371,16 +358,16 @@ et feriis huius temporis invenitur tum in Breviario tum in Missali.
 variis hominum necessitatibus, imprimis vero pro fructibus terrae et
 hominum laboribus, Dominum exorare, eique publice gratias referre.
 
-**46.** Ut Rogationes et Quattuor anni Tempora diversis locorum et fide-
-lium necessitatibus aptari possint, quoad tempus et rationem illa cele-
-brandi a Conferentiis Episcopalibus ordinentur oportet.
+**46.** Ut Rogationes et Quattuor anni Tempora diversis locorum et fidelium
+necessitatibus aptari possint, quoad tempus et rationem illa celebrandi
+a Conferentiis Episcopalibus ordinentur oportet.
 
 De eorum proinde amplitudine celebrationis, per unum vel plures dies
 protrahendae, de eorum iteratione per anni decursum, normae statuantur
 a competenti auctoritate, attentis necessitatibus localibus.
 
-**47.** Missa pro singulis diebus harum celebrationum, inter votivas eli-
-gatur, quae sit magis accommodata supplicationum proposito.
+**47.** Missa pro singulis diebus harum celebrationum, inter votivas
+eligatur, quae sit magis accommodata supplicationum proposito.
 
 
 ## Caput secundum
@@ -395,8 +382,8 @@ vel in usum alicuius Ecclesiae particularis vel familiae religiosae.
 
 **49.** In calendario generali universus cyclus celebrationum inscribitur,
 tum mysterii salutis in Proprio de tempore, tum eorum Sanctorum qui
-momentum universale prae se ferunt, et ideo obligatorie ab omnibus cele-
-brantur, tum aliorum qui universalitatem et continuitatem sanctitatis
+momentum universale prae se ferunt, et ideo obligatorie ab omnibus celebrantur,
+tum aliorum qui universalitatem et continuitatem sanctitatis
 in populo Dei demonstrant.
 
 Calendaria vero particularia celebrationes magis proprias continent
@@ -409,28 +396,27 @@ ab Apostolica Sede sunt probanda.
 
 **50.** In componendis calendariis particularibus, ad haec attendatur:
 
-a) Proprium de tempore, seu cyclus temporum, sollemnitatum et fe-
-storum, quo mysterium Redemptionis in anno liturgico explicatur et
+a) Proprium de tempore, seu cyclus temporum, sollemnitatum et festorum,
+quo mysterium Redemptionis in anno liturgico explicatur et
 colitur, integer semper servetur, et debita praeeminentia gaudeat super
 celebrationes particulares.
 
 b) Celebrationes propriae organice cum celebrationibus universalibus
-componantur, attentis ordine et praecedentia in tabula dierum liturgico-
-rum pro singulis indicatis. Ne tamen calendaria particularia plus aequo
+componantur, attentis ordine et praecedentia in tabula dierum liturgicorum
+pro singulis indicatis. Ne tamen calendaria particularia plus aequo
 onerentur, singuli Sancti unica celebratione in anno liturgico gaudeant,
 servata, ubi rationes pastorales id suadeant, altera celebratione in forma
-memoriae ad libitum pro translatione aut inventione sanctorum Patro-
-norum aut Fundatorum Ecclesiarum vel familiarum religiosarum.
+memoriae ad libitum pro translatione aut inventione sanctorum Patronorum
+aut Fundatorum Ecclesiarum vel familiarum religiosarum.
 
 c) Celebrationes indultae ne sint duplicatio aliarum celebrationum in
 cyclo mysterii salutis iam occurrentium, neque numero plus aequo
 augeantur.
 
-**51.** Quamvis conveniat ut quaevis dioecesis suum Calendarium et Pro-
-prium Officiorum atque Missarum habeat, nihil tamen obstat quominus
+**51.** Quamvis conveniat ut quaevis dioecesis suum Calendarium
+et Proprium Officiorum atque Missarum habeat, nihil tamen obstat quominus
 Calendaria et Propria habeantur universae provinciae aut regioni aut
-nationi, vel etiam latiori dicioni, communia, ab iis quorum interest, mu-
-tua cooperatione paranda.
+nationi, vel etiam latiori dicioni, communia, ab iis quorum interest, mutua cooperatione paranda.
 
 Quod principium, aequa ratione, servari potest etiam in calendariis
 religiosis pro pluribus provinciis eiusdem dicionis civilis.
@@ -438,22 +424,21 @@ religiosis pro pluribus provinciis eiusdem dicionis civilis.
 **52.** Calendarium particulare conficitur inserendo calendario generali
 sollemnitates, festa et memorias quae sunt propria, idest:
 
-a) In calendario dioecesano, praeter celebrationes Patronorum, et De-
-dicationis ecclesiae cathedralis, Sancti et Beati, qui cum dioecesi pecu-
-liarem habent necessitudinem, ex. gr. originis, commorationis longioris,
+a) In calendario dioecesano, praeter celebrationes Patronorum,
+et Dedicationis ecclesiae cathedralis, Sancti et Beati, qui cum dioecesi
+peculiarem habent necessitudinem, ex. gr. originis, commorationis longioris,
 obitus.
 
 b) In calendario religioso, praeter celebrationes Tituli, Fundatoris et
 Patroni, Sancti et Beati, qui illius familiae religiosae sodales fuerunt vel
 cum ea peculiarem relationem habuerunt.
 
-c) In calendario singularum ecclesiarum, praeter celebrationes pro-
-prias dioecesis aut familiae religiosae, celebrationes ipsius ecclesiae pro-
-priae, quae in tabula dierum liturgicorum recensentur, necnon Sancti
+c) In calendario singularum ecclesiarum, praeter celebrationes proprias
+dioecesis aut familiae religiosae, celebrationes ipsius ecclesiae propriae,
+quae in tabula dierum liturgicorum recensentur, necnon Sancti
 quorum corpus in eadem ecclesia asservatur. Sodales autem familiarum
 religiosarum cum communitate Ecclesiae localis iunguntur in celebrandis
-Dedicatione ecclesiae cathedralis et Patronis principalibus loci et am-
-plioris dicionis ubi degunt.
+Dedicatione ecclesiae cathedralis et Patronis principalibus loci et amplioris dicionis ubi degunt.
 
 **53.** Quando aliqua dioecesis vel aliqua familia religiosa pluribus Sanctis
 et Beatis decoratur, cavendum est ne calendarium universae dioecesis
@@ -470,30 +455,27 @@ c) Ceteri Sancti et Beati celebrentur tantum iis in locis cum quibus
 strictiores habent necessitudines, aut ubi eorum corpus asservatur.
 
 **54.** Celebrationes propriae, nisi aliter pro aliquibus earum in tabula
-dierum liturgicorum praevideatur, aut peculiares rationes exstent histo-
-ricae aut pastorales, ut memoriae obligatoriae vel ad libitum inscriban-
-tur. Nihil tamen impedit, quominus aliquae celebrationes pro certis locis
+dierum liturgicorum praevideatur, aut peculiares rationes exstent historicae
+aut pastorales, ut memoriae obligatoriae vel ad libitum inscribantur.
+Nihil tamen impedit, quominus aliquae celebrationes pro certis locis
 modo sollemniore fiant quam in universa dioecesi vel familia religiosa.
 
 **55.** Celebrationes calendario proprio inscriptae ab omnibus qui ad
-illud calendarium tenentur servari debent; et nonnisi approbante Apo-
-stolica Sede e calendario expungi vel gradu mutari possunt.
+illud calendarium tenentur servari debent; et nonnisi approbante Apostolica Sede e calendario expungi vel gradu mutari possunt.
 
 
 ### Tit. II - De celebrationum die proprio
 
 **56.** Sanctos consuevit Ecclesia celebrare ipsorum die natalicio: quod
-opportune servetur etiam in propriis celebrationibus calendario parti-
-culari inscribendis.
+opportune servetur etiam in propriis celebrationibus calendario particulari inscribendis.
 
 Attamen, etsi celebrationes propriae peculiare momentum habent pro
-singulis Ecclesiis particularibus vel familiis religiosis, valde tamen ex-
-pedit ut, in celebrandis sollemnitatibus, festis et memoriis obligatoriis,
+singulis Ecclesiis particularibus vel familiis religiosis, valde tamen
+expedit ut, in celebrandis sollemnitatibus, festis et memoriis obligatoriis,
 quae in calendario generali recensentur, unitas, quantum fieri potest,
 habeatur.
 
-Proinde in celebrationibus propriis calendario particulari inscriben-
-dis, haec serventur:
+Proinde in celebrationibus propriis calendario particulari inscribendis, haec serventur:
 
 a) Celebrationes quae etiam in calendario generali recensentur, eodem
 die quo ibi inscripta sunt, calendario proprio inscribantur, mutato, si
@@ -502,32 +484,28 @@ necesse est, gradu celebrationis.
 Idem servetur in inscribendis celebrationibus alicui tantum ecclesiae
 propriis, ad calendarium dioecesanum vel religiosum quod attinet.
 
-b) Celebrationes Sanctorum, quae in calendario generali non inve-
-niuntur, diei natalicio assignentur.
+b) Celebrationes Sanctorum, quae in calendario generali non inveniuntur, diei natalicio assignentur.
 
 c) Si autem dies natalicius ignoratur, celebratio assignetur diei alia
-ratione eidem Sancto proprio, ex. gr. diei ordinationis, inventionis, trans-
-lationis; secus diei qui in calendario particulari liber sit ab aliis cele-
-brationibus.
+ratione eidem Sancto proprio, ex. gr. diei ordinationis, inventionis,
+translationis; secus diei qui in calendario particulari liber sit ab aliis celebrationibus.
 
 d) Si vero dies natalicius impeditur alia celebratione superioris vel
-eiusdem gradus in calendario generali vel particulari, assignetur proxi-
-miori diei similiter non impedito.
+eiusdem gradus in calendario generali vel particulari, assignetur proximiori diei similiter non impedito.
 
 e) Aliae celebrationes, quae indultae vocantur, inscribantur die aptiore
 sub respectu pastorali.
 
-/) Ut autem cyclus anni liturgici plena sua luce fulgeat, neque cele-
-brationes Sanctorum perpetuo impediantur, dies quibus plerumque tem-
-pus Quadragesimae et octava Paschae occurrunt, necnon dies a 17 ad
+f) Ut autem cyclus anni liturgici plena sua luce fulgeat, neque celebrationes
+Sanctorum perpetuo impediantur, dies quibus plerumque tempus Quadragesimae
+et octava Paschae occurrunt, necnon dies a 17 ad
 31 decembris, a celebrationibus particularibus liberi maneant, nisi agatur
 de memoriis non obligatoriis vel de festis de quibus in tabula dierum
 liturgicorum, n. 8 a, b, c, d, aut de sollemnitatibus quae ad aliud tempus
 nequeunt transferri.
 
-Sollemnitas S. Ioseph (die 19 martii), ad alium diem extra Quadra-
-gesimam a Conferentiis Episcopalibus transferri potest, nisi sit de prae-
-cepto servanda.
+Sollemnitas S. Ioseph (die 19 martii), ad alium diem extra Quadragesimam
+a Conferentiis Episcopalibus transferri potest, nisi sit de praecepto servanda.
 
 **57.** Si qui Sancti vel Beati una simul calendario inscribuntur, simul
 semper celebrantur, quoties eodem gradu sunt celebrandi, etsi unus aut
@@ -536,8 +514,8 @@ vel Beatis gradu superiore sunt celebrandi, fiat Officium de his tantum,
 omissa celebratione ceterorum, nisi conveniat eos alii diei assignare ad
 modum memoriae obligatoriae.
 
-**58.** Ad bonum pastorale fidelium procurandum, in dominicis per an-
-num, licet eas celebrationes agere, quae infra hebdomadam occurrunt,
+**58.** Ad bonum pastorale fidelium procurandum, in dominicis per annum,
+licet eas celebrationes agere, quae infra hebdomadam occurrunt,
 quaeque ipsorum fidelium pietati sunt acceptae, dummodo hae in tabula
 praecedentiae ipsi dominicae praeponantur. De his celebrationibus dici
 possunt omnes Missae, quae concurrente populo celebrantur.
@@ -608,20 +586,19 @@ III
 
 ---
 
-**60.** Si eodem die plures celebrationes occurrunt, fit de ea quae in ta-
-bula dierum liturgicorum superiorem obtinet locum.
+**60.** Si eodem die plures celebrationes occurrunt, fit de ea quae in tabula dierum liturgicorum superiorem obtinet locum.
 
 Attamen:
 
 a) in occurrentia perpetua, sollemnitates et festa, necnon memoriae
 calendarii particularis quae in tota dioecesi vel in tota familia religiosa
-vel eiusdem provincia impediuntur, assignentur proximiori diei non im-
-pedito sollemnitatibus vel festis; memoriae vero calendarii generalis in
-aliquo calendario particulari, necnon memoriae dioecesis vel familiae reli-
-giosae in aliqua tantum ecclesia impeditae, omittuntur.
+vel eiusdem provincia impediuntur, assignentur proximiori diei non impedito
+sollemnitatibus vel festis; memoriae vero calendarii generalis in
+aliquo calendario particulari, necnon memoriae dioecesis vel familiae
+religiosae in aliqua tantum ecclesia impeditae, omittuntur.
 
-b) In occurrentia accidentali, sollemnitas quae impeditur a die litur-
-gico qui praecedentia gaudeat, ad proximiorem diem transferatur qui sit
+b) In occurrentia accidentali, sollemnitas quae impeditur a die liturgico
+qui praecedentia gaudeat, ad proximiorem diem transferatur qui sit
 liber a diebus sub nn. 1-8 in tabula praecedentiae recensitis. Reliquae
 celebrationes eo anno omittuntur.
 
