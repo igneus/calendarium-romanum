@@ -77,7 +77,7 @@ Itaque dominica uti primordialis dies festus haberi debet. 3
 
 
 
-5 . Propter suum peculiare momentum, dominica suam cedit celebra-
+5. Propter suum peculiare momentum, dominica suam cedit celebra-
 tionem solummodo sollemnitatibus, necnon festis Domini; Dominicae
 vero Adventus, Quadragesimae et Paschae super omnia festa Domini et
 super omnes sollemnitates praecedentiam habent. Sollemnitates autem in
@@ -95,7 +95,7 @@ c ) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
 d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. univer-
 sorum Regis.
 
-7 . Ubi autem sollemnitates Epiphaniae, Ascensionis et SS.mae Eucha-
+7. Ubi autem sollemnitates Epiphaniae, Ascensionis et SS.mae Eucha-
 ristiae non sunt de praecepto servandae, assignentur dominicae tamquam
 diei proprio, hac ratione:
 
@@ -109,24 +109,24 @@ S S Co x, (p io CfirljTi
 
 #### III. De sollemnitatibus, festis et memoriis
 
-8 . Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
+8. Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
 Dei Genetricem Mariam cum peculiari amore veneratur, memoriasque
 Martyrum aliorumque Sanctorum pietati fidelium proponit. 4
 
-9 . Sancti qui momentum universale prae se ferunt in Ecclesia universa
+9. Sancti qui momentum universale prae se ferunt in Ecclesia universa
 obligatorie celebrantur; ceteri, aut in calendario inscribuntur, ad libi-
 tum tamen celebrandi, aut particulari cuique Ecclesiae, vel nationi, vel
 religiosae familiae, relinquuntur colendi. 5
 
-10 . Celebrationes, iuxta momentum quod ipsis tribuitur, ita inter se
+10. Celebrationes, iuxta momentum quod ipsis tribuitur, ita inter se
 distinguuntur et nominantur: sollemnitas, festum, memoria.
 
-11 . Sollemnitates inter dies praecipuos adnumerantur, quorum cele-
+11. Sollemnitates inter dies praecipuos adnumerantur, quorum cele-
 bratio incipit a I Vesperis, die praecedenti. Nonnullae sollemnitates etiam
 Missa propria vigiliae ditantur, vespere diei praecedentis adhibenda, si
 Missa horis vespertinis celebratur.
 
-12 . Summarum sollemnitatum Paschae et Nativitatis celebratio per
+12. Summarum sollemnitatum Paschae et Nativitatis celebratio per
 octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 
 4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-
@@ -137,11 +137,11 @@ s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
 
 
-13 . Festa intra fines diei naturalis celebrantur; proinde non habent
+13. Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
 
-14 . Memoriae sunt obligatoriae vel ad libitum; earum autem cele-
+14. Memoriae sunt obligatoriae vel ad libitum; earum autem cele-
 bratio cum celebratione feriae occurrentis componitur secundum normas,
 quae in Institutionibus generalibus 'de Missa et de Officio divino expo-
 nuntur.
@@ -152,13 +152,13 @@ solummodo tamquam memoriae ad libitum celebrari possunt.
 Si eodem die plures inscribuntur in calendario memoriae ad libitum,
 una tantum celebrari potest, omissis ceteris.
 
-15 . In sabbatis per annum, in quibus non occurrat memoria obliga-
+15. In sabbatis per annum, in quibus non occurrat memoria obliga-
 toria, fieri potest memoria ad libitum de beata Maria Virgine.
 
 
 #### IV. De feriis
 
-16 . Hebdomadae dies, qui post dominicam decurrunt, feriae nuncu-
+16. Hebdomadae dies, qui post dominicam decurrunt, feriae nuncu-
 pantur; diversa tamen ratione celebrantur, iuxta momentum ipsis pro-
 prium:
 
@@ -174,13 +174,13 @@ memoriis componuntur.
 
 ### Tit. II - De anni circulo
 
-17 . Totum Christi mysterium per anni circulum ab Ecclesia recolitur,
+17. Totum Christi mysterium per anni circulum ab Ecclesia recolitur,
 ab Incarnatione usque ad diem Pentecostes et ad exspectationem adventus
 Domini. 6
 
 #### I. De Triduo paschali
 
-18 . Cum vero humanae redemptionis et perfectae Dei glorificationis
+18. Cum vero humanae redemptionis et perfectae Dei glorificationis
 opus adimpleverit Christus praecipue per suum paschale mysterium, quo
 mortem nostram moriendo destruxit et vitam resurgendo reparavit,
 sacrum paschale Triduum Passionis et Resurrectionis Domini uti totius
@@ -320,7 +320,7 @@ nis Iesu.
 36. Dominica a die 2 ad diem 5 ianuarii occurrens est Dominica II
 post Nativitatem.
 
-37 . Epiphania Domini celebratur die 6 ianuarii, nisi, ubi non est de
+37. Epiphania Domini celebratur die 6 ianuarii, nisi, ubi non est de
 praecepto servanda, assignata sit dominicae a die 2 ad diem 8 ianuarii
 occurrenti (cf. n. 7).
 
@@ -337,26 +337,26 @@ tes diriguntur ad exspectationem secundi Christi adventus in fine tem-
 porum. His duabus rationibus, tempus Adventus se praebet ut tempus
 devotae ac iucundae exspectationis.
 
-40 . Tempus Adventus incipit a I Vesperis dominicae quae incidit in
+40. Tempus Adventus incipit a I Vesperis dominicae quae incidit in
 diem 30 novembris vel est huic vicinior, et explicit ante I Vesperas Na-
 tivitatis Domini.
 
-41 . Dominicae huius temporis nuncupantur dominicae I, II, III, IV
+41. Dominicae huius temporis nuncupantur dominicae I, II, III, IV
 Adventus.
 
-42 . Feriae a die 17 ad diem 24 decembris inclusive modo magis di-
+42. Feriae a die 17 ad diem 24 decembris inclusive modo magis di-
 recto ad praeparationem Nativitatis Domini ordinantur.
 
 
 #### VI. De tempore « per annum »
 
-43 . Praeter tempora propriam indolem habentia, triginta tres vel tri-
+43. Praeter tempora propriam indolem habentia, triginta tres vel tri-
 ginta quattuor supersunt hebdomadae per anni circulum, in quibus non
 celebratur peculiaris mysterii Christi aspectus; sed potius ipsum myste-
 rium Christi in sua plenitudine recolitur, praesertim vero diebus domi-
 nicis. Huiusmodi periodus tempus « per annum » nuncupatur.
 
-44 . Tempus « per annum » incipit feria II quae sequitur dominicam post
+44. Tempus « per annum » incipit feria II quae sequitur dominicam post
 diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante
 Quadragesimam inclusive; iterum incipit feria II post dominicam Pen-
 tecostes et explicit ante I Vesperas dominicae I Adventus.
@@ -647,7 +647,7 @@ tum ante Pentecosten inclusive.
 
 Feriae per annum.
 
-60 . Si eodem die plures celebrationes occurrunt, fit de ea quae in ta-
+60. Si eodem die plures celebrationes occurrunt, fit de ea quae in ta-
 bula dierum liturgicorum superiorem obtinet locum.
 
 Attamen:
@@ -664,7 +664,7 @@ gico qui praecedentia gaudeat, ad proximiorem diem transferatur qui sit
 liber a diebus sub nn. 1-8 in tabula praecedentiae recensitis. Reliquae
 celebrationes eo anno omittuntur.
 
-61 . Si vero eodem die celebrandae sint Vesperae Officii currentis et
+61. Si vero eodem die celebrandae sint Vesperae Officii currentis et
 I Vesperae diei sequentis, praevalent Vesperae celebrationis quae in
 tabula dierum liturgicorum superiorem obtinet locum; in casu autem
 paritatis, Vesperae diei currentis.
