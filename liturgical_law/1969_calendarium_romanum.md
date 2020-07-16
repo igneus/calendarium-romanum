@@ -94,9 +94,7 @@ a) Epiphania, dominicae a die 2 ad diem 8 ianuarii occurrenti;
 
 b) Ascensio, dominicae VII Paschae;
 
-c) Sollemnitas SSjnae Eucharistiae, dominicae post SS.mam Trinitatem.
-
-S S Co x, (p io CfirljTi
+c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
 
 #### III. De sollemnitatibus, festis et memoriis
 
