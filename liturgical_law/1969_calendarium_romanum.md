@@ -39,12 +39,12 @@ explicat nataliciaque Sanctorum commemorat.
 
 Variis autem anni liturgici temporibus, iuxta traditas disciplinas, Ecclesia
 fidelium eruditionem perficit, per pias animi et corporis exercitationes,
-instructionem, precationem, paenitentiae et misericordiae opera. 1
+instructionem, precationem, paenitentiae et misericordiae opera. [1]
 
 **2.** Principia quae sequuntur tum ad ritum romanum tum ad omnes
 alios ritus applicari possunt ac debent, normae tamen practicae solum
 ritum romanum spectare intellegendae sunt, nisi agatur de iis quae ex
-ipsa rei natura alios quoque ritus afficiant. 2
+ipsa rei natura alios quoque ritus afficiant. [2]
 
 ### Tit. I - De diebus liturgicis
 
@@ -61,17 +61,14 @@ vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 **4.** Primo uniuscuiusque hebdomadae die, quae dies Domini seu dies
 dominica nuncupatur. Ecclesia, ex traditione apostolica, quae originem
 ducit ab ipsa die Resurrectionis Christi, mysterium paschale celebrat.
-Itaque dominica uti primordialis dies festus haberi debet. 3
+Itaque dominica uti primordialis dies festus haberi debet. [3]
 
+    1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
+    A.A.S. 56 (1964) pp. 125-126.
 
-1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
-A.A.S. 56 (1964) pp. 125-126.
+    5 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
 
-5 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
-
-3 Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
-
-
+    3 Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
 
 **5.** Propter suum peculiare momentum, dominica suam cedit celebrationem
 solummodo sollemnitatibus, necnon festis Domini; Dominicae
@@ -105,12 +102,12 @@ S S Co x, (p io CfirljTi
 
 **8.** Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
 Dei Genetricem Mariam cum peculiari amore veneratur, memoriasque
-Martyrum aliorumque Sanctorum pietati fidelium proponit. 4
+Martyrum aliorumque Sanctorum pietati fidelium proponit. [4]
 
 **9.** Sancti qui momentum universale prae se ferunt in Ecclesia universa
 obligatorie celebrantur; ceteri, aut in calendario inscribuntur, ad libitum
 tamen celebrandi, aut particulari cuique Ecclesiae, vel nationi, vel
-religiosae familiae, relinquuntur colendi. 5
+religiosae familiae, relinquuntur colendi. [5]
 
 **10.** Celebrationes, iuxta momentum quod ipsis tribuitur, ita inter se
 distinguuntur et nominantur: sollemnitas, festum, memoria.
@@ -123,13 +120,10 @@ Missa horis vespertinis celebratur.
 **12.** Summarum sollemnitatum Paschae et Nativitatis celebratio per
 octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 
-4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
-A.A.S. 56 (1964) pp. 125-126.
+    4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
+    A.A.S. 56 (1964) pp. 125-126.
 
-s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
-
-
-
+    s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
 **13.** Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
@@ -164,7 +158,7 @@ memoriis componuntur.
 
 **17.** Totum Christi mysterium per anni circulum ab Ecclesia recolitur,
 ab Incarnatione usque ad diem Pentecostes et ad exspectationem adventus
-Domini. 6
+Domini. [6]
 
 #### I. De Triduo paschali
 
@@ -173,27 +167,25 @@ opus adimpleverit Christus praecipue per suum paschale mysterium, quo
 mortem nostram moriendo destruxit et vitam resurgendo reparavit,
 sacrum paschale Triduum Passionis et Resurrectionis Domini uti totius
 
-6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
-A.A.S. 56 (1964) p. 125.
+    6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
+    A.A.S. 56 (1964) p. 125.
 
-
-
-anni liturgici culmen effulget. 7 Fastigium igitur, quod dies dominica habet
-in hebdomada, sollemnitas Paschae habet in anno liturgico. 8
+anni liturgici culmen effulget. [7] Fastigium igitur, quod dies dominica habet
+in hebdomada, sollemnitas Paschae habet in anno liturgico. [8]
 
 **19.** Triduum paschale Passionis et Resurrectionis Domini incipit a Missa
 vespertina in Cena Domini, habet suum centrum in Vigilia paschali, et
 clauditur Vesperis dominicae Resurrectionis.
 
-**20.** Feria VI in Passione Domini, 9 et, iuxta opportunitatem, etiam
-Sabbato sancto usque ad Vigiliam paschalem, 10 ubique celebratur sacrum
+**20.** Feria VI in Passione Domini, [9] et, iuxta opportunitatem, etiam
+Sabbato sancto usque ad Vigiliam paschalem, [10] ubique celebratur sacrum
 ieiunium paschale.
 
 Feria VI Hebdomadae sanctae, horis postmeridianis, fit celebratio
 Passionis Domini.
 
 **21.** Vigilia paschalis, nocte sancta qua Dominus resurrexit, habetur
-ut « mater omnium sanctarum Vigiliarum », lx in qua Ecclesia Christi
+ut « mater omnium sanctarum Vigiliarum », [11] in qua Ecclesia Christi
 resurrectionem vigilando exspectat, eamque in sacramentis celebrat. Ergo
 tota huius sacrae Vigiliae celebratio nocte peragi debet, ita ut incipiatur
 post initium noctis et finiatur ante diei dominicae diluculum.
@@ -202,7 +194,7 @@ post initium noctis et finiatur ante diei dominicae diluculum.
 
 **22.** Quinquaginta dies a dominica Resurrectionis ad dominicam Pentecostes
 in laetitia et exsultatione celebrantur sicut unus dies festus,
-immo « magna dominica ». 12
+immo « magna dominica ». [12]
 
 Hi sunt dies in quibus praecipue cantatur Alleluia.
 
@@ -218,22 +210,20 @@ ubi non est de praecepto servanda, VII dominicae Paschae fuerit assignata (cf. n
 
 **26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten inclusive ad adventum praeparant Spiritus Sancti Paracliti.
 
-7 Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
-A.A.S. 56 (1964) p. 99.
+    7 Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
+    A.A.S. 56 (1964) p. 99.
 
-s Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
+    s Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
 
-9 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
-p. 184.
+    9 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
+    p. 184.
 
-10 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 110:
-A.A.S. 56 (1964) p. 127.
+    10 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 110:
+    A.A.S. 56 (1964) p. 127.
 
-11 S. Augustinus, Sermo 219: PL 38, 1088.
+    11 S. Augustinus, Sermo 219: PL 38, 1088.
 
-12 S. Athanasius, Epist. fest. 1: PG 26, 1366.
-
-
+    12 S. Athanasius, Epist. fest. 1: PG 26, 1366.
 
 #### III. De tempore Quadragesimae
 
@@ -241,7 +231,7 @@ A.A.S. 56 (1964) p. 127.
 liturgia enim quadragesimalis tam catechumenos, per diversos initiationis Christianae
 gradus, quam fideles, memoriam Baptismi
 recolentes et paenitentiam agentes, componit ad celebrandum paschale
-mysterium. 13
+mysterium. [13]
 
 **28.** Tempus Quadragesimae decurrit a feria IV Cinerum ad Missam
 in Cena Domini exclusive.
@@ -250,7 +240,7 @@ Ab initio Quadragesimae usque ad Vigiliam paschalem non dicitur
 Alleluia.
 
 **29.** Feria IV in capite Quadragesimae, quae ubique habetur ut dies
-ieiunii, 14 imponuntur cineres.
+ieiunii, [14] imponuntur cineres.
 
 **30.** Dominicae huius temporis appellantur dominicae I, II, III, IV, V
 in Quadragesima. Dominica sexta, in qua initium sumit Hebdomada sancta,
@@ -285,13 +275,11 @@ b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
 c) Die 27 decembris, fit festum S. Ioannis, Apostoli et Evangelistae.
 
-13 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 109:
-A.A.S. 56 (1964) p. 127.
+    13 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 109:
+    A.A.S. 56 (1964) p. 127.
 
-14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
-p. 184.
-
-
+    14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
+    p. 184.
 
 d) Die 28 decembris, fit festum Ss. Innocentium.
 
