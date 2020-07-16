@@ -44,3 +44,37 @@ I18n.locale = ENV['LOCALE'] || :en
 # make the gem's executable(s) easily available for aruba
 gem_bin = File.expand_path('../../bin', __FILE__)
 ENV['PATH'] = "#{gem_bin}:#{ENV['PATH']}"
+
+class MarkdownDocument
+  def initialize(str)
+    @str = str
+  end
+
+  def each_ruby_example
+    example = nil
+    line = nil
+    @str.each_line.with_index(1) do |l, i|
+      if example.nil?
+        if example_beginning?(l)
+          example = ''
+          line = i + 1
+        end
+      elsif example_end?(l)
+        yield example, line
+        example = nil
+      else
+        example += l
+      end
+    end
+  end
+
+  protected
+
+  def example_beginning?(line)
+    line =~ /^```ruby/
+  end
+
+  def example_end?(line)
+    line =~ /```/
+  end
+end

@@ -86,6 +86,47 @@ c) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
 
 d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. universorum Regis.
 
+```ruby
+calendar = CR::PerpetualCalendar.new
+
+# a) Dominica infra octavam Nativitatis Domini, fit festum S. Familiae
+d = Date.new 2013, 12, 29
+expect(d).to be_sunday
+day = calendar[d]
+expect(day.celebrations[0]).to be_feast
+expect(day.celebrations[0].symbol).to be :holy_family
+
+# b) Dominica post diem 6 ianuarii, fit festum Baptismatis Domini;
+d = Date.new 2014, 1, 12
+expect(d).to be_sunday
+day = calendar[d]
+expect(day.celebrations[0]).to be_feast
+expect(day.celebrations[0].symbol).to be :baptism_of_lord
+
+# c) Dominica post Pentecosten, fit sollemnitas SS.mae Trinitatis;
+d1 = Date.new 2014, 6, 8
+expect(calendar[d1].celebrations[0].symbol).to be :pentecost
+
+d = Date.new 2014, 6, 15
+expect(d).to be_sunday
+day = calendar[d]
+expect(day.celebrations[0]).to be_solemnity
+expect(day.celebrations[0].symbol).to be :holy_trinity
+
+# d) Dominica ultima « per annum », fit sollemnitas D. N. I. C. universorum Regis.
+d1 = Date.new 2014, 11, 30
+expect(d1).to be_sunday
+I18n.with_locale(:en) do
+  expect(calendar[d1].celebrations[0].title).to eq '1st Sunday of Advent'
+end
+
+d = Date.new 2014, 11, 23
+expect(d).to be_sunday
+day = calendar[d]
+expect(day.celebrations[0]).to be_solemnity
+expect(day.celebrations[0].symbol).to be :christ_king
+```
+
 **7.** Ubi autem sollemnitates Epiphaniae, Ascensionis et SS.mae Eucharistiae
 non sunt de praecepto servandae, assignentur dominicae tamquam
 diei proprio, hac ratione:
