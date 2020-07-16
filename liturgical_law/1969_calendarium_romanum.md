@@ -28,9 +28,7 @@ MCMLXIX
 
 # NORMAE UNIVERSALES DE ANNO LITURGICO ET DE CALENDARIO
 
-
-## Caput primum
-## DE ANNO LITURGICO
+## Caput primum - DE ANNO LITURGICO
 
 **1.** Christi opus salutiferum sancta Ecclesia, statis diebus per anni
 decursum, sacra recordatione celebrat. In unaquaque hebdomada, die
@@ -48,7 +46,6 @@ alios ritus applicari possunt ac debent, normae tamen practicae solum
 ritum romanum spectare intellegendae sunt, nisi agatur de iis quae ex
 ipsa rei natura alios quoque ritus afficiant. 2
 
-
 ### Tit. I - De diebus liturgicis
 
 #### I. De die liturgico in genere
@@ -58,7 +55,6 @@ praesertim vero Sacrificio eucharistico et Officio divino.
 
 Dies liturgicus decurrit a media nocte ad mediam noctem. Celebratio
 vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
-
 
 #### II. De dominica
 
@@ -152,7 +148,6 @@ una tantum celebrari potest, omissis ceteris.
 **15.** In sabbatis per annum, in quibus non occurrat memoria obligatoria,
 fieri potest memoria ad libitum de beata Maria Virgine.
 
-
 #### IV. De feriis
 
 **16.** Hebdomadae dies, qui post dominicam decurrunt, feriae nuncupantur;
@@ -164,7 +159,6 @@ b) Feriae Adventus, a die 17 ad diem 24 decembris inclusive, et omnes feriae Qua
 
 c) Ceterae feriae omnibus sollemnitatibus et festis cedunt et cum
 memoriis componuntur.
-
 
 ### Tit. II - De anni circulo
 
@@ -203,7 +197,6 @@ ut « mater omnium sanctarum Vigiliarum », lx in qua Ecclesia Christi
 resurrectionem vigilando exspectat, eamque in sacramentis celebrat. Ergo
 tota huius sacrae Vigiliae celebratio nocte peragi debet, ita ut incipiatur
 post initium noctis et finiatur ante diei dominicae diluculum.
-
 
 #### II. De tempore paschali
 
@@ -317,7 +310,6 @@ occurrenti (cf. n. 7).
 **38.** Dominica post diem 6 ianuarii occurrente, fit festum Baptismatis
 Domini.
 
-
 #### V. De tempore Adventus
 
 **39.** Tempus Adventus duplicem habet indolem: est enim tempus praeparationis
@@ -334,7 +326,6 @@ Adventus.
 
 **42.** Feriae a die 17 ad diem 24 decembris inclusive modo magis directo ad praeparationem Nativitatis Domini ordinantur.
 
-
 #### VI. De tempore « per annum »
 
 **43.** Praeter tempora propriam indolem habentia, triginta tres vel
@@ -350,7 +341,6 @@ et explicit ante I Vesperas dominicae I Adventus.
 
 Eadem ratione adhibetur series formulariorum, quae pro dominicis
 et feriis huius temporis invenitur tum in Breviario tum in Missali.
-
 
 #### VII. De Rogationibus et Quattuor anni Temporibus
 
@@ -369,10 +359,7 @@ a competenti auctoritate, attentis necessitatibus localibus.
 **47.** Missa pro singulis diebus harum celebrationum, inter votivas
 eligatur, quae sit magis accommodata supplicationum proposito.
 
-
-## Caput secundum
-## DE CALENDARIO
-
+## Caput secundum - DE CALENDARIO
 
 ### Tit. I - De calendario et celebrationibus in eo inscribendis
 
@@ -461,8 +448,8 @@ Nihil tamen impedit, quominus aliquae celebrationes pro certis locis
 modo sollemniore fiant quam in universa dioecesi vel familia religiosa.
 
 **55.** Celebrationes calendario proprio inscriptae ab omnibus qui ad
-illud calendarium tenentur servari debent; et nonnisi approbante Apostolica Sede e calendario expungi vel gradu mutari possunt.
-
+illud calendarium tenentur servari debent; et nonnisi approbante Apostolica
+Sede e calendario expungi vel gradu mutari possunt.
 
 ### Tit. II - De celebrationum die proprio
 
