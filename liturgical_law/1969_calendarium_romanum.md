@@ -140,23 +140,25 @@ c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
 ```ruby
 calendar = CR::PerpetualCalendar.new(temporale_options: {transfer_to_sunday: [:epiphany, :ascension, :corpus_christi]})
 
-2000.upto(2100) do |year|
+2000.upto(2100) do |liturgical_year|
+  civil_year = liturgical_year + 1
+
   # a) Epiphania, dominicae a die 2 ad diem 8 ianuarii occurrenti;
-  d = CR::Temporale::Dates.epiphany year, sunday: true
+  d = CR::Temporale::Dates.epiphany liturgical_year, sunday: true
   expect(d).to be_sunday
-  expect(d).to be_between(Date.new(year+1, 1, 2), Date.new(year+1, 1, 8))
+  expect(d).to be_between(Date.new(civil_year, 1, 2), Date.new(civil_year, 1, 8))
   expect(calendar[d].celebrations[0].symbol).to be :epiphany
 
   # b) Ascensio, dominicae VII Paschae;
-  d = CR::Temporale::Dates.ascension year, sunday: true
+  d = CR::Temporale::Dates.ascension liturgical_year, sunday: true
   expect(d).to be_sunday
-  expect(d).to eq(CR::Temporale::Dates.pentecost(year) - 7)
+  expect(d).to eq(CR::Temporale::Dates.pentecost(liturgical_year) - 7)
   expect(calendar[d].celebrations[0].symbol).to be :ascension
 
   # c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
-  d = CR::Temporale::Dates.corpus_christi year, sunday: true
+  d = CR::Temporale::Dates.corpus_christi liturgical_year, sunday: true
   expect(d).to be_sunday
-  expect(d).to eq(CR::Temporale::Dates.holy_trinity(year) + 7)
+  expect(d).to eq(CR::Temporale::Dates.holy_trinity(liturgical_year) + 7)
   expect(calendar[d].celebrations[0].symbol).to be :corpus_christi
 end
 ```
