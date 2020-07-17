@@ -195,17 +195,15 @@ I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
 
 ```ruby
-sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
+calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load)
 
 presentation = CR::AbstractDate.new 2, 2
 year_on_sunday = (2000..2100).find {|y| presentation.concretize(y).sunday? }
 year_on_weekday = (2000..2100).find {|y| not presentation.concretize(y).sunday? }
 
-calendar = CR::Calendar.new(year_on_weekday-1, sanctorale, vespers: true)
 day = calendar[presentation.concretize(year_on_weekday) - 1]
 expect(day.vespers).to be nil
 
-calendar = CR::Calendar.new(year_on_sunday-1, sanctorale, vespers: true)
 day = calendar[presentation.concretize(year_on_sunday) - 1]
 expect(day.vespers).to be_a CR::Celebration
 expect(day.vespers.symbol).to be :presentation_of_lord
