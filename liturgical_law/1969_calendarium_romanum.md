@@ -194,9 +194,26 @@ octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
 
+```ruby
+sanctorale = CR::Data::GENERAL_ROMAN_ENGLISH.load
+
+presentation = CR::AbstractDate.new 2, 2
+year_on_sunday = (2000..2100).find {|y| presentation.concretize(y).sunday? }
+year_on_weekday = (2000..2100).find {|y| not presentation.concretize(y).sunday? }
+
+calendar = CR::Calendar.new(year_on_weekday-1, sanctorale, vespers: true)
+day = calendar[presentation.concretize(year_on_weekday) - 1]
+expect(day.vespers).to be nil
+
+calendar = CR::Calendar.new(year_on_sunday-1, sanctorale, vespers: true)
+day = calendar[presentation.concretize(year_on_sunday) - 1]
+expect(day.vespers).to be_a CR::Celebration
+expect(day.vespers.symbol).to be :presentation_of_lord
+```
+
 **14.** Memoriae sunt obligatoriae vel ad libitum; earum autem celebratio cum
 celebratione feriae occurrentis componitur secundum normas,
-quae in Institutionibus generalibus 'de Missa et de Officio divino exponuntur.
+quae in Institutionibus generalibus de Missa et de Officio divino exponuntur.
 
 Memoriae vero obligatoriae, quae occurrunt in feriis Quadragesimae,
 solummodo tamquam memoriae ad libitum celebrari possunt.
@@ -206,6 +223,25 @@ una tantum celebrari potest, omissis ceteris.
 
 **15.** In sabbatis per annum, in quibus non occurrat memoria obligatoria,
 fieri potest memoria ad libitum de beata Maria Virgine.
+
+```ruby
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load
+
+free_saturdays = CR::Util::Year.new(2000).select do |date|
+  day = calendar[date]
+
+  date.saturday? &&
+    day.season == CR::Seasons::ORDINARY &&
+	day.celebrations.find {|c| c.rank > CR::Ranks::MEMORIAL_OPTIONAL }.nil?
+end
+
+expect(free_saturdays).not_to be_empty # make sure
+
+free_saturdays.each do |date|
+  expect(calendar[date].celebrations.find {|c| c.symbol == :saturday_memorial_bvm })
+    .not_to be nil
+end
+```
 
 #### IV. De feriis
 
@@ -225,16 +261,15 @@ memoriis componuntur.
 ab Incarnatione usque ad diem Pentecostes et ad exspectationem adventus
 Domini. [6]
 
+    6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
+      A.A.S. 56 (1964) p. 125.
+
 #### I. De Triduo paschali
 
 **18.** Cum vero humanae redemptionis et perfectae Dei glorificationis
 opus adimpleverit Christus praecipue per suum paschale mysterium, quo
 mortem nostram moriendo destruxit et vitam resurgendo reparavit,
 sacrum paschale Triduum Passionis et Resurrectionis Domini uti totius
-
-    6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
-      A.A.S. 56 (1964) p. 125.
-
 anni liturgici culmen effulget. [7] Fastigium igitur, quod dies dominica habet
 in hebdomada, sollemnitas Paschae habet in anno liturgico. [8]
 
@@ -270,8 +305,26 @@ nuncupantur; concluditur autem hoc sacrum quinquaginta dierum tempus dominica Pe
 **24.** Octo primi dies temporis paschalis constituunt octavam Paschae
 et uti sollemnitates Domini celebrantur.
 
+```ruby
+calendar = CR::PerpetualCalendar.new
+
+easter = CR::Temporale::Dates.easter_sunday 2000
+
+easter.upto(easter + 7) do |d|
+  day = calendar[d]
+  expect(day.celebrations.size).to be 1
+  expect(day.celebrations[0]).to be_solemnity
+end
+```
+
 **25.** Quadragesima die post Pascha celebratur Ascensio Domini, nisi,
 ubi non est de praecepto servanda, VII dominicae Paschae fuerit assignata (cf. n. 7).
+
+```ruby
+year = 2000
+expect(CR::Temporale::Dates.easter_sunday(year) + 39)
+  .to eq CR::Temporale::Dates.ascension(year)
+```
 
 **26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten inclusive ad adventum praeparant Spiritus Sancti Paracliti.
 
@@ -303,12 +356,42 @@ in Cena Domini exclusive.
 Ab initio Quadragesimae usque ad Vigiliam paschalem non dicitur
 Alleluia.
 
+```ruby
+year = 2000
+ashes = CR::Temporale::Dates.ash_wednesday year
+maundy = CR::Temporale::Dates.good_friday(year) - 1
+
+calendar = CR::PerpetualCalendar.new
+
+ashes.upto(maundy) do |date|
+  expect(calendar[date].season).to be CR::Seasons::LENT
+end
+
+expect(calendar[ashes - 1].season).not_to be CR::Seasons::LENT
+# TODO: failing, fix
+# expect(calendar[maundy + 1].season).not_to be CR::Seasons::LENT
+```
+
 **29.** Feria IV in capite Quadragesimae, quae ubique habetur ut dies
 ieiunii, [14] imponuntur cineres.
 
 **30.** Dominicae huius temporis appellantur dominicae I, II, III, IV, V
 in Quadragesima. Dominica sexta, in qua initium sumit Hebdomada sancta,
 dicitur « Dominica in palmis de Passione Domini ».
+
+```ruby
+calendar = CR::PerpetualCalendar.new
+
+easter = CR::Temporale::Dates.easter_sunday 2000
+
+I18n.with_locale(:la) do
+  expect(calendar[easter - 7 * 6].celebrations[0].title)
+    .to eq 'Dominica I Quadragesimae' # a slightly different form of the title
+
+  expect(calendar[easter - 7].celebrations[0].title)
+    .to eq 'Dominica in Palmis de Passione Domini'
+end
+```
 
 **31.** Hebdomada sancta ordinatur ad recolendam Passionem Christi
 ab eius ingressu messianico in Ierusalem.
@@ -324,6 +407,21 @@ manifestationum recolere: quod fit tempore Nativitatis.
 
 **33.** Tempus Nativitatis decurrit a I Vesperis Nativitatis Domini usque
 ad dominicam post Epiphaniam, seu post diem 6 ianuarii, inclusive.
+
+```ruby
+year = 2000
+nativity = CR::Temporale::Dates.nativity year
+baptism = CR::Temporale::Dates.baptism_of_lord year
+
+calendar = CR::PerpetualCalendar.new
+
+nativity.upto(baptism) do |date|
+  expect(calendar[date].season).to be CR::Seasons::CHRISTMAS
+end
+
+expect(calendar[nativity - 1].season).not_to be CR::Seasons::CHRISTMAS
+expect(calendar[baptism + 1].season).not_to be CR::Seasons::CHRISTMAS
+```
 
 **34.** Missa in Vigilia Nativitatis adhibetur vespere diei 24 decembris
 sive ante sive post I Vesperas.
@@ -351,8 +449,61 @@ e) Dies 29, 30, 31 sunt dies infra octavam.
 f) Die 1 ianuarii, in octava Nativitatis, fit Sollemnitas Sanctae Dei
 Genetricis Mariae, in qua commemoratur etiam impositio SS.mi Nominis Iesu.
 
+```ruby
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+
+year = 2000
+
+calendar[Date.new(year, 12, 26)].celebrations[0].tap do |c|
+  expect(c).to be_feast
+  expect(c.symbol).to be :stephen
+end
+
+calendar[Date.new(year, 12, 27)].celebrations[0].tap do |c|
+  expect(c).to be_feast
+  expect(c.symbol).to be :john_evangelist
+end
+
+calendar[Date.new(year, 12, 28)].celebrations[0].tap do |c|
+  expect(c).to be_feast
+  expect(c.symbol).to be :innocents
+end
+
+I18n.with_locale(:la) do
+  29.upto(30) do |day|
+    date = Date.new year, 12, day
+    c = calendar[date].celebrations[0]
+
+    if date.sunday?
+      expect(c).to be_feast
+	  expect(c.symbol).to be :holy_family
+    else
+	  expect(c.title).to match /De die .+? infra octavam Nativitatis/
+    end
+  end
+end
+```
+
 **36.** Dominica a die 2 ad diem 5 ianuarii occurrens est Dominica II
 post Nativitatem.
+
+```ruby
+calendar = CR::PerpetualCalendar.new
+
+second_sundays =
+  (2000 .. 2100)
+    .collect {|year| (Date.new(year, 1, 2) .. Date.new(year, 1, 5)).select(&:sunday?) }
+    .flatten
+
+expect(second_sundays).not_to be_empty # make sure
+
+I18n.with_locale(:la) do
+  second_sundays.each do |date|
+    expect(calendar[date].celebrations[0].title)
+	  .to eq 'Dominica II post Nativitatem'
+  end
+end
+```
 
 **37.** Epiphania Domini celebratur die 6 ianuarii, nisi, ubi non est de
 praecepto servanda, assignata sit dominicae a die 2 ad diem 8 ianuarii
@@ -361,19 +512,57 @@ occurrenti (cf. n. 7).
 **38.** Dominica post diem 6 ianuarii occurrente, fit festum Baptismatis
 Domini.
 
+```ruby
+year = 2000
+
+expect(CR::Temporale::Dates.sunday_after(CR::Temporale::Dates.epiphany(year)))
+  .to eq CR::Temporale::Dates.baptism_of_lord year
+```
+
 #### V. De tempore Adventus
 
 **39.** Tempus Adventus duplicem habet indolem: est enim tempus praeparationis
 ad sollemnia Nativitatis, in quibus primus Dei Filii adventus
 ad homines recolitur, ac simul tempus quo per hanc recordationem mentes diriguntur
-ad exspectationem secundi Christi adventus in fine temporum. His duabus rationibus, tempus Adventus se praebet ut tempus
-devotae ac iucundae exspectationis.
+ad exspectationem secundi Christi adventus in fine temporum. His duabus rationibus,
+tempus Adventus se praebet ut tempus devotae ac iucundae exspectationis.
 
 **40.** Tempus Adventus incipit a I Vesperis dominicae quae incidit in
 diem 30 novembris vel est huic vicinior, et explicit ante I Vesperas Nativitatis Domini.
 
+```ruby
+year = 2000
+
+first_advent = CR::Temporale::Dates.first_advent_sunday year
+vigil_of_nativity = CR::Temporale::Dates.nativity(year) - 1
+
+# incidit in diem 30 novembris vel est huic vicinior
+expect(first_advent).to be_within(6).of(Date.new(year, 11, 30))
+
+calendar = CR::PerpetualCalendar.new
+
+first_advent.upto(vigil_of_nativity) do |date|
+  expect(calendar[date].season).to be CR::Seasons::ADVENT
+end
+
+expect(calendar[first_advent - 1].season).not_to be CR::Seasons::ADVENT
+expect(calendar[vigil_of_nativity + 1].season).not_to be CR::Seasons::ADVENT
+```
+
 **41.** Dominicae huius temporis nuncupantur dominicae I, II, III, IV
 Adventus.
+
+```ruby
+year = 2000
+
+calendar = CR::PerpetualCalendar.new
+
+first_advent = CR::Temporale::Dates.first_advent_sunday year
+I18n.with_locale(:la) do
+  expect(calendar[first_advent].celebrations[0].title)
+    .to eq 'Dominica I Adventus'
+end
+```
 
 **42.** Feriae a die 17 ad diem 24 decembris inclusive modo magis directo ad praeparationem Nativitatis Domini ordinantur.
 
@@ -392,6 +581,32 @@ et explicit ante I Vesperas dominicae I Adventus.
 
 Eadem ratione adhibetur series formulariorum, quae pro dominicis
 et feriis huius temporis invenitur tum in Breviario tum in Missali.
+
+```ruby
+year = 2000
+
+after_baptism = CR::Temporale::Dates.baptism_of_lord(year) + 1
+before_ashes = CR::Temporale::Dates.ash_wednesday(year) - 1
+
+after_pentecost = CR::Temporale::Dates.pentecost(year) + 1
+before_first_advent = CR::Temporale::Dates.first_advent_sunday(year + 1) - 1
+
+calendar = CR::PerpetualCalendar.new
+
+after_baptism.upto(before_ashes) do |date|
+  expect(calendar[date].season).to be CR::Seasons::ORDINARY
+end
+
+expect(calendar[after_baptism - 1].season).not_to be CR::Seasons::ORDINARY
+expect(calendar[before_ashes + 1].season).not_to be CR::Seasons::ORDINARY
+
+after_pentecost.upto(before_first_advent) do |date|
+  expect(calendar[date].season).to be CR::Seasons::ORDINARY
+end
+
+expect(calendar[after_pentecost - 1].season).not_to be CR::Seasons::ORDINARY
+expect(calendar[before_first_advent + 1].season).not_to be CR::Seasons::ORDINARY
+```
 
 #### VII. De Rogationibus et Quattuor anni Temporibus
 
