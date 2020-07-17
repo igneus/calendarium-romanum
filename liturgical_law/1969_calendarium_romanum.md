@@ -449,6 +449,8 @@ Genetricis Mariae, in qua commemoratur etiam impositio SS.mi Nominis Iesu.
 ```ruby
 calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
 
+year = 2000 # use fixed year - it would be too unwieldy to make this example work with random year
+
 calendar[Date.new(year, 12, 26)].celebrations[0].tap do |c|
   expect(c).to be_feast
   expect(c.symbol).to be :stephen
