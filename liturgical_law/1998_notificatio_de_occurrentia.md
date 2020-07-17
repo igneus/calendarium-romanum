@@ -36,7 +36,7 @@ years_with_occurrence = (2000 .. 2100).select do |y|
 
   (not celebrations.empty?) &&
     celebrations[0].memorial? &&
-	celebrations[0].rank != CR::Ranks::MEMORIAL_OPTIONAL
+    celebrations[0].rank != CR::Ranks::MEMORIAL_OPTIONAL
 end
 
 expect(years_with_occurrence).not_to be_empty # make sure

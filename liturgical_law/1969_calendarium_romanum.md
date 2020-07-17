@@ -230,7 +230,7 @@ free_saturdays = CR::Util::Year.new(2000).select do |date|
 
   date.saturday? &&
     day.season == CR::Seasons::ORDINARY &&
-	day.celebrations.find {|c| c.rank > CR::Ranks::MEMORIAL_OPTIONAL }.nil?
+    day.celebrations.find {|c| c.rank > CR::Ranks::MEMORIAL_OPTIONAL }.nil?
 end
 
 expect(free_saturdays).not_to be_empty # make sure
@@ -471,9 +471,9 @@ I18n.with_locale(:la) do
 
     if date.sunday?
       expect(c).to be_feast
-	  expect(c.symbol).to be :holy_family
+      expect(c.symbol).to be :holy_family
     else
-	  expect(c.title).to match /De die .+? infra octavam Nativitatis/
+      expect(c.title).to match /De die .+? infra octavam Nativitatis/
     end
   end
 end
@@ -495,7 +495,7 @@ expect(second_sundays).not_to be_empty # make sure
 I18n.with_locale(:la) do
   second_sundays.each do |date|
     expect(calendar[date].celebrations[0].title)
-	  .to eq 'Dominica II post Nativitatem'
+      .to eq 'Dominica II post Nativitatem'
   end
 end
 ```
