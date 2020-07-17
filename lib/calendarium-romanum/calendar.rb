@@ -26,14 +26,14 @@ module CalendariumRomanum
     #   @param temporale [Temporale, nil]
     #     If not provided, +Temporale+ for the given year with default
     #     configuration will built.
-    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
+    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
     #
     # @overload initialize(temporale, sanctorale=nil, vespers: false)
     #   @param temporale [Temporale]
     #   @param sanctorale [Sanctorale, nil]
     #     If not provided, the +Calendar+ will only know celebrations
     #     of the temporale cycle, no feasts of the saints!
-    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#  vespers}
+    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
     #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
