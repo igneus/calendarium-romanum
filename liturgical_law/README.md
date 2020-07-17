@@ -11,4 +11,12 @@ by the library.
 ```ruby
 # RSpec expectations are available in the code blocks
 expect(1).to be_truthy
+
+# method `year` returns a random year (the same for the whole example, even if called multiple times)
+# and should be used in all examples which need a single year and don't require a particular one
+expect(year).to be_a Integer
+expect(year).to be >= 1970
+
+a = year; b = year
+expect(a).to be b
 ```
