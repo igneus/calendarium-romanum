@@ -31,7 +31,7 @@ Archiepiscopus a Secretis
 sanctorale = CR::Data::GENERAL_ROMAN_LATIN.load
 calendar = CR::PerpetualCalendar.new sanctorale: sanctorale
 
-years_with_occurrence = (2000 .. 2100).select do |y|
+has_occurrence = proc do |y|
   celebrations = sanctorale[CR::Temporale::Dates.immaculate_heart(y)]
 
   (not celebrations.empty?) &&
@@ -39,6 +39,12 @@ years_with_occurrence = (2000 .. 2100).select do |y|
     celebrations[0].rank != CR::Ranks::MEMORIAL_OPTIONAL
 end
 
+# "Talis occurrentia accidentalis non invenitur ante annum 2003."
+# (civil year 2003 is meant, i.e. liturgical year 2002/3, denoted simply as 2002 by the library)
+expect((1996 .. 2001).select(&has_occurrence))
+  .to be_empty
+
+years_with_occurrence = (2002 .. 2100).select &has_occurrence
 expect(years_with_occurrence).not_to be_empty # make sure
 
 # standard rank is obligatory memorial
