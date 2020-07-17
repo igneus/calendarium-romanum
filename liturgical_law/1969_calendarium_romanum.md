@@ -64,7 +64,7 @@ ducit ab ipsa die Resurrectionis Christi, mysterium paschale celebrat.
 Itaque dominica uti primordialis dies festus haberi debet. [3]
 
     1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
-    A.A.S. 56 (1964) pp. 125-126.
+      A.A.S. 56 (1964) pp. 125-126.
 
     5 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
 
@@ -184,9 +184,9 @@ Missa horis vespertinis celebratur.
 octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 
     4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
-    A.A.S. 56 (1964) pp. 125-126.
+      A.A.S. 56 (1964) pp. 125-126.
 
-    s Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
+    5 Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
 **13.** Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
@@ -231,7 +231,7 @@ mortem nostram moriendo destruxit et vitam resurgendo reparavit,
 sacrum paschale Triduum Passionis et Resurrectionis Domini uti totius
 
     6 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 102:
-    A.A.S. 56 (1964) p. 125.
+      A.A.S. 56 (1964) p. 125.
 
 anni liturgici culmen effulget. [7] Fastigium igitur, quod dies dominica habet
 in hebdomada, sollemnitas Paschae habet in anno liturgico. [8]
@@ -273,16 +273,15 @@ ubi non est de praecepto servanda, VII dominicae Paschae fuerit assignata (cf. n
 
 **26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten inclusive ad adventum praeparant Spiritus Sancti Paracliti.
 
-    7 Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
-    A.A.S. 56 (1964) p. 99.
+    7  Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
+       A.A.S. 56 (1964) p. 99.
 
-    s Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
+    8  Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
 
-    9 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
-    p. 184.
+    9  Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
 
     10 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 110:
-    A.A.S. 56 (1964) p. 127.
+       A.A.S. 56 (1964) p. 127.
 
     11 S. Augustinus, Sermo 219: PL 38, 1088.
 
@@ -339,10 +338,9 @@ b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 c) Die 27 decembris, fit festum S. Ioannis, Apostoli et Evangelistae.
 
     13 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 109:
-    A.A.S. 56 (1964) p. 127.
+       A.A.S. 56 (1964) p. 127.
 
-    14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966)
-    p. 184.
+    14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
 
 d) Die 28 decembris, fit festum Ss. Innocentium.
 
