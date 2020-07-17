@@ -62,6 +62,20 @@ describe CR::PerpetualCalendar do
         expect(cache[2000]).to be calendar
       end
     end
+
+    describe 'with vespers' do
+      it 'by default creates Calendars without Vespers' do
+        pc = described_class.new()
+        calendar = pc.calendar_for_year(year)
+        expect(calendar.populates_vespers?).to be false
+      end
+
+      it 'by creates Calendars with Vespers if asked for' do
+        pc = described_class.new(vespers: true)
+        calendar = pc.calendar_for_year(year)
+        expect(calendar.populates_vespers?).to be true
+      end
+    end
   end
 
   describe '#day' do
