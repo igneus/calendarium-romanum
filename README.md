@@ -51,7 +51,7 @@ freely choose between GNU/LGPL 3 and MIT
 ## Project status, Backward compatibility
 
 The gem's public interface still evolves and each minor release
-contains several breaking changes. There is no backward compatibility
+contains several breaking changes. There is no guaranteed backward compatibility
 between minor versions.
 This will continue until release of v1.0.0.
 
@@ -61,13 +61,13 @@ the dependency to a particular minor version.
 In your app's Gemfile
 
 ```
-gem 'calendarium-romanum', '~>0.6.0'
+gem 'calendarium-romanum', '~>0.7.0'
 ```
 
 or in gemspec of your gem
 
 ```
-spec.add_dependency 'calendarium-romanum', '~>0.6.0'
+spec.add_dependency 'calendarium-romanum', '~>0.7.0'
 ```
 
 ## Usage
