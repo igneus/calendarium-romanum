@@ -11,6 +11,13 @@ Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
           cls = Class.new do
             # make RSpec expectations available for the code example
             extend RSpec::Matchers
+
+            class << self
+              def year
+                # random year, but stays the same for the whole example/code block
+                @year ||= rand(1970 .. 3000)
+              end
+            end
           end
 
           cls.class_eval(code, path, line)

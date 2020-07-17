@@ -321,7 +321,6 @@ end
 ubi non est de praecepto servanda, VII dominicae Paschae fuerit assignata (cf. n. 7).
 
 ```ruby
-year = 2000
 expect(CR::Temporale::Dates.easter_sunday(year) + 39)
   .to eq CR::Temporale::Dates.ascension(year)
 ```
@@ -357,7 +356,6 @@ Ab initio Quadragesimae usque ad Vigiliam paschalem non dicitur
 Alleluia.
 
 ```ruby
-year = 2000
 ashes = CR::Temporale::Dates.ash_wednesday year
 maundy = CR::Temporale::Dates.good_friday(year) - 1
 
@@ -409,7 +407,6 @@ manifestationum recolere: quod fit tempore Nativitatis.
 ad dominicam post Epiphaniam, seu post diem 6 ianuarii, inclusive.
 
 ```ruby
-year = 2000
 nativity = CR::Temporale::Dates.nativity year
 baptism = CR::Temporale::Dates.baptism_of_lord year
 
@@ -451,8 +448,6 @@ Genetricis Mariae, in qua commemoratur etiam impositio SS.mi Nominis Iesu.
 
 ```ruby
 calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
-
-year = 2000
 
 calendar[Date.new(year, 12, 26)].celebrations[0].tap do |c|
   expect(c).to be_feast
@@ -513,8 +508,6 @@ occurrenti (cf. n. 7).
 Domini.
 
 ```ruby
-year = 2000
-
 expect(CR::Temporale::Dates.sunday_after(CR::Temporale::Dates.epiphany(year)))
   .to eq CR::Temporale::Dates.baptism_of_lord year
 ```
@@ -531,8 +524,6 @@ tempus Adventus se praebet ut tempus devotae ac iucundae exspectationis.
 diem 30 novembris vel est huic vicinior, et explicit ante I Vesperas Nativitatis Domini.
 
 ```ruby
-year = 2000
-
 first_advent = CR::Temporale::Dates.first_advent_sunday year
 vigil_of_nativity = CR::Temporale::Dates.nativity(year) - 1
 
@@ -553,8 +544,6 @@ expect(calendar[vigil_of_nativity + 1].season).not_to be CR::Seasons::ADVENT
 Adventus.
 
 ```ruby
-year = 2000
-
 calendar = CR::PerpetualCalendar.new
 
 first_advent = CR::Temporale::Dates.first_advent_sunday year
@@ -583,8 +572,6 @@ Eadem ratione adhibetur series formulariorum, quae pro dominicis
 et feriis huius temporis invenitur tum in Breviario tum in Missali.
 
 ```ruby
-year = 2000
-
 after_baptism = CR::Temporale::Dates.baptism_of_lord(year) + 1
 before_ashes = CR::Temporale::Dates.ash_wednesday(year) - 1
 
