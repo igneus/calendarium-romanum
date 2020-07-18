@@ -141,13 +141,17 @@ module CalendariumRomanum
     #   @return [Boolean]
     # @!method memorial?
     #   @return [Boolean]
+    # @!method optional_memorial?
+    #   @return [Boolean]
+    # @!method obligatory_memorial?
+    #   @return [Boolean]
     # @!method sunday?
     #   @return [Boolean]
     #   @since 0.6.0
     # @!method ferial?
     #   @return [Boolean]
     #   @since 0.6.0
-    def_delegators :@rank, :solemnity?, :feast?, :memorial?, :sunday?, :ferial?
+    def_delegators :@rank, :solemnity?, :feast?, :memorial?, :optional_memorial?, :obligatory_memorial?, :sunday?, :ferial?
 
     # Feast title/name
     #

@@ -55,6 +55,23 @@ describe CR::Rank do
     it { expect(CR::Ranks::FERIAL.memorial?).to be false }
   end
 
+  describe '#optional_memorial?' do
+    it { expect(CR::Ranks::MEMORIAL_OPTIONAL.optional_memorial?).to be true }
+
+    (CR::Ranks.all - [CR::Ranks::MEMORIAL_OPTIONAL]).each do |rank|
+      it { expect(rank.optional_memorial?).to be false }
+    end
+  end
+
+  describe '#obligatory_memorial?' do
+    it { expect(CR::Ranks::MEMORIAL_GENERAL.obligatory_memorial?).to be true }
+    it { expect(CR::Ranks::MEMORIAL_PROPER.obligatory_memorial?).to be true }
+
+    (CR::Ranks.all - [CR::Ranks::MEMORIAL_GENERAL, CR::Ranks::MEMORIAL_PROPER]).each do |rank|
+      it { expect(rank.obligatory_memorial?).to be false }
+    end
+  end
+
   describe '#sunday?' do
     it { expect(CR::Ranks::SUNDAY_UNPRIVILEGED.sunday?).to be true }
     it { expect(CR::Ranks::FERIAL.sunday?).to be false }

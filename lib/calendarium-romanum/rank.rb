@@ -68,6 +68,16 @@ module CalendariumRomanum
     end
 
     # @return [Boolean]
+    def optional_memorial?
+      self == Ranks::MEMORIAL_OPTIONAL
+    end
+
+    # @return [Boolean]
+    def obligatory_memorial?
+      memorial? && !optional_memorial?
+    end
+
+    # @return [Boolean]
     # @since 0.6.0
     def ferial?
       self == Ranks::FERIAL ||
