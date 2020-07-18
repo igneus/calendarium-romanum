@@ -35,6 +35,7 @@ module CalendariumRomanum
     end
 
     GENERAL_ROMAN_LATIN = SanctoraleFile.new('universal-la.txt')
+    GENERAL_ROMAN_LATIN_1969 = SanctoraleFile.new('universal-1969-la.txt')
     GENERAL_ROMAN_ENGLISH = SanctoraleFile.new('universal-en.txt')
     GENERAL_ROMAN_FRENCH = SanctoraleFile.new('universal-fr.txt')
     GENERAL_ROMAN_ITALIAN = SanctoraleFile.new('universal-it.txt')
@@ -45,6 +46,7 @@ module CalendariumRomanum
       # only calendars of broader interest have constants defined
       [
         GENERAL_ROMAN_LATIN,
+        GENERAL_ROMAN_LATIN_1969,
         GENERAL_ROMAN_ENGLISH,
         GENERAL_ROMAN_FRENCH,
         GENERAL_ROMAN_ITALIAN,
