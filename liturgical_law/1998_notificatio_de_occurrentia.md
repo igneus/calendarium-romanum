@@ -35,8 +35,7 @@ has_occurrence = proc do |y|
   celebrations = sanctorale[CR::Temporale::Dates.immaculate_heart(y)]
 
   (not celebrations.empty?) &&
-    celebrations[0].memorial? &&
-    celebrations[0].rank != CR::Ranks::MEMORIAL_OPTIONAL
+    celebrations[0].obligatory_memorial?
 end
 
 # "Talis occurrentia accidentalis non invenitur ante annum 2003."
