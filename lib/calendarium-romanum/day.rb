@@ -1,5 +1,3 @@
-require 'forwardable'
-
 module CalendariumRomanum
 
   # Information on one particular day of the liturgical year
@@ -104,7 +102,7 @@ module CalendariumRomanum
   # some days have one,
   # some have more among which one is to be chosen
   class Celebration
-    extend Forwardable
+    include RankPredicates
 
     # @param title [String|Proc]
     #   Celebration title/name.
@@ -134,24 +132,6 @@ module CalendariumRomanum
 
     # @return [Rank]
     attr_reader :rank
-
-    # @!method solemnity?
-    #   @return [Boolean]
-    # @!method feast?
-    #   @return [Boolean]
-    # @!method memorial?
-    #   @return [Boolean]
-    # @!method optional_memorial?
-    #   @return [Boolean]
-    # @!method obligatory_memorial?
-    #   @return [Boolean]
-    # @!method sunday?
-    #   @return [Boolean]
-    #   @since 0.6.0
-    # @!method ferial?
-    #   @return [Boolean]
-    #   @since 0.6.0
-    def_delegators :@rank, :solemnity?, :feast?, :memorial?, :optional_memorial?, :obligatory_memorial?, :sunday?, :ferial?
 
     # Feast title/name
     #

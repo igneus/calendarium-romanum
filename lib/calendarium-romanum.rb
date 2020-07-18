@@ -8,6 +8,7 @@ end
   version
   i18n_setup
   abstract_date
+  rank_predicates
   rank
   enum
   enums
