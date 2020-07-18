@@ -21,11 +21,10 @@ Talis occurrentia accidentalis non invenitur ante annum 2003.
 Ex aedibus Congregationis de Cultu Divino, die 8 mensis decembris 1998, in Sollemnitate Immaculatae Conceptionis beatae Mariae Virginis.
 
 Georgius A. Card. MEDINA ESTÉVEZ
-Praefectus
+*Praefectus*
 
-+ Gerardus M. AGNELO
-
-Archiepiscopus a Secretis
+Gerardus M. AGNELO
+*Archiepiscopus a Secretis*
 
 ```ruby
 sanctorale = CR::Data::GENERAL_ROMAN_LATIN.load

@@ -18,7 +18,7 @@ sollemnitate Epiphaniae occurrat et proinde celebrari non possit.
 Attentis insuper petitionibus pluribus de hac re factis, Sacra haec Congregatio pro Sacramentis
 et Cultu Divino, approbante Summo Pontifice PAULO VI, statuit:
 
-In locis ubi sollemnitas Epiphaniae in dominicam est transferenda et haec die 7  vel 8 ianuarii
+In locis ubi sollemnitas Epiphaniae in dominicam est transferenda et haec die 7 vel 8 ianuarii
 incidit, ita ut festum Baptismatis Domini, eadem die occurrens, esset omittendum, idem festum
 Baptismatis Domini ad feriam II immediate sequentem transferatur.
 
@@ -27,10 +27,10 @@ Contrariis quibuslibet niinime obstantibus.
 Ex aedibus Sacrae Congregationis pro Sacramentis et Cultu Divino, die 7  Octobris 1977.
 
 Antonius Innocenti
-Archiep. tit. Aeclanen. a Secretis
+*Archiep. tit. Aeclanen. a Secretis*
 
 Iacobus R. Card. Knox
-Praefectus
+*Praefectus*
 
 ```ruby
 years = (1977 .. 2100).select do |y|
@@ -41,7 +41,7 @@ expect(years).not_to be_empty # make sure
 
 years.each do |y|
   epiphany = CR::Temporale::Dates.epiphany(y, sunday: true)
-  baptism = CR::Temporale::Dates.baptism_of_lord y, epiphany_on_sunday: true
+  baptism = CR::Temporale::Dates.baptism_of_lord(y, epiphany_on_sunday: true)
 
   expect(baptism).to eq(epiphany + 1)
   expect(baptism).to be_monday
