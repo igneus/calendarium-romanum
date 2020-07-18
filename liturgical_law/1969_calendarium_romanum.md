@@ -427,6 +427,7 @@ antiquam traditionem romanam, scilicet in nocte, in aurora et in die.
 **35.** Nativitas Domini suam habet octavam sic ordinatam:
 
 a) Dominica infra octavam, fit festum S. Familiae Iesu, Mariae et Ioseph.
+*[variant printed in Missale Romanum: "dominica infra octavam, vel, ea deficiente, die 30 decembris"]*
 
 b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
@@ -476,6 +477,19 @@ I18n.with_locale(:la) do
       expect(c.title).to match /De die .+? infra octavam Nativitatis/
     end
   end
+end
+
+# Dominica infra octavam, vel, ea deficiente, die 30 decembris, fit festum S. Familiae
+years_without_sunday = (1970..2100).select do |y|
+  (26..31)
+    .collect {|i| Date.new y, 12, i }
+    .find(&:sunday?)
+    .nil?
+end
+expect(years_without_sunday).not_to be_empty # make sure
+
+years_without_sunday.each do |y|
+  expect(calendar[Date.new(y, 12, 30)].celebrations[0].symbol).to be :holy_family
 end
 ```
 
