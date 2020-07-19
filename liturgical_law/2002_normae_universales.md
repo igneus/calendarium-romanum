@@ -847,6 +847,30 @@ Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadae sanctae,
 semper ad feriam II post dominicam II Paschae erit transferenda.
 Reliquae celebrationes eo anno omittuntur.
 
+```ruby
+# Sollemnitas ... Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadae sanctae,
+# semper ad feriam II post dominicam II Paschae erit transferenda.
+
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+
+annunciation = CR::AbstractDate.new 3, 25
+
+years_in_holy_week = (2000 .. 2100).select do |y|
+  date = annunciation.in_year y + 1
+
+  date >= CR::Temporale::Dates.palm_sunday(y) &&
+    date <= CR::Temporale::Dates.easter_sunday(y)
+end
+
+expect(years_in_holy_week).not_to be_empty
+
+years_in_holy_week.each do |y|
+  date = CR::Temporale::Dates.easter_sunday(y) + 8
+  expect(date).to be_monday
+  expect(calendar[date].celebrations[0].symbol).to be :annunciation
+end
+```
+
 **61.** Si vero eodem die celebrandae sint Vesperae Officii currentis et
 I Vesperae diei sequentis, praevalent Vesperae celebrationis quae in
 tabula dierum liturgicorum superiorem obtinet locum; in casu autem
