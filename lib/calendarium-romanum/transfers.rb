@@ -18,19 +18,26 @@ module CalendariumRomanum
     # @param temporale [Temporale]
     # @param sanctorale [Sanctorale]
     def initialize(temporale, sanctorale)
-      @transferred = {}
       @temporale = temporale
       @sanctorale = sanctorale
+    end
 
-      dates = sanctorale.solemnities.keys.collect do |abstract_date|
+    def self.call(temporale, sanctorale)
+      new(temporale, sanctorale).call
+    end
+
+    def call
+      @transferred = {}
+
+      dates = @sanctorale.solemnities.keys.collect do |abstract_date|
         concretize_abstract_date abstract_date
       end.sort
 
       dates.each do |date|
-        tc = temporale[date]
+        tc = @temporale[date]
         next unless tc.solemnity?
 
-        sc = sanctorale[date]
+        sc = @sanctorale[date]
         next unless sc.size == 1 && sc.first.solemnity?
 
         loser = [tc, sc.first].sort_by(&:rank).first
@@ -44,17 +51,8 @@ module CalendariumRomanum
           end
         @transferred[transfer_to] = loser
       end
-    end
 
-    # @return [Hash<Date=>Celebration>]
-    attr_reader :transferred
-
-    # Retrieve solemnity for the specified day
-    #
-    # @param date [Date]
-    # @return [Celebration, nil]
-    def get(date)
-      @transferred[date]
+      @transferred
     end
 
     private

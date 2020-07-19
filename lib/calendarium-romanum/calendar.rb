@@ -57,7 +57,7 @@ module CalendariumRomanum
       @temporale = temporale || Temporale.new(year)
       @populate_vespers = vespers
 
-      @transferred = Transfers.new(@temporale, @sanctorale)
+      @transferred = Transfers.call(@temporale, @sanctorale).freeze
     end
 
     class << self
@@ -244,7 +244,7 @@ module CalendariumRomanum
     private
 
     def celebrations_for(date)
-      tr = @transferred.get(date)
+      tr = @transferred[date]
       return [tr] if tr
 
       t = @temporale[date]

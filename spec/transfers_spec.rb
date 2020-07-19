@@ -36,7 +36,7 @@ describe CR::Transfers do
   it 'does nothing if there are no sanctorale solemnities' do
     allow(sanctorale).to receive(:solemnities).and_return({})
 
-    expect(transfers.transferred).to be_empty
+    expect(transfers.call).to be_empty
   end
 
   it 'no transfer required' do
@@ -45,7 +45,7 @@ describe CR::Transfers do
     allow(temporale)
       .to receive(:[]).with(Date.new(2001, 5, 5)).and_return(ferial)
 
-    expect(transfers.transferred).to be_empty
+    expect(transfers.call).to be_empty
   end
 
   describe 'logic of finding the target date' do
@@ -59,7 +59,7 @@ describe CR::Transfers do
       date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
       date_set_free(date + 1)
 
-      expect(transfers.transferred).to eq({(date + 1) => solemnity})
+      expect(transfers.call).to eq({(date + 1) => solemnity})
     end
 
     it 'transfers to the preceding day if free and the following day is not' do
@@ -73,7 +73,7 @@ describe CR::Transfers do
       date_set_temporale_impeded(date + 1)
       date_set_free(date - 1)
 
-      expect(transfers.transferred).to eq({(date - 1) => solemnity})
+      expect(transfers.call).to eq({(date - 1) => solemnity})
     end
 
     it 'transfers to the second following day if necessary' do
@@ -88,7 +88,7 @@ describe CR::Transfers do
       date_set_temporale_impeded(date - 1)
       date_set_free(date + 2)
 
-      expect(transfers.transferred).to eq({(date + 2) => solemnity})
+      expect(transfers.call).to eq({(date + 2) => solemnity})
     end
 
     it 'transfers to the second preceding day if necessary' do
@@ -104,7 +104,7 @@ describe CR::Transfers do
       date_set_temporale_impeded(date - 1)
       date_set_free(date - 2)
 
-      expect(transfers.transferred).to eq({(date - 2) => solemnity})
+      expect(transfers.call).to eq({(date - 2) => solemnity})
     end
   end
 
@@ -124,7 +124,7 @@ describe CR::Transfers do
         date_set_free(date - 1)
 
         # date+1 was impeded by celebration_in_the_way
-        expect(transfers.transferred).to eq({(date - 1) => solemnity})
+        expect(transfers.call).to eq({(date - 1) => solemnity})
       end
     end
 
@@ -143,7 +143,7 @@ describe CR::Transfers do
         date_set_free(date - 1)
 
         # celebration_in_the_way smashed, solemnity takes it's place
-        expect(transfers.transferred).to eq({(date + 1) => solemnity})
+        expect(transfers.call).to eq({(date + 1) => solemnity})
       end
     end
   end
@@ -166,7 +166,7 @@ describe CR::Transfers do
       date_set_free(date_b + 1)
       date_set_free(date_a - 1)
 
-      expect(transfers.transferred).to eq({(date_a - 1) => a, (date_b + 1) => b})
+      expect(transfers.call).to eq({(date_a - 1) => a, (date_b + 1) => b})
     end
 
     it 'both forward' do
@@ -177,7 +177,7 @@ describe CR::Transfers do
       date_set_free(date_b + 1)
       date_set_free(date_b + 2)
 
-      expect(transfers.transferred).to eq({(date_b + 1) => a, (date_b + 2) => b})
+      expect(transfers.call).to eq({(date_b + 1) => a, (date_b + 2) => b})
     end
   end
 
@@ -199,7 +199,7 @@ describe CR::Transfers do
 
       # closest free days are before Palm Sunday, but liturgical law explicitly requires
       # transfer to days after Easter Octave
-      expect(transfers.transferred).to eq({destination => solemnity})
+      expect(transfers.call).to eq({destination => solemnity})
     end
   end
 end
