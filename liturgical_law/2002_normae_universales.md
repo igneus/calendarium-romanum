@@ -54,6 +54,29 @@ super omnes sollemnitates praecedentiam habent. Sollemnitates autem in
 his dominicis occurrentes ad feriam secundam sequentem transferuntur,
 nisi agatur de occurrentia in Dominica in Palmis aut in Dominica Resurrectionis Domini.
 
+```ruby
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+
+annunciation = CR::AbstractDate.new 3, 25
+
+years_on_lenten_sunday = (2000 .. 2100).select do |y|
+  date = annunciation.in_year(y)
+
+  date.sunday? &&
+    calendar[date].season == CR::Seasons::LENT &&
+    date < CR::Temporale::Dates.palm_sunday(y - 1) # not in Holy week
+end
+
+expect(years_on_lenten_sunday).not_to be_empty # make sure
+
+years_on_lenten_sunday.each do |y|
+  date = annunciation.concretize(y) + 1
+
+  expect(date).to be_monday
+  expect(calendar[date].celebrations[0].symbol).to be :annunciation
+end
+```
+
 **6.** Dominica excludit per se assignationem perpetuam alius celebrationis. Attamen:
 
 a) dominica infra octavam Nativitatis Domini, fit festum S. Familiae;
