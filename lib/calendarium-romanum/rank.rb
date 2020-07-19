@@ -47,6 +47,19 @@ module CalendariumRomanum
       other.priority <=> priority
     end
 
+    # Returns the next higher rank.
+    #
+    # Allows constructing ranges of ranks.
+    #
+    # @return [Rank]
+    def succ
+      all = CR::Ranks.all
+      index = all.index(self)
+      raise StopIteration.new if index == 0
+
+      all[index - 1]
+    end
+
     private
 
     # Required by the {RankPredicates} mixin
