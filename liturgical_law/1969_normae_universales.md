@@ -53,6 +53,8 @@ vero Adventus, Quadragesimae et Paschae super omnia festa Domini et
 super omnes sollemnitates praecedentiam habent. Sollemnitates autem in
 his dominicis occurrentes, sabbato anticipantur.
 
+**NOTE: par. 5 changed in newer version of the document.**
+
 **6.** Dominica excludit per se assignationem perpetuam alius celebrationis. Attamen:
 
 a) Dominica infra octavam Nativitatis Domini, fit festum S. Familiae;
@@ -167,6 +169,8 @@ octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
 **13.** Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
 occurrunt et pro earum Officio substituuntur.
+
+**NOTE: par. 13 changed in newer version of the document.**
 
 ```ruby
 calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load)
@@ -411,6 +415,8 @@ antiquam traditionem romanam, scilicet in nocte, in aurora et in die.
 **35.** Nativitas Domini suam habet octavam sic ordinatam:
 
 a) Dominica infra octavam, fit festum S. Familiae Iesu, Mariae et Ioseph.
+
+**NOTE: a) changed in newer version of the document.**
 
 b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
@@ -738,6 +744,8 @@ nequeunt transferri.
 Sollemnitas S. Ioseph (die 19 martii), ad alium diem extra Quadragesimam
 a Conferentiis Episcopalibus transferri potest, nisi sit de praecepto servanda.
 
+**NOTE: note on St. Joseph changed in newer version of the document.**
+
 **57.** Si qui Sancti vel Beati una simul calendario inscribuntur, simul
 semper celebrantur, quoties eodem gradu sunt celebrandi, etsi unus aut
 aliqui eorum sunt magis proprii. Si vero unus aut aliqui ex his Sanctis
@@ -771,6 +779,8 @@ Dies infra octavam Paschae.
 
 **3.** Sollemnitates Domini, beatae Mariae Virginis, Sanctorum in calendario generali inscriptae.
 Commemoratio omnium fidelium defunctorum, quae tamen locum cedit dominicae occurrenti.
+
+**NOTE: 3. changed in newer version of the document.**
 
 **4.** Sollemnitates propriae, nempe:
 - a) Sollemnitas Patroni principalis loci seu oppidi aut civitatis.
@@ -832,6 +842,8 @@ b) In occurrentia accidentali, sollemnitas quae impeditur a die liturgico
 qui praecedentia gaudeat, ad proximiorem diem transferatur qui sit
 liber a diebus sub nn. 1-8 in tabula praecedentiae recensitis. Reliquae
 celebrationes eo anno omittuntur.
+
+**NOTE: par. 60 changed in newer version of the document.**
 
 **61.** Si vero eodem die celebrandae sint Vesperae Officii currentis et
 I Vesperae diei sequentis, praevalent Vesperae celebrationis quae in
