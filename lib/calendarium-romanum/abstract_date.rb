@@ -48,6 +48,8 @@ module CalendariumRomanum
       Date.new(year, month, day)
     end
 
+    alias in_year concretize
+
     private
 
     def validate!(month, day)
