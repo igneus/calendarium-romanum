@@ -1,30 +1,9 @@
 ---
-title: Calendarium Romanum
+title: Normae universales de anno liturgico et de calendario
 promulgated: 1969-03-21 S. C. R. Prot. N. R 21/969
 effective_since: 1970-01-01
-source: https://archive.org/stream/CalendariumRomanum1969/Calendarium%20Romanum%20%281969%29_djvu.txt
-note: |
-  From the book only the part with nature of actual liturgical law
-  is reproduced, leaving out everything else (introductory decree
-  promulgating the document and specifying temporary liturgical
-  rules; papal motu proprio; first version of General Roman Calendar,
-  which we provide as data file; litany of saints;
-  commentary by the reform commission)
+source: Calendarium Romanum editio typica 1969 https://archive.org/stream/CalendariumRomanum1969/Calendarium%20Romanum%20%281969%29_djvu.txt
 ---
-
-CALENDARIUM ROMANUM
-
-EX DECRETO SACROSANCTI OECUMENICI
-CONCILII VATICANI II INSTAURATUM
-AUCTORITATE PAULI PP. VI PROMULGATUM
-
-EDITIO TYPICA
-
-TYPIS POLYGLOTTIS VATICANIS
-MCMLXIX
-
-
-
 
 # NORMAE UNIVERSALES DE ANNO LITURGICO ET DE CALENDARIO
 
