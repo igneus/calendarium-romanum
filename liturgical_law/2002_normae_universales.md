@@ -70,7 +70,7 @@ end
 expect(years_on_lenten_sunday).not_to be_empty # make sure
 
 years_on_lenten_sunday.each do |y|
-  date = annunciation.concretize(y) + 1
+  date = annunciation.in_year(y) + 1
 
   expect(date).to be_monday
   expect(calendar[date].celebrations[0].symbol).to be :annunciation
@@ -194,13 +194,13 @@ et temporis Nativitatis occurrunt et pro earum Officio substituuntur.
 calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load)
 
 presentation = CR::AbstractDate.new 2, 2
-year_on_sunday = (2000..2100).find {|y| presentation.concretize(y).sunday? }
-year_on_weekday = (2000..2100).find {|y| not presentation.concretize(y).sunday? }
+year_on_sunday = (2000..2100).find {|y| presentation.in_year(y).sunday? }
+year_on_weekday = (2000..2100).find {|y| not presentation.in_year(y).sunday? }
 
-day = calendar[presentation.concretize(year_on_weekday) - 1]
+day = calendar[presentation.in_year(year_on_weekday) - 1]
 expect(day.vespers).to be nil
 
-day = calendar[presentation.concretize(year_on_sunday) - 1]
+day = calendar[presentation.in_year(year_on_sunday) - 1]
 expect(day.vespers).to be_a CR::Celebration
 expect(day.vespers.symbol).to be :presentation_of_lord
 ```
