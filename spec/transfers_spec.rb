@@ -109,8 +109,8 @@ describe CR::Transfers do
   end
 
   describe 'impeding and non-impeding ranks' do
-    (CR::Ranks.all[0..7]).each do |rank|
-      it "does not transfer solemnity to a day with celebration of rank #{rank}" do
+    (CR::Ranks::FEAST_PROPER .. CR::Ranks::TRIDUUM).each do |rank|
+      it "does not transfer solemnity to a day with celebration of rank #{rank.desc.inspect}" do
         solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
         solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
         allow(sanctorale).to receive(:solemnities).and_return(solemnities)
@@ -128,8 +128,8 @@ describe CR::Transfers do
       end
     end
 
-    (CR::Ranks.all[8..12]).each do |rank|
-      it "does transfer solemnity to a day with celebration of rank #{rank}" do
+    (CR::Ranks::FERIAL .. CR::Ranks::FERIAL_PRIVILEGED).each do |rank|
+      it "does transfer solemnity to a day with celebration of rank #{rank.desc.inspect}" do
         solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
         solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
         allow(sanctorale).to receive(:solemnities).and_return(solemnities)
