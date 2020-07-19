@@ -432,7 +432,6 @@ antiquam traditionem romanam, scilicet in nocte, in aurora et in die.
 **35.** Nativitas Domini suam habet octavam sic ordinatam:
 
 a) Dominica infra octavam, fit festum S. Familiae Iesu, Mariae et Ioseph.
-*[variant printed in Missale Romanum: "dominica infra octavam, vel, ea deficiente, die 30 decembris"]*
 
 b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
@@ -759,8 +758,6 @@ nequeunt transferri.
 
 Sollemnitas S. Ioseph (die 19 martii), ad alium diem extra Quadragesimam
 a Conferentiis Episcopalibus transferri potest, nisi sit de praecepto servanda.
-
-*[variant printed in Missale Romanum: "Sollemnitas S. Ioseph, ubi est de præcepto servanda, si cum Dominica in palmis de Passione Domini occurrit, anticipatur sabbato præcedenti, die 18 martii. Ubi vero non est de præcepto servanda, a Conferentia Episcoporum ad alium diem extra Quadragesimam transferri potest."]*
 
 **57.** Si qui Sancti vel Beati una simul calendario inscribuntur, simul
 semper celebrantur, quoties eodem gradu sunt celebrandi, etsi unus aut
