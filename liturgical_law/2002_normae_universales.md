@@ -473,7 +473,7 @@ I18n.with_locale(:la) do
   end
 end
 
-# Dominica infra octavam, vel, ea deficiente, die 30 decembris, fit festum S. Familiae
+# Dominica infra octavam ... deficiente, die 30 decembris, fit festum S. Familiae
 years_without_sunday = (1970..2100).select do |y|
   (26..31)
     .collect {|i| Date.new y, 12, i }
