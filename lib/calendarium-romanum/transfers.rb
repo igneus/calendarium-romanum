@@ -27,10 +27,10 @@ module CalendariumRomanum
       end.sort
 
       dates.each do |date|
-        tc = temporale.get(date)
+        tc = temporale[date]
         next unless tc.solemnity?
 
-        sc = sanctorale.get(date)
+        sc = sanctorale[date]
         next unless sc.size == 1 && sc.first.solemnity?
 
         loser = [tc, sc.first].sort_by(&:rank).first
@@ -53,10 +53,10 @@ module CalendariumRomanum
 
     private
 
-    def valid_destination?(day)
-      return false if @temporale.get(day).rank >= Ranks::FEAST_PROPER
+    def valid_destination?(date)
+      return false if @temporale[date].rank >= Ranks::FEAST_PROPER
 
-      sc = @sanctorale.get(day)
+      sc = @sanctorale[date]
       return false if sc.size > 0 && sc.first.rank >= Ranks::FEAST_PROPER
 
       true
