@@ -35,13 +35,19 @@ module CalendariumRomanum
 
         loser = [tc, sc.first].sort_by(&:rank).first
 
-        transfer_to = date
-        begin
-          transfer_to = transfer_to.succ
-        end until valid_destination?(transfer_to)
+        transfer_to =
+          if loser.symbol == :annunciation && in_holy_week?(date)
+            monday_easter2 = @temporale.easter_sunday + 8
+            valid_destination?(monday_easter2) ? monday_easter2 : free_day_closest_to(monday_easter2)
+          else
+            free_day_closest_to(date)
+          end
         @transferred[transfer_to] = loser
       end
     end
+
+    # @return [Hash<Date=>Celebration>]
+    attr_reader :transferred
 
     # Retrieve solemnity for the specified day
     #
@@ -54,6 +60,7 @@ module CalendariumRomanum
     private
 
     def valid_destination?(date)
+      return false if @transferred.has_key? date
       return false if @temporale[date].rank >= Ranks::FEAST_PROPER
 
       sc = @sanctorale[date]
@@ -76,6 +83,27 @@ module CalendariumRomanum
       else
         abstract_date.concretize(@temporale.year)
       end
+    end
+
+    def free_day_closest_to(date)
+      dates_around(date).find {|d| valid_destination?(d) }
+    end
+
+    def dates_around(date)
+      return to_enum(:dates_around, date) unless block_given?
+
+      1.upto(100) do |i|
+        yield date + i
+        yield date - i
+      end
+
+      raise 'this point should never be reached'
+    end
+
+    def in_holy_week?(date)
+      holy_week = (@temporale.palm_sunday .. @temporale.easter_sunday)
+
+      holy_week.include? date
     end
   end
 end

@@ -456,8 +456,8 @@ describe CR::Calendar do
         expect(celebs.size).to eq 1
         expect(celebs[0]).to eq celfactory.good_friday
 
-        # it is transferred on a day after the Easter octave
-        d = c.temporale.easter_sunday + 8
+        # it is transferred to the closest free day - Saturday before Palm Sunday
+        d = c.temporale.palm_sunday - 1
         celebs = c.day(d).celebrations
         expect(celebs.size).to eq 1
         expect(celebs[0]).to eq st_none

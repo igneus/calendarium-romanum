@@ -760,6 +760,24 @@ in palmis de Passione Domini occurrit, anticipatur sabbato praecedenti,
 die 18 martii. Ubi vero non est de praecepto servanda, a Conferentia Episcoporum
 ad alium diem extra Quadragesimam transferri potest.
 
+```ruby
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+
+joseph = CR::AbstractDate.new 3, 19
+
+years_on_palm_sunday = (2000 .. 2100).select do |y|
+  joseph.in_year(y + 1) == CR::Temporale::Dates.palm_sunday(y)
+end
+
+expect(years_on_palm_sunday).not_to be_empty
+
+years_on_palm_sunday.each do |y|
+  date = Date.new(y + 1, 3, 18)
+  expect(date).to be_saturday
+  expect(calendar[date].celebrations[0].symbol).to be :joseph
+end
+```
+
 **57.** Si qui Sancti vel Beati una simul calendario inscribuntur, simul
 semper celebrantur, quoties eodem gradu sunt celebrandi, etsi unus aut
 aliqui eorum sunt magis proprii. Si vero unus aut aliqui ex his Sanctis
