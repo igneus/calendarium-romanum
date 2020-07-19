@@ -46,6 +46,11 @@ alios ritus applicari possunt ac debent, normae tamen practicae solum
 ritum romanum spectare intellegendae sunt, nisi agatur de iis quae ex
 ipsa rei natura alios quoque ritus afficiant. [2]
 
+    1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
+      A.A.S. 56 (1964) pp. 125-126.
+
+    2 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
+
 ### Tit. I - De diebus liturgicis
 
 #### I. De die liturgico in genere
@@ -62,13 +67,6 @@ vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 dominica nuncupatur. Ecclesia, ex traditione apostolica, quae originem
 ducit ab ipsa die Resurrectionis Christi, mysterium paschale celebrat.
 Itaque dominica uti primordialis dies festus haberi debet. [3]
-
-    1 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 102-105:
-      A.A.S. 56 (1964) pp. 125-126.
-
-    5 Cf. Ibidem, n. 3: A.A.S. 56 (1964) p. 98.
-
-    3 Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
 
 **5.** Propter suum peculiare momentum, dominica suam cedit celebrationem
 solummodo sollemnitatibus, necnon festis Domini; Dominicae
@@ -163,6 +161,8 @@ calendar = CR::PerpetualCalendar.new(temporale_options: {transfer_to_sunday: [:e
 end
 ```
 
+    3 Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
+
 #### III. De sollemnitatibus, festis et memoriis
 
 **8.** Anni circulo, Ecclesia, mysterium Christi celebrando, etiam beatam
@@ -184,11 +184,6 @@ Missa horis vespertinis celebratur.
 
 **12.** Summarum sollemnitatum Paschae et Nativitatis celebratio per
 octo dies continuos protrahitur. Utraque octava legibus propriis ordinatur.
-
-    4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
-      A.A.S. 56 (1964) pp. 125-126.
-
-    5 Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
 
 **13.** Festa intra fines diei naturalis celebrantur; proinde non habent
 I Vesperas, nisi de festis Domini agatur quae in dominicis per annum
@@ -241,6 +236,11 @@ free_saturdays.each do |date|
 end
 ```
 
+    4 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, nn. 103-104:
+      A.A.S. 56 (1964) pp. 125-126.
+
+    5 Cf. Ibidem, n. 111: A.A.S. 56 (1964) p. 127.
+
 #### IV. De feriis
 
 **16.** Hebdomadae dies, qui post dominicam decurrunt, feriae nuncupantur;
@@ -288,6 +288,18 @@ resurrectionem vigilando exspectat, eamque in sacramentis celebrat. Ergo
 tota huius sacrae Vigiliae celebratio nocte peragi debet, ita ut incipiatur
 post initium noctis et finiatur ante diei dominicae diluculum.
 
+    7  Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
+       A.A.S. 56 (1964) p. 99.
+
+    8  Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
+
+    9  Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
+
+    10 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 110:
+       A.A.S. 56 (1964) p. 127.
+
+    11 S. Augustinus, Sermo 219: PL 38, 1088.
+
 #### II. De tempore paschali
 
 **22.** Quinquaginta dies a dominica Resurrectionis ad dominicam Pentecostes
@@ -324,18 +336,6 @@ expect(CR::Temporale::Dates.easter_sunday(year) + 39)
 ```
 
 **26.** Feriae post Ascensionem usque ad sabbatum ante Pentecosten inclusive ad adventum praeparant Spiritus Sancti Paracliti.
-
-    7  Cf. Conc, Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 5:
-       A.A.S. 56 (1964) p. 99.
-
-    8  Cf. Ibidem, n. 106: A.A.S. 56 (1964) p. 126.
-
-    9  Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
-
-    10 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 110:
-       A.A.S. 56 (1964) p. 127.
-
-    11 S. Augustinus, Sermo 219: PL 38, 1088.
 
     12 S. Athanasius, Epist. fest. 1: PG 26, 1366.
 
@@ -395,6 +395,11 @@ ab eius ingressu messianico in Ierusalem.
 Feria V Hebdomadae sanctae, mane, Episcopus, Missam cum suo presbyterio concelebrans,
 olea sancta benedicit et chrisma conficit.
 
+    13 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 109:
+       A.A.S. 56 (1964) p. 127.
+
+    14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
+
 #### IV. De tempore Nativitatis
 
 **32.** Post annuam mysterii paschalis celebrationem, nihil antiquius
@@ -432,11 +437,6 @@ a) Dominica infra octavam, fit festum S. Familiae Iesu, Mariae et Ioseph.
 b) Die 26 decembris, fit festum S. Stephani, Protomartyris.
 
 c) Die 27 decembris, fit festum S. Ioannis, Apostoli et Evangelistae.
-
-    13 Cf. Conc. Vat. II, Const. de Sacra Liturgia, Sacrosanctum Concilium, n. 109:
-       A.A.S. 56 (1964) p. 127.
-
-    14 Cf. Paulus VI, Const. Apost. Paenitemini, 17 febr. 1966, II § 3: A.A.S. 58 (1966) p. 184.
 
 d) Die 28 decembris, fit festum Ss. Innocentium.
 
