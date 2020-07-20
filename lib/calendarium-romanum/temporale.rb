@@ -218,15 +218,15 @@ module CalendariumRomanum
     def season(date)
       range_check date
 
-      if (first_advent_sunday <= date) &&
+      if first_advent_sunday <= date &&
          nativity > date
         Seasons::ADVENT
 
-      elsif (nativity <= date) &&
-            (baptism_of_lord >= date)
+      elsif nativity <= date &&
+            baptism_of_lord >= date
         Seasons::CHRISTMAS
 
-      elsif (ash_wednesday <= date) &&
+      elsif ash_wednesday <= date &&
             good_friday > date
         Seasons::LENT
 
@@ -234,8 +234,8 @@ module CalendariumRomanum
             easter_sunday >= date
         Seasons::TRIDUUM
 
-      elsif (easter_sunday < date) &&
-            (pentecost >= date)
+      elsif easter_sunday < date &&
+            pentecost >= date
         Seasons::EASTER
 
       else
