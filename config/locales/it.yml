@@ -4,6 +4,7 @@ it:
       advent: Tempo di Avvento
       christmas: Tempo di Natale
       lent: Tempo di Quaresima
+      triduum: Triduo Pasquale
       easter: Tempo pasquale
       ordinary: Tempo ordinario
     solemnity:

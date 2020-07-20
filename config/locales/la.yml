@@ -4,6 +4,7 @@ la:
       advent: Tempus Adventus
       christmas: Tempus Nativitatis
       lent: Tempus Quadragesimae
+      triduum: Triduum Paschale
       easter: Tempus Paschale
       ordinary: Tempus per annum
     solemnity:

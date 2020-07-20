@@ -169,13 +169,20 @@ describe CR::Temporale do
     describe 'Lent' do
       let(:season) { CR::Seasons::LENT }
       let(:date_beginning) { Date.new(2014, 3, 5) }
-      let(:date_end) { Date.new(2014, 4, 19) }
+      let(:date_end) { Date.new(2014, 4, 17) }
+      include_examples 'season determination'
+    end
+
+    describe 'Easter Triduum' do
+      let(:season) { CR::Seasons::TRIDUUM }
+      let(:date_beginning) { Date.new(2014, 4, 18) }
+      let(:date_end) { Date.new(2014, 4, 20) }
       include_examples 'season determination'
     end
 
     describe 'Easter time' do
       let(:season) { CR::Seasons::EASTER }
-      let(:date_beginning) { Date.new(2014, 4, 20) }
+      let(:date_beginning) { Date.new(2014, 4, 21) }
       let(:date_end) { Date.new(2014, 6, 8) }
       include_examples 'season determination'
     end

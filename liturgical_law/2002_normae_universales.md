@@ -286,6 +286,20 @@ resurrectionem vigilando exspectat, eamque in sacramentis celebrat. Ergo
 tota huius sacrae Vigiliae celebratio nocte peragi debet, ita ut vel incipiatur
 post initium noctis vel finiatur ante diei dominicae diluculum.
 
+```ruby
+good_friday = CR::Temporale::Dates.good_friday year
+easter = CR::Temporale::Dates.easter_sunday(year)
+
+calendar = CR::PerpetualCalendar.new
+
+good_friday.upto(easter) do |date|
+  expect(calendar[date].season).to be CR::Seasons::TRIDUUM
+end
+
+expect(calendar[good_friday - 1].season).not_to be CR::Seasons::TRIDUUM
+expect(calendar[easter + 1].season).not_to be CR::Seasons::TRIDUUM
+```
+
     7 Cf. ibid., n. 5.
 
     8 Cf. ibid., n. 106.
@@ -360,8 +374,7 @@ ashes.upto(maundy) do |date|
 end
 
 expect(calendar[ashes - 1].season).not_to be CR::Seasons::LENT
-# TODO: failing, fix
-# expect(calendar[maundy + 1].season).not_to be CR::Seasons::LENT
+expect(calendar[maundy + 1].season).not_to be CR::Seasons::LENT
 ```
 
 **29.** Feria IV in capite Quadragesimae, quae ubique habetur ut dies

@@ -227,10 +227,14 @@ module CalendariumRomanum
         Seasons::CHRISTMAS
 
       elsif (ash_wednesday <= date) &&
-            easter_sunday > date
+            good_friday > date
         Seasons::LENT
 
-      elsif (easter_sunday <= date) &&
+      elsif good_friday <= date &&
+            easter_sunday >= date
+        Seasons::TRIDUUM
+
+      elsif (easter_sunday < date) &&
             (pentecost >= date)
         Seasons::EASTER
 
@@ -251,8 +255,10 @@ module CalendariumRomanum
         nativity
       when Seasons::LENT
         ash_wednesday
+      when Seasons::TRIDUUM
+        good_friday
       when Seasons::EASTER
-        easter_sunday
+        easter_sunday + 1
       when Seasons::ORDINARY # ordinary time
         baptism_of_lord + 1
       else
@@ -272,11 +278,13 @@ module CalendariumRomanum
 
       week = date_difference(date, week1_beginning) / WEEK + 1
 
-      if seasonn == Seasons::ORDINARY
+      if seasonn == Seasons::ORDINARY || seasonn == Seasons::EASTER
         # ordinary time does not begin with Sunday, but the first week
         # is week 1, not 0
         week += 1
+      end
 
+      if seasonn == Seasons::ORDINARY
         if date > pentecost
           weeks_after_date = date_difference(Dates.first_advent_sunday(@year + 1), date) / WEEK
           week = 34 - weeks_after_date
