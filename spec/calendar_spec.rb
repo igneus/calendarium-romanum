@@ -672,13 +672,15 @@ describe CR::Calendar do
               assumption = Date.new(2014, 8, 15)
               sanctorale.replace(8, 16, [testing_solemnity])
 
-              day = calendar.day(assumption)
-              expect(day.celebrations.first.rank).to be CR::Ranks::SOLEMNITY_GENERAL
-              expect(day.vespers).to be nil
-
               # make sure
               next_day = calendar.day(assumption + 1)
               expect(next_day.celebrations.first).to be testing_solemnity
+
+              day = calendar.day(assumption)
+              expect(day.celebrations.first.rank).to be testing_solemnity.rank # important: ranks are equal
+
+              # the day's celebration wins, Assumption loses first Vespers
+              expect(day.vespers).to be nil
             end
           end
         end
