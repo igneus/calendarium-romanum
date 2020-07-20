@@ -112,6 +112,12 @@ module CalendariumRomanum
     # @return [Sanctorale]
     attr_reader :sanctorale
 
+    # Solemnities transferred to a date different from the usual one
+    # due to occurrence with a higher-ranking celebration.
+    #
+    # @return [Hash<Date=>Celebration>]
+    attr_reader :transferred
+
     # Do {Day} instances returned by this +Calendar+
     # have {Day#vespers} populated?
     # @return [Boolean]

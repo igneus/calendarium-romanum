@@ -383,6 +383,24 @@ describe CR::Calendar do
       end
     end
 
+    describe '#transferred' do
+      let(:c) { CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN_ENGLISH.load) }
+
+      it 'is a frozen Hash' do
+        expect(c.transferred).to be_a Hash
+        expect(c.transferred).to be_frozen
+      end
+
+      it 'maps dates to Celebrations' do
+        expect(c.transferred).not_to be_empty # make sure
+        c.transferred.each_pair do |key,val|
+          expect(key).to be_a Date
+          expect(val).to be_a CR::Celebration
+          expect(val).to be_solemnity
+        end
+      end
+    end
+
     describe 'Temporale x Sanctorale resolution' do
       before :all do
         @s = CR::Data::GENERAL_ROMAN_ENGLISH.load
