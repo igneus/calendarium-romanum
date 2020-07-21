@@ -314,6 +314,49 @@ day = calendar[date]
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000010deea8 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x000000010fec08 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
 
+### Proper calendar of a church
+
+One common case of preparing custom sanctorale data is
+implementing proper calendar of a church
+(cf. *General Norms for the Liturgical Year and the Calendar* par. 52 c).
+Proper calendar of a church is built by adding to the calendar
+of the diocese (or religious institute) the church'es proper celebration,
+which are usually just two solemnities: anniversary of dedication
+and titular solemnity.
+
+Let's say you have calendar of your diocese in sanctorale data file
+`my-diocese.txt`.
+You could copy the file to a new location and add the two proper solemnities,
+but your programmer better self won't allow you to do that.
+What options are left? You can create a new sanctorale file
+with the two proper celebrations and then load it over the calendar
+of the diocese, as explained in [data](/data).
+Or, if you need the calendar just for that single little script
+and don't care about creating data files, you can build the two
+proper solemnities in code:
+
+```ruby
+# here you would load your 'diocese.txt' instead
+diocese = CR::SanctoraleLoader.new.load_from_file 'data/universal-en.txt'
+
+dedication = CR::Celebration.new('Anniversary of Dedication of the Parish Church', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE)
+titular = CR::Celebration.new('Saint Nicholas, Bishop, Titular Solemnity of the Parish Church', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE)
+
+# solution 1 - directly modify the loaded Sanctorale
+
+diocese.replace(10, 25, [dedication])
+diocese.replace(12, 6, [titular])
+
+# solution 2 - create a new Sanctorale with just the two solemnities,
+# then create a third instance merging contents of the two without modifying them
+
+proper_solemnities = CR::Sanctorale.new
+proper_solemnities.replace(10, 25, [dedication])
+proper_solemnities.replace(12, 6, [titular])
+
+complete_proper_calendar = CR::SanctoraleFactory.create_layered(diocese, proper_solemnities)
+```
+
 ## I18n, or, how to fix names of temporale feasts
 
 One drawback of the current implementation is that names
