@@ -161,11 +161,23 @@ which loads the gem *and* defines the `CR` shortcut for you.
 Following examples expect the `CR` constant to be defined
 and reference the `CalendariumRomanum` module.
 
+Another possible way of saving some typing (if you don't care about
+possible name clashes or polluting current namespace)
+is including `CalendariumRomanum` module in the current module.
+Then `CalendariumRomanum` classes can be referenced unqualified:
+
+```ruby
+include CalendariumRomanum
+
+loader = SanctoraleLoader.new
+# etc.
+```
+
 ### 4. Isn't there an easier way to get sanctorale data?
 
 Yes! There are a few data files bundled in the gem.
 You can explore them by iterating over `CalendariumRomanum::Data.all`.
-The more interesting ones are additionally identified by their proper
+Those of general interest are additionally identified by their proper
 constants, e.g. `CalendariumRomanum::Data::GENERAL_ROMAN_ENGLISH`.
 Bundled data files can be loaded by a handy shortcut method `#load`:
 
@@ -282,7 +294,7 @@ proper calendar of any diocese in the Czech Republic.
 
 In case you already have sanctorale data in another format,
 it might be better suited for you to implement your own loading
-routine instead of migrating them to our custom format.
+routine instead of transforming them to our custom format.
 `SanctoraleLoader` is the class to look into for inspiration.
 
 The important bit is that for each celebration you
@@ -291,20 +303,16 @@ instance by a call to `Sanctorale#add`, which receives a month,
 a day (as integers) and a `Celebration`:
 
 ```ruby
-include CalendariumRomanum
-sanctorale = Sanctorale.new
-celebration = Celebration.new('Saint John Eudes, priest', Ranks::MEMORIAL_OPTIONAL, Colours::WHITE)
+sanctorale = CR::Sanctorale.new
+celebration = CR::Celebration.new('Saint John Eudes, priest', CR::Ranks::MEMORIAL_OPTIONAL, CR::Colours::WHITE)
 sanctorale.add 8, 19, celebration
 
 date = Date.new(2016, 8, 19)
-calendar = Calendar.for_day(date, sanctorale)
+calendar = CR::Calendar.for_day(date, sanctorale)
 
 day = calendar[date]
 day.celebrations # => [#<CalendariumRomanum::Celebration:0x000000010deea8 @title="", @rank=#<struct CalendariumRomanum::Rank priority=3.13, desc="Unprivileged ferials", short_desc="ferial">, @colour=:green>, #<CalendariumRomanum::Celebration:0x000000010fec08 @title="Saint John Eudes, priest", @rank=#<struct CalendariumRomanum::Rank priority=3.12, desc="Optional memorials", short_desc="optional memorial">, @colour=:white>]
 ```
-
-(Note that this time some typing was saved by *including*
-the `CalendariumRomanum` module into the current namespace.)
 
 ## I18n, or, how to fix names of temporale feasts
 
@@ -321,7 +329,7 @@ data.
 
 `I18n.locale = :la # or :en, :fr, :it, :cs`
 
-The gem ships with English, Latin, Italian, French and Czech translation.
+The gem ships with English, Latin, Italian, Spanish, French and Czech translation.
 Contributed translations to other languages are most welcome.
 
 ## Transfer of solemnities to a Sunday
