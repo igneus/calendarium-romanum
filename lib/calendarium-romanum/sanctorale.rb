@@ -219,7 +219,8 @@ module CalendariumRomanum
       @days.each_pair do |date,celebrations|
         celebrations.each do |celebration|
           if @symbols.include?(celebration.symbol) &&
-             !duplicates.include?(celebration.symbol)
+             !duplicates.include?(celebration.symbol) &&
+             !celebration.symbol.nil?
             duplicates << celebration.symbol
           end
 
