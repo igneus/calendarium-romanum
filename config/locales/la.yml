@@ -29,6 +29,7 @@ la:
       saturday_memorial_bvm: Memoria Sanctae Mariae in Sabbato
     extension:
       christ_eternal_priest: Domini nostri Iesu Christi Summi et Aeterni Sacerdotis
+      dedication: Anniversarium dedicationis ecclesiae
     ordinary:
       sunday: 'Dominica %{week} per annum'
       ferial: '%{weekday}, hebdomada %{week} per annum'

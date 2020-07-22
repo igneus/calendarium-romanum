@@ -29,6 +29,7 @@ it:
       saturday_memorial_bvm: Memoria di santa Maria in sabato
     extension:
       christ_eternal_priest: Nostro Signore Gesù Cristo Sommo e Eterno Sacerdote # I didn't find an official translation anywhere (as the feast is not celebrated in Italy) and had to translate myself - readers proficient in Italian are kindly asked for a check
+      dedication: Anniversario della Dedicazione della chiesa
     ordinary:
       sunday: '%{week} Domenica del Tempo Ordinario'
       ferial: '%{weekday} della %{week} settimana del Tempo Ordinario'

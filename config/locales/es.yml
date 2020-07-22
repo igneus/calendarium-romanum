@@ -29,6 +29,7 @@ es:
       saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
     extension:
       christ_eternal_priest: Jesucristo, Sumo y Eterno Sacerdote
+      dedication: Aniversario Dedicación de la iglesia
     ordinary:
       sunday: '%{week} Domingo del Tiempo Ordinario'
       ferial: '%{weekday}, %{week} semana del Tiempo Ordinario'
