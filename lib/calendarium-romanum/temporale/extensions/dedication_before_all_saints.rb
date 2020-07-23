@@ -5,12 +5,10 @@ module CalendariumRomanum
       # of a church celebrated on the Sunday before All Saints /
       # last October Sunday.
       #
-      # In some countries
-      # (like {England and Wales}[https://www.liturgyoffice.org.uk/Calendar/Info/background2.shtml]
-      # or Czech Republic)
-      # churches, whose date of dedication is unknown, celebrate
-      # the anniversary of dedication on the Sunday before All Saints.
-      # Use this extension when building proper calendar of such a church.
+      # In churches, whose actual day of consecration is unknown, the anniversary
+      # of consecration is celebrated either on October 25th, or on the Sunday
+      # before All Saints (cf. Notitiae 71/1972, p. 103).
+      # This extension implements the latter case.
       #
       # @example
       #   # It can be used either this way
@@ -22,7 +20,6 @@ module CalendariumRomanum
       #   temporale = Temporale.new(2015, extensions: [
       #     Temporale::Extensions::DedicationBeforeAllSaints.new(title: 'Title', symbol: :symbol)
       #   ])
-
       class DedicationBeforeAllSaints
         DEFAULT_TITLE = proc { I18n.t('temporale.extension.dedication') }
         DEFAULT_SYMBOL = :dedication
