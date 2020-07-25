@@ -90,10 +90,6 @@ module CalendariumRomanum
     end
   end
 
-  # Sunday lectionary cycles.
-  # Values returned by {Calendar#lectionary}
-  LECTIONARY_CYCLES = [:A, :B, :C].freeze
-
   # Celebration ranks as specified in the Table of Liturgical Days
   class Ranks < Enum
     TRIDUUM           = Rank.new(1.1, 'rank.1_1')
