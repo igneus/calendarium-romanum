@@ -104,6 +104,11 @@ module CalendariumRomanum
   class Celebration
     include RankPredicates
 
+    # All arguments can be passed either as positional or keyword arguments.
+    # In case of conflict keyword arguments win.
+    # @example
+    #   Celebration.new('Lost title', title: 'Winning title') # will have title 'Winning title'
+    #
     # @param title [String|Proc]
     #   Celebration title/name.
     #   If a +Proc+ is passed, it is expected not to receive
@@ -121,13 +126,17 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale)
-      @title = title
-      @rank = rank
-      @colour = colour
-      @symbol = symbol
-      @date = date
-      @cycle = cycle
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, **kwargs)
+      @title = kwargs.delete(:title) || title
+      @rank = kwargs.delete(:rank) || rank
+      @colour = kwargs.delete(:colour) || kwargs.delete(:color) || colour
+      @symbol = kwargs.delete(:symbol) || symbol
+      @date = kwargs.delete(:date) || date
+      @cycle = kwargs.delete(:cycle) || cycle
+
+      unless kwargs.empty?
+        raise ArgumentError.new('Unexpected keyword arguments: ' + kwargs.keys.inspect)
+      end
     end
 
     # @return [Rank]

@@ -1,6 +1,104 @@
 require_relative 'spec_helper'
 
 describe CR::Celebration do
+  describe '.new' do
+    it 'can be executed without arguments, sets defaults' do
+      c = described_class.new
+
+      expect(c.title).to eq ''
+      expect(c.rank).to be CR::Ranks::FERIAL
+      expect(c.colour).to be CR::Colours::GREEN
+      expect(c.symbol).to be nil
+      expect(c.date).to be nil
+      expect(c.cycle).to be :sanctorale
+    end
+
+    it 'accepts positional arguments' do
+      c = described_class.new(
+        'Title',
+        CR::Ranks::FEAST_PROPER,
+        CR::Colours::RED,
+        :none,
+        CR::AbstractDate.new(1, 11),
+        :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'accepts keyword arguments' do
+      c = described_class.new(
+        title: 'Title',
+        rank: CR::Ranks::FEAST_PROPER,
+        colour: CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'accepts mix of positional and keyword arguments' do
+      c = described_class.new(
+        'Title',
+        CR::Ranks::FEAST_PROPER,
+        CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'keyword arguments win over positional ones' do
+      c = described_class.new(
+        # positional arguments (won't take effect)
+        'Another Title',
+        CR::Ranks::MEMORIAL_GENERAL,
+        CR::Colours::WHITE,
+        :nullus,
+        CR::AbstractDate.new(2, 22),
+        :sanctorale,
+        # keyword arguments
+        title: 'Title',
+        rank: CR::Ranks::FEAST_PROPER,
+        colour: CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'fails loudly on unexpected keyword arguments' do
+      expect { described_class.new(title: 'Title', unexpected: 'value', another: 2) }
+        .to raise_exception(ArgumentError, 'Unexpected keyword arguments: [:unexpected, :another]')
+    end
+  end
+
   describe '#==' do
     let(:c) { described_class.new('title') }
 
