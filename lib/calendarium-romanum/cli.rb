@@ -1,4 +1,5 @@
 require 'thor'
+require_relative 'dumper'
 
 module CalendariumRomanum
 
@@ -102,6 +103,14 @@ module CalendariumRomanum
           puts celebration(cb)
           puts
         end
+      end
+    end
+
+    desc 'dump YEAR', 'print calendar of the specified year (for use in regression tests)'
+    def dump(year)
+      calendar = Calendar.new year.to_i, Data::GENERAL_ROMAN_LATIN.load, vespers: true
+      I18n.with_locale(:la) do
+        Dumper.new.call(calendar)
       end
     end
 
