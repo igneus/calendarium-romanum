@@ -623,6 +623,22 @@ describe CR::Temporale do
     end
   end
 
+  describe '#each_day' do
+    it 'yields each date and corresponding CR::Celebrations' do
+      expect {|block| t.each_day(&block) }.to yield_control.at_least(360).times # liturgical year can be shorter than the civil one
+
+      t.each_day do |date,cel|
+        expect(date).to be_a Date
+        expect(cel).to be_a CR::Celebration
+        break
+      end
+    end
+
+    it 'can be called without a block' do
+      expect(t.each_day).to be_an Enumerator
+    end
+  end
+
   describe 'Solemnities transferred to a Sunday' do
     let(:year) { 2016 }
     let(:transferred) { [:epiphany, :ascension, :corpus_christi] }

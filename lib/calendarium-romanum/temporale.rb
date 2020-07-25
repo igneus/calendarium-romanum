@@ -326,6 +326,16 @@ module CalendariumRomanum
       self[date]
     end
 
+    # Enumerates dates and celebrations
+    #
+    # @yield [Date, Celebration]
+    # @return [void, Enumerator] if called without a block, returns +Enumerator+
+    def each_day
+      return to_enum(__method__) unless block_given?
+
+      date_range.each {|date| yield date, self[date] }
+    end
+
     # @return [Boolean]
     # @since 0.6.0
     def ==(b)
