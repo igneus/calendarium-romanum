@@ -53,7 +53,7 @@ vero Adventus, Quadragesimae et Paschae super omnia festa Domini et
 super omnes sollemnitates praecedentiam habent. Sollemnitates autem in
 his dominicis occurrentes, sabbato anticipantur.
 
-**NOTE: par. 5 changed in newer version of the document.**
+**NOTE: par. 5 was changed - see decree CD 500/89.**
 
 **6.** Dominica excludit per se assignationem perpetuam alius celebrationis. Attamen:
 
