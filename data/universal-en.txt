@@ -205,7 +205,7 @@ locale: en
 2 s all_souls : All Souls
 3 de_porres : Saint Martin de Porres, religious
 4 m borromeo : Saint Charles Borromeo, bishop
-9 f lateran_basilica : Dedication of the Lateran basilica
+9 f2.5 lateran_basilica : Dedication of the Lateran basilica
 10 m leo_great : Saint Leo the Great, pope and doctor
 11 m martin : Saint Martin of Tours, bishop
 12 m R josaphat : Saint Josaphat, bishop and martyr

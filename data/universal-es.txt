@@ -205,7 +205,7 @@ locale: es
 2 s all_souls : Conmemoración de Todos los Difuntos
 3 de_porres : San Martín de Porres, Religioso
 4 m borromeo : San Carlos Borromeo, Obispo
-9 f lateran_basilica : Dedicación de la Basílica de Letrán
+9 f2.5 lateran_basilica : Dedicación de la Basílica de Letrán
 10 m leo_great : San León el Magno, Papa y Doctor de la Iglesia
 11 m martin : San Martín de Tours, Obispo
 12 m R josaphat : San Josafat, Obispo y Mártir

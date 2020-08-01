@@ -204,7 +204,7 @@ locale: it
 2 s all_souls : Commemorazione di tutti i fedeli defunti
 3 de_porres : San Martino de Porres, religioso
 4 m borromeo : San Carlo Borromeo, vescovo
-9 f lateran_basilica : Dedicazione della basilica Lateranense
+9 f2.5 lateran_basilica : Dedicazione della basilica Lateranense
 10 m leo_great : San Leone Magno, papa e dottore della Chiesa
 11 m martin : San Martino di Tours, vescovo
 12 m R josaphat : San Giosafat, vescovo e martire

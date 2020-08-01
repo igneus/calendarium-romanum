@@ -198,7 +198,7 @@ note: |
 2 s all_souls : IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
 3 de_porres : S. Martini de Porres, religiosi
 4 m borromeo : S. Caroli Borromeo, episcopi
-9 f lateran_basilica : In dedicatione basilicae Lateranensis
+9 f2.5 lateran_basilica : In dedicatione basilicae Lateranensis
 10 m leo_great : S. Leonis Magni, papae et Ecclesiae doctoris
 11 m martin : S. Martini Turonensis, episcopi
 12 m R josaphat : S. Iosaphat, episcopi et martyris

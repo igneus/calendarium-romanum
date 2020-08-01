@@ -205,7 +205,7 @@ locale: fr
 2 s all_souls : Commémoration des fidèles défunts
 3 de_porres : Saint Martin de Porrès, religieux
 4 m borromeo : Saint Charles Borromée, évêque
-9 f lateran_basilica : Dédicace de la Basilique Saint-Jean-de-Latran
+9 f2.5 lateran_basilica : Dédicace de la Basilique Saint-Jean-de-Latran
 10 m leo_great : Saint Léon le Grand, pape et docteur de l'Église
 11 m martin : Saint Martin de Tours, évêque
 12 m R josaphat : Saint Josaphat, évêque et martyr
