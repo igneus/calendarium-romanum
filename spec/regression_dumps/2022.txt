@@ -799,7 +799,7 @@ Calendar for liturgical year 2022
 2023-11-08 ordinary 31 false
 - "Feria quarta, hebdomada XXXI per annum" 3.13 green   temporale
 2023-11-09 ordinary 31 false
-- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.7 white lateran_basilica 11/9 sanctorale
+- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.5 white lateran_basilica 11/9 sanctorale
 2023-11-10 ordinary 31 false
 - "S. Leonis Magni, papae et Ecclesiae doctoris" 3.1 white leo_great 11/10 sanctorale
 2023-11-11 ordinary 31 true

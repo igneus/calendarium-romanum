@@ -794,7 +794,7 @@ Calendar for liturgical year 2030
 - "Sabbato, hebdomada XXXI per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
 2031-11-09 ordinary 32 false
-- "Dominica XXXII per annum" 2.6 green   temporale
+- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.5 white lateran_basilica 11/9 sanctorale
 2031-11-10 ordinary 32 false
 - "S. Leonis Magni, papae et Ecclesiae doctoris" 3.1 white leo_great 11/10 sanctorale
 2031-11-11 ordinary 32 false

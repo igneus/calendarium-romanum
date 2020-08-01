@@ -790,8 +790,8 @@ Calendar for liturgical year 2023
 - "Feria quinta, hebdomada XXXI per annum" 3.13 green   temporale
 2024-11-08 ordinary 31 false
 - "Feria sexta, hebdomada XXXI per annum" 3.13 green   temporale
-2024-11-09 ordinary 31 true
-- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.7 white lateran_basilica 11/9 sanctorale
+2024-11-09 ordinary 31 false
+- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.5 white lateran_basilica 11/9 sanctorale
 2024-11-10 ordinary 32 false
 - "Dominica XXXII per annum" 2.6 green   temporale
 2024-11-11 ordinary 32 false
