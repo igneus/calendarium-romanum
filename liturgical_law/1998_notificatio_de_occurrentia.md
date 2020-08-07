@@ -42,13 +42,10 @@ end
 expect((1996 .. 2001).select(&has_occurrence))
   .to be_empty
 
-years_with_occurrence = (2002 .. 2100).select &has_occurrence
-expect(years_with_occurrence).not_to be_empty # make sure
-
 # standard rank is obligatory memorial
 expect(CR::Temporale::CelebrationFactory.immaculate_heart.rank).to be CR::Ranks::MEMORIAL_GENERAL
 
-years_with_occurrence.each do |y|
+years_with(from: 2002, &has_occurrence).each do |y|
   day = calendar[CR::Temporale::Dates.immaculate_heart(y)]
   expect(day.celebrations.size).to be >= 3 # ferial, Immaculate Heart, another optional memorial
   immaculate_heart = day.celebrations.find {|c| c.symbol == :immaculate_heart }

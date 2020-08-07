@@ -59,17 +59,14 @@ calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.l
 
 annunciation = CR::AbstractDate.new 3, 25
 
-years_on_lenten_sunday = (2000 .. 2100).select do |y|
+years_with do |y|
   date = annunciation.in_year(y)
 
   date.sunday? &&
     calendar[date].season == CR::Seasons::LENT &&
     date < CR::Temporale::Dates.palm_sunday(y - 1) # not in Holy week
 end
-
-expect(years_on_lenten_sunday).not_to be_empty # make sure
-
-years_on_lenten_sunday.each do |y|
+.each do |y|
   date = annunciation.in_year(y) + 1
 
   expect(date).to be_monday
@@ -487,15 +484,13 @@ I18n.with_locale(:la) do
 end
 
 # Dominica infra octavam ... deficiente, die 30 decembris, fit festum S. Familiae
-years_without_sunday = (1970..2100).select do |y|
+years_with do |y|
   (26..31)
     .collect {|i| Date.new y, 12, i }
     .find(&:sunday?)
     .nil?
 end
-expect(years_without_sunday).not_to be_empty # make sure
-
-years_without_sunday.each do |y|
+.each do |y|
   expect(calendar[Date.new(y, 12, 30)].celebrations[0].symbol).to be :holy_family
 end
 ```

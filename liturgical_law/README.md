@@ -19,4 +19,13 @@ expect(year).to be >= 1970
 
 a = year; b = year
 expect(a).to be b
+
+# method `years_with` returns an array of years (which are valid liturgical years
+# for calendarium-romanum) matching the specified condition
+yrs = years_with {|y| true }
+expect(yrs).to be_an Array
+expect(yrs[0]).to be_an Integer
+# if no matching year is found an exception is raised
+expect { years_with {|y| false } }
+  .to raise_exception(RuntimeError, /no matching year/)
 ```

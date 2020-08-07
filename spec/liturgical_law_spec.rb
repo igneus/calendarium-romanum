@@ -17,6 +17,13 @@ Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
                 # random year, but stays the same for the whole example/code block
                 @year ||= rand(1970 .. 3000)
               end
+
+              def years_with(from: 1970, to: 2300)
+                from
+                  .upto(to)
+                  .select {|y| yield y }
+                  .tap {|result| raise 'no matching year found' if result.empty? }
+              end
             end
           end
 

@@ -33,13 +33,10 @@ Iacobus R. Card. Knox
 *Praefectus*
 
 ```ruby
-years = (1977 .. 2100).select do |y|
+years_with do |y|
   [7, 8].include? CR::Temporale::Dates.epiphany(y, sunday: true).day
 end
-
-expect(years).not_to be_empty # make sure
-
-years.each do |y|
+.each do |y|
   epiphany = CR::Temporale::Dates.epiphany(y, sunday: true)
   baptism = CR::Temporale::Dates.baptism_of_lord(y, epiphany_on_sunday: true)
 
