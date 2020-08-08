@@ -389,12 +389,13 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::VIOLET
         end
 
-        it 'Resurrection' do
+        it 'Easter' do
           c = t13.get(4, 20)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Easter Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
           expect(c.symbol).to eq :easter_sunday
+          expect(c.sunday?).to be false # questionable
         end
 
         it 'Ascension' do
@@ -410,6 +411,7 @@ describe CR::Temporale do
           expect(c.title).to have_translation 'Pentecost'
           expect(c.colour).to eq CR::Colours::RED
           expect(c.symbol).to eq :pentecost
+          expect(c.sunday?).to be false
         end
 
         it 'Trinity' do
@@ -417,6 +419,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Trinity Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be false
         end
 
         it 'Body of Christ' do
@@ -438,6 +441,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Christ The King'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be false
         end
 
         describe 'other locales' do
