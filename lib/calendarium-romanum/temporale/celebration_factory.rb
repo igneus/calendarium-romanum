@@ -29,7 +29,7 @@ module CalendariumRomanum
           @celebrations ||= [:first_advent_sunday]
         end
 
-        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false)
+        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: nil)
           define_singleton_method(symbol) do
             Temporale.create_celebration(
               proc { I18n.t("temporale.solemnity.#{symbol}") },

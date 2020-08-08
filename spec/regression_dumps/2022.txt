@@ -73,7 +73,7 @@ Calendar for liturgical year 2022
 - "De die V infra octavam Nativitatis" 2.9 white   temporale
 - "S. Thomae Becket, episcopi et martyris" 4.0 white becket 12/29 sanctorale
 2022-12-30 christmas 1 false
-- "Sanctae Familiae Iesu, Mariae et Ioseph" 2.5 white holy_family false temporale
+- "Sanctae Familiae Iesu, Mariae et Ioseph" 2.5 white holy_family  temporale
 2022-12-31 christmas 1 true
 - "De die VII infra octavam Nativitatis" 2.9 white   temporale
 - "S. Silvestri I, papae" 4.0 white sylvester_i 12/31 sanctorale
@@ -89,12 +89,12 @@ Calendar for liturgical year 2022
 2023-01-05 christmas 2 true
 - "Feria quinta post octavam Nativitatis" 3.13 white   temporale
 2023-01-06 christmas 2 false
-- "In Epiphania Domini" 1.2 white epiphany false temporale
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2023-01-07 christmas 2 true
 - "Sabbato post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
 2023-01-08 christmas 3 false
-- "In Baptismate Domini" 2.5 white baptism_of_lord false temporale
+- "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
 2023-01-09 ordinary 1 false
 - "Feria secunda, hebdomada I per annum" 3.13 green   temporale
 2023-01-10 ordinary 1 false
@@ -108,7 +108,7 @@ Calendar for liturgical year 2022
 - "S. Hilarii, episcopi et Ecclesiae doctoris" 3.12 white hilary 1/13 sanctorale
 2023-01-14 ordinary 1 true
 - "Sabbato, hebdomada I per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-01-15 ordinary 2 false
 - "Dominica II per annum" 2.6 green   temporale
 2023-01-16 ordinary 2 false
@@ -156,7 +156,7 @@ Calendar for liturgical year 2022
 - "S. Ansgarii, episcopi" 3.12 white ansgar 2/3 sanctorale
 2023-02-04 ordinary 4 true
 - "Sabbato, hebdomada IV per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-02-05 ordinary 5 false
 - "Dominica V per annum" 2.6 green   temporale
 2023-02-06 ordinary 5 false
@@ -174,7 +174,7 @@ Calendar for liturgical year 2022
 2023-02-11 ordinary 5 true
 - "Sabbato, hebdomada V per annum" 3.13 green   temporale
 - "B. Mariae Virginis de Lourdes" 3.12 white bvm_lourdes 2/11 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-02-12 ordinary 6 false
 - "Dominica VI per annum" 2.6 green   temporale
 2023-02-13 ordinary 6 false
@@ -190,7 +190,7 @@ Calendar for liturgical year 2022
 - "Ss. septem Fundatorum Ordinis Servorum B. M. V." 3.12 white servite_founders 2/17 sanctorale
 2023-02-18 ordinary 6 true
 - "Sabbato, hebdomada VI per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-02-19 ordinary 7 false
 - "Dominica VII per annum" 2.6 green   temporale
 2023-02-20 ordinary 7 false
@@ -199,7 +199,7 @@ Calendar for liturgical year 2022
 - "Feria tertia, hebdomada VII per annum" 3.13 green   temporale
 - "S. Petri Damiani, episcopi et Ecclesiae doctoris" 3.12 white peter_damian 2/21 sanctorale
 2023-02-22 lent 0 false
-- "Feria IV Cinerum" 1.2 violet ash_wednesday false temporale
+- "Feria IV Cinerum" 1.2 violet ash_wednesday  temporale
 2023-02-23 lent 0 false
 - "Feria quinta post Cineres" 2.9 violet   temporale
 - "S. Polycarpi, episcopi et martyris" 4.0 violet polycarp 2/23 sanctorale
@@ -285,7 +285,7 @@ Calendar for liturgical year 2022
 2023-04-01 lent 5 true
 - "Sabbato, hebdomada V Quadragesimae" 2.9 violet   temporale
 2023-04-02 lent 6 false
-- "Dominica in Palmis de Passione Domini" 1.2 red palm_sunday false temporale
+- "Dominica in Palmis de Passione Domini" 1.2 red palm_sunday  temporale
 2023-04-03 lent 6 false
 - "Feria secunda Hebdomadae Sanctae" 1.2 violet   temporale
 2023-04-04 lent 6 false
@@ -295,11 +295,11 @@ Calendar for liturgical year 2022
 2023-04-06 lent 6 false
 - "Feria quinta Hebdomadae Sanctae" 1.2 violet   temporale
 2023-04-07 triduum 0 false
-- "Feria VI in Passione Domini" 1.1 red good_friday false temporale
+- "Feria VI in Passione Domini" 1.1 red good_friday  temporale
 2023-04-08 triduum 0 true
-- "Sabbato sancto" 1.1 violet holy_saturday false temporale
+- "Sabbato sancto" 1.1 violet holy_saturday  temporale
 2023-04-09 triduum 1 false
-- "Dominica Paschae in Resurrectione Domini" 1.1 white easter_sunday false temporale
+- "Dominica Paschae in Resurrectione Domini" 1.1 white easter_sunday  temporale
 2023-04-10 easter 1 false
 - "Feria secunda infra octavam Paschae" 1.2 white   temporale
 2023-04-11 easter 1 false
@@ -385,7 +385,7 @@ Calendar for liturgical year 2022
 2023-05-17 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2023-05-18 easter 6 false
-- "In Ascensione Domini" 1.2 white ascension false temporale
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2023-05-19 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2023-05-20 easter 6 true
@@ -411,9 +411,9 @@ Calendar for liturgical year 2022
 - "Sabbato, hebdomada VII temporis paschalis" 3.13 white   temporale
 - "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
 2023-05-28 easter 8 false
-- "Dominica Pentecostes" 1.2 red pentecost false temporale
+- "Dominica Pentecostes" 1.2 red pentecost  temporale
 2023-05-29 ordinary 8 false
-- "B. Mariae Virginis Ecclesiae Matris" 3.1 white mother_of_church false temporale
+- "B. Mariae Virginis Ecclesiae Matris" 3.1 white mother_of_church  temporale
 2023-05-30 ordinary 8 false
 - "Feria tertia, hebdomada VIII per annum" 3.13 green   temporale
 2023-05-31 ordinary 8 false
@@ -426,7 +426,7 @@ Calendar for liturgical year 2022
 2023-06-03 ordinary 8 true
 - "Ss. Caroli Lwanga et sociorum, martyrum" 3.1 red ugandan_martyrs 6/3 sanctorale
 2023-06-04 ordinary 9 false
-- "Sanctissimae Trinitatis" 1.3 white holy_trinity false temporale
+- "Sanctissimae Trinitatis" 1.3 white holy_trinity  temporale
 2023-06-05 ordinary 9 false
 - "S. Bonifatii, episcopi et martyris" 3.1 red boniface 6/5 sanctorale
 2023-06-06 ordinary 9 false
@@ -435,13 +435,13 @@ Calendar for liturgical year 2022
 2023-06-07 ordinary 9 true
 - "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
 2023-06-08 ordinary 9 false
-- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi false temporale
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2023-06-09 ordinary 9 false
 - "Feria sexta, hebdomada IX per annum" 3.13 green   temporale
 - "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
 2023-06-10 ordinary 9 true
 - "Sabbato, hebdomada IX per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-06-11 ordinary 10 false
 - "Dominica X per annum" 2.6 green   temporale
 2023-06-12 ordinary 10 false
@@ -453,9 +453,9 @@ Calendar for liturgical year 2022
 2023-06-15 ordinary 10 true
 - "Feria quinta, hebdomada X per annum" 3.13 green   temporale
 2023-06-16 ordinary 10 false
-- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart false temporale
+- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
 2023-06-17 ordinary 10 true
-- "Immaculati Cordis B. Mariae Virginis" 3.1 white immaculate_heart false temporale
+- "Immaculati Cordis B. Mariae Virginis" 3.1 white immaculate_heart  temporale
 2023-06-18 ordinary 11 false
 - "Dominica XI per annum" 2.6 green   temporale
 2023-06-19 ordinary 11 false
@@ -489,7 +489,7 @@ Calendar for liturgical year 2022
 - "Ss. Protomartyrum S. Romanae Ecclesiae" 3.12 red first_martyrs_of_rome 6/30 sanctorale
 2023-07-01 ordinary 12 true
 - "Sabbato, hebdomada XII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-07-02 ordinary 13 false
 - "Dominica XIII per annum" 2.6 green   temporale
 2023-07-03 ordinary 13 false
@@ -507,7 +507,7 @@ Calendar for liturgical year 2022
 - "Feria sexta, hebdomada XIII per annum" 3.13 green   temporale
 2023-07-08 ordinary 13 true
 - "Sabbato, hebdomada XIII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-07-09 ordinary 14 false
 - "Dominica XIV per annum" 2.6 green   temporale
 2023-07-10 ordinary 14 false
@@ -572,7 +572,7 @@ Calendar for liturgical year 2022
 2023-08-05 ordinary 17 true
 - "Sabbato, hebdomada XVII per annum" 3.13 green   temporale
 - "In Dedicatione basilicae S. Mariae" 3.12 white mary_major 8/5 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-08-06 ordinary 18 false
 - "IN TRANSFIGURATIONE DOMINI" 2.5 white transfiguration 8/6 sanctorale
 2023-08-07 ordinary 18 false
@@ -591,7 +591,7 @@ Calendar for liturgical year 2022
 2023-08-12 ordinary 18 true
 - "Sabbato, hebdomada XVIII per annum" 3.13 green   temporale
 - "S. Ioannae Franciscae de Chantal, religiosae" 3.12 white de_chantal 8/12 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-08-13 ordinary 19 false
 - "Dominica XIX per annum" 2.6 green   temporale
 2023-08-14 ordinary 19 true
@@ -608,7 +608,7 @@ Calendar for liturgical year 2022
 2023-08-19 ordinary 19 true
 - "Sabbato, hebdomada XIX per annum" 3.13 green   temporale
 - "S. Ioannis Eudes, presbyteri" 3.12 white eudes 8/19 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-08-20 ordinary 20 false
 - "Dominica XX per annum" 2.6 green   temporale
 2023-08-21 ordinary 20 false
@@ -626,7 +626,7 @@ Calendar for liturgical year 2022
 - "S. Ioseph de Calasanz, presbyteri" 3.12 white joseph_calasanz 8/25 sanctorale
 2023-08-26 ordinary 20 true
 - "Sabbato, hebdomada XX per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-08-27 ordinary 21 false
 - "Dominica XXI per annum" 2.6 green   temporale
 2023-08-28 ordinary 21 false
@@ -641,7 +641,7 @@ Calendar for liturgical year 2022
 - "Feria sexta, hebdomada XXI per annum" 3.13 green   temporale
 2023-09-02 ordinary 21 true
 - "Sabbato, hebdomada XXI per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-09-03 ordinary 22 false
 - "Dominica XXII per annum" 2.6 green   temporale
 2023-09-04 ordinary 22 false
@@ -657,7 +657,7 @@ Calendar for liturgical year 2022
 2023-09-09 ordinary 22 true
 - "Sabbato, hebdomada XXII per annum" 3.13 green   temporale
 - "S. Petri Claver, presbyteri" 3.12 white claver 9/9 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-09-10 ordinary 23 false
 - "Dominica XXIII per annum" 2.6 green   temporale
 2023-09-11 ordinary 23 false
@@ -739,7 +739,7 @@ Calendar for liturgical year 2022
 2023-10-14 ordinary 27 true
 - "Sabbato, hebdomada XXVII per annum" 3.13 green   temporale
 - "S. Callisti I, papae et martyris" 3.12 red callistus_i 10/14 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-10-15 ordinary 28 false
 - "Dominica XXVIII per annum" 2.6 green   temporale
 2023-10-16 ordinary 28 false
@@ -758,7 +758,7 @@ Calendar for liturgical year 2022
 - "Feria sexta, hebdomada XXVIII per annum" 3.13 green   temporale
 2023-10-21 ordinary 28 true
 - "Sabbato, hebdomada XXVIII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-10-22 ordinary 29 false
 - "Dominica XXIX per annum" 2.6 green   temporale
 2023-10-23 ordinary 29 false
@@ -822,7 +822,7 @@ Calendar for liturgical year 2022
 2023-11-18 ordinary 32 true
 - "Sabbato, hebdomada XXXII per annum" 3.13 green   temporale
 - "In Dedicatione basilicarum Ss. Petri et Pauli, apostolorum" 3.12 white peter_paul_basilicas 11/18 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-11-19 ordinary 33 false
 - "Dominica XXXIII per annum" 2.6 green   temporale
 2023-11-20 ordinary 33 false
@@ -840,9 +840,9 @@ Calendar for liturgical year 2022
 2023-11-25 ordinary 33 true
 - "Sabbato, hebdomada XXXIII per annum" 3.13 green   temporale
 - "S. Catharinae Alexandrinae, virginis et martyris" 3.12 red catherine_of_alexandria 11/25 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-11-26 ordinary 34 false
-- "Domini nostri Iesu Christi universorum regis" 1.3 white christ_king false temporale
+- "Domini nostri Iesu Christi universorum regis" 1.3 white christ_king  temporale
 2023-11-27 ordinary 34 false
 - "Feria secunda, hebdomada XXXIV per annum" 3.13 green   temporale
 2023-11-28 ordinary 34 false
@@ -855,4 +855,4 @@ Calendar for liturgical year 2022
 - "Feria sexta, hebdomada XXXIV per annum" 3.13 green   temporale
 2023-12-02 ordinary 34 true
 - "Sabbato, hebdomada XXXIV per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale

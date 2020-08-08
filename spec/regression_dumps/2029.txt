@@ -63,7 +63,7 @@ Calendar for liturgical year 2029
 - "De die V infra octavam Nativitatis" 2.9 white   temporale
 - "S. Thomae Becket, episcopi et martyris" 4.0 white becket 12/29 sanctorale
 2029-12-30 christmas 1 false
-- "Sanctae Familiae Iesu, Mariae et Ioseph" 2.5 white holy_family false temporale
+- "Sanctae Familiae Iesu, Mariae et Ioseph" 2.5 white holy_family  temporale
 2029-12-31 christmas 1 true
 - "De die VII infra octavam Nativitatis" 2.9 white   temporale
 - "S. Silvestri I, papae" 4.0 white sylvester_i 12/31 sanctorale
@@ -79,7 +79,7 @@ Calendar for liturgical year 2029
 2030-01-05 christmas 1 true
 - "Sabbato post octavam Nativitatis" 3.13 white   temporale
 2030-01-06 christmas 2 false
-- "In Epiphania Domini" 1.2 white epiphany false temporale
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2030-01-07 christmas 2 false
 - "Feria secunda post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
@@ -94,7 +94,7 @@ Calendar for liturgical year 2029
 2030-01-12 christmas 2 true
 - "Sabbato post Epiphaniam" 3.13 white   temporale
 2030-01-13 christmas 3 false
-- "In Baptismate Domini" 2.5 white baptism_of_lord false temporale
+- "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
 2030-01-14 ordinary 1 false
 - "Feria secunda, hebdomada I per annum" 3.13 green   temporale
 2030-01-15 ordinary 1 false
@@ -107,7 +107,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada I per annum" 3.13 green   temporale
 2030-01-19 ordinary 1 true
 - "Sabbato, hebdomada I per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-01-20 ordinary 2 false
 - "Dominica II per annum" 2.6 green   temporale
 2030-01-21 ordinary 2 false
@@ -153,7 +153,7 @@ Calendar for liturgical year 2029
 - "S. Iosephinae Bakhita, virginis" 3.12 white josephine_bakhita 2/8 sanctorale
 2030-02-09 ordinary 4 true
 - "Sabbato, hebdomada IV per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-02-10 ordinary 5 false
 - "Dominica V per annum" 2.6 green   temporale
 2030-02-11 ordinary 5 false
@@ -169,7 +169,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada V per annum" 3.13 green   temporale
 2030-02-16 ordinary 5 true
 - "Sabbato, hebdomada V per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-02-17 ordinary 6 false
 - "Dominica VI per annum" 2.6 green   temporale
 2030-02-18 ordinary 6 false
@@ -199,7 +199,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada VII per annum" 3.13 green   temporale
 2030-03-02 ordinary 7 true
 - "Sabbato, hebdomada VII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-03-03 ordinary 8 false
 - "Dominica VIII per annum" 2.6 green   temporale
 2030-03-04 ordinary 8 false
@@ -208,7 +208,7 @@ Calendar for liturgical year 2029
 2030-03-05 ordinary 8 false
 - "Feria tertia, hebdomada VIII per annum" 3.13 green   temporale
 2030-03-06 lent 0 false
-- "Feria IV Cinerum" 1.2 violet ash_wednesday false temporale
+- "Feria IV Cinerum" 1.2 violet ash_wednesday  temporale
 2030-03-07 lent 0 false
 - "Feria quinta post Cineres" 2.9 violet   temporale
 - "Ss. Perpetuae et Felicitatis, martyrum" 4.0 violet perpetua_felicity 3/7 sanctorale
@@ -296,7 +296,7 @@ Calendar for liturgical year 2029
 - "Sabbato, hebdomada V Quadragesimae" 2.9 violet   temporale
 - "S. Martini I, papae et martyris" 4.0 violet martin_i 4/13 sanctorale
 2030-04-14 lent 6 false
-- "Dominica in Palmis de Passione Domini" 1.2 red palm_sunday false temporale
+- "Dominica in Palmis de Passione Domini" 1.2 red palm_sunday  temporale
 2030-04-15 lent 6 false
 - "Feria secunda Hebdomadae Sanctae" 1.2 violet   temporale
 2030-04-16 lent 6 false
@@ -306,11 +306,11 @@ Calendar for liturgical year 2029
 2030-04-18 lent 6 false
 - "Feria quinta Hebdomadae Sanctae" 1.2 violet   temporale
 2030-04-19 triduum 0 false
-- "Feria VI in Passione Domini" 1.1 red good_friday false temporale
+- "Feria VI in Passione Domini" 1.1 red good_friday  temporale
 2030-04-20 triduum 0 true
-- "Sabbato sancto" 1.1 violet holy_saturday false temporale
+- "Sabbato sancto" 1.1 violet holy_saturday  temporale
 2030-04-21 triduum 1 false
-- "Dominica Paschae in Resurrectione Domini" 1.1 white easter_sunday false temporale
+- "Dominica Paschae in Resurrectione Domini" 1.1 white easter_sunday  temporale
 2030-04-22 easter 1 false
 - "Feria secunda infra octavam Paschae" 1.2 white   temporale
 2030-04-23 easter 1 false
@@ -400,7 +400,7 @@ Calendar for liturgical year 2029
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
 2030-05-30 easter 6 false
-- "In Ascensione Domini" 1.2 white ascension false temporale
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2030-05-31 easter 6 false
 - "In Visitatione B. Mariae Virginis" 2.7 white visitation 5/31 sanctorale
 2030-06-01 easter 6 true
@@ -421,9 +421,9 @@ Calendar for liturgical year 2029
 2030-06-08 easter 7 true
 - "Sabbato, hebdomada VII temporis paschalis" 3.13 white   temporale
 2030-06-09 easter 8 false
-- "Dominica Pentecostes" 1.2 red pentecost false temporale
+- "Dominica Pentecostes" 1.2 red pentecost  temporale
 2030-06-10 ordinary 10 false
-- "B. Mariae Virginis Ecclesiae Matris" 3.1 white mother_of_church false temporale
+- "B. Mariae Virginis Ecclesiae Matris" 3.1 white mother_of_church  temporale
 2030-06-11 ordinary 10 false
 - "S. Barnabae, apostoli" 3.1 red barnabas 6/11 sanctorale
 2030-06-12 ordinary 10 false
@@ -434,9 +434,9 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada X per annum" 3.13 green   temporale
 2030-06-15 ordinary 10 true
 - "Sabbato, hebdomada X per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-06-16 ordinary 11 false
-- "Sanctissimae Trinitatis" 1.3 white holy_trinity false temporale
+- "Sanctissimae Trinitatis" 1.3 white holy_trinity  temporale
 2030-06-17 ordinary 11 false
 - "Feria secunda, hebdomada XI per annum" 3.13 green   temporale
 2030-06-18 ordinary 11 false
@@ -445,14 +445,14 @@ Calendar for liturgical year 2029
 - "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
 - "S. Romualdi, abbatis" 3.12 white romuald 6/19 sanctorale
 2030-06-20 ordinary 11 false
-- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi false temporale
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2030-06-21 ordinary 11 false
 - "S Aloisii Gonzaga, religiosi" 3.1 white aloysius 6/21 sanctorale
 2030-06-22 ordinary 11 true
 - "Sabbato, hebdomada XI per annum" 3.13 green   temporale
 - "S. Paulini Nolani" 3.12 white paulinus 6/22 sanctorale
 - "Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum" 3.12 red fisher_more 6/22 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-06-23 ordinary 12 true
 - "Dominica XII per annum" 2.6 green   temporale
 2030-06-24 ordinary 12 false
@@ -465,7 +465,7 @@ Calendar for liturgical year 2029
 - "Feria quinta, hebdomada XII per annum" 3.13 green   temporale
 - "S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris" 3.12 white cyril_of_alexandria 6/27 sanctorale
 2030-06-28 ordinary 12 false
-- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart false temporale
+- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
 2030-06-29 ordinary 12 false
 - "Ss. PETRI ET PAULI, APOSTOLORUM" 1.3 red peter_paul 6/29 sanctorale
 2030-06-30 ordinary 13 false
@@ -485,7 +485,7 @@ Calendar for liturgical year 2029
 2030-07-06 ordinary 13 true
 - "Sabbato, hebdomada XIII per annum" 3.13 green   temporale
 - "S. Mariae Goretti, virginis et martyris" 3.12 red goretti 7/6 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-07-07 ordinary 14 false
 - "Dominica XIV per annum" 2.6 green   temporale
 2030-07-08 ordinary 14 false
@@ -502,7 +502,7 @@ Calendar for liturgical year 2029
 2030-07-13 ordinary 14 true
 - "Sabbato, hebdomada XIV per annum" 3.13 green   temporale
 - "S. Henrici" 3.12 white henry 7/13 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-07-14 ordinary 15 false
 - "Dominica XV per annum" 2.6 green   temporale
 2030-07-15 ordinary 15 false
@@ -519,7 +519,7 @@ Calendar for liturgical year 2029
 2030-07-20 ordinary 15 true
 - "Sabbato, hebdomada XV per annum" 3.13 green   temporale
 - "S. Apollinaris, episcopi et martyris" 3.12 red apollinaris 7/20 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-07-21 ordinary 16 false
 - "Dominica XVI per annum" 2.6 green   temporale
 2030-07-22 ordinary 16 false
@@ -536,7 +536,7 @@ Calendar for liturgical year 2029
 - "Ss. Ioachim et Annae, parentum B. Mariae Virginis" 3.1 white joachim_anne 7/26 sanctorale
 2030-07-27 ordinary 16 true
 - "Sabbato, hebdomada XVI per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-07-28 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2030-07-29 ordinary 17 false
@@ -554,7 +554,7 @@ Calendar for liturgical year 2029
 - "S. Petri Iuliani Eymard, presbyteri" 3.12 white eymard 8/2 sanctorale
 2030-08-03 ordinary 17 true
 - "Sabbato, hebdomada XVII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-08-04 ordinary 18 false
 - "Dominica XVIII per annum" 2.6 green   temporale
 2030-08-05 ordinary 18 false
@@ -590,7 +590,7 @@ Calendar for liturgical year 2029
 - "S. Stephani Hungariae" 3.12 white stephen_hungary 8/16 sanctorale
 2030-08-17 ordinary 19 true
 - "Sabbato, hebdomada XIX per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-08-18 ordinary 20 false
 - "Dominica XX per annum" 2.6 green   temporale
 2030-08-19 ordinary 20 false
@@ -621,7 +621,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada XXI per annum" 3.13 green   temporale
 2030-08-31 ordinary 21 true
 - "Sabbato, hebdomada XXI per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-09-01 ordinary 22 false
 - "Dominica XXII per annum" 2.6 green   temporale
 2030-09-02 ordinary 22 false
@@ -636,7 +636,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada XXII per annum" 3.13 green   temporale
 2030-09-07 ordinary 22 true
 - "Sabbato, hebdomada XXII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-09-08 ordinary 23 false
 - "Dominica XXIII per annum" 2.6 green   temporale
 2030-09-09 ordinary 23 false
@@ -686,7 +686,7 @@ Calendar for liturgical year 2029
 - "Sabbato, hebdomada XXV per annum" 3.13 green   temporale
 - "S. Venceslai, martyris" 3.12 red wenceslaus 9/28 sanctorale
 - "S. Laurentii Ruiz et sociorum, martyrum" 3.12 red ruiz 9/28 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-09-29 ordinary 26 false
 - "Dominica XXVI per annum" 2.6 green   temporale
 2030-09-30 ordinary 26 false
@@ -702,7 +702,7 @@ Calendar for liturgical year 2029
 2030-10-05 ordinary 26 true
 - "Sabbato, hebdomada XXVI per annum" 3.13 green   temporale
 - "S. Faustinæ Kowalska, virginis" 3.12 white faustina_kowalska 10/5 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-06 ordinary 27 false
 - "Dominica XXVII per annum" 2.6 green   temporale
 2030-10-07 ordinary 27 false
@@ -720,7 +720,7 @@ Calendar for liturgical year 2029
 - "S. Ioannis XXIII, papae" 3.12 white john_xxiii 10/11 sanctorale
 2030-10-12 ordinary 27 true
 - "Sabbato, hebdomada XXVII per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-13 ordinary 28 false
 - "Dominica XXVIII per annum" 2.6 green   temporale
 2030-10-14 ordinary 28 false
@@ -740,7 +740,7 @@ Calendar for liturgical year 2029
 - "Sabbato, hebdomada XXVIII per annum" 3.13 green   temporale
 - "Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum" 3.12 red brebeuf_jogues 10/19 sanctorale
 - "S. Pauli a Cruce, presbyteri" 3.12 white paul_of_cross 10/19 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-20 ordinary 29 false
 - "Dominica XXIX per annum" 2.6 green   temporale
 2030-10-21 ordinary 29 false
@@ -758,7 +758,7 @@ Calendar for liturgical year 2029
 - "Feria sexta, hebdomada XXIX per annum" 3.13 green   temporale
 2030-10-26 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-27 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
 2030-10-28 ordinary 30 false
@@ -804,7 +804,7 @@ Calendar for liturgical year 2029
 - "Sabbato, hebdomada XXXII per annum" 3.13 green   temporale
 - "S. Margaritae Scotiae" 3.12 white margaret_of_scotland 11/16 sanctorale
 - "S. Gertrudis, virginis" 3.12 white gertrude 11/16 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-11-17 ordinary 33 false
 - "Dominica XXXIII per annum" 2.6 green   temporale
 2030-11-18 ordinary 33 false
@@ -822,9 +822,9 @@ Calendar for liturgical year 2029
 - "Sabbato, hebdomada XXXIII per annum" 3.13 green   temporale
 - "S. Clementis I, papae et martyris" 3.12 red clement_i 11/23 sanctorale
 - "S. Columbani, abbatis" 3.12 white columban 11/23 sanctorale
-- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm false temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-11-24 ordinary 34 false
-- "Domini nostri Iesu Christi universorum regis" 1.3 white christ_king false temporale
+- "Domini nostri Iesu Christi universorum regis" 1.3 white christ_king  temporale
 2030-11-25 ordinary 34 false
 - "Feria secunda, hebdomada XXXIV per annum" 3.13 green   temporale
 - "S. Catharinae Alexandrinae, virginis et martyris" 3.12 red catherine_of_alexandria 11/25 sanctorale
