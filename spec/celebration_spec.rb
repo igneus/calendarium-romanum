@@ -140,9 +140,9 @@ describe CR::Celebration do
   end
 
   describe '#temporale?, #sanctorale?' do
-    let(:tc) { described_class.new.change(cycle: :temporale) }
-    let(:sc) { described_class.new.change(cycle: :sanctorale) }
-    let(:nc) { described_class.new.change(cycle: anything) }
+    let(:tc) { described_class.new(cycle: :temporale) }
+    let(:sc) { described_class.new(cycle: :sanctorale) }
+    let(:nc) { described_class.new(cycle: anything) }
 
     it { expect(tc.temporale?).to be true }
     it { expect(tc.sanctorale?).to be false }
