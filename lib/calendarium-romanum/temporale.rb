@@ -64,8 +64,16 @@ module CalendariumRomanum
       # with sensible defaults
       #
       # See {Celebration#initialize} for argument description.
-      def create_celebration(title, rank, colour, symbol: nil, date: nil)
-        Celebration.new(title, rank, colour, symbol, date, :temporale)
+      def create_celebration(title, rank, colour, symbol: nil, date: nil, sunday: nil)
+        Celebration.new(
+          title: title,
+          rank: rank,
+          colour: colour,
+          symbol: symbol,
+          date: date,
+          cycle: :temporale,
+          sunday: sunday
+        )
       end
 
       C = Struct.new(:date_method, :celebration)
@@ -366,7 +374,7 @@ module CalendariumRomanum
       week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
 
-      self.class.create_celebration title, rank, seas.colour
+      self.class.create_celebration title, rank, seas.colour, sunday: true
     end
 
     def ferial(date)

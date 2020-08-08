@@ -126,16 +126,21 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, **kwargs)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, sunday = false, **kwargs)
       @title = kwargs.delete(:title) || title
       @rank = kwargs.delete(:rank) || rank
       @colour = kwargs.delete(:colour) || kwargs.delete(:color) || colour
       @symbol = kwargs.delete(:symbol) || symbol
       @date = kwargs.delete(:date) || date
       @cycle = kwargs.delete(:cycle) || cycle
+      @sunday = kwargs.delete(:sunday) || sunday
 
       unless kwargs.empty?
         raise ArgumentError.new('Unexpected keyword arguments: ' + kwargs.keys.inspect)
+      end
+
+      if @sunday && ![Ranks::SUNDAY_UNPRIVILEGED, Ranks::PRIMARY].include?(@rank)
+        raise ArgumentError.new("Rank #{@rank} cannot be Sunday")
       end
     end
 
@@ -144,7 +149,7 @@ module CalendariumRomanum
     #
     # @return [Celebration]
     # @since 0.5.0
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil, sunday: nil)
       self.class.new(
         title: title || self.title,
         rank: rank || self.rank,
@@ -152,6 +157,7 @@ module CalendariumRomanum
         symbol: symbol || self.symbol,
         date: date || self.date,
         cycle: cycle || self.cycle,
+        sunday: sunday || @sunday
       )
     end
 
@@ -223,6 +229,16 @@ module CalendariumRomanum
     # @since 0.6.0
     def sanctorale?
       cycle == :sanctorale
+    end
+
+    # Is the celebration a Sunday?
+    #
+    # Please note that for "privileged Sundays" true is returned, while {Rank#sunday?}
+    # returns false (because not all celebrations of that rank are Sundays).
+    #
+    # @return [Boolean]
+    def sunday?
+      rank.sunday? || @sunday
     end
 
     # String representation of the object's contents

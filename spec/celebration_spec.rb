@@ -97,6 +97,22 @@ describe CR::Celebration do
       expect { described_class.new(title: 'Title', unexpected: 'value', another: 2) }
         .to raise_exception(ArgumentError, 'Unexpected keyword arguments: [:unexpected, :another]')
     end
+
+    can_be_sunday = [CR::Ranks::PRIMARY, CR::Ranks::SUNDAY_UNPRIVILEGED]
+
+    can_be_sunday.each do |rank|
+      it "rank '#{rank.desc}' can be Sunday" do
+        c = described_class.new rank: rank, sunday: true
+        expect(c.sunday?).to be true
+      end
+    end
+
+    (CR::Ranks.all - can_be_sunday).each do |rank|
+      it "rank '#{rank.desc}' cannot be Sunday" do
+        expect { described_class.new rank: rank, sunday: true }
+          .to raise_exception(ArgumentError, /cannot be Sunday/)
+      end
+    end
   end
 
   describe '#==' do
@@ -152,6 +168,25 @@ describe CR::Celebration do
 
     it { expect(nc.sanctorale?).to be false }
     it { expect(nc.temporale?).to be false }
+  end
+
+  describe '#sunday?' do
+    it 'is true for unprivileged Sundays' do
+      c = described_class.new rank: CR::Ranks::SUNDAY_UNPRIVILEGED
+      expect(c.sunday?).to be true
+    end
+
+    (CR::Ranks.all - [CR::Ranks::SUNDAY_UNPRIVILEGED]).each do |rank|
+      it "is false for '#{rank.desc}'" do
+        c = described_class.new rank: rank
+        expect(c.sunday?).to be false
+      end
+    end
+
+    it 'is true for primary days if set by a constructor parameter' do
+      c = described_class.new rank: CR::Ranks::PRIMARY, sunday: true
+      expect(c.sunday?).to be true
+    end
   end
 
   describe '#to_s' do

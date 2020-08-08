@@ -277,30 +277,35 @@ describe CR::Temporale do
           c = t13.get(8, 10)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::GREEN
+          expect(c.sunday?).to be true
         end
 
         it 'in Advent' do
           c = t13.get(12, 15)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
+          expect(c.sunday?).to be true
         end
 
         it 'in Christmas time' do
           c = t13.get(1, 5)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be true
         end
 
         it 'in Lent' do
           c = t13.get(3, 23)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
+          expect(c.sunday?).to be true
         end
 
         it 'in Easter Time' do
           c = t13.get(5, 11)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be true
         end
       end
 
@@ -367,6 +372,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Passion Sunday (Palm Sunday)'
           expect(c.colour).to eq CR::Colours::RED
+          expect(c.sunday?).to be true
         end
 
         it 'Good Friday' do
