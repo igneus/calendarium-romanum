@@ -139,6 +139,22 @@ module CalendariumRomanum
       end
     end
 
+    # Build a new instance using the receiver's attributes
+    # for all properties for which (a non-nil) value was not passed.
+    #
+    # @return [Celebration]
+    # @since 0.5.0
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
+      self.class.new(
+        title: title || self.title,
+        rank: rank || self.rank,
+        colour: colour || color || self.colour,
+        symbol: symbol || self.symbol,
+        date: date || self.date,
+        cycle: cycle || self.cycle,
+      )
+    end
+
     # @return [Rank]
     attr_reader :rank
 
@@ -207,22 +223,6 @@ module CalendariumRomanum
     # @since 0.6.0
     def sanctorale?
       cycle == :sanctorale
-    end
-
-    # Build a new instance using the receiver's attributes
-    # for all properties for which (a non-nil) value was not passed.
-    #
-    # @return [Celebration]
-    # @since 0.5.0
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
-      self.class.new(
-        title || self.title,
-        rank || self.rank,
-        colour || color || self.colour,
-        symbol || self.symbol,
-        date || self.date,
-        cycle || self.cycle,
-      )
     end
 
     # String representation of the object's contents
