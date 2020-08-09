@@ -18,7 +18,7 @@ module CalendariumRomanum
       calendar = options[:calendar]
       if File.exist?(calendar)
         begin
-          sanctorale = SanctoraleLoader.new.load_from_file(calendar)
+          sanctorale = sanctorale_from_path(calendar)
         rescue CalendariumRomanum::InvalidDataError
           die! 'Invalid file format.'
         end
@@ -54,11 +54,9 @@ module CalendariumRomanum
 
     desc 'errors FILE1, ...', 'finds errors in sanctorale data files'
     def errors(*files)
-      loader = SanctoraleLoader.new
       files.each do |path|
-        s = Sanctorale.new
         begin
-          loader.load_from_file path, s
+          sanctorale_from_path path
         rescue Errno::ENOENT, InvalidDataError => err
           die! err.message
         end
@@ -67,9 +65,8 @@ module CalendariumRomanum
 
     desc 'cmp FILE1, FILE2', 'detect differences in rank and colour of corresponding celebrations'
     def cmp(a, b)
-      loader = SanctoraleLoader.new
       paths = [a, b]
-      sanctoralia = paths.collect {|source| loader.load_from_file source }
+      sanctoralia = paths.collect {|source| sanctorale_from_path source }
       names = paths.collect {|source| File.basename source }
 
       # a leap year must be chosen in order to iterate over
@@ -154,5 +151,14 @@ module CalendariumRomanum
       end
     end
 
+    def sanctorale_from_path(path)
+      loader = SanctoraleLoader.new
+
+      if path == '-'
+        loader.load(STDIN)
+      else
+        loader.load_from_file(path)
+      end
+    end
   end
 end
