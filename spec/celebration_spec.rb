@@ -7,7 +7,7 @@ describe CR::Celebration do
 
       expect(c.title).to eq ''
       expect(c.rank).to be CR::Ranks::FERIAL
-      expect(c.colour).to be CR::Colours::GREEN
+      expect(c.colour).to be CR::Colours::WHITE
       expect(c.symbol).to be nil
       expect(c.date).to be nil
       expect(c.cycle).to be :sanctorale

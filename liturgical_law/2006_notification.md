@@ -30,7 +30,7 @@ dell’Annunciazione del Signore sarà celebrata il 31 marzo, ovvero il lunedì 
 la II Domenica di Pasqua.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new(sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load)
+calendar = CR::PerpetualCalendar.new(sanctorale: CR::Data::GENERAL_ROMAN.load)
 
 expect(calendar[Date.new(2008, 3, 15)].celebrations[0].symbol).to be :joseph
 expect(calendar[Date.new(2008, 3, 31)].celebrations[0].symbol).to be :annunciation

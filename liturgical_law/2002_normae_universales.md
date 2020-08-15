@@ -55,7 +55,7 @@ his dominicis occurrentes ad feriam secundam sequentem transferuntur,
 nisi agatur de occurrentia in Dominica in Palmis aut in Dominica Resurrectionis Domini.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 annunciation = CR::AbstractDate.new 3, 25
 
@@ -188,7 +188,7 @@ I Vesperas, nisi de festis Domini agatur quae in dominicis “ per annum ”
 et temporis Nativitatis occurrunt et pro earum Officio substituuntur.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load)
+calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN.load)
 
 presentation = CR::AbstractDate.new 2, 2
 year_on_sunday = (2000..2100).find {|y| presentation.in_year(y).sunday? }
@@ -216,7 +216,7 @@ una tantum celebrari potest, omissis ceteris.
 fieri potest memoria ad libitum de beata Maria Virgine.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 free_saturdays = CR::Util::Year.new(2000).select do |date|
   day = calendar[date]
@@ -450,7 +450,7 @@ f) die 1 ianuarii, in octava Nativitatis, fit sollemnitas Sanctae Dei
 Genetricis Mariae, in qua commemoratur etiam impositio Ss.mi Nominis Iesu.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 year = 2000 # use fixed year - it would be too unwieldy to make this example work with random year
 
@@ -769,7 +769,7 @@ die 18 martii. Ubi vero non est de praecepto servanda, a Conferentia Episcoporum
 ad alium diem extra Quadragesimam transferri potest.
 
 ```ruby
-calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 joseph = CR::AbstractDate.new 3, 19
 
@@ -877,7 +877,7 @@ Reliquae celebrationes eo anno omittuntur.
 # Sollemnitas ... Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadae sanctae,
 # semper ad feriam II post dominicam II Paschae erit transferenda.
 
-calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.load
+calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 annunciation = CR::AbstractDate.new 3, 25
 

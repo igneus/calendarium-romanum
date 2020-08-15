@@ -355,7 +355,7 @@ describe CR::Calendar do
     end
 
     describe '#transferred' do
-      let(:c) { CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN_ENGLISH.load) }
+      let(:c) { CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN.load) }
 
       it 'is a frozen Hash' do
         expect(c.transferred).to be_a Hash

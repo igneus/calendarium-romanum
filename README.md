@@ -336,7 +336,7 @@ proper solemnities in code:
 
 ```ruby
 # here you would load your 'diocese.txt' instead
-diocese = CR::SanctoraleLoader.new.load_from_file 'data/universal-en.txt'
+diocese = CR::SanctoraleLoader.new.load_from_file 'data/universal.txt'
 
 dedication = CR::Celebration.new('Anniversary of Dedication of the Parish Church', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE)
 titular = CR::Celebration.new('Saint Nicholas, Bishop, Titular Solemnity of the Parish Church', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE)

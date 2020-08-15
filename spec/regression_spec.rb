@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 require 'stringio'
 
 describe 'results stay the same' do
-  let(:sanctorale) { CR::Data::GENERAL_ROMAN_LATIN.load }
+  let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
 
   years = 2020..2030
   years.each do |year|

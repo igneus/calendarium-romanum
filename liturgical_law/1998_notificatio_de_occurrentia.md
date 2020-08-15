@@ -27,7 +27,7 @@ Gerardus M. AGNELO
 *Archiepiscopus a Secretis*
 
 ```ruby
-sanctorale = CR::Data::GENERAL_ROMAN_LATIN.load
+sanctorale = CR::Data::GENERAL_ROMAN.load
 calendar = CR::PerpetualCalendar.new sanctorale: sanctorale
 
 has_occurrence = proc do |y|
