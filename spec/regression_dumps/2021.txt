@@ -1,0 +1,849 @@
+Calendar for liturgical year 2021
+2021-11-28 advent 1 false
+- "Dominica I Adventus" 1.2 violet   temporale
+2021-11-29 advent 1 false
+- "Feria secunda, hebdomada I Adventus" 3.13 violet   temporale
+2021-11-30 advent 1 false
+- "S. Andreae, apostoli" 2.7 red andrew 11/30 sanctorale
+2021-12-01 advent 1 false
+- "Feria quarta, hebdomada I Adventus" 3.13 violet   temporale
+2021-12-02 advent 1 false
+- "Feria quinta, hebdomada I Adventus" 3.13 violet   temporale
+2021-12-03 advent 1 false
+- "S. Francisci Xavier, presbyteri" 3.1 white francis_xavier 12/3 sanctorale
+2021-12-04 advent 1 true
+- "Sabbato, hebdomada I Adventus" 3.13 violet   temporale
+- "S. Ioannis Damasceni, presbyteri et Ecclesiae doctoris" 3.12 white john_damascene 12/4 sanctorale
+2021-12-05 advent 2 false
+- "Dominica II Adventus" 1.2 violet   temporale
+2021-12-06 advent 2 false
+- "Feria secunda, hebdomada II Adventus" 3.13 violet   temporale
+- "S. Nicolai, episcopi" 3.12 white nicholas 12/6 sanctorale
+2021-12-07 advent 2 true
+- "S. Ambrosii, episcopi et Ecclesiae doctoris" 3.1 white ambrose 12/7 sanctorale
+2021-12-08 advent 2 false
+- "IN CONCEPTIONE IMMACULATA BEATAE MARIAE VIRGINIS" 1.3 white bvm_immaculate 12/8 sanctorale
+2021-12-09 advent 2 false
+- "Feria quinta, hebdomada II Adventus" 3.13 violet   temporale
+- "S. Ioannis Didaci Cuahtlatoatzin" 3.12 white juan_diego 12/9 sanctorale
+2021-12-10 advent 2 false
+- "Feria sexta, hebdomada II Adventus" 3.13 violet   temporale
+- "Beatae Mariae Virginis de Loreto" 3.12 white bvm_loreto 12/10 sanctorale
+2021-12-11 advent 2 true
+- "Sabbato, hebdomada II Adventus" 3.13 violet   temporale
+- "S. Damasi I, papae" 3.12 white damasus_i 12/11 sanctorale
+2021-12-12 advent 3 false
+- "Dominica III Adventus" 1.2 violet   temporale
+2021-12-13 advent 3 false
+- "S. Luciae, virginis et martyris" 3.1 red lucy 12/13 sanctorale
+2021-12-14 advent 3 false
+- "S. Ioannis a Cruce, presbyteri et Ecclesiae doctoris" 3.1 white john_of_cross 12/14 sanctorale
+2021-12-15 advent 3 false
+- "Feria quarta, hebdomada III Adventus" 3.13 violet   temporale
+2021-12-16 advent 3 false
+- "Feria quinta, hebdomada III Adventus" 3.13 violet   temporale
+2021-12-17 advent 3 false
+- "Die XVII decembris" 2.9 violet   temporale
+2021-12-18 advent 3 true
+- "Die XVIII decembris" 2.9 violet   temporale
+2021-12-19 advent 4 false
+- "Dominica IV Adventus" 1.2 violet   temporale
+2021-12-20 advent 4 false
+- "Die XX decembris" 2.9 violet   temporale
+2021-12-21 advent 4 false
+- "Die XXI decembris" 2.9 violet   temporale
+- "S. Petri Canisii, presbyteri et Ecclesiae doctoris" 4.0 violet canisius 12/21 sanctorale
+2021-12-22 advent 4 false
+- "Die XXII decembris" 2.9 violet   temporale
+2021-12-23 advent 4 false
+- "Die XXIII decembris" 2.9 violet   temporale
+- "S. Ioannis de Kęty, presbyteri" 4.0 violet john_of_kanty 12/23 sanctorale
+2021-12-24 advent 4 true
+- "Die XXIV decembris" 2.9 violet   temporale
+2021-12-25 christmas 0 false
+- "In Nativitate Domini" 1.2 white nativity 12/25 temporale
+2021-12-26 christmas 1 false
+- "Sanctae Familiae Iesu, Mariae et Ioseph" 2.5 white holy_family  temporale
+2021-12-27 christmas 1 false
+- "S. Ioannis, apostoli et evangelistae" 2.7 white john_evangelist 12/27 sanctorale
+2021-12-28 christmas 1 false
+- "Ss. Innocentium, martyrum" 2.7 red innocents 12/28 sanctorale
+2021-12-29 christmas 1 false
+- "De die V infra octavam Nativitatis" 2.9 white   temporale
+- "S. Thomae Becket, episcopi et martyris" 4.0 white becket 12/29 sanctorale
+2021-12-30 christmas 1 false
+- "De die VI infra octavam Nativitatis" 2.9 white   temporale
+2021-12-31 christmas 1 true
+- "De die VII infra octavam Nativitatis" 2.9 white   temporale
+- "S. Silvestri I, papae" 4.0 white sylvester_i 12/31 sanctorale
+2022-01-01 christmas 1 false
+- "In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae" 1.3 white mother_of_god 1/1 temporale
+2022-01-02 christmas 2 false
+- "Dominica II post Nativitatem" 2.6 white   temporale
+2022-01-03 christmas 2 false
+- "Feria secunda post octavam Nativitatis" 3.13 white   temporale
+- "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
+2022-01-04 christmas 2 false
+- "Feria tertia post octavam Nativitatis" 3.13 white   temporale
+2022-01-05 christmas 2 true
+- "Feria quarta post octavam Nativitatis" 3.13 white   temporale
+2022-01-06 christmas 2 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
+2022-01-07 christmas 2 false
+- "Feria sexta post Epiphaniam" 3.13 white   temporale
+- "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
+2022-01-08 christmas 2 true
+- "Sabbato post Epiphaniam" 3.13 white   temporale
+2022-01-09 christmas 3 false
+- "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
+2022-01-10 ordinary 1 false
+- "Feria secunda, hebdomada I per annum" 3.13 green   temporale
+2022-01-11 ordinary 1 false
+- "Feria tertia, hebdomada I per annum" 3.13 green   temporale
+2022-01-12 ordinary 1 false
+- "Feria quarta, hebdomada I per annum" 3.13 green   temporale
+2022-01-13 ordinary 1 false
+- "Feria quinta, hebdomada I per annum" 3.13 green   temporale
+- "S. Hilarii, episcopi et Ecclesiae doctoris" 3.12 white hilary 1/13 sanctorale
+2022-01-14 ordinary 1 false
+- "Feria sexta, hebdomada I per annum" 3.13 green   temporale
+2022-01-15 ordinary 1 true
+- "Sabbato, hebdomada I per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-01-16 ordinary 2 false
+- "Dominica II per annum" 2.6 green   temporale
+2022-01-17 ordinary 2 false
+- "S. Antonii, abbatis" 3.1 white anthony_of_egypt 1/17 sanctorale
+2022-01-18 ordinary 2 false
+- "Feria tertia, hebdomada II per annum" 3.13 green   temporale
+2022-01-19 ordinary 2 false
+- "Feria quarta, hebdomada II per annum" 3.13 green   temporale
+2022-01-20 ordinary 2 false
+- "Feria quinta, hebdomada II per annum" 3.13 green   temporale
+- "S. Fabiani, papae et martyris" 3.12 red fabian 1/20 sanctorale
+- "S. Sebastiani, martyris" 3.12 red sebastian 1/20 sanctorale
+2022-01-21 ordinary 2 false
+- "S. Agnetis, virginis et martyris" 3.1 red agnes 1/21 sanctorale
+2022-01-22 ordinary 2 true
+- "Sabbato, hebdomada II per annum" 3.13 green   temporale
+- "S. Vincentii, diaconi et martyris" 3.12 red vincent_deacon 1/22 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-01-23 ordinary 3 false
+- "Dominica III per annum" 2.6 green   temporale
+2022-01-24 ordinary 3 false
+- "S. Francisci de Sales, episcopi et Ecclesiae doctoris" 3.1 white francis_de_sales 1/24 sanctorale
+2022-01-25 ordinary 3 false
+- "In conversione S. Pauli, apostoli" 2.7 white paul_conversion 1/25 sanctorale
+2022-01-26 ordinary 3 false
+- "Ss. Timothei et Titi, episcoporum" 3.1 white timothy_titus 1/26 sanctorale
+2022-01-27 ordinary 3 false
+- "Feria quinta, hebdomada III per annum" 3.13 green   temporale
+- "S. Angelae Merici, virginis" 3.12 white merici 1/27 sanctorale
+2022-01-28 ordinary 3 false
+- "S. Thomae de Aquino, presbyteri et Ecclesiae doctoris" 3.1 white aquinas 1/28 sanctorale
+2022-01-29 ordinary 3 true
+- "Sabbato, hebdomada III per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-01-30 ordinary 4 false
+- "Dominica IV per annum" 2.6 green   temporale
+2022-01-31 ordinary 4 false
+- "S. Ioannis Bosco, presbyteri" 3.1 white bosco 1/31 sanctorale
+2022-02-01 ordinary 4 false
+- "Feria tertia, hebdomada IV per annum" 3.13 green   temporale
+2022-02-02 ordinary 4 false
+- "IN PRAESENTATIONE DOMINI" 2.5 white presentation_of_lord 2/2 sanctorale
+2022-02-03 ordinary 4 false
+- "Feria quinta, hebdomada IV per annum" 3.13 green   temporale
+- "S. Blasii, episcopi et martyris" 3.12 red blase 2/3 sanctorale
+- "S. Ansgarii, episcopi" 3.12 white ansgar 2/3 sanctorale
+2022-02-04 ordinary 4 false
+- "Feria sexta, hebdomada IV per annum" 3.13 green   temporale
+2022-02-05 ordinary 4 true
+- "S. Agathae, virginis et martyris" 3.1 red agatha 2/5 sanctorale
+2022-02-06 ordinary 5 false
+- "Dominica V per annum" 2.6 green   temporale
+2022-02-07 ordinary 5 false
+- "Feria secunda, hebdomada V per annum" 3.13 green   temporale
+2022-02-08 ordinary 5 false
+- "Feria tertia, hebdomada V per annum" 3.13 green   temporale
+- "S. Hieronymi Emiliani" 3.12 white jerome_emiliani 2/8 sanctorale
+- "S. Iosephinae Bakhita, virginis" 3.12 white josephine_bakhita 2/8 sanctorale
+2022-02-09 ordinary 5 false
+- "Feria quarta, hebdomada V per annum" 3.13 green   temporale
+2022-02-10 ordinary 5 false
+- "S. Scholasticae, virginis" 3.1 white scholastica 2/10 sanctorale
+2022-02-11 ordinary 5 false
+- "Feria sexta, hebdomada V per annum" 3.13 green   temporale
+- "B. Mariae Virginis de Lourdes" 3.12 white bvm_lourdes 2/11 sanctorale
+2022-02-12 ordinary 5 true
+- "Sabbato, hebdomada V per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-02-13 ordinary 6 false
+- "Dominica VI per annum" 2.6 green   temporale
+2022-02-14 ordinary 6 false
+- "Ss. Cyrilli, monachi, et Methodii, episcopi" 3.1 white cyril_methodius 2/14 sanctorale
+2022-02-15 ordinary 6 false
+- "Feria tertia, hebdomada VI per annum" 3.13 green   temporale
+2022-02-16 ordinary 6 false
+- "Feria quarta, hebdomada VI per annum" 3.13 green   temporale
+2022-02-17 ordinary 6 false
+- "Feria quinta, hebdomada VI per annum" 3.13 green   temporale
+- "Ss. septem Fundatorum Ordinis Servorum B. M. V." 3.12 white servite_founders 2/17 sanctorale
+2022-02-18 ordinary 6 false
+- "Feria sexta, hebdomada VI per annum" 3.13 green   temporale
+2022-02-19 ordinary 6 true
+- "Sabbato, hebdomada VI per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-02-20 ordinary 7 false
+- "Dominica VII per annum" 2.6 green   temporale
+2022-02-21 ordinary 7 false
+- "Feria secunda, hebdomada VII per annum" 3.13 green   temporale
+- "S. Petri Damiani, episcopi et Ecclesiae doctoris" 3.12 white peter_damian 2/21 sanctorale
+2022-02-22 ordinary 7 false
+- "Cathedrae S. Petri, apostoli" 2.7 white chair_of_peter 2/22 sanctorale
+2022-02-23 ordinary 7 false
+- "S. Polycarpi, episcopi et martyris" 3.1 red polycarp 2/23 sanctorale
+2022-02-24 ordinary 7 false
+- "Feria quinta, hebdomada VII per annum" 3.13 green   temporale
+2022-02-25 ordinary 7 false
+- "Feria sexta, hebdomada VII per annum" 3.13 green   temporale
+2022-02-26 ordinary 7 true
+- "Sabbato, hebdomada VII per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-02-27 ordinary 8 false
+- "Dominica VIII per annum" 2.6 green   temporale
+2022-02-28 ordinary 8 false
+- "Feria secunda, hebdomada VIII per annum" 3.13 green   temporale
+2022-03-01 ordinary 8 false
+- "Feria tertia, hebdomada VIII per annum" 3.13 green   temporale
+2022-03-02 lent 0 false
+- "Feria IV Cinerum" 1.2 violet ash_wednesday  temporale
+2022-03-03 lent 0 false
+- "Feria quinta post Cineres" 2.9 violet   temporale
+2022-03-04 lent 0 false
+- "Feria sexta post Cineres" 2.9 violet   temporale
+- "S. Casimiri" 4.0 violet casimir 3/4 sanctorale
+2022-03-05 lent 0 true
+- "Sabbato post Cineres" 2.9 violet   temporale
+2022-03-06 lent 1 false
+- "Dominica I Quadragesimae" 1.2 violet   temporale
+2022-03-07 lent 1 false
+- "Feria secunda, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "Ss. Perpetuae et Felicitatis, martyrum" 4.0 violet perpetua_felicity 3/7 sanctorale
+2022-03-08 lent 1 false
+- "Feria tertia, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "S. Ioannis a Deo, religiosi" 4.0 violet john_of_god 3/8 sanctorale
+2022-03-09 lent 1 false
+- "Feria quarta, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "S. Franciscae Romanae, religiosae" 4.0 violet frances_of_rome 3/9 sanctorale
+2022-03-10 lent 1 false
+- "Feria quinta, hebdomada I Quadragesimae" 2.9 violet   temporale
+2022-03-11 lent 1 false
+- "Feria sexta, hebdomada I Quadragesimae" 2.9 violet   temporale
+2022-03-12 lent 1 true
+- "Sabbato, hebdomada I Quadragesimae" 2.9 violet   temporale
+2022-03-13 lent 2 false
+- "Dominica II Quadragesimae" 1.2 violet   temporale
+2022-03-14 lent 2 false
+- "Feria secunda, hebdomada II Quadragesimae" 2.9 violet   temporale
+2022-03-15 lent 2 false
+- "Feria tertia, hebdomada II Quadragesimae" 2.9 violet   temporale
+2022-03-16 lent 2 false
+- "Feria quarta, hebdomada II Quadragesimae" 2.9 violet   temporale
+2022-03-17 lent 2 false
+- "Feria quinta, hebdomada II Quadragesimae" 2.9 violet   temporale
+- "S. Patricii, episcopi" 4.0 violet patrick 3/17 sanctorale
+2022-03-18 lent 2 true
+- "Feria sexta, hebdomada II Quadragesimae" 2.9 violet   temporale
+- "S. Cyrilli Hierosolymitani, episcopi et Ecclesiae doctoris" 4.0 violet cyril_of_jerusalem 3/18 sanctorale
+2022-03-19 lent 2 true
+- "S. IOSEPH, SPONSI B. M. V." 1.3 white joseph 3/19 sanctorale
+2022-03-20 lent 3 false
+- "Dominica III Quadragesimae" 1.2 violet   temporale
+2022-03-21 lent 3 false
+- "Feria secunda, hebdomada III Quadragesimae" 2.9 violet   temporale
+2022-03-22 lent 3 false
+- "Feria tertia, hebdomada III Quadragesimae" 2.9 violet   temporale
+2022-03-23 lent 3 false
+- "Feria quarta, hebdomada III Quadragesimae" 2.9 violet   temporale
+- "S. Turibii de Mongrovejo, episcopi" 4.0 violet turibius 3/23 sanctorale
+2022-03-24 lent 3 true
+- "Feria quinta, hebdomada III Quadragesimae" 2.9 violet   temporale
+2022-03-25 lent 3 false
+- "IN ANNUNTIATIONE DOMINI" 1.3 white annunciation 3/25 sanctorale
+2022-03-26 lent 3 true
+- "Sabbato, hebdomada III Quadragesimae" 2.9 violet   temporale
+2022-03-27 lent 4 false
+- "Dominica IV Quadragesimae" 1.2 violet   temporale
+2022-03-28 lent 4 false
+- "Feria secunda, hebdomada IV Quadragesimae" 2.9 violet   temporale
+2022-03-29 lent 4 false
+- "Feria tertia, hebdomada IV Quadragesimae" 2.9 violet   temporale
+2022-03-30 lent 4 false
+- "Feria quarta, hebdomada IV Quadragesimae" 2.9 violet   temporale
+2022-03-31 lent 4 false
+- "Feria quinta, hebdomada IV Quadragesimae" 2.9 violet   temporale
+2022-04-01 lent 4 false
+- "Feria sexta, hebdomada IV Quadragesimae" 2.9 violet   temporale
+2022-04-02 lent 4 true
+- "Sabbato, hebdomada IV Quadragesimae" 2.9 violet   temporale
+- "S. Francisci de Paola, eremitae" 4.0 violet francis_of_paola 4/2 sanctorale
+2022-04-03 lent 5 false
+- "Dominica V Quadragesimae" 1.2 violet   temporale
+2022-04-04 lent 5 false
+- "Feria secunda, hebdomada V Quadragesimae" 2.9 violet   temporale
+- "S. Isidori, episcopi et Ecclesiae doctoris" 4.0 violet isidore 4/4 sanctorale
+2022-04-05 lent 5 false
+- "Feria tertia, hebdomada V Quadragesimae" 2.9 violet   temporale
+- "S. Vincentii Ferrer, presbyteri" 4.0 violet vincent_ferrer 4/5 sanctorale
+2022-04-06 lent 5 false
+- "Feria quarta, hebdomada V Quadragesimae" 2.9 violet   temporale
+2022-04-07 lent 5 false
+- "Feria quinta, hebdomada V Quadragesimae" 2.9 violet   temporale
+- "S. Ioannis Baptistae de la Salle, presbyteri" 4.0 violet de_la_salle 4/7 sanctorale
+2022-04-08 lent 5 false
+- "Feria sexta, hebdomada V Quadragesimae" 2.9 violet   temporale
+2022-04-09 lent 5 true
+- "Sabbato, hebdomada V Quadragesimae" 2.9 violet   temporale
+2022-04-10 lent 6 false
+- "Dominica in Palmis de Passione Domini" 1.2 red palm_sunday  temporale
+2022-04-11 lent 6 false
+- "Feria secunda Hebdomadae Sanctae" 1.2 violet   temporale
+2022-04-12 lent 6 false
+- "Feria tertia Hebdomadae Sanctae" 1.2 violet   temporale
+2022-04-13 lent 6 false
+- "Feria quarta Hebdomadae Sanctae" 1.2 violet   temporale
+2022-04-14 lent 6 false
+- "Feria quinta Hebdomadae Sanctae" 1.2 violet   temporale
+2022-04-15 triduum 0 false
+- "Feria VI in Passione Domini" 1.1 red good_friday  temporale
+2022-04-16 triduum 0 true
+- "Sabbato sancto" 1.1 violet holy_saturday  temporale
+2022-04-17 triduum 1 false
+- "Dominica Paschae in Resurrectione Domini" 1.1 white easter_sunday  temporale
+2022-04-18 easter 1 false
+- "Feria secunda infra octavam Paschae" 1.2 white   temporale
+2022-04-19 easter 1 false
+- "Feria tertia infra octavam Paschae" 1.2 white   temporale
+2022-04-20 easter 1 false
+- "Feria quarta infra octavam Paschae" 1.2 white   temporale
+2022-04-21 easter 1 false
+- "Feria quinta infra octavam Paschae" 1.2 white   temporale
+2022-04-22 easter 1 false
+- "Feria sexta infra octavam Paschae" 1.2 white   temporale
+2022-04-23 easter 1 false
+- "Sabbato infra octavam Paschae" 1.2 white   temporale
+2022-04-24 easter 2 false
+- "Dominica II Paschae" 1.2 white   temporale
+2022-04-25 easter 2 false
+- "S. Marci, evangelistae" 2.7 red mark 4/25 sanctorale
+2022-04-26 easter 2 false
+- "Feria tertia, hebdomada II temporis paschalis" 3.13 white   temporale
+2022-04-27 easter 2 false
+- "Feria quarta, hebdomada II temporis paschalis" 3.13 white   temporale
+2022-04-28 easter 2 false
+- "Feria quinta, hebdomada II temporis paschalis" 3.13 white   temporale
+- "S. Petri Chanel, presbyteri et martyris" 3.12 red peter_chanel 4/28 sanctorale
+- "S. Ludovici Mariae Grignion de Montfort, presbyteri" 3.12 white de_montfort 4/28 sanctorale
+2022-04-29 easter 2 false
+- "S. Catharinae Senensis, virginis et Ecclesiae doctoris" 3.1 white catherine_of_siena 4/29 sanctorale
+2022-04-30 easter 2 true
+- "Sabbato, hebdomada II temporis paschalis" 3.13 white   temporale
+- "S. Pii V, papae" 3.12 white pius_v 4/30 sanctorale
+2022-05-01 easter 3 false
+- "Dominica III Paschae" 1.2 white   temporale
+2022-05-02 easter 3 false
+- "S. Athanasii, episcopi et Ecclesiae doctoris" 3.1 white athanasius 5/2 sanctorale
+2022-05-03 easter 3 false
+- "Ss. Philippi et Iacobi, apostolorum" 2.7 red philip_james 5/3 sanctorale
+2022-05-04 easter 3 false
+- "Feria quarta, hebdomada III temporis paschalis" 3.13 white   temporale
+2022-05-05 easter 3 false
+- "Feria quinta, hebdomada III temporis paschalis" 3.13 white   temporale
+2022-05-06 easter 3 false
+- "Feria sexta, hebdomada III temporis paschalis" 3.13 white   temporale
+2022-05-07 easter 3 true
+- "Sabbato, hebdomada III temporis paschalis" 3.13 white   temporale
+2022-05-08 easter 4 false
+- "Dominica IV Paschae" 1.2 white   temporale
+2022-05-09 easter 4 false
+- "Feria secunda, hebdomada IV temporis paschalis" 3.13 white   temporale
+2022-05-10 easter 4 false
+- "Feria tertia, hebdomada IV temporis paschalis" 3.13 white   temporale
+2022-05-11 easter 4 false
+- "Feria quarta, hebdomada IV temporis paschalis" 3.13 white   temporale
+2022-05-12 easter 4 false
+- "Feria quinta, hebdomada IV temporis paschalis" 3.13 white   temporale
+- "Ss. Nerei et Achillei, martyrum" 3.12 red nereus_achilleus 5/12 sanctorale
+- "S. Pancratii, martyris" 3.12 red pancras 5/12 sanctorale
+2022-05-13 easter 4 false
+- "Feria sexta, hebdomada IV temporis paschalis" 3.13 white   temporale
+- "B. Mariae Virginis de Fatima" 3.12 white bvm_fatima 5/13 sanctorale
+2022-05-14 easter 4 true
+- "S. Matthiae, apostoli" 2.7 red matthias 5/14 sanctorale
+2022-05-15 easter 5 false
+- "Dominica V Paschae" 1.2 white   temporale
+2022-05-16 easter 5 false
+- "Feria secunda, hebdomada V temporis paschalis" 3.13 white   temporale
+2022-05-17 easter 5 false
+- "Feria tertia, hebdomada V temporis paschalis" 3.13 white   temporale
+2022-05-18 easter 5 false
+- "Feria quarta, hebdomada V temporis paschalis" 3.13 white   temporale
+- "S. Ioannis I, papae et martyris" 3.12 red john_i 5/18 sanctorale
+2022-05-19 easter 5 false
+- "Feria quinta, hebdomada V temporis paschalis" 3.13 white   temporale
+2022-05-20 easter 5 false
+- "Feria sexta, hebdomada V temporis paschalis" 3.13 white   temporale
+- "S. Bernardini Senensis, presbyteri" 3.12 white bernardine 5/20 sanctorale
+2022-05-21 easter 5 true
+- "Sabbato, hebdomada V temporis paschalis" 3.13 white   temporale
+- "S. Christophori Magallanes, presbyteri, et sociorum, martyrum" 3.12 red magallanes 5/21 sanctorale
+2022-05-22 easter 6 false
+- "Dominica VI Paschae" 1.2 white   temporale
+2022-05-23 easter 6 false
+- "Feria secunda, hebdomada VI temporis paschalis" 3.13 white   temporale
+2022-05-24 easter 6 false
+- "Feria tertia, hebdomada VI temporis paschalis" 3.13 white   temporale
+2022-05-25 easter 6 true
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
+- "S. Gregorii VII, papae" 3.12 white gregory_vii 5/25 sanctorale
+- "S. Mariae Magdalenae de' Pazzi, virginis" 3.12 white de_pazzi 5/25 sanctorale
+2022-05-26 easter 6 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
+2022-05-27 easter 6 false
+- "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
+2022-05-28 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+2022-05-29 easter 7 false
+- "Dominica VII Paschae" 1.2 white   temporale
+2022-05-30 easter 7 false
+- "Feria secunda, hebdomada VII temporis paschalis" 3.13 white   temporale
+2022-05-31 easter 7 false
+- "In Visitatione B. Mariae Virginis" 2.7 white visitation 5/31 sanctorale
+2022-06-01 easter 7 false
+- "S. Iustini, martyris" 3.1 red justin 6/1 sanctorale
+2022-06-02 easter 7 false
+- "Feria quinta, hebdomada VII temporis paschalis" 3.13 white   temporale
+- "Ss. Marcellini et Petri, martyrum" 3.12 red marcellinus_peter 6/2 sanctorale
+2022-06-03 easter 7 false
+- "Ss. Caroli Lwanga et sociorum, martyrum" 3.1 red ugandan_martyrs 6/3 sanctorale
+2022-06-04 easter 7 true
+- "Sabbato, hebdomada VII temporis paschalis" 3.13 white   temporale
+2022-06-05 easter 8 false
+- "Dominica Pentecostes" 1.2 red pentecost  temporale
+2022-06-06 ordinary 10 false
+- "B. Mariae Virginis Ecclesiae Matris" 3.1 white mother_of_church  temporale
+2022-06-07 ordinary 10 false
+- "Feria tertia, hebdomada X per annum" 3.13 green   temporale
+2022-06-08 ordinary 10 false
+- "Feria quarta, hebdomada X per annum" 3.13 green   temporale
+2022-06-09 ordinary 10 false
+- "Feria quinta, hebdomada X per annum" 3.13 green   temporale
+- "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
+2022-06-10 ordinary 10 false
+- "Feria sexta, hebdomada X per annum" 3.13 green   temporale
+2022-06-11 ordinary 10 true
+- "S. Barnabae, apostoli" 3.1 red barnabas 6/11 sanctorale
+2022-06-12 ordinary 11 false
+- "Sanctissimae Trinitatis" 1.3 white holy_trinity  temporale
+2022-06-13 ordinary 11 false
+- "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
+2022-06-14 ordinary 11 false
+- "Feria tertia, hebdomada XI per annum" 3.13 green   temporale
+2022-06-15 ordinary 11 true
+- "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
+2022-06-16 ordinary 11 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+2022-06-17 ordinary 11 false
+- "Feria sexta, hebdomada XI per annum" 3.13 green   temporale
+2022-06-18 ordinary 11 true
+- "Sabbato, hebdomada XI per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-06-19 ordinary 12 false
+- "Dominica XII per annum" 2.6 green   temporale
+2022-06-20 ordinary 12 false
+- "Feria secunda, hebdomada XII per annum" 3.13 green   temporale
+2022-06-21 ordinary 12 false
+- "S Aloisii Gonzaga, religiosi" 3.1 white aloysius 6/21 sanctorale
+2022-06-22 ordinary 12 false
+- "Feria quarta, hebdomada XII per annum" 3.13 green   temporale
+- "S. Paulini Nolani" 3.12 white paulinus 6/22 sanctorale
+- "Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum" 3.12 red fisher_more 6/22 sanctorale
+2022-06-23 ordinary 12 true
+- "Feria quinta, hebdomada XII per annum" 3.13 green   temporale
+2022-06-24 ordinary 12 false
+- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
+2022-06-25 ordinary 12 false
+- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
+2022-06-26 ordinary 13 false
+- "Dominica XIII per annum" 2.6 green   temporale
+2022-06-27 ordinary 13 false
+- "Feria secunda, hebdomada XIII per annum" 3.13 green   temporale
+- "S. Cyrilli Alexandrini, episcopi et Ecclesiae doctoris" 3.12 white cyril_of_alexandria 6/27 sanctorale
+2022-06-28 ordinary 13 true
+- "S. Irenaei, episcopi et martyris" 3.1 red irenaeus 6/28 sanctorale
+2022-06-29 ordinary 13 false
+- "Ss. PETRI ET PAULI, APOSTOLORUM" 1.3 red peter_paul 6/29 sanctorale
+2022-06-30 ordinary 13 false
+- "Feria quinta, hebdomada XIII per annum" 3.13 green   temporale
+- "Ss. Protomartyrum S. Romanae Ecclesiae" 3.12 red first_martyrs_of_rome 6/30 sanctorale
+2022-07-01 ordinary 13 false
+- "Feria sexta, hebdomada XIII per annum" 3.13 green   temporale
+2022-07-02 ordinary 13 true
+- "Sabbato, hebdomada XIII per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-07-03 ordinary 14 false
+- "Dominica XIV per annum" 2.6 green   temporale
+2022-07-04 ordinary 14 false
+- "Feria secunda, hebdomada XIV per annum" 3.13 green   temporale
+- "S. Elisabeth Lusitaniae" 3.12 white elizabeth_of_portugal 7/4 sanctorale
+2022-07-05 ordinary 14 false
+- "Feria tertia, hebdomada XIV per annum" 3.13 green   temporale
+- "S. Antonii Mariae Zaccaria, presbyteri" 3.12 white anthony_zaccaria 7/5 sanctorale
+2022-07-06 ordinary 14 false
+- "Feria quarta, hebdomada XIV per annum" 3.13 green   temporale
+- "S. Mariae Goretti, virginis et martyris" 3.12 red goretti 7/6 sanctorale
+2022-07-07 ordinary 14 false
+- "Feria quinta, hebdomada XIV per annum" 3.13 green   temporale
+2022-07-08 ordinary 14 false
+- "Feria sexta, hebdomada XIV per annum" 3.13 green   temporale
+2022-07-09 ordinary 14 true
+- "Sabbato, hebdomada XIV per annum" 3.13 green   temporale
+- "Ss. Augustini Zhao Rong, presbyteri" 3.12 red chinese_martyrs 7/9 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-07-10 ordinary 15 false
+- "Dominica XV per annum" 2.6 green   temporale
+2022-07-11 ordinary 15 false
+- "S. Benedicti, abbatis" 3.1 white benedict 7/11 sanctorale
+2022-07-12 ordinary 15 false
+- "Feria tertia, hebdomada XV per annum" 3.13 green   temporale
+2022-07-13 ordinary 15 false
+- "Feria quarta, hebdomada XV per annum" 3.13 green   temporale
+- "S. Henrici" 3.12 white henry 7/13 sanctorale
+2022-07-14 ordinary 15 false
+- "Feria quinta, hebdomada XV per annum" 3.13 green   temporale
+- "S. Camilli de Lellis, presbyteri" 3.12 white camillus_de_lellis 7/14 sanctorale
+2022-07-15 ordinary 15 false
+- "S. Bonaventurae, episcopi et Ecclesiae doctoris" 3.1 white bonaventure 7/15 sanctorale
+2022-07-16 ordinary 15 true
+- "Sabbato, hebdomada XV per annum" 3.13 green   temporale
+- "B. Mariae Virginis de Monte Carmelo" 3.12 white bvm_mount_carmel 7/16 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-07-17 ordinary 16 false
+- "Dominica XVI per annum" 2.6 green   temporale
+2022-07-18 ordinary 16 false
+- "Feria secunda, hebdomada XVI per annum" 3.13 green   temporale
+2022-07-19 ordinary 16 false
+- "Feria tertia, hebdomada XVI per annum" 3.13 green   temporale
+2022-07-20 ordinary 16 false
+- "Feria quarta, hebdomada XVI per annum" 3.13 green   temporale
+- "S. Apollinaris, episcopi et martyris" 3.12 red apollinaris 7/20 sanctorale
+2022-07-21 ordinary 16 false
+- "Feria quinta, hebdomada XVI per annum" 3.13 green   temporale
+- "S. Laurentii de Brindisi, presbyteri et Ecclesiae doctoris" 3.12 white lawrence_of_brindisi 7/21 sanctorale
+2022-07-22 ordinary 16 false
+- "S. Mariae Magdalenae" 2.7 white mary_magdalene 7/22 sanctorale
+2022-07-23 ordinary 16 true
+- "Sabbato, hebdomada XVI per annum" 3.13 green   temporale
+- "S. Birgittae, religiosae" 3.12 white birgitta 7/23 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-07-24 ordinary 17 false
+- "Dominica XVII per annum" 2.6 green   temporale
+2022-07-25 ordinary 17 false
+- "S. Iacobi, apostoli" 2.7 red james 7/25 sanctorale
+2022-07-26 ordinary 17 false
+- "Ss. Ioachim et Annae, parentum B. Mariae Virginis" 3.1 white joachim_anne 7/26 sanctorale
+2022-07-27 ordinary 17 false
+- "Feria quarta, hebdomada XVII per annum" 3.13 green   temporale
+2022-07-28 ordinary 17 false
+- "Feria quinta, hebdomada XVII per annum" 3.13 green   temporale
+2022-07-29 ordinary 17 false
+- "S. Marthae" 3.1 white martha 7/29 sanctorale
+2022-07-30 ordinary 17 true
+- "Sabbato, hebdomada XVII per annum" 3.13 green   temporale
+- "S. Petri Chrysologi, episcopi et Ecclesiae doctoris" 3.12 white peter_chrysologus 7/30 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-07-31 ordinary 18 false
+- "Dominica XVIII per annum" 2.6 green   temporale
+2022-08-01 ordinary 18 false
+- "S. Alfonsi Mariae de' Liguori, episcopi et Ecclesiae doctoris" 3.1 white alphonsus 8/1 sanctorale
+2022-08-02 ordinary 18 false
+- "Feria tertia, hebdomada XVIII per annum" 3.13 green   temporale
+- "S. Eusebii Vercellensis, episcopi" 3.12 white eusebius 8/2 sanctorale
+- "S. Petri Iuliani Eymard, presbyteri" 3.12 white eymard 8/2 sanctorale
+2022-08-03 ordinary 18 false
+- "Feria quarta, hebdomada XVIII per annum" 3.13 green   temporale
+2022-08-04 ordinary 18 false
+- "S. Ioannis Mariae Vianney, presbyteri" 3.1 white vianney 8/4 sanctorale
+2022-08-05 ordinary 18 false
+- "Feria sexta, hebdomada XVIII per annum" 3.13 green   temporale
+- "In Dedicatione basilicae S. Mariae" 3.12 white mary_major 8/5 sanctorale
+2022-08-06 ordinary 18 false
+- "IN TRANSFIGURATIONE DOMINI" 2.5 white transfiguration 8/6 sanctorale
+2022-08-07 ordinary 19 false
+- "Dominica XIX per annum" 2.6 green   temporale
+2022-08-08 ordinary 19 false
+- "S. Dominici, presbyteri" 3.1 white dominic 8/8 sanctorale
+2022-08-09 ordinary 19 false
+- "Feria tertia, hebdomada XIX per annum" 3.13 green   temporale
+- "S. Teresiae Benedictae a Cruce, virginis et martyris" 3.12 red stein 8/9 sanctorale
+2022-08-10 ordinary 19 false
+- "S. Laurentii, diaconi et martyris" 2.7 red lawrence 8/10 sanctorale
+2022-08-11 ordinary 19 false
+- "S. Clarae, virginis" 3.1 white clare 8/11 sanctorale
+2022-08-12 ordinary 19 false
+- "Feria sexta, hebdomada XIX per annum" 3.13 green   temporale
+- "S. Ioannae Franciscae de Chantal, religiosae" 3.12 white de_chantal 8/12 sanctorale
+2022-08-13 ordinary 19 true
+- "Sabbato, hebdomada XIX per annum" 3.13 green   temporale
+- "Ss. Pontiani, papae, et Hippolyti, presbyteri, martyrum" 3.12 red pontian_hippolytus 8/13 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-08-14 ordinary 20 true
+- "Dominica XX per annum" 2.6 green   temporale
+2022-08-15 ordinary 20 false
+- "IN ASSUMPTIONE B. MARIAE VIRGINIS" 1.3 white assumption 8/15 sanctorale
+2022-08-16 ordinary 20 false
+- "Feria tertia, hebdomada XX per annum" 3.13 green   temporale
+- "S. Stephani Hungariae" 3.12 white stephen_hungary 8/16 sanctorale
+2022-08-17 ordinary 20 false
+- "Feria quarta, hebdomada XX per annum" 3.13 green   temporale
+2022-08-18 ordinary 20 false
+- "Feria quinta, hebdomada XX per annum" 3.13 green   temporale
+2022-08-19 ordinary 20 false
+- "Feria sexta, hebdomada XX per annum" 3.13 green   temporale
+- "S. Ioannis Eudes, presbyteri" 3.12 white eudes 8/19 sanctorale
+2022-08-20 ordinary 20 true
+- "S. Bernardi, abbatis et Ecclesiae doctoris" 3.1 white bernard 8/20 sanctorale
+2022-08-21 ordinary 21 false
+- "Dominica XXI per annum" 2.6 green   temporale
+2022-08-22 ordinary 21 false
+- "B. Mariae Virginis Reginae" 3.1 white bvm_queenship 8/22 sanctorale
+2022-08-23 ordinary 21 false
+- "Feria tertia, hebdomada XXI per annum" 3.13 green   temporale
+- "S. Rosae de Lima, virginis" 3.12 white rose_lima 8/23 sanctorale
+2022-08-24 ordinary 21 false
+- "S. Bartholomaei, apostoli" 2.7 red bartholomew 8/24 sanctorale
+2022-08-25 ordinary 21 false
+- "Feria quinta, hebdomada XXI per annum" 3.13 green   temporale
+- "S. Ludovici" 3.12 white louis 8/25 sanctorale
+- "S. Ioseph de Calasanz, presbyteri" 3.12 white joseph_calasanz 8/25 sanctorale
+2022-08-26 ordinary 21 false
+- "Feria sexta, hebdomada XXI per annum" 3.13 green   temporale
+2022-08-27 ordinary 21 true
+- "S. Monicae" 3.1 white monica 8/27 sanctorale
+2022-08-28 ordinary 22 false
+- "Dominica XXII per annum" 2.6 green   temporale
+2022-08-29 ordinary 22 false
+- "In Passione S. Ioannis Baptistae, martyris" 3.1 red baptist_beheading 8/29 sanctorale
+2022-08-30 ordinary 22 false
+- "Feria tertia, hebdomada XXII per annum" 3.13 green   temporale
+2022-08-31 ordinary 22 false
+- "Feria quarta, hebdomada XXII per annum" 3.13 green   temporale
+2022-09-01 ordinary 22 false
+- "Feria quinta, hebdomada XXII per annum" 3.13 green   temporale
+2022-09-02 ordinary 22 false
+- "Feria sexta, hebdomada XXII per annum" 3.13 green   temporale
+2022-09-03 ordinary 22 true
+- "S. Gregorii Magni, papae et Ecclesiae doctoris" 3.1 white gregory_great 9/3 sanctorale
+2022-09-04 ordinary 23 false
+- "Dominica XXIII per annum" 2.6 green   temporale
+2022-09-05 ordinary 23 false
+- "Feria secunda, hebdomada XXIII per annum" 3.13 green   temporale
+2022-09-06 ordinary 23 false
+- "Feria tertia, hebdomada XXIII per annum" 3.13 green   temporale
+2022-09-07 ordinary 23 false
+- "Feria quarta, hebdomada XXIII per annum" 3.13 green   temporale
+2022-09-08 ordinary 23 false
+- "In Nativitate B. Mariae Virginis" 2.7 white bvm_birth 9/8 sanctorale
+2022-09-09 ordinary 23 false
+- "Feria sexta, hebdomada XXIII per annum" 3.13 green   temporale
+- "S. Petri Claver, presbyteri" 3.12 white claver 9/9 sanctorale
+2022-09-10 ordinary 23 true
+- "Sabbato, hebdomada XXIII per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-09-11 ordinary 24 false
+- "Dominica XXIV per annum" 2.6 green   temporale
+2022-09-12 ordinary 24 false
+- "Feria secunda, hebdomada XXIV per annum" 3.13 green   temporale
+- "Ss.mi Nominis Mariae" 3.12 white bvm_name 9/12 sanctorale
+2022-09-13 ordinary 24 false
+- "S. Ioannis Chrysostomi, episcopi et Ecclesiae doctoris" 3.1 white john_chrysostom 9/13 sanctorale
+2022-09-14 ordinary 24 false
+- "IN EXALTATIONE SANCTAE CRUCIS" 2.5 red cross 9/14 sanctorale
+2022-09-15 ordinary 24 false
+- "B. Mariae Virginis Perdolentis" 3.1 white bvm_sorrows 9/15 sanctorale
+2022-09-16 ordinary 24 false
+- "Ss. Cornelii, papae, et Cypriani, episcopi, martyrum" 3.1 red cornelius_cyprian 9/16 sanctorale
+2022-09-17 ordinary 24 true
+- "Sabbato, hebdomada XXIV per annum" 3.13 green   temporale
+- "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-09-18 ordinary 25 false
+- "Dominica XXV per annum" 2.6 green   temporale
+2022-09-19 ordinary 25 false
+- "Feria secunda, hebdomada XXV per annum" 3.13 green   temporale
+- "S. Ianuarii, episcopi et martyris" 3.12 red januarius 9/19 sanctorale
+2022-09-20 ordinary 25 false
+- "Ss. Andreae Kim Tae-gŏn et Pauli Chŏng Ha-sang et sociorum, martyrum" 3.1 red korean_martyrs 9/20 sanctorale
+2022-09-21 ordinary 25 false
+- "S. Matthaei, apostoli et evangelistae" 2.7 red matthew 9/21 sanctorale
+2022-09-22 ordinary 25 false
+- "Feria quinta, hebdomada XXV per annum" 3.13 green   temporale
+2022-09-23 ordinary 25 false
+- "S. Pii de Pietrelcina, presbyteri" 3.1 white padre_pio 9/23 sanctorale
+2022-09-24 ordinary 25 true
+- "Sabbato, hebdomada XXV per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-09-25 ordinary 26 false
+- "Dominica XXVI per annum" 2.6 green   temporale
+2022-09-26 ordinary 26 false
+- "Feria secunda, hebdomada XXVI per annum" 3.13 green   temporale
+- "Ss. Cosmae et Damiani, martyrum" 3.12 red cosmas_damian 9/26 sanctorale
+2022-09-27 ordinary 26 false
+- "S. Vincentii de Paul, presbyteri" 3.1 white vincent_de_paul 9/27 sanctorale
+2022-09-28 ordinary 26 false
+- "Feria quarta, hebdomada XXVI per annum" 3.13 green   temporale
+- "S. Venceslai, martyris" 3.12 red wenceslaus 9/28 sanctorale
+- "S. Laurentii Ruiz et sociorum, martyrum" 3.12 red ruiz 9/28 sanctorale
+2022-09-29 ordinary 26 false
+- "Ss. Michaelis, Gabrielis et Raphaelis, archangelorum" 2.7 white archangels 9/29 sanctorale
+2022-09-30 ordinary 26 false
+- "S. Hieronymi, presbyteri et Ecclesiae doctoris" 3.1 white jerome 9/30 sanctorale
+2022-10-01 ordinary 26 true
+- "S. Teresiae a Iesu Infante, virginis et Ecclesiae doctoris" 3.1 white therese_lisieux 10/1 sanctorale
+2022-10-02 ordinary 27 false
+- "Dominica XXVII per annum" 2.6 green   temporale
+2022-10-03 ordinary 27 false
+- "Feria secunda, hebdomada XXVII per annum" 3.13 green   temporale
+2022-10-04 ordinary 27 false
+- "S. Francisci Assisiensis" 3.1 white francis_assisi 10/4 sanctorale
+2022-10-05 ordinary 27 false
+- "Feria quarta, hebdomada XXVII per annum" 3.13 green   temporale
+- "S. Faustinæ Kowalska, virginis" 3.12 white faustina_kowalska 10/5 sanctorale
+2022-10-06 ordinary 27 false
+- "Feria quinta, hebdomada XXVII per annum" 3.13 green   temporale
+- "S. Brunonis, presbyteri" 3.12 white bruno 10/6 sanctorale
+2022-10-07 ordinary 27 false
+- "B. Mariae Virginis a Rosario" 3.1 white bvm_rosary 10/7 sanctorale
+2022-10-08 ordinary 27 true
+- "Sabbato, hebdomada XXVII per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-10-09 ordinary 28 false
+- "Dominica XXVIII per annum" 2.6 green   temporale
+2022-10-10 ordinary 28 false
+- "Feria secunda, hebdomada XXVIII per annum" 3.13 green   temporale
+2022-10-11 ordinary 28 false
+- "Feria tertia, hebdomada XXVIII per annum" 3.13 green   temporale
+- "S. Ioannis XXIII, papae" 3.12 white john_xxiii 10/11 sanctorale
+2022-10-12 ordinary 28 false
+- "Feria quarta, hebdomada XXVIII per annum" 3.13 green   temporale
+2022-10-13 ordinary 28 false
+- "Feria quinta, hebdomada XXVIII per annum" 3.13 green   temporale
+2022-10-14 ordinary 28 false
+- "Feria sexta, hebdomada XXVIII per annum" 3.13 green   temporale
+- "S. Callisti I, papae et martyris" 3.12 red callistus_i 10/14 sanctorale
+2022-10-15 ordinary 28 true
+- "S. Teresiae a Iesu, virginis et Ecclesiae doctoris" 3.1 white teresa_avila 10/15 sanctorale
+2022-10-16 ordinary 29 false
+- "Dominica XXIX per annum" 2.6 green   temporale
+2022-10-17 ordinary 29 false
+- "S. Ignatii Antiocheni, episcopi et martyris" 3.1 red ignatius_of_antioch 10/17 sanctorale
+2022-10-18 ordinary 29 false
+- "S. Lucae, evangelistae" 2.7 red luke 10/18 sanctorale
+2022-10-19 ordinary 29 false
+- "Feria quarta, hebdomada XXIX per annum" 3.13 green   temporale
+- "Ss. Ioannis de Brébeuf et Isaac Jogues, presbyterorum, et sociorum, martyrum" 3.12 red brebeuf_jogues 10/19 sanctorale
+- "S. Pauli a Cruce, presbyteri" 3.12 white paul_of_cross 10/19 sanctorale
+2022-10-20 ordinary 29 false
+- "Feria quinta, hebdomada XXIX per annum" 3.13 green   temporale
+2022-10-21 ordinary 29 false
+- "Feria sexta, hebdomada XXIX per annum" 3.13 green   temporale
+2022-10-22 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "S. Ioannis Pauli II, papae" 3.12 white john_paul_ii 10/22 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-10-23 ordinary 30 false
+- "Dominica XXX per annum" 2.6 green   temporale
+2022-10-24 ordinary 30 false
+- "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
+- "S. Antonii Mariae Claret, episcopi" 3.12 white claret 10/24 sanctorale
+2022-10-25 ordinary 30 false
+- "Feria tertia, hebdomada XXX per annum" 3.13 green   temporale
+2022-10-26 ordinary 30 false
+- "Feria quarta, hebdomada XXX per annum" 3.13 green   temporale
+2022-10-27 ordinary 30 false
+- "Feria quinta, hebdomada XXX per annum" 3.13 green   temporale
+2022-10-28 ordinary 30 false
+- "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
+2022-10-29 ordinary 30 true
+- "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-10-30 ordinary 31 false
+- "Dominica XXXI per annum" 2.6 green   temporale
+2022-10-31 ordinary 31 true
+- "Feria secunda, hebdomada XXXI per annum" 3.13 green   temporale
+2022-11-01 ordinary 31 false
+- "OMNIUM SANCTORUM" 1.3 white all_saints 11/1 sanctorale
+2022-11-02 ordinary 31 false
+- "IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM" 1.3 white all_souls 11/2 sanctorale
+2022-11-03 ordinary 31 false
+- "Feria quinta, hebdomada XXXI per annum" 3.13 green   temporale
+- "S. Martini de Porres, religiosi" 3.12 white de_porres 11/3 sanctorale
+2022-11-04 ordinary 31 false
+- "S. Caroli Borromeo, episcopi" 3.1 white borromeo 11/4 sanctorale
+2022-11-05 ordinary 31 true
+- "Sabbato, hebdomada XXXI per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-11-06 ordinary 32 false
+- "Dominica XXXII per annum" 2.6 green   temporale
+2022-11-07 ordinary 32 false
+- "Feria secunda, hebdomada XXXII per annum" 3.13 green   temporale
+2022-11-08 ordinary 32 false
+- "Feria tertia, hebdomada XXXII per annum" 3.13 green   temporale
+2022-11-09 ordinary 32 false
+- "IN DEDICATIONE BASILICAE LATERANENSIS" 2.5 white lateran_basilica 11/9 sanctorale
+2022-11-10 ordinary 32 false
+- "S. Leonis Magni, papae et Ecclesiae doctoris" 3.1 white leo_great 11/10 sanctorale
+2022-11-11 ordinary 32 false
+- "S. Martini Turonensis, episcopi" 3.1 white martin 11/11 sanctorale
+2022-11-12 ordinary 32 true
+- "S. Iosaphat, episcopi et martyris" 3.1 red josaphat 11/12 sanctorale
+2022-11-13 ordinary 33 false
+- "Dominica XXXIII per annum" 2.6 green   temporale
+2022-11-14 ordinary 33 false
+- "Feria secunda, hebdomada XXXIII per annum" 3.13 green   temporale
+2022-11-15 ordinary 33 false
+- "Feria tertia, hebdomada XXXIII per annum" 3.13 green   temporale
+- "S. Alberti Magni, episcopi et Ecclesiae doctoris" 3.12 white albert 11/15 sanctorale
+2022-11-16 ordinary 33 false
+- "Feria quarta, hebdomada XXXIII per annum" 3.13 green   temporale
+- "S. Margaritae Scotiae" 3.12 white margaret_of_scotland 11/16 sanctorale
+- "S. Gertrudis, virginis" 3.12 white gertrude 11/16 sanctorale
+2022-11-17 ordinary 33 false
+- "S. Elisabeth Hungariae, religiosae" 3.1 white elizabeth_of_hungary 11/17 sanctorale
+2022-11-18 ordinary 33 false
+- "Feria sexta, hebdomada XXXIII per annum" 3.13 green   temporale
+- "In Dedicatione basilicarum Ss. Petri et Pauli, apostolorum" 3.12 white peter_paul_basilicas 11/18 sanctorale
+2022-11-19 ordinary 33 true
+- "Sabbato, hebdomada XXXIII per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+2022-11-20 ordinary 34 false
+- "Domini nostri Iesu Christi universorum regis" 1.3 white christ_king  temporale
+2022-11-21 ordinary 34 false
+- "In Praesentatione B. Mariae Virginis" 3.1 white bvm_presentation 11/21 sanctorale
+2022-11-22 ordinary 34 false
+- "S. Caeciliae, virginis et martyris" 3.1 red cecilia 11/22 sanctorale
+2022-11-23 ordinary 34 false
+- "Feria quarta, hebdomada XXXIV per annum" 3.13 green   temporale
+- "S. Clementis I, papae et martyris" 3.12 red clement_i 11/23 sanctorale
+- "S. Columbani, abbatis" 3.12 white columban 11/23 sanctorale
+2022-11-24 ordinary 34 false
+- "Ss. Andreae Dũng Lac, presbyteri, et sociorum, martyrum" 3.1 red vietnamese_martyrs 11/24 sanctorale
+2022-11-25 ordinary 34 false
+- "Feria sexta, hebdomada XXXIV per annum" 3.13 green   temporale
+- "S. Catharinae Alexandrinae, virginis et martyris" 3.12 red catherine_of_alexandria 11/25 sanctorale
+2022-11-26 ordinary 34 true
+- "Sabbato, hebdomada XXXIV per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale

@@ -18,6 +18,8 @@ module CalendariumRomanum
     #   +Hash+ of arguments for {Temporale#initialize}.
     #   +temporale_factory+ and +temporale_options+ are mutually
     #   exclusive - pass either (or none) of them, never both.
+    # @param vespers [Boolean]
+    #   See argument of the same name to {Calendar#initialize}
     # @param cache [Hash]
     #   object to be used as internal cache of {Calendar} instances -
     #   anything exposing +#[]=+ and +#[]+ and "behaving mostly like
@@ -29,13 +31,14 @@ module CalendariumRomanum
     #   by huge amount of cached {Calendar} instances.
     #   (By default, once a {Calendar} for a certain year is built,
     #   it is cached for the +PerpetualCalendar+ instances' lifetime.)
-    def initialize(sanctorale: nil, temporale_factory: nil, temporale_options: nil, cache: {})
+    def initialize(sanctorale: nil, temporale_factory: nil, temporale_options: nil, vespers: false, cache: {})
       if temporale_factory && temporale_options
         raise ArgumentError.new('Specify either temporale_factory or temporale_options, not both')
       end
 
       @sanctorale = sanctorale
       @temporale_factory = temporale_factory || build_temporale_factory(temporale_options)
+      @vespers = vespers
 
       @cache = cache
     end
@@ -90,7 +93,7 @@ module CalendariumRomanum
       if @cache.has_key? year
         @cache[year]
       else
-        @cache[year] = Calendar.new(@temporale_factory.call(year), @sanctorale)
+        @cache[year] = Calendar.new(@temporale_factory.call(year), @sanctorale, vespers: @vespers)
       end
     end
   end

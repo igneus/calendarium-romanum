@@ -55,6 +55,23 @@ describe CR::Rank do
     it { expect(CR::Ranks::FERIAL.memorial?).to be false }
   end
 
+  describe '#optional_memorial?' do
+    it { expect(CR::Ranks::MEMORIAL_OPTIONAL.optional_memorial?).to be true }
+
+    (CR::Ranks.all - [CR::Ranks::MEMORIAL_OPTIONAL]).each do |rank|
+      it { expect(rank.optional_memorial?).to be false }
+    end
+  end
+
+  describe '#obligatory_memorial?' do
+    it { expect(CR::Ranks::MEMORIAL_GENERAL.obligatory_memorial?).to be true }
+    it { expect(CR::Ranks::MEMORIAL_PROPER.obligatory_memorial?).to be true }
+
+    (CR::Ranks.all - [CR::Ranks::MEMORIAL_GENERAL, CR::Ranks::MEMORIAL_PROPER]).each do |rank|
+      it { expect(rank.obligatory_memorial?).to be false }
+    end
+  end
+
   describe '#sunday?' do
     it { expect(CR::Ranks::SUNDAY_UNPRIVILEGED.sunday?).to be true }
     it { expect(CR::Ranks::FERIAL.sunday?).to be false }
@@ -72,6 +89,27 @@ describe CR::Rank do
         expect(CR::Ranks::FERIAL.to_s)
           .to eq '#<CalendariumRomanum::Rank @priority=3.13 desc="Ferials">'
       end
+    end
+  end
+
+  describe '#succ' do
+    it 'returns the next rank' do
+      expect(CR::Ranks::FERIAL.succ).to be CR::Ranks::MEMORIAL_OPTIONAL
+    end
+
+    it 'throws exception if there\'s no further rank' do
+      expect { CR::Ranks::TRIDUUM.succ }
+        .to raise_exception StopIteration
+    end
+  end
+
+  describe 'it is possible to construct Range of Ranks' do
+    it 'non-empty' do
+      expect(CR::Ranks::FERIAL .. CR::Ranks::FEAST_GENERAL).to include CR::Ranks::MEMORIAL_PROPER
+    end
+
+    it 'empty' do
+      expect((CR::Ranks::SOLEMNITY_GENERAL .. CR::Ranks::FEAST_GENERAL).to_a).to be_empty
     end
   end
 end

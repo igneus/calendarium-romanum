@@ -169,13 +169,20 @@ describe CR::Temporale do
     describe 'Lent' do
       let(:season) { CR::Seasons::LENT }
       let(:date_beginning) { Date.new(2014, 3, 5) }
-      let(:date_end) { Date.new(2014, 4, 19) }
+      let(:date_end) { Date.new(2014, 4, 17) }
+      include_examples 'season determination'
+    end
+
+    describe 'Easter Triduum' do
+      let(:season) { CR::Seasons::TRIDUUM }
+      let(:date_beginning) { Date.new(2014, 4, 18) }
+      let(:date_end) { Date.new(2014, 4, 20) }
       include_examples 'season determination'
     end
 
     describe 'Easter time' do
       let(:season) { CR::Seasons::EASTER }
-      let(:date_beginning) { Date.new(2014, 4, 20) }
+      let(:date_beginning) { Date.new(2014, 4, 21) }
       let(:date_end) { Date.new(2014, 6, 8) }
       include_examples 'season determination'
     end
@@ -270,30 +277,35 @@ describe CR::Temporale do
           c = t13.get(8, 10)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::GREEN
+          expect(c.sunday?).to be true
         end
 
         it 'in Advent' do
           c = t13.get(12, 15)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
+          expect(c.sunday?).to be true
         end
 
         it 'in Christmas time' do
           c = t13.get(1, 5)
           expect(c.rank).to eq CR::Ranks::SUNDAY_UNPRIVILEGED
           expect(c.color).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be true
         end
 
         it 'in Lent' do
           c = t13.get(3, 23)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::VIOLET
+          expect(c.sunday?).to be true
         end
 
         it 'in Easter Time' do
           c = t13.get(5, 11)
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.color).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be true
         end
       end
 
@@ -360,6 +372,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::PRIMARY
           expect(c.title).to have_translation 'Passion Sunday (Palm Sunday)'
           expect(c.colour).to eq CR::Colours::RED
+          expect(c.sunday?).to be true
         end
 
         it 'Good Friday' do
@@ -376,12 +389,13 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::VIOLET
         end
 
-        it 'Resurrection' do
+        it 'Easter' do
           c = t13.get(4, 20)
           expect(c.rank).to eq CR::Ranks::TRIDUUM
           expect(c.title).to have_translation 'Easter Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
           expect(c.symbol).to eq :easter_sunday
+          expect(c.sunday?).to be false # questionable
         end
 
         it 'Ascension' do
@@ -397,6 +411,7 @@ describe CR::Temporale do
           expect(c.title).to have_translation 'Pentecost'
           expect(c.colour).to eq CR::Colours::RED
           expect(c.symbol).to eq :pentecost
+          expect(c.sunday?).to be false
         end
 
         it 'Trinity' do
@@ -404,6 +419,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Trinity Sunday'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be false
         end
 
         it 'Body of Christ' do
@@ -425,6 +441,7 @@ describe CR::Temporale do
           expect(c.rank).to eq CR::Ranks::SOLEMNITY_GENERAL
           expect(c.title).to have_translation 'Christ The King'
           expect(c.colour).to eq CR::Colours::WHITE
+          expect(c.sunday?).to be false
         end
 
         describe 'other locales' do
@@ -613,6 +630,22 @@ describe CR::Temporale do
           expect(c.colour).to eq CR::Colours::WHITE
         end
       end
+    end
+  end
+
+  describe '#each_day' do
+    it 'yields each date and corresponding CR::Celebrations' do
+      expect {|block| t.each_day(&block) }.to yield_control.at_least(360).times # liturgical year can be shorter than the civil one
+
+      t.each_day do |date,cel|
+        expect(date).to be_a Date
+        expect(cel).to be_a CR::Celebration
+        break
+      end
+    end
+
+    it 'can be called without a block' do
+      expect(t.each_day).to be_an Enumerator
     end
   end
 

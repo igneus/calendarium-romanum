@@ -19,7 +19,8 @@ module CalendariumRomanum
             Celebration.new(
               proc { I18n.t('temporale.extension.christ_eternal_priest') },
               Ranks::FEAST_PROPER,
-              Colours::WHITE
+              Colours::WHITE,
+              :christ_eternal_priest
             )
           )
         end

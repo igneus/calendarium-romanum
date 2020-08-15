@@ -4,6 +4,7 @@ en:
       advent: Advent
       christmas: Christmas Season
       lent: Lent
+      triduum: Easter Triduum
       easter: Easter Season
       ordinary: Ordinary Time
     solemnity:
@@ -28,6 +29,7 @@ en:
       saturday_memorial_bvm: The Memorial of the Blessed Virgin Mary on Saturday
     extension:
       christ_eternal_priest: Our Lord Jesus Christ, The Eternal High Priest
+      dedication: Anniversary of Dedication
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
       ferial: '%{weekday}, %{week} week in Ordinary Time'

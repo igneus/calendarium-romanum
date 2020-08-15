@@ -1,5 +1,3 @@
-require 'forwardable'
-
 module CalendariumRomanum
 
   # Information on one particular day of the liturgical year
@@ -104,8 +102,13 @@ module CalendariumRomanum
   # some days have one,
   # some have more among which one is to be chosen
   class Celebration
-    extend Forwardable
+    include RankPredicates
 
+    # All arguments can be passed either as positional or keyword arguments.
+    # In case of conflict keyword arguments win.
+    # @example
+    #   Celebration.new('Lost title', title: 'Winning title') # will have title 'Winning title'
+    #
     # @param title [String|Proc]
     #   Celebration title/name.
     #   If a +Proc+ is passed, it is expected not to receive
@@ -123,31 +126,43 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::WHITE, symbol = nil, date = nil, cycle = :sanctorale)
-      @title = title
-      @rank = rank
-      @colour = colour
-      @symbol = symbol
-      @date = date
-      @cycle = cycle
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::WHITE, symbol = nil, date = nil, cycle = :sanctorale, sunday = false, **kwargs)
+      @title = kwargs.delete(:title) || title
+      @rank = kwargs.delete(:rank) || rank
+      @colour = kwargs.delete(:colour) || kwargs.delete(:color) || colour
+      @symbol = kwargs.delete(:symbol) || symbol
+      @date = kwargs.delete(:date) || date
+      @cycle = kwargs.delete(:cycle) || cycle
+      @sunday = kwargs.delete(:sunday) || sunday
+
+      unless kwargs.empty?
+        raise ArgumentError.new('Unexpected keyword arguments: ' + kwargs.keys.inspect)
+      end
+
+      if @sunday && ![Ranks::SUNDAY_UNPRIVILEGED, Ranks::PRIMARY].include?(@rank)
+        raise ArgumentError.new("Rank #{@rank} cannot be Sunday")
+      end
+    end
+
+    # Build a new instance using the receiver's attributes
+    # for all properties for which (a non-nil) value was not passed.
+    #
+    # @return [Celebration]
+    # @since 0.5.0
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil, sunday: nil)
+      self.class.new(
+        title: title || self.title,
+        rank: rank || self.rank,
+        colour: colour || color || self.colour,
+        symbol: symbol || self.symbol,
+        date: date || self.date,
+        cycle: cycle || self.cycle,
+        sunday: sunday || @sunday
+      )
     end
 
     # @return [Rank]
     attr_reader :rank
-
-    # @!method solemnity?
-    #   @return [Boolean]
-    # @!method feast?
-    #   @return [Boolean]
-    # @!method memorial?
-    #   @return [Boolean]
-    # @!method sunday?
-    #   @return [Boolean]
-    #   @since 0.6.0
-    # @!method ferial?
-    #   @return [Boolean]
-    #   @since 0.6.0
-    def_delegators :@rank, :solemnity?, :feast?, :memorial?, :sunday?, :ferial?
 
     # Feast title/name
     #
@@ -216,20 +231,14 @@ module CalendariumRomanum
       cycle == :sanctorale
     end
 
-    # Build a new instance using the receiver's attributes
-    # for all properties for which (a non-nil) value was not passed.
+    # Is the celebration a Sunday?
     #
-    # @return [Celebration]
-    # @since 0.5.0
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil)
-      self.class.new(
-        title || self.title,
-        rank || self.rank,
-        colour || color || self.colour,
-        symbol || self.symbol,
-        date || self.date,
-        cycle || self.cycle,
-      )
+    # Please note that for "privileged Sundays" true is returned, while {Rank#sunday?}
+    # returns false (because not all celebrations of that rank are Sundays).
+    #
+    # @return [Boolean]
+    def sunday?
+      rank.sunday? || @sunday
     end
 
     # String representation of the object's contents

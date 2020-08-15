@@ -354,6 +354,24 @@ describe CR::Calendar do
       end
     end
 
+    describe '#transferred' do
+      let(:c) { CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN_ENGLISH.load) }
+
+      it 'is a frozen Hash' do
+        expect(c.transferred).to be_a Hash
+        expect(c.transferred).to be_frozen
+      end
+
+      it 'maps dates to Celebrations' do
+        expect(c.transferred).not_to be_empty # make sure
+        c.transferred.each_pair do |key,val|
+          expect(key).to be_a Date
+          expect(val).to be_a CR::Celebration
+          expect(val).to be_solemnity
+        end
+      end
+    end
+
     describe 'Temporale x Sanctorale resolution' do
       before :all do
         @s = CR::Data::GENERAL_ROMAN.load
@@ -427,8 +445,8 @@ describe CR::Calendar do
         expect(celebs.size).to eq 1
         expect(celebs[0]).to eq celfactory.good_friday
 
-        # it is transferred on a day after the Easter octave
-        d = c.temporale.easter_sunday + 8
+        # it is transferred to the closest free day - Saturday before Palm Sunday
+        d = c.temporale.palm_sunday - 1
         celebs = c.day(d).celebrations
         expect(celebs.size).to eq 1
         expect(celebs[0]).to eq st_none
@@ -625,13 +643,15 @@ describe CR::Calendar do
               assumption = Date.new(2014, 8, 15)
               sanctorale.replace(8, 16, [testing_solemnity])
 
-              day = calendar.day(assumption)
-              expect(day.celebrations.first.rank).to be CR::Ranks::SOLEMNITY_GENERAL
-              expect(day.vespers).to be nil
-
               # make sure
               next_day = calendar.day(assumption + 1)
               expect(next_day.celebrations.first).to be testing_solemnity
+
+              day = calendar.day(assumption)
+              expect(day.celebrations.first.rank).to be testing_solemnity.rank # important: ranks are equal
+
+              # the day's celebration wins, Assumption loses first Vespers
+              expect(day.vespers).to be nil
             end
           end
         end

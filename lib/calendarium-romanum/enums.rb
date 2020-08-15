@@ -67,7 +67,9 @@ module CalendariumRomanum
 
     # Liturgical colour of the season's Sundays and ferials
     #
-    # @return [Colour]
+    # May be +nil+ if there is no single colour.
+    #
+    # @return [Colour, nil]
     attr_reader :colour
   end
 
@@ -76,6 +78,7 @@ module CalendariumRomanum
     ADVENT = Season.new(:advent, Colours::VIOLET)
     CHRISTMAS = Season.new(:christmas, Colours::WHITE)
     LENT = Season.new(:lent, Colours::VIOLET)
+    TRIDUUM = Season.new(:triduum, nil)
     EASTER = Season.new(:easter, Colours::WHITE)
     ORDINARY = Season.new(:ordinary, Colours::GREEN)
 
@@ -84,6 +87,7 @@ module CalendariumRomanum
         ADVENT,
         CHRISTMAS,
         LENT,
+        TRIDUUM,
         EASTER,
         ORDINARY,
       ]

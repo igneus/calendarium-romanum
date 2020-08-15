@@ -18,45 +18,50 @@ module CalendariumRomanum
     # @param temporale [Temporale]
     # @param sanctorale [Sanctorale]
     def initialize(temporale, sanctorale)
-      @transferred = {}
       @temporale = temporale
       @sanctorale = sanctorale
+    end
 
-      dates = sanctorale.solemnities.keys.collect do |abstract_date|
+    def self.call(temporale, sanctorale)
+      new(temporale, sanctorale).call
+    end
+
+    def call
+      @transferred = {}
+
+      dates = @sanctorale.solemnities.keys.collect do |abstract_date|
         concretize_abstract_date abstract_date
       end.sort
 
       dates.each do |date|
-        tc = temporale.get(date)
+        tc = @temporale[date]
         next unless tc.solemnity?
 
-        sc = sanctorale.get(date)
+        sc = @sanctorale[date]
         next unless sc.size == 1 && sc.first.solemnity?
 
         loser = [tc, sc.first].sort_by(&:rank).first
 
-        transfer_to = date
-        begin
-          transfer_to = transfer_to.succ
-        end until valid_destination?(transfer_to)
+        transfer_to =
+          if loser.symbol == :annunciation && in_holy_week?(date)
+            monday_easter2 = @temporale.easter_sunday + 8
+            valid_destination?(monday_easter2) ? monday_easter2 : free_day_closest_to(monday_easter2)
+          else
+            free_day_closest_to(date)
+          end
         @transferred[transfer_to] = loser
       end
-    end
 
-    # Retrieve solemnity for the specified day
-    #
-    # @param date [Date]
-    # @return [Celebration, nil]
-    def get(date)
-      @transferred[date]
+      @transferred
     end
 
     private
 
-    def valid_destination?(day)
-      return false if @temporale.get(day).rank >= Ranks::FEAST_PROPER
+    def valid_destination?(date)
+      return false if @transferred.has_key? date
+      return false if @temporale[date].rank >= Ranks::FEAST_PROPER
 
-      sc = @sanctorale.get(day)
+      sc = @sanctorale[date]
       return false if sc.size > 0 && sc.first.rank >= Ranks::FEAST_PROPER
 
       true
@@ -76,6 +81,27 @@ module CalendariumRomanum
       else
         abstract_date.concretize(@temporale.year)
       end
+    end
+
+    def free_day_closest_to(date)
+      dates_around(date).find {|d| valid_destination?(d) }
+    end
+
+    def dates_around(date)
+      return to_enum(:dates_around, date) unless block_given?
+
+      1.upto(100) do |i|
+        yield date + i
+        yield date - i
+      end
+
+      raise 'this point should never be reached'
+    end
+
+    def in_holy_week?(date)
+      holy_week = (@temporale.palm_sunday .. @temporale.easter_sunday)
+
+      holy_week.include? date
     end
   end
 end

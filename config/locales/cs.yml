@@ -4,6 +4,7 @@ cs:
       advent: Doba adventní
       christmas: Doba vánoční
       lent: Doba postní
+      triduum: Velikonoční triduum
       easter: Doba velikonoční
       ordinary: Liturgické mezidobí
     solemnity:
@@ -28,6 +29,7 @@ cs:
       saturday_memorial_bvm: Sobotní památka Panny Marie
     extension:
       christ_eternal_priest: Ježíše Krista, nejvyššího a věčného kněze
+      dedication: Výročí posvěcení kostela
     ordinary:
       sunday: '%{week} neděle v mezidobí'
       ferial: '%{weekday} %{week} týdne v mezidobí'

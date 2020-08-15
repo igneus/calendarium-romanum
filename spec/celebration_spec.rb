@@ -1,6 +1,120 @@
 require_relative 'spec_helper'
 
 describe CR::Celebration do
+  describe '.new' do
+    it 'can be executed without arguments, sets defaults' do
+      c = described_class.new
+
+      expect(c.title).to eq ''
+      expect(c.rank).to be CR::Ranks::FERIAL
+      expect(c.colour).to be CR::Colours::GREEN
+      expect(c.symbol).to be nil
+      expect(c.date).to be nil
+      expect(c.cycle).to be :sanctorale
+    end
+
+    it 'accepts positional arguments' do
+      c = described_class.new(
+        'Title',
+        CR::Ranks::FEAST_PROPER,
+        CR::Colours::RED,
+        :none,
+        CR::AbstractDate.new(1, 11),
+        :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'accepts keyword arguments' do
+      c = described_class.new(
+        title: 'Title',
+        rank: CR::Ranks::FEAST_PROPER,
+        colour: CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'accepts mix of positional and keyword arguments' do
+      c = described_class.new(
+        'Title',
+        CR::Ranks::FEAST_PROPER,
+        CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'keyword arguments win over positional ones' do
+      c = described_class.new(
+        # positional arguments (won't take effect)
+        'Another Title',
+        CR::Ranks::MEMORIAL_GENERAL,
+        CR::Colours::WHITE,
+        :nullus,
+        CR::AbstractDate.new(2, 22),
+        :sanctorale,
+        # keyword arguments
+        title: 'Title',
+        rank: CR::Ranks::FEAST_PROPER,
+        colour: CR::Colours::RED,
+        symbol: :none,
+        date: CR::AbstractDate.new(1, 11),
+        cycle: :temporale
+      )
+
+      expect(c.title).to eq 'Title'
+      expect(c.rank).to be CR::Ranks::FEAST_PROPER
+      expect(c.colour).to be CR::Colours::RED
+      expect(c.symbol).to be :none
+      expect(c.date).to eq CR::AbstractDate.new(1, 11)
+      expect(c.cycle).to be :temporale
+    end
+
+    it 'fails loudly on unexpected keyword arguments' do
+      expect { described_class.new(title: 'Title', unexpected: 'value', another: 2) }
+        .to raise_exception(ArgumentError, 'Unexpected keyword arguments: [:unexpected, :another]')
+    end
+
+    can_be_sunday = [CR::Ranks::PRIMARY, CR::Ranks::SUNDAY_UNPRIVILEGED]
+
+    can_be_sunday.each do |rank|
+      it "rank '#{rank.desc}' can be Sunday" do
+        c = described_class.new rank: rank, sunday: true
+        expect(c.sunday?).to be true
+      end
+    end
+
+    (CR::Ranks.all - can_be_sunday).each do |rank|
+      it "rank '#{rank.desc}' cannot be Sunday" do
+        expect { described_class.new rank: rank, sunday: true }
+          .to raise_exception(ArgumentError, /cannot be Sunday/)
+      end
+    end
+  end
+
   describe '#==' do
     let(:c) { described_class.new('title') }
 
@@ -42,9 +156,9 @@ describe CR::Celebration do
   end
 
   describe '#temporale?, #sanctorale?' do
-    let(:tc) { described_class.new.change(cycle: :temporale) }
-    let(:sc) { described_class.new.change(cycle: :sanctorale) }
-    let(:nc) { described_class.new.change(cycle: anything) }
+    let(:tc) { described_class.new(cycle: :temporale) }
+    let(:sc) { described_class.new(cycle: :sanctorale) }
+    let(:nc) { described_class.new(cycle: anything) }
 
     it { expect(tc.temporale?).to be true }
     it { expect(tc.sanctorale?).to be false }
@@ -54,6 +168,25 @@ describe CR::Celebration do
 
     it { expect(nc.sanctorale?).to be false }
     it { expect(nc.temporale?).to be false }
+  end
+
+  describe '#sunday?' do
+    it 'is true for unprivileged Sundays' do
+      c = described_class.new rank: CR::Ranks::SUNDAY_UNPRIVILEGED
+      expect(c.sunday?).to be true
+    end
+
+    (CR::Ranks.all - [CR::Ranks::SUNDAY_UNPRIVILEGED]).each do |rank|
+      it "is false for '#{rank.desc}'" do
+        c = described_class.new rank: rank
+        expect(c.sunday?).to be false
+      end
+    end
+
+    it 'is true for primary days if set by a constructor parameter' do
+      c = described_class.new rank: CR::Ranks::PRIMARY, sunday: true
+      expect(c.sunday?).to be true
+    end
   end
 
   describe '#to_s' do

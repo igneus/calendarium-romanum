@@ -64,8 +64,16 @@ module CalendariumRomanum
       # with sensible defaults
       #
       # See {Celebration#initialize} for argument description.
-      def create_celebration(title, rank, colour, symbol: nil, date: nil)
-        Celebration.new(title, rank, colour, symbol, date, :temporale)
+      def create_celebration(title, rank, colour, symbol: nil, date: nil, sunday: nil)
+        Celebration.new(
+          title: title,
+          rank: rank,
+          colour: colour,
+          symbol: symbol,
+          date: date,
+          cycle: :temporale,
+          sunday: sunday
+        )
       end
 
       C = Struct.new(:date_method, :celebration)
@@ -218,20 +226,24 @@ module CalendariumRomanum
     def season(date)
       range_check date
 
-      if (first_advent_sunday <= date) &&
+      if first_advent_sunday <= date &&
          nativity > date
         Seasons::ADVENT
 
-      elsif (nativity <= date) &&
-            (baptism_of_lord >= date)
+      elsif nativity <= date &&
+            baptism_of_lord >= date
         Seasons::CHRISTMAS
 
-      elsif (ash_wednesday <= date) &&
-            easter_sunday > date
+      elsif ash_wednesday <= date &&
+            good_friday > date
         Seasons::LENT
 
-      elsif (easter_sunday <= date) &&
-            (pentecost >= date)
+      elsif good_friday <= date &&
+            easter_sunday >= date
+        Seasons::TRIDUUM
+
+      elsif easter_sunday < date &&
+            pentecost >= date
         Seasons::EASTER
 
       else
@@ -251,8 +263,10 @@ module CalendariumRomanum
         nativity
       when Seasons::LENT
         ash_wednesday
+      when Seasons::TRIDUUM
+        good_friday
       when Seasons::EASTER
-        easter_sunday
+        easter_sunday + 1
       when Seasons::ORDINARY # ordinary time
         baptism_of_lord + 1
       else
@@ -272,11 +286,13 @@ module CalendariumRomanum
 
       week = date_difference(date, week1_beginning) / WEEK + 1
 
-      if seasonn == Seasons::ORDINARY
+      if seasonn == Seasons::ORDINARY || seasonn == Seasons::EASTER
         # ordinary time does not begin with Sunday, but the first week
         # is week 1, not 0
         week += 1
+      end
 
+      if seasonn == Seasons::ORDINARY
         if date > pentecost
           weeks_after_date = date_difference(Dates.first_advent_sunday(@year + 1), date) / WEEK
           week = 34 - weeks_after_date
@@ -318,6 +334,16 @@ module CalendariumRomanum
       self[date]
     end
 
+    # Enumerates dates and celebrations
+    #
+    # @yield [Date, Celebration]
+    # @return [void, Enumerator] if called without a block, returns +Enumerator+
+    def each_day
+      return to_enum(__method__) unless block_given?
+
+      date_range.each {|date| yield date, self[date] }
+    end
+
     # @return [Boolean]
     # @since 0.6.0
     def ==(b)
@@ -348,7 +374,7 @@ module CalendariumRomanum
       week = Ordinalizer.ordinal season_week(seas, date)
       title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
 
-      self.class.create_celebration title, rank, seas.colour
+      self.class.create_celebration title, rank, seas.colour, sunday: true
     end
 
     def ferial(date)

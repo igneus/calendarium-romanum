@@ -1,6 +1,7 @@
 module CalendariumRomanum
   # Celebration rank
   class Rank
+    include RankPredicates
     include Comparable
 
     # @param priority [Float, nil] number in the Table of Liturgical Days
@@ -46,32 +47,24 @@ module CalendariumRomanum
       other.priority <=> priority
     end
 
-    # @return [Boolean]
-    def solemnity?
-      priority.to_i == 1
+    # Returns the next higher rank.
+    #
+    # Allows constructing ranges of ranks.
+    #
+    # @return [Rank]
+    def succ
+      all = CR::Ranks.all
+      index = all.index(self)
+      raise StopIteration.new if index == 0
+
+      all[index - 1]
     end
 
-    # @return [Boolean]
-    # @since 0.6.0
-    def sunday?
-      self == Ranks::SUNDAY_UNPRIVILEGED
-    end
+    private
 
-    # @return [Boolean]
-    def feast?
-      priority.to_i == 2
-    end
-
-    # @return [Boolean]
-    def memorial?
-      priority.to_i == 3 && priority <= 3.12
-    end
-
-    # @return [Boolean]
-    # @since 0.6.0
-    def ferial?
-      self == Ranks::FERIAL ||
-        self == Ranks::FERIAL_PRIVILEGED
+    # Required by the {RankPredicates} mixin
+    def rank
+      self
     end
   end
 end

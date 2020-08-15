@@ -4,6 +4,7 @@ la:
       advent: Tempus Adventus
       christmas: Tempus Nativitatis
       lent: Tempus Quadragesimae
+      triduum: Triduum Paschale
       easter: Tempus Paschale
       ordinary: Tempus per annum
     solemnity:
@@ -28,6 +29,7 @@ la:
       saturday_memorial_bvm: Memoria Sanctae Mariae in Sabbato
     extension:
       christ_eternal_priest: Domini nostri Iesu Christi Summi et Aeterni Sacerdotis
+      dedication: Anniversarium dedicationis ecclesiae
     ordinary:
       sunday: 'Dominica %{week} per annum'
       ferial: '%{weekday}, hebdomada %{week} per annum'

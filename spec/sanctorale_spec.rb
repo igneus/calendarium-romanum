@@ -268,6 +268,20 @@ describe CR::Sanctorale do
 
       expect(s.get(1, 14)).to eq [nullus]
     end
+
+    it 'allows multiple celebrations without symbol' do
+      celebration_without_symbol = CR::Celebration.new 'Without Symbol'
+      expect(celebration_without_symbol.symbol).to be nil # make sure
+
+      s.add 1, 14, celebration_without_symbol
+
+      s2 = described_class.new
+      s2.add 9, 19, celebration_without_symbol
+
+      expect do
+        s.update s2
+      end.not_to raise_exception
+    end
   end
 
   describe '#size' do

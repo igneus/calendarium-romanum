@@ -8,6 +8,7 @@ end
   version
   i18n_setup
   abstract_date
+  rank_predicates
   rank
   enum
   enums
@@ -19,6 +20,7 @@ end
   temporale/dates
   temporale/celebration_factory
   temporale/extensions/christ_eternal_priest
+  temporale/extensions/dedication_before_all_saints
   temporale
   sanctorale
   sanctorale_loader

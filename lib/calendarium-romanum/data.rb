@@ -35,12 +35,14 @@ module CalendariumRomanum
     end
 
     GENERAL_ROMAN = SanctoraleFile.new('universal.txt')
+    GENERAL_ROMAN_LATIN_1969 = SanctoraleFile.new('universal-1969-la.txt')
     CZECH = SanctoraleFile.new('czech-cs.txt')
 
     values(index_by: :siglum) do
       # only calendars of broader interest have constants defined
       [
         GENERAL_ROMAN,
+        GENERAL_ROMAN_LATIN_1969,
         CZECH,
       ] \
       +

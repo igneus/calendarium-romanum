@@ -50,7 +50,7 @@ module CalendariumRomanum
       @temporale = temporale
       @populate_vespers = vespers
 
-      @transferred = Transfers.new(@temporale, @sanctorale)
+      @transferred = Transfers.call(@temporale, @sanctorale).freeze
     end
 
     class << self
@@ -103,6 +103,12 @@ module CalendariumRomanum
 
     # @return [Sanctorale]
     attr_reader :sanctorale
+
+    # Solemnities transferred to a date different from the usual one
+    # due to occurrence with a higher-ranking celebration.
+    #
+    # @return [Hash<Date=>Celebration>]
+    attr_reader :transferred
 
     # Do {Day} instances returned by this +Calendar+
     # have {Day#vespers} populated?
@@ -221,7 +227,7 @@ module CalendariumRomanum
     private
 
     def celebrations_for(date)
-      tr = @transferred.get(date)
+      tr = @transferred[date]
       return [tr] if tr
 
       t = @temporale[date]

@@ -29,14 +29,15 @@ module CalendariumRomanum
           @celebrations ||= [:first_advent_sunday]
         end
 
-        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false)
+        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: nil, sunday: nil)
           define_singleton_method(symbol) do
             Temporale.create_celebration(
               proc { I18n.t("temporale.solemnity.#{symbol}") },
               rank,
               colour,
               symbol: symbol,
-              date: fixed_date
+              date: fixed_date,
+              sunday: sunday
             )
           end
 
@@ -70,7 +71,7 @@ module CalendariumRomanum
       celebration(:holy_saturday, Ranks::TRIDUUM, Colours::VIOLET)
       # @return [Celebration]
       # @!scope class
-      celebration(:palm_sunday, Ranks::PRIMARY, Colours::RED)
+      celebration(:palm_sunday, Ranks::PRIMARY, Colours::RED, sunday: true)
       # @return [Celebration]
       # @!scope class
       celebration(:easter_sunday, Ranks::TRIDUUM)

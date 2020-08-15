@@ -4,6 +4,7 @@ fr:
       advent: "Temps de l'Avent"
       christmas: Temps de Noël
       lent: Temps du Carême
+      triduum: Triduum pascal
       easter: Temps de Pâques
       ordinary: Temps ordinaire
     solemnity:
@@ -28,6 +29,7 @@ fr:
       saturday_memorial_bvm: Mémoire de Sainte-Marie le samedi
     extension:
       christ_eternal_priest: Jésus Christ, prêtre éternel et souverain
+      dedication: Anniversaire de la Dédicace de l'église
     ordinary:
       sunday: '%{week} Dimanche de Temps Ordinaire'
       ferial: '%{weekday}, %{week} semaine de Temps Ordinaire'
