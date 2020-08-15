@@ -6,7 +6,7 @@ describe CR::Celebration do
       c = described_class.new
 
       expect(c.title).to eq ''
-      expect(c.rank).to be CR::Ranks::FERIAL
+      expect(c.rank).to be CR::Ranks::MEMORIAL_OPTIONAL
       expect(c.colour).to be CR::Colours::WHITE
       expect(c.symbol).to be nil
       expect(c.date).to be nil

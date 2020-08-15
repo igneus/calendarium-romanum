@@ -126,7 +126,7 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::WHITE, symbol = nil, date = nil, cycle = :sanctorale, sunday = false, **kwargs)
+    def initialize(title = '', rank = Ranks::MEMORIAL_OPTIONAL, colour = Colours::WHITE, symbol = nil, date = nil, cycle = :sanctorale, sunday = false, **kwargs)
       @title = kwargs.delete(:title) || title
       @rank = kwargs.delete(:rank) || rank
       @colour = kwargs.delete(:colour) || kwargs.delete(:color) || colour
