@@ -205,7 +205,7 @@ title: General Roman Calendar
 4 m borromeo
 9 f2.5 lateran_basilica
 10 m leo_great
-11 martin
+11 m martin
 12 m R josaphat
 15 albert
 16 margaret_of_scotland
