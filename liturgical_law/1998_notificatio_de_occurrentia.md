@@ -1,7 +1,9 @@
 ---
 title: De occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus
 promulgated: 1998-12-08 CCDDS Prot. n. 2671/98/L
-source: http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20000630_memoria-immaculati-cordis-mariae-virginis_lt.html
+source:
+- http://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20000630_memoria-immaculati-cordis-mariae-virginis_lt.html
+- Notitiae 392-393/1999, p. 157; http://www.cultodivino.va/content/dam/cultodivino/notitiae/1999/392-393.pdf#page=63
 ---
 
 # NOTIFICATIO : DE OCCURRENTIA MEMORIAE OBLIGATORIAE IMMACULATI CORDIS BEATAE MARIAE VIRGINIS UNA CUM ALTERA MEMORIA EIUSDEM GRADUS
