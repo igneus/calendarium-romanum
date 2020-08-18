@@ -43,6 +43,22 @@ describe CR::Temporale::Dates do
     end
   end
 
+  describe '.easter_sunday' do
+    describe 'computed results match known Easter dates' do
+      table = nil
+      File.open(File.expand_path('../data/easter_dates.txt', File.dirname(__FILE__))) do |io|
+        table = CR::Temporale::EasterTable.load_from(io)
+      end
+
+      (1984..2049).each do |year|
+        it year.to_s do
+          expect(described_class.easter_sunday(year))
+            .to eq table[year]
+        end
+      end
+    end
+  end
+
   describe 'transferable solemnities' do
     # for sake of simplicity a year has been chosen when
     # none of the transferable solemnities falls on a Sunday
