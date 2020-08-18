@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe CR::Temporale::Dates do
   let(:today) { Date.new 2014, 3, 16 }
 
-  describe '#weekday_before' do
+  describe '.weekday_before' do
     describe 'works well for all 7 weekdays' do
       [
         [0, Date.new(2014, 3, 9)],
@@ -23,7 +23,7 @@ describe CR::Temporale::Dates do
     end
   end
 
-  describe '#weekday_after aliases' do
+  describe '.weekday_after aliases' do
     describe 'works well for all 7 weekdays' do
       [
         [:monday_after, Date.new(2014, 3, 17)],
