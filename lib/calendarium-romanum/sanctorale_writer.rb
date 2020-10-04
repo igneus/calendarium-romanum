@@ -30,7 +30,7 @@ module CalendariumRomanum
       Ranks::FERIAL => 'm3.13',
 
       Ranks::COMMEMORATION => '4.0'
-    }
+    }.freeze
 
     # @api private
     COLOUR_CODES = {
@@ -54,7 +54,7 @@ module CalendariumRomanum
 
       # Write metadata to YAML if present
       unless src.metadata.nil? || src.metadata.empty?
-        dest << src.metadata.transform_keys(&:to_s).to_yaml
+        dest << src.metadata.to_yaml
         dest << "---\n"
       end
 

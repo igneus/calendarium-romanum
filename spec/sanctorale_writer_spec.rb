@@ -7,11 +7,9 @@ describe CR::SanctoraleWriter do
   describe 'record/file format' do
     let(:celebration) do
       CR::Celebration.new(
-        'The Most Holy Name of Jesus',
-        CR::Ranks::MEMORIAL_OPTIONAL,
-        CR::Colours::WHITE,
-        :name_jesus,
-        CR::AbstractDate.new(1, 3)
+        title: 'The Most Holy Name of Jesus',
+        symbol: :name_jesus,
+        date: CR::AbstractDate.new(1, 3)
       )  
     end
     let(:result) { d.send(:celebration_line, celebration) }
@@ -22,15 +20,24 @@ describe CR::SanctoraleWriter do
       end
     end
 
+    describe 'title' do
+      it 'prints the title' do
+        expect(result).to include(': The Most Holy Name of Jesus')
+      end
+    end
+
+    describe 'symbol' do
+      it 'prints the symbol' do
+        expect(result).to include(' name_jesus :')
+      end
+    end
+
     describe 'rank' do
       describe 'memorial' do
         let(:celebration) do
           CR::Celebration.new(
-            'Saints Joachim and Anne',
-            CR::Ranks::MEMORIAL_GENERAL,
-            CR::Colours::WHITE,
-            :joachim_anne,
-            CR::AbstractDate.new(7, 26)
+            rank: CR::Ranks::MEMORIAL_GENERAL,
+            date: CR::AbstractDate.new(7, 26)
           )  
         end
         it 'includes m as rank' do
@@ -40,11 +47,8 @@ describe CR::SanctoraleWriter do
       describe 'feast' do
         let(:celebration) do
           CR::Celebration.new(
-            'Saints Michael, Gabriel and Raphael, Archangels',
-            CR::Ranks::FEAST_GENERAL,
-            CR::Colours::WHITE,
-            :archangels,
-            CR::AbstractDate.new(9, 29)
+            rank: CR::Ranks::FEAST_GENERAL,
+            date: CR::AbstractDate.new(9, 29)
           )  
         end
         it 'includes f as rank' do
@@ -54,11 +58,8 @@ describe CR::SanctoraleWriter do
       describe 'solemnity' do
         let(:celebration) do
           CR::Celebration.new(
-            'Immaculate Conception of the Blessed Virgin Mary',
-            CR::Ranks::SOLEMNITY_GENERAL,
-            CR::Colours::WHITE,
-            :bvm_immaculate,
-            CR::AbstractDate.new(12, 8)
+            rank: CR::Ranks::SOLEMNITY_GENERAL,
+            date: CR::AbstractDate.new(12, 8)
           )  
         end
         it 'includes s as rank' do
@@ -69,11 +70,8 @@ describe CR::SanctoraleWriter do
       describe 'feast of the lord' do
         let(:celebration) do
           CR::Celebration.new(
-            'Transfiguration of the Lord',
-            CR::Ranks::FEAST_LORD_GENERAL,
-            CR::Colours::WHITE,
-            :transfiguration,
-            CR::AbstractDate.new(8, 6)
+            rank: CR::Ranks::FEAST_LORD_GENERAL,
+            date: CR::AbstractDate.new(8, 6)
           )  
         end
         it 'includes f2.5 as rank' do
@@ -86,11 +84,8 @@ describe CR::SanctoraleWriter do
       describe 'red' do
         let(:celebration) do
           CR::Celebration.new(
-            'Saint Maximilian Mary Kolbe, priest and martyr',
-            CR::Ranks::MEMORIAL_GENERAL,
-            CR::Colours::RED,
-            :kolbe,
-            CR::AbstractDate.new(8, 14)
+            colour: CR::Colours::RED,
+            date: CR::AbstractDate.new(8, 14)
           )  
         end
         it 'includes R as colour' do
@@ -99,10 +94,17 @@ describe CR::SanctoraleWriter do
       end
     end
   end
+
+  describe 'exceptional cases' do
+    it 'raises an exception if no date is provided' do
+      c = CR::Celebration.new
+      expect { d.send(:celebration_line, c) }.to raise_exception(NoMethodError)
+    end
+  end
   
   describe 'YAML front matter (YFM)' do
     it 'writes YFM if metadata is present' do
-      s.metadata = {foo: 'bar'}
+      s.metadata = {'foo' => 'bar'}
       expect(d.write_to_string(s))
         .to eq("---\nfoo: bar\n---\n")
     end
@@ -113,8 +115,11 @@ describe CR::SanctoraleWriter do
   end
 
   describe 'complete output' do
-    it 'writes a simple but complete file correctly' do
-      celebration =
+    let(:s) do
+      s = CR::Sanctorale.new
+      s.add(
+        9,
+        14,
         CR::Celebration.new(
           'Triumph of the Holy Cross',
           CR::Ranks::FEAST_LORD_GENERAL,
@@ -122,19 +127,30 @@ describe CR::SanctoraleWriter do
           :cross,
           CR::AbstractDate.new(9, 14)
         )
-      s.add(9, 14, celebration)
-      s.metadata = { metadata: 'test' }
+      )
+      s.metadata = { 'metadata' => 'test' }
 
-      expected = <<~END
-        ---
-        metadata: test
-        ---
+      s
+    end
 
-        = 9
-        14 f2.5 R cross : Triumph of the Holy Cross
-      END
+    it 'writes a simple but complete file correctly' do
+      expected = <<EXPECTED
+---
+metadata: test
+---
+
+= 9
+14 f2.5 R cross : Triumph of the Holy Cross
+EXPECTED
 
       expect(d.write_to_string(s)).to eq(expected)
+    end
+
+    it 'can load the output with SanctoraleLoader' do
+      serialized = d.write_to_string(s)
+      loaded = CR::SanctoraleLoader.new.load_from_string(serialized)
+
+      expect(loaded).to eq(s)
     end
   end
 end
