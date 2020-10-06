@@ -25,6 +25,7 @@ end
   temporale
   sanctorale
   sanctorale_loader
+  sanctorale_writer
   sanctorale_factory
   transfers
   util
