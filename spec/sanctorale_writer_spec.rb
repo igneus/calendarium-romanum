@@ -8,11 +8,11 @@ describe CR::SanctoraleWriter do
     let(:celebration) do
       CR::Celebration.new(
         title: 'The Most Holy Name of Jesus',
-        symbol: :name_jesus,
-        date: CR::AbstractDate.new(1, 3)
+        symbol: :name_jesus
       )  
     end
-    let(:result) { d.send(:celebration_line, celebration) }
+    let(:date) { CR::AbstractDate.new(1, 3) }
+    let(:result) { d.send(:celebration_line, date, celebration) }
 
     describe 'day' do
       it 'prints the day' do
@@ -36,8 +36,7 @@ describe CR::SanctoraleWriter do
       describe 'memorial' do
         let(:celebration) do
           CR::Celebration.new(
-            rank: CR::Ranks::MEMORIAL_GENERAL,
-            date: CR::AbstractDate.new(7, 26)
+            rank: CR::Ranks::MEMORIAL_GENERAL
           )  
         end
         it 'includes m as rank' do
@@ -47,8 +46,7 @@ describe CR::SanctoraleWriter do
       describe 'feast' do
         let(:celebration) do
           CR::Celebration.new(
-            rank: CR::Ranks::FEAST_GENERAL,
-            date: CR::AbstractDate.new(9, 29)
+            rank: CR::Ranks::FEAST_GENERAL
           )  
         end
         it 'includes f as rank' do
@@ -58,8 +56,7 @@ describe CR::SanctoraleWriter do
       describe 'solemnity' do
         let(:celebration) do
           CR::Celebration.new(
-            rank: CR::Ranks::SOLEMNITY_GENERAL,
-            date: CR::AbstractDate.new(12, 8)
+            rank: CR::Ranks::SOLEMNITY_GENERAL
           )  
         end
         it 'includes s as rank' do
@@ -70,8 +67,7 @@ describe CR::SanctoraleWriter do
       describe 'feast of the lord' do
         let(:celebration) do
           CR::Celebration.new(
-            rank: CR::Ranks::FEAST_LORD_GENERAL,
-            date: CR::AbstractDate.new(8, 6)
+            rank: CR::Ranks::FEAST_LORD_GENERAL
           )  
         end
         it 'includes f2.5 as rank' do
@@ -84,8 +80,7 @@ describe CR::SanctoraleWriter do
       describe 'red' do
         let(:celebration) do
           CR::Celebration.new(
-            colour: CR::Colours::RED,
-            date: CR::AbstractDate.new(8, 14)
+            colour: CR::Colours::RED
           )  
         end
         it 'includes R as colour' do
@@ -94,17 +89,10 @@ describe CR::SanctoraleWriter do
       end
     end
   end
-
-  describe 'exceptional cases' do
-    it 'raises an exception if no date is provided' do
-      c = CR::Celebration.new
-      expect { d.send(:celebration_line, c) }.to raise_exception(NoMethodError)
-    end
-  end
   
   describe 'YAML front matter (YFM)' do
     it 'writes YFM if metadata is present' do
-      s.metadata = {'foo' => 'bar'}
+      s.metadata = { 'foo' => 'bar' }
       expect(d.write_to_string(s))
         .to eq("---\nfoo: bar\n---\n")
     end

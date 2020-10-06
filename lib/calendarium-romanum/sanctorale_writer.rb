@@ -67,7 +67,7 @@ module CalendariumRomanum
         end
 
         celebrations.each do |c|
-          dest << celebration_line(c)
+          dest << celebration_line(date, c)
           dest << "\n"
         end
       end
@@ -93,8 +93,8 @@ module CalendariumRomanum
     private
 
     # Convert a {Celebration} to a {String} for writing
-    def celebration_line(celebration)
-      line = "#{celebration.date.day} "
+    def celebration_line(date, celebration)
+      line = "#{date.day} "
 
       unless celebration.rank == Ranks::MEMORIAL_OPTIONAL
         code = RANK_CODES[celebration.rank]
