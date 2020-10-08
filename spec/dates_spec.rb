@@ -76,14 +76,27 @@ describe CR::Temporale::Dates do
       end
     end
 
-    it 'Baptism of the Lord' do
-      transferred =
+    describe 'Baptism of the Lord' do
+      it 'is on Sunday if Epiphany is on it\'s usual date or earlier' do
+        transferred =
           described_class.baptism_of_lord(year, epiphany_on_sunday: true)
-      not_transferred =
-        described_class.baptism_of_lord(year)
+        not_transferred =
+          described_class.baptism_of_lord(year)
 
-      expect(transferred).to be_monday
-      expect(not_transferred).to be_sunday
+        expect(transferred).to eq not_transferred
+      end
+
+      it 'is transferred to Monday if Epiphany is later than on it\'s usual date' do
+        year = 2016
+
+        transferred =
+          described_class.baptism_of_lord(year, epiphany_on_sunday: true)
+        not_transferred =
+          described_class.baptism_of_lord(year)
+
+        expect(transferred).to be_monday
+        expect(not_transferred).to be_sunday
+      end
     end
   end
 end
