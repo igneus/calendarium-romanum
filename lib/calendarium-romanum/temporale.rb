@@ -354,23 +354,38 @@ module CalendariumRomanum
     def ferial(date)
       seas = season date
       week = season_week(seas, date)
+      week_ord = Ordinalizer.ordinal week
       rank = Ranks::FERIAL
       title = nil
+      id = nil
       case seas
       when Seasons::ADVENT
         if date >= Date.new(@year, 12, 17)
           rank = Ranks::FERIAL_PRIVILEGED
           nth = Ordinalizer.ordinal(date.day)
-          title = I18n.t 'temporale.advent.before_christmas', day: nth
+          title = I18n.t 'temporale.advent.before_christmas', day: nth, week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
+          id = "advent_#{(I18n.t "weekday.#{date.wday}", locale: :en).downcase}_december#{date.day}"
         end
       when Seasons::CHRISTMAS
         if date < mother_of_god
           rank = Ranks::FERIAL_PRIVILEGED
 
-          nth = Ordinalizer.ordinal(date.day - nativity.day + 1) # 1-based counting
+          day_of_octave = date.day - nativity.day + 1 # 1-based counting
+          nth = Ordinalizer.ordinal(day_of_octave)
           title = I18n.t 'temporale.christmas.nativity_octave.ferial', day: nth
+          id = "christmas_octave_#{day_of_octave}"
         elsif date > epiphany
-          title = I18n.t 'temporale.christmas.after_epiphany.ferial', weekday: I18n.t("weekday.#{date.wday}")
+          if transferred_to_sunday?(:epiphany)
+            title = I18n.t 'temporale.christmas.after_epiphany.ferial', weekday: I18n.t("weekday.#{date.wday}")
+          else
+            title = I18n.t 'temporale.christmas.after_epiphany.ferial_with_day', weekday: I18n.t("weekday.#{date.wday}"), day: date.day
+            rank = Ranks::FERIAL_PRIVILEGED
+            id = "post_epiphany_#{(I18n.t "weekday.#{date.wday}", locale: :en).downcase}_january#{date.day}"
+          end
+        else # > mother_of_god && < epiphany
+          rank = Ranks::FERIAL_PRIVILEGED
+          title = I18n.t 'temporale.christmas.ferial', weekday: I18n.t("weekday.#{date.wday}"), day: date.day
+          id = "pre_epiphany_#{(I18n.t "weekday.#{date.wday}", locale: :en).downcase}_january#{date.day}"
         end
       when Seasons::LENT
         if week == 0
@@ -378,6 +393,7 @@ module CalendariumRomanum
         elsif date > palm_sunday
           rank = Ranks::PRIMARY
           title = I18n.t 'temporale.lent.holy_week.ferial', weekday: I18n.t("weekday.#{date.wday}")
+          id = "lent_holy_#{(I18n.t "weekday.#{date.wday}", locale: :en).downcase}"
         end
         rank = Ranks::FERIAL_PRIVILEGED unless rank > Ranks::FERIAL_PRIVILEGED
       when Seasons::EASTER
@@ -387,10 +403,9 @@ module CalendariumRomanum
         end
       end
 
-      week_ord = Ordinalizer.ordinal week
       title ||= I18n.t "temporale.#{seas.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
 
-      self.class.create_celebration title, rank, seas.colour
+      self.class.create_celebration title, rank, seas.colour, symbol: id
     end
 
     # helper: difference between two Dates in days
