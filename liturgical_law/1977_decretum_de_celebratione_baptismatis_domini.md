@@ -22,7 +22,7 @@ In locis ubi sollemnitas Epiphaniae in dominicam est transferenda et haec die 7 
 incidit, ita ut festum Baptismatis Domini, eadem die occurrens, esset omittendum, idem festum
 Baptismatis Domini ad feriam II immediate sequentem transferatur.
 
-Contrariis quibuslibet niinime obstantibus.
+Contrariis quibuslibet minime obstantibus.
 
 Ex aedibus Sacrae Congregationis pro Sacramentis et Cultu Divino, die 7  Octobris 1977.
 
