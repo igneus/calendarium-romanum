@@ -82,8 +82,8 @@ module CalendariumRomanum
         end
 
         dest.add(
-          celebration.date.month,
-          celebration.date.day,
+          celebration.date&.month,
+          celebration.date&.day,
           celebration
         )
       end
@@ -113,7 +113,7 @@ module CalendariumRomanum
           colour_letters = COLOUR_CODES.keys.compact.join('')
 
           Regexp.new(
-            '^((?<month>\d+)\/)?(?<day>\d+)' + # date
+            '^((?<month>\d+)\/)?(?<day>\d+)(?<move_if_sunday>\+1sunday)?' + # date
             '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
             '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
             '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
@@ -135,6 +135,7 @@ module CalendariumRomanum
 
       month = (m[:month] || month_section).to_i
       day = m[:day].to_i
+      move_if_sunday = m[:move_if_sunday] == '+1sunday'
       rank_char = m[:rank_char]
       rank_num = m[:rank_num]
       colour = m[:colour]
@@ -169,7 +170,8 @@ module CalendariumRomanum
         symbol,
         AbstractDate.new(month, day),
         :sanctorale,
-        has_vigil
+        has_vigil,
+        move_if_sunday
       )
     end
 

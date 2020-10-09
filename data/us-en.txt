@@ -10,7 +10,7 @@ extends:
 1/4 m seton : Saint Elizabeth Ann Seton, Religious
 1/5 m neumann : Saint John Neumann, Bishop
 1/6 bessette : Saint André Bessette, Religious
-1/22 unborn_children : Day of Prayer for the Legal Protection of Unborn Children
+1/22+1sunday unborn_children : Day of Prayer for the Legal Protection of Unborn Children
 # (1/23, when 1/22 falls on a Sunday)
 1/23 vincent_deacon : Saint Vincent, Deacon and Martyr
 1/23 marianne_cope : Saint Marianne Cope, Virgin

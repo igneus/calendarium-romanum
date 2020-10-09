@@ -136,7 +136,7 @@ module CalendariumRomanum
     #   Normal fixed date of the celebration
     # @param cycle [:sanctorale, :temporale]
     #   Cycle the celebration belongs to
-    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, has_vigil = false)
+    def initialize(title = '', rank = Ranks::FERIAL, colour = Colours::GREEN, symbol = nil, date = nil, cycle = :sanctorale, has_vigil = false, move_if_sunday = false)
       @title = title
       @rank = rank
       @colour = colour
@@ -144,6 +144,7 @@ module CalendariumRomanum
       @date = date
       @cycle = cycle
       @has_vigil = has_vigil
+      @move_if_sunday = move_if_sunday
     end
 
     # @return [Rank]
@@ -211,6 +212,13 @@ module CalendariumRomanum
     # @since 1.0.0
     attr_reader :has_vigil
 
+    # Determines if the given celebration
+    # should move to monday if the natural date falls on a sunday
+    #
+    # @return [Boolean]
+    # @since 1.0.0
+    attr_reader :move_if_sunday
+
     def ==(b)
       self.class == b.class &&
         title == b.title &&
@@ -219,7 +227,8 @@ module CalendariumRomanum
         symbol == b.symbol &&
         date == b.date &&
         cycle == b.cycle &&
-        has_vigil == b.has_vigil
+        has_vigil == b.has_vigil &&
+        move_if_sunday = b.move_if_sunday
     end
 
     # Does the celebration belong to the temporale cycle?
@@ -245,13 +254,21 @@ module CalendariumRomanum
     def has_vigil?
       has_vigil
     end
+    
+    # Add conventional method
+    #
+    # @return [Boolean]
+    # @since 1.0.0
+    def move_if_sunday?
+      move_if_sunday
+    end
 
     # Build a new instance using the receiver's attributes
     # for all properties for which (a non-nil) value was not passed.
     #
     # @return [Celebration]
     # @since 0.5.0
-    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil, has_vigil: nil)
+    def change(title: nil, rank: nil, colour: nil, color: nil, symbol: nil, date: nil, cycle: nil, has_vigil: nil, move_if_sunday: nil)
       self.class.new(
         title || self.title,
         rank || self.rank,
@@ -260,6 +277,7 @@ module CalendariumRomanum
         date || self.date,
         cycle || self.cycle,
         has_vigil || self.has_vigil,
+        move_if_sunday || self.move_if_sunday,
       )
     end
 
@@ -269,7 +287,7 @@ module CalendariumRomanum
     # @return [String]
     # @since 0.7.0
     def to_s
-      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect} has_vigil=#{has_vigil}>"
+      "#<#{self.class.name} @title=\"#{title}\" @rank=#{rank} @colour=#{colour} symbol=#{symbol.inspect} date=#{date.inspect} cycle=#{cycle.inspect} has_vigil=#{has_vigil} move_if_sunday=#{move_if_sunday}>"
     end
   end
 end
