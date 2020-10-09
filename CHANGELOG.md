@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v1.0.0...v1.1.0) (2020-10-09)
+
+
+### Features
+
+* Add thanksgiving extension, and an option to sanctoral calendar for feasts to move to monday in years that the normal date is a sunday ([3f3982b](https://github.com/Lumen-de-Lumine/calendarium-romanum/commit/3f3982b8fcec4ee826adeeb0627c6c0a326eeefb))
+* **Calendar Data:** Handle ids for octave of Christmas, Dec 17-24, and weekdays before and after Epiphany ([192df94](https://github.com/Lumen-de-Lumine/calendarium-romanum/commit/192df9470769c2076fd7ae975544fc5a11010bfc))
+
+
+
 # [1.0.0](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v0.6.0...v1.0.0) (2020-07-15)
 
 
