@@ -45,8 +45,9 @@ module CalendariumRomanum
       # @param epiphany_on_sunday [Boolean] was Epiphany transferred to Sunday?
       # @return [Date]
       def self.baptism_of_lord(year, epiphany_on_sunday: false)
+        # GNLYC 38)
         e = epiphany(year, sunday: epiphany_on_sunday)
-        if epiphany_on_sunday
+        if e.mday > 6
           e + 1
         else
           sunday_after e

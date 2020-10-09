@@ -45,14 +45,15 @@ en:
     advent:
       sunday: '%{week} Sunday of Advent'
       ferial: '%{weekday} of the %{week} Week of Advent'
-      before_christmas: 'December %{day}'
+      before_christmas: 'December %{day}: %{weekday} of the %{week} Week of Advent'
     christmas:
       nativity_octave:
         ferial: '%{day} Day within the Octave of the Nativity of the Lord [Christmas]'
-      sunday: '%{week} Sunday after the Nativity [CHRISTMAS]'
-      ferial: '%{weekday} after Christmas Octave'
+      sunday: '%{week} Sunday after the Nativity [Christmas]'
+      ferial: '%{weekday} of Christmas Time: January %{day}'
       after_epiphany:
         ferial: '%{weekday} after Epiphany'
+        ferial_with_day: '%{weekday} after Epiphany: January %{day}'
     lent:
       after_ashes:
         ferial: '%{weekday} after Ash Wednesday'
