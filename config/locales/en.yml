@@ -38,6 +38,7 @@ en:
       saturday_memorial_bvm: Mass for the Blessed Virgin Mary on Saturday
     extension:
       christ_eternal_priest: Our Lord Jesus Christ, The Eternal High Priest
+      thanksgiving: Thanksgiving Day
     ordinary:
       sunday: '%{week} Sunday in Ordinary Time'
       ferial: '%{weekday} of the %{week} Week in Ordinary Time'

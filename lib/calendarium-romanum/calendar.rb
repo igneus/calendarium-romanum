@@ -298,8 +298,25 @@ module CalendariumRomanum
          (st.empty? || st.first.rank == Ranks::MEMORIAL_OPTIONAL) &&
          t.rank <= Ranks::MEMORIAL_OPTIONAL
         st = st.dup << Temporale::CelebrationFactory.saturday_memorial_bvm
+      elsif date.sunday?
+        st = st.reject do |celebration|
+          celebration.move_if_sunday?
+        end
+      elsif date.monday?
+        puts (date - 1)
+        yesterday_st = @sanctorale[date - 1]
+        yesterday_st.each do |celebration|
+          puts celebration
+          if celebration.move_if_sunday?
+            st = st.dup << celebration
+          end
+        end
       end
-
+      if t.rank == Ranks::MEMORIAL_OPTIONAL
+        st = st.dup << t;
+        t = temporale.send :ferial, date
+        puts t;
+      end
       unless st.empty?
         if st.first.rank > t.rank
           if st.first.rank == Ranks::MEMORIAL_OPTIONAL
