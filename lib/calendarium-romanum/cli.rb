@@ -105,10 +105,7 @@ module CalendariumRomanum
 
     desc 'dump YEAR', 'print calendar of the specified year (for use in regression tests)'
     def dump(year)
-      calendar = Calendar.new year.to_i, Data::GENERAL_ROMAN_LATIN.load, vespers: true
-      I18n.with_locale(:la) do
-        Dumper.new.call(calendar)
-      end
+      Dumper.new.regression_tests_dump year.to_i
     end
 
     desc 'version', 'print version information'

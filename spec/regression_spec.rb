@@ -10,12 +10,8 @@ describe 'results stay the same' do
     .sort_by {|year, path| year }
     .each do |year, path|
     it year do
-      c = CR::Calendar.new year, sanctorale, vespers: true
-
       s = StringIO.new
-      I18n.with_locale(:la) do
-        CR::Dumper.new(s).call(c)
-      end
+      CR::Dumper.new(s).regression_tests_dump(year)
 
       expect(s.string).to eq File.read(path)
     end
