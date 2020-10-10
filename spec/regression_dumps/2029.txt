@@ -439,6 +439,8 @@ or 2030-06-02 easter 7 false
 - "Feria quarta, hebdomada X per annum" 3.13 green   temporale
 2030-06-13 ordinary 10 false
 - "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
+or 2030-06-13 ordinary 10 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2030-06-14 ordinary 10 false
 - "Feria sexta, hebdomada X per annum" 3.13 green   temporale
 2030-06-15 ordinary 10 true
@@ -780,8 +782,13 @@ or 2030-06-23 ordinary 12 false
 2030-10-26 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2030-10-26 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-27 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2030-10-27 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2030-10-28 ordinary 30 false
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2030-10-29 ordinary 30 false

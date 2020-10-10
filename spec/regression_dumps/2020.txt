@@ -430,6 +430,8 @@ or 2021-05-16 easter 7 false
 2021-05-27 ordinary 8 false
 - "Feria quinta, hebdomada VIII per annum" 3.13 green   temporale
 - "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
+or 2021-05-27 ordinary 8 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2021-05-28 ordinary 8 false
 - "Feria sexta, hebdomada VIII per annum" 3.13 green   temporale
 2021-05-29 ordinary 8 true
@@ -813,8 +815,13 @@ or 2021-06-06 ordinary 10 false
 2021-10-30 ordinary 30 true
 - "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2021-10-30 ordinary 30 true
+- "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2021-10-31 ordinary 31 true
 - "Dominica XXXI per annum" 2.6 green   temporale
+or 2021-10-31 ordinary 31 true
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2021-11-01 ordinary 31 false
 - "OMNIUM SANCTORUM" 1.3 white all_saints 11/1 sanctorale
 2021-11-02 ordinary 31 false

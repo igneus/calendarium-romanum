@@ -465,6 +465,8 @@ or 2028-05-28 easter 7 false
 - "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
 2028-06-08 ordinary 9 false
 - "Feria quinta, hebdomada IX per annum" 3.13 green   temporale
+or 2028-06-08 ordinary 9 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2028-06-09 ordinary 9 false
 - "Feria sexta, hebdomada IX per annum" 3.13 green   temporale
 - "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
@@ -814,8 +816,12 @@ or 2028-06-18 ordinary 11 false
 - "Feria sexta, hebdomada XXIX per annum" 3.13 green   temporale
 2028-10-28 ordinary 29 true
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
+or 2028-10-28 ordinary 29 true
+- "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2028-10-29 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2028-10-29 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2028-10-30 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2028-10-31 ordinary 30 true

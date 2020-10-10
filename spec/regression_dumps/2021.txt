@@ -466,6 +466,8 @@ or 2022-05-29 easter 7 false
 2022-06-09 ordinary 10 false
 - "Feria quinta, hebdomada X per annum" 3.13 green   temporale
 - "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
+or 2022-06-09 ordinary 10 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2022-06-10 ordinary 10 false
 - "Feria sexta, hebdomada X per annum" 3.13 green   temporale
 2022-06-11 ordinary 10 true
@@ -813,8 +815,13 @@ or 2022-06-19 ordinary 12 false
 2022-10-29 ordinary 30 true
 - "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2022-10-29 ordinary 30 true
+- "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2022-10-30 ordinary 31 false
 - "Dominica XXXI per annum" 2.6 green   temporale
+or 2022-10-30 ordinary 31 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2022-10-31 ordinary 31 true
 - "Feria secunda, hebdomada XXXI per annum" 3.13 green   temporale
 2022-11-01 ordinary 31 false

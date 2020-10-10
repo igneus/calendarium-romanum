@@ -441,6 +441,8 @@ or 2023-05-21 easter 7 false
 - "In Visitatione B. Mariae Virginis" 2.7 white visitation 5/31 sanctorale
 2023-06-01 ordinary 8 false
 - "S. Iustini, martyris" 3.1 red justin 6/1 sanctorale
+or 2023-06-01 ordinary 8 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2023-06-02 ordinary 8 false
 - "Feria sexta, hebdomada VIII per annum" 3.13 green   temporale
 - "Ss. Marcellini et Petri, martyrum" 3.12 red marcellinus_peter 6/2 sanctorale
@@ -805,8 +807,12 @@ or 2023-06-11 ordinary 10 false
 - "Feria sexta, hebdomada XXIX per annum" 3.13 green   temporale
 2023-10-28 ordinary 29 true
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
+or 2023-10-28 ordinary 29 true
+- "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2023-10-29 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2023-10-29 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2023-10-30 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2023-10-31 ordinary 30 true

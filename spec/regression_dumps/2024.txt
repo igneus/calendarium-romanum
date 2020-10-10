@@ -452,6 +452,8 @@ or 2025-06-01 easter 7 false
 - "S. Barnabae, apostoli" 3.1 red barnabas 6/11 sanctorale
 2025-06-12 ordinary 10 false
 - "Feria quinta, hebdomada X per annum" 3.13 green   temporale
+or 2025-06-12 ordinary 10 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2025-06-13 ordinary 10 false
 - "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
 2025-06-14 ordinary 10 true
@@ -783,8 +785,13 @@ or 2025-06-22 ordinary 12 false
 2025-10-25 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2025-10-25 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2025-10-26 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2025-10-26 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2025-10-27 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2025-10-28 ordinary 30 false

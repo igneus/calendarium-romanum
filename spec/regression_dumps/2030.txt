@@ -438,6 +438,8 @@ or 2031-05-25 easter 7 false
 - "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
 2031-06-05 ordinary 9 false
 - "S. Bonifatii, episcopi et martyris" 3.1 red boniface 6/5 sanctorale
+or 2031-06-05 ordinary 9 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2031-06-06 ordinary 9 false
 - "Feria sexta, hebdomada IX per annum" 3.13 green   temporale
 - "S. Norberti, episcopi" 3.12 white norbert 6/6 sanctorale
@@ -788,8 +790,13 @@ or 2031-06-15 ordinary 11 false
 2031-10-25 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2031-10-25 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2031-10-26 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2031-10-26 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2031-10-27 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2031-10-28 ordinary 30 false

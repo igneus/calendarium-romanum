@@ -423,6 +423,8 @@ or 2026-05-17 easter 7 false
 - "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
 2026-05-28 ordinary 8 false
 - "Feria quinta, hebdomada VIII per annum" 3.13 green   temporale
+or 2026-05-28 ordinary 8 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2026-05-29 ordinary 8 false
 - "Feria sexta, hebdomada VIII per annum" 3.13 green   temporale
 - "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
@@ -793,8 +795,14 @@ or 2026-06-07 ordinary 10 false
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "S. Antonii Mariae Claret, episcopi" 3.12 white claret 10/24 sanctorale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2026-10-24 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "S. Antonii Mariae Claret, episcopi" 3.12 white claret 10/24 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2026-10-25 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2026-10-25 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2026-10-26 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2026-10-27 ordinary 30 false

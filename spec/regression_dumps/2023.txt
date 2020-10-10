@@ -402,6 +402,8 @@ or 2024-05-12 easter 7 false
 - "S. Ritae de Cascia, religiosae" 3.12 white rita 5/22 sanctorale
 2024-05-23 ordinary 7 false
 - "Feria quinta, hebdomada VII per annum" 3.13 green   temporale
+or 2024-05-23 ordinary 7 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2024-05-24 ordinary 7 false
 - "Feria sexta, hebdomada VII per annum" 3.13 green   temporale
 2024-05-25 ordinary 7 true
@@ -789,8 +791,13 @@ or 2024-06-02 ordinary 9 false
 2024-10-26 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2024-10-26 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2024-10-27 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2024-10-27 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2024-10-28 ordinary 30 false
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2024-10-29 ordinary 30 false

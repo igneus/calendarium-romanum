@@ -406,6 +406,8 @@ or 2029-05-13 easter 7 false
 - "Feria quarta, hebdomada VII per annum" 3.13 green   temporale
 2029-05-24 ordinary 7 false
 - "Feria quinta, hebdomada VII per annum" 3.13 green   temporale
+or 2029-05-24 ordinary 7 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2029-05-25 ordinary 7 false
 - "Feria sexta, hebdomada VII per annum" 3.13 green   temporale
 - "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
@@ -795,8 +797,13 @@ or 2029-06-03 ordinary 9 false
 2029-10-27 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2029-10-27 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2029-10-28 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2029-10-28 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2029-10-29 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2029-10-30 ordinary 30 false
