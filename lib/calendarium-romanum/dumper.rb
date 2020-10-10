@@ -8,15 +8,15 @@ module CalendariumRomanum
       @io = io
     end
 
-    # Dumps +calendar+. If +calendar2+ is specified, dumps an alternative entry
-    # for any date for which +calendar2+ differs from +calendar+.
-    def call(calendar, calendar2=nil)
+    # Dumps +calendar+. If +other_calendars+ are specified, dumps an alternative entry
+    # for any date for which any of +other_calendars+ differs from +calendar+.
+    def call(calendar, *other_calendars)
       @io.puts "Calendar for liturgical year #{calendar.year}"
       calendar.each do |day|
         dump_day(day)
 
-        if calendar2
-          day2 = calendar2[day.date]
+        other_calendars.each do |cal|
+          day2 = cal[day.date]
           if day2 != day
             @io.print 'or '
             dump_day(day2)
@@ -38,9 +38,18 @@ module CalendariumRomanum
         sanctorale,
         vespers: true
       )
+      calendar_with_extensions = Calendar.new(
+        Temporale.new(year, extensions: Temporale::Extensions.all),
+        sanctorale,
+        vespers: true
+      )
 
       I18n.with_locale(:la) do
-        call(calendar, calendar_with_transfers)
+        call(
+          calendar,
+          calendar_with_transfers,
+          calendar_with_extensions,
+        )
       end
     end
 
