@@ -78,10 +78,16 @@ Calendar for liturgical year 2030
 - "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
 2031-01-04 christmas 1 true
 - "Sabbato post octavam Nativitatis" 3.13 white   temporale
+or 2031-01-04 christmas 1 true
+- "Sabbato post octavam Nativitatis" 3.13 white   temporale
 2031-01-05 christmas 2 true
 - "Dominica II post Nativitatem" 2.6 white   temporale
+or 2031-01-05 christmas 2 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2031-01-06 christmas 2 false
 - "In Epiphania Domini" 1.2 white epiphany  temporale
+or 2031-01-06 christmas 2 false
+- "Feria secunda post Epiphaniam" 3.13 white   temporale
 2031-01-07 christmas 2 false
 - "Feria tertia post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
@@ -390,14 +396,24 @@ Calendar for liturgical year 2030
 2031-05-21 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Christophori Magallanes, presbyteri, et sociorum, martyrum" 3.12 red magallanes 5/21 sanctorale
+or 2031-05-21 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Christophori Magallanes, presbyteri, et sociorum, martyrum" 3.12 red magallanes 5/21 sanctorale
 2031-05-22 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2031-05-22 easter 6 false
+- "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Ritae de Cascia, religiosae" 3.12 white rita 5/22 sanctorale
 2031-05-23 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2031-05-24 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+or 2031-05-24 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 2031-05-25 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2031-05-25 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2031-05-26 easter 7 false
 - "S. Philippi Neri, presbyteri" 3.1 white neri 5/26 sanctorale
 2031-05-27 easter 7 false
@@ -437,15 +453,24 @@ Calendar for liturgical year 2030
 - "Feria tertia, hebdomada X per annum" 3.13 green   temporale
 2031-06-11 ordinary 10 true
 - "S. Barnabae, apostoli" 3.1 red barnabas 6/11 sanctorale
+or 2031-06-11 ordinary 10 false
+- "S. Barnabae, apostoli" 3.1 red barnabas 6/11 sanctorale
 2031-06-12 ordinary 10 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2031-06-12 ordinary 10 false
+- "Feria quinta, hebdomada X per annum" 3.13 green   temporale
 2031-06-13 ordinary 10 false
 - "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
 2031-06-14 ordinary 10 true
 - "Sabbato, hebdomada X per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2031-06-14 ordinary 10 true
+- "Sabbato, hebdomada X per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2031-06-15 ordinary 11 false
 - "Dominica XI per annum" 2.6 green   temporale
+or 2031-06-15 ordinary 11 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2031-06-16 ordinary 11 false
 - "Feria secunda, hebdomada XI per annum" 3.13 green   temporale
 2031-06-17 ordinary 11 false

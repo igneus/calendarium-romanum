@@ -88,15 +88,26 @@ Calendar for liturgical year 2022
 - "Feria quarta post octavam Nativitatis" 3.13 white   temporale
 2023-01-05 christmas 2 true
 - "Feria quinta post octavam Nativitatis" 3.13 white   temporale
+or 2023-01-05 christmas 2 false
+- "Feria quinta post octavam Nativitatis" 3.13 white   temporale
 2023-01-06 christmas 2 false
 - "In Epiphania Domini" 1.2 white epiphany  temporale
+or 2023-01-06 christmas 2 false
+- "Feria sexta post octavam Nativitatis" 3.13 white   temporale
 2023-01-07 christmas 2 true
 - "Sabbato post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
+or 2023-01-07 christmas 2 true
+- "Sabbato post octavam Nativitatis" 3.13 white   temporale
+- "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
 2023-01-08 christmas 3 false
 - "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
+or 2023-01-08 christmas 3 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2023-01-09 ordinary 1 false
 - "Feria secunda, hebdomada I per annum" 3.13 green   temporale
+or 2023-01-09 christmas 3 false
+- "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
 2023-01-10 ordinary 1 false
 - "Feria tertia, hebdomada I per annum" 3.13 green   temporale
 2023-01-11 ordinary 1 false
@@ -384,15 +395,25 @@ Calendar for liturgical year 2022
 - "Feria tertia, hebdomada VI temporis paschalis" 3.13 white   temporale
 2023-05-17 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+or 2023-05-17 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2023-05-18 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2023-05-18 easter 6 false
+- "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Ioannis I, papae et martyris" 3.12 red john_i 5/18 sanctorale
 2023-05-19 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2023-05-20 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Bernardini Senensis, presbyteri" 3.12 white bernardine 5/20 sanctorale
+or 2023-05-20 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Bernardini Senensis, presbyteri" 3.12 white bernardine 5/20 sanctorale
 2023-05-21 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2023-05-21 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2023-05-22 easter 7 false
 - "Feria secunda, hebdomada VII temporis paschalis" 3.13 white   temporale
 - "S. Ritae de Cascia, religiosae" 3.12 white rita 5/22 sanctorale
@@ -434,16 +455,25 @@ Calendar for liturgical year 2022
 - "S. Norberti, episcopi" 3.12 white norbert 6/6 sanctorale
 2023-06-07 ordinary 9 true
 - "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
+or 2023-06-07 ordinary 9 false
+- "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
 2023-06-08 ordinary 9 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2023-06-08 ordinary 9 false
+- "Feria quinta, hebdomada IX per annum" 3.13 green   temporale
 2023-06-09 ordinary 9 false
 - "Feria sexta, hebdomada IX per annum" 3.13 green   temporale
 - "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
 2023-06-10 ordinary 9 true
 - "Sabbato, hebdomada IX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2023-06-10 ordinary 9 true
+- "Sabbato, hebdomada IX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2023-06-11 ordinary 10 false
 - "Dominica X per annum" 2.6 green   temporale
+or 2023-06-11 ordinary 10 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2023-06-12 ordinary 10 false
 - "Feria secunda, hebdomada X per annum" 3.13 green   temporale
 2023-06-13 ordinary 10 false

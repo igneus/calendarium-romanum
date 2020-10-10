@@ -78,17 +78,30 @@ Calendar for liturgical year 2021
 - "S. Silvestri I, papae" 4.0 white sylvester_i 12/31 sanctorale
 2022-01-01 christmas 1 false
 - "In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae" 1.3 white mother_of_god 1/1 temporale
+or 2022-01-01 christmas 1 true
+- "In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae" 1.3 white mother_of_god 1/1 temporale
 2022-01-02 christmas 2 false
 - "Dominica II post Nativitatem" 2.6 white   temporale
+or 2022-01-02 christmas 2 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2022-01-03 christmas 2 false
 - "Feria secunda post octavam Nativitatis" 3.13 white   temporale
 - "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
+or 2022-01-03 christmas 2 false
+- "Feria secunda post Epiphaniam" 3.13 white   temporale
+- "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
 2022-01-04 christmas 2 false
 - "Feria tertia post octavam Nativitatis" 3.13 white   temporale
+or 2022-01-04 christmas 2 false
+- "Feria tertia post Epiphaniam" 3.13 white   temporale
 2022-01-05 christmas 2 true
 - "Feria quarta post octavam Nativitatis" 3.13 white   temporale
+or 2022-01-05 christmas 2 false
+- "Feria quarta post Epiphaniam" 3.13 white   temporale
 2022-01-06 christmas 2 false
 - "In Epiphania Domini" 1.2 white epiphany  temporale
+or 2022-01-06 christmas 2 false
+- "Feria quinta post Epiphaniam" 3.13 white   temporale
 2022-01-07 christmas 2 false
 - "Feria sexta post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
@@ -409,15 +422,26 @@ Calendar for liturgical year 2021
 - "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
 - "S. Gregorii VII, papae" 3.12 white gregory_vii 5/25 sanctorale
 - "S. Mariae Magdalenae de' Pazzi, virginis" 3.12 white de_pazzi 5/25 sanctorale
+or 2022-05-25 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
+- "S. Gregorii VII, papae" 3.12 white gregory_vii 5/25 sanctorale
+- "S. Mariae Magdalenae de' Pazzi, virginis" 3.12 white de_pazzi 5/25 sanctorale
 2022-05-26 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2022-05-26 easter 6 false
+- "S. Philippi Neri, presbyteri" 3.1 white neri 5/26 sanctorale
 2022-05-27 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
 2022-05-28 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+or 2022-05-28 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 2022-05-29 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2022-05-29 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2022-05-30 easter 7 false
 - "Feria secunda, hebdomada VII temporis paschalis" 3.13 white   temporale
 2022-05-31 easter 7 false
@@ -454,15 +478,24 @@ Calendar for liturgical year 2021
 - "Feria tertia, hebdomada XI per annum" 3.13 green   temporale
 2022-06-15 ordinary 11 true
 - "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
+or 2022-06-15 ordinary 11 false
+- "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
 2022-06-16 ordinary 11 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2022-06-16 ordinary 11 false
+- "Feria quinta, hebdomada XI per annum" 3.13 green   temporale
 2022-06-17 ordinary 11 false
 - "Feria sexta, hebdomada XI per annum" 3.13 green   temporale
 2022-06-18 ordinary 11 true
 - "Sabbato, hebdomada XI per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2022-06-18 ordinary 11 true
+- "Sabbato, hebdomada XI per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2022-06-19 ordinary 12 false
 - "Dominica XII per annum" 2.6 green   temporale
+or 2022-06-19 ordinary 12 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2022-06-20 ordinary 12 false
 - "Feria secunda, hebdomada XII per annum" 3.13 green   temporale
 2022-06-21 ordinary 12 false
