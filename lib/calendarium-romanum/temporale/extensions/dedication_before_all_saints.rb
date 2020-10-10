@@ -32,7 +32,7 @@ module CalendariumRomanum
             :dedication,
             Celebration.new(
               DEFAULT_TITLE,
-              Ranks::FEAST_PROPER,
+              Ranks::SOLEMNITY_PROPER,
               Colours::WHITE,
               DEFAULT_SYMBOL
             )
@@ -59,7 +59,7 @@ module CalendariumRomanum
             proc {|year| self.class.dedication(year) },
             Celebration.new(
               @title,
-              Ranks::FEAST_PROPER,
+              Ranks::SOLEMNITY_PROPER,
               Colours::WHITE,
               @symbol
             )
