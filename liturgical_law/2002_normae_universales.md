@@ -211,15 +211,18 @@ et temporis Nativitatis occurrunt et pro earum Officio substituuntur.
 calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN_ENGLISH.load)
 
 presentation = CR::AbstractDate.new 2, 2
-year_on_sunday = (2000..2100).find {|y| presentation.in_year(y).sunday? }
-year_on_weekday = (2000..2100).find {|y| not presentation.in_year(y).sunday? }
+years_on_sunday, years_on_weekday = years.partition {|y| presentation.in_year(y).sunday? }
 
-day = calendar[presentation.in_year(year_on_weekday) - 1]
-expect(day.vespers).to be nil
+years_on_weekday.each do |year|
+  day = calendar[presentation.in_year(year) - 1]
+  expect(day.vespers).to be nil
+end
 
-day = calendar[presentation.in_year(year_on_sunday) - 1]
-expect(day.vespers).to be_a CR::Celebration
-expect(day.vespers.symbol).to be :presentation_of_lord
+years_on_sunday.each do |year|
+  day = calendar[presentation.in_year(year) - 1]
+  expect(day.vespers).to be_a CR::Celebration
+  expect(day.vespers.symbol).to be :presentation_of_lord
+end
 ```
 
 **14.** Memoriae sunt obligatoriae vel ad libitum; earum autem celebratio cum
@@ -522,7 +525,7 @@ post Nativitatem.
 calendar = CR::PerpetualCalendar.new
 
 second_sundays =
-  (2000 .. 2100)
+  years
     .collect {|year| (Date.new(year, 1, 2) .. Date.new(year, 1, 5)).select(&:sunday?) }
     .flatten
 
@@ -793,13 +796,10 @@ calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.l
 
 joseph = CR::AbstractDate.new 3, 19
 
-years_on_palm_sunday = (2000 .. 2100).select do |y|
+years_with do |y|
   joseph.in_year(y + 1) == CR::Temporale::Dates.palm_sunday(y)
 end
-
-expect(years_on_palm_sunday).not_to be_empty
-
-years_on_palm_sunday.each do |y|
+.each do |y|
   date = Date.new(y + 1, 3, 18)
   expect(date).to be_saturday
   expect(calendar[date].celebrations[0].symbol).to be :joseph
@@ -901,7 +901,7 @@ calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN_LATIN.l
 
 annunciation = CR::AbstractDate.new 3, 25
 
-years_in_holy_week = (2000 .. 2100).select do |y|
+years_in_holy_week = years.select do |y|
   date = annunciation.in_year y + 1
 
   date >= CR::Temporale::Dates.palm_sunday(y) &&

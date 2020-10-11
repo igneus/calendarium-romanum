@@ -18,6 +18,10 @@ Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
                 @year ||= rand(1970 .. 3000)
               end
 
+              def years(from: 1970, to: 2300)
+                from.upto(to)
+              end
+
               def years_with(from: 1970, to: 2300)
                 from
                   .upto(to)
