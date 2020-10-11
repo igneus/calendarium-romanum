@@ -40,6 +40,26 @@ praesertim vero sacrificio eucharistico et Officio divino.
 Dies liturgicus decurrit a media nocte ad mediam noctem. Celebratio
 vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 
+```ruby
+i = 0
+
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+.each
+.each_cons(2) do |yesterday, today|
+  ct = today.celebrations.first
+  cy = yesterday.celebrations.first
+
+  if (ct.sunday? ||
+      [CR::Ranks::SOLEMNITY_GENERAL, CR::Ranks::SOLEMNITY_PROPER].include?(ct.rank)) &&
+     ct.rank > cy.rank
+    expect(yesterday.vespers).to eq ct
+    i += 1
+  end
+end
+
+expect(i).to be > 0 # make sure that at least some first Vespers were actually encountered
+```
+
 #### II. De dominica
 
 **4.** Primo uniuscuiusque hebdomadae die, quae dies Domini seu dies
@@ -901,3 +921,26 @@ end
 I Vesperae diei sequentis, praevalent Vesperae celebrationis quae in
 tabula dierum liturgicorum superiorem obtinet locum; in casu autem
 paritatis, Vesperae diei currentis.
+
+```ruby
+# for general example of first vespers, see p. 3
+
+# "... in casu autem paritatis, Vesperae diei currentis"
+i = 0
+
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+.each
+.each_cons(2) do |yesterday, today|
+  ct = today.celebrations.first
+  cy = yesterday.celebrations.first
+
+  if (ct.sunday? ||
+      [CR::Ranks::SOLEMNITY_GENERAL, CR::Ranks::SOLEMNITY_PROPER].include?(ct.rank)) &&
+     ct.rank == cy.rank # casus paritatis
+    expect(yesterday.vespers).to be nil
+    i += 1
+  end
+end
+
+expect(i).to be > 0 # make sure that at least some first Vespers were actually encountered
+```
