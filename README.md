@@ -12,28 +12,47 @@ API documentation:
 [0.2.0](http://www.rubydoc.info/gems/calendarium-romanum/0.2.0)
 
 Ruby gem for
-calendar computations according to the Roman Catholic liturgical
-calendar as instituted by
-[MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html) of Paul VI. (AAS 61 (1969), pp. 222-226).
-The rules are defined in
-*General Norms for the Liturgical Year and the Calendar*
-([English translation][gnlyc]).
+calendar computations according to the Roman Catholic liturgical calendar as instituted by
+[MP Mysterii Paschalis](http://w2.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html)
+of Paul VI. (AAS 61 (1969), pp. 222-226),
+defined in *General Norms for the Liturgical Year and the Calendar*
+([English translation][gnlyc])
+and subsequent [documents of liturgical legislation][liturgical_law].
 
-calendarium-romanum aspires to become the most complete
+`calendarium-romanum` aspires to become the most complete and most accurate
 FOSS implementation of this calendar system
 (see [list of implementations available][awesomecc]).
 
 ## Features
 
-- [x] liturgical season
-- [x] Sundays, temporale feasts
-- [x] sanctorale calendars: data format, example data files, their loading
-- [x] resolution of precedence of concurrent celebrations
-- [x] octave days
-- [x] commemorations in the privileged seasons where memorials are suppressed
-- [x] transfer of suppressed solemnities
-- [x] optional transfer of important solemnities to a Sunday
-- [x] additional temporale feasts (Christ the Eternal Priest and similar)
+`calendarium-romanum` is now a **feature-complete** implementation of the abovementioned calendar
+system, capable of generating a complete and (at least mostly) correct Roman Catholic liturgical
+calendar for any year according to the most recent calendar rules and data
+(i.e. today's state of the calendar is used also for years in the past - for historically accurate
+computations see a [related project][crhistorical]).
+
+It is **continuously kept up-to-date** with latest developments of the liturgical
+legislation and newly introduced feasts.
+
+**Accuracy** is highly valued. Therefore just a very limited set of calendar data
+is bundled in the library, but with a guarantee that a theologian continuously takes care
+of them being up-to-date and correct. Users of the library will usually want to prepare
+and maintain their own data files representing their local calendars.
+(For ready-to-use calendar data without guarantees of correctness
+see a [related repository][data-contrib].)
+
+The project's scope is strictly limited to computing **liturgical calendar in a narrow sense.**
+It doesn't provide functionality specific for individual liturgical books, unless it is
+dealt with in general liturgical norms regarding the calendar.
+(Liturgical colours being an exception from this rule, as it is very common to include
+them in all kinds of liturgical calendars.)
+But the library is designed with machine-readability in mind, so that additional layers
+of functionality, implementing book-specific calculations, can be built upon it.
+
+Strings are **localized** (using the [i18n][i18n] Ruby gem). Translations to six languages
+(Latin, English, Spanish, French, Italian, Czech)
+are provided. The built-in translations can be both replaced and/or supplemented
+with translations to additional languages without having to modify the gem's code.
 
 ## Credits
 
@@ -45,14 +64,19 @@ See also changelog for list of contributions and their authors.
 
 ## License
 
-freely choose between GNU/LGPL 3 and MIT
+dual licensed: freely choose between GNU/LGPL 3 and MIT
 
-## Project status, Backward compatibility
+## Project status
 
-The gem's public interface still evolves and each minor release
-contains several breaking changes. There is no guaranteed backward compatibility
-between minor versions.
-This will continue until release of v1.0.0.
+The library is currently considered feature-complete for release 1.0.0
+and it's public API mostly stabilized.
+Development focuses on reaching higher degree of certainty regarding
+correctness by means of making the test suite more comprehensive and rigorous.
+
+## Backward compatibility
+
+The gem's public interface has now been mostly stabilized, but until v1.0.0 release
+there is still no guaranteed backward compatibility between minor versions.
 
 When using the gem in your projects, it is recommended to lock
 the dependency to a particular minor version.
@@ -561,5 +585,9 @@ See also `.travis.yml` for comprehensive tests run on the CI.
 [gnlyc]: https://www.ewtn.com/catholicism/library/liturgical-year-2193
 [i18n]: https://github.com/svenfuchs/i18n
 [translations]: /tree/master/config/locales
+[liturgical_law]: /tree/master/liturgical_law
 [module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
 [calrom]: https://github.com/calendarium-romanum/calrom
+[crhistorical]: https://github.com/calendarium-romanum/historical
+[data-contrib]: https://github.com/calendarium-romanum/data-contrib
+[i18n]: https://github.com/ruby-i18n/i18n
