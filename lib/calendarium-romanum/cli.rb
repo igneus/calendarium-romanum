@@ -1,6 +1,18 @@
 require 'thor'
 require_relative 'dumper'
 
+# monkey patch preventing Thor from screwing formatting in our commands' long_desc
+# credits: https://github.com/erikhuda/thor/issues/398#issuecomment-237400762
+class Thor
+  module Shell
+    class Basic
+      def print_wrapped(message, options = {})
+         stdout.puts message
+       end
+    end
+  end
+end
+
 module CalendariumRomanum
 
   # Implementation of the +calendariumrom+ executable.
@@ -10,9 +22,18 @@ module CalendariumRomanum
   class CLI < Thor
     include CalendariumRomanum::Util
 
-    desc 'query 2007-06-05', 'show calendar information for a specified date'
-    option :calendar, default: 'universal-en', aliases: :c
-    option :locale, default: 'en', aliases: :l
+    desc 'query [DATE]', 'show calendar information for a specified date/month/year'
+    long_desc <<-EOS
+show calendar information for a specified date/month/year
+
+DATE formats:
+not specified - today
+2000-01-02    - single date
+2000-01       - month
+2000          - year
+EOS
+    option :calendar, default: 'universal-en', aliases: :c, desc: 'sanctorale data file to use'
+    option :locale, default: 'en', aliases: :l, desc: 'locale to use for localized strings'
     def query(date_str = nil)
       I18n.locale = options[:locale]
       calendar = options[:calendar]
@@ -47,12 +68,12 @@ module CalendariumRomanum
       end
     end
 
-    desc 'calendars', 'lists calendars available for querying'
+    desc 'calendars', 'list calendars available for querying'
     def calendars
       Data.each {|c| puts c.siglum }
     end
 
-    desc 'errors FILE1, ...', 'finds errors in sanctorale data files'
+    desc 'errors FILE1, ...', 'find errors in sanctorale data files'
     def errors(*files)
       files.each do |path|
         begin
@@ -63,7 +84,7 @@ module CalendariumRomanum
       end
     end
 
-    desc 'cmp FILE1, FILE2', 'detect differences in rank and colour of corresponding celebrations'
+    desc 'cmp FILE1, FILE2', 'detect differences between two sanctorale data files'
     def cmp(a, b)
       paths = [a, b]
       sanctoralia = paths.collect {|source| sanctorale_from_path source }
@@ -103,7 +124,7 @@ module CalendariumRomanum
       end
     end
 
-    desc 'dump YEAR', 'print calendar of the specified year (for use in regression tests)'
+    desc 'dump YEAR', 'print calendar of the specified year for use in regression tests'
     def dump(year)
       Dumper.new.regression_tests_dump year.to_i
     end
