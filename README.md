@@ -546,8 +546,9 @@ from the command line and to check validity of sanctorale data files.
 
 ### 1. Query liturgical calendar from the command line
 
- - `calendariumrom query --calendar universal-fr 2007-06-25` queries a non-default (French) calendar for any given date. `--calendar` can be omitted, the default calendar (`universal-en`) is used then. The date can be omitted as well, `calendariumrom` will query the current date, then. Please note that the date has to be in format `YYYY-MM-DD` or `YYYY/MM/DD`. If the day, or even the month is omitted, `query` will query a whole month, or even a whole year. The specified calendar has to be one in the resulting list of the `calendarium calendars` command, or a valid filesystem path.
- - `calendariumrom calendars` will list all available data files known to calendarium-romanum.
+- `calendariumrom query` prints calendar entries for today or a specified day, month or year.
+  See `calendariumrom help query` for available options and arguments.
+- `calendariumrom calendars` lists data files bundled in `calendarium-romanum`.
 
 Tip: `calendariumrom query` is a rather bare-bones calendar querying
 tool. Check out the [`calrom`][calrom] gem for a more feature-rich
@@ -555,13 +556,16 @@ liturgical calendar for your command line.
 
 ### 2. Check sanctorale data files
 
- - `calendariumrom cmp FILE1 FILE2` will load 2 data files from the file system and compare them. If there are any differences in rank or colour of corresponding celebrations, it will output them. 
- - `calendariumrom errors FILE1, ...` finds errors in a data file. It tries to load it from file system, and if the parser will fail, for whatever reason, it will print out the reason. 
+- `calendariumrom cmp FILE1 FILE2` loads two data files and prints any differences between them
+  (excepting differences in celebration titles)
+- `calendariumrom errors FILE1, ...` attempts loading a data file (or several of them),
+  reports eventual errors
 
 ### 3. Help
 
- - `calendariumrom` lists available subcommands
- - `calendariumrom help [COMMAND]` outputs a short help for all available subcommands
+- `calendariumrom` lists available subcommands
+- `calendariumrom help [COMMAND]` outputs a short help for all available subcommands
+- `calendariumrom version` prints installed version of the gem
 
 ## For Developers
 
