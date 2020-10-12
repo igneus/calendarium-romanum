@@ -1,3 +1,7 @@
+## [1.1.1](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v1.1.0...v1.1.1) (2020-10-12)
+
+
+
 # [1.1.0](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v1.0.0...v1.1.0) (2020-10-09)
 
 
