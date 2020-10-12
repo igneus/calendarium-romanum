@@ -239,7 +239,7 @@ a `Calendar` for liturgical year 1999-2000 by calling
 `Calendar.new(1999)`.
 
 We have already seen `Calendar.for_day()`, which takes care
-for finding the liturgical year a particular date belongs to
+of finding the liturgical year a particular date belongs to
 and creating a `Calendar` for this year.
 But maybe you want to query a calendar without caring about liturgical
 years altogether, possibly picking days across multiple years.
@@ -523,7 +523,7 @@ Some internal details may be worth a mention:
 
 On `require 'calendarium-romanum'`, paths of a few translation
 files bundled in the gem are added to `I18n.config.load_path`.
-While otherwise we avoid poluting or modifying the environment
+While otherwise we avoid polluting or modifying the environment
 outside the gem's own scope, in this case we exceptionally
 modify global configuration in order to make the internationalization
 easily and conveniently work.
