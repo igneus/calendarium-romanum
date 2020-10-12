@@ -30,7 +30,6 @@ module CalendariumRomanum
         # @return [Date]
         def self.thanksgiving(year)
           # Fourth Thursday of November
-          puts Dates.thursday_after(Date.new(year + 1, 11, 21))
           Dates.thursday_after(Date.new(year + 1, 11, 21))
         end  
       end
