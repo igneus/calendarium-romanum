@@ -19,8 +19,6 @@ module CalendariumRomanum
   #
   # @api private
   class CLI < Thor
-    include CalendariumRomanum::Util
-
     desc 'query [DATE]', 'show calendar information for a specified date/month/year'
     long_desc <<-EOS
 show calendar information for a specified date/month/year
@@ -55,7 +53,7 @@ EOS
 
       if date_str
         begin
-          parsed_date = DateParser.new(date_str)
+          parsed_date = Util::DateParser.new(date_str)
           parsed_date.date_range.each do |day|
             print_single_date(pcal, day)
           end
@@ -85,42 +83,7 @@ EOS
 
     desc 'cmp FILE1, FILE2', 'detect differences between two sanctorale data files'
     def cmp(a, b)
-      paths = [a, b]
-      sanctoralia = paths.collect {|source| sanctorale_from_path source }
-      names = paths.collect {|source| File.basename source }
-
-      # a leap year must be chosen in order to iterate over
-      # all possible days of a Sanctorale
-      Year.new(1990).each_day do |d|
-        a, b = sanctoralia.collect {|s| s.get(d) }
-
-        0.upto([a.size, b.size].max - 1) do |i|
-          ca = a[i]
-          cb = b[i]
-          compared = [ca, cb]
-
-          if compared.index(&:nil?)
-            notnili = compared.index {|c| !c.nil? }
-
-            print date(d)
-            puts " only in #{names[notnili]}:"
-            puts celebration(compared[notnili])
-            puts
-            next
-          end
-
-          differences = %i(rank colour symbol).select do |property|
-            ca.public_send(property) != cb.public_send(property)
-          end
-
-          next if differences.empty?
-          print date(d)
-          puts " differs in #{differences.join(', ')}"
-          puts celebration(ca)
-          puts celebration(cb)
-          puts
-        end
-      end
+      Comparator.new.call(a, b)
     end
 
     desc 'dump YEAR', 'print calendar of the specified year for use in regression tests'
@@ -135,14 +98,6 @@ EOS
     end
 
     private
-
-    def date(d)
-      "#{d.month}/#{d.day}"
-    end
-
-    def celebration(c)
-      "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
-    end
 
     def die!(message, code = 1)
       STDERR.puts message
@@ -167,17 +122,11 @@ EOS
         end
       end
     end
-
-    def sanctorale_from_path(path)
-      loader = SanctoraleLoader.new
-
-      if path == '-'
-        loader.load(STDIN)
-      else
-        loader.load_from_file(path)
-      end
-    end
   end
 end
 
+# required files reopen the CLI class - require after the class'es main definition
+# in order to prevent superclass mismatch errors
+require_relative 'cli/helper'
 require_relative 'cli/dumper'
+require_relative 'cli/comparator'
