@@ -75,7 +75,11 @@ end
 # in order to prevent superclass mismatch errors
 require_relative 'cli/helper'
 
-CalendariumRomanum::CLI.include CalendariumRomanum::CLI::Helper
+module CalendariumRomanum
+  class CLI
+    include Helper
+  end
+end
 
 require_relative 'cli/comparator'
 require_relative 'cli/date_parser'
