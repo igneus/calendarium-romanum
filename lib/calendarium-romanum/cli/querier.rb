@@ -31,17 +31,19 @@ module CalendariumRomanum
 
         pcal = PerpetualCalendar.new sanctorale: sanctorale
 
+        today = Date.today
+        date_range = today..today
+
         if date_str
           begin
-            parsed_date = DateParser.new(date_str)
-            parsed_date.date_range.each do |day|
-              print_single_date(pcal, day)
-            end
+            date_range = DateParser.parse(date_str)
           rescue ArgumentError
             die! 'Invalid date.'
           end
-        else
-          print_single_date(pcal, Date.today)
+        end
+
+        date_range.each do |day|
+          print_single_date(pcal, day)
         end
       end
 

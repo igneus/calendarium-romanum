@@ -28,6 +28,16 @@ module CalendariumRomanum
       end
 
       alias each_day each
+
+      def ==(other)
+        self.class == other.class &&
+          start == other.start &&
+          prop == other.prop
+      end
+
+      protected
+
+      attr_reader :start, :prop
     end
 
     # Enumerates days of a year
