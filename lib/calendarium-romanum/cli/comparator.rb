@@ -4,15 +4,13 @@ module CalendariumRomanum
     class Comparator
       include Helper
 
-      def call(a, b)
-        paths = [a, b]
+      def call(path_a, path_b)
+        paths = [path_a, path_b]
         sanctoralia = paths.collect {|source| sanctorale_from_path source }
         names = paths.collect {|source| File.basename source }
 
-        # a leap year must be chosen in order to iterate over
-        # all possible days of a Sanctorale
-        Util::Year.new(1990).each_day do |d|
-          a, b = sanctoralia.collect {|s| s.get(d) }
+        all_possible_dates.each do |d|
+          a, b = sanctoralia.collect {|sanctorale| sanctorale[d] }
 
           0.upto([a.size, b.size].max - 1) do |i|
             ca = a[i]
@@ -44,6 +42,12 @@ module CalendariumRomanum
       end
 
       private
+
+      def all_possible_dates
+        # a leap year must be chosen in order to iterate over
+        # all possible days of a Sanctorale
+        Util::Year.new(1990).each_day
+      end
 
       def date(d)
         "#{d.month}/#{d.day}"
