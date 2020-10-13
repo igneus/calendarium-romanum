@@ -6,7 +6,7 @@ module CalendariumRomanum
     class Querier
       include Helper
 
-      def initialize(locale:, calendar:)
+      def initialize(locale: :en, calendar: 'universal-en')
         @locale = locale
         @calendar = calendar
       end
