@@ -1,5 +1,4 @@
 require 'thor'
-require_relative 'dumper'
 
 # monkey patch preventing Thor from screwing formatting in our commands' long_desc
 # credits: https://github.com/erikhuda/thor/issues/398#issuecomment-237400762
@@ -180,3 +179,5 @@ EOS
     end
   end
 end
+
+require_relative 'cli/dumper'

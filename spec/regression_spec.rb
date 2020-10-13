@@ -11,7 +11,7 @@ describe 'results stay the same' do
     .each do |year, path|
     it year do
       s = StringIO.new
-      CR::Dumper.new(s).regression_tests_dump(year)
+      CR::CLI::Dumper.new(s).regression_tests_dump(year)
 
       expect(s.string).to eq File.read(path)
     end
