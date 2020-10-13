@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CR::Util::DateParser do
+describe CR::CLI::DateParser do
   describe 'new' do
     it 'should accept a full date YYYY/MM/DD' do
       date_str = '2017/10/06'

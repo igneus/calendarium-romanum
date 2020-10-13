@@ -77,6 +77,7 @@ require_relative 'cli/helper'
 
 CalendariumRomanum::CLI.include CalendariumRomanum::CLI::Helper
 
-require_relative 'cli/dumper'
 require_relative 'cli/comparator'
+require_relative 'cli/date_parser'
+require_relative 'cli/dumper'
 require_relative 'cli/querier'

@@ -33,7 +33,7 @@ module CalendariumRomanum
 
         if date_str
           begin
-            parsed_date = Util::DateParser.new(date_str)
+            parsed_date = DateParser.new(date_str)
             parsed_date.date_range.each do |day|
               print_single_date(pcal, day)
             end
