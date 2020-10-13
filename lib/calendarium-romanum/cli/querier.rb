@@ -13,21 +13,6 @@ module CalendariumRomanum
 
       def call(date_str = nil)
         I18n.locale = @locale
-        calendar = @calendar
-        if File.exist?(calendar)
-          begin
-            sanctorale = sanctorale_from_path(calendar)
-          rescue CalendariumRomanum::InvalidDataError
-            die! 'Invalid file format.'
-          end
-        else
-          data_file = Data[calendar]
-
-          if data_file.nil?
-            die! "Invalid calendar. Either loading a calendar from filesystem did not succeed, \n or a preinstalled calendar was specified which doesn't exist. See subcommand `calendars` for valid options."
-          end
-          sanctorale = data_file.load
-        end
 
         pcal = PerpetualCalendar.new sanctorale: sanctorale
 
@@ -65,6 +50,20 @@ module CalendariumRomanum
             print ' : '
             puts c.title
           end
+        end
+      end
+
+      def sanctorale
+        if File.exist?(@calendar)
+          begin
+            sanctorale_from_path(@calendar)
+          rescue CalendariumRomanum::InvalidDataError
+            die! 'Invalid file format.'
+          end
+        elsif data_file = Data[@calendar]
+          data_file.load
+        else
+          die! "Invalid calendar. Either loading a calendar from filesystem did not succeed, \n or a preinstalled calendar was specified which doesn't exist. See subcommand `calendars` for valid options."
         end
       end
     end
