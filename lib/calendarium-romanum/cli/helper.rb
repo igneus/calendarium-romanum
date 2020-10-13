@@ -11,8 +11,11 @@ module CalendariumRomanum
           loader.load_from_file(path)
         end
       end
-    end
 
-    include Helper # include in the CLI class
+      def die!(message, code = 1)
+        STDERR.puts message
+        exit code
+      end
+    end
   end
 end

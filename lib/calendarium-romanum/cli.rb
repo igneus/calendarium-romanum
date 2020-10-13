@@ -32,37 +32,9 @@ EOS
     option :calendar, default: 'universal-en', aliases: :c, desc: 'sanctorale data file to use'
     option :locale, default: 'en', aliases: :l, desc: 'locale to use for localized strings'
     def query(date_str = nil)
-      I18n.locale = options[:locale]
-      calendar = options[:calendar]
-      if File.exist?(calendar)
-        begin
-          sanctorale = sanctorale_from_path(calendar)
-        rescue CalendariumRomanum::InvalidDataError
-          die! 'Invalid file format.'
-        end
-      else
-        data_file = Data[calendar]
-
-        if data_file.nil?
-          die! "Invalid calendar. Either loading a calendar from filesystem did not succeed, \n or a preinstalled calendar was specified which doesn't exist. See subcommand `calendars` for valid options."
-        end
-        sanctorale = data_file.load
-      end
-
-      pcal = PerpetualCalendar.new sanctorale: sanctorale
-
-      if date_str
-        begin
-          parsed_date = Util::DateParser.new(date_str)
-          parsed_date.date_range.each do |day|
-            print_single_date(pcal, day)
-          end
-        rescue ArgumentError
-          die! 'Invalid date.'
-        end
-      else
-        print_single_date(pcal, Date.today)
-      end
+      Querier
+        .new(locale: options[:locale], calendar: options[:calendar])
+        .call(date_str)
     end
 
     desc 'calendars', 'list calendars available for querying'
@@ -96,37 +68,15 @@ EOS
       puts 'calendarium-romanum CLI'
       puts "calendarium-romanum: version #{CalendariumRomanum::VERSION}, released #{CalendariumRomanum::RELEASE_DATE}"
     end
-
-    private
-
-    def die!(message, code = 1)
-      STDERR.puts message
-      exit code
-    end
-
-    def print_single_date(calendar, date)
-      day = calendar.day date
-
-      puts date
-      puts "season: #{day.season.name}"
-      puts
-
-      rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size }.max
-      day.celebrations.each do |c|
-        if [Ranks::PRIMARY, Ranks::TRIDUUM].include? c.rank
-          puts c.title
-        elsif !c.rank.short_desc.nil?
-          print c.rank.short_desc.rjust(rank_length)
-          print ' : '
-          puts c.title
-        end
-      end
-    end
   end
 end
 
 # required files reopen the CLI class - require after the class'es main definition
 # in order to prevent superclass mismatch errors
 require_relative 'cli/helper'
+
+CalendariumRomanum::CLI.include CalendariumRomanum::CLI::Helper
+
 require_relative 'cli/dumper'
 require_relative 'cli/comparator'
+require_relative 'cli/querier'
