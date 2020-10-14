@@ -158,6 +158,12 @@ describe CalendariumRomanum::CLI, type: :aruba do
       it { expect(last_command).to be_successfully_executed }
     end
 
+    describe 'id' do
+      before(:each) { run "calendariumrom id #{path_universal_la}" }
+
+      it { expect(all_output).to start_with "basil_gregory\n" }
+    end
+
     describe 'version' do
       before(:each) { run 'calendariumrom version' }
 

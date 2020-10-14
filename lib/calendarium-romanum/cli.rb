@@ -58,6 +58,15 @@ EOS
       Comparator.new.call(a, b)
     end
 
+    desc 'id FILE', 'print celebration identifiers found in a sanctorale data file'
+    def id(file)
+      sanctorale_from_path(file).each_day do |_, celebrations|
+        celebrations.each do |c|
+          puts c.symbol if c.symbol
+        end
+      end
+    end
+
     desc 'dump YEAR', 'print calendar of the specified year for use in regression tests'
     def dump(year)
       Dumper.new.regression_tests_dump year.to_i
