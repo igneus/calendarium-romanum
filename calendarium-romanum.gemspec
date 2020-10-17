@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.date        = CalendariumRomanum::RELEASE_DATE.to_s
   s.summary     = 'Roman Catholic liturgical calendar computations'
 
-  s.description = 'calendar computations according to the Roman Catholic liturgical calendar as instituted by MP Mysterii Paschalis of Paul VI (1969).'
+  s.description = 'calendar computations according to the Roman Catholic liturgical calendar as instituted by MP Mysterii Paschalis of Paul VI (1969) and defined in General Norms for the Liturgical Year and the Calendar and other documents of liturgical legislation.'
 
   s.authors     = ['Jakub Pavlík']
   s.email       = 'jkb.pavlik@gmail.com'
