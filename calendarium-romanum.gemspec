@@ -17,6 +17,11 @@ Gem::Specification.new do |s|
   s.executables = %w(calendariumrom)
   s.homepage    = 'http://github.com/igneus/calendarium-romanum'
   s.licenses    = ['LGPL-3.0', 'MIT']
+  s.metadata = {
+    'documentation_uri' => 'https://www.rubydoc.info/gems/calendarium-romanum/',
+  }
+
+  s.required_ruby_version = '>= 2.0'
 
   s.add_dependency 'thor', '~> 0.18'
   s.add_dependency 'i18n', '~> 0.6'
