@@ -149,7 +149,7 @@ note: |
 23 rose_lima : S. Rosae de Lima, virginis
 24 f R bartholomew : S. Bartholomaei, apostoli
 25 louis : S. Ludovici
-25 joseph_calasanz : Ioseph Calasanz, presbyteri
+25 joseph_calasanz : S. Ioseph Calasanz, presbyteri
 27 m monica : S. Monicae
 28 m augustine : S. Augustini, episcopi et Ecclesiae doctoris
 29 m R baptist_beheading : In Passione S. Ioannis Baptistae, martyris
