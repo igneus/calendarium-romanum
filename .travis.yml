@@ -2,8 +2,6 @@ language: ruby
 cache: bundler
 dist: trusty
 
-  #- jruby-9.1.12.0
-
 install: bundle install --jobs=3 --deployment --without development
 
 _shared_job: &shared_job
@@ -17,10 +15,9 @@ jobs:
       <<: *shared_job
     - rvm: 2.0.0 # oldest MRI we support
       <<: *shared_job
+  allow_failures:
+    - rvm: jruby-9.1.12.0
+      <<: *shared_job
 
 git:
   depth: 3
-
-#matrix:
-#  allow_failures:
-#    - rvm: jruby-9.1.12.0
