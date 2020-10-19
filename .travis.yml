@@ -6,14 +6,17 @@ dist: trusty
 
 install: bundle install --jobs=3 --deployment --without development
 
+_shared_job: &shared_job
+  script: bundle exec rake spec
+
 jobs:
   include:
     - rvm: 2.6.5 # ~ latest MRI
       script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
     - rvm: 2.5.0 # oldest officially maintained MRI
-      script: bundle exec rake spec
+      <<: *shared_job
     - rvm: 2.0.0 # oldest MRI we support
-      script: bundle exec rake spec
+      <<: *shared_job
 
 git:
   depth: 3
