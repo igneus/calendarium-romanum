@@ -1,5 +1,5 @@
 language: ruby
-
+cache: bundler
 dist: trusty
 
   #- jruby-9.1.12.0
