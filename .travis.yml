@@ -3,14 +3,19 @@ language: ruby
 dist: trusty
 
 rvm:
-  - 2.0.0 # oldest MRI we support
-  - 2.5.0 # oldest officially maintained MRI
   - 2.6.5 # ~ latest MRI
   #- jruby-9.1.12.0
 
 install: bundle install --jobs=3 --deployment --without development
 
 script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
+
+jobs:
+  include:
+    - rvm: 2.0.0 # oldest MRI we support
+      script: bundle exec rake spec
+    - rvm: 2.5.0 # oldest officially maintained MRI
+      script: bundle exec rake spec
 
 git:
   depth: 3
