@@ -8,12 +8,12 @@ install: bundle install --jobs=3 --deployment --without development
 
 jobs:
   include:
-    - rvm: 2.0.0 # oldest MRI we support
-      script: bundle exec rake spec
-    - rvm: 2.5.0 # oldest officially maintained MRI
-      script: bundle exec rake spec
     - rvm: 2.6.5 # ~ latest MRI
       script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
+    - rvm: 2.5.0 # oldest officially maintained MRI
+      script: bundle exec rake spec
+    - rvm: 2.0.0 # oldest MRI we support
+      script: bundle exec rake spec
 
 git:
   depth: 3
