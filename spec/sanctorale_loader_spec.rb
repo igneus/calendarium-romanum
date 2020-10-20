@@ -6,12 +6,9 @@ describe CR::SanctoraleLoader do
 
   describe 'data sources' do
     describe '#load_from_string' do
-      before :each do
+      it 'loads something from a string' do
         str = '1/3 : Ss.mi Nominis Iesu'
         l.load_from_string str, s
-      end
-
-      it 'loads one entry' do
         expect(s.size).to eq 1
       end
     end
@@ -81,30 +78,24 @@ describe CR::SanctoraleLoader do
     end
 
     describe 'rank' do
-      # say we specify a proper calendar of a church dedicated to St. George
-      describe 'not specified - sets default' do
-        let(:record) { '4/23 : S. Georgii, martyris' }
-        it { expect(result.rank).to eq CR::Ranks::MEMORIAL_OPTIONAL }
-      end
+      [
+        ['not specified - sets default', '', CR::Ranks::MEMORIAL_OPTIONAL],
+        ['letter code', 's', CR::Ranks::SOLEMNITY_GENERAL],
+        ['letter code (uppercase)', 'S', CR::Ranks::SOLEMNITY_GENERAL],
+        ['letter code and priority number', 's1.4', CR::Ranks::SOLEMNITY_PROPER],
+        ['priority number', '1.4', CR::Ranks::SOLEMNITY_PROPER],
+      ].each do |title, rank_code, expected|
+        describe title do
+          describe 'in minimal context' do
+            let(:record) { "4/23 #{rank_code} : S. Georgii, martyris" }
+            it { expect(result.rank).to eq expected }
+          end
 
-      describe 'sets rank if specified' do
-        let(:record) { '4/23 s R : S. Georgii, martyris' }
-        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_GENERAL }
-      end
-
-      describe 'sets rank if specified (uppercase)' do
-        let(:record) { '4/23 S R : S. Georgii, martyris' }
-        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_GENERAL }
-      end
-
-      describe 'sets exact rank if specified' do
-        let(:record) { '4/23 s1.4 R : S. Georgii, martyris' }
-        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_PROPER }
-      end
-
-      describe 'sets exact rank if specified only by number' do
-        let(:record) { '4/23 1.4 R : S. Georgii, martyris' }
-        it { expect(result.rank).to eq CR::Ranks::SOLEMNITY_PROPER }
+          describe 'in ample context' do
+            let(:record) { "4/23 #{rank_code} R george : S. Georgii, martyris" }
+            it { expect(result.rank).to eq expected }
+          end
+        end
       end
     end
 
@@ -138,69 +129,32 @@ describe CR::SanctoraleLoader do
 
   describe 'invalid input' do
     describe 'syntax errors' do
-      it 'invalid syntax' do
-        str = 'line without standard beginning'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Syntax error/)
+      [
+        ['standard line beginning missing', 'some content'],
+        ['month heading - non-numeric', '= January'],
+        ['invalid rank', '1/25 X : In conversione S. Pauli, apostoli'],
+      ].each do |title, given|
+        it title do
+          expect { l.load_from_string given }
+            .to raise_exception(CR::InvalidDataError, /Syntax error/)
+        end
       end
     end
 
     describe 'syntactically correct data making no sense' do
-      it 'invalid month heading' do
-        str = '= 13'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
-      end
-
-      it 'one more invalid month heading' do
-        str = '= 0'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
-      end
-
-      it 'invalid month' do
-        str = '100/25 f : In conversione S. Pauli, apostoli'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
-      end
-
-      it 'line with day only, without preceding month heading' do
-        str = '25 f : In conversione S. Pauli, apostoli'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Invalid month/)
-      end
-
-      it 'invalid day' do
-        str = '1/250 f : In conversione S. Pauli, apostoli'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Invalid day/)
-      end
-
-      it 'invalid rank' do
-        str = '1/25 X : In conversione S. Pauli, apostoli'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /Syntax error/)
-      end
-
-      it 'invalid numeric rank' do
-        str = '4/23 s8.4 R : S. Georgii, martyris'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /rank/)
-      end
-
-      it 'invalid combination of rank latter and number' do
-        str = '4/23 m2.5 R : S. Georgii, martyris'
-        expect do
-          l.load_from_string str, s
-        end.to raise_exception(CR::InvalidDataError, /rank/)
+      [
+        ['month heading - number too high', '= 13', /Invalid month/],
+        ['month heading - number too low', '= 0', /Invalid month/],
+        ['invalid inline month', '100/25 f : In conversione S. Pauli, apostoli', /Invalid month/],
+        ['no inline month, no preceding month heading', '25 f : In conversione S. Pauli, apostoli', /Invalid month/],
+        ['invalid day', '1/250 f : In conversione S. Pauli, apostoli', /Invalid day/],
+        ['invalid numeric rank', '4/23 s8.4 R : S. Georgii, martyris', /rank/],
+        ['invalid combination of rank latter and number', '4/23 m2.5 R : S. Georgii, martyris', /rank/],
+      ].each do |title, given, expected_message|
+        it title do
+          expect { l.load_from_string given }
+            .to raise_exception(CR::InvalidDataError, expected_message)
+        end
       end
     end
   end
