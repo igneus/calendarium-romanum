@@ -78,14 +78,37 @@ describe CR::SanctoraleLoader do
     end
 
     describe 'rank' do
+      # SanctoraleLoader may allow other rank codes (encoding Sundays, ferials etc.),
+      # but here are listed all (and only) those which should actually appear in sanctorale data files.
       [
-        ['not specified - sets default', '', CR::Ranks::MEMORIAL_OPTIONAL],
-        ['letter code', 's', CR::Ranks::SOLEMNITY_GENERAL],
-        ['letter code (uppercase)', 'S', CR::Ranks::SOLEMNITY_GENERAL],
-        ['letter code and priority number', 's1.4', CR::Ranks::SOLEMNITY_PROPER],
-        ['priority number', '1.4', CR::Ranks::SOLEMNITY_PROPER],
-      ].each do |title, rank_code, expected|
-        describe title do
+        # not specified - sets default
+        ['', CR::Ranks::MEMORIAL_OPTIONAL],
+        # letter code
+        ['s', CR::Ranks::SOLEMNITY_GENERAL],
+        ['f', CR::Ranks::FEAST_GENERAL],
+        ['m', CR::Ranks::MEMORIAL_GENERAL],
+        # letter code uppercase (codes are case-insensitive)
+        ['S', CR::Ranks::SOLEMNITY_GENERAL],
+        # letter code + priority number
+        ['s1.3', CR::Ranks::SOLEMNITY_GENERAL],
+        ['s1.4', CR::Ranks::SOLEMNITY_PROPER],
+        ['f2.5', CR::Ranks::FEAST_LORD_GENERAL],
+        ['f2.7', CR::Ranks::FEAST_GENERAL],
+        ['f2.8', CR::Ranks::FEAST_PROPER],
+        ['m3.10', CR::Ranks::MEMORIAL_GENERAL],
+        ['m3.11', CR::Ranks::MEMORIAL_PROPER],
+        ['m3.12', CR::Ranks::MEMORIAL_OPTIONAL],
+        # priority number
+        ['1.3', CR::Ranks::SOLEMNITY_GENERAL],
+        ['1.4', CR::Ranks::SOLEMNITY_PROPER],
+        ['2.5', CR::Ranks::FEAST_LORD_GENERAL],
+        ['2.7', CR::Ranks::FEAST_GENERAL],
+        ['2.8', CR::Ranks::FEAST_PROPER],
+        ['3.10', CR::Ranks::MEMORIAL_GENERAL],
+        ['3.11', CR::Ranks::MEMORIAL_PROPER],
+        ['3.12', CR::Ranks::MEMORIAL_OPTIONAL],
+      ].each do |rank_code, expected|
+        describe rank_code do
           describe 'in minimal context' do
             let(:record) { "4/23 #{rank_code} : S. Georgii, martyris" }
             it { expect(result.rank).to eq expected }
