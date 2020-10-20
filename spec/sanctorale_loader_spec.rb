@@ -87,6 +87,11 @@ describe CR::SanctoraleLoader do
         ['s', CR::Ranks::SOLEMNITY_GENERAL],
         ['f', CR::Ranks::FEAST_GENERAL],
         ['m', CR::Ranks::MEMORIAL_GENERAL],
+        # letter code with specifying suffix
+        ['sp', CR::Ranks::SOLEMNITY_PROPER],
+        ['fl', CR::Ranks::FEAST_LORD_GENERAL],
+        ['fp', CR::Ranks::FEAST_PROPER],
+        ['mp', CR::Ranks::MEMORIAL_PROPER],
         # letter code uppercase (codes are case-insensitive)
         ['S', CR::Ranks::SOLEMNITY_GENERAL],
         # letter code + priority number
