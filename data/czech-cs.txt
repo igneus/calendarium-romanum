@@ -83,7 +83,7 @@ country: cz
 18 R john_i : Sv. Jana I., papeže a mučedníka
 20 hofbauer : Sv. Klementa Marie Hofbauera, kněze
 20 bernardine : Sv. Bernardina Sienského, kněze
-21 R magallanes : Sv. Kryštofa Magallanese, kněze a druhů, mučedníků
+21 R magallanes : Sv. Kryštofa Magallanese, kněze, a druhů, mučedníků
 22 rita : Sv. Rity z Cascie, řeholnice
 25 bede_venerable : Sv. Bedy Ctihodného, kněze a učitele církve
 25 gregory_vii : Sv. Řehoře VII., papeže
