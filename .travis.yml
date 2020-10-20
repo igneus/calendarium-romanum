@@ -1,20 +1,22 @@
 language: ruby
-
+cache: bundler
 dist: trusty
-
-rvm:
-  - 2.0.0 # oldest MRI we support
-  - 2.5.0 # oldest officially maintained MRI
-  - 2.6.5 # ~ latest MRI
-  #- jruby-9.1.12.0
 
 install: bundle install --jobs=3 --deployment --without development
 
-script: bundle exec rake spec_all_locales && bash spec/build/gem_build_test.sh
+script: bundle exec rake spec
+
+jobs:
+  include:
+    - rvm: 2.6.5 # ~ latest MRI
+      script:
+        - bundle exec rake spec_all_locales
+        - bash spec/build/gem_build_test.sh
+    - rvm: 2.5.0 # oldest officially maintained MRI
+    - rvm: 2.0.0 # oldest MRI we support
+  #   - rvm: jruby-9.1.12.0 # experimental
+  # allow_failures:
+  #   - rvm: jruby-9.1.12.0
 
 git:
   depth: 3
-
-#matrix:
-#  allow_failures:
-#    - rvm: jruby-9.1.12.0
