@@ -1,10 +1,7 @@
 require_relative 'spec_helper'
 
 describe CR::Calendar do
-  before :all do
-    @c = described_class.new(2013).freeze
-  end
-
+  let(:c) { described_class.new(2013).freeze }
   let(:celfactory) { CR::Temporale::CelebrationFactory }
 
   describe '.new' do
@@ -90,23 +87,23 @@ describe CR::Calendar do
   end
 
   describe '#each' do
-    let (:day_count) {(@c.temporale.start_date..@c.temporale.end_date).count}
+    let (:day_count) {(c.temporale.start_date..c.temporale.end_date).count}
 
     it 'yields for each iteration' do
-      expect {|b| @c.each(&b) }.to yield_control
+      expect {|b| c.each(&b) }.to yield_control
     end
 
     it 'yields the expected number of times' do
-      expect {|b| @c.each(&b) }.to yield_control.exactly(day_count).times
+      expect {|b| c.each(&b) }.to yield_control.exactly(day_count).times
     end
 
     it 'yields calendar day instances' do
       expected_class = Array.new(day_count, CR::Day)
-      expect {|b| @c.each(&b) }.to yield_successive_args(*expected_class)
+      expect {|b| c.each(&b) }.to yield_successive_args(*expected_class)
     end
 
     it 'returns Enumerator if called without a block' do
-      expect(@c.each).to be_a Enumerator
+      expect(c.each).to be_a Enumerator
     end
   end
 
@@ -169,13 +166,13 @@ describe CR::Calendar do
     describe 'received arguments' do
       describe 'Date' do
         it 'returns a Day' do
-          expect(@c[Date.new(2013, 12, 10)]).to be_a CR::Day
+          expect(c[Date.new(2013, 12, 10)]).to be_a CR::Day
         end
       end
 
       describe 'Date range' do
         it 'returns an array of Days' do
-          array = @c[Date.new(2013, 12, 10)..Date.new(2014, 4, 10)]
+          array = c[Date.new(2013, 12, 10)..Date.new(2014, 4, 10)]
           expect(array).to be_a Array
           array.each{|day| expect(day).to be_a CR::Day}
         end
@@ -187,26 +184,26 @@ describe CR::Calendar do
     describe 'received arguments' do
       describe 'Date' do
         it 'returns a Day' do
-          expect(@c.day(Date.new(2013, 12, 10))).to be_a CR::Day
+          expect(c.day(Date.new(2013, 12, 10))).to be_a CR::Day
         end
       end
 
       describe 'DateTime' do
         it 'returns a Day' do
-          expect(@c.day(DateTime.new(2013, 12, 10, 12, 10, 0))).to be_a CR::Day
+          expect(c.day(DateTime.new(2013, 12, 10, 12, 10, 0))).to be_a CR::Day
         end
       end
 
       describe 'three Integers' do
         it 'returns a Day' do
-          expect(@c.day(2013, 12, 10)).to be_a CR::Day
+          expect(c.day(2013, 12, 10)).to be_a CR::Day
         end
       end
 
       describe 'two integers' do
         describe 'autumn' do
           it 'supplies year' do
-            day = @c.day(12, 10)
+            day = c.day(12, 10)
             expect(day).to be_a CR::Day
             expect(day.date).to eq Date.new(2013, 12, 10)
           end
@@ -214,7 +211,7 @@ describe CR::Calendar do
 
         describe 'spring' do
           it 'supplies year' do
-            day = @c.day(4, 10)
+            day = c.day(4, 10)
             expect(day).to be_a CR::Day
             expect(day.date).to eq Date.new(2014, 4, 10)
           end
@@ -224,7 +221,7 @@ describe CR::Calendar do
           describe 'absolutely' do
             it 'fails' do
               expect do
-                @c.day(0, 34)
+                c.day(0, 34)
               end.to raise_exception(ArgumentError, 'invalid date')
             end
           end
@@ -232,7 +229,7 @@ describe CR::Calendar do
           describe 'for the given year' do
             it 'fails' do
               expect do
-                @c.day(2, 29)
+                c.day(2, 29)
               end.to raise_exception(ArgumentError, 'invalid date')
             end
           end
@@ -242,7 +239,7 @@ describe CR::Calendar do
 
     describe "date not included in the calendar's year" do
       it 'throws RangeError' do
-        expect { @c.day(2000, 1, 1) }.to raise_exception RangeError
+        expect { c.day(2000, 1, 1) }.to raise_exception RangeError
       end
     end
 
@@ -256,43 +253,43 @@ describe CR::Calendar do
     describe 'temporale features' do
       describe 'season' do
         it 'detects Advent correctly' do
-          expect(@c.day(2013, 12, 10).season).to eq CR::Seasons::ADVENT
+          expect(c.day(2013, 12, 10).season).to eq CR::Seasons::ADVENT
         end
       end
 
       describe 'week of the season' do
         describe 'Advent' do
           it 'sets Advent week correctly' do
-            expect(@c.day(2013, 12, 10).season_week).to eq 2
-            expect(@c.day(2013, 12, 15).season_week).to eq 3
+            expect(c.day(2013, 12, 10).season_week).to eq 2
+            expect(c.day(2013, 12, 15).season_week).to eq 3
           end
         end
 
         describe 'Christmas' do
           it 'days before the first Sunday are week 0' do
-            expect(@c.day(2013, 12, 25).season_week).to eq 0
+            expect(c.day(2013, 12, 25).season_week).to eq 0
           end
 
           it 'first Sunday starts week 1' do
-            expect(@c.day(2013, 12, 29).season_week).to eq 1
+            expect(c.day(2013, 12, 29).season_week).to eq 1
           end
         end
 
         describe 'Lent' do
           it 'Ash Wednesday is week 0' do
-            expect(@c.day(2014, 3, 5).season_week).to eq 0
+            expect(c.day(2014, 3, 5).season_week).to eq 0
           end
         end
 
         describe 'Easter' do
           it 'Easter Sunday opens week 1' do
-            expect(@c.day(2014, 4, 20).season_week).to eq 1
+            expect(c.day(2014, 4, 20).season_week).to eq 1
           end
         end
 
         describe 'Ordinary time' do
           it 'Monday after Baptism of the Lord is week 1' do
-            expect(@c.day(2014, 1, 13).season_week).to eq 1
+            expect(c.day(2014, 1, 13).season_week).to eq 1
           end
 
           describe 'after Pentecost' do
@@ -320,7 +317,7 @@ describe CR::Calendar do
               describe 'first' do
                 Date.new(2014, 6, 9).upto(Date.new(2014, 6, 14)) do |date|
                   it date do
-                    expect(@c.day(date).season_week).to eq 10
+                    expect(c.day(date).season_week).to eq 10
                   end
                 end
               end
@@ -328,7 +325,7 @@ describe CR::Calendar do
               describe 'second' do
                 Date.new(2014, 6, 15).upto(Date.new(2014, 6, 21)) do |date|
                   it date do
-                    expect(@c.day(date).season_week).to eq 11
+                    expect(c.day(date).season_week).to eq 11
                   end
                 end
               end
@@ -336,7 +333,7 @@ describe CR::Calendar do
               describe 'second last' do
                 Date.new(2014, 11, 16).upto(Date.new(2014, 11, 22)) do |date|
                   it date do
-                    expect(@c.day(date).season_week).to eq 33
+                    expect(c.day(date).season_week).to eq 33
                   end
                 end
               end
@@ -344,7 +341,7 @@ describe CR::Calendar do
               describe 'last' do
                 Date.new(2014, 11, 23).upto(Date.new(2014, 11, 29)) do |date|
                   it date do
-                    expect(@c.day(date).season_week).to eq 34
+                    expect(c.day(date).season_week).to eq 34
                   end
                 end
               end
@@ -373,26 +370,24 @@ describe CR::Calendar do
     end
 
     describe 'Temporale x Sanctorale resolution' do
-      before :all do
-        @s = CR::Data::GENERAL_ROMAN.load
-        @c = described_class.new(2013, @s).freeze
-      end
+      let(:s) { CR::Data::GENERAL_ROMAN.load }
+      let(:c) { described_class.new(2013, s).freeze }
 
       it '"empty" day results in a ferial' do
-        d = @c.day(7, 2)
+        d = c.day(7, 2)
         expect(d.celebrations.size).to eq 1
         expect(d.celebrations[0].rank).to eq CR::Ranks::FERIAL
       end
 
       it 'sanctorale feast' do
-        d = @c.day(7, 3)
+        d = c.day(7, 3)
         expect(d.celebrations.size).to eq 1
         expect(d.celebrations[0].rank).to eq CR::Ranks::FEAST_GENERAL
         expect(d.celebrations[0].title).to have_translation 'Saint Thomas the Apostle'
       end
 
       it 'optional memorial does not suppress ferial' do
-        d = @c.day(7, 14)
+        d = c.day(7, 14)
         expect(d.celebrations.size).to eq 2
 
         expect(d.celebrations[0].rank).to eq CR::Ranks::FERIAL
@@ -402,14 +397,14 @@ describe CR::Calendar do
       end
 
       it 'obligatory memorial does suppress ferial' do
-        d = @c.day(1, 17)
+        d = c.day(1, 17)
         expect(d.celebrations.size).to eq 1
 
         expect(d.celebrations[0].rank).to eq CR::Ranks::MEMORIAL_GENERAL
       end
 
       it 'memorial in Lent becomes mere commemoration' do
-        d = @c.day(4, 2)
+        d = c.day(4, 2)
         expect(d.celebrations.size).to eq 2
 
         comm = d.celebrations[1]
@@ -453,7 +448,7 @@ describe CR::Calendar do
       end
 
       it 'transfer of suppressed Annunciation (real world example)' do
-        c = described_class.new 2015, @s
+        c = described_class.new 2015, s
 
         d = Date.new(2016, 3, 25)
 
@@ -471,7 +466,7 @@ describe CR::Calendar do
 
       describe 'collision of Immaculate Heart with another obligatory memorial' do
         let(:year) { 2002 }
-        let(:c) { described_class.new year, @s }
+        let(:c) { described_class.new year, s }
         let(:date) { Date.new(2003, 6, 28) }
 
         it 'makes both memorials optional' do
@@ -490,7 +485,7 @@ describe CR::Calendar do
 
       describe 'collision of Mary, Mother of the Church with another obligatory memorial' do
         let(:year) { 2019 }
-        let(:c) { described_class.new year, @s }
+        let(:c) { described_class.new year, s }
         let(:date) { Date.new(2020, 6, 1) }
 
         it 'the Marian memorial takes precedence' do

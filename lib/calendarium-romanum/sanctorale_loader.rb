@@ -15,8 +15,12 @@ module CalendariumRomanum
     RANK_CODES = {
       nil => Ranks::MEMORIAL_OPTIONAL, # default
       'm' => Ranks::MEMORIAL_GENERAL,
+      'mp' => Ranks::MEMORIAL_PROPER,
       'f' => Ranks::FEAST_GENERAL,
-      's' => Ranks::SOLEMNITY_GENERAL
+      'fl' => Ranks::FEAST_LORD_GENERAL,
+      'fp' => Ranks::FEAST_PROPER,
+      's' => Ranks::SOLEMNITY_GENERAL,
+      'sp' => Ranks::SOLEMNITY_PROPER,
     }.freeze
 
     # @api private
@@ -113,13 +117,13 @@ module CalendariumRomanum
     def line_regexp
       @line_regexp ||=
         begin
-          rank_letters = RANK_CODES.keys.compact.join('')
+          rank_letters = RANK_CODES.keys.compact.join('|')
           colour_letters = COLOUR_CODES.keys.compact.join('')
 
           Regexp.new(
             '^((?<month>\d+)\/)?(?<day>\d+)' + # date
             '(' +
-            '(\s+(?<rank_char>[' + rank_letters + '])?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
+            '(\s+(?<rank_char>' + rank_letters + ')?(?<rank_num>\d\.\d{1,2})?)?' + # rank (optional)
             '(\s+(?<colour>[' + colour_letters + ']))?' + # colour (optional)
             '(\s+(?<symbol>[\w]{2,}))?' + # symbol (optional)
             '(\s*:(?<title>.*))?' + # title

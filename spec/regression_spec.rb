@@ -5,17 +5,14 @@ require 'stringio'
 describe 'results stay the same' do
   let(:sanctorale) { CR::Data::GENERAL_ROMAN.load }
 
-  years = 2020..2030
-  years.each do |year|
+  Dir[File.expand_path "../regression_dumps/*.txt", __FILE__]
+    .collect {|f| [File.basename(f).to_i, f] }
+    .sort_by {|year, path| year }
+    .each do |year, path|
     it year do
-      c = CR::Calendar.new year, sanctorale, vespers: true
-
       s = StringIO.new
-      I18n.with_locale(:la) do
-        CR::Dumper.new(s).call(c)
-      end
+      CR::CLI::Dumper.new(s).regression_tests_dump(year)
 
-      path = File.expand_path "../regression_dumps/#{year}.txt", __FILE__
       expect(s.string).to eq File.read(path)
     end
   end

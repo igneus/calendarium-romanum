@@ -6,6 +6,8 @@ describe CalendariumRomanum::Data do
     glob = File.join(data_path, '*.txt')
 
     Dir[glob].each do |file|
+      next if File.basename(file) == 'easter_dates.txt'
+
       it "#{file} has it's Data entry" do
         expect(described_class.all)
           .to include(an_object_having_attributes(path: file))

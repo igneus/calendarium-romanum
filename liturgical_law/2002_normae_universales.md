@@ -40,6 +40,26 @@ praesertim vero sacrificio eucharistico et Officio divino.
 Dies liturgicus decurrit a media nocte ad mediam noctem. Celebratio
 vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 
+```ruby
+i = 0
+
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+.each
+.each_cons(2) do |yesterday, today|
+  ct = today.celebrations.first
+  cy = yesterday.celebrations.first
+
+  if (ct.sunday? ||
+      [CR::Ranks::SOLEMNITY_GENERAL, CR::Ranks::SOLEMNITY_PROPER].include?(ct.rank)) &&
+     ct.rank > cy.rank
+    expect(yesterday.vespers).to eq ct
+    i += 1
+  end
+end
+
+expect(i).to be > 0 # make sure that at least some first Vespers were actually encountered
+```
+
 #### II. De dominica
 
 **4.** Primo uniuscuiusque hebdomadae die, quae dies Domini seu dies
@@ -191,15 +211,18 @@ et temporis Nativitatis occurrunt et pro earum Officio substituuntur.
 calendar = CR::PerpetualCalendar.new(vespers: true, sanctorale: CR::Data::GENERAL_ROMAN.load)
 
 presentation = CR::AbstractDate.new 2, 2
-year_on_sunday = (2000..2100).find {|y| presentation.in_year(y).sunday? }
-year_on_weekday = (2000..2100).find {|y| not presentation.in_year(y).sunday? }
+years_on_sunday, years_on_weekday = years.partition {|y| presentation.in_year(y).sunday? }
 
-day = calendar[presentation.in_year(year_on_weekday) - 1]
-expect(day.vespers).to be nil
+years_on_weekday.each do |year|
+  day = calendar[presentation.in_year(year) - 1]
+  expect(day.vespers).to be nil
+end
 
-day = calendar[presentation.in_year(year_on_sunday) - 1]
-expect(day.vespers).to be_a CR::Celebration
-expect(day.vespers.symbol).to be :presentation_of_lord
+years_on_sunday.each do |year|
+  day = calendar[presentation.in_year(year) - 1]
+  expect(day.vespers).to be_a CR::Celebration
+  expect(day.vespers.symbol).to be :presentation_of_lord
+end
 ```
 
 **14.** Memoriae sunt obligatoriae vel ad libitum; earum autem celebratio cum
@@ -502,7 +525,7 @@ post Nativitatem.
 calendar = CR::PerpetualCalendar.new
 
 second_sundays =
-  (2000 .. 2100)
+  years
     .collect {|year| (Date.new(year, 1, 2) .. Date.new(year, 1, 5)).select(&:sunday?) }
     .flatten
 
@@ -773,13 +796,10 @@ calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 joseph = CR::AbstractDate.new 3, 19
 
-years_on_palm_sunday = (2000 .. 2100).select do |y|
+years_with do |y|
   joseph.in_year(y + 1) == CR::Temporale::Dates.palm_sunday(y)
 end
-
-expect(years_on_palm_sunday).not_to be_empty
-
-years_on_palm_sunday.each do |y|
+.each do |y|
   date = Date.new(y + 1, 3, 18)
   expect(date).to be_saturday
   expect(calendar[date].celebrations[0].symbol).to be :joseph
@@ -881,7 +901,7 @@ calendar = CR::PerpetualCalendar.new sanctorale: CR::Data::GENERAL_ROMAN.load
 
 annunciation = CR::AbstractDate.new 3, 25
 
-years_in_holy_week = (2000 .. 2100).select do |y|
+years_in_holy_week = years.select do |y|
   date = annunciation.in_year y + 1
 
   date >= CR::Temporale::Dates.palm_sunday(y) &&
@@ -901,3 +921,26 @@ end
 I Vesperae diei sequentis, praevalent Vesperae celebrationis quae in
 tabula dierum liturgicorum superiorem obtinet locum; in casu autem
 paritatis, Vesperae diei currentis.
+
+```ruby
+# for general example of first vespers, see p. 3
+
+# "... in casu autem paritatis, Vesperae diei currentis"
+i = 0
+
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+.each
+.each_cons(2) do |yesterday, today|
+  ct = today.celebrations.first
+  cy = yesterday.celebrations.first
+
+  if (ct.sunday? ||
+      [CR::Ranks::SOLEMNITY_GENERAL, CR::Ranks::SOLEMNITY_PROPER].include?(ct.rank)) &&
+     ct.rank == cy.rank # casus paritatis
+    expect(yesterday.vespers).to be nil
+    i += 1
+  end
+end
+
+expect(i).to be > 0 # make sure that at least some first Vespers were actually encountered
+```

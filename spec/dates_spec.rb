@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe CR::Temporale::Dates do
   let(:today) { Date.new 2014, 3, 16 }
 
-  describe '#weekday_before' do
+  describe '.weekday_before' do
     describe 'works well for all 7 weekdays' do
       [
         [0, Date.new(2014, 3, 9)],
@@ -23,7 +23,7 @@ describe CR::Temporale::Dates do
     end
   end
 
-  describe '#weekday_after aliases' do
+  describe '.weekday_after aliases' do
     describe 'works well for all 7 weekdays' do
       [
         [:monday_after, Date.new(2014, 3, 17)],
@@ -38,6 +38,22 @@ describe CR::Temporale::Dates do
         it method do
           actual = described_class.public_send(method, today)
           expect(actual).to eq expected
+        end
+      end
+    end
+  end
+
+  describe '.easter_sunday' do
+    describe 'computed results match known Easter dates' do
+      table = nil
+      File.open(File.expand_path('../data/easter_dates.txt', File.dirname(__FILE__))) do |io|
+        table = CR::Temporale::EasterTable.load_from(io)
+      end
+
+      (1984..2049).each do |year|
+        it year.to_s do
+          expect(described_class.easter_sunday(year))
+            .to eq table[year]
         end
       end
     end
@@ -60,14 +76,27 @@ describe CR::Temporale::Dates do
       end
     end
 
-    it 'Baptism of the Lord' do
-      transferred =
+    describe 'Baptism of the Lord' do
+      it 'is on Sunday if Epiphany is on it\'s usual date or earlier' do
+        transferred =
           described_class.baptism_of_lord(year, epiphany_on_sunday: true)
-      not_transferred =
-        described_class.baptism_of_lord(year)
+        not_transferred =
+          described_class.baptism_of_lord(year)
 
-      expect(transferred).to be_monday
-      expect(not_transferred).to be_sunday
+        expect(transferred).to eq not_transferred
+      end
+
+      it 'is transferred to Monday if Epiphany is later than on it\'s usual date' do
+        year = 2016
+
+        transferred =
+          described_class.baptism_of_lord(year, epiphany_on_sunday: true)
+        not_transferred =
+          described_class.baptism_of_lord(year)
+
+        expect(transferred).to be_monday
+        expect(not_transferred).to be_sunday
+      end
     end
   end
 end

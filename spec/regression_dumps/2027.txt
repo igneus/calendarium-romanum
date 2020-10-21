@@ -78,17 +78,30 @@ Calendar for liturgical year 2027
 - "S. Silvestri I, papae" 4.0 white sylvester_i 12/31 sanctorale
 2028-01-01 christmas 1 false
 - "In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae" 1.3 white mother_of_god 1/1 temporale
+or 2028-01-01 christmas 1 true
+- "In Octava Nativitatis Domini, Sanctae Dei Genitricis Mariae" 1.3 white mother_of_god 1/1 temporale
 2028-01-02 christmas 2 false
 - "Dominica II post Nativitatem" 2.6 white   temporale
+or 2028-01-02 christmas 2 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2028-01-03 christmas 2 false
 - "Feria secunda post octavam Nativitatis" 3.13 white   temporale
 - "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
+or 2028-01-03 christmas 2 false
+- "Feria secunda post Epiphaniam" 3.13 white   temporale
+- "Ss.mi Nominis Iesu" 3.12 white name_jesus 1/3 sanctorale
 2028-01-04 christmas 2 false
 - "Feria tertia post octavam Nativitatis" 3.13 white   temporale
+or 2028-01-04 christmas 2 false
+- "Feria tertia post Epiphaniam" 3.13 white   temporale
 2028-01-05 christmas 2 true
 - "Feria quarta post octavam Nativitatis" 3.13 white   temporale
+or 2028-01-05 christmas 2 false
+- "Feria quarta post Epiphaniam" 3.13 white   temporale
 2028-01-06 christmas 2 false
 - "In Epiphania Domini" 1.2 white epiphany  temporale
+or 2028-01-06 christmas 2 false
+- "Feria quinta post Epiphaniam" 3.13 white   temporale
 2028-01-07 christmas 2 false
 - "Feria sexta post Epiphaniam" 3.13 white   temporale
 - "S. Raimundi de Penyafort, presbyteri" 3.12 white raymond 1/7 sanctorale
@@ -406,15 +419,27 @@ Calendar for liturgical year 2027
 - "Feria tertia, hebdomada VI temporis paschalis" 3.13 white   temporale
 2028-05-24 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+or 2028-05-24 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2028-05-25 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2028-05-25 easter 6 false
+- "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
+- "S. Gregorii VII, papae" 3.12 white gregory_vii 5/25 sanctorale
+- "S. Mariae Magdalenae de' Pazzi, virginis" 3.12 white de_pazzi 5/25 sanctorale
 2028-05-26 easter 6 false
 - "S. Philippi Neri, presbyteri" 3.1 white neri 5/26 sanctorale
 2028-05-27 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
+or 2028-05-27 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Augustini Cantuarensis, episcopi" 3.12 white augustine_of_canterbury 5/27 sanctorale
 2028-05-28 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2028-05-28 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2028-05-29 easter 7 false
 - "Feria secunda, hebdomada VII temporis paschalis" 3.13 white   temporale
 - "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
@@ -440,6 +465,8 @@ Calendar for liturgical year 2027
 - "Feria quarta, hebdomada IX per annum" 3.13 green   temporale
 2028-06-08 ordinary 9 false
 - "Feria quinta, hebdomada IX per annum" 3.13 green   temporale
+or 2028-06-08 ordinary 9 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2028-06-09 ordinary 9 false
 - "Feria sexta, hebdomada IX per annum" 3.13 green   temporale
 - "S. Ephraem, diaconi et Ecclesiae doctoris" 3.12 white ephrem 6/9 sanctorale
@@ -454,15 +481,24 @@ Calendar for liturgical year 2027
 - "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
 2028-06-14 ordinary 10 true
 - "Feria quarta, hebdomada X per annum" 3.13 green   temporale
+or 2028-06-14 ordinary 10 false
+- "Feria quarta, hebdomada X per annum" 3.13 green   temporale
 2028-06-15 ordinary 10 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2028-06-15 ordinary 10 false
+- "Feria quinta, hebdomada X per annum" 3.13 green   temporale
 2028-06-16 ordinary 10 false
 - "Feria sexta, hebdomada X per annum" 3.13 green   temporale
 2028-06-17 ordinary 10 true
 - "Sabbato, hebdomada X per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2028-06-17 ordinary 10 true
+- "Sabbato, hebdomada X per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2028-06-18 ordinary 11 false
 - "Dominica XI per annum" 2.6 green   temporale
+or 2028-06-18 ordinary 11 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2028-06-19 ordinary 11 false
 - "Feria secunda, hebdomada XI per annum" 3.13 green   temporale
 - "S. Romualdi, abbatis" 3.12 white romuald 6/19 sanctorale
@@ -780,8 +816,12 @@ Calendar for liturgical year 2027
 - "Feria sexta, hebdomada XXIX per annum" 3.13 green   temporale
 2028-10-28 ordinary 29 true
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
+or 2028-10-28 ordinary 29 true
+- "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2028-10-29 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2028-10-29 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2028-10-30 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2028-10-31 ordinary 30 true

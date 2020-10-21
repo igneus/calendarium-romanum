@@ -22,7 +22,7 @@ In locis ubi sollemnitas Epiphaniae in dominicam est transferenda et haec die 7 
 incidit, ita ut festum Baptismatis Domini, eadem die occurrens, esset omittendum, idem festum
 Baptismatis Domini ad feriam II immediate sequentem transferatur.
 
-Contrariis quibuslibet niinime obstantibus.
+Contrariis quibuslibet minime obstantibus.
 
 Ex aedibus Sacrae Congregationis pro Sacramentis et Cultu Divino, die 7  Octobris 1977.
 
@@ -33,14 +33,26 @@ Iacobus R. Card. Knox
 *Praefectus*
 
 ```ruby
-years_with do |y|
+is_case_mentionned = proc do |y|
   [7, 8].include? CR::Temporale::Dates.epiphany(y, sunday: true).day
 end
+
+years_with(&is_case_mentionned)
 .each do |y|
   epiphany = CR::Temporale::Dates.epiphany(y, sunday: true)
   baptism = CR::Temporale::Dates.baptism_of_lord(y, epiphany_on_sunday: true)
 
   expect(baptism).to eq(epiphany + 1)
   expect(baptism).to be_monday
+end
+
+years_with do |y|
+  !is_case_mentionned.(y)
+end
+.each do |y|
+  with_translation = CR::Temporale::Dates.baptism_of_lord(y, epiphany_on_sunday: true)
+  without_translation = CR::Temporale::Dates.baptism_of_lord(y)
+
+  expect(with_translation).to eq without_translation
 end
 ```

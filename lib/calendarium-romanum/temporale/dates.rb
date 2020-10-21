@@ -46,7 +46,7 @@ module CalendariumRomanum
       # @return [Date]
       def self.baptism_of_lord(year, epiphany_on_sunday: false)
         e = epiphany(year, sunday: epiphany_on_sunday)
-        if epiphany_on_sunday
+        if e.day > 6
           e + 1
         else
           sunday_after e

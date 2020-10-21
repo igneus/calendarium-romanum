@@ -399,14 +399,23 @@ Calendar for liturgical year 2029
 2030-05-29 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
+or 2030-05-29 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
 2030-05-30 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2030-05-30 easter 6 false
+- "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2030-05-31 easter 6 false
 - "In Visitatione B. Mariae Virginis" 2.7 white visitation 5/31 sanctorale
 2030-06-01 easter 6 true
 - "S. Iustini, martyris" 3.1 red justin 6/1 sanctorale
+or 2030-06-01 easter 6 true
+- "S. Iustini, martyris" 3.1 red justin 6/1 sanctorale
 2030-06-02 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2030-06-02 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2030-06-03 easter 7 false
 - "Ss. Caroli Lwanga et sociorum, martyrum" 3.1 red ugandan_martyrs 6/3 sanctorale
 2030-06-04 easter 7 false
@@ -430,6 +439,8 @@ Calendar for liturgical year 2029
 - "Feria quarta, hebdomada X per annum" 3.13 green   temporale
 2030-06-13 ordinary 10 false
 - "S. Antonii de Padova, presbyteri et Ecclesiae doctoris" 3.1 white anthony_of_padua 6/13 sanctorale
+or 2030-06-13 ordinary 10 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2030-06-14 ordinary 10 false
 - "Feria sexta, hebdomada X per annum" 3.13 green   temporale
 2030-06-15 ordinary 10 true
@@ -444,8 +455,13 @@ Calendar for liturgical year 2029
 2030-06-19 ordinary 11 true
 - "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
 - "S. Romualdi, abbatis" 3.12 white romuald 6/19 sanctorale
+or 2030-06-19 ordinary 11 false
+- "Feria quarta, hebdomada XI per annum" 3.13 green   temporale
+- "S. Romualdi, abbatis" 3.12 white romuald 6/19 sanctorale
 2030-06-20 ordinary 11 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2030-06-20 ordinary 11 false
+- "Feria quinta, hebdomada XI per annum" 3.13 green   temporale
 2030-06-21 ordinary 11 false
 - "S Aloisii Gonzaga, religiosi" 3.1 white aloysius 6/21 sanctorale
 2030-06-22 ordinary 11 true
@@ -453,8 +469,15 @@ Calendar for liturgical year 2029
 - "S. Paulini Nolani" 3.12 white paulinus 6/22 sanctorale
 - "Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum" 3.12 red fisher_more 6/22 sanctorale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2030-06-22 ordinary 11 true
+- "Sabbato, hebdomada XI per annum" 3.13 green   temporale
+- "S. Paulini Nolani" 3.12 white paulinus 6/22 sanctorale
+- "Ss. Ioannis Fisher, episcopi, et Thomae More, martyrum" 3.12 red fisher_more 6/22 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-06-23 ordinary 12 true
 - "Dominica XII per annum" 2.6 green   temporale
+or 2030-06-23 ordinary 12 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2030-06-24 ordinary 12 false
 - "IN NATIVITATE S. IOANNIS BAPTISTAE" 1.3 white baptist_birth 6/24 sanctorale
 2030-06-25 ordinary 12 false
@@ -759,8 +782,13 @@ Calendar for liturgical year 2029
 2030-10-26 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2030-10-26 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2030-10-27 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2030-10-27 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2030-10-28 ordinary 30 false
 - "Ss. Simonis et Iudae, apostolorum" 2.7 red simon_jude 10/28 sanctorale
 2030-10-29 ordinary 30 false

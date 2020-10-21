@@ -76,12 +76,20 @@ Calendar for liturgical year 2028
 - "Feria quinta post octavam Nativitatis" 3.13 white   temporale
 2029-01-05 christmas 1 true
 - "Feria sexta post octavam Nativitatis" 3.13 white   temporale
+or 2029-01-05 christmas 1 false
+- "Feria sexta post octavam Nativitatis" 3.13 white   temporale
 2029-01-06 christmas 1 false
 - "In Epiphania Domini" 1.2 white epiphany  temporale
+or 2029-01-06 christmas 1 true
+- "Sabbato post octavam Nativitatis" 3.13 white   temporale
 2029-01-07 christmas 2 false
 - "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
+or 2029-01-07 christmas 2 false
+- "In Epiphania Domini" 1.2 white epiphany  temporale
 2029-01-08 ordinary 1 false
 - "Feria secunda, hebdomada I per annum" 3.13 green   temporale
+or 2029-01-08 christmas 2 false
+- "In Baptismate Domini" 2.5 white baptism_of_lord  temporale
 2029-01-09 ordinary 1 false
 - "Feria tertia, hebdomada I per annum" 3.13 green   temporale
 2029-01-10 ordinary 1 false
@@ -354,16 +362,26 @@ Calendar for liturgical year 2028
 - "Feria tertia, hebdomada VI temporis paschalis" 3.13 white   temporale
 2029-05-09 easter 6 true
 - "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
+or 2029-05-09 easter 6 false
+- "Feria quarta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2029-05-10 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
+or 2029-05-10 easter 6 false
+- "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2029-05-11 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2029-05-12 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 - "Ss. Nerei et Achillei, martyrum" 3.12 red nereus_achilleus 5/12 sanctorale
 - "S. Pancratii, martyris" 3.12 red pancras 5/12 sanctorale
+or 2029-05-12 easter 6 true
+- "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "Ss. Nerei et Achillei, martyrum" 3.12 red nereus_achilleus 5/12 sanctorale
+- "S. Pancratii, martyris" 3.12 red pancras 5/12 sanctorale
 2029-05-13 easter 7 false
 - "Dominica VII Paschae" 1.2 white   temporale
+or 2029-05-13 easter 7 false
+- "In Ascensione Domini" 1.2 white ascension  temporale
 2029-05-14 easter 7 false
 - "S. Matthiae, apostoli" 2.7 red matthias 5/14 sanctorale
 2029-05-15 easter 7 false
@@ -388,6 +406,8 @@ Calendar for liturgical year 2028
 - "Feria quarta, hebdomada VII per annum" 3.13 green   temporale
 2029-05-24 ordinary 7 false
 - "Feria quinta, hebdomada VII per annum" 3.13 green   temporale
+or 2029-05-24 ordinary 7 false
+- "Domini nostri Iesu Christi Summi et Aeterni Sacerdotis" 2.8 white christ_eternal_priest  sanctorale
 2029-05-25 ordinary 7 false
 - "Feria sexta, hebdomada VII per annum" 3.13 green   temporale
 - "S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris" 3.12 white bede_venerable 5/25 sanctorale
@@ -404,16 +424,26 @@ Calendar for liturgical year 2028
 - "S. Pauli VI, papae" 3.12 white paul_vi 5/29 sanctorale
 2029-05-30 ordinary 8 true
 - "Feria quarta, hebdomada VIII per annum" 3.13 green   temporale
+or 2029-05-30 ordinary 8 false
+- "Feria quarta, hebdomada VIII per annum" 3.13 green   temporale
 2029-05-31 ordinary 8 false
 - "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
+or 2029-05-31 ordinary 8 false
+- "In Visitatione B. Mariae Virginis" 2.7 white visitation 5/31 sanctorale
 2029-06-01 ordinary 8 false
 - "S. Iustini, martyris" 3.1 red justin 6/1 sanctorale
 2029-06-02 ordinary 8 true
 - "Sabbato, hebdomada VIII per annum" 3.13 green   temporale
 - "Ss. Marcellini et Petri, martyrum" 3.12 red marcellinus_peter 6/2 sanctorale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2029-06-02 ordinary 8 true
+- "Sabbato, hebdomada VIII per annum" 3.13 green   temporale
+- "Ss. Marcellini et Petri, martyrum" 3.12 red marcellinus_peter 6/2 sanctorale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2029-06-03 ordinary 9 false
 - "Dominica IX per annum" 2.6 green   temporale
+or 2029-06-03 ordinary 9 false
+- "Sanctissimi Corporis et Sanguinis Christi" 1.3 white corpus_christi  temporale
 2029-06-04 ordinary 9 false
 - "Feria secunda, hebdomada IX per annum" 3.13 green   temporale
 2029-06-05 ordinary 9 false
@@ -767,8 +797,13 @@ Calendar for liturgical year 2028
 2029-10-27 ordinary 29 true
 - "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
+or 2029-10-27 ordinary 29 true
+- "Sabbato, hebdomada XXIX per annum" 3.13 green   temporale
+- "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale
 2029-10-28 ordinary 30 false
 - "Dominica XXX per annum" 2.6 green   temporale
+or 2029-10-28 ordinary 30 false
+- "Anniversarium dedicationis ecclesiae" 1.4 white dedication  sanctorale
 2029-10-29 ordinary 30 false
 - "Feria secunda, hebdomada XXX per annum" 3.13 green   temporale
 2029-10-30 ordinary 30 false

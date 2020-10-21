@@ -1,5 +1,16 @@
 require 'thor'
-require_relative 'dumper'
+
+# monkey patch preventing Thor from screwing formatting in our commands' long_desc
+# credits: https://github.com/erikhuda/thor/issues/398#issuecomment-237400762
+class Thor
+  module Shell
+    class Basic
+      def print_wrapped(message, options = {})
+         stdout.puts message
+       end
+    end
+  end
+end
 
 module CalendariumRomanum
 
@@ -8,51 +19,30 @@ module CalendariumRomanum
   #
   # @api private
   class CLI < Thor
-    include CalendariumRomanum::Util
+    desc 'query [DATE]', 'show calendar information for a specified date/month/year'
+    long_desc <<-EOS
+show calendar information for a specified date/month/year
 
-    desc 'query 2007-06-05', 'show calendar information for a specified date'
-    option :calendar, default: Data::GENERAL_ROMAN.siglum, aliases: :c
-    option :locale, default: 'en', aliases: :l
+DATE formats:
+not specified - today
+2000-01-02    - single date
+2000-01       - month
+2000          - year
+EOS
+    option :calendar, default: Data::GENERAL_ROMAN.siglum, aliases: :c, desc: 'sanctorale data file to use'
+    option :locale, default: 'en', aliases: :l, desc: 'locale to use for localized strings'
     def query(date_str = nil)
-      I18n.locale = options[:locale]
-      calendar = options[:calendar]
-      if File.exist?(calendar)
-        begin
-          sanctorale = sanctorale_from_path(calendar)
-        rescue CalendariumRomanum::InvalidDataError
-          die! 'Invalid file format.'
-        end
-      else
-        data_file = Data[calendar]
-
-        if data_file.nil?
-          die! "Invalid calendar. Either loading a calendar from filesystem did not succeed, \n or a preinstalled calendar was specified which doesn't exist. See subcommand `calendars` for valid options."
-        end
-        sanctorale = data_file.load
-      end
-
-      pcal = PerpetualCalendar.new sanctorale: sanctorale
-
-      if date_str
-        begin
-          parsed_date = DateParser.new(date_str)
-          parsed_date.date_range.each do |day|
-            print_single_date(pcal, day)
-          end
-        rescue ArgumentError
-          die! 'Invalid date.'
-        end
-      else
-        print_single_date(pcal, Date.today)
-      end
+      Querier
+        .new(locale: options[:locale], calendar: options[:calendar])
+        .call(date_str)
     end
 
-    desc 'calendars', 'lists calendars available for querying'
+    desc 'calendars', 'list calendars available for querying'
     def calendars
       Data.each {|c| puts c.siglum }
     end
 
-    desc 'errors FILE1, ...', 'finds errors in sanctorale data files'
+    desc 'errors FILE1, ...', 'find errors in sanctorale data files'
     def errors(*files)
       files.each do |path|
         begin
@@ -63,52 +53,14 @@ module CalendariumRomanum
       end
     end
 
-    desc 'cmp FILE1, FILE2', 'detect differences in rank and colour of corresponding celebrations'
+    desc 'cmp FILE1, FILE2', 'detect differences between two sanctorale data files'
     def cmp(a, b)
-      paths = [a, b]
-      sanctoralia = paths.collect {|source| sanctorale_from_path source }
-      names = paths.collect {|source| File.basename source }
-
-      # a leap year must be chosen in order to iterate over
-      # all possible days of a Sanctorale
-      Year.new(1990).each_day do |d|
-        a, b = sanctoralia.collect {|s| s.get(d) }
-
-        0.upto([a.size, b.size].max - 1) do |i|
-          ca = a[i]
-          cb = b[i]
-          compared = [ca, cb]
-
-          if compared.index(&:nil?)
-            notnili = compared.index {|c| !c.nil? }
-
-            print date(d)
-            puts " only in #{names[notnili]}:"
-            puts celebration(compared[notnili])
-            puts
-            next
-          end
-
-          differences = %i(rank colour symbol).select do |property|
-            ca.public_send(property) != cb.public_send(property)
-          end
-
-          next if differences.empty?
-          print date(d)
-          puts " differs in #{differences.join(', ')}"
-          puts celebration(ca)
-          puts celebration(cb)
-          puts
-        end
-      end
+      Comparator.new.call(a, b)
     end
 
-    desc 'dump YEAR', 'print calendar of the specified year (for use in regression tests)'
+    desc 'dump YEAR', 'print calendar of the specified year for use in regression tests'
     def dump(year)
-      calendar = Calendar.new year.to_i, Data::GENERAL_ROMAN_LATIN.load, vespers: true
-      I18n.with_locale(:la) do
-        Dumper.new.call(calendar)
-      end
+      Dumper.new.regression_tests_dump year.to_i
     end
 
     desc 'version', 'print version information'
@@ -116,49 +68,20 @@ module CalendariumRomanum
       puts 'calendarium-romanum CLI'
       puts "calendarium-romanum: version #{CalendariumRomanum::VERSION}, released #{CalendariumRomanum::RELEASE_DATE}"
     end
-
-    private
-
-    def date(d)
-      "#{d.month}/#{d.day}"
-    end
-
-    def celebration(c)
-      "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
-    end
-
-    def die!(message, code = 1)
-      STDERR.puts message
-      exit code
-    end
-
-    def print_single_date(calendar, date)
-      day = calendar.day date
-
-      puts date
-      puts "season: #{day.season.name}"
-      puts
-
-      rank_length = day.celebrations.collect {|c| c.rank.short_desc.nil? ? 0 : c.rank.short_desc.size }.max
-      day.celebrations.each do |c|
-        if [Ranks::PRIMARY, Ranks::TRIDUUM].include? c.rank
-          puts c.title
-        elsif !c.rank.short_desc.nil?
-          print c.rank.short_desc.rjust(rank_length)
-          print ' : '
-          puts c.title
-        end
-      end
-    end
-
-    def sanctorale_from_path(path)
-      loader = SanctoraleLoader.new
-
-      if path == '-'
-        loader.load(STDIN)
-      else
-        loader.load_from_file(path)
-      end
-    end
   end
 end
+
+# required files reopen the CLI class - require after the class'es main definition
+# in order to prevent superclass mismatch errors
+require_relative 'cli/helper'
+
+module CalendariumRomanum
+  class CLI
+    include Helper
+  end
+end
+
+require_relative 'cli/comparator'
+require_relative 'cli/date_parser'
+require_relative 'cli/dumper'
+require_relative 'cli/querier'

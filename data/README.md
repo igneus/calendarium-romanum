@@ -33,25 +33,27 @@ DAY must be a number valid as a possible date in the given month.
 (29 is valid in February, as it sometimes occurs;
 31 is not valid in April, as there is never April 31st.)
 
-RANK is a single letter m=memorial, f=feast, s=solemnity.
-If omitted, optional memorial is assumed.
+RANK is a rank code, which can have several forms:
 
-When it is desirable to specify rank of a celebration
-with greater precision, e.g. in order to distinguish feasts
-inscribed in the General Roman Calendar from proper feasts,
-use rank number instead of a rank letter.
-Rank priority numbers are defined in
-[lib/calendarium-romanum/enums.rb](../lib/calendarium-romanum/enums.rb)
-and correspond to section and subsection numbers in
-the Table of Liturgical Days
-(see end of the [General Norms](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM)).
-This is why the sequence is non-continuous:
-`1.4` is followed by `2.5` and `2.9` by `3.10`.
+1. *no* rank code - optional memorial will be assumed
+1. single letter: `m` = memorial, `f` = feast, `s` = solemnity
+1. rank priority number, e.g. `1.3` (defined in
+   [lib/calendarium-romanum/enums.rb](../lib/calendarium-romanum/enums.rb),
+   and correspond to section and subsection numbers in the Table of Liturgical Days
+   in the [General Norms](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM))
+1. letter and a priority number, e.g. `s1.3`
+1. letter with a specifying suffix, e.g. `sp`: suffix `p` distinguishes
+   proper solemnities/feasts/memorials from those inscribed in the General
+   Roman Calendar, suffix `l` (only allowed in combination `fl`)
+   distinguishes feasts of the Lord from other feasts inscribed
+   in the General Roman Calendar.
+
+Single letter codes are used to encode ranks of most celebrations
+inscribed in the General Roman Calendar, the other forms for other
+ranks (proper celebrations, feasts of the Lord etc.).
 
 The example below presents pairs of equivalent lines,
 the first one specifying rank by letter, the second one by number.
-Rank letters are always interpreted as if the celebration
-was inscribed in the General Roman Calendar.
 
 ```
 3/19 s : Saint Joseph Husband of the Blessed Virgin Mary
@@ -69,20 +71,22 @@ was inscribed in the General Roman Calendar.
 
 As an example of a proper celebration (which requires rank number
 when exact ranking is important) let's use solemnity of the
-principal patron of Bohemia, martyr duke St. Wenceslas:
+principal patron of Bohemia, martyr duke St. Wenceslas
+(three alternative ways to encode the same rank of a proper solemnity):
 
 ```
 9/28 1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
-```
-
-If you have dificulties remembering meanings of the numbers,
-but are comfortable with rank letters, it might be helpful for you
-to use rank numbers *alongside* the letters.
-This is supported too, you will find this format used throughout
-the bundled data files.
-
-```
 9/28 s1.4 R : Sv. Václava, mučedníka, hlavního patrona českého národa
+9/28 sp R : Sv. Václava, mučedníka, hlavního patrona českého národa
+```
+
+Feasts of the Lord similarly require a more specific rank code
+than the general `f`:
+
+```
+11/9 2.5 lateran_basilica : Dedication of the Lateran basilica
+11/9 f2.5 lateran_basilica : Dedication of the Lateran basilica
+11/9 fl lateran_basilica : Dedication of the Lateran basilica
 ```
 
 COLOUR is a single letter R=red, W=white (G=green, V=violet normally

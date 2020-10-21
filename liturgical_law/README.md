@@ -20,6 +20,12 @@ expect(year).to be >= 1970
 a = year; b = year
 expect(a).to be b
 
+# method `years` returns an Enumerable of years (which are valid liturgical years
+# for calendarium-romanum)
+expect(years).to be_a Enumerable
+yrs = years.to_a
+expect(yrs[0]).to be_a Integer
+
 # method `years_with` returns an array of years (which are valid liturgical years
 # for calendarium-romanum) matching the specified condition
 yrs = years_with {|y| true }

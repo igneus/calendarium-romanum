@@ -19,11 +19,14 @@ end
   perpetual_calendar
   temporale/dates
   temporale/celebration_factory
+  temporale/easter_table
+  temporale/extensions
   temporale/extensions/christ_eternal_priest
   temporale/extensions/dedication_before_all_saints
   temporale
   sanctorale
   sanctorale_loader
+  sanctorale_writer
   sanctorale_factory
   transfers
   util
