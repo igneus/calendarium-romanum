@@ -43,7 +43,7 @@ vero dominicae et sollemnitatum incipit iam vespere diei praecedentis.
 ```ruby
 i = 0
 
-CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN.load, vespers: true)
 .each
 .each_cons(2) do |yesterday, today|
   ct = today.celebrations.first
@@ -928,7 +928,7 @@ paritatis, Vesperae diei currentis.
 # "... in casu autem paritatis, Vesperae diei currentis"
 i = 0
 
-CR::Calendar.new(year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true)
+CR::Calendar.new(year, CR::Data::GENERAL_ROMAN.load, vespers: true)
 .each
 .each_cons(2) do |yesterday, today|
   ct = today.celebrations.first

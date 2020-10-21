@@ -28,7 +28,7 @@ module CalendariumRomanum
 
       # Produces the dump used for regression tests for the specified +year+.
       def regression_tests_dump(year)
-        sanctorale = Data::GENERAL_ROMAN_LATIN.load
+        sanctorale = Data::GENERAL_ROMAN.load
         calendar = Calendar.new(
           year,
           sanctorale,

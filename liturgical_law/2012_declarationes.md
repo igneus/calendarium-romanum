@@ -15,7 +15,7 @@ celebrabitur die 8 aprilis, scilicet feria II post Dominicam II Paschae, sicut
 ex editione typica tertia Missalis Romani patet.
 
 ```ruby
-calendar = CR::Calendar.new(2012, CR::Data::GENERAL_ROMAN_LATIN.load)
+calendar = CR::Calendar.new(2012, CR::Data::GENERAL_ROMAN.load)
 
 day = calendar[Date.new(2013, 4, 8)]
 expect(day.celebrations.first.symbol).to be :annunciation
@@ -31,7 +31,7 @@ Mariae Virginis celebrabitur die 9 decembris, feria II post Dominica
 II Adventus.
 
 ```ruby
-calendar = CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN_LATIN.load)
+calendar = CR::Calendar.new(2013, CR::Data::GENERAL_ROMAN.load)
 
 day = calendar[Date.new(2013, 12, 9)]
 expect(day.celebrations.first.symbol).to be :bvm_immaculate
