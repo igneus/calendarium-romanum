@@ -29,7 +29,7 @@ not specified - today
 2000-01       - month
 2000          - year
 EOS
-    option :calendar, default: Data::GENERAL_ROMAN_ENGLISH.siglum, aliases: :c, desc: 'sanctorale data file to use'
+    option :calendar, default: Data::GENERAL_ROMAN_ENGLISH.siglum, aliases: :c, desc: 'sanctorale data file to use (filesystem path or identifier of a bundled one)'
     option :locale, default: 'en', aliases: :l, desc: 'locale to use for localized strings'
     def query(date_str = nil)
       Querier
