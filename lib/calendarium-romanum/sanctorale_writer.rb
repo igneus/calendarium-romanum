@@ -85,9 +85,9 @@ module CalendariumRomanum
     # @param filename [String]
     # @param encoding [String]
     def write_to_file(sanctorale, filename, encoding = 'utf-8')
-      f = File.open(filename, 'w', encoding: encoding)
-      write(sanctorale, f)
-      f.close()
+      File.open(filename, 'w', encoding: encoding) do |f|
+        write(sanctorale, f)
+      end
     end
 
     private
