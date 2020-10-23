@@ -40,7 +40,6 @@ module CalendariumRomanum
       Colours::RED => 'R'
     }.freeze
 
-
     # Write to an object which understands +#<<+
     #
     # @param src [Sanctorale]
@@ -61,7 +60,7 @@ module CalendariumRomanum
       # Write each celebration, grouped by month with headings
       current_month = 0
       src.each_day.sort_by{ |date, _| date }.each do |date, celebrations|
-        if date.month > current_month 
+        if date.month > current_month
           current_month = date.month
           dest << "\n= #{current_month}\n"
         end
@@ -75,9 +74,7 @@ module CalendariumRomanum
       dest
     end
 
-
     alias write_to_string write
-
 
     # Write to a filesystem path
     #
