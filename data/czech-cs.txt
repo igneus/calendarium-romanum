@@ -9,8 +9,8 @@ country: cz
 = 1
 2 m basil_gregory : Sv. Basila Velikého a Řehoře Naziánského, biskupů a učitelů církve
 3 name_jesus : Nejsvětějšího Jména Ježíš
-7 raymond : sv. Rajmunda z Peñafortu, kněze
-13 hilary : sv. Hilaria, biskupa a učitele církve
+7 raymond : Sv. Rajmunda z Peñafortu, kněze
+13 hilary : Sv. Hilaria, biskupa a učitele církve
 17 m anthony_of_egypt : Sv. Antonína, opata
 18 m3.11 bvm_unity : Panny Marie, Matky jednoty křesťanů
 20 R fabian : Sv. Fabiána, papeže a mučedníka
@@ -143,7 +143,7 @@ country: cz
 
 = 8
 1 m alphonsus : Sv. Alfonsa Marie z Liguori, biskupa a učitele církve
-2 eusebius : sv. Eusebia z Vercelli, biskupa
+2 eusebius : Sv. Eusebia z Vercelli, biskupa
 2 eymard : Sv. Petra Juliána Eymarda, kněze
 4 m vianney : Sv. Jana Marie Vianneye, kněze
 5 mary_major : Posvěcení římské baziliky Panny Marie
@@ -233,7 +233,7 @@ country: cz
 13 m agnes_of_bohemia : Sv. Anežky České, panny
 15 albert : Sv. Alberta Velikého, biskupa a učitele církve
 16 margaret_of_scotland : Sv. Markéty Skotské
-16 gertrude : sv. Gertrudy, panny
+16 gertrude : Sv. Gertrudy, panny
 17 m elizabeth_of_hungary : Sv. Alžběty Uherské, řeholnice
 18 peter_paul_basilicas : Posvěcení římských bazilik svatých apoštolů Petra a Pavla
 21 m bvm_presentation : Zasvěcení Panny Marie v Jeruzalémě
