@@ -81,6 +81,7 @@ module CalendariumRomanum
     # @param sanctorale [Sanctorale]
     # @param filename [String]
     # @param encoding [String]
+    # @return [void]
     def write_to_file(sanctorale, filename, encoding = 'utf-8')
       File.open(filename, 'w', encoding: encoding) do |f|
         write(sanctorale, f)
