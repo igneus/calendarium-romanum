@@ -4,7 +4,11 @@ describe CalendariumRomanum::Enum do
   let(:enum_values) { [:a, :b] }
 
   let(:test_class) do
-    Class.new(described_class) { values { [:a, :b] } }
+    d = described_class
+    Class.new do
+      extend d
+      values { [:a, :b] }
+    end
   end
 
   describe '.all' do
@@ -36,7 +40,11 @@ describe CalendariumRomanum::Enum do
 
     describe 'indexed by a custom property' do
       let(:test_class) do
-        Class.new(described_class) { values(index_by: :to_s) { [1] } }
+        d = described_class
+        Class.new do
+          extend d
+          values(index_by: :to_s) { [1] }
+        end
       end
 
       it 'finds the element' do

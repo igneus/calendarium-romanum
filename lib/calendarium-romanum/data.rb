@@ -3,7 +3,8 @@ module CalendariumRomanum
   #
   # @example
   #   sanctorale = CalendariumRomanum::Data::GENERAL_ROMAN_LATIN.load
-  class Data < Enum
+  module Data
+    extend Enum
 
     class SanctoraleFile
       # This class is not intended to be initialized by client code -

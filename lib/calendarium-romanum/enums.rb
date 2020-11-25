@@ -33,7 +33,9 @@ module CalendariumRomanum
   end
 
   # Standard set of liturgical colours
-  class Colours < Enum
+  module Colours
+    extend Enum
+
     GREEN = Colour.new(:green)
     VIOLET = Colour.new(:violet)
     WHITE = Colour.new(:white)
@@ -74,7 +76,9 @@ module CalendariumRomanum
   end
 
   # Standard set of liturgical seasons
-  class Seasons < Enum
+  module Seasons
+    extend Enum
+
     ADVENT = Season.new(:advent, Colours::VIOLET)
     CHRISTMAS = Season.new(:christmas, Colours::WHITE)
     LENT = Season.new(:lent, Colours::VIOLET)
@@ -99,7 +103,9 @@ module CalendariumRomanum
   LECTIONARY_CYCLES = [:A, :B, :C].freeze
 
   # Celebration ranks as specified in the Table of Liturgical Days
-  class Ranks < Enum
+  module Ranks
+    extend Enum
+
     TRIDUUM           = Rank.new(1.1, 'rank.1_1')
     PRIMARY           = Rank.new(1.2, 'rank.1_2') # description may not be exact
     SOLEMNITY_GENERAL = Rank.new(1.3, 'rank.1_3', 'rank.short.solemnity') # description may not be exact
@@ -143,5 +149,17 @@ module CalendariumRomanum
         COMMEMORATION,
       ]
     end
+  end
+
+  # Convenience module containing all the colour, season and rank constants
+  # for easy including
+  #
+  # @example
+  #   include CalendariumRomanum::Constants
+  #   RED # now all the constants are available in current module
+  module Constants
+    include Colours
+    include Seasons
+    include Ranks
   end
 end
