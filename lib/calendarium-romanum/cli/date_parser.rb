@@ -1,5 +1,6 @@
 module CalendariumRomanum
   class CLI
+    # @api private
     class DateParser
       def self.parse(date_str)
         /(?<year>\d{4})([\/-](?<month>\d{1,2})([\/-](?<day>\d{1,2}))?)?/.match(date_str) do |m|

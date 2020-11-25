@@ -1,6 +1,8 @@
 module CalendariumRomanum
   class CLI
     # Compares two sanctorale data files, reports differences.
+    #
+    # @api private
     class Comparator
       include Helper
 

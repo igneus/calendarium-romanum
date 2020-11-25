@@ -3,6 +3,8 @@ module CalendariumRomanum
     # "Queries" a Calendar.
     # Builds liturgical calendar according to the specified options and
     # prints calendar entries for the specified period.
+    #
+    # @api private
     class Querier
       include Helper
 

@@ -1,6 +1,8 @@
 module CalendariumRomanum
   class CLI
     # Mixin providing helper methods used by multiple CLI-related classes.
+    #
+    # @api private
     module Helper
       def sanctorale_from_path(path)
         loader = SanctoraleLoader.new
