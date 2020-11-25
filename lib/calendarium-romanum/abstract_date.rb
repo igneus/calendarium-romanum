@@ -48,6 +48,7 @@ module CalendariumRomanum
       Date.new(year, month, day)
     end
 
+    # @since 0.8.0
     alias in_year concretize
 
     private

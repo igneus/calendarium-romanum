@@ -9,6 +9,8 @@ module CalendariumRomanum
   # For specification of the data format see {file:data/README.md}
   # of the data directory, For a complete example see e.g.
   # {file:universal-en.txt the file describing General Roman Calendar}.
+  #
+  # @since 0.8.0
   class SanctoraleWriter
 
     # @api private

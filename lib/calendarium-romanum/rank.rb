@@ -52,6 +52,7 @@ module CalendariumRomanum
     # Allows constructing ranges of ranks.
     #
     # @return [Rank]
+    # @since 0.8.0
     def succ
       all = CR::Ranks.all
       index = all.index(self)

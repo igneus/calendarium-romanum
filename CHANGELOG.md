@@ -1,5 +1,96 @@
 # Changelog
 
+## [0.8.0] 2020-11-25
+
+### Fixed
+
+- several fixes to the solemnity transfer rules:
+  - the algorithm was searching for free days only forwards,
+	but liturgical law assumes closest free day, even earlier
+  - check that two solemnities are not transferred to the same date,
+    overwriting one another
+  - the special rule on Annunciation from *Normae universales* 60
+	implemented
+- fixed bug in computation of the date of Baptism of the Lord if Epiphany
+  is transferred to Sunday
+- fixed bug in `Sanctorale#update` preventing more than one `Celebration`
+  with nil `#symbol` in a single `Sanctorale`
+- `CelebrationFactory` was setting `Celebration#date` (if not specified)
+  to false instead of expected nil (thus breaking type promises)
+- data: `czech-cs.txt`: typo fixed in the feast *symbol* of St. Bartholomew;
+  spelling of several feast titles corrected
+- data: `czech-cs.txt`: proof-read against official sources, feasts
+  of "BVM, Queen of Angels" and St. Teresa of Calcutta deleted
+  (they are not on the calendar of Czech and Moravian dioceses,
+  incorrect information was copied from Czech Wikipedia at the time
+  of the data file's creation)
+- data: all: Dedication of the Lateran Basilica is feast of the Lord
+  (had incorrect rank of a normal feast so far)
+- data: `universal-en.txt`: several inaccuracies concerning liturgical
+  colour fixed
+
+### Added
+
+- `liturgical_law/`: all documents of liturgical legislation
+  containing the liturgical calendar rules (original Latin text)
+  in Markdown format, with Ruby code examples proving that
+  the rules are implemented correctly;
+  the code examples are all executed as part of the gem's test suite
+- `SanctoraleWriter` (contributed by Mike Kasberg @mkasberg)
+- `PerpetualCalendar.new` accepts keyword argument `vespers`
+  (cf. `Calendar.new` argument of the same name)
+- `Rank#optional_memorial?`, `#obligatory_memorial?`
+- `AbstractDate#in_year` - more readable alias of `#concretize`
+- `Rank#succ` - (among other things) allows constructing `Range` of `Rank`s
+- `Calendar#transferred`
+- `Temporale::Extensions::DedicationBeforeAllSaints` defining the solemnity
+  of Aniversary of Dedication for churches celebrating it on the movable
+  date on the last October Sunday
+- `Temporale::Extensions.all` - method listing all Temporale extensions
+  defined by the gem
+- `Temporale#each_day`
+- `Temporale::EasterTable` - class handling a simple plaintext format
+  for tables of Easter dates
+- `Celebration.new`: new argument `sunday`
+- `SanctoraleLoader`: proper solemnities/feasts/memorials
+  can be specified also by adding suffix `p` to the rank code
+  (instead of rank priority number used so far),
+  similarly suffix `l` can be used to specify proper rank for
+  feasts of the Lord
+- data: `universal-1969-la.txt` - historical first version
+  of the General Roman Calendar
+- module `Constants` containing all the constants from `Colours`,
+  `Seasons` and `Ranks`
+
+### Changed
+
+- the gemspec now declares requirement of Ruby >= 2.0
+- `Calendar.new` can be called also without the `year` argument if `Temporale`
+  is provided (thus calling `Calendar.new(temporale, sanctorale)`
+  instead of `Calendar.new(year, sanctorale, temporale)`)
+- Easter Triduum is now dealt with as a separate `Season`,
+  because *Normae universales* 18-21 clearly set the Triduum apart from
+  both Lent and Eastertide
+- `Temporale::Extensions::ChristEternalPriest` specifies celebration
+  symbol (so far it was nil)
+- `Celebration.new` supports keyword arguments (as an alternative to
+  or even in combination with the positional ones)
+- `Temporale`: business logic guaranteeing that `Celebration#sunday?`
+  is true also for privileged Sundays (Advent, Lent)
+- `calendariumrom` executable: all subcommands dealing with sanctorale
+  data files accept special file name `-` and load sanctorale data
+  from stdin in that case
+- `Enum`, `Colours`, `Seasons`, `Ranks` and `Data` changed from classes
+  to modules
+
+### Acknowledgements
+
+Improvements not affecting the gem's public interface (and thus not listed
+in the changelog) contributed by
+
+- Ihor Voloshyn @Snick555
+- Dmitry Zhmurko @zhmurko
+
 ## [0.7.1] 2020-06-28
 
 ### Fixed

@@ -20,6 +20,8 @@ module CalendariumRomanum
       #   temporale = Temporale.new(2015, extensions: [
       #     Temporale::Extensions::DedicationBeforeAllSaints.new(title: 'Title', symbol: :symbol)
       #   ])
+      #
+      # @since 0.8.0
       class DedicationBeforeAllSaints
         DEFAULT_TITLE = proc { I18n.t('temporale.extension.dedication') }
         DEFAULT_SYMBOL = :dedication

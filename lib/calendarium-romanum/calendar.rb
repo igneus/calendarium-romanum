@@ -34,6 +34,7 @@ module CalendariumRomanum
     #     If not provided, the +Calendar+ will only know celebrations
     #     of the temporale cycle, no feasts of the saints!
     #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
+    #   @since 0.8.0
     #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
@@ -116,6 +117,7 @@ module CalendariumRomanum
     # due to occurrence with a higher-ranking celebration.
     #
     # @return [Hash<Date=>Celebration>]
+    # @since 0.8.0
     attr_reader :transferred
 
     # Do {Day} instances returned by this +Calendar+

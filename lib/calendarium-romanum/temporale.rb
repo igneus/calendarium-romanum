@@ -338,6 +338,7 @@ module CalendariumRomanum
     #
     # @yield [Date, Celebration]
     # @return [void, Enumerator] if called without a block, returns +Enumerator+
+    # @since 0.8.0
     def each_day
       return to_enum(__method__) unless block_given?
 

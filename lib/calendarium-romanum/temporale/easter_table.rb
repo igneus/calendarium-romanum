@@ -1,5 +1,6 @@
 module CalendariumRomanum
   class Temporale
+    # @since 0.8.0
     class EasterTable
       # Loads an Easter table from a String- or IO-like object +src+.
       # +src+ must contain Easter dates, parseable by +Date.parse+, one date per line.

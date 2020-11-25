@@ -157,6 +157,8 @@ module CalendariumRomanum
   # @example
   #   include CalendariumRomanum::Constants
   #   RED # now all the constants are available in current module
+  #
+  # @since 0.8.0
   module Constants
     include Colours
     include Seasons
