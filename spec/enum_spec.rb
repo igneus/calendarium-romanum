@@ -11,6 +11,19 @@ describe CalendariumRomanum::Enum do
     end
   end
 
+  it 'freezes all values' do
+    value = Object.new
+    expect(value).not_to be_frozen # make sure
+
+    d = described_class
+    test_enum = Class.new do
+      extend d
+      values { [value] }
+    end
+
+    expect(test_enum.all). to all(be_frozen)
+  end
+
   describe '.all' do
     it 'returns all values in the original order' do
       expect(test_class.all).to eq enum_values

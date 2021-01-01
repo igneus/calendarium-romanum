@@ -14,16 +14,14 @@ module CalendariumRomanum
     def values(index_by: nil)
       defined?(@indexed) && raise(RuntimeError.new('initialized repeatedly'))
 
-      @indexed = {}
       @all = yield.freeze
+      @all.each &:freeze
 
+      @indexed = {}
       @all.each_with_index do |val, i|
-        val.freeze
-
         key = index_by ? val.public_send(index_by) : i
         @indexed[key] = val
       end
-
       @indexed.freeze
     end
 
