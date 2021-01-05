@@ -171,6 +171,7 @@ module CalendariumRomanum
         AbstractDate.new(month, day),
         :sanctorale,
         has_vigil,
+        false,
         move_if_sunday
       )
     end

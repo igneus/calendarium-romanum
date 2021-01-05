@@ -210,6 +210,14 @@ module CalendariumRomanum
           # ignore range errors for the time being
           puts "ERROR: range error when generating vigils for date: #{date}"
         end
+
+        begin
+          evening = evening_on(date, celebrations)
+          celebrations.push(evening) unless evening.nil?
+        rescue RangeError
+          # ignore range errors for the time being
+          puts "ERROR: range error when generating evenings for date: #{date}"
+        end
       end
 
       s = @temporale.season(date)
@@ -369,6 +377,22 @@ module CalendariumRomanum
 
       if not c.nil? and c.respond_to?(:symbol)
         symbol = "#{c.symbol}_vigil".to_sym
+        c = c.change(
+          title: proc { I18n.t("#{c.cycle.to_s}.solemnity.#{symbol}") },
+          symbol: symbol
+        )
+      end
+
+      c
+    end
+    
+    def evening_on(date, celebrations)
+      c = celebrations.select do |e|
+        true if not e.nil? and e.has_evening
+      end.first
+
+      if not c.nil? and c.respond_to?(:symbol)
+        symbol = "#{c.symbol}_evening".to_sym
         c = c.change(
           title: proc { I18n.t("#{c.cycle.to_s}.solemnity.#{symbol}") },
           symbol: symbol
