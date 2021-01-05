@@ -1,3 +1,12 @@
+# [2.0.0](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v1.1.2...v2.0.0) (2021-01-05)
+
+
+### Features
+
+* Add Holy Thursday evening celebration ([916be39](https://github.com/Lumen-de-Lumine/calendarium-romanum/commit/916be39b1861bfedd09a5c52795c5b448ad50e8b))
+
+
+
 ## [1.1.2](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v1.1.1...v1.1.2) (2020-10-13)
 
 
