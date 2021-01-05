@@ -92,6 +92,11 @@ module CalendariumRomanum
       end
 
       # (see .nativity)
+      def self.holy_thursday(year)
+        easter_sunday(year) - 3
+      end
+
+      # (see .nativity)
       def self.good_friday(year)
         easter_sunday(year) - 2
       end

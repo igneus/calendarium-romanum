@@ -64,8 +64,8 @@ module CalendariumRomanum
       # with sensible defaults
       #
       # See {Celebration#initialize} for argument description.
-      def create_celebration(title, rank, colour, symbol: nil, date: nil, has_vigil: false, move_if_sunday: false)
-        Celebration.new(title, rank, colour, symbol, date, :temporale, has_vigil, move_if_sunday)
+      def create_celebration(title, rank, colour, symbol: nil, date: nil, has_vigil: false, has_evening: false, move_if_sunday: false)
+        Celebration.new(title, rank, colour, symbol, date, :temporale, has_vigil, has_evening, move_if_sunday)
       end
 
       C = Struct.new(:date_method, :celebration)
@@ -82,6 +82,7 @@ module CalendariumRomanum
               epiphany
               baptism_of_lord
               ash_wednesday
+              holy_thursday
               good_friday
               holy_saturday
               palm_sunday
@@ -165,6 +166,8 @@ module CalendariumRomanum
     # @!method baptism_of_lord
     #   @return [Date]
     # @!method ash_wednesday
+    #   @return [Date]
+    # @!method holy_thursday
     #   @return [Date]
     # @!method good_friday
     #   @return [Date]

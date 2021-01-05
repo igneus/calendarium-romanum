@@ -29,7 +29,7 @@ module CalendariumRomanum
           @celebrations ||= [:first_advent_sunday]
         end
 
-        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false, has_vigil: false, move_if_sunday: false)
+        def celebration(symbol, rank, colour = Colours::WHITE, fixed_date: false, has_vigil: false, has_evening: false, move_if_sunday: false)
           define_singleton_method(symbol) do
             Temporale.create_celebration(
               proc { I18n.t("temporale.solemnity.#{symbol}") },
@@ -38,6 +38,7 @@ module CalendariumRomanum
               symbol: symbol,
               date: fixed_date,
               has_vigil: has_vigil,
+              has_evening: has_evening,
               move_if_sunday: move_if_sunday
             )
           end
@@ -64,6 +65,9 @@ module CalendariumRomanum
       # @return [Celebration]
       # @!scope class
       celebration(:ash_wednesday, Ranks::PRIMARY, Colours::VIOLET)
+      # @return [Celebration]
+      # @!scope class
+      celebration(:holy_thursday, Ranks::TRIDUUM, Colours::VIOLET, has_evening: true)
       # @return [Celebration]
       # @!scope class
       celebration(:good_friday, Ranks::TRIDUUM, Colours::RED)
