@@ -71,10 +71,11 @@ EOS
     end
 
     desc 'merge FILE1 ...', 'loads sanctorale data files on top of each other, prints the resulting sanctorale'
+    option :front_matter, type: :boolean, desc: 'output YAML front matter'
     def merge(*files)
       sanctoralia = files.collect {|path| sanctorale_from_path path }
       merged = SanctoraleFactory.create_layered *sanctoralia
-      SanctoraleWriter.new.write merged, STDOUT
+      SanctoraleWriter.new(front_matter: options[:front_matter]).write merged, STDOUT
     end
 
     desc 'id FILE', 'print celebration identifiers found in a sanctorale data file'
