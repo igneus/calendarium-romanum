@@ -100,6 +100,13 @@ describe CR::SanctoraleWriter do
     it 'does not write YFM if no metadata is present' do
       expect(d.write_to_string(s)).to eq('')
     end
+
+    it 'does not write YFM if disabled by constructor option' do
+      d = described_class.new front_matter: false
+
+      s.metadata = {'foo' => 'bar'}
+      expect(d.write_to_string(s)).to eq ''
+    end
   end
 
   describe 'complete output' do

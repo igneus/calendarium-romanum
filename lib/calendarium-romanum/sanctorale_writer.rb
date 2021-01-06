@@ -42,6 +42,11 @@ module CalendariumRomanum
       Colours::RED => 'R'
     }.freeze
 
+    # @param front_matter [Boolean] Should YAML front matter be written?
+    def initialize(front_matter: true)
+      @write_front_matter = front_matter
+    end
+
     # Write to an object which understands +#<<+
     #
     # @param src [Sanctorale]
@@ -54,7 +59,7 @@ module CalendariumRomanum
       dest ||= String.new
 
       # Write metadata to YAML if present
-      unless src.metadata.nil? || src.metadata.empty?
+      unless (!@write_front_matter) || src.metadata.nil? || src.metadata.empty?
         dest << src.metadata.to_yaml
         dest << "---\n"
       end
