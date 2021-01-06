@@ -46,7 +46,7 @@ module CalendariumRomanum
         # @param year [Integer] liturgical year
         # @return [Date]
         def self.dedication(year)
-          Dates.sunday_before(Date.new(year + 1, 11, 1))
+          DateHelper.sunday_before(Date.new(year + 1, 11, 1))
         end
 
         def initialize(title: DEFAULT_TITLE, symbol: DEFAULT_SYMBOL)

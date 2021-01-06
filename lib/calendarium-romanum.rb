@@ -17,6 +17,7 @@ end
   day
   calendar
   perpetual_calendar
+  temporale/date_helper
   temporale/dates
   temporale/celebration_factory
   temporale/easter_table
