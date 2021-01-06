@@ -42,8 +42,8 @@ module CalendariumRomanum
       #   include CalendariumRomanum
       #
       #   my_sanctorale = SanctoraleFactory.load_layered_from_files(
-      #     'my_data/general_calendar.txt',
-      #     'my_data/particular_calendar.txt'
+      #     'data/czech-cs.txt',
+      #     'data/czech-cechy-cs.txt'
       #   )
       def load_layered_from_files(*paths)
         loader = SanctoraleLoader.new
