@@ -54,8 +54,12 @@ EOS
     end
 
     desc 'cmp FILE1 FILE2', 'detect differences between two sanctorale data files'
+    option :no_rank, type: :boolean, desc: 'ignore differences of rank'
+    option :no_colour, type: :boolean, desc: 'ignore differences of colour'
+    option :no_symbol, type: :boolean, desc: 'ignore differences of symbol'
     def cmp(a, b)
-      Comparator.new.call(a, b)
+      properties = Comparator::SUPPORTED_PROPERTIES.select {|i| !options["no_#{i}".to_sym] }
+      Comparator.new(properties).call(a, b)
     end
 
     desc 'merge FILE1 ...', 'loads sanctorale data files on top of each other, prints the resulting sanctorale'

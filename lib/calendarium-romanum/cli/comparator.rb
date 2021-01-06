@@ -1,3 +1,5 @@
+require 'set'
+
 module CalendariumRomanum
   class CLI
     # Compares two sanctorale data files, reports differences.
@@ -5,6 +7,16 @@ module CalendariumRomanum
     # @api private
     class Comparator
       include Helper
+
+      SUPPORTED_PROPERTIES = %i(rank colour symbol)
+
+      def initialize(properties = SUPPORTED_PROPERTIES)
+        unless Set.new(properties) <= Set.new(SUPPORTED_PROPERTIES)
+          raise ArgumentError.new("Unsupported properties specified: #{properties} Only #{SUPPORTED_PROPERTIES} are supported")
+        end
+
+        @properties = properties
+      end
 
       def call(path_a, path_b)
         paths = [path_a, path_b]
@@ -29,7 +41,7 @@ module CalendariumRomanum
               next
             end
 
-            differences = %i(rank colour symbol).select do |property|
+            differences = @properties.select do |property|
               ca.public_send(property) != cb.public_send(property)
             end
 

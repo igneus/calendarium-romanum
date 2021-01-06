@@ -66,8 +66,9 @@ describe CalendariumRomanum::CLI, type: :aruba do
         before(:each) do
           write_file 'cal1.txt', content1
           write_file 'cal2.txt', content2
-          run 'calendariumrom cmp cal1.txt cal2.txt'
+          run "calendariumrom cmp #{options} cal1.txt cal2.txt"
         end
+        let(:options) { '' }
 
         describe 'in rank' do
           let(:content1) { '1/11 : St. None, abbot' }
@@ -77,6 +78,17 @@ describe CalendariumRomanum::CLI, type: :aruba do
             expect(all_output).to include '1/11'
             expect(all_output).to include 'St. None, abbot'
             expect(all_output).to include 'differs in rank'
+            expect(last_command).to be_successfully_executed
+          end
+        end
+
+        describe 'in rank, but it is ignored' do
+          let(:options) { '--no-rank' }
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { '1/11 m : St. None, abbot' }
+
+          it do
+            expect(all_output).not_to include 'differs in rank'
             expect(last_command).to be_successfully_executed
           end
         end
