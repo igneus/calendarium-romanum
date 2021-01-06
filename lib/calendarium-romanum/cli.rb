@@ -42,7 +42,7 @@ EOS
       Data.each {|c| puts c.siglum }
     end
 
-    desc 'errors FILE1, ...', 'find errors in sanctorale data files'
+    desc 'errors FILE1 ...', 'find errors in sanctorale data files'
     def errors(*files)
       files.each do |path|
         begin
@@ -53,7 +53,7 @@ EOS
       end
     end
 
-    desc 'cmp FILE1, FILE2', 'detect differences between two sanctorale data files'
+    desc 'cmp FILE1 FILE2', 'detect differences between two sanctorale data files'
     def cmp(a, b)
       Comparator.new.call(a, b)
     end
