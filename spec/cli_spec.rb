@@ -119,6 +119,23 @@ describe CalendariumRomanum::CLI, type: :aruba do
       end
     end
 
+    describe 'merge' do
+      before(:each) do
+        write_file 'cal1.txt', content1
+        write_file 'cal2.txt', content2
+        run 'calendariumrom merge cal1.txt cal2.txt'
+      end
+
+      describe 'merges the two calendars' do
+        let(:content1) { "1/11 : St. None, abbot\n1/12 : St. Nulla, abbess" }
+        let(:content2) { "1/12 : St. Some\n1/13 : St. Other" }
+
+        it do
+          expect(all_output).to end_with "= 1\n11 : St. None, abbot\n12 : St. Some\n13 : St. Other\n"
+        end
+      end
+    end
+
     describe 'query' do
       describe 'invalid data file from file system' do
         before(:each) do

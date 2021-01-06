@@ -58,6 +58,13 @@ EOS
       Comparator.new.call(a, b)
     end
 
+    desc 'merge FILE1 ...', 'loads sanctorale data files on top of each other, prints the resulting sanctorale'
+    def merge(*files)
+      sanctoralia = files.collect {|path| sanctorale_from_path path }
+      merged = SanctoraleFactory.create_layered *sanctoralia
+      SanctoraleWriter.new.write merged, STDOUT
+    end
+
     desc 'id FILE', 'print celebration identifiers found in a sanctorale data file'
     def id(file)
       sanctorale_from_path(file).each_day do |_, celebrations|
