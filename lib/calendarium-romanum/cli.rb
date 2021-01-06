@@ -57,8 +57,16 @@ EOS
     option :no_rank, type: :boolean, desc: 'ignore differences of rank'
     option :no_colour, type: :boolean, desc: 'ignore differences of colour'
     option :no_symbol, type: :boolean, desc: 'ignore differences of symbol'
+    option :title, type: :boolean, desc: 'report differences of title'
     def cmp(a, b)
-      properties = Comparator::SUPPORTED_PROPERTIES.select {|i| !options["no_#{i}".to_sym] }
+      properties = Comparator::DEFAULT_PROPERTIES
+      options.each_key do |k|
+        if k.start_with? 'no_'
+          properties.delete k.sub('no_', '').to_sym
+        else
+          properties << k.to_sym
+        end
+      end
       Comparator.new(properties).call(a, b)
     end
 

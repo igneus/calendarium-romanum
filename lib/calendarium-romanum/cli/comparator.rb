@@ -8,9 +8,10 @@ module CalendariumRomanum
     class Comparator
       include Helper
 
-      SUPPORTED_PROPERTIES = %i(rank colour symbol)
+      SUPPORTED_PROPERTIES = %i(rank colour symbol title)
+      DEFAULT_PROPERTIES = SUPPORTED_PROPERTIES - %i(title)
 
-      def initialize(properties = SUPPORTED_PROPERTIES)
+      def initialize(properties = DEFAULT_PROPERTIES)
         unless Set.new(properties) <= Set.new(SUPPORTED_PROPERTIES)
           raise ArgumentError.new("Unsupported properties specified: #{properties} Only #{SUPPORTED_PROPERTIES} are supported")
         end

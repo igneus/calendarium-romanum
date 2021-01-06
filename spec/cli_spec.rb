@@ -105,6 +105,27 @@ describe CalendariumRomanum::CLI, type: :aruba do
           end
         end
 
+        describe 'in title, but it is ignored by default' do
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { '1/11 : St. None, monk' }
+
+          it do
+            expect(all_output).not_to include 'differs'
+            expect(last_command).to be_successfully_executed
+          end
+        end
+
+        describe 'in title, and comparing it is enabled' do
+          let(:content1) { '1/11 : St. None, abbot' }
+          let(:content2) { '1/11 : St. None, monk' }
+          let(:options) { '--title' }
+
+          it do
+            expect(all_output).to include 'differs in title'
+            expect(last_command).to be_successfully_executed
+          end
+        end
+
         describe 'in optional memorial count' do
           let(:content1) { '1/11 : St. None, abbot' }
           let(:content2) { "1/11 : St. None, abbot\n1/11 : St. Nulla, abbess" }
