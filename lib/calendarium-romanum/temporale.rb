@@ -308,7 +308,9 @@ module CalendariumRomanum
     # @return [Celebration]
     # @since 0.6.0
     def [](date)
-      @solemnities[date] || @feasts[date] || sunday(date) || @memorials[date] || ferial(date)
+      sw = season_and_week(date)
+
+      @solemnities[date] || @feasts[date] || sunday(date, sw) || @memorials[date] || ferial(date, sw)
     end
 
     # Retrieve temporale celebration for the given day
@@ -359,30 +361,42 @@ module CalendariumRomanum
 
     private
 
+    SeasonWeek = Struct.new(:season, :week)
+    private_constant :SeasonWeek
+
+    def season_and_week(date)
+      s = season(date)
+      w = season_week(s, date)
+
+      SeasonWeek.new(s, w)
+    end
+
     # seasons when Sundays have higher rank
     SEASONS_SUNDAY_PRIMARY = [Seasons::ADVENT, Seasons::LENT, Seasons::EASTER].freeze
 
-    def sunday(date)
+    def sunday(date, season_week)
       return nil unless date.sunday?
 
-      seas = season date
       rank = Ranks::SUNDAY_UNPRIVILEGED
-      if SEASONS_SUNDAY_PRIMARY.include?(seas)
+      if SEASONS_SUNDAY_PRIMARY.include?(season_week.season)
         rank = Ranks::PRIMARY
       end
 
-      week = Ordinalizer.ordinal season_week(seas, date)
-      title = I18n.t "temporale.#{seas.to_sym}.sunday", week: week
+      week = Ordinalizer.ordinal season_week.week
+      title = I18n.t "temporale.#{season_week.season.to_sym}.sunday", week: week
 
-      self.class.create_celebration title, rank, seas.colour, sunday: true
+      self.class.create_celebration title, rank, season_week.season.colour, sunday: true
     end
 
-    def ferial(date)
-      seas = season date
-      week = season_week(seas, date)
+    def ferial(date, season_week = nil)
+      # Normally +season_week+ is provided, but the method is once called also from Calendar
+      # and we definitely don't want Calendar to care that much about Temporale internals
+      # So as to know how to retrieve the value, so in that case we provide it ourselves.
+      season_week ||= season_and_week(date)
+
       rank = Ranks::FERIAL
       title = nil
-      case seas
+      case season_week.season
       when Seasons::ADVENT
         if date >= Date.new(@year, 12, 17)
           rank = Ranks::FERIAL_PRIVILEGED
@@ -399,7 +413,7 @@ module CalendariumRomanum
           title = I18n.t 'temporale.christmas.after_epiphany.ferial', weekday: I18n.t("weekday.#{date.wday}")
         end
       when Seasons::LENT
-        if week == 0
+        if season_week.week == 0
           title = I18n.t 'temporale.lent.after_ashes.ferial', weekday: I18n.t("weekday.#{date.wday}")
         elsif date > palm_sunday
           rank = Ranks::PRIMARY
@@ -407,16 +421,16 @@ module CalendariumRomanum
         end
         rank = Ranks::FERIAL_PRIVILEGED unless rank > Ranks::FERIAL_PRIVILEGED
       when Seasons::EASTER
-        if week == 1
+        if season_week.week == 1
           rank = Ranks::PRIMARY
           title = I18n.t 'temporale.easter.octave.ferial', weekday: I18n.t("weekday.#{date.wday}")
         end
       end
 
-      week_ord = Ordinalizer.ordinal week
-      title ||= I18n.t "temporale.#{seas.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
+      week_ord = Ordinalizer.ordinal season_week.week
+      title ||= I18n.t "temporale.#{season_week.season.to_sym}.ferial", week: week_ord, weekday: I18n.t("weekday.#{date.wday}")
 
-      self.class.create_celebration title, rank, seas.colour
+      self.class.create_celebration title, rank, season_week.season.colour
     end
 
     # helper: difference between two Dates in days
