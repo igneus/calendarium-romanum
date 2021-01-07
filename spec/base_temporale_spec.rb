@@ -180,8 +180,35 @@ describe CR::BaseTemporale do
       end
     end
 
+    describe 'custom seasons' do
+      it 'is used' do
+        single_season = CR::Season.new(:single, nil) { true }
+        cls = Class.new(described_class) do
+          set_seasons [single_season]
+        end
+
+        t = cls.new year
+        t.date_range.each do |date|
+          expect(t.season(date)).to be single_season
+        end
+      end
+
+      it 'is passed on through inheritance' do
+        single_season = CR::Season.new(:single, nil) { true }
+        cls = Class.new(described_class) do
+          set_seasons [single_season]
+        end
+        child_cls = Class.new(cls)
+
+        t = child_cls.new year
+        t.date_range.each do |date|
+          expect(t.season(date)).to be single_season
+        end
+      end
+    end
+
     describe 'default settings' do
-      xit 'deals with whole year' do
+      it 'deals with whole year' do
         described_class.new(2000).each_day do |date, celebration|
           expect(date).to be_a Date
           expect(celebration).to be_a CR::Celebration

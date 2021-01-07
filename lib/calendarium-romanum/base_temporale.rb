@@ -27,6 +27,13 @@ module CalendariumRomanum
         )
       end
 
+      # @return [Array<Season>]
+      def seasons
+        @seasons ||
+          (superclass.respond_to?(:seasons) && superclass.seasons) ||
+          CR::Seasons.all
+      end
+
       private
 
       C = Struct.new(:date_method, :celebration)
@@ -55,6 +62,10 @@ module CalendariumRomanum
       # Call in class body to set custom celebration factory
       def celebration_factory(factory)
         @celebration_factory = factory
+      end
+
+      def set_seasons(ary)
+        @seasons = ary
       end
 
       # @api private
@@ -123,7 +134,10 @@ module CalendariumRomanum
     end
 
     def season(date)
-      Seasons::LENT
+      r = self.class.seasons.find {|s| s.include? date, self }
+      raise RuntimeError.new("No season found for #{date}") if r.nil?
+
+      r
     end
 
     def season_week(season, date)
