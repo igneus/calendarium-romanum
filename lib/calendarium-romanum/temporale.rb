@@ -42,9 +42,8 @@ module CalendariumRomanum
       # @return [Integer]
       def liturgical_year(date)
         year = date.year
-        temporale = Temporale.new year
 
-        if date < temporale.first_advent_sunday
+        if date < Dates.first_advent_sunday(year)
           return year - 1
         end
 
