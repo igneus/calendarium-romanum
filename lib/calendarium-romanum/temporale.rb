@@ -266,7 +266,7 @@ module CalendariumRomanum
         good_friday
       when Seasons::EASTER
         easter_sunday + 1
-      when Seasons::ORDINARY # ordinary time
+      when Seasons::ORDINARY
         baptism_of_lord + 1
       else
         raise ArgumentError.new('unsupported season')
