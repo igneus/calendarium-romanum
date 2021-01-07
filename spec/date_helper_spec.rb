@@ -58,4 +58,15 @@ describe CR::Temporale::DateHelper do
       end
     end
   end
+
+  describe '.octave_of' do
+    [
+      ['within a month', Date.new(2000, 1, 1), Date.new(2000, 1, 8)],
+      ['over month boundaries', Date.new(2000, 1, 31), Date.new(2000, 2, 7)],
+    ].each do |name, given, expected|
+      it name do
+        expect(described_class.octave_of(given)).to eq expected
+      end
+    end
+  end
 end
