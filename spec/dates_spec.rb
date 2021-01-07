@@ -3,6 +3,16 @@ require_relative 'spec_helper'
 describe CR::Temporale::Dates do
   let(:today) { Date.new 2014, 3, 16 }
 
+  describe 'usage as mixin' do
+    it 'can be included and provides all the solemnity date methods' do
+      m = Module.new
+      expect(m.public_instance_methods).not_to include :easter_sunday # make sure
+
+      m.include described_class
+      expect(m.public_instance_methods).to include :easter_sunday
+    end
+  end
+
   describe '.easter_sunday' do
     describe 'computed results match known Easter dates' do
       table = nil
