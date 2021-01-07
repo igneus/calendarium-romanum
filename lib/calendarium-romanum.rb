@@ -26,6 +26,7 @@ require 'date'
   temporale/extensions
   temporale/extensions/christ_eternal_priest
   temporale/extensions/dedication_before_all_saints
+  base_temporale
   temporale
   sanctorale
   sanctorale_loader
