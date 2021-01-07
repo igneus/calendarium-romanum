@@ -71,13 +71,13 @@ module CalendariumRomanum
       # @api private
       def celebration_dates_provider
         @celebration_dates_provider ||
-          CR::Temporale::Dates
+          Temporale::Dates
       end
 
       # @api private
       def get_celebration_factory
         @celebration_factory ||
-          CR::Temporale::CelebrationFactory
+          Temporale::CelebrationFactory
       end
     end
 
@@ -94,14 +94,14 @@ module CalendariumRomanum
     #
     # @return [Date]
     def start_date
-      CR::Temporale::Dates.first_advent_sunday(year)
+      Temporale::Dates.first_advent_sunday(year)
     end
 
     # Last day of the liturgical year
     #
     # @return [Date]
     def end_date
-      CR::Temporale::Dates.first_advent_sunday(year + 1) - 1
+      Temporale::Dates.first_advent_sunday(year + 1) - 1
     end
 
     # Date range of the liturgical year
