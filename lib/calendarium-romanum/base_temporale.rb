@@ -50,7 +50,11 @@ module CalendariumRomanum
 
         # Define instance method returning the celebration's date for the given year
         define_method symbol do
-          date_callable.call year
+          if date_callable.is_a? Proc
+            instance_eval &date_callable
+          else
+            date_callable.call year
+          end
         end
       end
 
@@ -230,7 +234,12 @@ module CalendariumRomanum
     end
 
     def prepare_celebration_date(date_callable, celebration)
-      date = date_callable.call(year)
+      date =
+        if date_callable.is_a? Proc
+          instance_eval &date_callable
+        else
+          date_callable.call(year)
+        end
 
       add_to =
         if celebration.feast?

@@ -4,7 +4,6 @@ module CalendariumRomanum
   # Handles seasons and celebrations of the temporale cycle
   # for a given liturgical year.
   class Temporale < BaseTemporale
-    set_seasons Seasons.all
 
     # How many days in a week
     WEEK = 7
@@ -12,6 +11,92 @@ module CalendariumRomanum
     # Which solemnities can be transferred to Sunday
     SUNDAY_TRANSFERABLE_SOLEMNITIES =
       %i(epiphany ascension corpus_christi).freeze
+
+    set_seasons Seasons.all
+    celebration_dates Temporale::Dates
+
+    # @!method nativity
+    #   @return [Date]
+    celebration :nativity
+
+    # @!method holy_family
+    #   @return [Date]
+    celebration :holy_family
+
+    # @!method mother_of_god
+    #   @return [Date]
+    celebration :mother_of_god
+
+    # @!method epiphany
+    #   @return [Date]
+    celebration :epiphany, date: proc { Dates.epiphany(year, sunday: transferred_to_sunday?(:epiphany)) }
+
+    # @!method baptism_of_lord
+    #   @return [Date]
+    celebration :baptism_of_lord, date: proc { Dates.baptism_of_lord(year, epiphany_on_sunday: transferred_to_sunday?(:epiphany)) }
+
+    # @!method ash_wednesday
+    #   @return [Date]
+    celebration :ash_wednesday
+
+    # @!method good_friday
+    #   @return [Date]
+    celebration :good_friday
+
+    # @!method holy_saturday
+    #   @return [Date]
+    celebration :holy_saturday
+
+    # @!method palm_sunday
+    #   @return [Date]
+    celebration :palm_sunday
+
+    # @!method easter_sunday
+    #   @return [Date]
+    celebration :easter_sunday
+
+    # @!method ascension
+    #   @return [Date]
+    celebration :ascension, date: proc { Dates.ascension(year, sunday: transferred_to_sunday?(:ascension)) }
+
+    # @!method pentecost
+    #   @return [Date]
+    celebration :pentecost
+
+    # @!method holy_trinity
+    #   @return [Date]
+    celebration :holy_trinity
+
+    # @!method corpus_christi
+    #   @return [Date]
+    celebration :corpus_christi, date: proc { Dates.corpus_christi(year, sunday: transferred_to_sunday?(:corpus_christi)) }
+
+    # @!method sacred_heart
+    #   @return [Date]
+    celebration :sacred_heart
+
+    # @!method christ_king
+    #   @return [Date]
+    celebration :christ_king
+
+    # Immaculate Heart of Mary and Mary, Mother of the Church
+    # are actually movable *sanctorale* feasts,
+    # but as it would make little sense
+    # to add support for movable sanctorale feasts because of
+    # two, we cheat a bit and handle them in temporale.
+
+    # @!method mother_of_church
+    #   @return [Date]
+    celebration :mother_of_church
+
+    # @!method immaculate_heart
+    #   @return [Date]
+    celebration :immaculate_heart
+
+    # @return [Date]
+    def first_advent_sunday
+      Dates.public_send __method__, year
+    end
 
     # @param year [Integer]
     #   the civil year when the liturgical year _begins_
@@ -22,13 +107,11 @@ module CalendariumRomanum
     #   Sunday - see {SUNDAY_TRANSFERABLE_SOLEMNITIES}
     #   for possible values
     def initialize(year, extensions: [], transfer_to_sunday: [])
-      @year = year
-
       @extensions = extensions
       @transfer_to_sunday = transfer_to_sunday.sort
       validate_sunday_transfer!
 
-      prepare_solemnities
+      super year
     end
 
     # @return [Integer]
@@ -73,47 +156,6 @@ module CalendariumRomanum
           sunday: sunday
         )
       end
-
-      C = Struct.new(:date_method, :celebration)
-      private_constant :C
-
-      # @api private
-      def celebrations
-        @celebrations ||=
-          begin
-            %i(
-              nativity
-              holy_family
-              mother_of_god
-              epiphany
-              baptism_of_lord
-              ash_wednesday
-              good_friday
-              holy_saturday
-              palm_sunday
-              easter_sunday
-              ascension
-              pentecost
-              holy_trinity
-              corpus_christi
-              mother_of_church
-              sacred_heart
-              christ_king
-              immaculate_heart
-            ).collect do |symbol|
-              date_method = symbol
-              C.new(
-                date_method,
-                CelebrationFactory.public_send(symbol)
-              )
-            end
-            # Immaculate Heart of Mary and Mary, Mother of the Church
-            # are actually movable *sanctorale* feasts,
-            # but as it would make little sense
-            # to add support for movable sanctorale feasts because of
-            # two, we cheat a bit and handle them in temporale.
-          end
-      end
     end
 
     # Does this instance transfer the specified solemnity to Sunday?
@@ -157,61 +199,6 @@ module CalendariumRomanum
 
       unless date_range.include? date
         raise RangeError.new "Date out of range #{date}"
-      end
-    end
-
-    # @!method nativity
-    #   @return [Date]
-    # @!method holy_family
-    #   @return [Date]
-    # @!method mother_of_god
-    #   @return [Date]
-    # @!method epiphany
-    #   @return [Date]
-    # @!method baptism_of_lord
-    #   @return [Date]
-    # @!method ash_wednesday
-    #   @return [Date]
-    # @!method good_friday
-    #   @return [Date]
-    # @!method holy_saturday
-    #   @return [Date]
-    # @!method palm_sunday
-    #   @return [Date]
-    # @!method easter_sunday
-    #   @return [Date]
-    # @!method ascension
-    #   @return [Date]
-    # @!method pentecost
-    #   @return [Date]
-    # @!method holy_trinity
-    #   @return [Date]
-    # @!method corpus_christi
-    #   @return [Date]
-    # @!method mother_of_church
-    #   @return [Date]
-    # @!method sacred_heart
-    #   @return [Date]
-    # @!method christ_king
-    #   @return [Date]
-    # @!method immaculate_heart
-    #   @return [Date]
-    # @!method first_advent_sunday
-    #   @return [Date]
-    (celebrations.collect(&:date_method) + [:first_advent_sunday])
-      .each do |feast|
-      if SUNDAY_TRANSFERABLE_SOLEMNITIES.include? feast
-        define_method feast do
-          Dates.public_send feast, year, sunday: transferred_to_sunday?(feast)
-        end
-      elsif feast == :baptism_of_lord
-        define_method feast do
-          Dates.public_send feast, year, epiphany_on_sunday: transferred_to_sunday?(:epiphany)
-        end
-      else
-        define_method feast do
-          Dates.public_send feast, year
-        end
       end
     end
 
@@ -417,43 +404,20 @@ module CalendariumRomanum
 
     # prepare dates of temporale solemnities
     def prepare_solemnities
-      @solemnities = {}
-      @feasts = {}
-      @memorials = {}
-
-      self.class.celebrations.each do |c|
-        prepare_celebration_date c.date_method, c.celebration
-      end
+      super
 
       @extensions.each do |extension|
         extension.each_celebration do |date_method, celebration|
-          date_proc = date_method
-          if date_method.is_a? Symbol
-            date_proc = extension.method(date_method)
-          end
+          date_proc =
+            if date_method.is_a? Symbol
+              date_proc = extension.method(date_method)
+            else
+              proc { date_method.call(year) }
+            end
 
           prepare_celebration_date date_proc, celebration
         end
       end
-    end
-
-    def prepare_celebration_date(date_method, celebration)
-      date =
-        if date_method.respond_to? :call
-          date_method.call(year)
-        else
-          public_send(date_method)
-        end
-
-      add_to =
-        if celebration.feast?
-          @feasts
-        elsif celebration.memorial?
-          @memorials
-        else
-          @solemnities
-        end
-      add_to[date] = celebration
     end
 
     def validate_sunday_transfer!

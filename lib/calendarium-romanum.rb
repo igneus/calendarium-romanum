@@ -21,9 +21,9 @@ require 'date'
   perpetual_calendar
   base_temporale
   temporale/celebration_factory
-  temporale
   temporale/date_helper
   temporale/dates
+  temporale
   temporale/easter_table
   temporale/extensions
   temporale/extensions/christ_eternal_priest
