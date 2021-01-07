@@ -88,7 +88,7 @@ module CalendariumRomanum
     end
 
     def dates_around(date)
-      return to_enum(:dates_around, date) unless block_given?
+      return to_enum(__method__, date) unless block_given?
 
       1.upto(100) do |i|
         yield date + i
