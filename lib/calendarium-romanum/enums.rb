@@ -88,11 +88,21 @@ module CalendariumRomanum
   module Seasons
     extend Enum
 
-    ADVENT = Season.new(:advent, Colours::VIOLET)
-    CHRISTMAS = Season.new(:christmas, Colours::WHITE)
-    LENT = Season.new(:lent, Colours::VIOLET)
-    TRIDUUM = Season.new(:triduum, nil)
-    EASTER = Season.new(:easter, Colours::WHITE)
+    ADVENT = Season.new(:advent, Colours::VIOLET) do |date, temporale|
+      temporale.first_advent_sunday <= date && temporale.nativity > date
+    end
+    CHRISTMAS = Season.new(:christmas, Colours::WHITE) do |date, temporale|
+      temporale.nativity <= date && temporale.baptism_of_lord >= date
+    end
+    LENT = Season.new(:lent, Colours::VIOLET) do |date, temporale|
+      temporale.ash_wednesday <= date && temporale.good_friday > date
+    end
+    TRIDUUM = Season.new(:triduum, nil) do |date, temporale|
+      temporale.good_friday <= date && temporale.easter_sunday >= date
+    end
+    EASTER = Season.new(:easter, Colours::WHITE) do |date, temporale|
+      temporale.easter_sunday < date && temporale.pentecost >= date
+    end
     ORDINARY = Season.new(:ordinary, Colours::GREEN) { true }
 
     values(index_by: :symbol) do

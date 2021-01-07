@@ -3,7 +3,8 @@ module CalendariumRomanum
   # One of the two main {Calendar} components.
   # Handles seasons and celebrations of the temporale cycle
   # for a given liturgical year.
-  class Temporale
+  class Temporale < BaseTemporale
+    set_seasons Seasons.all
 
     # How many days in a week
     WEEK = 7
@@ -223,29 +224,7 @@ module CalendariumRomanum
     def season(date)
       range_check date
 
-      if first_advent_sunday <= date &&
-         nativity > date
-        Seasons::ADVENT
-
-      elsif nativity <= date &&
-            baptism_of_lord >= date
-        Seasons::CHRISTMAS
-
-      elsif ash_wednesday <= date &&
-            good_friday > date
-        Seasons::LENT
-
-      elsif good_friday <= date &&
-            easter_sunday >= date
-        Seasons::TRIDUUM
-
-      elsif easter_sunday < date &&
-            pentecost >= date
-        Seasons::EASTER
-
-      else
-        Seasons::ORDINARY
-      end
+      super date
     end
 
     # When the specified liturgical season begins

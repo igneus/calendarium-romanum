@@ -31,7 +31,7 @@ module CalendariumRomanum
       def seasons
         @seasons ||
           (superclass.respond_to?(:seasons) && superclass.seasons) ||
-          CR::Seasons.all
+          [Season.new(nil, nil) { true }]
       end
 
       private
