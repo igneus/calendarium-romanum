@@ -4,6 +4,8 @@
 module CalendariumRomanum
 end
 
+require 'date'
+
 %w(
   version
   i18n_setup

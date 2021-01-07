@@ -1,5 +1,3 @@
-require 'date'
-
 module CalendariumRomanum
 
   # One of the two main {Calendar} components.
