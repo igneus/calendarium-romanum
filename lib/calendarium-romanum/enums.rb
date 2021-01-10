@@ -154,9 +154,13 @@ module CalendariumRomanum
   # Convenience module containing all the colour, season and rank constants
   # for easy including
   #
+  # Caveat: there is both a {Season} and a {Rank} with the identifier +TRIDUUM+.
+  # Due to this name clash, only the {Rank} is easily accessible
+  # using the {Constants} module.
+  #
   # @example
   #   include CalendariumRomanum::Constants
-  #   RED # now all the constants are available in current module
+  #   RED # now all the constants are available in the current module
   #
   # @since 0.8.0
   module Constants
