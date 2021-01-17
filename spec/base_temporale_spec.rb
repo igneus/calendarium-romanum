@@ -216,4 +216,14 @@ describe CR::BaseTemporale do
       end
     end
   end
+
+  describe 'compatibility with Calendar' do
+    it 'works if passed to Calendar as temporale' do
+      temporale = described_class.new year
+      calendar = CR::Calendar.new temporale
+      expect(calendar.temporale).to be temporale # make sure
+
+      expect(calendar[Date.new(2001, 1, 1)]).to be_a CR::Day
+    end
+  end
 end

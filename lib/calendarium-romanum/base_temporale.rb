@@ -115,6 +115,21 @@ module CalendariumRomanum
       start_date .. end_date
     end
 
+    # Check that the date belongs to the liturgical year.
+    # If it does not, throw exception.
+    #
+    # @param date [Date]
+    # @return [void]
+    # @raise [RangeError]
+    def range_check(date)
+      # necessary in order to handle Date correctly
+      date = date.to_date if date.class != Date
+
+      unless date_range.include? date
+        raise RangeError.new "Date out of range #{date}"
+      end
+    end
+
     # Retrieve temporale celebration for the given day
     #
     # @param date [Date]
