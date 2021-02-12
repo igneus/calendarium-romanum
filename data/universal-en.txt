@@ -69,6 +69,7 @@ locale: en
 1 joseph_worker : Saint Joseph the Worker
 2 m athanasius : Saint Athanasius, Bishop and Doctor of the Church
 3 f R philip_james : Saints Philip and James, Apostles
+10 john_of_avila : Saint John of Avila, Priest and Doctor of the Church
 12 R nereus_achilleus : Saints Nereus and Achilleus, Martyrs
 12 R pancras : Saint Pancras, Martyr
 13 bvm_fatima : Our Lady of Fatima

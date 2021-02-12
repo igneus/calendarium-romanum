@@ -17,6 +17,7 @@ extends:
 
 3/3 drexel : Saint Katharine Drexel, Virgin
 
+5/10 john_of_avila : Saint John of Avila, Priest and Doctor of the Church
 5/10 de_veuster : Saint Damien de Veuster, Priest
 5/15 isidore_the_farmer : Saint Isidore
 
