@@ -35,9 +35,8 @@ RSpec::Matchers.define :have_translation do |expected, locale|
   end
 end
 
-require 'calendarium-romanum'
+require 'calendarium-romanum/cr'
 require 'calendarium-romanum/cli'
-CR = CalendariumRomanum
 
 I18n.enforce_available_locales = true
 I18n.locale = ENV['LOCALE'] || :en
