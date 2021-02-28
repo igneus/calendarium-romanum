@@ -122,7 +122,7 @@ locale: la
 24 sharbel : S. Sarbelii Makhlūf, presbyteri
 25 f R james :  S. Iacobi, apostoli
 26 m joachim_anne :  Ss. Ioachim et Annae, parentum B. Mariae Virginis
-29 m martha :  S. Marthae
+29 m martha : Ss. Marthae, Mariae et Lazari
 30 peter_chrysologus : S. Petri Chrysologi, episcopi et Ecclesiae doctoris
 31 m ignatius_of_loyola :  S. Ignatii de Loyola, presbyteri
 

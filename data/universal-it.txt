@@ -121,7 +121,7 @@ locale: it
 24 sharbel : San Charbel Makhlouf, eremita
 25 f R james : San Giacomo, apostolo
 26 m joachim_anne : Santi Gioacchino ed Anna, genitori della Beata Vergine Maria
-29 m martha : Santa Marta
+29 m martha : Santi Marta, Maria e Lazzaro
 30 peter_chrysologus : San Pietro Crisologo, vescovo e dottore della Chiesa
 31 m ignatius_of_loyola : Sant'Ignazio di Loyola, sacerdote
 

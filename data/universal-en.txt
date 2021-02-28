@@ -122,7 +122,7 @@ locale: en
 24 sharbel : Saint Sharbel Makhluf, hermit
 25 f R james : Saint James, apostle
 26 m joachim_anne : Saints Joachim and Anne
-29 m martha : Saint Martha
+29 m martha : Saints Martha, Mary and Lazarus
 30 peter_chrysologus : Saint Peter Chrysologus, bishop and doctor
 31 m ignatius_of_loyola : Saint Ignatius of Loyola, priest
 
