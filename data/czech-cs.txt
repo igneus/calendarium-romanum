@@ -38,6 +38,7 @@ country: cz
 21 peter_damian : Sv. Petra Damianiho, biskupa a učitele církve
 22 f chair_of_peter : Stolce svatého Petra, apoštola
 23 m R polycarp : Sv. Polykarpa, biskupa a mučedníka
+27 gregory_of_narek : Sv. Řehoře z Nareku, opata a učitele církve
 
 = 3
 4 casimir : Sv. Kazimíra
@@ -75,6 +76,7 @@ country: cz
 3 f R philip_james : Sv. Filipa a Jakuba, apoštolů
 6 R sarkander : Sv. Jana Sarkandra, kněze a mučedníka
 8 bvm_mediatrix : Panny Marie, Prostřednice všech milostí
+10 john_de_avila : Sv. Jana z Avily, kněze a učitele církve
 12 R nereus_achilleus : Sv. Nerea a Achillea, mučedníků
 12 R pancras : Sv. Pankráce, mučedníka
 13 bvm_fatima : Panny Marie Fatimské
@@ -185,6 +187,7 @@ country: cz
 16 R ludmila : Sv. Ludmily, mučednice
 17 R cornelius_cyprian : Sv. Kornélia, papeže, a Cypriána, biskupa, mučedníků
 17 bellarmine : Sv. Roberta Bellarmina, biskupa a učitele církve
+17 hildegard : Sv. Hildegardy z Bingen, panny a učitelky církve
 19 R januarius : Sv. Januária, biskupa a mučedníka
 20 m R korean_martyrs : Sv. Ondřeje Kim Tae-gỏna, kněze, Pavla Chõng Ha-sanga a druhů, mučedníků
 21 f R matthew : Sv. Matouše, apoštola a evangelisty

@@ -36,6 +36,7 @@ locale: fr
 21 peter_damian : Saint Pierre Damien, évêque et docteur de l'Église
 22 f chair_of_peter : Chaire de saint Pierre, apôtre
 23 m R polycarp : Saint Polycarpe, évêque et martyr
+27 gregory_of_narek : Saint Grégoire de Narek, abbé et docteur de l'Église
 
 = 3
 4 casimir : Saint Casimir
@@ -69,6 +70,7 @@ locale: fr
 1 joseph_worker : Saint Joseph artisan
 2 m athanasius : Saint Athanase, évêque et docteur de l'Église
 3 f R philip_james : Saints Philippe et Jacques, apôtres
+10 john_de_avila : Saint Jean De Avila, prêtre et docteur de l'Église
 12 R nereus_achilleus : Saints Nérée et Achillée, martyrs
 12 R pancras : Saint Pancrace, martyr
 13 bvm_fatima : Notre-Dame de Fátima
@@ -166,6 +168,7 @@ locale: fr
 15 m bvm_sorrows : Notre-Dame des Douleurs
 16 m R cornelius_cyprian : Saints Corneille, pape, et Cyprien, évêque, martyrs
 17 bellarmine : Saint Robert Bellarmin, évêque et docteur de l'Église
+17 hildegard : Sainte Hildegarde de Bingen, vierge et docteur de l'Église
 19 R januarius : Saint Janvier, évêque et martyr
 20 m R korean_martyrs : Saint André Kim Taegon, prêtre, et Paul Chong Hasang et ses compagnons, martyrs
 21 f R matthew : Saint Matthieu, Apôtre et évangéliste

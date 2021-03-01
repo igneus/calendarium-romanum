@@ -35,6 +35,7 @@ locale: it
 21 peter_damian : San Pier Damiani, vescovo e dottore della Chiesa
 22 f chair_of_peter : Cattedra di San Pietro, apostolo
 23 m R polycarp : San Policarpo, vescovo e martire
+27 gregory_of_narek : San Gregorio di Narek, abate e dottore della Chiesa
 
 = 3
 4 casimir : San Casimiro
@@ -68,6 +69,7 @@ locale: it
 1 joseph_worker : San Giuseppe, lavoratore
 2 m athanasius : Sant'Atanasio, vescovo e dottore della Chiesa
 3 f R philip_james : Santi Filippo e Giacomo, apostoli
+10 john_de_avila : San Giovanni De Avila, presbitero e dottore della Chiesa
 12 R nereus_achilleus : Santi Nereo e Achilleo, martiri
 12 R pancras : San Pancrazio, martire
 13 bvm_fatima : Nostra Signora di Fatima
@@ -165,6 +167,7 @@ locale: it
 15 m bvm_sorrows : Beata Vergine Maria Addolorata
 16 m R cornelius_cyprian : Santi Cornelio, papa, e Cipriano vescovo, martiri
 17 bellarmine : San Roberto Bellarmino, vescovo e dottore della Chiesa
+17 hildegard : Santa Ildegarda di Bingen, vergine e dottore della Chiesa
 19 R januarius : San Gennaro, vescovo e martire
 20 m R korean_martyrs : Santi Andrea Kim Taegŏn, Paolo Chŏng Hasang e compagni, martiri
 21 f R matthew : San Matteo, apostolo ed evangelista

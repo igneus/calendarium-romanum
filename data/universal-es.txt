@@ -36,6 +36,7 @@ locale: es
 21 peter_damian : San Pedro Damián, Obispo y Doctor de la Iglesia
 22 f chair_of_peter : Cátedra de San Pedro, Apóstol
 23 m R polycarp : San Policarpo, Obispo y Mártir
+27 gregory_of_narek : San Gregorio de Narek, abad y doctor de la Iglesia
 
 = 3
 4 casimir : San Casimiro
@@ -69,6 +70,7 @@ locale: es
 1 joseph_worker : San José Obrero
 2 m athanasius : San Atanasio, Obispo y Doctor de la Iglesia
 3 f R philip_james : Santos Felipe y Santiago, Apóstoles
+10 john_de_avila : San Juan De Ávila, presbítero y doctor de la Iglesia
 12 R nereus_achilleus : Santos Nereo y Aquileo, Mártires
 12 R pancras : San Pancracio, Mártir
 13 bvm_fatima : Nuestra Señora de Fátima
@@ -166,6 +168,7 @@ locale: es
 15 m bvm_sorrows : Nuestra Señora de los Dolores
 16 m R cornelius_cyprian : Santos Cornelio, Papa, y Cipriano, Obispo, Mártires
 17 bellarmine : San Roberto Belarmino, Obispo y Doctor de la Iglesia
+17 hildegard : Santa Hildegarda de Bingen, virgen y doctora de la Iglesia
 19 R januarius : San Jenaro, Obispo y Mártir
 20 m R korean_martyrs : Santos Andrés Kim Taegon, Presbítero, Pablo Chong Hasang y compañeros, Mártires
 21 f R matthew : San Mateo, Apóstol y Evangelista
