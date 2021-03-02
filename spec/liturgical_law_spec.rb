@@ -11,6 +11,7 @@ Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
           cls = Class.new do
             # make RSpec expectations available for the code example
             extend RSpec::Matchers
+            extend RSpec::Core::Pending
 
             class << self
               def year
