@@ -211,6 +211,7 @@ or 2026-01-06 christmas 2 false
 - "Feria quinta, hebdomada I Quadragesimae" 2.9 violet   temporale
 2026-02-27 lent 1 false
 - "Feria sexta, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 4.0 violet gregory_of_narek 2/27 sanctorale
 2026-02-28 lent 1 true
 - "Sabbato, hebdomada I Quadragesimae" 2.9 violet   temporale
 2026-03-01 lent 2 false
@@ -585,7 +586,7 @@ or 2026-06-07 ordinary 10 false
 2026-07-28 ordinary 17 false
 - "Feria tertia, hebdomada XVII per annum" 3.13 green   temporale
 2026-07-29 ordinary 17 false
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2026-07-30 ordinary 17 false
 - "Feria quinta, hebdomada XVII per annum" 3.13 green   temporale
 - "S. Petri Chrysologi, episcopi et Ecclesiae doctoris" 3.12 white peter_chrysologus 7/30 sanctorale
@@ -700,6 +701,7 @@ or 2026-06-07 ordinary 10 false
 2026-09-17 ordinary 24 false
 - "Feria quinta, hebdomada XXIV per annum" 3.13 green   temporale
 - "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "S. Hildegardis Bingensis, virginis et Ecclesiae doctoris" 3.12 white hildegard 9/17 sanctorale
 2026-09-18 ordinary 24 false
 - "Feria sexta, hebdomada XXIV per annum" 3.13 green   temporale
 2026-09-19 ordinary 24 true

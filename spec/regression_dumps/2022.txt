@@ -222,6 +222,7 @@ or 2023-01-09 christmas 3 false
 - "Dominica I Quadragesimae" 1.2 violet   temporale
 2023-02-27 lent 1 false
 - "Feria secunda, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 4.0 violet gregory_of_narek 2/27 sanctorale
 2023-02-28 lent 1 false
 - "Feria tertia, hebdomada I Quadragesimae" 2.9 violet   temporale
 2023-03-01 lent 1 false
@@ -378,6 +379,7 @@ or 2023-01-09 christmas 3 false
 - "Feria tertia, hebdomada V temporis paschalis" 3.13 white   temporale
 2023-05-10 easter 5 false
 - "Feria quarta, hebdomada V temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2023-05-11 easter 5 false
 - "Feria quinta, hebdomada V temporis paschalis" 3.13 white   temporale
 2023-05-12 easter 5 false
@@ -586,7 +588,7 @@ or 2023-06-11 ordinary 10 false
 2023-07-28 ordinary 16 false
 - "Feria sexta, hebdomada XVI per annum" 3.13 green   temporale
 2023-07-29 ordinary 16 true
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2023-07-30 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2023-07-31 ordinary 17 false

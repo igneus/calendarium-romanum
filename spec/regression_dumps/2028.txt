@@ -206,6 +206,7 @@ or 2029-01-08 christmas 2 false
 - "Feria secunda, hebdomada II Quadragesimae" 2.9 violet   temporale
 2029-02-27 lent 2 false
 - "Feria tertia, hebdomada II Quadragesimae" 2.9 violet   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 4.0 violet gregory_of_narek 2/27 sanctorale
 2029-02-28 lent 2 false
 - "Feria quarta, hebdomada II Quadragesimae" 2.9 violet   temporale
 2029-03-01 lent 2 false
@@ -368,6 +369,7 @@ or 2029-05-09 easter 6 false
 - "In Ascensione Domini" 1.2 white ascension  temporale
 or 2029-05-10 easter 6 false
 - "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2029-05-11 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2029-05-12 easter 6 true
@@ -696,6 +698,7 @@ or 2029-06-03 ordinary 9 false
 2029-09-17 ordinary 24 false
 - "Feria secunda, hebdomada XXIV per annum" 3.13 green   temporale
 - "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "S. Hildegardis Bingensis, virginis et Ecclesiae doctoris" 3.12 white hildegard 9/17 sanctorale
 2029-09-18 ordinary 24 false
 - "Feria tertia, hebdomada XXIV per annum" 3.13 green   temporale
 2029-09-19 ordinary 24 false

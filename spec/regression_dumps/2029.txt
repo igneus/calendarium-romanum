@@ -193,6 +193,7 @@ Calendar for liturgical year 2029
 - "Feria tertia, hebdomada VII per annum" 3.13 green   temporale
 2030-02-27 ordinary 7 false
 - "Feria quarta, hebdomada VII per annum" 3.13 green   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 3.12 white gregory_of_narek 2/27 sanctorale
 2030-02-28 ordinary 7 false
 - "Feria quinta, hebdomada VII per annum" 3.13 green   temporale
 2030-03-01 ordinary 7 false
@@ -351,6 +352,7 @@ Calendar for liturgical year 2029
 - "Feria quinta, hebdomada III temporis paschalis" 3.13 white   temporale
 2030-05-10 easter 3 false
 - "Feria sexta, hebdomada III temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2030-05-11 easter 3 true
 - "Sabbato, hebdomada III temporis paschalis" 3.13 white   temporale
 2030-05-12 easter 4 false
@@ -563,7 +565,7 @@ or 2030-06-23 ordinary 12 false
 2030-07-28 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2030-07-29 ordinary 17 false
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2030-07-30 ordinary 17 false
 - "Feria tertia, hebdomada XVII per annum" 3.13 green   temporale
 - "S. Petri Chrysologi, episcopi et Ecclesiae doctoris" 3.12 white peter_chrysologus 7/30 sanctorale
@@ -683,6 +685,7 @@ or 2030-06-23 ordinary 12 false
 2030-09-17 ordinary 24 false
 - "Feria tertia, hebdomada XXIV per annum" 3.13 green   temporale
 - "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "S. Hildegardis Bingensis, virginis et Ecclesiae doctoris" 3.12 white hildegard 9/17 sanctorale
 2030-09-18 ordinary 24 false
 - "Feria quarta, hebdomada XXIV per annum" 3.13 green   temporale
 2030-09-19 ordinary 24 false

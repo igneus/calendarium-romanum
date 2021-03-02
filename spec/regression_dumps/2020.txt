@@ -216,6 +216,7 @@ or 2021-01-06 christmas 2 false
 - "Feria sexta, hebdomada I Quadragesimae" 2.9 violet   temporale
 2021-02-27 lent 1 true
 - "Sabbato, hebdomada I Quadragesimae" 2.9 violet   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 4.0 violet gregory_of_narek 2/27 sanctorale
 2021-02-28 lent 2 false
 - "Dominica II Quadragesimae" 1.2 violet   temporale
 2021-03-01 lent 2 false
@@ -375,6 +376,7 @@ or 2021-01-06 christmas 2 false
 - "Dominica VI Paschae" 1.2 white   temporale
 2021-05-10 easter 6 false
 - "Feria secunda, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2021-05-11 easter 6 false
 - "Feria tertia, hebdomada VI temporis paschalis" 3.13 white   temporale
 2021-05-12 easter 6 true
@@ -589,7 +591,7 @@ or 2021-06-06 ordinary 10 false
 2021-07-28 ordinary 17 false
 - "Feria quarta, hebdomada XVII per annum" 3.13 green   temporale
 2021-07-29 ordinary 17 false
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2021-07-30 ordinary 17 false
 - "Feria sexta, hebdomada XVII per annum" 3.13 green   temporale
 - "S. Petri Chrysologi, episcopi et Ecclesiae doctoris" 3.12 white peter_chrysologus 7/30 sanctorale
@@ -709,6 +711,7 @@ or 2021-06-06 ordinary 10 false
 2021-09-17 ordinary 24 false
 - "Feria sexta, hebdomada XXIV per annum" 3.13 green   temporale
 - "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "S. Hildegardis Bingensis, virginis et Ecclesiae doctoris" 3.12 white hildegard 9/17 sanctorale
 2021-09-18 ordinary 24 true
 - "Sabbato, hebdomada XXIV per annum" 3.13 green   temporale
 - "Memoria Sanctae Mariae in Sabbato" 3.12 white saturday_memorial_bvm  temporale

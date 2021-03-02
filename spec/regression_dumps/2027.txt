@@ -385,6 +385,7 @@ or 2028-01-06 christmas 2 false
 - "Feria tertia, hebdomada IV temporis paschalis" 3.13 white   temporale
 2028-05-10 easter 4 false
 - "Feria quarta, hebdomada IV temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2028-05-11 easter 4 false
 - "Feria quinta, hebdomada IV temporis paschalis" 3.13 white   temporale
 2028-05-12 easter 4 false
@@ -595,7 +596,7 @@ or 2028-06-18 ordinary 11 false
 2028-07-28 ordinary 16 false
 - "Feria sexta, hebdomada XVI per annum" 3.13 green   temporale
 2028-07-29 ordinary 16 true
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2028-07-30 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2028-07-31 ordinary 17 false

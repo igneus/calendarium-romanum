@@ -206,6 +206,7 @@ or 2024-01-08 christmas 2 false
 - "Feria secunda, hebdomada II Quadragesimae" 2.9 violet   temporale
 2024-02-27 lent 2 false
 - "Feria tertia, hebdomada II Quadragesimae" 2.9 violet   temporale
+- "S. Gregorii Narecensis, abbatis et Ecclesiae doctoris" 4.0 violet gregory_of_narek 2/27 sanctorale
 2024-02-28 lent 2 false
 - "Feria quarta, hebdomada II Quadragesimae" 2.9 violet   temporale
 2024-02-29 lent 2 false
@@ -368,6 +369,7 @@ or 2024-05-09 easter 6 false
 - "Feria quinta, hebdomada VI temporis paschalis" 3.13 white   temporale
 2024-05-10 easter 6 false
 - "Feria sexta, hebdomada VI temporis paschalis" 3.13 white   temporale
+- "S. Ioannis De Avila, presbyteri et Ecclesiae doctoris" 3.12 white john_de_avila 5/10 sanctorale
 2024-05-11 easter 6 true
 - "Sabbato, hebdomada VI temporis paschalis" 3.13 white   temporale
 or 2024-05-11 easter 6 true
@@ -572,7 +574,7 @@ or 2024-06-02 ordinary 9 false
 2024-07-28 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2024-07-29 ordinary 17 false
-- "S. Marthae" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
 2024-07-30 ordinary 17 false
 - "Feria tertia, hebdomada XVII per annum" 3.13 green   temporale
 - "S. Petri Chrysologi, episcopi et Ecclesiae doctoris" 3.12 white peter_chrysologus 7/30 sanctorale
@@ -692,6 +694,7 @@ or 2024-06-02 ordinary 9 false
 2024-09-17 ordinary 24 false
 - "Feria tertia, hebdomada XXIV per annum" 3.13 green   temporale
 - "S. Roberti Bellarmino, episcopi et Ecclesiae doctoris" 3.12 white bellarmine 9/17 sanctorale
+- "S. Hildegardis Bingensis, virginis et Ecclesiae doctoris" 3.12 white hildegard 9/17 sanctorale
 2024-09-18 ordinary 24 false
 - "Feria quarta, hebdomada XXIV per annum" 3.13 green   temporale
 2024-09-19 ordinary 24 false
