@@ -2,7 +2,7 @@ language: ruby
 cache: bundler
 dist: trusty
 
-install: bundle install --jobs=3 --deployment --without development
+install: bundle install --jobs=3 --without development
 
 script: bundle exec rake spec
 
