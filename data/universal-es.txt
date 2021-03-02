@@ -31,7 +31,7 @@ locale: es
 8 josephine_bakhita : Santa Josefina Bakhita, Virgen
 10 m scholastica : Santa Escolástica, Virgen
 11 bvm_lourdes : Nuestra Señora de Lourdes
-14 m cyril_methodius :  Santos Cirilo, Monje, y Metodio, Obispo
+14 m cyril_methodius : Santos Cirilo, Monje, y Metodio, Obispo
 17 servite_founders : Santos Siete Fundadores de la Orden de los Servitas
 21 peter_damian : San Pedro Damián, Obispo y Doctor de la Iglesia
 22 f chair_of_peter : Cátedra de San Pedro, Apóstol
@@ -52,7 +52,7 @@ locale: es
 = 4
 2 francis_of_paola : San Francisco de Paula, Ermitaño
 4 isidore : San Isidoro, Obispo y Doctor de la Iglesia
-5 vincent_ferrer :  San Vicente Ferrer, Presbítero
+5 vincent_ferrer : San Vicente Ferrer, Presbítero
 7 m de_la_salle : San Juan Bautista de La Salle, presbítero
 11 m R stanislaus : San Estanislao, Obispo y Mártir
 13 R martin_i : San Martín I, Papa y Mártir

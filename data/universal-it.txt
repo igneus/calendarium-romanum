@@ -180,7 +180,7 @@ locale: it
 30 m jerome : San Girolamo, sacerdote e dottore della Chiesa
 
 = 10
-1 m therese_lisieux :  Santa Teresa del Bambino Gesù, vergine e dottore della Chiesa
+1 m therese_lisieux : Santa Teresa del Bambino Gesù, vergine e dottore della Chiesa
 2 m guardian_angels : Santi Angeli custodi
 4 m francis_assisi : San Francesco d'Assisi
 5 faustina_kowalska : Santa Faustina Kowalska, vergine
