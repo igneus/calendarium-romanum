@@ -30,9 +30,7 @@ module CalendariumRomanum
     # @overload initialize(temporale, sanctorale=nil, vespers: false)
     #   @param temporale [Temporale]
     #   @param sanctorale [Sanctorale, nil]
-    #     If not provided, the +Calendar+ will only know celebrations
-    #     of the temporale cycle, no feasts of the saints!
-    #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
+    #   @param vespers [Boolean]
     #   @since 0.8.0
     #
     # @raise [RangeError]
