@@ -11,9 +11,9 @@ describe CR::Transfers do
   let(:date_range) { CR::Temporale::Dates.first_advent_sunday(2000) .. (CR::Temporale::Dates.first_advent_sunday(2001) - 1) }
 
   # example celebrations
-  let(:ferial) { CR::Celebration.new('title', CR::Ranks::FERIAL) }
-  let(:primary) { CR::Celebration.new('title', CR::Ranks::PRIMARY) }
-  let(:solemnity) { CR::Celebration.new('title', CR::Ranks::SOLEMNITY_GENERAL) }
+  let(:ferial) { CR::Celebration.new(rank: CR::Ranks::FERIAL) }
+  let(:primary) { CR::Celebration.new(rank: CR::Ranks::PRIMARY) }
+  let(:solemnity) { CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_GENERAL) }
 
   before :each do
     allow(temporale).to receive_messages(year: year, date_range: date_range)
@@ -96,13 +96,13 @@ describe CR::Transfers do
   describe 'impeding and non-impeding ranks' do
     (CR::Ranks::FEAST_PROPER .. CR::Ranks::TRIDUUM).each do |rank|
       it "does not transfer solemnity to a day with celebration of rank #{rank.desc.inspect}" do
-        solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
+        solemnity = CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_PROPER)
         solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
         allow(sanctorale).to receive(:solemnities).and_return(solemnities)
 
         date = Date.new(2001, 5, 5)
 
-        celebration_in_the_way = CR::Celebration.new('title', rank)
+        celebration_in_the_way = CR::Celebration.new(rank: rank)
 
         date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
         date_set(date + 1, sanctorale_cel: celebration_in_the_way)
@@ -115,13 +115,13 @@ describe CR::Transfers do
 
     (CR::Ranks::FERIAL .. CR::Ranks::FERIAL_PRIVILEGED).each do |rank|
       it "does transfer solemnity to a day with celebration of rank #{rank.desc.inspect}" do
-        solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
+        solemnity = CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_PROPER)
         solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
         allow(sanctorale).to receive(:solemnities).and_return(solemnities)
 
         date = Date.new(2001, 5, 5)
 
-        celebration_in_the_way = CR::Celebration.new('title', rank)
+        celebration_in_the_way = CR::Celebration.new(rank: rank)
 
         date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
         date_set(date + 1, sanctorale_cel: celebration_in_the_way)
@@ -134,8 +134,8 @@ describe CR::Transfers do
   end
 
   describe 'transferring multiple solemnities' do
-    let(:a) { CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER) }
-    let(:b) { CR::Celebration.new('title', CR::Ranks::SOLEMNITY_GENERAL) }
+    let(:a) { CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_PROPER) }
+    let(:b) { CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_GENERAL) }
 
     let(:date_a) { Date.new(2001, 5, 5) }
     let(:date_b) { Date.new(2001, 5, 6) }
@@ -187,7 +187,7 @@ describe CR::Transfers do
     it 'Annunciation occurring with the Holy week' do
       date = CR::Temporale::Dates.palm_sunday(year) + 1
 
-      solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER, nil, :annunciation)
+      solemnity = CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_PROPER, symbol: :annunciation)
       solemnities = {CR::AbstractDate.from_date(date) => solemnity}
       allow(sanctorale).to receive(:solemnities).and_return(solemnities)
 
