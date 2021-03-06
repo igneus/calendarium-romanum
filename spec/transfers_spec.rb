@@ -34,20 +34,22 @@ describe CR::Transfers do
     date_set(date, temporale_cel: primary)
   end
 
-  it 'does nothing if there are no sanctorale solemnities' do
-    allow(sanctorale).to receive(:solemnities).and_return({})
+  describe 'no-operation scenarios' do
+    it 'no sanctorale solemnities' do
+      allow(sanctorale).to receive(:solemnities).and_return({})
 
-    expect(transfers.call).to eq({})
-  end
+      expect(transfers.call).to eq({})
+    end
 
-  it 'no transfer required' do
-    date = Date.new(2001, 5, 5)
-    allow(sanctorale)
-      .to receive(:solemnities).and_return({CR::AbstractDate.from_date(date) => solemnity})
-    allow(temporale)
-      .to receive(:[]).with(date).and_return(ferial)
+    it 'solemnity collides with a non-solemnity' do
+      date = Date.new(2001, 5, 5)
+      allow(sanctorale)
+        .to receive(:solemnities).and_return({CR::AbstractDate.from_date(date) => solemnity})
+      allow(temporale)
+        .to receive(:[]).with(date).and_return(ferial)
 
-    expect(transfers.call).to eq({})
+      expect(transfers.call).to eq({})
+    end
   end
 
   describe 'logic of finding the target date' do
