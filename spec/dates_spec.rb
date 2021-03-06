@@ -8,7 +8,9 @@ describe CR::Temporale::Dates do
       m = Module.new
       expect(m.public_instance_methods).not_to include :easter_sunday # make sure
 
-      m.include described_class
+      dates_module = described_class
+      m.instance_eval { include dates_module }
+
       expect(m.public_instance_methods).to include :easter_sunday
     end
   end
