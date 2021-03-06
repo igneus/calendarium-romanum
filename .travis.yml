@@ -8,7 +8,7 @@ script: bundle exec rake spec
 
 jobs:
   include:
-    - rvm: 3.0.0 # ~ latest MRI
+    - rvm: 2.6.5 # ~ latest MRI
       script:
         - bundle exec rake spec_all_locales
         - bash spec/build/gem_build_test.sh
