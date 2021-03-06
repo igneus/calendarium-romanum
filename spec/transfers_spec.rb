@@ -112,7 +112,7 @@ describe CR::Transfers do
       let(:sanctorale_solemnity) { lower_solemnity }
 
       it 'wins' do
-        expect(transfers.call).to eq({(date + 1) => sanctorale_solemnity})
+        expect(transfers.call).to eq({date => temporale_solemnity, (date + 1) => sanctorale_solemnity})
       end
     end
 
@@ -121,7 +121,7 @@ describe CR::Transfers do
       let(:sanctorale_solemnity) { higher_solemnity }
 
       it 'wins' do
-        expect(transfers.call).to eq({(date + 1) => temporale_solemnity})
+        expect(transfers.call).to eq({date => sanctorale_solemnity, (date + 1) => temporale_solemnity})
       end
     end
 
@@ -130,7 +130,7 @@ describe CR::Transfers do
       let(:sanctorale_solemnity) { CR::Celebration.new('s', rank: CR::Ranks::SOLEMNITY_GENERAL) }
 
       it 'temporale wins' do
-        expect(transfers.call).to eq({(date + 1) => sanctorale_solemnity})
+        expect(transfers.call).to eq({date => temporale_solemnity, (date + 1) => sanctorale_solemnity})
       end
     end
   end
@@ -150,7 +150,7 @@ describe CR::Transfers do
         date_set(date + 1, sanctorale_cel: celebration_in_the_way)
         date_set_free(date - 1)
 
-        # date+1 was impeded by celebration_in_the_way
+        # date+1 was impeded by celebration_in_the_way, transferring backwards
         expect(transfers.call).to eq({(date - 1) => solemnity})
       end
     end

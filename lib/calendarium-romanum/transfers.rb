@@ -1,6 +1,6 @@
 module CalendariumRomanum
 
-  # Internal {Calendar} component.
+  # {Calendar} component.
   # Resolves transfers of conflicting solemnities.
   #
   # For any day {Temporale} has a {Celebration}.
@@ -12,22 +12,31 @@ module CalendariumRomanum
   # one is celebrated on the given day and the less lucky one
   # must be transferred to another day.
   # However, not all days are valid as targets of solemnity transfer.
-  #
-  # @api private
+  # This class handles the logic of transferring impeded solemnities
+  # to suitable dates.
   class Transfers
     # @param temporale [Temporale]
     # @param sanctorale [Sanctorale]
+    # @api private
     def initialize(temporale, sanctorale)
       @temporale = temporale
       @sanctorale = sanctorale
     end
 
+    # Resolves any conflict between temporale and sanctorale solemnities
+    # by deciding which of the conflicting solemnities is to take the original
+    # date, which is to be transferred, and specifying a date for both of them
+    # in the resulting Hash.
+    #
+    # @param temporale [Temporale]
+    # @param sanctorale [Sanctorale]
     # @return [Hash<Date=>Celebration>]
     def self.call(temporale, sanctorale)
       new(temporale, sanctorale).call
     end
 
     # @return [Hash<Date=>Celebration>]
+    # @api private
     def call
       @transferred = {}
 
@@ -42,7 +51,7 @@ module CalendariumRomanum
         sc = @sanctorale[date].first
         next unless sc && sc.solemnity?
 
-        loser = [sc, tc].sort_by(&:rank).first
+        loser, winner = [sc, tc].sort_by(&:rank)
 
         transfer_to =
           if loser.symbol == :annunciation && in_holy_week?(date)
@@ -52,6 +61,8 @@ module CalendariumRomanum
             free_day_closest_to(date)
           end
         @transferred[transfer_to] = loser
+        # primary celebrations have noone to be beaten by, no need to harden their dates
+        @transferred[date] = winner unless winner.rank == Ranks::PRIMARY
       end
 
       @transferred
