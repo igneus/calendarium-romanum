@@ -807,7 +807,7 @@ describe CR::Calendar do
     end
   end
 
-  # only s small subset of the Sanctorale public interface
+  # only a small subset of the Sanctorale public interface
   # is used by Calendar. These specs show how small it is.
   describe 'required sanctorale interface' do
     class HardcodedEmptySanctorale
