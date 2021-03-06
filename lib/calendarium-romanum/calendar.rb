@@ -16,7 +16,7 @@ module CalendariumRomanum
     # Returns a calendar for the liturgical year beginning with
     # Advent of the specified civil year.
     #
-    # @overload initialize(year, sanctorale = nil, temporale = nil, vespers: false)
+    # @overload initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil)
     #   @param year [Integer]
     #     Civil year when the liturgical year begins.
     #   @param sanctorale [Sanctorale, nil]
@@ -26,17 +26,22 @@ module CalendariumRomanum
     #     If not provided, +Temporale+ for the given year with default
     #     configuration will built.
     #   @param vespers [Boolean] Set to true if you want the +Calendar+ to populate {Day#vespers}
+    #   @param transfers [#call, nil]
+    #     Object with the same public interface as the +Transfers+ class (really class,
+    #     not instance!), responsible for handling transfers of conflicting solemnities.
+    #     Only useful for overriding the default solemnity transfer logic with a custom one.
     #
-    # @overload initialize(temporale, sanctorale=nil, vespers: false)
+    # @overload initialize(temporale, sanctorale=nil, vespers: false, transfers: nil)
     #   @param temporale [Temporale]
     #   @param sanctorale [Sanctorale, nil]
     #   @param vespers [Boolean]
+    #   @param transfers [#call, nil]
     #   @since 0.8.0
     #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false)
+    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil)
       unless year.is_a? Integer
         temporale = year
         year = temporale.year
@@ -55,7 +60,7 @@ module CalendariumRomanum
       @temporale = temporale || Temporale.new(year)
       @populate_vespers = vespers
 
-      @transferred = Transfers.call(@temporale, @sanctorale).freeze
+      @transferred = (transfers || Transfers).call(@temporale, @sanctorale).freeze
     end
 
     class << self

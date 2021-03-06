@@ -22,10 +22,12 @@ module CalendariumRomanum
       @sanctorale = sanctorale
     end
 
+    # @return [Hash<Date=>Celebration>]
     def self.call(temporale, sanctorale)
       new(temporale, sanctorale).call
     end
 
+    # @return [Hash<Date=>Celebration>]
     def call
       @transferred = {}
 
