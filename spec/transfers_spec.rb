@@ -93,6 +93,48 @@ describe CR::Transfers do
     end
   end
 
+  describe 'logic of which of conflicting solemnities is transferred' do
+    let(:date) { Date.new(2001, 5, 5) }
+
+    let(:higher_solemnity) { CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_GENERAL) }
+    let(:lower_solemnity) { CR::Celebration.new(rank: CR::Ranks::SOLEMNITY_PROPER) }
+
+    before :each do
+      allow(sanctorale)
+        .to receive(:solemnities).and_return({CR::AbstractDate.from_date(date) => sanctorale_solemnity})
+      date_set(date, temporale_cel: temporale_solemnity, sanctorale_cel: sanctorale_solemnity)
+
+      date_set_free(date + 1)
+    end
+
+    describe 'higher rank in temporale' do
+      let(:temporale_solemnity) { higher_solemnity }
+      let(:sanctorale_solemnity) { lower_solemnity }
+
+      it 'wins' do
+        expect(transfers.call).to eq({(date + 1) => sanctorale_solemnity})
+      end
+    end
+
+    describe 'higher rank in sanctorale' do
+      let(:temporale_solemnity) { lower_solemnity }
+      let(:sanctorale_solemnity) { higher_solemnity }
+
+      it 'wins' do
+        expect(transfers.call).to eq({(date + 1) => temporale_solemnity})
+      end
+    end
+
+    describe 'equal ranks' do
+      let(:temporale_solemnity) { CR::Celebration.new('t', rank: CR::Ranks::SOLEMNITY_GENERAL) }
+      let(:sanctorale_solemnity) { CR::Celebration.new('s', rank: CR::Ranks::SOLEMNITY_GENERAL) }
+
+      it 'temporale wins' do
+        expect(transfers.call).to eq({(date + 1) => sanctorale_solemnity})
+      end
+    end
+  end
+
   describe 'impeding and non-impeding ranks' do
     (CR::Ranks::FEAST_PROPER .. CR::Ranks::TRIDUUM).each do |rank|
       it "does not transfer solemnity to a day with celebration of rank #{rank.desc.inspect}" do

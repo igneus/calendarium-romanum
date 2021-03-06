@@ -41,6 +41,7 @@ module CalendariumRomanum
         next unless sc && sc.solemnity?
 
         loser = [tc, sc].sort_by(&:rank).first
+        loser = sc if sc.rank == tc.rank
 
         transfer_to =
           if loser.symbol == :annunciation && in_holy_week?(date)

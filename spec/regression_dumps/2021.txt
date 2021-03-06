@@ -512,7 +512,7 @@ or 2022-06-19 ordinary 12 false
 2022-06-24 ordinary 12 false
 - "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
 2022-06-25 ordinary 12 false
-- "Sacratissimi Cordis Iesu" 1.3 white sacred_heart  temporale
+- "IN NATIVITATE S. IOANNIS BAPTISTAE" 1.3 white baptist_birth 6/24 sanctorale
 2022-06-26 ordinary 13 false
 - "Dominica XIII per annum" 2.6 green   temporale
 2022-06-27 ordinary 13 false
