@@ -264,13 +264,13 @@ module CalendariumRomanum
          @temporale.season(date) == Seasons::ORDINARY &&
          (st.empty? || st.first.rank == Ranks::MEMORIAL_OPTIONAL) &&
          t.rank <= Ranks::MEMORIAL_OPTIONAL
-        st = st.dup << Temporale::CelebrationFactory.saturday_memorial_bvm
+        st += [Temporale::CelebrationFactory.saturday_memorial_bvm]
       end
 
       unless st.empty?
         if st.first.rank > t.rank
           if st.first.rank == Ranks::MEMORIAL_OPTIONAL
-            return st.dup.unshift t
+            return [t] + st
           else
             return st
           end
@@ -278,7 +278,7 @@ module CalendariumRomanum
           commemorations = st.collect do |c|
             c.change(rank: Ranks::COMMEMORATION, colour: t.colour)
           end
-          return commemorations.unshift t
+          return [t] + commemorations
         elsif t.symbol == :immaculate_heart &&
               [Ranks::MEMORIAL_GENERAL, Ranks::MEMORIAL_PROPER].include?(st.first.rank)
           optional_memorials = ([t] + st).collect do |celebration|
