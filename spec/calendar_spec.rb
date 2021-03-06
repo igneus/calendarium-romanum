@@ -500,6 +500,59 @@ describe CR::Calendar do
         end
       end
 
+      describe 'effect of transfers' do
+        let(:year) { 2032 } # year with an interesting solemnity collision
+        let(:temporale) { CR::Temporale.new year }
+        let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+        let(:calendar) { described_class.new(temporale, sanctorale, transfers: transfers) }
+        let(:date) { Date.new 2033, 6, 24 }
+
+        before :each do
+          # make sure
+          all_celebrations = sanctorale[date] + [temporale[date]]
+
+          expect(all_celebrations)
+            .to all(be_solemnity)
+          expect(all_celebrations.collect(&:rank).uniq.size).to eq 1 # same rank
+        end
+
+        describe 'collision not resolved' do
+          let(:transfers) { proc { {} } } # no solution, just an empty Hash
+
+          it 'temporale solemnity wins, sanctorale one is lost' do
+            expect(calendar[date].celebrations)
+              .to eq [temporale[date]]
+
+            expect(calendar[date + 1].celebrations)
+              .not_to eq sanctorale[date]
+            expect(calendar[date - 1].celebrations)
+              .not_to eq sanctorale[date]
+          end
+        end
+
+        describe 'sanctorale solemnity transferred' do
+          let(:transfers) { proc { {(date + 1) => sanctorale[date].first} } }
+
+          it 'works as expected' do
+            expect(calendar[date].celebrations)
+              .to eq [temporale[date]]
+            expect(calendar[date + 1].celebrations)
+              .to eq sanctorale[date]
+          end
+        end
+
+        describe 'temporale solemnity transferred' do
+          let(:transfers) { proc { {(date + 1) => temporale[date]} } }
+
+          it 'works as expected' do
+            expect(calendar[date].celebrations)
+              .to eq sanctorale[date]
+            expect(calendar[date + 1].celebrations)
+              .to eq [temporale[date]]
+          end
+        end
+      end
+
       it 'transfer of suppressed Annunciation (real world example)' do
         c = described_class.new 2015, s
 
