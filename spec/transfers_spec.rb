@@ -37,7 +37,7 @@ describe CR::Transfers do
   it 'does nothing if there are no sanctorale solemnities' do
     allow(sanctorale).to receive(:solemnities).and_return({})
 
-    expect(transfers.call).to be_empty
+    expect(transfers.call).to eq({})
   end
 
   it 'no transfer required' do
@@ -46,7 +46,7 @@ describe CR::Transfers do
     allow(temporale)
       .to receive(:[]).with(Date.new(2001, 5, 5)).and_return(ferial)
 
-    expect(transfers.call).to be_empty
+    expect(transfers.call).to eq({})
   end
 
   describe 'logic of finding the target date' do
