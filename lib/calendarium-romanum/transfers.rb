@@ -69,17 +69,19 @@ module CalendariumRomanum
 
     # Converts an AbstractDate to a Date in the given
     # liturgical year.
-    # It isn't guaranteed to work well (and probably doesn't work well)
-    # for the grey zone of dates between earliest and latest
-    # possible date of the first Advent Sunday, but that's no problem
-    # as long as there are no sanctorale solemnities in this
-    # date range.
     def concretize_abstract_date(abstract_date)
-      d = abstract_date.concretize(@temporale.year + 1)
+      year = @temporale.year
+      d = abstract_date.concretize(year + 1)
+      d_prev = abstract_date.concretize(year)
+
       if @temporale.date_range.include? d
+        if @temporale.date_range.include?(d_prev)
+          raise RuntimeError.new("Ambiguous case, #{abstract_date} twice in liturgical year #{year}")
+        end
+
         d
       else
-        abstract_date.concretize(@temporale.year)
+        d_prev
       end
     end
 

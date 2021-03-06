@@ -13,6 +13,7 @@ describe CR::Transfers do
   # example celebrations
   let(:ferial) { CR::Celebration.new('title', CR::Ranks::FERIAL) }
   let(:primary) { CR::Celebration.new('title', CR::Ranks::PRIMARY) }
+  let(:solemnity) { CR::Celebration.new('title', CR::Ranks::SOLEMNITY_GENERAL) }
 
   before :each do
     allow(temporale).to receive_messages(year: year, date_range: date_range)
@@ -178,6 +179,22 @@ describe CR::Transfers do
       date_set_free(date_b + 2)
 
       expect(transfers.call).to eq({(date_b + 1) => a, (date_b + 2) => b})
+    end
+  end
+
+  describe 'sanctorale solemnity in the blind spot around first Advent Sunday' do
+    # liturgical year with two instances of November 30th
+    let(:year) { 1999 }
+    let(:date_range) { CR::Temporale::Dates.first_advent_sunday(1999) .. (CR::Temporale::Dates.first_advent_sunday(2001) - 1) }
+
+    it 'throws an exception' do
+      allow(sanctorale)
+        .to receive(:solemnities).and_return({CR::AbstractDate.new(11, 30) => solemnity})
+      allow(temporale)
+        .to receive(:[]).and_return ferial
+
+      expect { transfers.call }
+        .to raise_exception RuntimeError, /twice in liturgical year/
     end
   end
 
