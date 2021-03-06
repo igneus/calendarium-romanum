@@ -41,36 +41,32 @@ describe CR::Transfers do
   end
 
   it 'no transfer required' do
-    solemnities = {CR::AbstractDate.new(5, 5) => CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)}
-    allow(sanctorale).to receive(:solemnities).and_return(solemnities)
+    date = Date.new(2001, 5, 5)
+    allow(sanctorale)
+      .to receive(:solemnities).and_return({CR::AbstractDate.from_date(date) => solemnity})
     allow(temporale)
-      .to receive(:[]).with(Date.new(2001, 5, 5)).and_return(ferial)
+      .to receive(:[]).with(date).and_return(ferial)
 
     expect(transfers.call).to eq({})
   end
 
   describe 'logic of finding the target date' do
-    it 'transfers to the following day if free' do
-      solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
-      solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
-      allow(sanctorale).to receive(:solemnities).and_return(solemnities)
+    let(:date) { Date.new(2001, 5, 5) }
 
-      date = Date.new(2001, 5, 5)
+    before :each do
+      allow(sanctorale)
+        .to receive(:solemnities).and_return({CR::AbstractDate.from_date(date) => solemnity})
 
       date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
+    end
+
+    it 'transfers to the following day if free' do
       date_set_free(date + 1)
 
       expect(transfers.call).to eq({(date + 1) => solemnity})
     end
 
     it 'transfers to the preceding day if free and the following day is not' do
-      solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
-      solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
-      allow(sanctorale).to receive(:solemnities).and_return(solemnities)
-
-      date = Date.new(2001, 5, 5)
-
-      date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
       date_set_temporale_impeded(date + 1)
       date_set_free(date - 1)
 
@@ -78,13 +74,6 @@ describe CR::Transfers do
     end
 
     it 'transfers to the second following day if necessary' do
-      solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
-      solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
-      allow(sanctorale).to receive(:solemnities).and_return(solemnities)
-
-      date = Date.new(2001, 5, 5)
-
-      date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
       date_set_temporale_impeded(date + 1)
       date_set_temporale_impeded(date - 1)
       date_set_free(date + 2)
@@ -93,13 +82,6 @@ describe CR::Transfers do
     end
 
     it 'transfers to the second preceding day if necessary' do
-      solemnity = CR::Celebration.new('title', CR::Ranks::SOLEMNITY_PROPER)
-      solemnities = {CR::AbstractDate.new(5, 5) => solemnity}
-      allow(sanctorale).to receive(:solemnities).and_return(solemnities)
-
-      date = Date.new(2001, 5, 5)
-
-      date_set(date, temporale_cel: primary, sanctorale_cel: solemnity)
       date_set_temporale_impeded(date + 1)
       date_set_temporale_impeded(date + 2)
       date_set_temporale_impeded(date - 1)
