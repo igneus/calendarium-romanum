@@ -476,6 +476,30 @@ describe CR::Calendar do
         expect(celebs[0]).to eq st_none
       end
 
+      describe 'no sanctorale solemnity is lost' do
+        let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
+
+        (2020..2040).each do |year|
+          it year do
+            calendar = CR::Calendar.new year, sanctorale
+
+            all_actually_celebrated = Set.new(
+              calendar
+                .each
+                .collect {|day| day.celebrations.collect &:symbol }
+                .flatten
+                .compact
+            )
+            sanctorale_solemnities =
+              sanctorale.solemnities.collect {|_,celebration| celebration.symbol }
+
+            sanctorale_solemnities.each do |sym|
+              expect(all_actually_celebrated).to include sym
+            end
+          end
+        end
+      end
+
       it 'transfer of suppressed Annunciation (real world example)' do
         c = described_class.new 2015, s
 
