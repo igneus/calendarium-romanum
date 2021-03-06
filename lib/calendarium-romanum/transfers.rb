@@ -37,10 +37,10 @@ module CalendariumRomanum
         tc = @temporale[date]
         next unless tc.solemnity?
 
-        sc = @sanctorale[date]
-        next unless sc.size == 1 && sc.first.solemnity?
+        sc = @sanctorale[date].first
+        next unless sc && sc.solemnity?
 
-        loser = [tc, sc.first].sort_by(&:rank).first
+        loser = [tc, sc].sort_by(&:rank).first
 
         transfer_to =
           if loser.symbol == :annunciation && in_holy_week?(date)
