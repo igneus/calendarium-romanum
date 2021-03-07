@@ -30,9 +30,9 @@ module CalendariumRomanum
 
     # @api private
     def initialize_dup(other)
-      @days = other.instance_variable_get(:@days).dup
+      @days = other.days.dup
       @solemnities = other.solemnities.dup
-      @symbols = other.instance_variable_get(:@symbols).dup
+      @symbols = other.symbols.dup
       @metadata = Marshal.load Marshal.dump other.metadata # deep copy
     end
 
@@ -255,7 +255,7 @@ module CalendariumRomanum
 
     protected
 
-    attr_reader :days
+    attr_reader :days, :symbols
 
     # Builds the registry of celebration symbols anew,
     # raises error if any duplicates are found.
