@@ -304,7 +304,7 @@ pcal = CR::PerpetualCalendar.new(cache: my_cache)
 ### Use prepared data or create your own
 
 The gem expects data files following a custom format -
-see README in the [data](/data) directory for it's description.
+see README in the [data][data] directory for it's description.
 The same directory contains a bunch of example data files.
 (All of them are also bundled in the gem and accessible via
 `CalendariumRomanum::Data`, as described above.)
@@ -355,7 +355,7 @@ You could copy the file to a new location and add the two proper solemnities,
 but your programmer better self won't allow you to do that.
 What options are left? You can create a new sanctorale file
 with the two proper celebrations and then load it over the calendar
-of the diocese, as explained in [data](/data).
+of the diocese, as explained in [data][data].
 Or, if you need the calendar just for that single little script
 and don't care about creating data files, you can build the two
 proper solemnities in code:
@@ -530,7 +530,7 @@ modify global configuration in order to make the internationalization
 easily and conveniently work.
 If your application requires `calendarium-romanum` to handle
 languages not bundled in the gem, or if you don't like the default
-translations, just prepare a [translation file](/config/locales),
+translations, just prepare a [translation file][translations],
 put it anywhere in your project's tree
 and add it's path to `I18n.config.load_path`.
 If, on the other hand, even the officially supported languages
@@ -589,8 +589,9 @@ See also `.travis.yml` for comprehensive tests run on the CI.
 [awesomecc]: https://github.com/calendarium-romanum/awesome-church-calendar
 [gnlyc]: https://www.ewtn.com/catholicism/library/liturgical-year-2193
 [i18n]: https://github.com/svenfuchs/i18n
-[translations]: /tree/master/config/locales
-[liturgical_law]: /tree/master/liturgical_law
+[translations]: /config/locales
+[liturgical_law]: /liturgical_law
+[data]: /data
 [module-included]: http://ruby-doc.org/core-2.2.2/Module.html#method-i-included
 [calrom]: https://github.com/calendarium-romanum/calrom
 [crhistorical]: https://github.com/calendarium-romanum/historical
