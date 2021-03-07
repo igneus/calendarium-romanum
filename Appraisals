@@ -1,3 +1,19 @@
+### i18n
+
+appraise 'i18n-0.9' do
+  gem 'i18n', '0.9.5'
+end
+
+appraise 'i18n-1.0' do
+  gem 'i18n', '1.0.0'
+end
+
+appraise 'i18n-1.8' do
+  gem 'i18n', '1.8.9'
+end
+
+### thor
+
 appraise 'thor-0.15' do
   gem 'thor', '0.15.0'
 end
