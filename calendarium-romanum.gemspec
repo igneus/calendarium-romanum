@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0'
 
-  s.add_dependency 'thor', '~> 0.18'
+  s.add_dependency 'thor', '~> 0.15'
   s.add_dependency 'i18n', '~> 0.6'
   s.add_dependency 'roman-numerals', '~> 0.3'
   s.add_development_dependency 'rake', '~> 12.0'
