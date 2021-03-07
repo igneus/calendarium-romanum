@@ -11,6 +11,33 @@ describe CR::Sanctorale do
   let(:opt_memorial_2) { ignotus }
   let(:solemnity) { CR::Celebration.new('S. Nullius', CR::Ranks::SOLEMNITY_PROPER, CR::Colours::WHITE, :nullus_solemnity) }
 
+  describe '#dup' do
+    it 'returns a new Sanctorale instance' do
+      copy = s.dup
+
+      expect(copy).to be_a described_class
+      expect(copy).not_to be s
+    end
+
+    it 'copies celebrations' do
+      s.add 1, 17, antonius
+      copy = s.dup
+
+      celebrations = copy.get(1, 17)
+      expect(celebrations.size).to be 1
+      expect(celebrations[0]).to be antonius # Celebration instances are reused, not copied
+    end
+
+    it 'changes to the copy do not change the original' do
+      copy = s.dup
+      copy.add 1, 17, antonius
+      copy.replace 1, 14, [nullus]
+
+      expect(s.get(1, 17)).to be_empty
+      expect(s.get(1, 14)).to be_empty
+    end
+  end
+
   describe '#get' do
     describe 'for an empty day' do
       it 'returns an Array' do
@@ -259,6 +286,29 @@ describe CR::Sanctorale do
       expect do
         s.update s2
       end.not_to raise_exception
+    end
+  end
+
+  describe '#merge' do
+    let(:s2) { described_class.new }
+
+    before :each do
+      s.add 1, 14, nullus
+      s2.add 1, 17, antonius
+
+      s.freeze
+      s2.freeze
+    end
+
+    it 'returns a new instance with celebrations from both self and the instance passed as argument' do
+      merged = s.merge s2
+      expect(merged.size).to eq 2
+
+      expect(merged).not_to be s
+      expect(merged).not_to be s2
+
+      expect(merged.get(1, 14)).to eq [nullus]
+      expect(merged.get(1, 17)).to eq [antonius]
     end
   end
 

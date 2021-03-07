@@ -22,6 +22,20 @@ module CalendariumRomanum
       @metadata = nil
     end
 
+    # @!method dup
+    #   Returns a copy of the receiver with properly copied internal
+    #   data structures, i.e. a copy which can be safely modified without
+    #   danger of unintentionally modifying the original instance.
+    #   @return [Sanctorale]
+
+    # @api private
+    def initialize_dup(other)
+      @days = other.instance_variable_get(:@days).dup
+      @solemnities = other.solemnities.dup
+      @symbols = other.instance_variable_get(:@symbols).dup
+      @metadata = Marshal.load Marshal.dump other.metadata # deep copy
+    end
+
     # Content subset - only {Celebration}s in the rank(s) of solemnity.
     #
     # @return [Hash<AbstractDate=>Celebration>]
@@ -133,6 +147,14 @@ module CalendariumRomanum
         replace date.month, date.day, celebrations, symbol_uniqueness: false
       end
       rebuild_symbols
+    end
+
+    # Returns a new copy containing {Celebration}s from both self and +other+.
+    #
+    # @param other [Sanctorale]
+    # @return [Sanctorale]
+    def merge(other)
+      dup.tap {|dupped| dupped.update other }
     end
 
     # Retrieves {Celebration}s for the given date
