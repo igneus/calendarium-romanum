@@ -718,6 +718,26 @@ describe CR::Temporale do
     end
   end
 
+  describe '#provides_celebration?' do
+    describe 'known' do
+      it 'built-in' do
+        expect(t.provides_celebration?(:easter_sunday)).to be true
+        expect(t.provides_celebration?(:mother_of_church)).to be true
+      end
+
+      it 'from an extension' do
+        expect(t.provides_celebration?(:christ_eternal_priest)).to be false # make sure
+
+        temporale = described_class.new 2000, extensions: [CR::Temporale::Extensions::ChristEternalPriest]
+        expect(temporale.provides_celebration?(:christ_eternal_priest)).to be true
+      end
+    end
+
+    it 'unknown' do
+      expect(t.provides_celebration?(:unknown)).to be false
+    end
+  end
+
   describe 'Solemnities transferred to a Sunday' do
     let(:year) { 2016 }
     let(:transferred) { [:epiphany, :ascension, :corpus_christi] }

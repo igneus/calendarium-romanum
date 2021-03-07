@@ -353,6 +353,14 @@ module CalendariumRomanum
         Set.new(extensions) == Set.new(b.extensions)
     end
 
+    # Does this instance provide celebration identified by symbol +symbol+?
+    #
+    # @param symbol [Symbol]
+    # @return [Boolean]
+    def provides_celebration?(symbol)
+      @all_celebration_symbols.include? symbol
+    end
+
     protected
 
     attr_reader :transfer_to_sunday, :extensions
@@ -456,6 +464,15 @@ module CalendariumRomanum
           prepare_celebration_date date_proc, celebration
         end
       end
+
+      @all_celebration_symbols = Set.new(
+        @solemnities
+          .merge(@feasts)
+          .merge(@memorials)
+          .each_value
+          .collect(&:symbol)
+          .compact # all should have a symbol, but we really want to prevent nil here
+      )
     end
 
     def prepare_celebration_date(date_method, celebration)
