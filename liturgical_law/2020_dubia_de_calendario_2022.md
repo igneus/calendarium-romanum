@@ -57,12 +57,13 @@ c) Sollemnitas Nativitatis S. Ioanni Baptistae et sollemnitas Sacratissimi Cordi
 	 II Vesperae omittantur. I Vesperae sollemnitatis Sacratissimi Cordis Iesu celebrentur.
 
 ```ruby
-calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true
-
 i23 = Date.new(2022, 6, 23)
 i24 = i23 + 1
 
 expect(i24).to be_friday
+
+overrider = CR::DateOverrider.new({i23 => :baptist_birth})
+calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true, overrides: overrider
 
 expect(calendar[i24].celebrations[0].symbol).to be :sacred_heart
 
@@ -77,9 +78,21 @@ feria VI, celebretur; sollemnitas autem Sacratissimi Cordis Iesu ad diem 23 iuni
 feriam V transferatur, usque ad horam Nonam inclusive.
 
 ```ruby
-skip 'there is currently no pretty way how to model this scenario using calendarium-romanum -
-  a custom Temporale is required, either with a changed date of Sacred Heart or with
-  customized solemnity transfer logic'
+i23 = Date.new(2022, 6, 23)
+i24 = i23 + 1
+
+overrider = CR::DateOverrider.new({i23 => :sacred_heart})
+calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true, overrides: overrider
+
+day = calendar[i23]
+expect(day.celebrations[0].symbol).to be :sacred_heart
+
+# TODO: Currently we cannot do this as expected, as for calendarium-romanum
+#   the two solemnities have exactly the same rank
+#
+# expect(day.vespers.symbol).to be :baptist_birth
+
+expect(calendar[i24].celebrations[0].symbol).to be :baptist_birth
 ```
 
 d) Dominica XX Temporis "per annum", die 14 augusti.

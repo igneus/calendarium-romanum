@@ -33,6 +33,12 @@ module CalendariumRomanum
     # @return [Integer]
     attr_reader :year
 
+    # @return [Array<Symbol>]
+    attr_reader :transfer_to_sunday
+
+    # @return [Array<#each_celebration>]
+    attr_reader :extensions
+
     class << self
       # Determines liturgical year for the given date
       #
@@ -360,10 +366,6 @@ module CalendariumRomanum
     def provides_celebration?(symbol)
       @all_celebration_symbols.include? symbol
     end
-
-    protected
-
-    attr_reader :transfer_to_sunday, :extensions
 
     private
 

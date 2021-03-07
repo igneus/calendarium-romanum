@@ -30,18 +30,21 @@ module CalendariumRomanum
     #     Object with the same public interface as the +Transfers+ class (really class,
     #     not instance!), responsible for handling transfers of conflicting solemnities.
     #     Only useful for overriding the default solemnity transfer logic with a custom one.
+    #   @param overrides [DateOverrider, nil]
+    #     List of ad hoc overridden celebration dates.
     #
     # @overload initialize(temporale, sanctorale=nil, vespers: false, transfers: nil)
     #   @param temporale [Temporale]
     #   @param sanctorale [Sanctorale, nil]
     #   @param vespers [Boolean]
     #   @param transfers [#call, nil]
+    #   @param overrides [DateOverrider, nil]
     #   @since 0.8.0
     #
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil)
+    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil, overrides: nil)
       unless year.is_a? Integer
         temporale = year
         year = temporale.year
@@ -55,9 +58,14 @@ module CalendariumRomanum
         raise ArgumentError.new('Temporale year must be the same as year.')
       end
 
+      overrides ||= DateOverrider.new
+
       @year = year
-      @sanctorale = sanctorale || Sanctorale.new
-      @temporale = temporale || Temporale.new(year)
+      @temporale, @sanctorale =
+                  overrides.call(
+                    temporale || Temporale.new(year),
+                    sanctorale || Sanctorale.new
+                  )
       @populate_vespers = vespers
 
       @transferred = (transfers || Transfers).call(@temporale, @sanctorale).freeze

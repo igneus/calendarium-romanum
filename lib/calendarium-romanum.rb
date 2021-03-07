@@ -32,6 +32,7 @@ require 'date'
   sanctorale_writer
   sanctorale_factory
   transfers
+  date_overrider
   util
   ordinalizer
 ).each do |f|
