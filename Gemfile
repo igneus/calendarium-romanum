@@ -11,6 +11,7 @@ end
 group :development do
   gem 'rubocop'
   gem 'yard'
+  gem 'appraisal'
 end
 
 group :test do
