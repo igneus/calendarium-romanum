@@ -228,6 +228,31 @@ module CalendariumRomanum
         days == b.days
     end
 
+    # Does this instance provide celebration identified by symbol +symbol+?
+    #
+    # @param symbol [Symbol]
+    # @return [Boolean]
+    def provides_celebration?(symbol)
+      @symbols.include? symbol
+    end
+
+    # If the instance contains a {Celebration} identified by the specified symbol,
+    # returns it's date and the {Celebration} itself, nil otherwise.
+    #
+    # @param symbol [Symbol]
+    # @return [Array<AbstractDate, Celebration>, nil]
+    def by_symbol(symbol)
+      return nil unless provides_celebration? symbol
+
+      @days.each_pair do |date, celebrations|
+        found = celebrations.find {|c| c.symbol == symbol }
+        return [date, found] if found
+      end
+
+      # reaching this point would mean that contents of @symbols and @days are not consistent
+      raise 'this point should never be reached'
+    end
+
     protected
 
     attr_reader :days

@@ -402,4 +402,28 @@ describe CR::Sanctorale do
       end
     end
   end
+
+  describe '#provides_celebration?' do
+    it 'known' do
+      s.add 1, 17, antonius
+
+      expect(s.provides_celebration?(:antonius)).to be true
+    end
+
+    it 'unknown' do
+      expect(s.provides_celebration?(:unknown)).to be false
+    end
+  end
+
+  describe '#by_symbol' do
+    it 'known' do
+      s.add 1, 17, antonius
+
+      expect(s.by_symbol(:antonius)).to eq [CR::AbstractDate.new(1, 17), antonius]
+    end
+
+    it 'unknown' do
+      expect(s.by_symbol(:unknown)).to be nil
+    end
+  end
 end
