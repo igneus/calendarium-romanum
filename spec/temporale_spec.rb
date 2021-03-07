@@ -616,6 +616,75 @@ describe CR::Temporale do
         end
       end
     end
+
+    describe 'effect of redefining celebration date method' do
+      let(:year) { 2000 }
+
+      describe 'singleton method' do
+        it 'has no effect' do
+          temporale = described_class.new year
+          def temporale.holy_trinity
+            Date.new(self.year + 1, 9, 1)
+          end
+
+          on_original_date = temporale[CR::Temporale::Dates.holy_trinity(year)]
+
+          # no effect - because Temporale celebrations are created and their dates
+          # computed on instance initialization
+          expect(on_original_date.symbol).to be :holy_trinity
+        end
+      end
+
+      describe 'instance method' do
+        let(:klass) do
+          Class.new(described_class) do
+            def holy_trinity
+              Date.new(self.year + 1, 9, 1)
+            end
+          end
+        end
+
+        let(:temporale) { klass.new year }
+
+        describe 'celebration not important for liturgical seasons' do
+          it 'changes date' do
+            on_original_date = temporale[CR::Temporale::Dates.holy_trinity(year)]
+            expect(on_original_date.symbol).to be nil
+            expect(on_original_date.rank).to be CR::Ranks::SUNDAY_UNPRIVILEGED
+
+            on_new_date = temporale[Date.new(year + 1, 9, 1)]
+            expect(on_new_date.symbol).to be :holy_trinity
+          end
+        end
+
+        describe 'celebration important for computation of liturgical seasons' do
+          let(:klass) do
+            Class.new(described_class) do
+              def nativity
+                Date.new(self.year + 1, 7, 25)
+              end
+            end
+          end
+
+          it 'changes celebration date' do
+            on_original_date = temporale[CR::Temporale::Dates.nativity(year)]
+            expect(on_original_date.symbol).to be nil
+            expect(on_original_date.rank).to be CR::Ranks::FERIAL_PRIVILEGED
+
+            on_new_date = temporale[Date.new(year + 1, 7, 25)]
+            expect(on_new_date.symbol).to be :nativity
+          end
+
+          it 'changes season boundaries' do
+            on_original_date = temporale.season CR::Temporale::Dates.nativity(year)
+            expect(on_original_date).to be CR::Seasons::ADVENT
+
+            before_summer_christmas = temporale.season Date.new(year + 1, 7, 1)
+            expect(before_summer_christmas).to be CR::Seasons::ADVENT
+          end
+        end
+      end
+    end
   end
 
   describe 'packaged extensions' do
