@@ -582,9 +582,10 @@ Get the sources and install development depencencies:
 
 ### Run Tests
 
-`bundle exec rake spec`
-
-See also `.travis.yml` for comprehensive tests run on the CI.
+- `bundle exec rake spec` to execute the test suite
+- `bundle exec rake spec_all_locales` to run the test suite for each of the supported locales
+- `bundle exec appraisal rake spec` to test compatibility with different versions of dependencies
+- `bash spec/build/gem_build_test.sh` to test that a valid working Ruby gem can be built from the sources
 
 [awesomecc]: https://github.com/calendarium-romanum/awesome-church-calendar
 [gnlyc]: https://www.ewtn.com/catholicism/library/liturgical-year-2193
