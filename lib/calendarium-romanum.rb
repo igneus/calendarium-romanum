@@ -15,6 +15,7 @@ require 'date'
   enum
   enums
   errors
+  event_dispatcher
   data
   day
   calendar
