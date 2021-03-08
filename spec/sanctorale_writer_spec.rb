@@ -9,7 +9,7 @@ describe CR::SanctoraleWriter do
       CR::Celebration.new(
         title: 'The Most Holy Name of Jesus',
         symbol: :name_jesus
-      )  
+      )
     end
     let(:date) { CR::AbstractDate.new(1, 3) }
     let(:result) { d.send(:celebration_line, date, celebration) }
@@ -37,7 +37,7 @@ describe CR::SanctoraleWriter do
         let(:celebration) do
           CR::Celebration.new(
             rank: CR::Ranks::MEMORIAL_GENERAL
-          )  
+          )
         end
         it 'includes m as rank' do
           expect(result).to include(' m ')
@@ -47,7 +47,7 @@ describe CR::SanctoraleWriter do
         let(:celebration) do
           CR::Celebration.new(
             rank: CR::Ranks::FEAST_GENERAL
-          )  
+          )
         end
         it 'includes f as rank' do
           expect(result).to include(' f ')
@@ -57,7 +57,7 @@ describe CR::SanctoraleWriter do
         let(:celebration) do
           CR::Celebration.new(
             rank: CR::Ranks::SOLEMNITY_GENERAL
-          )  
+          )
         end
         it 'includes s as rank' do
           expect(result).to include(' s ')
@@ -68,20 +68,20 @@ describe CR::SanctoraleWriter do
         let(:celebration) do
           CR::Celebration.new(
             rank: CR::Ranks::FEAST_LORD_GENERAL
-          )  
+          )
         end
         it 'includes f2.5 as rank' do
           expect(result).to include(' f2.5 ')
         end
       end
     end
-    
+
     describe 'colour' do
       describe 'red' do
         let(:celebration) do
           CR::Celebration.new(
             colour: CR::Colours::RED
-          )  
+          )
         end
         it 'includes R as colour' do
           expect(result).to include(' R ')
@@ -89,7 +89,7 @@ describe CR::SanctoraleWriter do
       end
     end
   end
-  
+
   describe 'YAML front matter (YFM)' do
     it 'writes YFM if metadata is present' do
       s.metadata = { 'foo' => 'bar' }
