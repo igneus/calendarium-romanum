@@ -40,7 +40,7 @@ Style/SpaceInsideHashLiteralBraces:
 Style/SpaceInsideRangeLiteral:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/ZeroLengthPredicate:
