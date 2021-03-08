@@ -50,8 +50,6 @@ describe CR::DateOverrider do
     let(:overrides) { {Date.new(year + 1, 7, 5) => :nullus} }
 
     it 'returns sanctorale with the override applied' do
-      pending 'waits for reasonable date moving support in Sanctorale'
-
       sanctorale.add 1, 14, nullus
 
       new_temporale, new_sanctorale = subject.call temporale, sanctorale

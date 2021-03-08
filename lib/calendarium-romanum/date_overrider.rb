@@ -31,7 +31,7 @@ module CalendariumRomanum
       new_sanctorale =
         for_sanctorale.empty? ?
           sanctorale :
-          sanctorale.merge(sanctorale_layer(for_sanctorale, sanctorale))
+          sanctorale.merge(sanctorale_layer(for_sanctorale, sanctorale), delete_same_symbols: true)
 
       new_temporale =
         for_temporale.empty? ?
@@ -52,8 +52,9 @@ module CalendariumRomanum
     def sanctorale_layer(overrides, sanctorale)
       r = Sanctorale.new
       overrides.each do |date, symbol|
-        orig_date, celebration = sanctorale.by_symbol(symbol)
-        r.replace orig_date.month, orig_date.day, []
+        _, celebration = sanctorale.by_symbol symbol
+        next if celebration.nil?
+
         r.add date.month, date.day, celebration
       end
       r
