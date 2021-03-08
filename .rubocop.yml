@@ -1,10 +1,10 @@
 Metrics/LineLength:
   Max: 100
 
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
@@ -31,16 +31,19 @@ Style/RaiseArgs:
 Style/RedundantException:
   Enabled: false
 
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideBlockBraces:
   SpaceBeforeBlockParameters: false
 
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
-Style/SpaceInsideRangeLiteral:
+Layout/SpaceInsideRangeLiteral:
   Enabled: false
 
 Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/ZeroLengthPredicate:
