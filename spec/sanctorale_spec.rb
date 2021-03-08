@@ -198,6 +198,62 @@ describe CR::Sanctorale do
         end.not_to raise_exception
       end
     end
+
+    describe 'delete_same_symbol option' do
+      before :each do
+        s.add 1, 13, nullus
+      end
+
+      it 'deletes already existing celebration with the same symbol' do
+        s.replace 7, 30, [nullus], delete_same_symbol: true
+
+        expect(s.get(7, 30)).to eq [nullus]
+        expect(s.get(1, 13)).to eq []
+      end
+    end
+  end
+
+  describe '#delete_by_symbol' do
+    describe 'symbol not present' do
+      before(:each) do
+        s.add 1, 17, antonius
+      end
+
+      it 'does not change the instance' do
+        expect { s.delete_by_symbol(:nullus) }
+          .not_to change { s.size }
+      end
+
+      it 'returns nil' do
+        expect(s.delete_by_symbol(:nullus)).to be nil
+      end
+    end
+
+    describe 'symbol present' do
+      before(:each) do
+        s.add 1, 17, antonius
+      end
+
+      it 'removes the celebration' do
+        expect { s.delete_by_symbol(:antonius) }
+          .to change { s.size }.by(-1)
+
+        expect(s.get(1, 17)).to eq []
+      end
+
+      it 'returns the deleted celebration' do
+        expect(s.delete_by_symbol(:antonius)).to be antonius
+      end
+
+      it 'does not delete other celebrations on the same date' do
+        s.add 1, 18, nullus
+        s.add 1, 18, ignotus
+
+        s.delete_by_symbol(:ignotus)
+
+        expect(s.get(1, 18)).to eq [nullus]
+      end
+    end
   end
 
   describe '#update' do
@@ -286,6 +342,19 @@ describe CR::Sanctorale do
       expect do
         s.update s2
       end.not_to raise_exception
+    end
+
+    describe 'delete_same_symbols option' do
+      it 'deletes existing celebrations with matching symbols' do
+        s.add 1, 17, antonius
+        s2.add 2, 17, antonius
+
+        s.update s2, delete_same_symbols: true
+
+        expect(s.size).to be 1
+        expect(s.get(2, 17)).to eq [antonius]
+        expect(s.get(1, 17)).to eq []
+      end
     end
   end
 
