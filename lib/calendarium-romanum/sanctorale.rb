@@ -101,14 +101,21 @@ module CalendariumRomanum
     # @param month [Integer]
     # @param day [Integer]
     # @param celebrations [Array<Celebration>]
-    # @param symbol_uniqueness [true|false]
+    # @param delete_same_symbol [Boolean]
+    #   if for any of the newly added celebration symbols is already present,
+    #   delete the celebration(s) in question before the actual replace operation
+    # @param symbol_uniqueness [Boolean]
     #   allows disabling symbol uniqueness check.
     #   Internal feature, not intended for use by client code.
     # @return [void]
     # @raise [ArgumentError]
     #   when performing the operation would break the object's invariant
-    def replace(month, day, celebrations, symbol_uniqueness: true)
+    def replace(month, day, celebrations, delete_same_symbol: false, symbol_uniqueness: true)
       date = AbstractDate.new(month, day)
+
+      if delete_same_symbol
+        celebrations.each {|c| delete_by_symbol c.symbol }
+      end
 
       symbols_without_day = @symbols
       unless @days[date].nil?
@@ -134,17 +141,42 @@ module CalendariumRomanum
       @days[date] = celebrations.dup
     end
 
+    # Deletes {Celebration} specified by it's symbol.
+    # Returns the {Celebration} or +nil+ if no such {Celebration} is found.
+    #
+    # @param symbol [Symbol]
+    # @return [Celebration, nil]
+    def delete_by_symbol(symbol)
+      return nil unless provides_celebration? symbol
+
+      date, celebration = by_symbol symbol
+      if @days[date].size > 1
+        @days[date].delete celebration
+      else
+        @days.delete date
+      end
+      @symbols.delete celebration.symbol
+
+      celebration
+    end
+
     # Updates the receiver with {Celebration}s from another instance.
     #
     # For each date contained in +other+ the content of +self+
     # is _replaced_ by that of +other+.
     #
     # @param other [Sanctorale]
+    # @param delete_same_symbols [Boolean]
+    #   if any of the celebration symbols from +other+ are already present,
+    #   delete the celebrations in question before adding those from +other+
     # @return [void]
     # @raise (see #replace)
-    def update(other)
+    def update(other, delete_same_symbols: false)
       other.each_day do |date, celebrations|
-        replace date.month, date.day, celebrations, symbol_uniqueness: false
+        replace(
+          date.month, date.day, celebrations,
+          delete_same_symbol: delete_same_symbols, symbol_uniqueness: false
+        )
       end
       rebuild_symbols
     end
@@ -152,9 +184,11 @@ module CalendariumRomanum
     # Returns a new copy containing {Celebration}s from both self and +other+.
     #
     # @param other [Sanctorale]
+    # @param delete_same_symbols [Boolean]
+    #   works analogically to the option of the same name for #update
     # @return [Sanctorale]
-    def merge(other)
-      dup.tap {|dupped| dupped.update other }
+    def merge(other, delete_same_symbols: false)
+      dup.tap {|dupped| dupped.update other, delete_same_symbols: delete_same_symbols }
     end
 
     # Retrieves {Celebration}s for the given date
