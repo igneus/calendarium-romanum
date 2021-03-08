@@ -876,6 +876,23 @@ describe CR::Calendar do
         expect(calendar[date].vespers.rank).to be CR::Ranks::SUNDAY_UNPRIVILEGED
       end
     end
+
+    describe 'Sanctorale celebration' do
+      it 'can be overridden' do
+        expect(sanctorale).to be_empty # make sure
+
+        calendar = described_class.new year, sanctorale, event_dispatcher: dispatcher
+
+        # solemnities of St. None all the year long
+        dispatcher.add_listener(CR::Calendar::SanctoraleRetrievalEvent::EVENT_ID) do |event|
+          event.result = [st_none]
+        end
+
+        expect(calendar[Date.new(year, 12, 15)].celebrations[0]).to be st_none
+        expect(calendar[Date.new(year + 1, 7, 1)].celebrations[0]).to be st_none
+        expect(calendar[Date.new(year + 1, 9, 1)].celebrations[0]).to be st_none
+      end
+    end
   end
 
   # only a small subset of the Sanctorale public interface

@@ -260,7 +260,7 @@ module CalendariumRomanum
       return [tr] if tr
 
       t = @temporale[date]
-      st = @sanctorale[date]
+      st = sanctorale_retrieval_event date, @sanctorale[date]
 
       if date.saturday? &&
          @temporale.season(date) == Seasons::ORDINARY &&
@@ -328,15 +328,22 @@ module CalendariumRomanum
     # (and thus lose the solemnity for the given year) by setting
     # #celebration to nil, or even replace it with a completely
     # different celebration.
-    class TransferredOnEvent < Struct.new(:date, :celebration)
-      EVENT_ID = :calendar_transferred_on
+    class TransferredOnEvent < Struct.new(:date, :celebration, :calendar)
+      EVENT_ID = :calendar__transferred_on
+    end
+
+    # Dispatched whenever {Calendar} retrieves {Celebration}s for
+    # a given date from {Sanctorale}.
+    # Listeners can override the {Celebration}s.
+    class SanctoraleRetrievalEvent < Struct.new(:date, :result, :calendar)
+      EVENT_ID = :calendar__sanctorale_retrieval
     end
 
     # Dispatched whenever {Calendar} decides which {Celebration}(s)
     # will take place on the given date.
     # Listeners can replace the result.
-    class TemporaleSanctoraleResolutionEvent < Struct.new(:date, :result, :temporale, :sanctorale)
-      EVENT_ID = :temporale_sanctorale_resolution
+    class TemporaleSanctoraleResolutionEvent < Struct.new(:date, :result, :temporale, :sanctorale, :calendar)
+      EVENT_ID = :calendar__temporale_sanctorale_resolution
     end
 
     # Dispatched whenever {Calendar} decides which (if any)
@@ -344,25 +351,31 @@ module CalendariumRomanum
     # Only valid options for +result+ are +nil+ (the day's {Celebration}
     # keeps the Vespers) or one of the {Celebration}s from +tomorrow+,
     # if it's rank makes it eligible for first Vespers.
-    class VespersResolutionEvent < Struct.new(:date, :result, :today, :tomorrow)
-      EVENT_ID = :vespers_resolution
+    class VespersResolutionEvent < Struct.new(:date, :result, :today, :tomorrow, :calendar)
+      EVENT_ID = :calendar__vespers_resolution
     end
 
     def transferred_on_event(*args)
       @event_dispatcher
-        .dispatch(TransferredOnEvent.new(*args))
+        .dispatch(TransferredOnEvent.new(*args, self))
         .celebration
+    end
+
+    def sanctorale_retrieval_event(*args)
+      @event_dispatcher
+        .dispatch(SanctoraleRetrievalEvent.new(*args, self))
+        .result
     end
 
     def resolution_event(*args)
       @event_dispatcher
-        .dispatch(TemporaleSanctoraleResolutionEvent.new(*args))
+        .dispatch(TemporaleSanctoraleResolutionEvent.new(*args, self))
         .result
     end
 
     def vespers_event(*args)
       @event_dispatcher
-        .dispatch(VespersResolutionEvent.new(*args))
+        .dispatch(VespersResolutionEvent.new(*args, self))
         .result
     end
 
