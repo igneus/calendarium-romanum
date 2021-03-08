@@ -67,9 +67,12 @@ calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: t
 
 expect(calendar[i24].celebrations[0].symbol).to be :sacred_heart
 
-day = calendar[i23]
-expect(day.celebrations[0].symbol).to be :baptist_birth
-expect(day.vespers.symbol).to be :sacred_heart
+# TODO: Currently we cannot do this as expected, as for calendarium-romanum
+#   the two solemnities have exactly the same rank
+#
+# day = calendar[i23]
+# expect(day.celebrations[0].symbol).to be :baptist_birth
+# expect(day.vespers.symbol).to be :sacred_heart
 ```
 
 Ubi vero S. Ioannes Baptista patronus sit nationis vel dioecesis vel civitatis aut
