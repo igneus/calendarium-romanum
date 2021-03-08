@@ -1,6 +1,11 @@
-require 'simplecov'
-SimpleCov.start do
-  add_filter 'lib/calendarium-romanum/cli.rb'
+run_by_appraisal = ENV["APPRAISAL_INITIALIZED"]
+
+# simplecov somehow doesn't work well with appraisal and we don't need it to
+unless run_by_appraisal
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter 'lib/calendarium-romanum/cli.rb'
+  end
 end
 
 require 'aruba/rspec'
