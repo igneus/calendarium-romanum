@@ -41,7 +41,7 @@ module CalendariumRomanum
     # @raise [RangeError]
     #   if +year+ is specified for which the implemented calendar
     #   system wasn't in force
-    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil)
+    def initialize(year, sanctorale = nil, temporale = nil, vespers: false, transfers: nil, event_dispatcher: nil)
       unless year.is_a? Integer
         temporale = year
         year = temporale.year
@@ -61,6 +61,8 @@ module CalendariumRomanum
       @populate_vespers = vespers
 
       @transferred = (transfers || Transfers).call(@temporale, @sanctorale).freeze
+
+      @event_dispatcher = event_dispatcher || EventDispatcher.new
     end
 
     class << self
@@ -254,11 +256,11 @@ module CalendariumRomanum
     private
 
     def celebrations_for(date)
-      tr = @transferred[date]
+      tr = transferred_on_event(date, @transferred[date]) if @transferred[date]
       return [tr] if tr
 
-      t = @temporale[date]
-      st = @sanctorale[date]
+      t = temporale_retrieval_event date, @temporale[date]
+      st = sanctorale_retrieval_event date, @sanctorale[date]
 
       if date.saturday? &&
          @temporale.season(date) == Seasons::ORDINARY &&
@@ -267,29 +269,36 @@ module CalendariumRomanum
         st += [Temporale::CelebrationFactory.saturday_memorial_bvm]
       end
 
-      unless st.empty?
+      result =
+      if st.empty?
+        [t]
+      else
         if st.first.rank > t.rank
           if st.first.rank == Ranks::MEMORIAL_OPTIONAL
-            return [t] + st
+            [t] + st
           else
-            return st
+            st
           end
         elsif t.rank == Ranks::FERIAL_PRIVILEGED && st.first.rank.memorial?
           commemorations = st.collect do |c|
             c.change(rank: Ranks::COMMEMORATION, colour: t.colour)
           end
-          return [t] + commemorations
+
+          [t] + commemorations
         elsif t.symbol == :immaculate_heart &&
               [Ranks::MEMORIAL_GENERAL, Ranks::MEMORIAL_PROPER].include?(st.first.rank)
           optional_memorials = ([t] + st).collect do |celebration|
             celebration.change rank: Ranks::MEMORIAL_OPTIONAL
           end
           ferial = temporale.send :ferial, date # ugly and evil
-          return [ferial] + optional_memorials
+
+          [ferial] + optional_memorials
+        else
+          [t]
         end
       end
 
-      [t]
+      resolution_event date, result, t, st
     end
 
     def first_vespers_on(date, celebrations)
@@ -297,19 +306,90 @@ module CalendariumRomanum
       tomorrow_celebrations = celebrations_for(tomorrow)
 
       c = tomorrow_celebrations.first
+
+      result =
       if c.rank >= Ranks::SOLEMNITY_PROPER ||
          c.rank == Ranks::SUNDAY_UNPRIVILEGED ||
          (c.rank == Ranks::FEAST_LORD_GENERAL && tomorrow.sunday?)
         if c.symbol == :ash_wednesday || c.symbol == :good_friday
-          return nil
-        end
-
-        if c.rank > celebrations.first.rank || c.symbol == :easter_sunday
-          return c
+          nil
+        elsif c.rank > celebrations.first.rank || c.symbol == :easter_sunday
+          c
+        else
+          nil
         end
       end
 
-      nil
+      vespers_event date, result, celebrations, tomorrow_celebrations
+    end
+
+    # There is a solemnity transferred to the given date.
+    # Listeners can prevent the transfer from taking effect
+    # (and thus lose the solemnity for the given year) by setting
+    # #celebration to nil, or even replace it with a completely
+    # different celebration.
+    class TransferredOnEvent < Struct.new(:date, :celebration, :calendar)
+      EVENT_ID = :calendar__transferred_on
+    end
+
+    # Dispatched whenever {Calendar} retrieves {Celebration} for
+    # a given date from {Temporale}.
+    # Listeners can override the {Celebration}.
+    class TemporaleRetrievalEvent < Struct.new(:date, :result, :calendar)
+      EVENT_ID = :calendar__temporale_retrieval
+    end
+
+    # Dispatched whenever {Calendar} retrieves {Celebration}s for
+    # a given date from {Sanctorale}.
+    # Listeners can override the {Celebration}s.
+    class SanctoraleRetrievalEvent < Struct.new(:date, :result, :calendar)
+      EVENT_ID = :calendar__sanctorale_retrieval
+    end
+
+    # Dispatched whenever {Calendar} decides which {Celebration}(s)
+    # will take place on the given date.
+    # Listeners can replace the result.
+    class TemporaleSanctoraleResolutionEvent < Struct.new(:date, :result, :temporale, :sanctorale, :calendar)
+      EVENT_ID = :calendar__temporale_sanctorale_resolution
+    end
+
+    # Dispatched whenever {Calendar} decides which (if any)
+    # {Celebration}'s Vespers should be celebrated on the given date.
+    # Only valid options for +result+ are +nil+ (the day's {Celebration}
+    # keeps the Vespers) or one of the {Celebration}s from +tomorrow+,
+    # if it's rank makes it eligible for first Vespers.
+    class VespersResolutionEvent < Struct.new(:date, :result, :today, :tomorrow, :calendar)
+      EVENT_ID = :calendar__vespers_resolution
+    end
+
+    def transferred_on_event(*args)
+      @event_dispatcher
+        .dispatch(TransferredOnEvent.new(*args, self))
+        .celebration
+    end
+
+    def temporale_retrieval_event(*args)
+      @event_dispatcher
+        .dispatch(TemporaleRetrievalEvent.new(*args, self))
+        .result
+    end
+
+    def sanctorale_retrieval_event(*args)
+      @event_dispatcher
+        .dispatch(SanctoraleRetrievalEvent.new(*args, self))
+        .result
+    end
+
+    def resolution_event(*args)
+      @event_dispatcher
+        .dispatch(TemporaleSanctoraleResolutionEvent.new(*args, self))
+        .result
+    end
+
+    def vespers_event(*args)
+      @event_dispatcher
+        .dispatch(VespersResolutionEvent.new(*args, self))
+        .result
     end
 
     def system_not_effective

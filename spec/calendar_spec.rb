@@ -807,6 +807,94 @@ describe CR::Calendar do
     end
   end
 
+  describe 'customizing behaviour through event listeners' do
+    let(:dispatcher) { CR::EventDispatcher.new }
+    let(:year) { 2014 }
+    let(:sanctorale) { CR::Sanctorale.new }
+
+    let(:st_none) { CR::Celebration.new('St. None, abbot, founder of the Order of Programmers (OProg)', CR::Ranks::SOLEMNITY_PROPER, symbol: :none) }
+
+    describe 'solemnity transfer' do
+      it 'can prevent it' do
+        # the solemnity falls on the year's Good Friday ...
+        d = CR::Temporale::Dates.good_friday(year)
+        sanctorale.add d.month, d.day, st_none
+
+        calendar = described_class.new year, sanctorale, event_dispatcher: dispatcher
+
+        # ... and is transferred
+        new_date = CR::Temporale::Dates.palm_sunday(year) - 1
+        expect(calendar.transferred).to eq({new_date => st_none})
+
+        expect(calendar[new_date].celebrations[0]).to be st_none
+
+        # now we prevent the transfer from taking effect through an event listener
+        dispatcher.add_listener(CR::Calendar::TransferredOnEvent::EVENT_ID) do |event|
+          event.celebration = nil
+        end
+
+        expect(calendar[new_date].celebrations[0]).to be_ferial
+      end
+    end
+
+    describe 'sanctorale vs. temporale resolution' do
+      it 'can override it' do
+        sanctorale.add 7, 10, st_none
+
+        calendar = described_class.new year, sanctorale, event_dispatcher: dispatcher
+
+        expect(calendar.day(7, 10).celebrations[0]).to be st_none
+
+        # now we modify the calendar's behaviour to ignore St. None
+        dispatcher.add_listener(CR::Calendar::TemporaleSanctoraleResolutionEvent::EVENT_ID) do |event|
+          event.result = [event.temporale] if event.result[0].symbol == :none
+        end
+
+        expect(calendar.day(7, 10).celebrations[0]).to be_ferial
+      end
+    end
+
+    describe 'first Vespers resolution' do
+      it 'can override it' do
+        date = Date.new(year + 1, 7, 18)
+        expect(date).to be_saturday # make sure
+
+        sanctorale.add date.month, date.day, st_none
+
+        calendar = described_class.new year, sanctorale, event_dispatcher: dispatcher, vespers: true
+
+        # normally the solemnity gets second Vespers
+        expect(calendar[date].vespers).to be nil
+
+        # now we modify the calendar's behaviour to unlawfully grant the green Sunday first Vespers
+        dispatcher.add_listener(CR::Calendar::VespersResolutionEvent::EVENT_ID) do |event|
+          if event.today[0].symbol == :none && event.tomorrow[0].sunday?
+            event.result = event.tomorrow[0]
+          end
+        end
+
+        expect(calendar[date].vespers.rank).to be CR::Ranks::SUNDAY_UNPRIVILEGED
+      end
+    end
+
+    describe 'Sanctorale celebration' do
+      it 'can be overridden' do
+        expect(sanctorale).to be_empty # make sure
+
+        calendar = described_class.new year, sanctorale, event_dispatcher: dispatcher
+
+        # solemnities of St. None all the year long
+        dispatcher.add_listener(CR::Calendar::SanctoraleRetrievalEvent::EVENT_ID) do |event|
+          event.result = [st_none]
+        end
+
+        expect(calendar[Date.new(year, 12, 15)].celebrations[0]).to be st_none
+        expect(calendar[Date.new(year + 1, 7, 1)].celebrations[0]).to be st_none
+        expect(calendar[Date.new(year + 1, 9, 1)].celebrations[0]).to be st_none
+      end
+    end
+  end
+
   # only a small subset of the Sanctorale public interface
   # is used by Calendar. These specs show how small it is.
   describe 'required sanctorale interface' do

@@ -62,7 +62,7 @@ module CalendariumRomanum
           end
         @transferred[transfer_to] = loser
         # primary celebrations have noone to be beaten by, no need to harden their dates
-        @transferred[date] = winner unless winner.rank == Ranks::PRIMARY
+        @transferred[date] = winner unless winner.rank >= Ranks::PRIMARY
       end
 
       @transferred

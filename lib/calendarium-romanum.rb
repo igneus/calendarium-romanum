@@ -15,6 +15,7 @@ require 'date'
   enum
   enums
   errors
+  event_dispatcher
   data
   day
   calendar
@@ -31,6 +32,7 @@ require 'date'
   sanctorale_loader
   sanctorale_writer
   sanctorale_factory
+  special_cases_handler
   transfers
   util
   ordinalizer
