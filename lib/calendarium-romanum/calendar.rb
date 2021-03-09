@@ -259,7 +259,7 @@ module CalendariumRomanum
       tr = transferred_on_event(date, @transferred[date]) if @transferred[date]
       return [tr] if tr
 
-      t = @temporale[date]
+      t = temporale_retrieval_event date, @temporale[date]
       st = sanctorale_retrieval_event date, @sanctorale[date]
 
       if date.saturday? &&
@@ -332,6 +332,13 @@ module CalendariumRomanum
       EVENT_ID = :calendar__transferred_on
     end
 
+    # Dispatched whenever {Calendar} retrieves {Celebration} for
+    # a given date from {Temporale}.
+    # Listeners can override the {Celebration}.
+    class TemporaleRetrievalEvent < Struct.new(:date, :result, :calendar)
+      EVENT_ID = :calendar__temporale_retrieval
+    end
+
     # Dispatched whenever {Calendar} retrieves {Celebration}s for
     # a given date from {Sanctorale}.
     # Listeners can override the {Celebration}s.
@@ -359,6 +366,12 @@ module CalendariumRomanum
       @event_dispatcher
         .dispatch(TransferredOnEvent.new(*args, self))
         .celebration
+    end
+
+    def temporale_retrieval_event(*args)
+      @event_dispatcher
+        .dispatch(TemporaleRetrievalEvent.new(*args, self))
+        .result
     end
 
     def sanctorale_retrieval_event(*args)

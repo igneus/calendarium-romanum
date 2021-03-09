@@ -32,6 +32,7 @@ require 'date'
   sanctorale_loader
   sanctorale_writer
   sanctorale_factory
+  special_cases_handler
   transfers
   util
   ordinalizer

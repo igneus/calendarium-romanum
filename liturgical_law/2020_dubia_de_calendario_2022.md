@@ -57,7 +57,8 @@ c) Sollemnitas Nativitatis S. Ioanni Baptistae et sollemnitas Sacratissimi Cordi
 	 II Vesperae omittantur. I Vesperae sollemnitatis Sacratissimi Cordis Iesu celebrentur.
 
 ```ruby
-calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true
+year = 2021
+calendar = CR::Calendar.new year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true, event_dispatcher: CR::SpecialCasesHandler.event_dispatcher(year)
 
 i23 = Date.new(2022, 6, 23)
 i24 = i23 + 1
@@ -77,9 +78,40 @@ feria VI, celebretur; sollemnitas autem Sacratissimi Cordis Iesu ad diem 23 iuni
 feriam V transferatur, usque ad horam Nonam inclusive.
 
 ```ruby
-skip 'there is currently no pretty way how to model this scenario using calendarium-romanum -
-  a custom Temporale is required, either with a changed date of Sacred Heart or with
-  customized solemnity transfer logic'
+year = 2021
+
+i23 = Date.new(2022, 6, 23)
+i24 = i23 + 1
+
+dispatcher = CR::EventDispatcher.new
+
+# TODO these three listeners should be replaced by a single listener customizing
+#   the logic of solemnity transfer (once that is possible)
+dispatcher.add_listener(
+  CR::Calendar::TemporaleRetrievalEvent::EVENT_ID,
+  CR::SpecialCasesHandler::TemporaleDateChangeListener.new(:sacred_heart, i23)
+)
+dispatcher.add_listener(CR::Calendar::TransferredOnEvent::EVENT_ID) do |event|
+  if event.celebration && [:baptist_birth, :sacred_heart].include?(event.celebration.symbol)
+    event.celebration = nil
+  end
+end
+dispatcher.add_listener(CR::Calendar::TemporaleSanctoraleResolutionEvent::EVENT_ID) do |event|
+  event.result = event.sanctorale if event.date == i24
+end
+
+dispatcher.add_listener(
+  CR::Calendar::VespersResolutionEvent::EVENT_ID,
+  CR::SpecialCasesHandler::GrantFirstVespersListener.new(:baptist_birth)
+)
+
+calendar = CR::Calendar.new year, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true, event_dispatcher: dispatcher
+
+expect(calendar[i24].celebrations[0].symbol).to be :baptist_birth
+
+day = calendar[i23]
+expect(day.celebrations[0].symbol).to be :sacred_heart
+expect(day.vespers.symbol).to be :baptist_birth
 ```
 
 d) Dominica XX Temporis "per annum", die 14 augusti.
