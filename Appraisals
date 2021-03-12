@@ -1,5 +1,9 @@
 ### i18n
 
+appraise 'i18n-0.7' do
+  gem 'i18n', '0.7.0'
+end
+
 appraise 'i18n-0.9' do
   gem 'i18n', '0.9.5'
 end
