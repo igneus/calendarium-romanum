@@ -57,6 +57,8 @@ c) Sollemnitas Nativitatis S. Ioanni Baptistae et sollemnitas Sacratissimi Cordi
 	 II Vesperae omittantur. I Vesperae sollemnitatis Sacratissimi Cordis Iesu celebrentur.
 
 ```ruby
+pending 'ad hoc solution beyond the regular calendar rules, not supported in this version of calendarium-romanum'
+
 calendar = CR::Calendar.new 2021, CR::Data::GENERAL_ROMAN_LATIN.load, vespers: true
 
 i23 = Date.new(2022, 6, 23)
@@ -78,8 +80,7 @@ feriam V transferatur, usque ad horam Nonam inclusive.
 
 ```ruby
 skip 'there is currently no pretty way how to model this scenario using calendarium-romanum -
-  a custom Temporale is required, either with a changed date of Sacred Heart or with
-  customized solemnity transfer logic'
+  significant customizations of core functionalities would be required'
 ```
 
 d) Dominica XX Temporis "per annum", die 14 augusti.
