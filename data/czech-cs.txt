@@ -139,7 +139,7 @@ country: cz
 25 f R james : Sv. Jakuba, apoštola
 26 m joachim_anne : Sv. Jáchyma a Anny, rodičů Panny Marie
 27 gorazd : Sv. Gorazda a druhů
-29 m martha : Sv. Marty, Marie a Lazara
+29 m martha_mary_lazarus : Sv. Marty, Marie a Lazara
 30 peter_chrysologus : Sv. Petra Chryzologa, biskupa a učitele církve
 31 m ignatius_of_loyola : Sv. Ignáce z Loyoly, kněze
 

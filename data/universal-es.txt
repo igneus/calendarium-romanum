@@ -124,7 +124,7 @@ locale: es
 24 sharbel : San Chárbel Makhlouf, Ermitaño
 25 f R james : Santiago, apóstol
 26 m joachim_anne : Santos Joaquín y Ana, padres de la Santísima Virgen María
-29 m martha : Santos Marta, María y Lázaro
+29 m martha_mary_lazarus : Santos Marta, María y Lázaro
 30 peter_chrysologus : San Pedro Crisólogo, Obispo y Doctor de la Iglesia
 31 m ignatius_of_loyola : San Ignacio de Loyola, Presbítero
 

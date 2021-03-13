@@ -596,7 +596,7 @@ or 2028-06-18 ordinary 11 false
 2028-07-28 ordinary 16 false
 - "Feria sexta, hebdomada XVI per annum" 3.13 green   temporale
 2028-07-29 ordinary 16 true
-- "Ss. Marthae, Mariae et Lazari" 3.1 white martha 7/29 sanctorale
+- "Ss. Marthae, Mariae et Lazari" 3.1 white martha_mary_lazarus 7/29 sanctorale
 2028-07-30 ordinary 17 false
 - "Dominica XVII per annum" 2.6 green   temporale
 2028-07-31 ordinary 17 false

@@ -124,7 +124,7 @@ locale: fr
 24 sharbel : Saint Charbel Makhlouf, ermite
 25 f R james : Saint Jacques, apôtre
 26 m joachim_anne : Saints Joachim et Anne
-29 m martha : Saintes Marthe, Marie et Saint Lazare
+29 m martha_mary_lazarus : Saintes Marthe, Marie et Saint Lazare
 30 peter_chrysologus : Saint Pierre Chrysologue, évêque et docteur de l'Église
 31 m ignatius_of_loyola : Saint Ignace de Loyola, prêtre
 
