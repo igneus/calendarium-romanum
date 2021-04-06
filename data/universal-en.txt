@@ -36,6 +36,7 @@ locale: en
 21 peter_damian : Saint Peter Damian, Bishop and Doctor of the Church
 22 f chair_of_peter : The Chair of Saint Peter the Apostle
 23 m R polycarp : Saint Polycarp, Bishop and Martyr
+27 gregory_narek : Saint Gregory of Narek, Abbot and Doctor of the Church
 
 = 3
 4 casimir : Saint Casimir
@@ -167,6 +168,7 @@ locale: en
 15 m bvm_sorrows : Our Lady of Sorrows
 16 m R cornelius_cyprian : Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs
 17 bellarmine : Saint Robert Bellarmine, Bishop and Doctor of the Church
+17 hildegard : Saint Hildegard of Bingen, Virgin and Doctor of the Church
 19 R januarius : Saint Januarius, Bishop and Martyr
 20 m R korean_martyrs : Saint Andrew Kim Tae-gǒn, Priest, and Paul Chǒng Ha-sang, and Companions, Martyrs
 21 f R matthew : Saint Matthew, Apostle and Evangelist
