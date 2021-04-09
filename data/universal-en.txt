@@ -124,7 +124,7 @@ locale: en
 24 sharbel : Saint Sharbel Makhlūf, Priest
 25 f R james : Saint James, Apostle
 26 m joachim_anne : Saints Joachim and Anne, Parents of the Blessed Virgin Mary
-29 m R martha : Saint Martha
+29 m R martha : Saints Martha, Mary, and Lazarus
 30 peter_chrysologus : Saint Peter Chrysologus, Bishop and Doctor of the Church
 31 m ignatius_of_loyola : Saint Ignatius of Loyola, Priest
 
