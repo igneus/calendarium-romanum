@@ -35,7 +35,6 @@ locale: pt
 11 bvm_lourdes : Nossa Senhora de Lourdes
 14 m cyril_methodius : Ss. Cirilo, monge, e Metódio, bispo
 17 servite_founders : Ss. Sete Fundadores da Ordem dos Servitas
-20 francisco_jacinta_marto : Ss. Francisco e Jacinta Marto
 21 peter_damian : S. Pedro Damião, bispo e doutor da Igreja
 22 f chair_of_peter : Cátedra de S. Pedro, apóstolo
 23 m R polycarp : S. Policarpo, bispo e mártir
@@ -111,7 +110,7 @@ locale: pt
 
 = 7
 3 f R thomas_apostle : S. Tomé, apóstolo
-4 m elizabeth_of_portugal : S. Isabel de Portugal
+4 elizabeth_of_portugal : S. Isabel de Portugal
 5 anthony_zaccaria : S. António Maria Zacarias, presbítero
 6 R goretti : S. Maria Goretti, virgem e mártir
 9 R chinese_martyrs : Ss. Agostinho Zhao Rong e companheiros, mártires
@@ -119,15 +118,15 @@ locale: pt
 13 henry : S. Henrique
 14 camillus_de_lellis : S. Camilo de Lelis, presbítero
 15 m bonaventure : S. Boaventura, bispo e doutor da Igreja
-16 m bvm_mount_carmel : Virgem S. Maria do Monte Carmelo
+16 bvm_mount_carmel : Virgem S. Maria do Monte Carmelo
 20 R apollinaris : S. Apolinário, bispo e mártir
 21 lawrence_of_brindisi : S. Lourenço de Brindes, presbítero e doutor da Igreja
 22 f mary_magdalene : S. Maria Madalena
-23 f birgitta : S. Brígida, religiosa, Padroeira da Europa 
+23 birgitta : S. Brígida, religiosa
 24 sharbel : S. Sarbélio Makhluf, presbítero
 25 f R james : S. Tiago, Apóstolo 
 26 m joachim_anne : S. Joaquim e S. Ana, pais da Virgem S. Maria 
-29 m martha : SS. Marta, Maria e Lázaro
+29 m martha_mary_lazarus : SS. Marta, Maria e Lázaro
 30 peter_chrysologus : S. Pedro Crisólogo, bispo e doutor da Igreja
 31 m ignatius_of_loyola : S. Inácio de Loiola, presbítero
 
@@ -141,7 +140,7 @@ locale: pt
 7 R sixtus_ii : SS. Sisto II, papa, e Companheiros, mártires
 7 cajetan : S. Caetano, presbítero
 8 m dominic : S. Domingos, presbítero, Fundador da Ordem dos Pregadores
-9 f R stein : S. Teresa Benedita da Cruz, virgem e mártir, Padroeira da Europa
+9 R stein : S. Teresa Benedita da Cruz, virgem e mártir
 10 f R lawrence : S. Lourenço, diácono e mártir
 11 m clare : S. Clara, virgem
 12 de_chantal : S. Joana Francisca de Chantal, religiosa
@@ -192,7 +191,7 @@ locale: pt
 7 m bvm_rosary : Virgem Santa Maria do Rosário
 9 R denis : SS. Dionísio, bispo, e Companheiros, mártires
 9 leonardi : S. João Leonardo, presbítero
-11 m john_xxiii : S. João XXIII, papa
+11 john_xxiii : S. João XXIII, papa
 14 R callistus_i : S. Calisto I, papa e mártir
 15 m teresa_avila : S. Teresa de Jesus, virgem e doutora da Igreja
 16 hedwig : S. Hedwiges, religiosa
@@ -201,7 +200,7 @@ locale: pt
 18 f R luke : S. Lucas, Evangelista
 19 R brebeuf_jogues : SS. João de Brébeuf e Isaac Jogues, presbíteros, e Companheiros, mártires
 19 paul_of_cross : S. Paulo da Cruz, presbítero
-22 m john_paul_ii : S. João Paulo II, papa
+22 john_paul_ii : S. João Paulo II, papa
 23 john_capistrano : S. João de Capistrano, presbítero
 24 claret : S. António Maria Claret, bispo
 28 f R simon_jude : S. Simão e S. Judas, Apóstolos
