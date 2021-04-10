@@ -78,7 +78,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
             expect(all_output).to include '1/11'
             expect(all_output).to include 'St. None, abbot'
             expect(all_output).to include 'differs in rank'
-            expect(last_command).to be_successfully_executed
+            expect(last_command).to have_exit_status 1
           end
         end
 
@@ -101,7 +101,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
             expect(all_output).to include '1/11'
             expect(all_output).to include 'St. None, abbot'
             expect(all_output).to include 'differs in colour'
-            expect(last_command).to be_successfully_executed
+            expect(last_command).to have_exit_status 1
           end
         end
 
@@ -122,7 +122,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
 
           it do
             expect(all_output).to include 'differs in title'
-            expect(last_command).to be_successfully_executed
+            expect(last_command).to have_exit_status 1
           end
         end
 
@@ -134,7 +134,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
             expect(all_output).to include '1/11'
             expect(all_output).to include 'St. Nulla, abbess'
             expect(all_output).to include 'only in cal2.txt'
-            expect(last_command).to be_successfully_executed
+            expect(last_command).to have_exit_status 1
           end
         end
 
@@ -146,7 +146,7 @@ describe CalendariumRomanum::CLI, type: :aruba do
             expect(all_output).to include '1/11'
             expect(all_output).to include 'St. None, abbot'
             expect(all_output).to include 'only in cal2.txt'
-            expect(last_command).to be_successfully_executed
+            expect(last_command).to have_exit_status 1
           end
         end
       end

@@ -67,7 +67,7 @@ EOS
           properties << k.to_sym
         end
       end
-      Comparator.new(properties).call(a, b)
+      Comparator.new(properties).call(a, b) || exit(1)
     end
 
     desc 'merge FILE1 ...', 'loads sanctorale data files on top of each other, prints the resulting sanctorale'

@@ -24,6 +24,7 @@ module CalendariumRomanum
         sanctoralia = paths.collect {|source| sanctorale_from_path source }
         names = paths.collect {|source| File.basename source }
 
+        differences_found = false
         all_possible_dates.each do |d|
           a, b = sanctoralia.collect {|sanctorale| sanctorale[d] }
 
@@ -33,6 +34,7 @@ module CalendariumRomanum
             compared = [ca, cb]
 
             if compared.index(&:nil?)
+              differences_found = true
               notnili = compared.index {|c| !c.nil? }
 
               print date(d)
@@ -47,6 +49,7 @@ module CalendariumRomanum
             end
 
             next if differences.empty?
+            differences_found = true
             print date(d)
             puts " differs in #{differences.join(', ')}"
             puts celebration(ca)
@@ -54,6 +57,8 @@ module CalendariumRomanum
             puts
           end
         end
+
+        !differences_found
       end
 
       private
