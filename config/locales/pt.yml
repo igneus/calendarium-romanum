@@ -1,0 +1,94 @@
+pt:
+  temporale:
+    season:
+      advent: Tempo do Advento
+      christmas: Tempo do Natal
+      lent: Tempo da Quaresma
+      triduum: Tríduo Pascal
+      easter: Tempo Pascal
+      ordinary: Tempo Comum
+    solemnity:
+      nativity: Natal do Senhor
+      holy_family: "Sagrada Família de Jesus, Maria e José"
+      mother_of_god: Oitava do Natal. Santa Maria Mãe de Deus
+      epiphany: Epifania do Senhor
+      baptism_of_lord: Baptismo do Senhor
+      ash_wednesday: Quarta-feira de cinzas
+      palm_sunday: Domingo de Ramos na Paixão do Senhor
+      good_friday: Sexta-feira da Paixão do Senhor
+      holy_saturday: Sábado Santo
+      easter_sunday: Domingo de Páscoa da Ressureição do Senhor
+      ascension: Ascensão do Senhor
+      pentecost: Domingo de Pentecostes
+      holy_trinity: Santíssima Trindade
+      corpus_christi: Santíssimo Corpo e Sangue de Cristo
+      sacred_heart: Sagrado Coração de Jesus
+      mother_of_church: Maria Mãe da Igreja
+      immaculate_heart: Coração Imaculado de Maria
+      christ_king: "Nosso Senhor Jesus Cristo, Rei do Universo"
+      saturday_memorial_bvm: Santa Maria no Sábado
+    extension:
+      christ_eternal_priest: "Nosso Senhor Jesus Cristo, Sumo e Eterno Sacerdote"
+      dedication: Aniversário da dedicação da Igreja
+    ordinary:
+      sunday: '%{week}º Domingo do Tempo Comum'
+      ferial: '%{weekday} da %{week}ª semana do Tempo Comum'
+    advent:
+      sunday: '%{week}º Domingo do Advento'
+      ferial: '%{weekday} da %{week}ª semana do Advento'
+      before_christmas: '%{day} de Dezembro'
+    christmas:
+      nativity_octave:
+        ferial: '%{day} na Oitava do Natal'
+      sunday: '%{week}º Domingo do Tempo do Natal'
+      ferial: '%{weekday} da %{week}ª semana do Tempo do Natal'
+      after_epiphany:
+        ferial: '%{weekday} depois da Epifania do Senhor'
+    lent:
+      after_ashes:
+        ferial: '%{weekday} depois das Cinzas'
+      sunday: '%{week}º Domingo da Quaresma'
+      ferial: '%{weekday} da %{week}ª semana da Quaresma'
+      holy_week:
+        ferial: '%{weekday} da Semana Santa'
+    easter:
+      octave:
+        ferial: '%{weekday} da Oitava da Páscoa'
+      sunday: '%{week}º Domingo do Tempo Pascal'
+      ferial: '%{weekday} da %{week}ª semana do Tempo Pascal'
+  rank:
+    '1_1': Tríduo Pascal
+    '1_2': Dias litúrgicos primários
+    '1_3': Solenidades no Calendário Geral
+    '1_4': Solenidades
+    '2_5': Festas do Senhor no Calendário Geral
+    '2_6': Domingos não-privilegiados
+    '2_7': Festas de Santos no Calendário Geral
+    '2_8': Festas
+    '2_9': Dias Privilegiados
+    '3_10': Memórias Obrigatórias no Calendário Geral
+    '3_11': Memórias Obrigatórias
+    '3_12': Memórias Facultativas
+    '3_13': Dias feriais
+    '4_0': Comemorações
+    short:
+      solemnity: solenidade
+      feast: festa
+      sunday: domingo
+      memorial: memória
+      memorial_opt: memória facultativa
+      ferial: dia ferial
+      commemoration: comemoração
+  weekday:
+    '0': Domingo
+    '1': Segunda-feira
+    '2': Terça-feira
+    '3': Quarta-feira
+    '4': Quinta-feira
+    '5': Sexta-feira
+    '6': Sábado
+  colour:
+    violet: roxo
+    white: branco
+    green: verde
+    red: vermelho
