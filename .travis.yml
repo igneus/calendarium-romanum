@@ -11,6 +11,7 @@ jobs:
     - rvm: 2.6.5 # ~ latest MRI
       script:
         - bundle exec rake spec_all_locales
+        - bundle exec rake data_cmp
         - bash spec/build/gem_build_test.sh
     - rvm: 2.5.0 # oldest officially maintained MRI
     - rvm: 2.0.0 # oldest MRI we support
