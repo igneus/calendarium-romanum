@@ -205,7 +205,7 @@ locale: en
 
 = 11
 1 s all_saints : All Saints
-2 s all_souls : All Souls
+2 s V all_souls : All Souls
 3 de_porres : Saint Martin de Porres, religious
 4 m borromeo : Saint Charles Borromeo, bishop
 9 f2.5 lateran_basilica : Dedication of the Lateran basilica

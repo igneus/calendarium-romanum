@@ -204,7 +204,7 @@ locale: it
 
 = 11
 1 s all_saints : Tutti i Santi
-2 s all_souls : Commemorazione di tutti i fedeli defunti
+2 s V all_souls : Commemorazione di tutti i fedeli defunti
 3 de_porres : San Martino de Porres, religioso
 4 m borromeo : San Carlo Borromeo, vescovo
 9 f2.5 lateran_basilica : Dedicazione della basilica Lateranense

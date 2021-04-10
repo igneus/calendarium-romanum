@@ -205,7 +205,7 @@ locale: fr
 
 = 11
 1 s all_saints : Toussaint
-2 s all_souls : Commémoration des fidèles défunts
+2 s V all_souls : Commémoration des fidèles défunts
 3 de_porres : Saint Martin de Porrès, religieux
 4 m borromeo : Saint Charles Borromée, évêque
 9 f2.5 lateran_basilica : Dédicace de la Basilique Saint-Jean-de-Latran

@@ -226,7 +226,7 @@ country: cz
 
 = 11
 1 s all_saints : Všech svatých
-2 s all_souls : Vzpomínka na všechny věrné zemřelé
+2 s V all_souls : Vzpomínka na všechny věrné zemřelé
 3 de_porres : Sv. Martina de Porres, řeholníka
 4 m borromeo : Sv. Karla Boromejského, biskupa
 9 f lateran_basilica : Posvěcení lateránské baziliky

@@ -195,7 +195,7 @@ note: |
 = 11
 
 1 s all_saints : OMNIUM SANCTORUM
-2 s all_souls : IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
+2 s V all_souls : IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM
 3 de_porres : S. Martini de Porres, religiosi
 4 m borromeo : S. Caroli Borromeo, episcopi
 9 f2.5 lateran_basilica : In dedicatione basilicae Lateranensis

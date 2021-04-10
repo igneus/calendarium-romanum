@@ -205,7 +205,7 @@ locale: es
 
 = 11
 1 s all_saints : Todos los Santos
-2 s all_souls : Conmemoración de Todos los Difuntos
+2 s V all_souls : Conmemoración de Todos los Difuntos
 3 de_porres : San Martín de Porres, Religioso
 4 m borromeo : San Carlos Borromeo, Obispo
 9 f2.5 lateran_basilica : Dedicación de la Basílica de Letrán
