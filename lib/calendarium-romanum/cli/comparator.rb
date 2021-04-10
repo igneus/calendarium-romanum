@@ -74,7 +74,9 @@ module CalendariumRomanum
       end
 
       def celebration(c)
-        "#{c.rank.priority} #{c.colour.symbol} | #{c.title}"
+        symbol_chunk = c.symbol && "#{c.symbol} | "
+
+        "#{c.rank.priority} #{c.colour.symbol} | #{symbol_chunk}#{c.title}"
       end
     end
   end
