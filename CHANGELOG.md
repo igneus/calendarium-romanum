@@ -1,5 +1,62 @@
 # Changelog
 
+## [0.9.0] 2021-04-11
+
+### Fixed
+
+- `Transfers` + `Calendar`: on collision of two solemnities of
+  exactly the same rank (e.g. collision of the solemnities of
+  Sacred Heart of Jesus and Birth of St. John the Baptist in 2022)
+  the sanctorale one was scheduled both on the original date and
+  on the transferred date and the temporale solemnity was not
+  scheduled at all
+- liturgical colour of All Souls (has incorrectly been white
+  since the beginning of the project, changed to violet)
+
+### Added
+
+- data: General Roman Calendar in Portuguese + Portuguese locale (by Tomas Monteiro @tmonteiro2344)
+- data: all calendars: new memorial of St. Martha, Mary and Lazarus
+  (replacing memorial of St. Martha alone),
+  new optional memorials of St. Gregory of Narek, St. John De Avila
+  and St. Hildegard of Bingen
+- `SanctoraleWriter.new`: new optional keyword argument `front_matter`
+- `Calendar.new`: new optional keyword argument `transfers`
+  for supplying custom implementation of the solemnity transfer logic
+- `Temporale#provides_celebration?`
+- `Sanctorale#provides_celebration?`, `#by_symbol`, `#merge`
+- CLI: `calendariumrom id` to list celebration symbols included
+  in specified sanctorale data file
+- CLI: `calendariumrom merge` to merge two or more sanctorale data files
+- CLI: `calendariumrom cmp` supports new options `--no-rank`,
+  `--no-colour`, `--no-symbol` for ignoring differences in the specified
+  celebration properties and option `--title` to check for differences
+  in title (ignored by default)
+
+### Changed
+
+- `Temporale::Dates` methods are defined as instance methods and made
+  available as module methods through `extend self` (so far they were
+  defined and only available as module methods)
+- `Temporale::Dates`: helper methods `weekday_before`, `weekday_after`,
+  `octave_of` and their derivatives extracted to a new module
+  `Temporale::DateHelper` (but they are still available on `Temporale::Dates`, too)
+- data: repeated spaces removed from the Latin, Italian and Spanish
+  version of the General Roman Calendar (this does not affect behaviour
+  of calendarium-romanum itself, but may affect some other applications
+  possibly processing the data files directly)
+- `Transfers#call` return value: now it contains not only solemnities
+  transferred (and the destination dates), but also the ones winning
+  the original date, unless they are of the two highest ranks
+- `Transfer#call`: in case of collision of two solemnities of exactly
+  the same rank temporale always wins over sanctorale
+- `Sanctorale#dup` now properly creates for the clone it's own internal
+  data structures independent of the original's ones
+- CLI: `calendariumrom cmp` exits with status 1 if any differences are found
+- CLI: `calendariumrom cmp` prints celebration symbol if available
+- runtime dependencies loosenned: we support `thor` already from version 0.15
+  and `i18n` from version 0.7
+
 ## [0.8.0] 2020-11-25
 
 ### Fixed

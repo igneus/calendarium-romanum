@@ -357,6 +357,7 @@ module CalendariumRomanum
     #
     # @param symbol [Symbol]
     # @return [Boolean]
+    # @since 0.9.0
     def provides_celebration?(symbol)
       @all_celebration_symbols.include? symbol
     end

@@ -2,6 +2,8 @@ module CalendariumRomanum
   class Temporale
     # Provides utility methods for date arithmetics, available
     # both as mixin instance methods and module methods.
+    #
+    # @since 0.9.0
     module DateHelper
       extend self
 

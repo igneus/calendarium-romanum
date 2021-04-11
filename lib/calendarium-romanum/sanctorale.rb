@@ -153,6 +153,7 @@ module CalendariumRomanum
     #
     # @param other [Sanctorale]
     # @return [Sanctorale]
+    # @since 0.9.0
     def merge(other)
       dup.tap {|dupped| dupped.update other }
     end
@@ -232,6 +233,7 @@ module CalendariumRomanum
     #
     # @param symbol [Symbol]
     # @return [Boolean]
+    # @since 0.9.0
     def provides_celebration?(symbol)
       @symbols.include? symbol
     end
@@ -241,6 +243,7 @@ module CalendariumRomanum
     #
     # @param symbol [Symbol]
     # @return [Array<AbstractDate, Celebration>, nil]
+    # @since 0.9.0
     def by_symbol(symbol)
       return nil unless provides_celebration? symbol
 
