@@ -813,7 +813,7 @@ or 2031-10-26 ordinary 30 false
 2031-11-01 ordinary 30 false
 - "OMNIUM SANCTORUM" 1.3 white all_saints 11/1 sanctorale
 2031-11-02 ordinary 31 false
-- "IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM" 1.3 white all_souls 11/2 sanctorale
+- "IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM" 1.3 violet all_souls 11/2 sanctorale
 2031-11-03 ordinary 31 false
 - "Feria secunda, hebdomada XXXI per annum" 3.13 green   temporale
 - "S. Martini de Porres, religiosi" 3.12 white de_porres 11/3 sanctorale

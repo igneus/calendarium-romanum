@@ -816,7 +816,7 @@ or 2029-10-28 ordinary 30 false
 2029-11-01 ordinary 30 false
 - "OMNIUM SANCTORUM" 1.3 white all_saints 11/1 sanctorale
 2029-11-02 ordinary 30 false
-- "IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM" 1.3 white all_souls 11/2 sanctorale
+- "IN COMMEMORATIONE OMNIUM FIDELIUM DEFUNCTORUM" 1.3 violet all_souls 11/2 sanctorale
 2029-11-03 ordinary 30 true
 - "Sabbato, hebdomada XXX per annum" 3.13 green   temporale
 - "S. Martini de Porres, religiosi" 3.12 white de_porres 11/3 sanctorale
