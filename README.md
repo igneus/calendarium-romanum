@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/calendarium-romanum.svg)](https://badge.fury.io/rb/calendarium-romanum)
 
 API documentation:
-[0.8.0](http://www.rubydoc.info/gems/calendarium-romanum/0.9.0)
+[0.9.0](http://www.rubydoc.info/gems/calendarium-romanum/0.9.0)
 [0.8.0](http://www.rubydoc.info/gems/calendarium-romanum/0.8.0)
 [0.7.1](http://www.rubydoc.info/gems/calendarium-romanum/0.7.1)
 [0.6.0](http://www.rubydoc.info/gems/calendarium-romanum/0.6.0)
