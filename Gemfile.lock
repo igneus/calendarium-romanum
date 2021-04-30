@@ -41,7 +41,7 @@ GEM
       ast (~> 2.4.1)
     rainbow (3.0.0)
     rake (12.0.0)
-    rexml (3.2.4)
+    rexml (3.2.5)
     roman-numerals (0.3.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
