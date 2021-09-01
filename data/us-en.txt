@@ -12,7 +12,7 @@ extends:
 1/6 bessette : Saint André Bessette, Religious
 1/22+1sunday unborn_children : Day of Prayer for the Legal Protection of Unborn Children
 # (1/23, when 1/22 falls on a Sunday)
-1/23 vincent_deacon : Saint Vincent, Deacon and Martyr
+1/23 R vincent_deacon : Saint Vincent, Deacon and Martyr
 1/23 marianne_cope : Saint Marianne Cope, Virgin
 
 3/3 drexel : Saint Katharine Drexel, Virgin
@@ -34,7 +34,7 @@ extends:
 10/5 francis_xavier_seelos : Blessed Francis Xavier Seelos, Priest
 10/6 bruno : Saint Bruno, Priest
 10/6 durocher : Blessed Marie Rose Durocher, Virgin
-10/19 m brebeuf_jogues : Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
+10/19 m R brebeuf_jogues : Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
 10/20 paul_of_cross : Saint Paul of the Cross, Priest
 
 11/13 m cabrini : Saint Frances Xavier Cabrini, Virgin
@@ -42,7 +42,7 @@ extends:
 11/18 rose_duchesne : Saint Rose Philippine Duchesne, Virgin
 11/23 R clement_i : Saint Clement I, Pope and Martyr
 11/23 columban : Saint Columban, Abbot
-11/23 miguel_pro : Blessed Miguel Agustín Pro, Priest and Martyr
+11/23 R miguel_pro : Blessed Miguel Agustín Pro, Priest and Martyr
 # 11/4thThursday thanksgiving : Thanksgiving Day
 
 12/12 f bvm_guadalupe : Our Lady of Guadalupe
