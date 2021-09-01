@@ -1,7 +1,7 @@
 require 'date'
 
 module CalendariumRomanum
-  VERSION = '2.0.2'.freeze
+  VERSION = '2.0.3'.freeze
 
-  RELEASE_DATE = Date.new(2021, 2, 12).freeze
+  RELEASE_DATE = Date.new(2021, 9, 1).freeze
 end

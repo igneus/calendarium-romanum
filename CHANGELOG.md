@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v2.0.2...v2.0.3) (2021-09-01)
+
+
+### Features
+
+* Add St. Gregory of Narek and St. Hildegard of Bingen to the calendar ([fab860f](https://github.com/Lumen-de-Lumine/calendarium-romanum/commit/fab860f26bb64dc53b435983c51f9ca4a9c0a094))
+
+
+
 ## [2.0.2](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v2.0.1...v2.0.2) (2021-02-12)
 
 
