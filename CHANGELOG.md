@@ -1,3 +1,12 @@
+## [2.0.4](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v2.0.3...v2.0.4) (2021-09-02)
+
+
+### Bug Fixes
+
+* Fix some liturgical colors for non-martyrs, and add violet for All Souls ([e83f375](https://github.com/Lumen-de-Lumine/calendarium-romanum/commit/e83f375699bc69f9dea29e270d28e7324a24a45d))
+
+
+
 ## [2.0.3](https://github.com/Lumen-de-Lumine/calendarium-romanum/compare/v2.0.2...v2.0.3) (2021-09-01)
 
 
