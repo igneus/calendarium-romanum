@@ -124,7 +124,7 @@ locale: en
 24 sharbel : Saint Sharbel Makhlūf, Priest
 25 f R james : Saint James, Apostle
 26 m joachim_anne : Saints Joachim and Anne, Parents of the Blessed Virgin Mary
-29 m R martha : Saints Martha, Mary, and Lazarus
+29 m martha : Saints Martha, Mary, and Lazarus
 30 peter_chrysologus : Saint Peter Chrysologus, Bishop and Doctor of the Church
 31 m ignatius_of_loyola : Saint Ignatius of Loyola, Priest
 
@@ -205,12 +205,12 @@ locale: en
 
 = 11
 1 s all_saints : All Saints
-2 s all_souls : The Commemoration of All the Faithful Departed (All Souls’ Day)
-3 R de_porres : Saint Martin de Porres, Religious
+2 s V all_souls : The Commemoration of All the Faithful Departed (All Souls’ Day)
+3 de_porres : Saint Martin de Porres, Religious
 4 m borromeo : Saint Charles Borromeo, Bishop
-9 f lateran_basilica : The Dedication of the Lateran Basilica
+9 f2.5 lateran_basilica : The Dedication of the Lateran Basilica
 10 m leo_great : Saint Leo the Great, Pope and Doctor of the Church
-11 m R martin : Saint Martin of Tours, Bishop
+11 m martin : Saint Martin of Tours, Bishop
 12 m R josaphat : Saint Josaphat, Bishop and Martyr
 15 albert : Saint Albert the Great, Bishop and Doctor of the Church
 16 margaret_of_scotland : Saint Margaret of Scotland
