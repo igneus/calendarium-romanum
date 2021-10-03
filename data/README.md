@@ -40,7 +40,7 @@ RANK is a rank code, which can have several forms:
 1. rank priority number, e.g. `1.3` (defined in
    [lib/calendarium-romanum/enums.rb](../lib/calendarium-romanum/enums.rb),
    and correspond to section and subsection numbers in the Table of Liturgical Days
-   in the [General Norms](https://www.ewtn.com/library/CURIA/CDWLITYR.HTM))
+   in the [General Norms](https://www.ewtn.com/catholicism/library/liturgical-year-2193))
 1. letter and a priority number, e.g. `s1.3`
 1. letter with a specifying suffix, e.g. `sp`: suffix `p` distinguishes
    proper solemnities/feasts/memorials from those inscribed in the General
