@@ -26,5 +26,5 @@ jobs:
         run: |
           bundle exec rake spec_all_locales &&
           bundle exec rake data_cmp &&
-          bash spec/build/gem_build_test.sh
+          bash spec/build/gem_build_test.sh --no-rvm
         if: matrix.ruby-version == '2.6.5'
