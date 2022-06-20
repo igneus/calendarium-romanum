@@ -1,6 +1,6 @@
 # calendarium-romanum
 
-[![Build Status](https://travis-ci.org/igneus/calendarium-romanum.svg?branch=master)](https://travis-ci.org/igneus/calendarium-romanum)
+![Build Status](https://github.com/igneus/calendarium-romanum/actions/workflows/ci.yml/badge.svg)
 [![Gem Version](https://badge.fury.io/rb/calendarium-romanum.svg)](https://badge.fury.io/rb/calendarium-romanum)
 
 API documentation:
