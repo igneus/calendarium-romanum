@@ -69,8 +69,9 @@ module CalendariumRomanum
             sanctorale
           )
 
-          r[year] = calendar.transferred.transform_values do |celebration|
-            celebration.symbol.to_s
+          r[year] = {}
+          calendar.transferred.each_pair do |date, celebration|
+            r[year][date] = celebration.symbol.to_s
           end
         end
 
