@@ -15,6 +15,10 @@ task :regression_refresh do
   2020.upto(2030).each do |year|
     sh "#{EXECUTABLE} dump #{year} > spec/regression_dumps/#{year}.txt"
   end
+
+  a = 2000
+  b = 2100
+  sh "#{EXECUTABLE} dump_transfers #{a} #{b} > spec/regression_dumps/transfers_#{a}_#{b}.txt"
 end
 
 desc 'Checks that all versions of the General Roman Calendar are the same'

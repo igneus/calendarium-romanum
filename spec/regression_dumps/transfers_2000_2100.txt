@@ -1,0 +1,189 @@
+---
+2000:
+  2001-03-26: annunciation
+2001:
+  2002-04-08: annunciation
+2002:
+  2002-12-09: bvm_immaculate
+2003: {}
+2004:
+  2005-04-04: annunciation
+  2005-03-25: good_friday
+2005:
+  2006-03-20: joseph
+2006:
+  2007-03-26: annunciation
+2007:
+  2008-03-15: joseph
+  2008-03-31: annunciation
+2008: {}
+2009: {}
+2010: {}
+2011:
+  2012-03-26: annunciation
+2012:
+  2013-04-08: annunciation
+2013:
+  2013-12-09: bvm_immaculate
+2014: {}
+2015:
+  2016-04-04: annunciation
+  2016-03-25: good_friday
+2016:
+  2017-03-20: joseph
+2017:
+  2018-04-09: annunciation
+2018: {}
+2019:
+  2019-12-09: bvm_immaculate
+2020: {}
+2021:
+  2022-06-25: baptist_birth
+  2022-06-24: sacred_heart
+2022:
+  2023-03-20: joseph
+2023:
+  2024-04-08: annunciation
+2024:
+  2024-12-09: bvm_immaculate
+2025: {}
+2026:
+  2027-04-05: annunciation
+2027:
+  2028-03-20: joseph
+2028:
+  2029-04-09: annunciation
+2029: {}
+2030:
+  2030-12-09: bvm_immaculate
+2031:
+  2032-04-05: annunciation
+2032:
+  2033-06-25: baptist_birth
+  2033-06-24: sacred_heart
+2033:
+  2034-03-20: joseph
+2034:
+  2035-03-17: joseph
+  2035-04-02: annunciation
+  2035-03-25: easter_sunday
+2035: {}
+2036: {}
+2037:
+  2038-06-25: baptist_birth
+  2038-06-24: corpus_christi
+2038: {}
+2039:
+  2040-04-09: annunciation
+2040: {}
+2041:
+  2041-12-09: bvm_immaculate
+2042:
+  2043-04-06: annunciation
+2043:
+  2044-06-25: baptist_birth
+  2044-06-24: sacred_heart
+2044:
+  2045-03-20: joseph
+2045:
+  2046-03-17: joseph
+  2046-04-02: annunciation
+  2046-03-25: easter_sunday
+2046: {}
+2047:
+  2047-12-09: bvm_immaculate
+2048: {}
+2049: {}
+2050:
+  2051-03-20: joseph
+2051: {}
+2052:
+  2052-12-09: bvm_immaculate
+2053:
+  2054-04-06: annunciation
+2054: {}
+2055:
+  2056-03-20: joseph
+2056:
+  2057-03-26: annunciation
+  2057-06-30: peter_paul
+  2057-06-29: sacred_heart
+2057: {}
+2058:
+  2058-12-09: bvm_immaculate
+  2059-04-07: annunciation
+2059: {}
+2060: {}
+2061:
+  2062-03-18: joseph
+  2062-04-03: annunciation
+  2062-03-25: holy_saturday
+2062:
+  2063-03-26: annunciation
+2063: {}
+2064:
+  2065-04-06: annunciation
+2065: {}
+2066: {}
+2067:
+  2068-03-26: annunciation
+  2068-06-30: peter_paul
+  2068-06-29: sacred_heart
+2068: {}
+2069:
+  2069-12-09: bvm_immaculate
+  2070-04-07: annunciation
+2070: {}
+2071: {}
+2072:
+  2073-03-18: joseph
+  2073-04-03: annunciation
+  2073-03-25: holy_saturday
+2073:
+  2074-03-26: annunciation
+2074: {}
+2075:
+  2075-12-09: bvm_immaculate
+2076: {}
+2077: {}
+2078:
+  2079-03-20: joseph
+2079: {}
+2080:
+  2080-12-09: bvm_immaculate
+  2081-04-07: annunciation
+2081: {}
+2082: {}
+2083:
+  2084-03-18: joseph
+  2084-04-03: annunciation
+  2084-03-25: holy_saturday
+2084:
+  2085-03-26: annunciation
+2085:
+  2086-04-08: annunciation
+2086:
+  2086-12-09: bvm_immaculate
+2087: {}
+2088: {}
+2089:
+  2090-03-20: joseph
+2090:
+  2091-03-26: annunciation
+2091:
+  2092-04-07: annunciation
+2092: {}
+2093: {}
+2094: {}
+2095:
+  2096-03-26: annunciation
+2096:
+  2097-04-08: annunciation
+2097:
+  2097-12-09: bvm_immaculate
+2098: {}
+2099:
+  2100-04-05: annunciation
+2100:
+  2101-06-25: baptist_birth
+  2101-06-24: sacred_heart

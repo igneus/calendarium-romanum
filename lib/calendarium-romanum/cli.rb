@@ -92,6 +92,11 @@ EOS
       Dumper.new.regression_tests_dump year.to_i
     end
 
+    desc 'dump_transfers START END', 'print transferred solemnities for the specified year span for use in regression tests'
+    def dump_transfers(year_start, year_end)
+      Dumper.new.transfers_dump(year_start.to_i .. year_end.to_i)
+    end
+
     desc 'version', 'print version information'
     def version
       puts 'calendarium-romanum CLI'

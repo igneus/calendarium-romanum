@@ -1,3 +1,5 @@
+require 'yaml'
+
 module CalendariumRomanum
   class CLI
     # Produces a condensed text representation of a Calendar, used in regression tests.
@@ -52,6 +54,27 @@ module CalendariumRomanum
             calendar_with_extensions,
           )
         end
+      end
+
+      # Produces the dump for solemnity transfer regression tests.
+      #
+      # @param years [Enumerable]
+      def transfers_dump(years)
+        sanctorale = Data::GENERAL_ROMAN_LATIN.load
+
+        r = {}
+        years.each do |year|
+          calendar = Calendar.new(
+            year,
+            sanctorale
+          )
+
+          r[year] = calendar.transferred.transform_values do |celebration|
+            celebration.symbol.to_s
+          end
+        end
+
+        @io.puts YAML.dump r
       end
 
       private
