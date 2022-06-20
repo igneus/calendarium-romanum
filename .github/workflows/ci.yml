@@ -1,0 +1,24 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  specs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version:
+          # TODO: test latest MRI, oldest officially maintained MRI, 2.0.0 as oldest version we still support, and one recent JRuby version
+          - 2.6.5
+          - 2.5.0
+          - 2.0.0
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+      - name: Install dependencies
+        run: bundle install --jobs=3 --deployment --without development
+      - name: Run tests
+        run: bundle exec rake spec
