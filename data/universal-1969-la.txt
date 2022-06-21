@@ -82,7 +82,7 @@ note: |
 20 bernardine : S. Bernardini Senensis, presbyteri
 25 bede_venerable : S. Bedae Venerabilis, presbyteri et Ecclesiae doctoris
 25 gregory_vii : S. Gregorii VII, papae
-25 de_pazzi : S. Mariae Magdalenae de’ Pazzi, virginis
+25 de_pazzi : S. Mariae Magdalenae de' Pazzi, virginis
 26 m neri : S. Philippi Neri, presbyteri
 27 augustine_of_canterbury : S. Augustini Cantuariensis, episcopi
 31 f visitation : In Visitatione B. Mariae Virginis
