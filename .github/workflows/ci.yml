@@ -22,6 +22,7 @@ jobs:
         run: bundle install --jobs=3 --deployment --without development
       - name: Run tests
         run: bundle exec rake spec
+        if: matrix.ruby-version != '2.6.5'
       - name: Run extended tests
         run: |
           bundle exec rake spec_all_locales &&
