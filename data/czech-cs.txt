@@ -249,7 +249,7 @@ country: cz
 
 = 12
 1 R campion : Sv. Edmunda Kampiána, kněze a mučedníka
-3 m francis_xaver : Sv. Františka Xaverského, kněze
+3 m francis_xavier : Sv. Františka Xaverského, kněze
 4 john_damascene : Sv. Jana Damašského, kněze a učitele církve
 6 nicholas : Sv. Mikuláše, biskupa
 7 m ambrose : Sv. Ambrože, biskupa a učitele církve
