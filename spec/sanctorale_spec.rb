@@ -316,6 +316,127 @@ describe CR::Sanctorale do
     end
   end
 
+  describe '#difference' do
+    let(:a) { described_class.new }
+    let(:b) { described_class.new }
+
+    it 'returns a new instance' do
+      diff = a.difference b
+      expect(diff).not_to be a
+      expect(diff).not_to be b
+    end
+
+    describe 'empty sanctorales' do
+      it 'returns an empty instance' do
+        expect(a.difference(b)).to eq described_class.new
+      end
+    end
+
+    describe 'no conflicting dates' do
+      before :each do
+        a.add 1, 1, nullus
+        b.add 1, 2, ignotus
+      end
+
+      it 'returns the content of other' do
+        expect(a.difference(b)).to eq b
+      end
+    end
+
+    describe 'conflicting date' do
+      before :each do
+        a.add 1, 1, nullus
+        b.add 1, 1, ignotus
+      end
+
+      it 'returns the content of other' do
+        expect(a.difference(b)).to eq b
+      end
+    end
+
+    describe 'contents the same' do
+      before :each do
+        a.add 1, 1, nullus
+        b.add 1, 1, nullus
+      end
+
+      it 'returns an empty result' do
+        expect(a.difference(b)).to be_empty
+      end
+    end
+
+    describe 'given day in a subset of b' do
+      before :each do
+        a.add 1, 1, nullus
+
+        b.add 1, 1, nullus
+        b.add 1, 1, ignotus
+      end
+
+      it 'returns the content of other' do
+        expect(a.difference(b)).to eq b
+      end
+    end
+
+    describe 'given day in b subset of a' do
+      before :each do
+        a.add 1, 1, nullus
+        a.add 1, 1, ignotus
+
+        b.add 1, 1, nullus
+      end
+
+      it 'returns the content of other' do
+        expect(a.difference(b)).to eq b
+      end
+    end
+
+    describe 'given day in b the same as in a, except of ordering' do
+      before :each do
+        a.add 1, 1, nullus
+        a.add 1, 1, ignotus
+
+        b.add 1, 1, ignotus
+        b.add 1, 1, nullus
+      end
+
+      it 'returns the content of other (i.e. even a difference in ordering is considered a difference)' do
+        expect(a.difference(b)).to eq b
+      end
+    end
+
+    # when specific conditions are met, #difference and #merge are mutually inverse operations
+    describe 'relation to #merge' do
+      describe 'given dates of `b` are a superset (>=) of dates of `a`' do
+        before :each do
+          a.add 1, 1, antonius
+
+          b.add 1, 1, nullus
+          b.add 1, 2, ignotus
+        end
+
+        it '#merge reverses #difference, re-creating `b`' do
+          diff = a.difference b
+          expect(a.merge(diff)).to eq b
+        end
+      end
+
+      describe 'given dates of `a` are a superset (>=) of dates of `b`' do
+        before :each do
+          a.add 1, 1, nullus
+          a.add 1, 2, ignotus
+
+          b.add 1, 1, antonius
+        end
+
+        it '#difference reverses #merge, re-creating `b`' do
+          merged = a.merge b
+          expect(a.difference(merged)).to eq b
+        end
+      end
+    end
+  end
+
   describe '#size' do
     it 'knows when the Sanctorale is empty' do
       expect(s.size).to be 0

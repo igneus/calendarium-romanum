@@ -158,6 +158,20 @@ module CalendariumRomanum
       dup.tap {|dupped| dupped.update other }
     end
 
+    # Returns a new instance containing {Celebration}s from +other+ which differ
+    # from those in self.
+    #
+    # @param other [Sanctorale]
+    # @return [Sanctorale]
+    def difference(other)
+      r = self.class.new
+      other.each_day do |date, celebrations|
+        r.replace(date.month, date.day, celebrations) if celebrations != self[date] && !celebrations.empty?
+      end
+
+      r
+    end
+
     # Retrieves {Celebration}s for the given date
     #
     # @param date [AbstractDate, Date]
