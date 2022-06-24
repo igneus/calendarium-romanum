@@ -78,6 +78,14 @@ EOS
       SanctoraleWriter.new(front_matter: options[:front_matter]).write merged, STDOUT
     end
 
+    desc 'diff FILE1 FILE2', 'prints sanctorale containing only days from FILE2 differing from FILE1'
+    option :front_matter, type: :boolean, desc: 'output YAML front matter'
+    def diff(a, b)
+      sa, sb = [a, b].collect {|path| sanctorale_from_path path }
+      diff = sa.difference sb
+      SanctoraleWriter.new(front_matter: options[:front_matter]).write diff, STDOUT
+    end
+
     desc 'id FILE', 'print celebration identifiers found in a sanctorale data file'
     def id(file)
       sanctorale_from_path(file).each_day do |_, celebrations|

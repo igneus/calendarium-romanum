@@ -169,6 +169,23 @@ describe CalendariumRomanum::CLI, type: :aruba do
       end
     end
 
+    describe 'diff' do
+      before(:each) do
+        write_file 'cal1.txt', content1
+        write_file 'cal2.txt', content2
+        run 'calendariumrom diff cal1.txt cal2.txt'
+      end
+
+      describe 'prints how the latter file differs from the first one' do
+        let(:content1) { "1/11 : St. None, abbot\n1/12 : St. Nulla, abbess" }
+        let(:content2) { "1/11 : St. None, abbot\n1/12 : St. Some" }
+
+        it do
+          expect(all_output).to end_with "= 1\n12 : St. Some\n"
+        end
+      end
+    end
+
     describe 'query' do
       describe 'invalid data file from file system' do
         before(:each) do
