@@ -58,6 +58,10 @@ describe CR::Sanctorale do
         expect(s.get(Date.new(2014, 1, 17))).to eq [antonius]
       end
 
+      it 'get by AbstractDate' do
+        expect(s.get(CR::AbstractDate.new(1, 17))).to eq [antonius]
+      end
+
       it 'may have more CR::Celebrations for a day' do
         [
           'S. Fabiani, papae et martyris',

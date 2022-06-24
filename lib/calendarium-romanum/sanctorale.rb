@@ -177,14 +177,13 @@ module CalendariumRomanum
     #   @param day [Integer]
     # @return (see #[])
     def get(*args)
-      if args.size == 1 && args[0].is_a?(Date)
-        month = args[0].month
-        day = args[0].day
-      else
-        month, day = args
-      end
+      date =
+        if args.size == 1
+          args[0]
+        else
+          AbstractDate.new(*args)
+        end
 
-      date = AbstractDate.new(month, day)
       self[date]
     end
 
