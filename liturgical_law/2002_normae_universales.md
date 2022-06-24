@@ -173,7 +173,7 @@ calendar = CR::PerpetualCalendar.new(temporale_options: {transfer_to_sunday: [:e
   expect(d).to eq(CR::Temporale::Dates.pentecost(liturgical_year) - 7)
   expect(calendar[d].celebrations[0].symbol).to be :ascension
 
-  # c) Sollemnitas SS.mae Eucharistiae, dominicae post SS.mam Trinitatem.
+  # c) sollemnitas Ss.mi Corporis et Sanguinis Christi, dominicae post Ss.mam Trinitatem.
   d = CR::Temporale::Dates.corpus_christi liturgical_year, sunday: true
   expect(d).to be_sunday
   expect(d).to eq(CR::Temporale::Dates.holy_trinity(liturgical_year) + 7)
