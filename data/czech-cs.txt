@@ -229,7 +229,7 @@ country: cz
 2 s V all_souls : Vzpomínka na všechny věrné zemřelé
 3 de_porres : Sv. Martina de Porres, řeholníka
 4 m borromeo : Sv. Karla Boromejského, biskupa
-9 f lateran_basilica : Posvěcení lateránské baziliky
+9 f2.5 lateran_basilica : Posvěcení lateránské baziliky
 10 m leo_great : Sv. Lva Velikého, papeže a učitele církve
 11 m martin : Sv. Martina, biskupa
 12 m R josaphat : Sv. Josafata, biskupa a mučedníka
