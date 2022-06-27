@@ -213,6 +213,35 @@ module CalendariumRomanum
       end
     end
 
+    # Builds a new instance with the same dates as the receiver
+    # and corresponding celebrations returned by the block.
+    #
+    # @yield [AbstractDate, Array<Celebration>] the array is never empty
+    # @return [Sanctorale]
+    def map_days
+      r = self.class.new
+      each_day do |date, celebrations|
+        new_celebrations = yield(date, celebrations)
+        next if new_celebrations.nil? || new_celebrations.empty?
+        r.replace date.month, date.day, new_celebrations
+      end
+
+      r
+    end
+
+    # Builds a new instance with each celebration
+    # replaced with result of yielding it to the block.
+    #
+    # @yield [Celebration]
+    # @return [Sanctorale]
+    def map_celebrations
+      map_days do |date, celebrations|
+        celebrations
+          .collect {|c| yield c }
+          .compact
+      end
+    end
+
     # Returns count of _days_ with {Celebration}s filled
     #
     # @return [Integer]

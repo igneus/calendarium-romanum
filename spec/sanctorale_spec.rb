@@ -485,6 +485,69 @@ describe CR::Sanctorale do
     end
   end
 
+  describe '#map_days' do
+    before :each do
+      s.add 1, 17, antonius
+    end
+
+    it 'yields date and celebrations' do
+      expect {|block| s.map_days(&block) }
+        .to yield_with_args(CR::AbstractDate.new(1, 17), [antonius])
+    end
+
+    it 'returns a new Sanctorale instance' do
+      result = s.map_days { [nullus] }
+      expect(result).to be_a described_class
+      expect(result).not_to be s
+    end
+
+    it 'replaces celebrations with result of the block' do
+      expected = described_class.new.tap {|s| s.add 1, 17, nullus }
+
+      expect(s.map_days { [nullus] })
+        .to eq expected
+    end
+
+    it 'empty Array deletes the day' do
+      expect(s.map_days { [] })
+        .to be_empty
+    end
+
+    it 'nil deletes the day' do
+      expect(s.map_days { nil })
+        .to be_empty
+    end
+  end
+
+  describe '#map_celebrations' do
+    before :each do
+      s.add 1, 17, antonius
+    end
+
+    it 'yields each celebration' do
+      expect {|block| s.map_celebrations(&block) }
+        .to yield_with_args(antonius)
+    end
+
+    it 'returns a new Sanctorale instance' do
+      result = s.map_celebrations { nullus }
+      expect(result).to be_a described_class
+      expect(result).not_to be s
+    end
+
+    it 'replaces celebrations with result of the block' do
+      expected = described_class.new.tap {|s| s.add 1, 17, nullus }
+
+      expect(s.map_celebrations { nullus })
+        .to eq expected
+    end
+
+    it 'nil deletes the celebration' do
+      expect(s.map_celebrations { nil })
+        .to be_empty
+    end
+  end
+
   describe '#freeze' do
     it 'makes the instance frozen' do
       expect(s).not_to be_frozen # make sure
