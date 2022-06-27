@@ -159,7 +159,7 @@ note: |
 3 m gregory_great : S. Gregorii Magni, papae et Ecclesiae doctoris
 8 f bvm_birth : In Nativitate B. Mariae Virginis
 13 m john_chrysostom : S. Ioannis Chrysostomi, episcopi et Ecclesiae doctoris
-14 f R cross : In Exaltatione sanctae Crucis
+14 f2.5 R cross : In Exaltatione sanctae Crucis
 15 m bvm_sorrows : B. Mariae Virginis Perdolentis
 16 m R cornelius_cyprian : Ss. Cornelii, papae, et Cypriani, episcopi, martyrum
 17 bellarmine : S. Roberti Bellarmino, episcopi et Ecclesiae doctoris
