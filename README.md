@@ -105,7 +105,7 @@ require 'calendarium-romanum'
 
 ### 1. Typical usage
 
-The easiest way to obtain calendar entry of a liturgical day:
+The easiest way to obtain calendar entry of any liturgical day:
 
 ```ruby
 I18n.locale = :en # set locale
