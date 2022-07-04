@@ -18,7 +18,7 @@ the less formal ones notifications).
 * **1969 Normae universales de anno liturgico et de calendario**
   initial outline of the calendar system
 * **1970 Missale Romanum, editio typica**
-  [updated](http://www.cultodivino.va/content/dam/cultodivino/notitiae/1970/54 1.pdf#page=49)
+  [updated](http://www.cultodivino.va/content/dam/cultodivino/notitiae/1970/54%201.pdf#page=49)
   paragraphs 13, 56, 59 and 60 of the *Normae*
 * **1975 Missale Romanum, editio typica altera**
   [updated](http://www.cultodivino.va/content/dam/cultodivino/notitiae/1975/111-112.pdf#page=27)
@@ -33,8 +33,8 @@ the less formal ones notifications).
 
 ## Code examples
 
-The Markdown files, in addition to the text of documents of liturgical
-legislation, contain also blocks of Ruby code, each proving
+The Markdown files, in addition to the text of liturgical
+legislation, contain also blocks of Ruby code, each demonstrating
 that the immediately preceding part of the document is implemented
 by the library. The documents illustrated with code blocks thus constitute
 sort of a test suite in the [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
