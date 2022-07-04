@@ -540,6 +540,13 @@ are present in `I18n.config.load_path` and possibly search your
 application (and it's other dependencies) for code which kicked
 them out.
 
+## Example code
+
+For applications using calendarium-romanum see the Dependency Graph on Github.
+
+There is also a growing collection of [gists][gists] with smaller examples,
+usually finding answers for calendrical questions.
+
 ## Executable
 
 This gem provides an executable, `calendariumrom`.
@@ -599,3 +606,4 @@ Get the sources and install development depencencies:
 [crhistorical]: https://github.com/calendarium-romanum/historical
 [data-contrib]: https://github.com/calendarium-romanum/data-contrib
 [i18n]: https://github.com/ruby-i18n/i18n
+[gists]: https://gist.github.com/search?q=calendarium-romanum
