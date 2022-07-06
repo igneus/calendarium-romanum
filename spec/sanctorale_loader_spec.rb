@@ -161,6 +161,9 @@ describe CR::SanctoraleLoader do
         ['standard line beginning missing', 'some content'],
         ['month heading - non-numeric', '= January'],
         ['invalid rank', '1/25 X : In conversione S. Pauli, apostoli'],
+        ['invalid colour', '1/25 f X : In conversione S. Pauli, apostoli'],
+        ['symbol too short', '1/25 f w s : In conversione S. Pauli, apostoli'],
+        ['unexpected content in the leading part', '1/25 f w symbol unexpected : In conversione S. Pauli, apostoli'],
       ].each do |title, given|
         it title do
           expect { l.load_from_string given }
