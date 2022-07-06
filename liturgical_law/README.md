@@ -26,7 +26,7 @@ the less formal ones notifications).
   the change of paragraph 59 dropped a few categories from the *Table of Liturgical Days*)
 * **1977 Decree about the feast of Baptism of the Lord**
   with an improved rule of computing it's date for places where Epiphany is celebrated
-  on a Sunday
+  on Sunday
 * **1990 Decree updating Normae, n. 5**
   (transfer rule for a solemnity impeded by a privileged Sunday)
 * **1998 Notification concerning occurrence of the memorial of the Immaculate Heart of Mary**
@@ -47,7 +47,7 @@ Utilities commonly used in the code blocks:
 # RSpec expectations are available in the code blocks
 expect(1).to be_truthy
 
-# method `year` returns a random year (which is a valid liturgical years
+# method `year` returns a random year (which is a valid liturgical year
 # for calendarium-romanum) and should be used in all examples which need
 # a single year and don't require a particular one
 expect(year).to be_a Integer
