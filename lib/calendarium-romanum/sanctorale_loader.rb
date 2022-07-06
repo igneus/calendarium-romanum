@@ -70,13 +70,12 @@ module CalendariumRomanum
         next if l.empty?
 
         # month section heading
-        n = l.match(/^=\s*(\d+)\s*$/)
-        unless n.nil?
+        next if l.match(/^=\s*(\d+)\s*$/) do |n|
           month_section = n[1].to_i
-          unless month_section >= 1 && month_section <= 12
+          unless (1..12).include? month_section
             raise error("Invalid month #{month_section}", line_num)
           end
-          next
+          true
         end
 
         begin
