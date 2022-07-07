@@ -44,13 +44,17 @@ EOS
 
     desc 'errors FILE1 ...', 'find errors in sanctorale data files'
     def errors(*files)
-      files.each do |path|
-        begin
-          sanctorale_from_path path
-        rescue Errno::ENOENT, InvalidDataError => err
-          die! err.message
-        end
+      errors = false
+      handler = proc do |exception|
+        errors = true
+        STDERR.puts exception.message
       end
+
+      files.each do |path|
+        sanctorale_from_path path, error_handler: handler
+      end
+
+      exit 1 if errors
     end
 
     desc 'cmp FILE1 FILE2', 'detect differences between two sanctorale data files'

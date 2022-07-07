@@ -32,6 +32,14 @@ module CalendariumRomanum
       'r' => Colours::RED
     }.freeze
 
+    # @param error_handler [#call, nil]
+    #   if provided, {SanctoraleLoader} on encountering errors
+    #   in the data being loaded does not raise exception,
+    #   but instead sends #call with the exception as argument
+    def initialize(error_handler: nil)
+      @error_handler = error_handler || method(:raise)
+    end
+
     # Load from an object which understands +#each_line+
     #
     # @param src [String, File, #each_line]
@@ -73,7 +81,7 @@ module CalendariumRomanum
         next if l.match(/^=\s*(\d+)\s*$/) do |n|
           month_section = n[1].to_i
           unless (1..12).include? month_section
-            raise error("Invalid month #{month_section}", line_num)
+            error!("Invalid month #{month_section}", line_num)
           end
           true
         end
@@ -81,7 +89,8 @@ module CalendariumRomanum
         begin
           celebration = load_line l, month_section
         rescue RangeError, RuntimeError => err
-          raise error(err.message, line_num)
+          error!(err.message, line_num)
+          next
         end
 
         dest.add(
@@ -172,8 +181,8 @@ module CalendariumRomanum
       )
     end
 
-    def error(message, line_number)
-      InvalidDataError.new("L#{line_number}: #{message}")
+    def error!(message, line_number)
+      @error_handler.call InvalidDataError.new("L#{line_number}: #{message}")
     end
   end
 end

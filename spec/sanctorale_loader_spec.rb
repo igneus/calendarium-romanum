@@ -211,4 +211,19 @@ describe CR::SanctoraleLoader do
         .to be nil
     end
   end
+
+  describe 'error_handler' do
+    it 'is called whenever an error is encountered' do
+      handler = double()
+      s = described_class.new(error_handler: handler)
+
+      expect(handler).to(
+        receive(:call)
+          .with(CR::InvalidDataError.new("L1: Syntax error, line skipped 'malformed input'"))
+      )
+      s.load_from_string 'malformed input'
+      # + normally an exception would be raised, but it is not
+      #   when error_handler is set
+    end
+  end
 end

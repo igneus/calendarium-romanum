@@ -4,8 +4,8 @@ module CalendariumRomanum
     #
     # @api private
     module Helper
-      def sanctorale_from_path(path)
-        loader = SanctoraleLoader.new
+      def sanctorale_from_path(path, error_handler: nil)
+        loader = SanctoraleLoader.new error_handler: error_handler
 
         if path == '-'
           loader.load(STDIN)

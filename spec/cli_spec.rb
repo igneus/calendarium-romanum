@@ -49,6 +49,16 @@ describe CalendariumRomanum::CLI, type: :aruba, slow: true do
             expect(last_command).to have_exit_status 1
           end
         end
+
+        describe 'multiple incorrect lines' do
+          let(:file_content) { "= 13\n1 f7.3 : St. None" }
+
+          it 'reports them all' do
+            expect(all_output).to start_with 'L1: Invalid month'
+            expect(all_output).to end_with "L2: Invalid celebration rank code 7.3\n"
+            expect(last_command).to have_exit_status 1
+          end
+        end
       end
     end
 
