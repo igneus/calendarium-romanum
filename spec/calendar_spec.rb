@@ -476,7 +476,7 @@ describe CR::Calendar do
         expect(celebs[0]).to eq st_none
       end
 
-      describe 'no sanctorale solemnity is lost' do
+      describe 'no sanctorale solemnity is lost', slow: true do
         let(:sanctorale) { CR::Data::GENERAL_ROMAN_ENGLISH.load }
 
         (2020..2040).each do |year|

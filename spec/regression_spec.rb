@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 require 'stringio'
 
-describe 'Regressions' do
+describe 'Regressions', slow: true do
   all_dumps = Dir[File.expand_path "../regression_dumps/*.txt", __FILE__]
   transfers_dumps, year_dumps = all_dumps.partition do |path|
     File.basename(path).start_with? 'transfers_'

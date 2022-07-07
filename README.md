@@ -590,8 +590,11 @@ Get the sources and install development depencencies:
 
 ### Run Tests
 
-- `bundle exec rake spec` to execute the test suite
+- `bundle exec rake spec` to execute the complete test suite
+- `bundle exec rake spec_fast` to run tests, skipping those known to be slow (for fast TDD cycles)
 - `bundle exec rake spec_all_locales` to run the test suite for each of the supported locales
+  (to make sure that the gem works equally well with all supported locales
+  and tests depending on the current locale are explicit about it)
 - `bundle exec appraisal rake spec` to test compatibility with different versions of dependencies
 - `bash spec/build/gem_build_test.sh` to test that a valid working Ruby gem can be built from the sources
 

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
-  describe path do
+  describe path, slow: true do
     document = File.read path
     doc = MarkdownDocument.new document
 

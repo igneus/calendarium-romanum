@@ -1,5 +1,11 @@
 require 'rspec/core/rake_task'
+
 RSpec::Core::RakeTask.new(:spec)
+
+desc 'Run RSpec examples excepting those marked as slow'
+RSpec::Core::RakeTask.new(:spec_fast) do |t|
+  t.rspec_opts = '--tag ~slow'
+end
 
 EXECUTABLE = 'ruby -Ilib bin/calendariumrom'
 

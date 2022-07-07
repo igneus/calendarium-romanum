@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CalendariumRomanum::CLI, type: :aruba do
+describe CalendariumRomanum::CLI, type: :aruba, slow: true do
   let(:path_universal_la) { CR::Data::GENERAL_ROMAN_LATIN.path }
   let(:path_universal_en) { CR::Data::GENERAL_ROMAN_ENGLISH.path }
 
