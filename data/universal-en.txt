@@ -197,7 +197,7 @@ locale: en
 17 m R ignatius_of_antioch : Saint Ignatius of Antioch, bishop and martyr
 18 f R luke : Saint Luke the Evangelist
 19 R brebeuf_jogues : Saints Jean de Brébeuf, Isaac Jogues, priests and martyrs; and their companions, martyrs
-19 paul_of_cross : Saint Paul of the Cross, priest
+20 paul_of_cross : Saint Paul of the Cross, priest
 22 john_paul_ii : Saint John Paul II, pope
 23 john_capistrano : Saint John of Capistrano, priest
 24 claret : Saint Anthony Mary Claret, bishop
