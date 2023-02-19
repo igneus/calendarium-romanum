@@ -50,7 +50,7 @@ expect(1).to be_truthy
 # method `year` returns a random year (which is a valid liturgical year
 # for calendarium-romanum) and should be used in all examples which need
 # a single year and don't require a particular one
-expect(year).to be_a Integer
+expect(year).to be_an Integer
 expect(year).to be >= 1970
 # year is the same for the whole example, even if called multiple times
 a = year; b = year
@@ -59,15 +59,15 @@ expect(a).to be b
 # method `years` returns a representative Enumerable of (valid liturgical)
 # years and should be used in all examples which test across several years
 # and don't require particular ones
-expect(years).to be_a Enumerable
+expect(years).to be_an Enumerable
 yrs = years.to_a
-expect(yrs[0]).to be_a Integer
+expect(yrs).to all(be_an(Integer))
 
 # method `years_with` returns an array of years (which are valid liturgical years
 # for calendarium-romanum) matching the specified condition
 yrs = years_with {|y| true }
 expect(yrs).to be_an Array
-expect(yrs[0]).to be_an Integer
+expect(yrs).to all(be_an(Integer))
 # if no matching year is found an exception is raised
 expect { years_with {|y| false } }
   .to raise_exception(RuntimeError, /no matching year/)
