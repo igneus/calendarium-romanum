@@ -25,7 +25,7 @@ the less formal ones notifications).
   paragraphs 14, 47 and 59 of the *Normae* (mostly mere terminological changes;
   the change of paragraph 59 dropped a few categories from the *Table of Liturgical Days*)
 * **1977 Decree about the feast of Baptism of the Lord**
-  with an improved rule of computing it's date for places where Epiphany is celebrated
+  with an improved rule of computing its date for places where Epiphany is celebrated
   on Sunday
 * **1990 Decree updating Normae, n. 5**
   (transfer rule for a solemnity impeded by a privileged Sunday)
@@ -37,7 +37,7 @@ The Markdown files, in addition to the text of liturgical
 legislation, contain also blocks of Ruby code, each demonstrating
 that the immediately preceding part of the document is implemented
 by the library. The documents illustrated with code blocks thus constitute
-sort of a test suite in the [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
+a test suite in the [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 style. This test suite is integrated in the project's main test suite
 (see `spec/liturgical_law_spec.rb`)
 
