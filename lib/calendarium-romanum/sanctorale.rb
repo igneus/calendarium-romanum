@@ -185,7 +185,7 @@ module CalendariumRomanum
     # Retrieves {Celebration}s for the given date
     #
     # @overload get(date)
-    #   @param date[AbstractDate, Date]
+    #   @param date [AbstractDate, Date]
     # @overload get(month, day)
     #   @param month [Integer]
     #   @param day [Integer]
