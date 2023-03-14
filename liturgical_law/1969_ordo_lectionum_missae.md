@@ -76,9 +76,9 @@ calendar = CR::PerpetualCalendar.new
 years_with do |y|
   sunday_count = (
     (CR::Temporale::Dates.baptism_of_lord(y) .. CR::Temporale::Dates.ash_wednesday(y))
-	  .select(&:sunday?).size +
+      .select(&:sunday?).size +
     (CR::Temporale::Dates.pentecost(y) ... CR::Temporale::Dates.first_advent_sunday(y + 1))
-	  .select(&:sunday?).size
+      .select(&:sunday?).size
   )
 
   # make sure there is no third possibility
@@ -106,9 +106,9 @@ calendar = CR::PerpetualCalendar.new
 years_with do |y|
   (
     (CR::Temporale::Dates.baptism_of_lord(y) .. CR::Temporale::Dates.ash_wednesday(y))
-	  .select(&:sunday?).size +
+      .select(&:sunday?).size +
     (CR::Temporale::Dates.pentecost(y) ... CR::Temporale::Dates.first_advent_sunday(y + 1))
-	  .select(&:sunday?).size
+      .select(&:sunday?).size
   ) == 33
 end
 .each do |y|
