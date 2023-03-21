@@ -60,8 +60,7 @@ expect(a).to be b
 # years and should be used in all examples which test across several years
 # and don't require particular ones
 expect(years).to be_an Enumerable
-yrs = years.to_a
-expect(yrs).to all(be_an(Integer))
+expect(years).to all(be_an(Integer))
 
 # method `years_with` returns an array of years (which are valid liturgical years
 # for calendarium-romanum) matching the specified condition
