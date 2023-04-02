@@ -44,6 +44,8 @@ module CalendariumRomanum
     end
 
     def <=>(other)
+      return nil unless other.class == self.class
+
       other.priority <=> priority
     end
 

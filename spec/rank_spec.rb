@@ -26,6 +26,7 @@ describe CR::Rank do
   describe '#==' do
     it { expect(CR::Ranks[1.2]).to be == CR::Ranks[1.2] }
     it { expect(CR::Ranks[1.2]).not_to be == CR::Ranks[1.1] }
+    it { expect(CR::Ranks::FERIAL == 'instance of another class').to be false }
   end
 
   describe 'descriptions' do

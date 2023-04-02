@@ -25,6 +25,8 @@ module CalendariumRomanum
     attr_reader :month, :day
 
     def <=>(other)
+      return nil unless other.class == self.class
+
       if month != other.month
         month <=> other.month
       else

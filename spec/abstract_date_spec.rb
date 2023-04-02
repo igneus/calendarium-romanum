@@ -59,6 +59,7 @@ describe CR::AbstractDate do
   describe '#==' do
     it { expect(AD.new(1, 1)).to be == AD.new(1, 1) }
     it { expect(AD.new(1, 1)).not_to be == AD.new(1, 2) }
+    it { expect(AD.new(1, 1) == 'instance of another class').to be false }
   end
 
   describe 'as a Hash key' do
