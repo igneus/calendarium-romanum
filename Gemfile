@@ -23,5 +23,4 @@ group :test do
   gem 'cucumber', '~> 2.99'
   gem 'simplecov'
   gem 'backports', '~> 3.18'
-  gem 'markly'
 end

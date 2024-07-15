@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'markly'
 
 class LiturgicalLawExample
   # make RSpec expectations available for the code example
@@ -29,26 +28,13 @@ Dir[File.expand_path('../../liturgical_law/*.md', __FILE__)].each do |path|
   describe path, slow: true do
     document = File.read path
 
-    last_paragraph = ''
-    header_level = 0
-    Markly.parse(document).each do |node|
-      case node.type
-      when :header
-        last_paragraph = node.to_plaintext
-      when :paragraph
-        last_paragraph = node.to_plaintext
-      when :code_block
-        next if node.fence_info != 'ruby'
+    MarkdownDocument.new(document).each_ruby_example do |code, line, last_paragraph|
+      context = last_paragraph[0..50].gsub(/\s+/, ' ')
+      context = context[0..context.rindex(' ')]
 
-        line = node.source_position[:start_line]
-
-        context = last_paragraph[0..50].gsub(/\s+/, ' ')
-        context = context[0..context.rindex(' ')]
-
-        it context do
-          cls = Class.new(LiturgicalLawExample)
-          cls.class_eval(node.string_content, path, line)
-        end
+      it context do
+        cls = Class.new(LiturgicalLawExample)
+        cls.class_eval(code, path, line)
       end
     end
   end

@@ -58,14 +58,21 @@ class MarkdownDocument
   def each_ruby_example
     example = nil
     line = nil
+    last_paragraph = ''
+    paragraph_beginning = false
     @str.each_line.with_index(1) do |l, i|
       if example.nil?
         if example_beginning?(l)
           example = ''
           line = i + 1
+        elsif l.strip.empty?
+          paragraph_beginning = true
+        elsif paragraph_beginning
+          last_paragraph = l
+          paragraph_beginning = false
         end
       elsif example_end?(l)
-        yield example, line
+        yield example, line, last_paragraph
         example = nil
       else
         example += l
