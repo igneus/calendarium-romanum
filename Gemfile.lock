@@ -34,6 +34,7 @@ GEM
     i18n (0.6.9)
     jaro_winkler (1.5.4)
     json (2.0.2)
+    markly (0.10.0)
     multi_json (1.12.2)
     multi_test (0.1.2)
     parallel (1.19.2)
@@ -83,6 +84,7 @@ DEPENDENCIES
   backports (~> 3.18)
   cucumber (~> 2.99)
   i18n
+  markly
   rake
   roman-numerals
   rspec
