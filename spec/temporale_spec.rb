@@ -703,7 +703,7 @@ describe CR::Temporale do
   end
 
   describe '#each_day' do
-    it 'yields each date and corresponding CR::Celebrations' do
+    it 'yields each date and corresponding CR::Celebrations', slow: true do
       expect {|block| t.each_day(&block) }.to yield_control.at_least(360).times # liturgical year can be shorter than the civil one
 
       t.each_day do |date,cel|

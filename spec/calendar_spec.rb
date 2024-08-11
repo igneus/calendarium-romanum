@@ -92,7 +92,7 @@ describe CR::Calendar do
     end
   end
 
-  describe '#each' do
+  describe '#each', slow: true do
     let (:day_count) {(c.temporale.start_date..c.temporale.end_date).count}
 
     it 'yields for each iteration' do
