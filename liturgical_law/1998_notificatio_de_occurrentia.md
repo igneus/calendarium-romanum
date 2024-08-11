@@ -18,16 +18,6 @@ Paschatis, eodem die occurrat una cum altera memoria obligatoria, illo anno hae 
 tamquam ad libitum retineri debent, iuxta indicationes quae in Instructione Calendaria particularia
 diei 24 iunii 1970 relate ad calendaria particularia (n. 23c) inveniuntur.
 
-Talis occurrentia accidentalis non invenitur ante annum 2003.
-
-Ex aedibus Congregationis de Cultu Divino, die 8 mensis decembris 1998, in Sollemnitate Immaculatae Conceptionis beatae Mariae Virginis.
-
-Georgius A. Card. MEDINA ESTÉVEZ
-*Praefectus*
-
-Gerardus M. AGNELO
-*Archiepiscopus a Secretis*
-
 ```ruby
 sanctorale = CR::Data::GENERAL_ROMAN_LATIN.load
 calendar = CR::PerpetualCalendar.new sanctorale: sanctorale
@@ -55,3 +45,13 @@ years_with(from: 2002, &has_occurrence).each do |y|
   expect(immaculate_heart.rank).to be CR::Ranks::MEMORIAL_OPTIONAL
 end
 ```
+
+Talis occurrentia accidentalis non invenitur ante annum 2003.
+
+Ex aedibus Congregationis de Cultu Divino, die 8 mensis decembris 1998, in Sollemnitate Immaculatae Conceptionis beatae Mariae Virginis.
+
+Georgius A. Card. MEDINA ESTÉVEZ
+*Praefectus*
+
+Gerardus M. AGNELO
+*Archiepiscopus a Secretis*

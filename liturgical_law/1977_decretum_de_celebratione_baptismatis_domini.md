@@ -22,16 +22,6 @@ In locis ubi sollemnitas Epiphaniae in dominicam est transferenda et haec die 7 
 incidit, ita ut festum Baptismatis Domini, eadem die occurrens, esset omittendum, idem festum
 Baptismatis Domini ad feriam II immediate sequentem transferatur.
 
-Contrariis quibuslibet minime obstantibus.
-
-Ex aedibus Sacrae Congregationis pro Sacramentis et Cultu Divino, die 7  Octobris 1977.
-
-Antonius Innocenti
-*Archiep. tit. Aeclanen. a Secretis*
-
-Iacobus R. Card. Knox
-*Praefectus*
-
 ```ruby
 is_case_mentionned = proc do |y|
   [7, 8].include? CR::Temporale::Dates.epiphany(y, sunday: true).day
@@ -56,3 +46,13 @@ end
   expect(with_translation).to eq without_translation
 end
 ```
+
+Contrariis quibuslibet minime obstantibus.
+
+Ex aedibus Sacrae Congregationis pro Sacramentis et Cultu Divino, die 7  Octobris 1977.
+
+Antonius Innocenti
+*Archiep. tit. Aeclanen. a Secretis*
+
+Iacobus R. Card. Knox
+*Praefectus*
