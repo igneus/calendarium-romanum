@@ -1,5 +1,5 @@
 module CalendariumRomanum
-  class Temporale
+  class Temporale < BaseTemporale
     # Provides factory methods building {Celebration}s
     # for temporale feasts
     class CelebrationFactory
