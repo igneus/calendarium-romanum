@@ -113,7 +113,7 @@ country: cz
 22 R fisher_more : Sv. Jana Fishera, biskupa a Tomáše Mora, mučedníků
 24 s baptist_birth : Narození svatého Jana Křtitele
 27 cyril_of_alexandria : Sv. Cyrila Alexandrijského, biskupa a učitele církve
-28 m R irenaeus : Sv. Ireneje, biskupa a mučedníka
+28 m R irenaeus : Sv. Ireneje, biskupa, mučedníka a učitele církve
 29 s R peter_paul : Sv. Petra a Pavla, apoštolů, hlavních patronů brněnské diecéze
 30 R first_martyrs_of_rome : Svatých prvomučedníků římských
 
